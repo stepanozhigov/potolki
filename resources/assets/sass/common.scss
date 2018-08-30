@@ -1,0 +1,45 @@
+.body {
+    margin: 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    &__icon {
+        margin-right: .625rem;
+    }
+}
+
+.title {
+    color: #50555a;
+    text-align: center;
+    font-size: 3.625rem;
+
+    &_center {
+        text-align: center;
+    }
+}
+
+.subtitle {
+    color: #fff;
+    font-size: 2rem;
+}
+.second-title {
+    text-align: center;
+    color: #50555f;
+    font-size: 2rem;
+    position: relative;
+
+    &:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: -20px;
+        left: 0;
+        width: 10rem;
+        height: .0625rem;
+        margin: 0 auto;
+        background-color: #a7aaad;
+    }
+}

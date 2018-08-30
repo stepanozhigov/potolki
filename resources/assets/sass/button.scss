@@ -1,0 +1,24 @@
+.button {
+    color: #6b6b6b;   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border: .125rem solid #a7aaad;
+    border-radius: .3125rem;
+    outline: none;
+    height: 3.125rem;
+    width: 17.5rem;
+}
+
+.button_red {
+    background-color: #dc1414;
+    color: #fff;
+    box-shadow: 0 0.0625rem 0 #a01414;
+    border: .125rem solid transparent;
+}
+
+.button_gray {
+    background-color: #a7aaad;
+    color: #fff;
+}
