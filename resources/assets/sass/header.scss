@@ -2,14 +2,27 @@
     display: flex;
     flex-direction: column;
 
+    &_light {
+        align-items: center;
+        padding: 2.5rem 0;
+    }
+
     &__top {
         padding: 65px 0 25px 0;
         display: flex;
         align-items: center;
     }
 
+    &__line {
+        margin: 0;
+        border-color: #e4e6e8;
+        border-width: .5px;
+    }
+
     &__bottom {
-        padding: 21px 0 31px 2px;
+        padding: 22px 0 25px 2px;
+        display: flex;
+        align-items: center;
     }
 
     &__directions {
@@ -26,10 +39,24 @@
             background-color: #a7aaad;
         }
     }
+    
+    &__menu {
+        flex-basis: 52.7%;
+        margin-left: auto;
+    }
 
-}
+    &__feedbacks {
+        flex-basis: 52.7%;
+        margin-left: auto;
+        display: flex;
+        justify-content: space-between;
+    }
 
-.header_light {
-    align-items: center;
-    padding: 2.5rem 0;
+    &__callback {
+        color: $red_crismon;
+        font-family: "Helvetica Neue";
+        font-size: 16px;
+        text-decoration: underline;
+    }
+
 }

@@ -1,0 +1,39 @@
+.menu {
+    display: flex;
+    justify-content: space-between;
+    color: $grey_abbey;
+    font-family: "Helvetica Neue";
+    font-size: 16px;
+    cursor: pointer;
+
+    &__item {
+        color: $grey_abbey;
+        text-decoration: none;
+        position: relative;
+
+        &:hover {
+            color: $red_crismon;
+
+            &:after {
+                content: ' ';
+                position: absolute;
+                bottom: -40px;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                border-bottom: 1px solid $red_crismon;
+                opacity: 0.5;
+            }
+        }
+
+        &_dropdown:before {
+            content: 	'\2630';
+            color: inherit;
+            font-size: 13px;
+            margin-right: 4px;
+
+        }
+
+    }
+
+}
