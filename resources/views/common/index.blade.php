@@ -12,14 +12,21 @@
 
     <section class="cities">
         <h2 class="second-title cities__title">Филиалы в других городах</h2>
-        <a href="/" class="button cities__item">Сочи</a>
-        <a href="/" class="button cities__item">Сочи</a>
-        <a href="/" class="button cities__item">Сочи</a>
-        <a href="/" class="button cities__item">Сочи</a>
-        <a href="/" class="button cities__item">Сочи</a>
+        
+        @foreach($cities as $city)
+            <a href="{{ route('windows.main', ['city' => $city->code]) }}" class="button cities__item">{{ $city->name }}</a>
+        @endforeach
+        
     </section>
 
-    <section class="directions">
-        <h2 class="second-title">Другие направления компании</h2>
+    <section class="directions container">
+        <h2 class="second-title directions__title">Другие направления компании</h2>
+
+        @foreach($directions as $direction)
+            <div class="card directions__item">
+                <img class="card__img" src="{{ Storage::url($direction->image) }}" alt="{{ $direction->name }}" >
+                <p class="card__title">{{ $direction->name }}</p>
+            </div>
+        @endforeach
     </section>
 @endsection

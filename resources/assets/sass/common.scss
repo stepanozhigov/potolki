@@ -1,5 +1,29 @@
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('../fonts/PlayfairDisplay-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('../fonts/HelveticaNeueCyr-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+
 .body {
     margin: 0;
+}
+
+.container {
+    width: 1180px;
+    margin: 0 auto;
+
+    @media screen and (max-width: 1250px) {
+        width: 95%;
+    }
 }
 
 .logo {
@@ -12,34 +36,79 @@
 }
 
 .title {
-    color: #50555a;
+    color: $grey_abbey;
     text-align: center;
-    font-size: 3.625rem;
+    font-family: 'Playfair Display';
+    font-size: 48px;
+    font-weight: 400;
+    margin: 0;
 
     &_center {
-        text-align: center;
+        text-align: center; 
     }
 }
 
 .subtitle {
+    font-family: 'Helvetica Neue';
+    font-weight: 300;
+    font-size: 26px;
     color: #fff;
-    font-size: 2rem;
+    margin: 0;
 }
 .second-title {
+    font-family: 'Playfair Display';
+    font-weight: 400;
+    font-size: 32px;
     text-align: center;
-    color: #50555f;
-    font-size: 2rem;
+    color: $grey_abbey;
+    margin: 0;
+    
     position: relative;
 
     &:after {
         content: '';
         position: absolute;
         right: 0;
-        bottom: -20px;
+        bottom: -23px;
         left: 0;
         width: 10rem;
         height: .0625rem;
         margin: 0 auto;
         background-color: #a7aaad;
     }
+}
+
+.arrow {
+    border: solid #a7aaad;
+    padding: 0 8px 8px 0;
+    border-width: 0 1px 1px 0;
+    margin-right: 10px;
+    
+    &_down {
+        transform: rotate(45deg);
+    }
+}
+
+
+.dropdown {
+    color: $grey_abbey;
+    font-family: "Helvetica Neue";
+    font-size: 16px;
+    cursor: pointer;
+
+    &__item {
+        display: none;
+
+        &_active {
+            display: flex;
+            align-items: center
+
+        }
+
+    }
+
+    &__arrow {
+        margin-top: -2px;
+    }
+
 }

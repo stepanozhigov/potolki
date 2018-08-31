@@ -1,5 +1,6 @@
 .cities {
     width: 780px;
+    padding: 78px 0 0 0;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -15,10 +16,11 @@
 
     &__title {
         flex-basis: 100%;
+        margin-bottom: 63px;
     }
 
     &__item {
-        max-width: 240px;
+        max-width: 236px;
         margin-bottom: 30px;
     }
 }

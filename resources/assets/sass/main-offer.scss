@@ -1,9 +1,10 @@
 .main-offer {
-    background: url(/img/main-offer-background.jpg) center no-repeat / cover;
+    background: url(/img/main-offer-background.jpg) no-repeat center;
+    background-size: cover;
     display: flex;
     flex-direction: column;
 
-    padding-top: 100px;
+    padding-top: 97px;
     padding-bottom: 80px;
 
     &_center {
@@ -11,9 +12,13 @@
     }
 
     &__title {
-        color: #fff;
+        color: $white;
+        margin-bottom: 19px;
     }
 
+    &__subtitle {
+        margin-bottom: 40px;
+    }
     &__button {
         margin-bottom: 1.25rem;
     }

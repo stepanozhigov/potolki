@@ -1,4 +1,6 @@
 .button {
+    font-family: 'Helvetica Neue';
+    font-size: 20px;
     color: #6b6b6b;   
     display: flex;
     align-items: center;
@@ -7,7 +9,7 @@
     border: .125rem solid #a7aaad;
     border-radius: .3125rem;
     outline: none;
-    height: 3.125rem;
+    height: 46px;
     width: 17.5rem;
 }
 

@@ -1,8 +1,35 @@
 .header {
     display: flex;
+    flex-direction: column;
+
+    &__top {
+        padding: 65px 0 25px 0;
+        display: flex;
+        align-items: center;
+    }
+
+    &__bottom {
+        padding: 21px 0 31px 2px;
+    }
+
+    &__directions {
+        margin: -2px 0 0 44px;
+        position: relative;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: -14px;
+            left: -24px;
+            width: .0625rem;
+            height: 2.8125rem;
+            background-color: #a7aaad;
+        }
+    }
+
 }
 
 .header_light {
-    justify-content: center;
+    align-items: center;
     padding: 2.5rem 0;
 }
