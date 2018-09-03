@@ -95,6 +95,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Futura PT - Book';
+  src: url(/fonts/FuturaPT-Book.woff?c431096955795da262fc32297d7bfa8f) format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
 .body {
   margin: 0;
 }
@@ -125,7 +132,6 @@
 
 .title {
   color: #50555a;
-  text-align: center;
   font-family: 'Playfair Display';
   font-size: 48px;
   font-weight: 400;
@@ -142,6 +148,16 @@
   font-size: 26px;
   color: #fff;
   margin: 0;
+}
+
+.overtitle {
+  color: #ffffff;
+  font-family: "Helvetica Neue";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 32px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
 }
 
 .second-title {
@@ -229,8 +245,7 @@
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  padding-top: 97px;
-  padding-bottom: 80px;
+  padding: 97px 0 80px 0;
 }
 
 .main-offer_center {
@@ -250,6 +265,10 @@
 
 .main-offer__button {
   margin-bottom: 1.25rem;
+}
+
+.main-offer__input {
+  margin-bottom: 20px;
 }
 
 .button {
@@ -336,10 +355,18 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.16), inset 0 -1px 0 rgba(0, 0, 0, 0.12);
+          box-shadow: 0 0 2px rgba(0, 0, 0, 0.16), inset 0 -1px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+  background-color: #ffffff;
 }
 
 .card__title {
   text-transform: uppercase;
+  font-family: 'Futura PT - Book';
+  font-size: 26px;
+  text-align: center;
+  color: #50555a;
 }
 
 .card__img {
@@ -410,5 +437,29 @@
   color: inherit;
   font-size: 13px;
   margin-right: 4px;
+}
+
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.form__agreement {
+  color: #e3e6e9;
+  font-family: "Helvetica Neue";
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.input {
+  border-radius: 5px;
+  border: 1px solid #d0d2d4;
+  background-color: #ffffff;
+  padding: 15px 30px 15px 20px;
 }
 

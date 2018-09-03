@@ -12,6 +12,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Futura PT - Book';
+    src: url('../fonts/FuturaPT-Book.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
 
 .body {
     margin: 0;
@@ -37,7 +44,6 @@
 
 .title {
     color: $grey_abbey;
-    text-align: center;
     font-family: 'Playfair Display';
     font-size: 48px;
     font-weight: 400;
@@ -55,6 +61,17 @@
     color: #fff;
     margin: 0;
 }
+
+.overtitle {
+    color: #ffffff;
+    font-family: "Helvetica Neue";
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 32px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
 .second-title {
     font-family: 'Playfair Display';
     font-weight: 400;
