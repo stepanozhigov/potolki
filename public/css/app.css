@@ -176,6 +176,16 @@
   text-align: center;
 }
 
+.intro {
+  font-family: 'Helvetica Neue';
+  font-weight: 300;
+  font-size: 22px;
+  color: #50555a;
+  margin: 0;
+  text-align: center;
+  line-height: 32px;
+}
+
 .overtitle {
   color: #a5aaaf;
   font-family: "Futura PT - Light";
@@ -513,7 +523,7 @@
 }
 
 .card__plate {
-  font-family: "Helvetica Neue";
+  font-family: "Futura PT - Light";
   position: absolute;
   background-color: rgba(255, 255, 255, 0.65);
   border-radius: 0 0 4px 4px;
@@ -679,5 +689,44 @@
   -ms-flex-preferred-size: 32%;
       flex-basis: 32%;
   margin-bottom: 30px;
+}
+
+.services {
+  padding: 100px 0 0 0;
+}
+
+.services__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.services__title {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  margin-bottom: 80px;
+}
+
+.services__overtitle {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+.services__intro {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  margin: 0 auto;
+  margin-bottom: 100px;
+}
+
+.services__card {
+  margin: 0 .625rem 2rem .625rem;
+  -ms-flex-preferred-size: calc(25% - 20px);
+      flex-basis: calc(25% - 20px);
 }
 

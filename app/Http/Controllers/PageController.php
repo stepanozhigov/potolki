@@ -29,4 +29,14 @@ class PageController extends Controller
             'city'  =>  $city
         ]);
     }
+
+    public function services (City $city)
+    {
+        return view ('common.services', [
+            'directions' => Direction::where('id', '!=', 1)->get(),
+            'currentDirection'  =>  Direction::find(1),
+            'city'  =>  $city
+        ]);
+    }
+
 }
