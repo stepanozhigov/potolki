@@ -25,15 +25,14 @@ Route::get('/', function () {
         ]);
 })->name('index');
 
-Route::get('/{city}/', function () { 
-    return view('windows.main', [
-        'directions' => Direction::where('id', '!=', 1)->get(),
-        'currentDirection'  =>  Direction::find(1),
-        'cities'    =>  City::all()
-        ]);
-})->name('windows.main');
 
-Route::get('/{city}/photos', 'PageController@photos');
+Route::prefix('/{city}')->group(function () {
+
+    Route::get('/', 'PageController@main')->name('windows.main');
+
+    Route::get('/photos', 'PageController@photos')->name('photos');
+});
+
 
 
 
