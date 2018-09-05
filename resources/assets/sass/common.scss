@@ -13,6 +13,20 @@
 }
 
 @font-face {
+    font-family: 'Futura PT - Light';
+    src: url('../fonts/FuturaPT-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura PT - Medium';
+    src: url('../fonts/FuturaPT-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'Futura PT - Book';
     src: url('../fonts/FuturaPT-Book.woff') format('woff');
     font-weight: 300;
@@ -45,9 +59,23 @@
 .title {
     color: $grey_abbey;
     font-family: 'Playfair Display';
-    font-size: 48px;
+    font-size: 43px;
     font-weight: 400;
     margin: 0;
+    position: relative;
+    line-height: 53px;
+
+    &:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: -30px;
+        left: 0;
+        width: 10rem;
+        height: .0625rem;
+        margin: 0 auto;
+        background-color: #a7aaad;
+    }
 
     &_center {
         text-align: center; 
@@ -57,19 +85,20 @@
 .subtitle {
     font-family: 'Helvetica Neue';
     font-weight: 300;
-    font-size: 26px;
-    color: #fff;
+    font-size: 22px;
+    color: $grey_abbey;
     margin: 0;
+    text-align: center;
 }
 
 .overtitle {
-    color: #ffffff;
-    font-family: "Helvetica Neue";
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 32px;
+    color: #a5aaaf;
+    font-family: "Futura PT - Light";
+    font-size: 22px;
+    font-weight: 300;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 7px;
+    text-align: center;
 }
 
 .second-title {
@@ -96,13 +125,9 @@
 }
 
 .arrow {
-    border: solid #a7aaad;
-    padding: 0 8px 8px 0;
-    border-width: 0 1px 1px 0;
-    margin-right: 10px;
-    
+        
     &_down {
-        transform: rotate(45deg);
+        /*transform: rotate(45deg);*/
     }
 }
 
@@ -125,7 +150,8 @@
     }
 
     &__arrow {
-        margin-top: -2px;
+        margin-top: 2px;
+        margin-right: 10px;
     }
 
 }
@@ -136,6 +162,14 @@
     font-family: "Helvetica Neue";
     font-size: 18px;
     text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__icon {
+        margin-right: 10px;
+    }
 }
 
 .whatsapp {

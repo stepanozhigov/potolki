@@ -33,5 +33,7 @@ Route::get('/{city}/', function () {
         ]);
 })->name('windows.main');
 
+Route::get('/{city}/photos', 'PageController@photos');
+
 
 

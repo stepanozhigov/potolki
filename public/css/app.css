@@ -96,6 +96,20 @@
 }
 
 @font-face {
+  font-family: 'Futura PT - Light';
+  src: url(/fonts/FuturaPT-Light.woff?92aa0d7878fe4d8d55dab98aae0796e5) format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futura PT - Medium';
+  src: url(/fonts/FuturaPT-Medium.woff?995c64e152e8dc077222766889194951) format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'Futura PT - Book';
   src: url(/fonts/FuturaPT-Book.woff?c431096955795da262fc32297d7bfa8f) format("woff");
   font-weight: 300;
@@ -133,9 +147,23 @@
 .title {
   color: #50555a;
   font-family: 'Playfair Display';
-  font-size: 48px;
+  font-size: 43px;
   font-weight: 400;
   margin: 0;
+  position: relative;
+  line-height: 53px;
+}
+
+.title:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -30px;
+  left: 0;
+  width: 10rem;
+  height: .0625rem;
+  margin: 0 auto;
+  background-color: #a7aaad;
 }
 
 .title_center {
@@ -145,19 +173,20 @@
 .subtitle {
   font-family: 'Helvetica Neue';
   font-weight: 300;
-  font-size: 26px;
-  color: #fff;
+  font-size: 22px;
+  color: #50555a;
   margin: 0;
+  text-align: center;
 }
 
 .overtitle {
-  color: #ffffff;
-  font-family: "Helvetica Neue";
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 32px;
+  color: #a5aaaf;
+  font-family: "Futura PT - Light";
+  font-size: 22px;
+  font-weight: 300;
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 7px;
+  text-align: center;
 }
 
 .second-title {
@@ -182,16 +211,8 @@
   background-color: #a7aaad;
 }
 
-.arrow {
-  border: solid #a7aaad;
-  padding: 0 8px 8px 0;
-  border-width: 0 1px 1px 0;
-  margin-right: 10px;
-}
-
 .arrow_down {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  /*transform: rotate(45deg);*/
 }
 
 .dropdown {
@@ -215,7 +236,8 @@
 }
 
 .dropdown__arrow {
-  margin-top: -2px;
+  margin-top: 2px;
+  margin-right: 10px;
 }
 
 .phone {
@@ -223,6 +245,19 @@
   font-family: "Helvetica Neue";
   font-size: 18px;
   text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.phone__icon {
+  margin-right: 10px;
 }
 
 .whatsapp {
@@ -254,25 +289,54 @@
           align-items: center;
 }
 
+.main-offer__overtitle {
+  text-align: left;
+  color: #ffffff;
+  font-family: "Futura PT - Medium";
+  font-size: 16px;
+  line-height: 32px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
 .main-offer__title {
   color: #ffffff;
+  font-size: 58px;
   margin-bottom: 19px;
+  max-width: 650px;
+}
+
+.main-offer__title:after {
+  content: none;
 }
 
 .main-offer__subtitle {
   margin-bottom: 40px;
+  text-align: left;
+  color: #ffffff;
 }
 
 .main-offer__button {
   margin-bottom: 1.25rem;
 }
 
+.main-offer__form {
+  max-width: 380px;
+}
+
 .main-offer__input {
   margin-bottom: 20px;
 }
 
+.main-offer__girl {
+  position: absolute;
+  right: 195px;
+  bottom: 73px;
+}
+
 .button {
   font-family: 'Helvetica Neue';
+  cursor: pointer;
   font-size: 20px;
   color: #6b6b6b;
   display: -webkit-box;
@@ -369,6 +433,28 @@
   color: #50555a;
 }
 
+.card__subtitle {
+  color: #50555a;
+  font-family: "Helvetica Neue";
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 19px;
+  text-align: center;
+  padding: 0 15px;
+}
+
+.card__line {
+  width: 80px;
+  border: 1px solid #d0d2d4;
+}
+
+.card__price {
+  color: #dc1414;
+  line-height: 28px;
+  font-family: "Helvetica Neue";
+  font-size: 24px;
+}
+
 .card__img {
   width: 100%;
   height: 250px;
@@ -433,7 +519,7 @@
 }
 
 .menu__item_dropdown:before {
-  content: '\2630';
+  content: url("/img/hamburger.svg");
   color: inherit;
   font-size: 13px;
   margin-right: 4px;
@@ -461,5 +547,40 @@
   border: 1px solid #d0d2d4;
   background-color: #ffffff;
   padding: 15px 30px 15px 20px;
+}
+
+.catalog-cards {
+  padding-top: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.catalog-cards__overtitle {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+.catalog-cards__title {
+  margin-bottom: 80px;
+  text-align: center;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+.catalog-cards__subtitle {
+  margin-bottom: 60px;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+.catalog-cards__item {
+  -ms-flex-preferred-size: 24%;
+      flex-basis: 24%;
 }
 

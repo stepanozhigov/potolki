@@ -5,7 +5,7 @@
             <img class="logo__text" src="/img/logo-text.svg" alt="графема Твой Стиль">        
         </a>
         <div class="header__directions dropdown">
-            <a class="dropdown__item dropdown__item_active"><i class="arrow arrow_down dropdown__arrow"></i>{{ $currentDirection->name }}</a>
+            <a class="dropdown__item dropdown__item_active"><img class="dropdown__arrow" src="/img/arrow.svg" alt="">{{ $currentDirection->name }}</a>
             
             @foreach ($directions as $direction)
                 <a href="{{ $direction->site }}" class="dropdown__item">{{ $direction->name }}</a>
@@ -29,10 +29,10 @@
     <hr class="header__line">
     <div class="header__bottom container">
         <div class="header__offices dropdown">
-            <a class="dropdown__item dropdown__item_active"><i class="arrow arrow_down dropdown__arrow"></i> Владивосток, Запорожская, 77</a>
+            <a class="dropdown__item dropdown__item_active"><img class="dropdown__arrow" src="/img/arrow.svg" alt=""> Владивосток, Запорожская, 77</a>
         </div>
         <div class="header__feedbacks">
-            <a href="" class="phone header__phone">8 800 333-97-14</a>
+            <a href="" class="phone header__phone"><img class="phone__icon" src="/img/phone.svg" alt=""> 8 800 333-97-14</a>
             <a href="" class="whatsapp header__whatsapp">Написать в WhatsApp</a>
             <a href="" class="header__callback">Заказать звонок</a>
         </div>

@@ -6,23 +6,54 @@
     align-items: flex-start;
     padding: 97px 0 80px 0;
 
+    &__inner {
+    }
+
     &_center {
         align-items: center;
     }
 
+    &__overtitle {
+        text-align: left;
+        color: $white;
+        font-family: "Futura PT - Medium";
+        font-size: 16px;
+        line-height: 32px;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+    }
+
     &__title {
         color: $white;
+        font-size: 58px;
         margin-bottom: 19px;
+        max-width: 650px;
+
+        &:after {
+            content: none;
+        }
+
     }
 
     &__subtitle {
         margin-bottom: 40px;
+        text-align: left;
+        color: $white;
     }
     &__button {
         margin-bottom: 1.25rem;
     }
 
+    &__form {
+        max-width: 380px;
+    }
     &__input {
         margin-bottom: 20px;
+    }
+
+    &__girl {
+        position: absolute;
+        right: 195px;
+        bottom: 73px;
     }
 }
