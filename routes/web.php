@@ -33,4 +33,6 @@ Route::prefix('/{city}')->group(function () {
     Route::get('/photos', 'PageController@photos')->name('photos');
 
     Route::get('/services', 'PageController@services')->name('services');
+
+    Route::get('/promos', 'PageController@promos')->name('promos');
 });

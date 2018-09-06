@@ -25,9 +25,15 @@
 
     &__title {
         color: $white;
+        text-align: left;
         font-size: 58px;
         margin-bottom: 19px;
         max-width: 650px;
+
+        &_center {
+            text-align: center;
+            max-width: 780px;
+        }
 
         &:after {
             content: none;

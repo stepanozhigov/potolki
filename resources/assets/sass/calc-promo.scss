@@ -1,0 +1,42 @@
+.calc-promo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    position: relative;
+    padding: 0 0 100px 0;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 31.6875rem;
+        height: 21.9375rem;
+        background-image: url(/img/calculator.jpg);
+        background-repeat: no-repeat;
+        z-index: 0;
+    }
+
+    &__title {
+        flex-basis: 60%;
+        text-align: start;
+        margin-bottom: 50px;
+        z-index: 1;
+
+        &:after {
+            right: initial;
+        }
+    }
+
+    &__intro {
+        flex-basis: 60%;
+        text-align: start;
+        z-index: 1;
+    }
+
+    &__footer {
+        flex-basis: 60%;
+        z-index: 1;
+    }
+}

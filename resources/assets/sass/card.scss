@@ -6,14 +6,26 @@
     border-radius: 5px;
     background-color: $white;
     position: relative;
+    text-decoration: none;
+    will-change: transform;
+    transition: transform 100ms linear;
+    transform: scale(1);
+    padding: 0 0 25px 0;
+
+    &:hover {
+        will-change: transform;
+        transition: transform 100ms linear;
+        transform: scale(1.05);
+
+    }
 
     &__title {
         text-transform: uppercase;
-        font-family: 'Futura PT - Book';
+        font-family: 'Futura PT - Light';
         font-size: 26px;
         text-align: center;
         color: $grey_abbey;
-        margin: 0;
+        margin: 28px 0 0 0;
     }
 
     &__subtitle {
@@ -30,6 +42,7 @@
     &__line {
         width: 80px;
         border: 1px solid #d0d2d4;
+        margin: 14px 0  0 0;
     }
 
     &__price {
@@ -37,12 +50,15 @@
         line-height: 28px;
         font-family: "Helvetica Neue";
         font-size: 24px;
+        margin: 23px 0 0 0;
     }
 
     &__img {
+       
         width: 100%;
         height: 250px;
         border-radius: 5px;
+        margin: 0;
     }
 
     &__plate {
@@ -54,5 +70,44 @@
         padding: 16px 19px 15px 19px;
         font-size: 18px;
         color: #50555a;
+    }
+
+    @media screen and (max-width: 700px) {
+
+        align-items: flex-start;
+        padding: 1.25rem 1.5625rem 1.25rem 1.25rem;
+        position: relative;
+
+        &:hover {
+            transform: none;
+        }
+
+        &__img {
+            display: none;
+        }
+
+        &__title {
+            margin: 0;
+        }
+
+        &__price {
+            margin: 0;
+        }
+
+        &__title:after{
+            content: " ";
+            position: absolute;
+            right: 34px;
+            top: 48px;
+            background: url(/img/arrow.svg) no-repeat;
+            width: 20px;
+            height: 20px;
+            background-size: contain;
+            transform: rotate(-90deg);
+        }
+
+        &__line {
+            display: none;
+        }
     }
 }

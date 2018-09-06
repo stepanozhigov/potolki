@@ -1,0 +1,19 @@
+.promos {
+    padding: 100px 0 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    &__title {
+        flex-basis: 100%;
+        margin-bottom: 80px;
+    }
+    &__overtitle {
+        flex-basis: 100%;
+    }
+}
+
+.promo {
+    display: flex;
+    flex-direction: column;
+}

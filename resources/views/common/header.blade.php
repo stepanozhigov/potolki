@@ -19,7 +19,7 @@
             <div class="dropdown menu__item menu__item_dropdown">
                 <a href="{{ route('services', request()->route()->city) }}" class="menu__item">Услуги</a>
             </div>
-            <a href="/asd" class="menu__item">Скидки</a>
+            <a href="{{ route('promos', request()->route()->city) }}" class="menu__item">Скидки</a>
             <a href="{{ route('photos', request()->route()->city) }}" class="menu__item">Фото</a>
             
             <div class="dropdown menu__item menu__item_dropdown">

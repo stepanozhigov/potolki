@@ -39,4 +39,13 @@ class PageController extends Controller
         ]);
     }
 
+    public function promos (City $city)
+    {
+        return view ('common.promos', [
+            'directions' => Direction::where('id', '!=', 1)->get(),
+            'currentDirection'  =>  Direction::find(1),
+            'city'  =>  $city
+        ]);
+    }
+
 }
