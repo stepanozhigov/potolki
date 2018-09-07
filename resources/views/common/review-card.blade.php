@@ -1,9 +1,6 @@
 <div class="review reviews__item">
     <div class="review__body">
-        <a href="123" class="person review__person">
-            <img src="http://okna-ts.ru/upload/iblock/595/5950d9e525e6adb22ba91eb1b4bae1d1.jpg" alt="" class="person__photo">
-            <p class="person__name">Снежана Снежана</p> 
-        </a>
+        @include('common.person', ['name' => 'Снежана Снежана', 'img' => 'http://okna-ts.ru/upload/iblock/595/5950d9e525e6adb22ba91eb1b4bae1d1.jpg' ])
         <hr class="review__line">
         <p class="review__date">11.11.2011</p>
         <p class="review__text">
