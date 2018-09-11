@@ -129,12 +129,13 @@ body {
     margin: 0;
     position: relative;
     line-height: 53px;
+    padding-bottom: 30px;
 
     &:after {
         content: '';
         position: absolute;
         right: 0;
-        bottom: -30px;
+        bottom: 0;
         left: 0;
         width: 10rem;
         height: .0625rem;
@@ -151,6 +152,110 @@ body {
 
         &::after {
             display: none;
+        }
+    }
+
+    &_big {
+        font-size: rem(43);
+        line-height: rem(51);
+
+        @include below($phablet) {
+            font-size: rem(32);
+            line-height: rem(38);
+        }
+    }
+
+    &_medium {
+        font-size: rem(32);
+        line-height: rem(38);
+
+        @include below($phablet) {
+            font-size: rem(26);
+            line-height: rem(31);
+        }
+    }
+
+    &_small {
+        font-size: rem(20);
+        line-height: rem(24);
+    }
+
+    &_overhead {
+        font-family: $futura;
+        font-size: rem(22);
+        font-weight: 300;
+        letter-spacing: rem(7);
+        text-transform: uppercase;
+        color: $grey_chateau;
+
+        @include below($phablet) {
+            font-size: rem(18);
+            letter-spacing: rem(5);
+        }
+
+        &_dark {
+            color: $grey_abbey;
+            font-size: rem(26);
+            letter-spacing: rem(1.5);
+        }
+
+        &_big {
+            font-size: rem(32);
+        }
+    }
+
+    &_underline {
+        position: relative;
+
+        padding-bottom: rem(25);
+
+        &::after {
+            content: '';
+
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            width: rem(160);
+            height: rem(1);
+            margin: 0 auto;
+
+            background-color: $grey_chateau;
+        }
+
+        &_right {
+            &::after {
+                left: auto;
+            }
+        }
+
+        &_left {
+            &::after {
+                right: auto;
+            }
+        }
+
+        &_card {
+            &::after {
+                content: '';
+
+                width: rem(80);
+                height: rem(2);
+
+                background-color: #d0d2d4;
+            }
+        }
+
+        &_portfolio {
+            &::after {
+                content: '';
+
+                width: rem(60);
+                height: rem(2);
+
+                background-color: #d0d2d4;
+            }
         }
     }
 }
@@ -176,7 +281,7 @@ body {
 
 .overtitle {
     color: #a5aaaf;
-    font-family: "Futura PT - Light";
+    font-family: $futura;
     font-size: 22px;
     font-weight: 300;
     text-transform: uppercase;
@@ -341,4 +446,86 @@ body {
             line-height: rem(45);
         }
     }
+}
+
+.page {
+    &__inner {
+        position: relative;
+
+        padding-top: rem(80);
+        padding-bottom: rem(60);
+
+        &::after {
+            content: '';
+
+            @include stretch;
+
+            position: absolute;
+
+            width: rem(780);
+            height: 100%;
+            margin-right: auto;
+            margin-left: auto;
+
+            border-radius: rem(5);
+            background-image: url('/img/texture2.png');
+        }
+
+        @include below($tablet-small) {
+            &::after {
+                content: '';
+
+                width: rem(480);
+            }
+        }
+
+        @include below($mobile) {
+            padding-top: rem(40);
+
+            &::after {
+                content: '';
+
+                width: rem(240);
+            }
+        }
+
+        &_alone {
+            margin-top: rem(60);
+            margin-bottom: rem(80);
+        }
+
+        &_sand {
+            &::after {
+                content: '';
+
+                background-image: url('/img/sand.jpg');
+            }
+        }
+    }
+}
+
+.about {
+    &__message-dir-open {
+        width: 48.75rem;
+        margin-right: auto;
+        margin-bottom: 6.25rem;
+        margin-left: auto;
+    }
+}
+
+.page__about {
+    padding-top: rem(80);
+
+    .title {
+		margin-bottom: 40px;
+	}
+}
+
+.page__employers {
+    padding-top: rem(80);
+	padding-bottom: rem(80);
+
+    .title {
+		margin-bottom: 50px;
+	}
 }

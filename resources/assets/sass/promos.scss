@@ -3,6 +3,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: space-between;
 
     &__title {
         flex-basis: 100%;
@@ -11,9 +12,62 @@
     &__overtitle {
         flex-basis: 100%;
     }
+
+    &__item {
+        flex-basis: 32.5%;
+        margin-bottom: 20px;
+    }
+
+    &__intro {
+        margin-bottom: 50px;
+    }
 }
 
 .promo {
     display: flex;
     flex-direction: column;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.16), inset 0 -1px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 5px;
+    background-color: $white;
+    position: relative;
+    text-decoration: none;
+    will-change: transform;
+    transition: transform 100ms linear;
+    transform: scale(1);
+    padding: 0 0 45px 0;
+
+    &__title {
+        text-transform: uppercase;
+        font-family: 'Futura PT - Light';
+        font-size: 26px;
+        text-align: left;
+        color: $grey_abbey;
+        margin: 28px 0 0 0;
+        padding: 0 35px;
+    }
+
+    &__text {
+        color: $grey_abbey;
+        font-family: "Helvetica Neue";
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 19px;
+        text-align: center;
+        padding: 0 35px;
+        margin: 0 0 10px 0;
+    }
+
+    &__line {
+        width: 80px;
+        border: 0;
+        border-bottom: 0.5px solid #a7aaad;
+        margin: 14px 0  0 0;
+    }
+
+    &__img {
+       
+        width: 100%;
+        border-radius: 5px;
+        margin: 0;
+    }
 }

@@ -30,11 +30,13 @@ Route::prefix('/{city}')->group(function () {
 
     Route::get('/', 'PageController@main')->name('windows.main');
 
-    Route::get('/photos', 'PageController@photos')->name('photos');
+    Route::get('/photos/{type?}', 'PageController@photos')->name('photos');
 
     Route::get('/services', 'PageController@services')->name('services');
 
     Route::get('/promos', 'PageController@promos')->name('promos');
 
     Route::get('/about', 'PageController@about')->name('about');
+
+    Route::get('/sotrudniki', 'PageController@employers')->name('sotrudniki');
 });

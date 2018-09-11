@@ -1,0 +1,258 @@
+@import 'mixins';
+@import 'variables';
+
+.videogallery {
+    position: relative;
+
+    height: rem(715);
+    margin-bottom: rem(80);
+    overflow: hidden;
+
+    @include below($mobile) {
+        height: rem(400);
+    }
+
+    &::after {
+        content: '';
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        background-color: rgba($black, .45);
+    }
+
+    &__background {
+        width: 100%;
+        height: 100%;
+
+        background-image: url('%=static=%assets/videogallery/01.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        filter: blur(15px) grayscale(100%);
+    }
+
+    &__content {
+        position: relative;
+        z-index: 999;
+        top: -100%;
+
+        display: flex;
+        width: rem(1280);
+        height: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+
+        @include below($tablet) {
+            width: 100%;
+        }
+    }
+
+    &__slider {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__slide {
+        display: flex!important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: rem(580)!important;
+        height: auto;
+        margin: 0 auto;
+
+        @include below($mobile) {
+            width: 100%!important;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        h2 {
+            position: absolute;
+            z-index: 99999999;
+            top: 50%;
+
+            width: 100%;
+            margin: 0;
+            margin-bottom: rem(40);
+
+            color: $white;
+            text-align: center;
+
+            transform: translateY(-50%);
+
+            @extend .text;
+            @extend .text_size_big;
+
+            &::after {
+                background-color: $white;
+            }
+        }
+
+        p {
+            display: none;
+            margin: 0;
+
+            color: $white;
+            text-align: center;
+
+            @extend .text;
+            @extend .text_size_medium;
+        }
+    }
+
+    &__image-wrap {
+        position: relative;
+
+        width: 100%;
+        height: rem(325);
+        margin-bottom: 0;
+
+        cursor: pointer;
+        box-shadow: 0 rem(16) rem(32) rgba($black, .24), 0 0 rem(16) rgba($black, .16);
+
+        @include below($mobile) {
+            height: rem(180);
+        }
+
+        &::after {
+            content: '';
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            display: none;
+
+            transform: translate(-50%,-50%);
+        }
+
+        &::before {
+            content: '';
+
+            position: absolute;
+            z-index: 999999;
+
+            width: 100%;
+            height: 100%;
+
+            background-color: rgba($black, .3);
+        }
+    }
+
+    .slick-arrow {
+        position: absolute;
+        top: calc(50% - 30px);
+
+        @include below($tablet-small) {
+            background: rgba($black, .4)!important;
+        }
+        @include below($mobile) {
+            top: calc(50% + 20px);
+        }
+    }
+
+    .slick-next {
+        right: 0;
+
+        @include below($tablet-small) {
+            border-top-right-radius: 0!important;
+            border-bottom-right-radius: 0!important;
+        }
+    }
+
+    .slick-prev {
+        z-index: 999;
+        left: 0;
+
+        @include below($tablet-small) {
+            border-top-left-radius: 0!important;
+            border-bottom-left-radius: 0!important;
+        }
+    }
+
+    .slick-slide {
+        margin: 0 rem(-70);
+
+        outline: none;
+        transform: scale(.625);
+
+        @include above($tablet-small) {
+            transition: transform .3s;
+        }
+        @include below($mobile) {
+            opacity: 0;
+        }
+    }
+
+    .slick-track {
+        display: flex;
+        align-items: center;
+    }
+
+    .slick-current {
+        position: relative;
+        z-index: 99999999;
+
+        transform: scale(1);
+
+        @include below($mobile) {
+            opacity: 1;
+        }
+
+        .videogallery__image-wrap {
+            margin-bottom: rem(40);
+
+            &::after {
+                display: block;
+            }
+
+            &::before {
+                display: none;
+            }
+        }
+
+        .videogallery__slide {
+            p {
+                display: block;
+
+                @include below($mobile) {
+                    display: none;
+                }
+            }
+
+            h2 {
+                position: relative;
+                top: 0;
+
+                margin: 0;
+                margin-bottom: rem(40);
+
+                color: $white;
+
+                transform: translateY(0);
+
+                @extend .title;
+                @extend .title_medium;
+                @extend .title_underline;
+                @include below($mobile) {
+                    font-size: rem(22);
+                }
+
+                &::after {
+                    background-color: $white;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,240 @@
+@import 'mixins';
+@import 'variables';
+
+.emplyee-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    border-radius: rem(5);
+    cursor: pointer;
+    background-color: $white;
+    box-shadow: 0 rem(8) rem(8) rgba(0, 0, 0, 0),
+    0 0 rem(2) rgba(0, 0, 0, .08),
+    inset 0 rem(-1) 0 rgba(0, 0, 0, .12);
+
+    @include above($tablet-small) {
+        transition: box-shadow .3s;
+
+        &:hover {
+            box-shadow: 0 rem(8) rem(8) rgba(0, 0, 0, .12),
+            0 0 rem(8) rgba(0, 0, 0, .08),
+            inset 0 rem(-1) 0 rgba(0, 0, 0, .12);
+        }
+    }
+
+    &:hover {
+        @include above($tablet-small) {
+            .emplyee-card__image {
+                height: 100%;
+            }
+
+            .emplyee-card__content {
+                height: 100%;
+
+                background-color: rgba($black, .6);
+            }
+
+            p {
+                max-height: none;
+
+                color: $white;
+                text-align: left;
+
+                &:first-of-type {
+                    margin-bottom: rem(15);
+
+                    color: $white;
+                }
+
+                &:last-of-type {
+                    @include below($mobile) {
+                        display: block;
+                    }
+                }
+            }
+
+            h2 {
+                color: $white;
+
+                &::after {
+                    background-color: $white;
+
+                    @include below($mobile) {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+
+    &__image {
+        width: 100%;
+        height: rem(360);
+
+        border-radius: rem(5);
+        box-shadow: 0 rem(8) rem(8) rgba(0, 0, 0, 0),
+        0 0 rem(2) rgba(0, 0, 0, .08),
+        inset 0 rem(-1) 0 rgba(0, 0, 0, .12);
+        object-fit: cover;
+
+        @include above($tablet-small) {
+            transition: height .7s;
+            transition-timing-function: ease-out;
+        }
+        @include below($mobile) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__content {
+        position: absolute;
+        top: auto;
+        bottom: 0;
+
+        width: 100%;
+        height: rem(267);
+        padding-top: rem(40);
+        padding-right: rem(20);
+        padding-bottom: rem(45);
+        padding-left: rem(20);
+
+        border-radius: rem(5);
+
+        @include above($tablet-small) {
+            transition: height .5s, background-color .8s;
+            transition-timing-function: ease-out;
+        }
+        @include below($mobile) {
+            height: rem(155);
+        }
+
+        p {
+            max-height: rem(60);
+            margin: 0;
+            overflow: hidden;
+
+            text-align: center;
+
+            @extend .text;
+            @extend .text_size_small;
+
+            &:first-of-type {
+                margin: 0;
+                padding: 0;
+                margin-bottom: rem(10)!important;
+
+                font-size: rem(14);
+                font-weight: rem(300);
+                line-height: 1;
+                color: $grey_chateau;
+                text-align: center;
+                letter-spacing: rem(3);
+
+                @extend .title;
+                @extend .title_card;
+
+                &::after {
+                    display: none;
+                }
+            }
+
+            &:last-of-type {
+                @include below($mobile) {
+                    display: none;
+                }
+            }
+        }
+
+        h2 {
+            position: relative;
+            margin: 0;
+            margin-bottom: rem(25);
+            font-family: $futura;
+            font-weight: normal;
+            color: $grey_abbey;
+
+            font-size: rem(20);
+            line-height: 1.2;
+            text-align: center;
+            text-transform: uppercase;
+
+            letter-spacing: rem(1.5);
+            text-transform: uppercase;
+
+            position: relative;
+
+            padding-bottom: rem(25);
+
+            &::after {
+                content: '';
+
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                left: 0;
+
+                width: rem(160);
+                height: rem(1);
+                margin: 0 auto;
+
+                background-color: $grey_chateau;
+            }
+
+            &::after {
+                content: '';
+
+                width: rem(80);
+
+                @include below($mobile) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &_active {
+        .emplyee-card__image {
+            height: 100%;
+        }
+
+        .emplyee-card__content {
+            height: 100%;
+
+            background-color: rgba($black, .6);
+        }
+
+        p {
+            max-height: none;
+
+            color: $white;
+            text-align: left;
+
+            &:first-of-type {
+                margin-bottom: rem(15);
+
+                color: $white;
+            }
+
+            &:last-of-type {
+                @include below($mobile) {
+                    display: block;
+                }
+            }
+        }
+
+        h2 {
+            color: $white;
+
+            &::after {
+                background-color: $white;
+
+                @include below($mobile) {
+                    display: block;
+                }
+            }
+        }
+    }
+}

@@ -24,4 +24,6 @@
                 @include('common.card', ['class' => 'services__card', 'img' => 'http://okna-ts.ru/upload/window-services/ustanovka.jpg', 'title' => 'Установка'])
             </div>
         </section>
+
+        @include('common.footer')
     @endsection

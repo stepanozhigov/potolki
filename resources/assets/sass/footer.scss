@@ -103,7 +103,7 @@
                 .footer__title {
                     position: relative;
 
-                    padding-right: 25px;
+                    padding-right: rem(25);
 
                     &::after {
                         content: '';
@@ -235,8 +235,8 @@
         display: flex;
         margin-top: rem(5);
         margin-bottom: rem(25);
-        width: 150px;
-        height: 39px;
+        width: rem(150);
+        height: rem(39);
 
         @include below($phablet) {
             width: rem(150);
@@ -336,7 +336,7 @@
             color: $white;
             text-align: left;
 
-            border-bottom: 1px solid #aaa;
+            border-bottom: rem(1) solid #aaa;
         }
     }
 
@@ -363,7 +363,7 @@
             margin-top: rem(23);
         }
         &:not(:last-of-type) {
-            margin-right: 12px;
+            margin-right: rem(12);
 
             @include below($tablet) {
                 margin-right: rem(25);
@@ -661,7 +661,7 @@
 
 	&_light {
 		position: relative;
-		padding: 20px 0;
+		padding: rem(20) 0;
 
         @include below($mobile) {
             padding-top: rem(40);
@@ -734,7 +734,7 @@
             @include below($mobile) {
                 width: 100%;
                 justify-content: center;
-                padding-bottom: 90px;
+                padding-bottom: rem(90);
 			}
 		}
 

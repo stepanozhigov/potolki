@@ -1,0 +1,49 @@
+@import 'mixins';
+@import 'variables';
+
+.masters-services {
+    @include below($mobile) {
+        display: none;
+    }
+
+    h2 {
+        margin: 0;
+        margin-bottom: rem(60);
+
+        text-align: center;
+
+        @extend .title;
+        @extend .title_underline;
+        @extend .title_medium;
+    }
+
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        justify-content: space-between;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 16.6%;
+
+        @include below($tablet-small) {
+            width: 33.3%;
+        }
+
+        p {
+            font-size: rem(18);
+            text-align: center;
+
+            @extend .text;
+        }
+    }
+
+    &__icon {
+        margin-bottom: rem(30);
+    }
+}

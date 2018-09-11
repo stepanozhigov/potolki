@@ -1,4 +1,4 @@
-
+@include('common.form-request-open')
 <footer class="footer {{ !empty($class) ? $class:'' }}">
     <div class="container">
         <div class="footer__inner">

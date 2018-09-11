@@ -6,7 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Direction;
 use App\City;
+
+use App\PhotoType;
 use App\Photo;
+
 use App\Promo;
 
 class PageController extends Controller
@@ -20,10 +23,14 @@ class PageController extends Controller
         ]);
     }
 
-    public function photos (City $city)
+    public function photos (City $city, PhotoType $type = null)
     {
+
         return view ('common.photos', [
-            'city'  =>  $city
+            'city'  =>  $city,
+            'types' =>  PhotoType::all(),
+            'photos'    =>  $type->photos ?? Photo::all(),
+            'currentType'  =>  $type
         ]);
     }
 
@@ -45,6 +52,13 @@ class PageController extends Controller
     public function about (City $city)
     {
         return view ('common.about', [
+            'city'  =>  $city
+        ]);
+    }
+
+    public function employers (City $city)
+    {
+        return view ('common.employers', [
             'city'  =>  $city
         ]);
     }
