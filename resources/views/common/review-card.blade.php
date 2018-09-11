@@ -1,6 +1,6 @@
 <div class="review reviews__item">
     <div class="review__body">
-        @include('common.person', ['name' => 'Снежана Снежана', 'img' => 'http://okna-ts.ru/upload/iblock/595/5950d9e525e6adb22ba91eb1b4bae1d1.jpg' ])
+        @include('common.person', ['class' => 'review__person', 'name' => 'Снежана Снежана', 'img' => 'http://okna-ts.ru/upload/iblock/595/5950d9e525e6adb22ba91eb1b4bae1d1.jpg' ])
         <hr class="review__line">
         <p class="review__date">11.11.2011</p>
         <p class="review__text">

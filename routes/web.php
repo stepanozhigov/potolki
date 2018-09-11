@@ -39,4 +39,8 @@ Route::prefix('/{city}')->group(function () {
     Route::get('/about', 'PageController@about')->name('about');
 
     Route::get('/sotrudniki', 'PageController@employers')->name('sotrudniki');
+
+    Route::get('/reviews', 'PageController@reviews')->name('reviews');
+
+    Route::get('/reviews/add', 'PageController@addReview')->name('add-review');
 });

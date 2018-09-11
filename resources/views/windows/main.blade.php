@@ -19,11 +19,9 @@
             </form>
             <img class="main-offer__girl" src="/img/main-offer-girl.png" alt="">
         </div>
-
     </section>
 
     <section class="catalog-cards container">
-
         <p class="overtitle catalog-cards__overtitle">Каталог</p>
         <h1 class="title catalog-cards__title">Светопрозрачные конструкции {{ $city->name_formatted }} от&nbspпроизводителя</h1>
         <p class="subtitle catalog-cards__subtitle">Фабрика окон №1 {{ $city->name_formatted }}. Посмотрите каталог и ниже рассчитайте Ваш заказ за 5 секунд.</p>
@@ -32,7 +30,6 @@
         @include('common.card', ['class' => 'catalog-cards__item', 'img' => 'http://okna-ts.ru/local/templates/windows/source/builds/static/img/assets/catalogueItem/catalogue-windows-1.jpg', 'title' => 'Окна', 'price' => '500'])
         @include('common.card', ['class' => 'catalog-cards__item', 'img' => 'http://okna-ts.ru/local/templates/windows/source/builds/static/img/assets/catalogueItem/catalogue-windows-1.jpg', 'title' => 'Окна', 'price' => '500'])
         @include('common.card', ['class' => 'catalog-cards__item', 'img' => 'http://okna-ts.ru/local/templates/windows/source/builds/static/img/assets/catalogueItem/catalogue-windows-1.jpg', 'title' => 'Окна', 'price' => '500'])
-
     </section>
 
     <section class="manufacturers container">
@@ -70,7 +67,6 @@
                 @include('common.card', ['class' => 'portfolio-list__item', 'img' => 'http://okna-ts.ru/local/templates/windows/source/builds/static/img/assets/catalogueItem/catalogue-windows-1.jpg', 'title' => 'Окна', 'price' => '500'])
                 @include('common.card', ['class' => 'portfolio-list__item', 'img' => 'http://okna-ts.ru/local/templates/windows/source/builds/static/img/assets/catalogueItem/catalogue-windows-1.jpg', 'title' => 'Окна', 'price' => '500'])
                 @include('common.card', ['class' => 'portfolio-list__item', 'img' => 'http://okna-ts.ru/local/templates/windows/source/builds/static/img/assets/catalogueItem/catalogue-windows-1.jpg', 'title' => 'Окна', 'price' => '500'])
-
         </div>
     </section>
 
@@ -82,6 +78,11 @@
         @include('common.review-card')
         @include('common.review-card')
         @include('common.review-card')
+
+        <div class="reviews__buttons">
+            <a href="{{ route('reviews', $city) }}" class="button">Прочитать все отзывы</a>
+            <a href="{{ route('add-review', $city) }}" class="button">Оставить отзыв</a>
+        </div>
     </section>
     @include('common.footer')
 @endsection

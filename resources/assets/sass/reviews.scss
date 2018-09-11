@@ -4,14 +4,32 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    padding: 50px 0 50px 0;
+
+    &__overtitle {
+        flex-basis: 100%;
+    }
+
+    &__intro {
+        flex-basis: 80%;
+        margin: 0 auto 100px auto;
+    }
 
     &__title {
         flex-basis: 100%;
-        margin: 0 0 160px 0;
+        margin: 0 0 50px 0;
     }
 
     &__item {
         flex-basis: 32.5%;
+        margin-bottom: 100px;
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        flex-basis: 50%;
     }
 }
 
@@ -21,7 +39,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    cursor: pointer;
+    cursor: pointer;    
 
     &__body {
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.16), 0 0 4px rgba(0, 0, 0, 0.08);

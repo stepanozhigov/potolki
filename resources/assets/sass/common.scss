@@ -312,6 +312,16 @@ body {
     }
 }
 
+.link {
+    color: #4c4747;
+    text-decoration: underline;
+    cursor: pointer;
+
+    &__red {
+        color: #dc1414;
+    }
+}
+
 .arrow {
 
     &_down {
