@@ -14,6 +14,12 @@
             @include('common.review-card')
             @include('common.review-card')
             @include('common.review-card')
+
+            <div class="paginator reviews__paginator">
+                <a href="" class="paginator__item paginator__item_active">1</a>
+                <a href="" class="paginator__item">2</a>
+                <a href="" class="paginator__item">3</a>
+            </div>
         </section>
         @include('common.footer')
     @endsection

@@ -413,6 +413,7 @@ body.no-scroll {
   text-align: center;
   color: #50555a;
   margin: 0;
+  padding-bottom: 25px;
   position: relative;
 }
 
@@ -420,7 +421,7 @@ body.no-scroll {
   content: '';
   position: absolute;
   right: 0;
-  bottom: -23px;
+  bottom: 0;
   left: 0;
   width: 10rem;
   height: .0625rem;
@@ -1785,7 +1786,7 @@ body.no-scroll {
 .reviews__intro {
   -ms-flex-preferred-size: 80%;
       flex-basis: 80%;
-  margin: 0 auto 100px auto;
+  margin: 0 auto;
 }
 
 .reviews__title {
@@ -1797,7 +1798,7 @@ body.no-scroll {
 .reviews__item {
   -ms-flex-preferred-size: 32.5%;
       flex-basis: 32.5%;
-  margin-bottom: 100px;
+  margin-top: 150px;
 }
 
 .reviews__buttons {
@@ -1810,6 +1811,12 @@ body.no-scroll {
   margin: 0 auto;
   -ms-flex-preferred-size: 50%;
       flex-basis: 50%;
+}
+
+.reviews__paginator {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  margin-top: 50px;
 }
 
 .review {
@@ -4639,5 +4646,27 @@ body.no-scroll {
 
 .masters-services__icon {
   margin-bottom: 1.875rem;
+}
+
+.paginator {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.paginator__item {
+  color: #a7aaad;
+  font-family: "Helvetica Neue";
+  font-size: 19px;
+  font-weight: 500;
+  margin-right: 15px;
+  text-decoration: none;
+}
+
+.paginator__item_active {
+  color: #dc1414;
 }
 

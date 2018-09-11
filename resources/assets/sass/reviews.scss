@@ -12,7 +12,7 @@
 
     &__intro {
         flex-basis: 80%;
-        margin: 0 auto 100px auto;
+        margin: 0 auto;
     }
 
     &__title {
@@ -22,7 +22,7 @@
 
     &__item {
         flex-basis: 32.5%;
-        margin-bottom: 100px;
+        margin-top: 150px;
     }
 
     &__buttons {
@@ -30,6 +30,11 @@
         justify-content: space-between;
         margin: 0 auto;
         flex-basis: 50%;
+    }
+
+    &__paginator {
+        flex-basis: 100%;
+        margin-top: 50px;
     }
 }
 

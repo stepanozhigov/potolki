@@ -296,6 +296,7 @@ body {
     text-align: center;
     color: $grey_abbey;
     margin: 0;
+    padding-bottom: 25px;
 
     position: relative;
 
@@ -303,7 +304,7 @@ body {
         content: '';
         position: absolute;
         right: 0;
-        bottom: -23px;
+        bottom: 0;
         left: 0;
         width: 10rem;
         height: .0625rem;
