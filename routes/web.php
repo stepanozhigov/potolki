@@ -35,4 +35,6 @@ Route::prefix('/{city}')->group(function () {
     Route::get('/services', 'PageController@services')->name('services');
 
     Route::get('/promos', 'PageController@promos')->name('promos');
+
+    Route::get('/about', 'PageController@about')->name('about');
 });

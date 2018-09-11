@@ -1,24 +1,25 @@
-<a href="{{ !empty($link) ? $link:'' }}" class="card {{ !empty($class) ? $class:'' }}">
+<a href="{{ $link ?? '' }}" class="card {{ $class ?? '' }}">
 
-    @if (!empty($plate))
+    @isset($plate)
         <p class="card__plate">12000  ₽ / 8 м2</p>
-    @endif
+    @endisset
 
-    @if (!empty($img))
+    @isset($img)
         <img src="{{ $img }}" alt="Фотопечать" class="card__img">
-    @endif
+    @endisset
 
-    @if (!empty($title))
+    @isset($title)
         <p class="card__title">{{ $title }}</p>
-    @endif
+    @endisset
+
     <hr class="card__line">
 
-    @if (!empty($text))
+    @isset($text)
         <p class="card__subtitle">{{ $text }}</p>
-    @endif
+    @endisset
 
-    @if (!empty($price))
+    @isset($price)
         <p class="card__price">от {{ $price }} Р</p>
-    @endif
+    @endisset
 
 </a>

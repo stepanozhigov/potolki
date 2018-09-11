@@ -2,9 +2,14 @@
 
 namespace App\Providers;
 
+use App\City;
+use App\Direction;
+
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use TCG\Voyager\Http\Controllers\ContentTypes\Image as tcgImage;
 use App\Http\Controllers\Voyager\Image as tcgAppImage;
+
 class AppServiceProvider extends ServiceProvider
 {
     
@@ -17,7 +22,9 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        //
+        View::share('cities', City::all());
+        View::share('directions', Direction::where('id', '!=', 1)->get());
+        View::share('currentDirection',Direction::find(1));
     }
 
     /**

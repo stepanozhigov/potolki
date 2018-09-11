@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Direction;
 use App\City;
 use App\Photo;
+use App\Promo;
 
 class PageController extends Controller
 {
@@ -15,9 +16,6 @@ class PageController extends Controller
     {
         //dd($city);
         return view('windows.main', [
-            'directions' => Direction::where('id', '!=', 1)->get(),
-            'currentDirection'  =>  Direction::find(1),
-            'cities'    =>  City::all(),
             'city'  =>  $city
         ]);
     }
@@ -25,8 +23,6 @@ class PageController extends Controller
     public function photos (City $city)
     {
         return view ('common.photos', [
-            'directions' => Direction::where('id', '!=', 1)->get(),
-            'currentDirection'  =>  Direction::find(1),
             'city'  =>  $city
         ]);
     }
@@ -34,8 +30,6 @@ class PageController extends Controller
     public function services (City $city)
     {
         return view ('common.services', [
-            'directions' => Direction::where('id', '!=', 1)->get(),
-            'currentDirection'  =>  Direction::find(1),
             'city'  =>  $city
         ]);
     }
@@ -43,8 +37,14 @@ class PageController extends Controller
     public function promos (City $city)
     {
         return view ('common.promos', [
-            'directions' => Direction::where('id', '!=', 1)->get(),
-            'currentDirection'  =>  Direction::find(1),
+            'city'  =>  $city,
+            'promos'    =>  Promo::all()
+        ]);
+    }
+
+    public function about (City $city)
+    {
+        return view ('common.about', [
             'city'  =>  $city
         ]);
     }
