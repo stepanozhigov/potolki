@@ -12,11 +12,11 @@
 
     <section class="cities">
         <h2 class="second-title cities__title">Филиалы в других городах</h2>
-        
+
         @foreach($cities as $city)
             <a href="{{ route('windows.main', ['city' => $city->code]) }}" class="button cities__item">{{ $city->name }}</a>
         @endforeach
-        
+
     </section>
 
     <section class="directions container">
@@ -29,4 +29,5 @@
             </div>
         @endforeach
     </section>
+    @include('common.footer', ['class' => 'footer_light'])
 @endsection

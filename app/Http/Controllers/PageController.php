@@ -17,7 +17,8 @@ class PageController extends Controller
         return view('windows.main', [
             'directions' => Direction::where('id', '!=', 1)->get(),
             'currentDirection'  =>  Direction::find(1),
-            'cities'    =>  City::all()
+            'cities'    =>  City::all(),
+            'city'  =>  $city
         ]);
     }
 

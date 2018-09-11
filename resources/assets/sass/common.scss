@@ -1,36 +1,75 @@
+@import 'mixins';
+@import 'variables';
+
+
 @font-face {
-    font-family: 'Playfair Display';
-    src: url('../fonts/PlayfairDisplay-Regular.woff') format('woff');
+    font-family: 'PTRoubleSans';
+    src: url('../fonts/subset-PTRoubleSans.woff2') format('woff2'),
+        url('../fonts/subset-PTRoubleSans.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura PT';
+    src: url('../fonts/Futura-PT-Light.woff2') format('woff2'),
+		url('../fonts/Futura-PT-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: 'Futura PT';
+    src: url('../fonts/Futura-PT-Book.woff2') format('woff2'),
+		url('../fonts/Futura-PT-Book.woff') format('woff');
     font-weight: 400;
     font-style: normal;
+    font-stretch: normal;
 }
 
 @font-face {
-    font-family: 'Helvetica Neue';
-    src: url('../fonts/HelveticaNeueCyr-Light.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
+	font-family: 'Playfair Display';
+	src: url('../fonts/subset-PlayfairDisplay-Italic.woff2') format('woff2'),
+		url('../fonts/subset-PlayfairDisplay-Italic.woff') format('woff');
+	font-weight: 400;
+	font-style: italic;
 }
 
 @font-face {
-    font-family: 'Futura PT - Light';
-    src: url('../fonts/FuturaPT-Light.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
+	font-family: 'Playfair Display';
+	src: url('../fonts/subset-PlayfairDisplay-Regular.woff2') format('woff2'),
+		url('../fonts/subset-PlayfairDisplay-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
 }
 
 @font-face {
-    font-family: 'Futura PT - Medium';
-    src: url('../fonts/FuturaPT-Medium.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
+	font-family: 'Helvetica Neue';
+	src: url('../fonts/subset-HelveticaNeue-Bold.woff') format('woff');
+	font-weight: 700;
+	font-style: normal;
 }
 
 @font-face {
-    font-family: 'Futura PT - Book';
-    src: url('../fonts/FuturaPT-Book.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
+	font-family: 'Helvetica Neue';
+	src: url('../fonts/subset-HelveticaNeue-Medium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Helvetica Neue';
+	src: url('../fonts/subset-HelveticaNeue-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Helvetica Neue';
+	src: url('../fonts/subset-HelveticaNeue-Light.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
 }
 
 
@@ -38,12 +77,37 @@
     margin: 0;
 }
 
+html, body {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    &.no-scroll {
+        position: fixed;
+
+        height: 100vh;
+        overflow: hidden;
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
 .container {
-    width: 1180px;
+    width: rem(1180);
     margin: 0 auto;
 
-    @media screen and (max-width: 1250px) {
-        width: 95%;
+    @include below($tablet) {
+        width: auto;
+        margin: 0 rem(20);
+    }
+
+    @include below($mobile) {
+        margin: 0 rem(10);
     }
 }
 
@@ -76,6 +140,18 @@
         height: .0625rem;
         margin: 0 auto;
         background-color: #a7aaad;
+    }
+
+    &_card {
+        font-family: $futura;
+        font-size: rem(26);
+        line-height: rem(31);
+        letter-spacing: rem(1.5);
+        text-transform: uppercase;
+
+        &::after {
+            display: none;
+        }
     }
 }
 
@@ -115,7 +191,7 @@
     text-align: center;
     color: $grey_abbey;
     margin: 0;
-    
+
     position: relative;
 
     &:after {
@@ -132,7 +208,7 @@
 }
 
 .arrow {
-        
+
     &_down {
         /*transform: rotate(45deg);*/
     }
@@ -226,4 +302,43 @@
 
     }
 
+}
+
+.text {
+    font-family: $helvetica;
+    font-weight: 300;
+    color: $grey_abbey;
+
+    &_size {
+        &_big {
+            font-size: rem(22);
+            line-height: rem(32);
+
+            @include below($phablet) {
+                font-size: rem(20);
+                line-height: rem(30);
+            }
+        }
+
+        &_medium {
+            font-size: rem(16);
+            line-height: rem(22);
+        }
+
+        &_small {
+            font-size: rem(14);
+            line-height: rem(19);
+        }
+    }
+
+    &_cursive {
+        font-size: rem(24);
+        font-style: italic;
+        line-height: rem(36);
+
+        @include below($tablet) {
+            font-size: rem(30);
+            line-height: rem(45);
+        }
+    }
 }
