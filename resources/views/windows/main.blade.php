@@ -75,9 +75,9 @@
             Отзывы наших клиентов
         </h2>
 
-        @include('common.review-card')
-        @include('common.review-card')
-        @include('common.review-card')
+        @include('common.gui.review')
+        @include('common.gui.review')
+        @include('common.gui.review')
 
         <div class="reviews__buttons">
             <a href="{{ route('reviews', $city) }}" class="button">Прочитать все отзывы</a>

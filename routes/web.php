@@ -30,6 +30,8 @@ Route::prefix('/{city}')->group(function () {
 
     Route::get('/', 'PageController@main')->name('windows.main');
 
+    Route::get('/calculator/{type}', 'PageController@calculator');
+
     Route::get('/photos/{type?}', 'PageController@photos')->name('photos');
 
     Route::get('/services', 'PageController@services')->name('services');

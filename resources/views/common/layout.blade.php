@@ -10,4 +10,5 @@
 <body class="body">
     @yield('content')
 </body>
+<script src="{{ Asset('/js/app.js').'?='.time() }}"></script>
 </html>

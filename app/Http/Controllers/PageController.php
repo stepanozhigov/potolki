@@ -70,4 +70,11 @@ class PageController extends Controller
         ]);
     }
 
+    public function calculator(City $city, $type)
+    {
+        return view('windows.calculator.'.$type, [
+            'city'  =>  $city
+        ]);
+    }
+
 }
