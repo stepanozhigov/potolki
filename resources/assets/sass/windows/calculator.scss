@@ -7,6 +7,10 @@
         flex-wrap: wrap;
     }
 
+    &__inner {
+        padding: 65px 0px;
+    }
+
     &__content {
         display: flex;
         justify-content: space-between;
@@ -20,5 +24,37 @@
 
     &__result {
         flex-basis: 10%;
+    }
+    
+    &__area {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__heights {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    &__widths {
+        display: flex;
+        justify-content: space-evenly;
+        flex-basis: 60%;
+    }
+
+    &__width {
+        
+        bottom: -20px;
+        width: 73px;
+        padding: 0;
+    }
+    &__height {
+        
+        right: -93px;
+        top: 46%;
+        width: 73px;
+        padding: 0;
     }
 }

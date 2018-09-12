@@ -8,7 +8,7 @@
         <p class="intro calculator__intro">Нужно описать процесс рассчета и т.д.</p>
 
         <div id="window-calc">
-            <window-calc></window-calc>
+            <window-calc :types="{{ $params }}"></window-calc>
         </div>
     </section> 
 

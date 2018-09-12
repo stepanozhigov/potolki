@@ -8,6 +8,7 @@ use App\City;
 use App\PhotoType;
 use App\Photo;
 use App\Promo;
+use App\WindowCalcParam;
 
 class PageController extends Controller
 {
@@ -73,7 +74,8 @@ class PageController extends Controller
     public function calculator(City $city, $type)
     {
         return view('windows.calculator.'.$type, [
-            'city'  =>  $city
+            'city'  =>  $city,
+            'params'    =>  WindowCalcParam::where('type', $type)->get()
         ]);
     }
 
