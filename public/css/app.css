@@ -4662,3 +4662,100 @@ body.no-scroll {
   color: #dc1414;
 }
 
+.radio {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.radio__mark {
+  position: relative;
+  width: 17px;
+  height: 17px;
+  border: 1px solid #d0d2d4;
+  background-color: #ffffff;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.radio__mark:before {
+  content: "";
+  position: absolute;
+  display: none;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 50%;
+  border: 2px solid #dc1414;
+  border-radius: 50%;
+  background: white;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.radio__input {
+  display: none;
+}
+
+.radio__input:checked ~ .radio__mark:before {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.calculator {
+  padding: 100px 0;
+}
+
+.calculator__types {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.calculator__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+.calculator__controls {
+  -ms-flex-preferred-size: 10%;
+      flex-basis: 10%;
+}
+
+.calculator__result {
+  -ms-flex-preferred-size: 10%;
+      flex-basis: 10%;
+}
+

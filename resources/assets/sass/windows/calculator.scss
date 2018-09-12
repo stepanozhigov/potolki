@@ -1,0 +1,24 @@
+.calculator {
+    padding: 100px 0;
+
+    &__types {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-basis: 100%;
+    }
+
+    &__controls {
+        flex-basis: 10%;
+    }
+
+    &__result {
+        flex-basis: 10%;
+    }
+}
