@@ -4,7 +4,13 @@
     align-items: center;
     text-decoration: none;
     
-    
+    &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex-basis: 74%;
+    }
+
     &__photo {
         width: 125px;
         height: 125px;
@@ -19,5 +25,6 @@
         font-size: 20px;
         text-decoration: none;
         font-weight: 500;
+        margin: 0 0 0 0;
     }
 }

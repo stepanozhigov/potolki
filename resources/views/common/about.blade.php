@@ -67,6 +67,5 @@
     </div>
     @include('common.videogallery')
     @include('common.message-dir-open')
-	@include('common.form-request-open')
     @include('common.footer')
 @endsection

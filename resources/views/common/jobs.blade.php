@@ -38,7 +38,6 @@
                             <p></p>
                         </section>
                     </div>
-                    <a href="anketa.html" class="jobs__link">Заполнить анкету</a>
                 </section>
             </div>
         </div>

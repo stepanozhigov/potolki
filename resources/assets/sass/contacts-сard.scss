@@ -1,0 +1,136 @@
+.contacts-сard {
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: rem(5);
+    background-color: $white;
+    box-shadow: 0 rem(8) rem(8) rgba($black, .16), 0 0 rem(8) rgba($black, .08), inset 0 rem(-1) 0 rgba($black, .1);
+
+    &__icon {
+        margin-right: rem(10);
+
+        stroke: $grey_chateau;
+
+        @include below($tablet-small) {
+            stroke: $red_crismon;
+        }
+    }
+
+    &__image-wrap {
+        display: none;
+    }
+
+    &__image {
+        width: 100%;
+        height: rem(200);
+
+        object-fit: cover;
+    }
+
+    &__content {
+        padding-top: rem(25);
+        padding-right: rem(30);
+        padding-bottom: rem(40);
+        padding-left: rem(30);
+
+        @include below($mobile) {
+            padding-top: rem(30);
+            padding-right: rem(25);
+            padding-bottom: rem(30);
+            padding-left: rem(25);
+        }
+    }
+
+    &__adress {
+        margin-bottom: rem(20);
+
+        @include below($mobile) {
+            margin-bottom: 0;
+
+            p {
+                &:last-of-type {
+                    display: none;
+                }
+            }
+
+            .contacts-сard__icon {
+                display: none;
+            }
+        }
+    }
+
+    &__working-time {
+        @include below($mobile) {
+            display: none;
+
+            .contacts-сard__icon {
+                display: none;
+            }
+        }
+    }
+
+    &__arrow-mobile {
+        position: absolute;
+        top: calc(50% - 4px);
+        right: rem(25);
+
+        display: none;
+        width: rem(24);
+        height: rem(12);
+        margin: 0 auto;
+
+        border: none;
+
+        @extend .arrow;
+        @extend .arrow_vertical-big;
+        @include below($mobile) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    h2 {
+        display: inline-flex;
+        align-items: center;
+        margin: 0;
+        margin-bottom: rem(15);
+
+        font-size: rem(22);
+        letter-spacing: rem(1);
+
+        @extend .title;
+        @extend .title_card;
+        @include below($mobile) {
+            margin-bottom: rem(5);
+
+            font-size: rem(20);
+            line-height: 1;
+        }
+    }
+
+    p {
+        padding-left: rem(25);
+        margin: 0;
+
+        @extend .text;
+        @extend .text_size_small;
+        @include below($mobile) {
+            padding-left: 0;
+
+            font-size: rem(16);
+            line-height: 1;
+        }
+    }
+
+    &_opened {
+        .contacts-сard__image-wrap {
+            display: block;
+        }
+
+        .contacts-сard__arrow-mobile {
+            display: none;
+        }
+    }
+}

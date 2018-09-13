@@ -7,14 +7,17 @@
         <div class="header__directions dropdown">
             <a class="dropdown__item dropdown__item_active"><img class="dropdown__arrow" src="/img/arrow.svg" alt="">{{ $currentDirection->name }}</a>
             
-            @foreach ($directions as $direction)
-                <a href="{{ $direction->site }}" class="dropdown__item">{{ $direction->name }}</a>
-            @endforeach
+            <div class="dropdown__content">
+                <a class="dropdown__item dropdown__item_active"><img class="dropdown__arrow" src="/img/arrow.svg" alt="">{{ $currentDirection->name }}</a>
+                @foreach ($directions as $direction)
+                    <a href="{{ $direction->site }}" class="dropdown__item">{{ $direction->name }}</a>
+                @endforeach
+            </div>            
         </div>
 
         <nav class="menu header__menu">
             <div class="dropdown menu__item menu__item_dropdown">
-                <a href="/asd" class="menu__item">Калькулятор</a>
+                <a href="{{ route('calculator', request()->route()->city) }}" class="menu__item">Калькулятор</a>
             </div>
             <div class="dropdown menu__item menu__item_dropdown">
                 <a href="{{ route('services', request()->route()->city) }}" class="menu__item">Услуги</a>

@@ -46,7 +46,7 @@
 
 @mixin input-typography {
     color: $grey_abbey;
-    font-family: sans-serif;
+    font-family: $helvetica;
     font-size: rem(18);
     font-weight: 300;
 

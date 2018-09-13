@@ -12454,7 +12454,7 @@ if (false) {
 /* 16 */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed: ModuleBuildError: Module build failed: \n        @extend .button_grey;\r\n               ^\n      \".jobs__link\" failed to @extend \".button_grey\".\nThe selector \".button_grey\" was not found.\nUse \"@extend .button_grey !optional\" if the extend should be able to fail.\n      in /var/www/laravel/resources/assets/sass/jobs.scss (line 91, column 17)\n    at runLoaders (/var/www/laravel/node_modules/webpack/lib/NormalModule.js:195:19)\n    at /var/www/laravel/node_modules/loader-runner/lib/LoaderRunner.js:364:11\n    at /var/www/laravel/node_modules/loader-runner/lib/LoaderRunner.js:230:18\n    at context.callback (/var/www/laravel/node_modules/loader-runner/lib/LoaderRunner.js:111:13)\n    at Object.asyncSassJobQueue.push [as callback] (/var/www/laravel/node_modules/sass-loader/lib/loader.js:55:13)\n    at Object.done [as callback] (/var/www/laravel/node_modules/neo-async/async.js:7974:18)\n    at options.error (/var/www/laravel/node_modules/node-sass/lib/index.js:294:32)");
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

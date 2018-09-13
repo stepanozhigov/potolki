@@ -1,0 +1,236 @@
+@import 'mixins';
+@import 'variables';
+
+.contacts {
+    position: relative;
+
+    @include below($mobile) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .map {
+        width: 100%;
+        height: 100%;
+
+        @include below($mobile) {
+            height: rem(350);
+        }
+        @include below($mobile) {
+            height: rem(950);
+        }
+    }
+
+    &__slider {
+        position: absolute;
+        z-index: 999;
+        left: 5%;
+
+        height: 100%;
+
+        @include below($tablet-small) {
+            left: rem(20);
+        }
+        @include below($mobile) {
+            left: rem(10);
+
+            width: calc(100% - 20px);
+        }
+    }
+
+    &__slider-content {
+        position: relative;
+        z-index: 1;
+        top: rem(-42);
+
+        display: inline-block;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: rem(530);
+        height: rem(762);
+        padding: 0 rem(70);
+        overflow: hidden;
+
+        @include below($tablet-small) {
+            top: 0;
+
+            width: rem(335);
+            height: rem(990);
+            padding: 0;
+            padding-top: rem(40);
+        }
+        @include below($mobile) {
+            justify-content: flex-start;
+            width: 100%;
+            height: 100%;
+            padding-top: rem(50);
+        }
+
+        &:hover {
+            .slick-arrow {
+                background-color: rgba($black, .5);
+            }
+        }
+
+        .slick-dots {
+            position: absolute;
+            z-index: 999;
+            top: 50%;
+            left: rem(30);
+
+            padding: 0;
+            margin: 0;
+
+            transform: translateY(-50%);
+            list-style-type: none;
+
+            @include below($tablet-small) {
+                display: none!important;
+            }
+        }
+
+        .slick-arrow {
+            position: absolute;
+            z-index: 999;
+            top: 50%;
+            right: 0;
+
+            width: rem(60);
+            height: rem(60);
+            padding: 0;
+            margin: 0;
+
+            border: 0 none;
+            outline: none;
+            background: rgba($white, .4);
+            background-color: rgba($black, .5)!important;
+            transform: translateY(-50%);
+            list-style-type: none;
+
+            @include text-hide;
+
+            &.slick-prev,
+            &.slick-next {
+                &::after {
+                    content: '';
+
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+
+                    transform: translate(-50%,-50%);
+                }
+            }
+        }
+
+        .slick-slide {
+            outline: none;
+        }
+
+        .slick-list {
+            height: 100%!important;
+
+            @include below($mobile) {
+                height: rem(675)!important;
+            }
+        }
+
+        .slick-next {
+            top: calc(50% +1px);
+
+            border-radius: 0 50% 50% 0!important;
+            transform: rotate(90deg);
+
+            @include below($tablet-small) {
+                top: auto!important;
+                bottom: 0!important;
+                left: calc(50% - 30px)!important;
+
+                border-radius: 50% 0 0 50%!important;
+            }
+            @include below($mobile) {
+                top: auto;
+                bottom: 0;
+                left: calc(50% - 30px);
+
+                border-radius: 50% 0 0 50%;
+            }
+
+            &::after {
+                background-image: url('/img/arrow-right-white.png');
+                background-size: contain;
+            }
+        }
+
+
+
+        .slick-prev {
+            top: calc(50% - 61px);
+
+            border-radius: 50% 0 0 50%!important;
+            transform: rotate(90deg);
+
+            @include below($tablet-small) {
+                top: 0!important;
+                left: calc(50% - 30px)!important;
+
+                border-radius: 0 50% 50% 0!important;
+            }
+
+            &::after {
+                background-image: url('/img/arrow-left-white.png');
+                background-size: contain;
+            }
+        }
+
+        .slick-current + .slick-slide {
+            @include below($mobile) {
+                .contacts-сard__image-wrap {
+                    display: flex;
+                }
+
+                .contacts-сard__arrow-mobile {
+                    display: none;
+                }
+
+                .contacts-сard__adress {
+                    margin-bottom: rem(21);
+
+                    h2 {
+                        margin-bottom: rem(10);
+                    }
+
+                    p {
+                        display: block;
+                    }
+                }
+
+                .contacts-сard__working-time {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+            .contacts-сard__image-wrap {
+                display: block;
+            }
+        }
+    }
+
+
+    &__contacts-сard {
+        margin-bottom: rem(30);
+    }
+
+    &__map {
+        height: rem(720);
+
+        @include below($tablet-small) {
+            width: 100%;
+            height: rem(990);
+        }
+        @include below($mobile) {
+            height: rem(950);
+        }
+    }
+}

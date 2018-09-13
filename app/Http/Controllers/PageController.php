@@ -64,6 +64,20 @@ class PageController extends Controller
         ]);
     }
 
+    public function contacts (City $city)
+    {
+        return view ('common.contacts', [
+            'city'  =>  $city
+        ]);
+    }
+
+    public function questions (City $city)
+    {
+        return view ('common.questions', [
+            'city'  =>  $city
+        ]);
+    }
+
     public function reviews (City $city)
     {
         return view('common.reviews', [
@@ -78,7 +92,7 @@ class PageController extends Controller
         ]);
     }
 
-    public function calculator(City $city, $type)
+    public function calculator(City $city, $type = 'okna')
     {
         return view('windows.calculator.'.$type, [
             'city'  =>  $city,

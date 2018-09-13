@@ -2,7 +2,7 @@
     font-family: 'Helvetica Neue';
     cursor: pointer;
     font-size: 20px;
-    color: #6b6b6b;   
+    color: #6b6b6b;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -12,16 +12,78 @@
     outline: none;
     height: 46px;
     width: 17.5rem;
-}
 
-.button_red {
-    background-color: #dc1414;
-    color: #fff;
-    box-shadow: 0 0.0625rem 0 #a01414;
-    border: .125rem solid transparent;
-}
+	&_red {
+	    background-color: #dc1414;
+	    color: #fff;
+	    box-shadow: 0 0.0625rem 0 #a01414;
+	    border: .125rem solid transparent;
+	}
 
-.button_gray {
-    background-color: #a7aaad;
-    color: #fff;
+	&_gray {
+	    background-color: #a7aaad;
+	    color: #fff;
+	}
+
+	&_tag {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+
+        font-family: $helvetica;
+        font-size: rem(18);
+        font-weight: 300;
+        text-decoration: none;
+
+        border: rem(1) solid $grey_chateau;
+        border-radius: rem(30);
+        outline: none;
+
+        color: $grey_chateau;
+
+        background-color: transparent;
+
+        @include above($desktop) {
+            transition: box-shadow .2s, background-color .2s;
+        }
+
+        &:hover {
+            border: rem(1) solid $grey_stone;
+            color: $grey_stone;
+        }
+
+        &.js-active {
+            border: rem(1) solid $red_thunderbird;
+            color: $red_thunderbird;
+        }
+
+        &_red {
+            height: rem(40);
+            line-height: rem(38);
+
+            color: $red_crismon;
+
+            border: rem(1) solid $red_crismon;
+            box-shadow: 0 rem(8) rem(8) rgba(0, 0, 0, 0), 0 0 rem(8) rgba(0, 0, 0, 0);
+
+            transition: box-shadow .3s, background .3s, color .3s, border .3s;
+
+            &:hover {
+                color: $white;
+
+                border: rem(1) solid transparent;
+                border-bottom: rem(1) solid $red_tamarillo;
+                box-shadow: 0 rem(8) rem(8) rgba(0, 0, 0, 0.16), 0 0 rem(8) rgba(0, 0, 0, 0.08);
+                background-color: $red_crismon;
+            }
+
+            &:active {
+                color: $white;
+
+                background-color: $red_tamarillo;
+                box-shadow: none;
+            }
+        }
+    }
 }
