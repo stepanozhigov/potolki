@@ -1,0 +1,186 @@
+@import 'mixins';
+@import 'variables';
+
+.jobs {
+    overflow: hidden;
+
+    &__switcher {
+        position: relative;
+        z-index: 4;
+
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: rem(40);
+
+        @include below($tablet-small) {
+            .switcher__button {
+                padding: rem(15) rem(25);
+
+                font-size: rem(18);
+                font-weight: 400;
+                line-height: 1;
+            }
+        }
+        @include below($mobile) {
+            .switcher {
+                width: 100%;
+            }
+
+            .switcher__button {
+                padding: rem(15) rem(25);
+            }
+        }
+    }
+
+    &__content {
+        position: relative;
+        z-index: 2;
+
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        margin-right: rem(-8);
+        margin-bottom: rem(15);
+        margin-left: rem(-8);
+
+        @include below($tablet-small) {
+            align-items: stretch;
+            margin-bottom: rem(50);
+
+            .jobsCard {
+                &:nth-of-type(n+3) {
+                    display: none;
+                }
+            }
+        }
+        @include below($mobile) {
+            margin: 0;
+            margin-bottom: rem(15);
+        }
+
+        &_hidden {
+            display: none;
+        }
+
+        &.show {
+            animation: fadeIn 1.2s;
+        }
+    }
+
+    &__link {
+        position: relative;
+        z-index: 2;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: rem(220);
+        height: rem(50);
+        padding: rem(10) rem(15);
+        margin: 0 auto;
+
+        font-family: $helvetica;
+        font-size: rem(20);
+        font-weight: 300;
+        color: $white;
+        text-decoration: none;
+
+        border-radius: rem(5);
+
+        @extend .button_gray;
+        @include below($tablet-small) {
+            width: rem(240);
+            height: rem(60);
+        }
+        @include below($mobile) {
+            width: 100%;
+        }
+    }
+
+
+
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: calc(33.3% - 16px);
+        padding-top: rem(45);
+        padding-right: rem(20);
+        padding-bottom: rem(50);
+        padding-left: rem(20);
+        margin: 0 rem(8);
+        margin-bottom: rem(25);
+        overflow: hidden;
+
+        text-decoration: none;
+
+        border-radius: rem(5);
+        outline: none;
+        background-color: $white;
+        box-shadow: 0 rem(8) rem(8) rgba(0, 0, 0, 0),
+        0 0 rem(2) rgba(0, 0, 0, .08),
+        inset 0 rem(-1) 0 rgba(0, 0, 0, .12);
+
+        @include above($tablet) {
+            transition: box-shadow .3s;
+        }
+        @include below($tablet-small) {
+            width: calc(50% - 20px);
+            margin: 0 rem(10);
+            margin-bottom: rem(25);
+        }
+        @include below($mobile) {
+            width: 100%;
+            margin: 0;
+            margin-bottom: rem(35);
+        }
+
+        &:hover {
+            box-shadow: 0 rem(8) rem(8) rgba(0, 0, 0, .12),
+            0 0 rem(8) rgba(0, 0, 0, .08),
+            inset 0 rem(-1) 0 rgba(0, 0, 0, .12);
+        }
+
+        h2,
+        h3 {
+            position: relative;
+
+            width: 100%;
+            padding-bottom: rem(25);
+            margin: 0;
+            margin-bottom: rem(35);
+
+            font-weight: 400;
+
+            @extend .title;
+            @extend .title_small;
+
+            &::after {
+                content: '';
+
+                position: absolute;
+                bottom: 0;
+                left: 0;
+
+                width: rem(180);
+                height: rem(1);
+
+                background-color: $grey_chateau;
+            }
+        }
+
+        p {
+            width: 100%;
+            margin: 0;
+
+            @extend .text;
+            @extend .text_size_medium;
+            @include below($tablet-small) {
+                max-height: rem(87);
+            }
+        }
+    }
+
+}

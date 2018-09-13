@@ -57,6 +57,13 @@ class PageController extends Controller
         ]);
     }
 
+    public function jobs (City $city)
+    {
+        return view ('common.jobs', [
+            'city'  =>  $city
+        ]);
+    }
+
     public function reviews (City $city)
     {
         return view('common.reviews', [

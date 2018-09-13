@@ -45,4 +45,6 @@ Route::prefix('/{city}')->group(function () {
     Route::get('/reviews', 'PageController@reviews')->name('reviews');
 
     Route::get('/reviews/add', 'PageController@addReview')->name('add-review');
+
+    Route::get('/vakansii', 'PageController@jobs')->name('vakansii');
 });

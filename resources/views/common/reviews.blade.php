@@ -15,6 +15,8 @@
             @include('common.gui.review')
             @include('common.gui.review')
 
+            <div class="overlay overlay_active"></div>
+            @include('common.gui.review-popup')
             <div class="paginator reviews__paginator">
                 <a href="" class="paginator__item paginator__item_active">1</a>
                 <a href="" class="paginator__item">2</a>
