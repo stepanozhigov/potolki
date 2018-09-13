@@ -38,7 +38,7 @@
         <div class="header__feedbacks">
             <a href="" class="phone header__phone"><img class="phone__icon" src="/img/phone.svg" alt=""> 8 800 333-97-14</a>
             <a href="" class="whatsapp header__whatsapp">Написать в WhatsApp</a>
-            <a href="" class="header__callback">Заказать звонок</a>
+            <a href="" data-src="#popup_callback" class="header__callback js-show">Заказать звонок</a>
         </div>
     </div>    
 </header>

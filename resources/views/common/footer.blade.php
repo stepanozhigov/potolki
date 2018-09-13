@@ -1,7 +1,10 @@
 @include('common.form-request-open')
 <div class="popup" id="popup_callback">
+    <img src="/img/close.svg" alt="" class="popup__close js-close">
     @include('common.forms.callback')
 </div>
+<div class="overlay js-close"></div>
+
 <footer class="footer {{ !empty($class) ? $class:'' }}">
     <div class="container">
         <div class="footer__inner">

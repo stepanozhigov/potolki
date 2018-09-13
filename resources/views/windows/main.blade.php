@@ -9,7 +9,7 @@
             <h1 class="title main-offer__title">Пластиковые окна со&nbspскидкой&nbsp30%</h1>
             <p class="main-offer__subtitle subtitle">Для получения скидки оставьте заявку</p>
 
-            <form class="form main-offer__form" action="">
+            <form class="form main-offer__form" action="" id="offer-form">
                 <input class="input main-offer__input" type="text"  placeholder="Ваше имя">
                 <input class="input main-offer__input" type="tel"  placeholder="Ваш телефон">
 

@@ -12,7 +12,6 @@
                 @include('common.gui.review', $review)    
             @endforeach
 
-            <!--<div class="overlay overlay_active"></div>-->
             @include('common.gui.review-popup')
             <div class="paginator reviews__paginator">
                 <a href="" class="paginator__item paginator__item_active">1</a>
