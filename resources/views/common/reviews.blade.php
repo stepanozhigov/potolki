@@ -8,14 +8,11 @@
                 Сюда нужно добавить какой-нибудь текст про страницу. А так же о том, что пользователь может <a class="link" href="{{ route('add-review', $city) }}">оставить отзыв</a>
                 и получить что-нибудь хорошее (например средство за уходом, скидку или другой подарок).
             </p>
-            @include('common.gui.review')
-            @include('common.gui.review')
-            @include('common.gui.review')
-            @include('common.gui.review')
-            @include('common.gui.review')
-            @include('common.gui.review')
+            @foreach ($reviews as $review)
+                @include('common.gui.review', $review)    
+            @endforeach
 
-            <div class="overlay overlay_active"></div>
+            <!--<div class="overlay overlay_active"></div>-->
             @include('common.gui.review-popup')
             <div class="paginator reviews__paginator">
                 <a href="" class="paginator__item paginator__item_active">1</a>

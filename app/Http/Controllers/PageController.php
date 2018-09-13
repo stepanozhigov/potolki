@@ -8,6 +8,7 @@ use App\City;
 use App\PhotoType;
 use App\Photo;
 use App\Promo;
+use App\Review;
 use App\WindowCalcParam;
 
 class PageController extends Controller
@@ -15,7 +16,8 @@ class PageController extends Controller
     public function main (City $city)
     {
         return view('windows.main', [
-            'city'  =>  $city
+            'city'  =>  $city,
+            'reviews'   =>  Review::all()
         ]);
     }
     public function photos (City $city, PhotoType $type = null)
@@ -80,7 +82,7 @@ class PageController extends Controller
 
     public function addReview (City $city)
     {
-        return view ('common.addReview', [
+        return view ('common.add-review', [
             'city'  =>  $city
         ]);
     }
@@ -88,7 +90,8 @@ class PageController extends Controller
     public function reviews (City $city)
     {
         return view('common.reviews', [
-            'city'  =>  $city
+            'city'  =>  $city,
+            'reviews'   =>  Review::all()
         ]);
     }
 
@@ -98,6 +101,11 @@ class PageController extends Controller
             'city'  =>  $city,
             'params'    =>  WindowCalcParam::where('type', $type)->get()
         ]);
+    }
+
+    public function callback ()
+    {
+        return view('common.forms.callback');
     }
 
 }

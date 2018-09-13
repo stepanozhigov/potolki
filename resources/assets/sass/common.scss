@@ -562,6 +562,73 @@ body {
     }
 }
 
+.select {
+    position: relative;
+
+    appearance: none;
+
+    select {
+        width: 100%;
+        height: rem(50);
+
+        padding-right: rem(50);
+        padding-left: rem(20);
+
+        font-family: $helvetica;
+        font-size: rem(18);
+        font-weight: 300;
+        color: #50555f;
+
+        border-radius: rem(5);
+        border: rem(1) solid #d0d2d4;
+        background-color: $white;
+        outline: none;
+
+        appearance: none;
+
+        &:focus {
+            border: rem(1) solid $grey_chateau;
+        }
+
+        &:-moz-focusring {
+            color: transparent;
+            text-shadow: 0 0 0 #000;
+        }
+
+        &::-ms-expand {
+            display: none;
+        }
+
+        &.error {
+            border: rem(1) solid $red_crismon;
+        }
+
+        @include below($tablet) {
+            height: rem(60);
+        }
+    }
+
+    &::after {
+        content: '';
+
+        position: absolute;
+        top: 50%;
+        right: rem(20);
+
+        width: rem(12);
+        height: rem(6);
+
+        background-image: url('/img/arrow-select.png');
+        background-repeat: no-repeat;
+
+        transform: translateY(-50%);
+
+        @include above($desktop) {
+            will-change: transform;
+        }
+    }
+}
+
 .page {
     &__inner {
         position: relative;
@@ -661,6 +728,19 @@ body {
 	}
 }
 
+.page__review {
+    margin-bottom: rem(50);
+	padding-top: rem(80);
+
+    .title {
+		margin-bottom: 40px;
+	}
+
+	.intro {
+		margin-bottom: rem(60);
+	}
+}
+
 
 .overlay {
     display: none;
@@ -675,4 +755,12 @@ body {
         left: 0;
     }
 
+}
+
+.popup {
+    display: none;
+
+    &_active {
+        display: flex;
+    }
 }

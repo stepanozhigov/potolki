@@ -1,4 +1,7 @@
 @include('common.form-request-open')
+<div class="popup" id="popup_callback">
+    @include('common.forms.callback')
+</div>
 <footer class="footer {{ !empty($class) ? $class:'' }}">
     <div class="container">
         <div class="footer__inner">

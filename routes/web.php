@@ -25,6 +25,7 @@ Route::get('/', function () {
         ]);
 })->name('index');
 
+Route::get('/forms/callback', 'PageController@callback');
 
 Route::prefix('/{city}')->group(function () {
 

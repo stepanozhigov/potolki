@@ -75,9 +75,9 @@
             Отзывы наших клиентов
         </h2>
 
-        @include('common.gui.review')
-        @include('common.gui.review')
-        @include('common.gui.review')
+        @foreach($reviews as $review)
+            @include('common.gui.review', $review)
+        @endforeach
 
         <div class="reviews__buttons">
             <a href="{{ route('reviews', $city) }}" class="button">Прочитать все отзывы</a>
