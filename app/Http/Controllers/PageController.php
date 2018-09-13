@@ -78,16 +78,16 @@ class PageController extends Controller
         ]);
     }
 
-    public function reviews (City $city)
+    public function addReview (City $city)
     {
-        return view('common.reviews', [
+        return view ('common.addReview', [
             'city'  =>  $city
         ]);
     }
 
-    public function addReview(City $city)
+    public function reviews (City $city)
     {
-        return view('common.add-review', [
+        return view('common.reviews', [
             'city'  =>  $city
         ]);
     }
