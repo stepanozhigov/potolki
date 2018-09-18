@@ -1,75 +1,16 @@
-@import 'mixins';
-@import 'variables';
-
-.employers {
+.employees {
     margin-bottom: rem(90);
-    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
 
     &__switcher {
-        position: relative;
-        z-index: 4;
-
-        display: flex;
-        justify-content: center;
-        width: 100%;
+        flex-basis: 77%;
         margin-bottom: rem(40);
-
-        @include below($tablet-small) {
-            .switcher__button {
-                padding: rem(15) rem(25);
-
-                font-size: rem(18);
-                font-weight: 400;
-                line-height: 1;
-            }
-        }
-        @include below($mobile) {
-            .switcher {
-                width: 100%;
-            }
-
-            .switcher__button {
-                padding: rem(15) rem(25);
-            }
-        }
     }
 
-    &__content {
-        position: relative;
-        z-index: 2;
-
-        display: flex;
-        flex-wrap: wrap;
-        align-items: flex-start;
-        justify-content: center;
-        margin-right: rem(-8);
-        margin-bottom: rem(-40);
-        margin-left: rem(-8);
-
-        @include below($tablet-small) {
-            align-items: stretch;
-            margin-bottom: rem(50);
-
-            .employersCard {
-                &:nth-of-type(n+3) {
-                    display: none;
-                }
-            }
-        }
-        @include below($mobile) {
-            margin: 0;
-            margin-bottom: rem(15);
-        }
-
-        &_hidden {
-            display: none;
-        }
-
-        &.show {
-            animation: fadeIn 1.2s;
-        }
-    }
-
+   
     &__card,
     &__additionally {
         width: calc(25% - 20px);

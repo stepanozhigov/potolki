@@ -47,14 +47,14 @@ class PageController extends Controller
 
     public function about (City $city)
     {
-        return view ('common.about', [
+        return view ('common.pages.about', [
             'city'  =>  $city
         ]);
     }
 
     public function employers (City $city)
     {
-        return view ('common.employers', [
+        return view ('common.pages.employers', [
             'city'  =>  $city
         ]);
     }
