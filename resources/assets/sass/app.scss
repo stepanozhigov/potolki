@@ -11,7 +11,7 @@
 
 @import 'cities';
 
-@import 'card';
+@import './gui/card';
 
 @import 'directions';
 
@@ -19,7 +19,7 @@
 
 @import 'form';
 
-@import 'catalog';
+@import './gui/catalog-cards';
 
 @import 'portfolio';
 
@@ -27,7 +27,7 @@
 
 @import 'promos';
 
-@import 'manufacturers';
+@import './gui/manufacturers';
 
 @import 'calc-promo';
 

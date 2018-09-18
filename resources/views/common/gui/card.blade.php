@@ -12,7 +12,7 @@
         <p class="card__title">{{ $title }}</p>
     @endisset
 
-    <hr class="card__line">
+    <hr class="line line_bold">
 
     @isset($text)
         <p class="card__subtitle">{{ $text }}</p>

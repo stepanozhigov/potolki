@@ -1,23 +1,8 @@
 .catalog-cards {
-    padding: 80px 0;
+    padding: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-
-    &__overtitle {
-        flex-basis: 100%;
-    }
-    
-    &__title {
-        margin-bottom: 80px;
-        text-align: center;
-        flex-basis: 100%;
-    }
-
-    &__subtitle {
-        margin-bottom: 60px;
-        flex-basis: 100%;
-    }
 
     &__item {
         flex-basis: 24%;

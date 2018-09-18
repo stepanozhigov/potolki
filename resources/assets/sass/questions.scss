@@ -178,9 +178,6 @@
 
             font-weight: 400;
 
-            @extend .title;
-            @extend .title_small;
-
             &::after {
                 content: '';
 

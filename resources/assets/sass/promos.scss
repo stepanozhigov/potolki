@@ -1,25 +1,13 @@
 .promos {
-    padding: 100px 0 0 0;
+    padding: 0 0 0 0;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
 
-    &__title {
-        flex-basis: 100%;
-        margin-bottom: 80px;
-    }
-    &__overtitle {
-        flex-basis: 100%;
-    }
-
     &__item {
         flex-basis: 32.5%;
         margin-bottom: 20px;
-    }
-
-    &__intro {
-        margin-bottom: 50px;
     }
 }
 

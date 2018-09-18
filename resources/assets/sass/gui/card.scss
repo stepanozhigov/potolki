@@ -21,11 +21,11 @@
 
     &__title {
         text-transform: uppercase;
-        font-family: 'Futura PT - Light';
+        font-family: 'Futura PT';
         font-size: 26px;
         text-align: center;
         color: $grey_abbey;
-        margin: 28px 0 0 0;
+        margin: 28px 0 15px 0;
     }
 
     &__subtitle {
@@ -37,12 +37,6 @@
         text-align: center;
         padding: 0 15px;
         margin: 0;
-    }
-
-    &__line {
-        width: 80px;
-        border: 1px solid #d0d2d4;
-        margin: 14px 0  0 0;
     }
 
     &__price {

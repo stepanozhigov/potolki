@@ -1,18 +1,8 @@
 .portfolio {
-    padding: 100px 0 100px 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     
-    &__overtitle {
-        flex-basis: 100%;
-    }
-
-    &__title {
-        flex-basis: 100%;
-        margin-bottom: 80px;
-    }
-
     &__switcher {
         flex-basis: 100%;
         margin: 0 0 60px 0;

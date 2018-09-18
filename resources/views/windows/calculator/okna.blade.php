@@ -3,10 +3,11 @@
     @include('common.header')
 
     <section class="calculator container">
-        <p class="overtitle calculator__overtitle">Калькулятор стоимость</p>
-        <h1 class="title calculator__title">Заказать пластиковые окна {{ $city->name_formatted }}</h1>
-        <p class="intro calculator__intro">Нужно описать процесс рассчета и т.д.</p>
-
+        @include('common.gui.titles', [
+            'overtitle' =>  'Калькулятор стоимости',
+            'title' =>  "Заказать пластиковые окна {$city->name_formatted}",
+            'intro' =>  "Нужно описать процесс рассчета и т.д."
+        ])
         <div id="window-calc">
             <window-calc :types="{{ $params }}"></window-calc>
         </div>

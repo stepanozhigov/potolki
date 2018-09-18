@@ -1,27 +1,11 @@
 .services {
-    padding: 100px 0 0 0;
     
     &__list {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
     }
-
-    &__title {
-        flex-basis: 100%;
-        margin-bottom: 80px;
-    }
-
-    &__overtitle {
-        flex-basis: 100%;
-    }
-
-    &__intro {
-        flex-basis: 100%;
-        margin: 0 auto;
-        margin-bottom: 100px;
-    }
-
+    
     &__card {
         margin: 0 .625rem 2rem .625rem;
         flex-basis: calc(25% - 20px);

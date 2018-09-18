@@ -18,9 +18,6 @@
 
         background-color: $white;
 
-        @extend .title;
-        @extend .title_medium;
-
         &::after {
             display: none!important;
         }
@@ -403,10 +400,6 @@
     &__feedback-title {
         margin-top: 0;
         margin-bottom: rem(50);
-
-        @extend .title;
-        @extend .title_medium;
-        @extend .title_underline;
     }
 
     &__feedback-text {

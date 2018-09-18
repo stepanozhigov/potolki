@@ -100,8 +100,6 @@
         font-size: rem(22);
         letter-spacing: rem(1);
 
-        @extend .title;
-        @extend .title_card;
         @include below($mobile) {
             margin-bottom: rem(5);
 

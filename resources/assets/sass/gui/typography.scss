@@ -1,0 +1,184 @@
+@font-face {
+    font-family: 'PTRoubleSans';
+    src: url('../fonts/subset-PTRoubleSans.woff2') format('woff2'),
+        url('../fonts/subset-PTRoubleSans.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura PT';
+    src: url('../fonts/Futura-PT-Light.woff2') format('woff2'),
+		url('../fonts/Futura-PT-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: 'Futura PT';
+    src: url('../fonts/Futura-PT-Book.woff2') format('woff2'),
+		url('../fonts/Futura-PT-Book.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+@font-face {
+	font-family: 'Playfair Display';
+	src: url('../fonts/subset-PlayfairDisplay-Italic.woff2') format('woff2'),
+		url('../fonts/subset-PlayfairDisplay-Italic.woff') format('woff');
+	font-weight: 400;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Playfair Display';
+	src: url('../fonts/subset-PlayfairDisplay-Regular.woff2') format('woff2'),
+		url('../fonts/subset-PlayfairDisplay-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Helvetica Neue';
+	src: url('../fonts/subset-HelveticaNeue-Bold.woff') format('woff');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Helvetica Neue';
+	src: url('../fonts/subset-HelveticaNeue-Medium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Helvetica Neue';
+	src: url('../fonts/subset-HelveticaNeue-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Helvetica Neue';
+	src: url('../fonts/subset-HelveticaNeue-Light.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+}
+
+.overtitle {
+    color: #a5aaaf;
+    font-family: $futura;
+    font-size: 22px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    text-align: center;
+    margin: 0;
+}
+
+.title {
+    color: $grey_abbey;
+    font-family: 'Playfair Display';
+    text-align: center;
+    font-size: 43px;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    line-height: 53px;
+}
+
+.second-title {
+    font-family: 'Playfair Display';
+    font-weight: 400;
+    font-size: 32px;
+    text-align: center;
+    color: $grey_abbey;
+    margin: 0;
+}
+
+.third-title {
+    color: $grey_abbey;
+    font-family: "Playfair Display";
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 0;
+}
+
+.intro {
+    font-family: 'Helvetica Neue';
+    font-weight: 300;
+    font-size: 22px;
+    color: $grey_abbey;
+    margin: 0;
+    text-align: center;
+    line-height: 32px;
+}
+
+.text {
+    font-family: $helvetica;
+    font-weight: 300;
+    color: $grey_abbey;
+
+    &_size {
+        &_big {
+            font-size: rem(22);
+            line-height: rem(32);
+
+            @include below($phablet) {
+                font-size: rem(20);
+                line-height: rem(30);
+            }
+        }
+
+        &_medium {
+            font-size: rem(16);
+            line-height: rem(22);
+        }
+
+        &_small {
+            font-size: rem(14);
+            line-height: rem(19);
+        }
+    }
+
+    &_cursive {
+        font-size: rem(24);
+        font-style: italic;
+        line-height: rem(36);
+
+        @include below($tablet) {
+            font-size: rem(30);
+            line-height: rem(45);
+        }
+    }
+}
+
+.titles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 75px 0 60px 0;
+    width: 100%;
+    z-index: 1;
+    
+    &__overtitle {
+        margin-bottom: 3px;
+    }
+
+    &__title {
+        margin-bottom: 25px;
+    }
+
+    &__second-title {
+        margin-bottom: 25px;
+    }
+
+    &__intro {
+        margin: 50px 0 0 0;
+    }
+}

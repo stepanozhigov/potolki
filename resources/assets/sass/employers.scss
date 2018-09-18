@@ -157,10 +157,6 @@
             color: $white;
             text-align: center;
 
-            @extend .title;
-            @extend .title_card;
-            @extend .title_underline;
-
             &::after {
                 background-color: $white;
             }

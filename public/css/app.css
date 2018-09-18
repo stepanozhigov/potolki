@@ -150,6 +150,190 @@
   font-style: normal;
 }
 
+.overtitle {
+  color: #a5aaaf;
+  font-family: "Futura PT", sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+  text-align: center;
+  margin: 0;
+}
+
+.title,
+.about__quote p,
+.about__reward h3 {
+  color: #50555a;
+  font-family: 'Playfair Display';
+  text-align: center;
+  font-size: 43px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  line-height: 53px;
+}
+
+.second-title {
+  font-family: 'Playfair Display';
+  font-weight: 400;
+  font-size: 32px;
+  text-align: center;
+  color: #50555a;
+  margin: 0;
+}
+
+.third-title {
+  color: #50555a;
+  font-family: "Playfair Display";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0;
+}
+
+.intro {
+  font-family: 'Helvetica Neue';
+  font-weight: 300;
+  font-size: 22px;
+  color: #50555a;
+  margin: 0;
+  text-align: center;
+  line-height: 32px;
+}
+
+.text,
+.footer__copyright-text,
+.footer__developer-text,
+.footer__developer-link,
+.form-request-open__subtitle,
+.form-request-open__input + .error,
+.form-request-open__status-send,
+.form-request-open__rules,
+.form-request-open__rules .link,
+.personal-data_tooltipster p,
+.personal-data_tooltipster li,
+.about__subtitle,
+.about__desc,
+.about__reward p,
+.videogallery__slide h2,
+.videogallery__slide p,
+.message-dir-open__name,
+.message-dir-open__rules,
+.message-dir-open__status-send,
+.employers__additionally-content p,
+.emplyee-card__content p,
+.masters-services__item p,
+.jobs__card p,
+.questions__card p,
+.contacts-сard p,
+.form-review__name,
+.form-review__agree,
+.form-review__video-text,
+.form-review__feedback-text {
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 300;
+  color: #50555a;
+}
+
+.text_size_big,
+.form-request-open__status-send,
+.about__subtitle,
+.videogallery__slide h2,
+.message-dir-open__name,
+.message-dir-open__status-send,
+.form-review__name {
+  font-size: 1.375rem;
+  line-height: 2rem;
+}
+
+@media screen and (max-width: 45rem) {
+  .text_size_big,
+  .form-request-open__status-send,
+  .about__subtitle,
+  .videogallery__slide h2,
+  .message-dir-open__name,
+  .message-dir-open__status-send,
+  .form-review__name {
+    font-size: 1.25rem;
+    line-height: 1.875rem;
+  }
+}
+
+.text_size_medium,
+.form-request-open__input + .error,
+.about__desc,
+.videogallery__slide p,
+.jobs__card p,
+.questions__card p,
+.form-review__video-text,
+.form-review__feedback-text {
+  font-size: 1rem;
+  line-height: 1.375rem;
+}
+
+.text_size_small,
+.footer__copyright-text,
+.footer__developer-text,
+.footer__developer-link,
+.form-request-open__rules,
+.form-request-open__rules .link,
+.personal-data_tooltipster p,
+.personal-data_tooltipster li,
+.about__reward p,
+.employers__additionally-content p,
+.emplyee-card__content p,
+.contacts-сard p {
+  font-size: 0.875rem;
+  line-height: 1.1875rem;
+}
+
+.text_cursive {
+  font-size: 1.5rem;
+  font-style: italic;
+  line-height: 2.25rem;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .text_cursive {
+    font-size: 1.875rem;
+    line-height: 2.8125rem;
+  }
+}
+
+.titles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 75px 0 60px 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.titles__overtitle {
+  margin-bottom: 3px;
+}
+
+.titles__title {
+  margin-bottom: 25px;
+}
+
+.titles__second-title {
+  margin-bottom: 25px;
+}
+
+.titles__intro {
+  margin: 50px 0 0 0;
+}
+
 .body {
   margin: 0;
 }
@@ -205,268 +389,6 @@ body.no-scroll {
   margin-right: .625rem;
 }
 
-.title,
-.form-request-open__title,
-.form-request-open__title-mobile,
-.about__quote p,
-.about__content h2,
-.about__reward h3,
-.videogallery .slick-current .videogallery__slide h2,
-.message-dir-open__title,
-.employers__additionally-content h2,
-.emplyee-card__content p:first-of-type,
-.masters-services h2,
-.jobs__card h2,
-.jobs__card h3,
-.questions__card h2,
-.questions__card h3,
-.contacts-сard h2,
-.form-review__title,
-.form-review__feedback-title {
-  color: #50555a;
-  font-family: 'Playfair Display';
-  text-align: center;
-  font-size: 43px;
-  font-weight: 400;
-  margin: 0;
-  position: relative;
-  line-height: 53px;
-  padding-bottom: 30px;
-}
-
-.title:after,
-.form-request-open__title:after,
-.form-request-open__title-mobile:after,
-.about__quote p:after,
-.about__content h2:after,
-.about__reward h3:after,
-.videogallery .slick-current .videogallery__slide h2:after,
-.message-dir-open__title:after,
-.employers__additionally-content h2:after,
-.emplyee-card__content p:first-of-type:after,
-.masters-services h2:after,
-.jobs__card h2:after,
-.jobs__card h3:after,
-.questions__card h2:after,
-.questions__card h3:after,
-.contacts-сard h2:after,
-.form-review__title:after,
-.form-review__feedback-title:after {
-  content: '';
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 10rem;
-  height: .0625rem;
-  margin: 0 auto;
-  background-color: #a7aaad;
-}
-
-.title_card,
-.form-request-open__title,
-.form-request-open__title-mobile,
-.employers__additionally-content h2,
-.emplyee-card__content p:first-of-type,
-.contacts-сard h2 {
-  font-family: "Futura PT", sans-serif;
-  font-size: 1.625rem;
-  line-height: 1.9375rem;
-  letter-spacing: 0.09375rem;
-  text-transform: uppercase;
-}
-
-.title_card::after,
-.form-request-open__title::after,
-.form-request-open__title-mobile::after,
-.employers__additionally-content h2::after,
-.emplyee-card__content p:first-of-type::after,
-.contacts-сard h2::after {
-  display: none;
-}
-
-.title_big {
-  font-size: 2.6875rem;
-  line-height: 3.1875rem;
-}
-
-@media screen and (max-width: 45rem) {
-  .title_big {
-    font-size: 2rem;
-    line-height: 2.375rem;
-  }
-}
-
-.title_medium,
-.about__content h2,
-.videogallery .slick-current .videogallery__slide h2,
-.message-dir-open__title,
-.masters-services h2,
-.form-review__title,
-.form-review__feedback-title {
-  font-size: 2rem;
-  line-height: 2.375rem;
-}
-
-@media screen and (max-width: 45rem) {
-  .title_medium,
-  .about__content h2,
-  .videogallery .slick-current .videogallery__slide h2,
-  .message-dir-open__title,
-  .masters-services h2,
-  .form-review__title,
-  .form-review__feedback-title {
-    font-size: 1.625rem;
-    line-height: 1.9375rem;
-  }
-}
-
-.title_small,
-.jobs__card h2,
-.jobs__card h3,
-.questions__card h2,
-.questions__card h3 {
-  font-size: 1.25rem;
-  line-height: 1.5rem;
-}
-
-.title_overhead {
-  font-family: "Futura PT", sans-serif;
-  font-size: 1.375rem;
-  font-weight: 300;
-  letter-spacing: 0.4375rem;
-  text-transform: uppercase;
-  color: #a7aaad;
-}
-
-@media screen and (max-width: 45rem) {
-  .title_overhead {
-    font-size: 1.125rem;
-    letter-spacing: 0.3125rem;
-  }
-}
-
-.title_overhead_dark {
-  color: #50555a;
-  font-size: 1.625rem;
-  letter-spacing: 0.09375rem;
-}
-
-.title_overhead_big {
-  font-size: 2rem;
-}
-
-.title_underline,
-.about__content h2,
-.videogallery .slick-current .videogallery__slide h2,
-.message-dir-open__title,
-.employers__additionally-content h2,
-.masters-services h2,
-.form-review__feedback-title {
-  position: relative;
-  padding-bottom: 1.5625rem;
-}
-
-.title_underline::after,
-.about__content h2::after,
-.videogallery .slick-current .videogallery__slide h2::after,
-.message-dir-open__title::after,
-.employers__additionally-content h2::after,
-.masters-services h2::after,
-.form-review__feedback-title::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 10rem;
-  height: 0.0625rem;
-  margin: 0 auto;
-  background-color: #a7aaad;
-}
-
-.title_underline_right::after {
-  left: auto;
-}
-
-.title_underline_left::after {
-  right: auto;
-}
-
-.title_underline_card::after {
-  content: '';
-  width: 5rem;
-  height: 0.125rem;
-  background-color: #d0d2d4;
-}
-
-.title_underline_portfolio::after {
-  content: '';
-  width: 3.75rem;
-  height: 0.125rem;
-  background-color: #d0d2d4;
-}
-
-.subtitle {
-  font-family: 'Helvetica Neue';
-  font-weight: 300;
-  font-size: 22px;
-  color: #50555a;
-  margin: 0;
-  text-align: center;
-}
-
-.intro {
-  font-family: 'Helvetica Neue';
-  font-weight: 300;
-  font-size: 22px;
-  color: #50555a;
-  margin: 0;
-  text-align: center;
-  line-height: 32px;
-}
-
-.overtitle {
-  color: #a5aaaf;
-  font-family: "Futura PT", sans-serif;
-  font-size: 22px;
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: 7px;
-  text-align: center;
-}
-
-.second-title {
-  font-family: 'Playfair Display';
-  font-weight: 400;
-  font-size: 32px;
-  text-align: center;
-  color: #50555a;
-  margin: 0;
-  padding-bottom: 25px;
-  position: relative;
-}
-
-.second-title:after {
-  content: '';
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 10rem;
-  height: .0625rem;
-  margin: 0 auto;
-  background-color: #a7aaad;
-}
-
-.third-title {
-  color: #50555a;
-  font-family: "Playfair Display";
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 24px;
-}
-
 .link {
   color: #4c4747;
   text-decoration: underline;
@@ -477,8 +399,16 @@ body.no-scroll {
   color: #dc1414;
 }
 
-.arrow_down {
-  /*transform: rotate(45deg);*/
+.line {
+  margin: 0;
+  border: 0;
+  width: 160px;
+  border-bottom: 1px solid #aaaaaa;
+}
+
+.line_bold {
+  width: 80px;
+  border-bottom: 2px solid #d0d2d4;
 }
 
 .dropdown {
@@ -612,105 +542,6 @@ body.no-scroll {
   background-image: linear-gradient(180deg, #fff 0%, #f0f0f0 100%);
   -webkit-box-shadow: inset 0 -0.0625rem 0 #50555a;
           box-shadow: inset 0 -0.0625rem 0 #50555a;
-}
-
-.text,
-.footer__copyright-text,
-.footer__developer-text,
-.footer__developer-link,
-.form-request-open__subtitle,
-.form-request-open__input + .error,
-.form-request-open__status-send,
-.form-request-open__rules,
-.form-request-open__rules .link,
-.personal-data_tooltipster p,
-.personal-data_tooltipster li,
-.about__subtitle,
-.about__desc,
-.about__reward p,
-.videogallery__slide h2,
-.videogallery__slide p,
-.message-dir-open__name,
-.message-dir-open__rules,
-.message-dir-open__status-send,
-.employers__additionally-content p,
-.emplyee-card__content p,
-.masters-services__item p,
-.jobs__card p,
-.questions__card p,
-.contacts-сard p,
-.form-review__name,
-.form-review__agree,
-.form-review__video-text,
-.form-review__feedback-text {
-  font-family: "Helvetica Neue", sans-serif;
-  font-weight: 300;
-  color: #50555a;
-}
-
-.text_size_big,
-.form-request-open__status-send,
-.about__subtitle,
-.videogallery__slide h2,
-.message-dir-open__name,
-.message-dir-open__status-send,
-.form-review__name {
-  font-size: 1.375rem;
-  line-height: 2rem;
-}
-
-@media screen and (max-width: 45rem) {
-  .text_size_big,
-  .form-request-open__status-send,
-  .about__subtitle,
-  .videogallery__slide h2,
-  .message-dir-open__name,
-  .message-dir-open__status-send,
-  .form-review__name {
-    font-size: 1.25rem;
-    line-height: 1.875rem;
-  }
-}
-
-.text_size_medium,
-.form-request-open__input + .error,
-.about__desc,
-.videogallery__slide p,
-.jobs__card p,
-.questions__card p,
-.form-review__video-text,
-.form-review__feedback-text {
-  font-size: 1rem;
-  line-height: 1.375rem;
-}
-
-.text_size_small,
-.footer__copyright-text,
-.footer__developer-text,
-.footer__developer-link,
-.form-request-open__rules,
-.form-request-open__rules .link,
-.personal-data_tooltipster p,
-.personal-data_tooltipster li,
-.about__reward p,
-.employers__additionally-content p,
-.emplyee-card__content p,
-.contacts-сard p {
-  font-size: 0.875rem;
-  line-height: 1.1875rem;
-}
-
-.text_cursive {
-  font-size: 1.5rem;
-  font-style: italic;
-  line-height: 2.25rem;
-}
-
-@media screen and (max-width: 79.9375rem) {
-  .text_cursive {
-    font-size: 1.875rem;
-    line-height: 2.8125rem;
-  }
 }
 
 .arrow,
@@ -917,35 +748,10 @@ body.no-scroll {
 }
 
 .page__about .title,
-.page__about .form-request-open__title,
-.page__about .form-request-open__title-mobile,
 .page__about .about__quote p,
 .about__quote .page__about p,
-.page__about .about__content h2,
-.about__content .page__about h2,
 .page__about .about__reward h3,
-.about__reward .page__about h3,
-.page__about .videogallery .slick-current .videogallery__slide h2,
-.videogallery .slick-current .videogallery__slide .page__about h2,
-.page__about .message-dir-open__title,
-.page__about .employers__additionally-content h2,
-.employers__additionally-content .page__about h2,
-.page__about .emplyee-card__content p:first-of-type,
-.emplyee-card__content .page__about p:first-of-type,
-.page__about .masters-services h2,
-.masters-services .page__about h2,
-.page__about .jobs__card h2,
-.jobs__card .page__about h2,
-.page__about .jobs__card h3,
-.jobs__card .page__about h3,
-.page__about .questions__card h2,
-.questions__card .page__about h2,
-.page__about .questions__card h3,
-.questions__card .page__about h3,
-.page__about .contacts-сard h2,
-.contacts-сard .page__about h2,
-.page__about .form-review__title,
-.page__about .form-review__feedback-title {
+.about__reward .page__about h3 {
   margin-bottom: 40px;
 }
 
@@ -955,35 +761,10 @@ body.no-scroll {
 }
 
 .page__employers .title,
-.page__employers .form-request-open__title,
-.page__employers .form-request-open__title-mobile,
 .page__employers .about__quote p,
 .about__quote .page__employers p,
-.page__employers .about__content h2,
-.about__content .page__employers h2,
 .page__employers .about__reward h3,
-.about__reward .page__employers h3,
-.page__employers .videogallery .slick-current .videogallery__slide h2,
-.videogallery .slick-current .videogallery__slide .page__employers h2,
-.page__employers .message-dir-open__title,
-.page__employers .employers__additionally-content h2,
-.employers__additionally-content .page__employers h2,
-.page__employers .emplyee-card__content p:first-of-type,
-.emplyee-card__content .page__employers p:first-of-type,
-.page__employers .masters-services h2,
-.masters-services .page__employers h2,
-.page__employers .jobs__card h2,
-.jobs__card .page__employers h2,
-.page__employers .jobs__card h3,
-.jobs__card .page__employers h3,
-.page__employers .questions__card h2,
-.questions__card .page__employers h2,
-.page__employers .questions__card h3,
-.questions__card .page__employers h3,
-.page__employers .contacts-сard h2,
-.contacts-сard .page__employers h2,
-.page__employers .form-review__title,
-.page__employers .form-review__feedback-title {
+.about__reward .page__employers h3 {
   margin-bottom: 50px;
 }
 
@@ -997,65 +778,15 @@ body.no-scroll {
 }
 
 .page__questions .title,
-.page__questions .form-request-open__title,
-.page__questions .form-request-open__title-mobile,
 .page__questions .about__quote p,
 .about__quote .page__questions p,
-.page__questions .about__content h2,
-.about__content .page__questions h2,
 .page__questions .about__reward h3,
 .about__reward .page__questions h3,
-.page__questions .videogallery .slick-current .videogallery__slide h2,
-.videogallery .slick-current .videogallery__slide .page__questions h2,
-.page__questions .message-dir-open__title,
-.page__questions .employers__additionally-content h2,
-.employers__additionally-content .page__questions h2,
-.page__questions .emplyee-card__content p:first-of-type,
-.emplyee-card__content .page__questions p:first-of-type,
-.page__questions .masters-services h2,
-.masters-services .page__questions h2,
-.page__questions .jobs__card h2,
-.jobs__card .page__questions h2,
-.page__questions .jobs__card h3,
-.jobs__card .page__questions h3,
-.page__questions .questions__card h2,
-.questions__card .page__questions h2,
-.page__questions .questions__card h3,
-.questions__card .page__questions h3,
-.page__questions .contacts-сard h2,
-.contacts-сard .page__questions h2,
-.page__questions .form-review__title,
-.page__questions .form-review__feedback-title,
 .page__jobs .title,
-.page__jobs .form-request-open__title,
-.page__jobs .form-request-open__title-mobile,
 .page__jobs .about__quote p,
 .about__quote .page__jobs p,
-.page__jobs .about__content h2,
-.about__content .page__jobs h2,
 .page__jobs .about__reward h3,
-.about__reward .page__jobs h3,
-.page__jobs .videogallery .slick-current .videogallery__slide h2,
-.videogallery .slick-current .videogallery__slide .page__jobs h2,
-.page__jobs .message-dir-open__title,
-.page__jobs .employers__additionally-content h2,
-.employers__additionally-content .page__jobs h2,
-.page__jobs .emplyee-card__content p:first-of-type,
-.emplyee-card__content .page__jobs p:first-of-type,
-.page__jobs .masters-services h2,
-.masters-services .page__jobs h2,
-.page__jobs .jobs__card h2,
-.jobs__card .page__jobs h2,
-.page__jobs .jobs__card h3,
-.jobs__card .page__jobs h3,
-.page__jobs .questions__card h2,
-.questions__card .page__jobs h2,
-.page__jobs .questions__card h3,
-.questions__card .page__jobs h3,
-.page__jobs .contacts-сard h2,
-.contacts-сard .page__jobs h2,
-.page__jobs .form-review__title,
-.page__jobs .form-review__feedback-title {
+.about__reward .page__jobs h3 {
   margin-bottom: 40px;
 }
 
@@ -1070,35 +801,10 @@ body.no-scroll {
 }
 
 .page__review .title,
-.page__review .form-request-open__title,
-.page__review .form-request-open__title-mobile,
 .page__review .about__quote p,
 .about__quote .page__review p,
-.page__review .about__content h2,
-.about__content .page__review h2,
 .page__review .about__reward h3,
-.about__reward .page__review h3,
-.page__review .videogallery .slick-current .videogallery__slide h2,
-.videogallery .slick-current .videogallery__slide .page__review h2,
-.page__review .message-dir-open__title,
-.page__review .employers__additionally-content h2,
-.employers__additionally-content .page__review h2,
-.page__review .emplyee-card__content p:first-of-type,
-.emplyee-card__content .page__review p:first-of-type,
-.page__review .masters-services h2,
-.masters-services .page__review h2,
-.page__review .jobs__card h2,
-.jobs__card .page__review h2,
-.page__review .jobs__card h3,
-.jobs__card .page__review h3,
-.page__review .questions__card h2,
-.questions__card .page__review h2,
-.page__review .questions__card h3,
-.questions__card .page__review h3,
-.page__review .contacts-сard h2,
-.contacts-сard .page__review h2,
-.page__review .form-review__title,
-.page__review .form-review__feedback-title {
+.about__reward .page__review h3 {
   margin-bottom: 40px;
 }
 
@@ -1151,7 +857,7 @@ body.no-scroll {
 }
 
 .main-offer {
-  background: url(/img/main-offer-background.jpg) no-repeat center;
+  background: url(/img/windows/main-offer.jpg) no-repeat center;
   background-size: cover;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1164,12 +870,6 @@ body.no-scroll {
       -ms-flex-align: start;
           align-items: flex-start;
   padding: 97px 0 80px 0;
-}
-
-.main-offer_center {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .main-offer__overtitle {
@@ -1215,12 +915,6 @@ body.no-scroll {
 
 .main-offer__input {
   margin-bottom: 20px;
-}
-
-.main-offer__girl {
-  position: absolute;
-  right: 195px;
-  bottom: 73px;
 }
 
 .button,
@@ -1421,11 +1115,11 @@ body.no-scroll {
 
 .card__title {
   text-transform: uppercase;
-  font-family: 'Futura PT - Light';
+  font-family: 'Futura PT';
   font-size: 26px;
   text-align: center;
   color: #50555a;
-  margin: 28px 0 0 0;
+  margin: 28px 0 15px 0;
 }
 
 .card__subtitle {
@@ -1437,12 +1131,6 @@ body.no-scroll {
   text-align: center;
   padding: 0 15px;
   margin: 0;
-}
-
-.card__line {
-  width: 80px;
-  border: 1px solid #d0d2d4;
-  margin: 14px 0  0 0;
 }
 
 .card__price {
@@ -1988,7 +1676,7 @@ body.no-scroll {
 }
 
 .catalog-cards {
-  padding: 80px 0;
+  padding: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1997,24 +1685,6 @@ body.no-scroll {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-}
-
-.catalog-cards__overtitle {
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
-}
-
-.catalog-cards__title {
-  margin-bottom: 80px;
-  text-align: center;
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
-}
-
-.catalog-cards__subtitle {
-  margin-bottom: 60px;
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
 }
 
 .catalog-cards__item {
@@ -2031,7 +1701,6 @@ body.no-scroll {
 }
 
 .portfolio {
-  padding: 100px 0 100px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2040,17 +1709,6 @@ body.no-scroll {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-}
-
-.portfolio__overtitle {
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
-}
-
-.portfolio__title {
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
-  margin-bottom: 80px;
 }
 
 .portfolio__switcher {
@@ -2081,10 +1739,6 @@ body.no-scroll {
       flex-basis: 19%;
 }
 
-.services {
-  padding: 100px 0 0 0;
-}
-
 .services__list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2096,24 +1750,6 @@ body.no-scroll {
           justify-content: center;
 }
 
-.services__title {
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
-  margin-bottom: 80px;
-}
-
-.services__overtitle {
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
-}
-
-.services__intro {
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
-  margin: 0 auto;
-  margin-bottom: 100px;
-}
-
 .services__card {
   margin: 0 .625rem 2rem .625rem;
   -ms-flex-preferred-size: calc(25% - 20px);
@@ -2121,7 +1757,7 @@ body.no-scroll {
 }
 
 .promos {
-  padding: 100px 0 0 0;
+  padding: 0 0 0 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2135,25 +1771,10 @@ body.no-scroll {
           justify-content: space-between;
 }
 
-.promos__title {
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
-  margin-bottom: 80px;
-}
-
-.promos__overtitle {
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
-}
-
 .promos__item {
   -ms-flex-preferred-size: 32.5%;
       flex-basis: 32.5%;
   margin-bottom: 20px;
-}
-
-.promos__intro {
-  margin-bottom: 50px;
 }
 
 .promo {
@@ -2223,12 +1844,6 @@ body.no-scroll {
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 0 0 60px 0;
-}
-
-.manufacturers__title {
-  margin: 0 0 80px 0;
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
 }
 
 .manufacturers__list {
@@ -2562,23 +2177,6 @@ body.no-scroll {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   padding: 50px 0 50px 0;
-}
-
-.reviews__overtitle {
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
-}
-
-.reviews__intro {
-  -ms-flex-preferred-size: 80%;
-      flex-basis: 80%;
-  margin: 0 auto;
-}
-
-.reviews__title {
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
-  margin: 0 0 50px 0;
 }
 
 .reviews__item {
@@ -3605,7 +3203,7 @@ body.no-scroll {
   position: relative;
   padding-top: 5rem;
   padding-bottom: 4.0625rem;
-  background-image: url("/img/background-footer-form.jpg");
+  background-image: url("/img/footer-form.jpg");
   background-size: cover;
   -webkit-box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.24), 0 0 0.5rem rgba(0, 0, 0, 0.12), inset 0 -0.0625rem 0.0625rem #d1dadf;
           box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.24), 0 0 0.5rem rgba(0, 0, 0, 0.12), inset 0 -0.0625rem 0.0625rem #d1dadf;
@@ -5419,7 +5017,7 @@ body.no-scroll {
 }
 
 .calculator {
-  padding: 100px 0;
+  padding: 0;
 }
 
 .calculator__types {

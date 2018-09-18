@@ -209,10 +209,6 @@
 
         h2 {
             margin-bottom: rem(60);
-
-            @extend .title;
-            @extend .title_medium;
-            @extend .title_underline;
             @include below($tablet) {
                 font-size: rem(26);
             }

@@ -11,10 +11,6 @@
         margin-bottom: rem(60);
 
         text-align: center;
-
-        @extend .title;
-        @extend .title_underline;
-        @extend .title_medium;
     }
 
     &__content {

@@ -7,7 +7,7 @@
     padding-top: rem(80);
     padding-bottom: rem(65);
 
-    background-image: url('/img/background-footer-form.jpg');
+    background-image: url('/img/footer-form.jpg');
     background-size: cover;
     box-shadow: 0 rem(8) rem(8) rgba($black, .24), 0 0 rem(8) rgba($black, .12), inset 0 rem(-1) rem(1) #d1dadf;
 
@@ -51,8 +51,6 @@
         font-weight: 300;
         text-align: center;
 
-        @extend .title;
-        @extend .title_card;
         line-height: 1.2;
         @include below($tablet) {
             margin-bottom: rem(20);

@@ -17,24 +17,26 @@
 
                 <p class="form__agreement">Оставляя контактную информацию, Вы соглашаетесь на обработку персональных данных</p>
             </form>
-            <img class="main-offer__girl" src="/img/main-offer-girl.png" alt="">
         </div>
     </section>
 
     <section class="catalog-cards container">
-        <p class="overtitle catalog-cards__overtitle">Каталог</p>
-        <h1 class="title catalog-cards__title">Светопрозрачные конструкции {{ $city->name_formatted }} от&nbspпроизводителя</h1>
-        <p class="subtitle catalog-cards__subtitle">Фабрика окон №1 {{ $city->name_formatted }}. Посмотрите каталог и ниже рассчитайте Ваш заказ за 5 секунд.</p>
-
-        @include('common.card', ['class' => 'catalog-cards__item', 'img' => 'http://okna-ts.ru/local/templates/windows/source/builds/static/img/assets/catalogueItem/catalogue-windows-1.jpg', 'title' => 'Окна', 'price' => '500'])
-        @include('common.card', ['class' => 'catalog-cards__item', 'img' => 'http://okna-ts.ru/local/templates/windows/source/builds/static/img/assets/catalogueItem/catalogue-windows-1.jpg', 'title' => 'Окна', 'price' => '500'])
-        @include('common.card', ['class' => 'catalog-cards__item', 'img' => 'http://okna-ts.ru/local/templates/windows/source/builds/static/img/assets/catalogueItem/catalogue-windows-1.jpg', 'title' => 'Окна', 'price' => '500'])
-        @include('common.card', ['class' => 'catalog-cards__item', 'img' => 'http://okna-ts.ru/local/templates/windows/source/builds/static/img/assets/catalogueItem/catalogue-windows-1.jpg', 'title' => 'Окна', 'price' => '500'])
+        @include('common.gui.titles', [
+            'overtitle' =>  'Каталог',
+            'title' =>  "Светопрозрачные конструкции {$city->name_formatted} от&nbspпроизводителя",
+            'intro' =>  "Фабрика окон №1 {$city->name_formatted}. Посмотрите каталог и ниже рассчитайте Ваш заказ за 5 секунд."
+        ])
+        
+        @include('common.gui.card', ['class' => 'catalog-cards__item', 'img' => 'http://okna-ts.ru/local/templates/windows/source/builds/static/img/assets/catalogueItem/catalogue-windows-1.jpg', 'title' => 'Окна', 'price' => '500'])
+        @include('common.gui.card', ['class' => 'catalog-cards__item', 'img' => 'http://okna-ts.ru/upload/okna-min/dveri-min.png', 'title' => 'Двери', 'price' => '500'])
+        @include('common.gui.card', ['class' => 'catalog-cards__item', 'img' => 'http://okna-ts.ru/upload/okna-min/balkoni-min.png', 'title' => 'Балконы', 'price' => '500'])
+        @include('common.gui.card', ['class' => 'catalog-cards__item', 'img' => 'http://okna-ts.ru/local/templates/windows/source/builds/static/img/assets/catalogueItem/catalogue-windows-4.jpg', 'title' => 'Перегородки', 'price' => '500'])
     </section>
 
     <section class="manufacturers container">
 
-        <h2 class="second-title manufacturers__title">Производители профилей</h2>
+        @include('common.gui.titles', ['secondTitle' => 'Производители профилей'])
+
         <div class="manufacturers__list">
             <img src="http://okna-ts.ru/local/templates/windows/source/builds/static/img/assets/featuresCard/montblanc.png" alt="" class="manufacturers__item">
             <img src="http://okna-ts.ru/local/templates/windows/source/builds/static/img/assets/featuresCard/salamander.png" alt="" class="manufacturers__item">
@@ -47,12 +49,12 @@
     </section>
 
     <section class="calc-promo container">
-
-        <h2 class="second-title calc-promo__title">Калькулятор стоимости</h2>
-        <p class="intro calc-promo__intro">
-            Для вашего удобства мы разработали онлайн калькулятор для предварительного расчета вашей конструкции.
-            Кликните на кнопку «Рассчитать» и выберите тип изделия для перехода в нужный раздел.
-        </p>
+        @include('common.gui.titles', [
+            'secondTitle' => 'Калькулятор стоимости',
+            'intro' =>  "Для вашего удобства мы разработали онлайн калькулятор для предварительного расчета вашей конструкции.
+            Кликните на кнопку «Рассчитать» и выберите тип изделия для перехода в нужный раздел."
+        ])
+        
         <div class="calc-promo__footer">
             <a href="" class="button button_inline button_red calc-promo__button">Рассчитать</a>
         </div>
@@ -60,20 +62,18 @@
     </section>
 
     <section class="portfolio-list">
-        <h2 class="second-title portfolio-list__title">Наши работы</h2>
+        @include('common.gui.titles', ['secondTitle' => 'Наши работы'])
         <div class="portfolio-list__list">
-                @include('common.card', ['class' => 'portfolio-list__item', 'img' => 'http://okna-ts.ru/local/templates/windows/source/builds/static/img/assets/catalogueItem/catalogue-windows-1.jpg', 'title' => 'Окна', 'price' => '500'])
-                @include('common.card', ['class' => 'portfolio-list__item', 'img' => 'http://okna-ts.ru/local/templates/windows/source/builds/static/img/assets/catalogueItem/catalogue-windows-1.jpg', 'title' => 'Окна', 'price' => '500'])
-                @include('common.card', ['class' => 'portfolio-list__item', 'img' => 'http://okna-ts.ru/local/templates/windows/source/builds/static/img/assets/catalogueItem/catalogue-windows-1.jpg', 'title' => 'Окна', 'price' => '500'])
-                @include('common.card', ['class' => 'portfolio-list__item', 'img' => 'http://okna-ts.ru/local/templates/windows/source/builds/static/img/assets/catalogueItem/catalogue-windows-1.jpg', 'title' => 'Окна', 'price' => '500'])
-                @include('common.card', ['class' => 'portfolio-list__item', 'img' => 'http://okna-ts.ru/local/templates/windows/source/builds/static/img/assets/catalogueItem/catalogue-windows-1.jpg', 'title' => 'Окна', 'price' => '500'])
+                @include('common.gui.card', ['class' => 'portfolio-list__item', 'img' => 'http://okna-ts.ru/local/templates/windows/source/builds/static/img/assets/catalogueItem/catalogue-windows-1.jpg', 'title' => 'Окна', 'price' => '500'])
+                @include('common.gui.card', ['class' => 'portfolio-list__item', 'img' => 'http://okna-ts.ru/local/templates/windows/source/builds/static/img/assets/catalogueItem/catalogue-windows-1.jpg', 'title' => 'Окна', 'price' => '500'])
+                @include('common.gui.card', ['class' => 'portfolio-list__item', 'img' => 'http://okna-ts.ru/local/templates/windows/source/builds/static/img/assets/catalogueItem/catalogue-windows-1.jpg', 'title' => 'Окна', 'price' => '500'])
+                @include('common.gui.card', ['class' => 'portfolio-list__item', 'img' => 'http://okna-ts.ru/local/templates/windows/source/builds/static/img/assets/catalogueItem/catalogue-windows-1.jpg', 'title' => 'Окна', 'price' => '500'])
+                @include('common.gui.card', ['class' => 'portfolio-list__item', 'img' => 'http://okna-ts.ru/local/templates/windows/source/builds/static/img/assets/catalogueItem/catalogue-windows-1.jpg', 'title' => 'Окна', 'price' => '500'])
         </div>
     </section>
 
     <section class="reviews container">
-        <h2 class="second-title reviews__title">
-            Отзывы наших клиентов
-        </h2>
+        @include('common.gui.titles', ['secondTitle' => 'Отзывы наших клиентов'])
 
         @foreach($reviews as $review)
             @include('common.gui.review', $review)
