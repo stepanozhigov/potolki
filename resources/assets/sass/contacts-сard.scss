@@ -82,8 +82,6 @@
 
         border: none;
 
-        @extend .arrow;
-        @extend .arrow_vertical-big;
         @include below($mobile) {
             display: flex;
             align-items: center;
@@ -112,8 +110,6 @@
         padding-left: rem(25);
         margin: 0;
 
-        @extend .text;
-        @extend .text_size_small;
         @include below($mobile) {
             padding-left: 0;
 

@@ -170,8 +170,6 @@
 
             color: $white;
 
-            @extend .text;
-            @extend .text_size_small;
         }
     }
 
@@ -195,7 +193,6 @@
 
         border-radius: rem(5);
 
-        @extend .button_gray;
         @include below($tablet-small) {
             width: rem(240);
             height: rem(60);

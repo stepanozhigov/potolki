@@ -88,7 +88,7 @@
 
         border-radius: rem(5);
 
-        @extend .button_gray;
+
         @include below($tablet-small) {
             width: rem(240);
             height: rem(60);
@@ -172,8 +172,6 @@
             width: 100%;
             margin: 0;
 
-            @extend .text;
-            @extend .text_size_medium;
             @include below($tablet-small) {
                 max-height: rem(87);
             }

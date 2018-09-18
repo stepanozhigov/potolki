@@ -6,6 +6,10 @@
     align-items: flex-start;
     padding: 97px 0 80px 0;
 
+    &_center {
+        align-items: center;
+    }
+    
     &__overtitle {
         text-align: left;
         color: $white;

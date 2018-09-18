@@ -91,9 +91,6 @@
 
             transform: translateY(-50%);
 
-            @extend .text;
-            @extend .text_size_big;
-
             &::after {
                 background-color: $white;
             }
@@ -106,8 +103,6 @@
             color: $white;
             text-align: center;
 
-            @extend .text;
-            @extend .text_size_medium;
         }
     }
 

@@ -423,8 +423,6 @@
 
         color: #e5e5e5;
 
-        @extend .text;
-        @extend .text_size_small;
         @include below($phablet) {
             font-size: rem(18);
             text-align: center;
@@ -631,8 +629,6 @@
 
         color: #e5e5e5;
 
-        @extend .text;
-        @extend .text_size_small;
         @include below($mobile) {
             width: rem(235);
         }
@@ -647,8 +643,6 @@
 
         transition: .3s;
 
-        @extend .text;
-        @extend .text_size_small;
         @include below($mobile) {
             font-size: rem(18);
             text-align: left;

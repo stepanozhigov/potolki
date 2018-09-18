@@ -94,7 +94,6 @@
 
         background-color: $white;
 
-        @extend .button_tag;
         @include below($tablet-small) {
             height: rem(50);
             padding: rem(15) rem(20);
@@ -196,8 +195,6 @@
             width: 100%;
             margin: 0;
 
-            @extend .text;
-            @extend .text_size_medium;
             @include below($tablet-small) {
                 max-height: rem(87);
             }

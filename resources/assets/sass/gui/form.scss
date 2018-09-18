@@ -1,4 +1,10 @@
+@import './gui/input';
+
 .form {
     display: flex;
     flex-direction: column;
+
+    &_horiz {
+        flex-direction: row;
+    }
 }

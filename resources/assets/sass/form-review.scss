@@ -117,8 +117,6 @@
         margin-top: 0;
         margin-bottom: rem(25);
 
-        @extend .text;
-        @extend .text_size_big;
         @include below($tablet) {
             margin-bottom: rem(20);
         }
@@ -187,9 +185,6 @@
 
     &__input {
         width: 100%;
-
-        @extend .input;
-        @extend .input_big;
     }
 
     &__avatar-input {
@@ -247,7 +242,6 @@
         min-height: rem(130);
         margin-bottom: rem(50);
 
-        @extend .textarea;
         @include below($mobile) {
             min-height: rem(200);
         }
@@ -268,7 +262,7 @@
     }
 
     &__select {
-        @extend .select;
+
         @include below($mobile) {
             width: auto;
 
@@ -293,8 +287,6 @@
         width: rem(230);
         margin-right: rem(30);
 
-        @extend .button;
-        @extend .button_red;
         @include below($tablet) {
             width: rem(300);
             height: rem(60);
@@ -308,7 +300,7 @@
         font-size: rem(12);
         color: #969a9d;
 
-        @extend .text;
+
         @include below($tablet) {
             width: rem(395);
             padding-top: rem(25);
@@ -382,9 +374,6 @@
         display: none;
         margin-left: rem(15);
 
-        @extend .text;
-        @extend .text_size_medium;
-
         &.show {
             display: inline-block;
 
@@ -405,16 +394,10 @@
     &__feedback-text {
         margin-top: 0;
         margin-bottom: rem(50);
-
-        @extend .text;
-        @extend .text_size_medium;
     }
 
     &__feedback-button {
         width: rem(300);
         margin: 0 auto;
-
-        @extend .button;
-        @extend .button_gray;
     }
 }

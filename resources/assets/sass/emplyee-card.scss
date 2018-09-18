@@ -118,9 +118,6 @@
 
             text-align: center;
 
-            @extend .text;
-            @extend .text_size_small;
-
             &:first-of-type {
                 margin: 0;
                 padding: 0;

@@ -5,7 +5,7 @@
 
 @import 'common';
 
-@import 'main-offer';
+@import './gui/main-offer';
 
 @import 'button';
 
@@ -17,7 +17,7 @@
 
 @import 'menu';
 
-@import 'form';
+@import './gui/form';
 
 @import './gui/catalog-cards';
 
@@ -37,7 +37,7 @@
 
 @import 'mixins';
 
-@import 'form-request-open';
+@import 'footer-offer';
 
 @import 'personal-data';
 

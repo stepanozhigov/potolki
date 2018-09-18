@@ -1,11 +1,4 @@
-@include('common.footer-offer')
-<div class="popup" id="popup_callback">
-    <img src="/img/close.svg" alt="" class="popup__close js-close">
-    @include('common.forms.callback')
-</div>
-<div class="overlay js-close"></div>
-
-<footer class="footer {{ !empty($class) ? $class:'' }}">
+<footer class="footer footer_light">
     <div class="container">
         <div class="footer__inner">
             <div class="footer__contacts">
@@ -112,15 +105,6 @@
                 </div>
                 <div class="footer__footer">
                     <div class="footer__item">
-                        <a href="javascript:void(0);" class="footer__title">Вопрос-ответ</a>
-                    </div>
-                    <div class="footer__item">
-                        <a href="javascript:void(0);" class="footer__title">Рассрочка</a>
-                    </div>
-                    <div class="footer__item">
-                        <a href="javascript:void(0);" class="footer__title">Скидки</a>
-                    </div>
-                    <div class="footer__item">
                         <a href="javascript:void(0);" class="footer__social footer__social_vk"></a>
                         <a href="javascript:void(0);" class="footer__social footer__social_ok"></a>
                         <a href="javascript:void(0);" class="footer__social footer__social_fb"></a>
@@ -133,7 +117,7 @@
     <div class="footer__copyright">
         <div class="container">
             <div class="footer__copyright-content">
-                <p class="footer__copyright-text">&copy;  2003-2016  ООО «Твой Стиль»  Все права защищены</p>
+                <p class="footer__copyright-text">©  2003-2016  ООО «Твой Стиль»  Все права защищены</p>
                 <div class="footer__developer">
                     <div class="footer__developer-content">
                         <p class="footer__developer-text">Разработка и продвижение – <a href="javascript:void(0);" class="footer__developer-link" target="_blank">
