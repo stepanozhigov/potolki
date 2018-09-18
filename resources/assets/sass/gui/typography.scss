@@ -111,6 +111,7 @@
 
 .card-title {
     text-transform: uppercase;
+    text-decoration: none;
     font-family: $futura;
     font-size: 26px;
     color: $grey_abbey;
@@ -132,7 +133,7 @@
     color: $grey_abbey;
     font-size: 16px;
     line-height: 22px;
-
+   
     &_bold {
         font-weight: 500;
     }
@@ -144,6 +145,8 @@
     font-size: 14px;
     font-weight: 300;
     line-height: 19px;
+    margin: 0;
+    text-decoration: none;
 }
 
 .titles {
