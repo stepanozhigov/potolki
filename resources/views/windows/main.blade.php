@@ -13,9 +13,9 @@
                 <input class="input main-offer__input" type="text"  placeholder="Ваше имя">
                 <input class="input main-offer__input" type="tel"  placeholder="Ваш телефон">
 
-                <button class="button button_red">Вызвать замерщика</button>
+                <button class="button">Вызвать замерщика</button>
 
-                <p class="form__agreement">Оставляя контактную информацию, Вы соглашаетесь на обработку персональных данных</p>
+                <p class="form__agreement subtext subtext_white">Оставляя контактную информацию, Вы соглашаетесь на обработку персональных данных</p>
             </form>
         </div>
     </section>

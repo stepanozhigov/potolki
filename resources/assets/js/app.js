@@ -18,6 +18,11 @@ require('./components/popup');
  */
 
 Vue.component('window-calc', require('./components/WindowCalc.vue'));
+Vue.component('city-search', require('./components/CitySearch.vue'));
+
+const citySearch = new Vue({
+    el: '#city-search'
+});
 
 const windowCalc = new Vue({
     el: '#window-calc'

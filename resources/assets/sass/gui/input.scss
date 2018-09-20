@@ -4,4 +4,31 @@
     background-color: $white;
     padding: 15px 20px;
     outline: none;
+    color: $grey_abbey;
+    font-family: "Helvetica Neue";
+    font-size: 18px;
+}
+.search {
+    display: flex;
+    position: relative;
+
+    &__icon {
+        position: absolute;
+        left: 24px;
+        top: 15px;
+    }
+
+    &__input {
+        width: 100%;
+        padding-left: 60px;
+        height: 50px;
+    }
+
+    &__result {
+        margin-left: 30px;
+    }
+
+    &__button {
+        margin-bottom: 30px;
+    }
 }

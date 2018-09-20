@@ -3,5 +3,13 @@
 .form {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 
+    &__input {
+        width: 33%;
+    }
+
+    &__agreement {
+        flex-basis: 100%;
+    }
 }

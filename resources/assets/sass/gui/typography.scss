@@ -134,6 +134,10 @@
     font-size: 16px;
     line-height: 22px;
    
+    &_white {
+        color: $white;
+    }
+    
     &_bold {
         font-weight: 500;
     }
@@ -147,6 +151,14 @@
     line-height: 19px;
     margin: 0;
     text-decoration: none;
+
+    &_white {
+        color: $white;
+    }
+
+    &_center {
+        text-align: center;
+    }
 }
 
 .titles {

@@ -3,20 +3,25 @@
 @section('content')
     @include('common.header_light')
 
-    <section class="main-offer main-offer_center">
-        <h1 class="title main-offer__title main-offer__title_center">Фабрика пластиковых окон «Твой&#160;стиль»</h1>
-        <p class="main-offer__subtitle subtitle">Выберите город, чтобы перейти на сайт</p>
-        <a href="/" class="button button_red main-offer__button  ">Выбрать Сочи</a>
-        <a href="/" class="button button_gray main-offer__button  ">Выбрать другой город</a>
+    <section class="index-offer">
+        <h1 class="title index-offer__title">Фабрика пластиковых окон «Твой&#160;стиль»</h1>
+        <p class="intro index-offer__intro">Выберите город, чтобы перейти на сайт</p>
+        <div class="index-offer__buttons">
+            <a href="/" class="button index-offer__button">Выбрать Сочи</a>
+            <a href="/" class="button button_gray index-offer__button">Выбрать другой город</a>
+        </div>        
     </section>
 
     <section class="cities">
         <h2 class="second-title cities__title">Филиалы в других городах</h2>
-
         @foreach($cities as $city)
-            <a href="{{ route('windows.main', ['city' => $city->code]) }}" class="button cities__item">{{ $city->name }}</a>
+            <a href="{{ route('windows.main', ['city' => $city->code]) }}" class="button button_inline cities__item">{{ $city->name }}</a>
         @endforeach
-
+        <p class="intro cities__intro">Нет вашего города? Воспользуйтесь поиском</p>
+        <div id="city-search" class="cities__search">
+            <city-search :cities="{{ $cities }}"></city-search>
+        </div>
+                
     </section>
 
     <section class="directions container">
@@ -29,5 +34,5 @@
             </div>
         @endforeach
     </section>
-    @include('common.footer', ['class' => 'footer_light'])
+    @include('common.gui.footer_light') 
 @endsection
