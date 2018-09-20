@@ -1,4 +1,4 @@
-@import 'gui/review';
+@import './gui/review';
 
 .reviews {
     display: flex;
@@ -8,7 +8,7 @@
 
     &__item {
         flex-basis: 32.5%;
-        margin-top: 150px;
+        margin-top: 70px;
     }
 
     &__buttons {

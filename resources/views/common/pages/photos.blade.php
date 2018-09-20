@@ -18,10 +18,10 @@
             </div>
 
             @foreach($photos as $photo)
-                <a class="card portfolio__item">
+                <a class="card b-card portfolio__item">
                     <p class="card__plate">{{ $photo->price }}  ₽ / {{ $photo->area }} м2</p>
                     <img src="{{ Voyager::image( $photo->thumbnail('preview','src') ) }}" alt="Фотопечать" class="card__img">
-                    <p class="card__title">{{ $photo->name }}</p>
+                    <p class="card-title card__title">{{ $photo->name }}</p>
                 </a>
             @endforeach
             

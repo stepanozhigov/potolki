@@ -13,7 +13,9 @@
     </section>
 
     <section class="cities">
-        <h2 class="second-title cities__title">Филиалы в других городах</h2>
+        @include('common.gui.titles', [
+            'secondTitle'  =>  'Филиалы в других городах'
+        ])
         @foreach($cities as $city)
             <a href="{{ route('windows.main', ['city' => $city->code]) }}" class="button button_inline cities__item">{{ $city->name }}</a>
         @endforeach
@@ -24,14 +26,15 @@
                 
     </section>
 
-    <section class="directions container">
-        <h2 class="second-title directions__title">Другие направления компании</h2>
-
+    <section class="directions container b-texture">
+        @include('common.gui.titles', [
+            'secondTitle'  =>  'Другие направления компании'
+        ])
         @foreach($directions as $direction)
-            <div class="card directions__item">
-                <img class="card__img" src="{{ Storage::url($direction->image) }}" alt="{{ $direction->name }}" >
-                <p class="card__title">{{ $direction->name }}</p>
-            </div>
+            <a href="{{ $direction->site }}" class="direction b-card directions__item">
+                <img class="direction__img" src="{{ Storage::url($direction->image) }}" alt="{{ $direction->name }}" >
+                <p class="card-title direction__title">{{ $direction->name }}</p>
+            </a>
         @endforeach
     </section>
     @include('common.gui.footer_light') 

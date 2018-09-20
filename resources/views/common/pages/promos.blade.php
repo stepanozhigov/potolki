@@ -8,7 +8,7 @@
                 'intro' =>  "Сотрудничайте с нами и Вас ждут выгодные акции на все конструкции от компании «Твой стиль». У нас Вы получите индивидуальную скидку при общении с персональным менеджером."
             ])            
             @foreach($promos as $promo)
-                <a class="promo promos__item">
+                <a class="promo b-card promos__item">
                     <img src="{{ Storage::url($promo->image) }}" alt="Фотопечать" class="promo__img">
                     <div class="promo__inner">
                         <p class="card-title promo__title">{!! $promo->title !!}</p>

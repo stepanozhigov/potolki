@@ -1,4 +1,4 @@
-<a href="{{ $link ?? '' }}" class="card {{ $class ?? '' }}">
+<a href="{{ $link ?? '' }}" class="card b-card {{ $class ?? '' }}">
 
     @isset($plate)
         <p class="card__plate">12000  ₽ / 8 м2</p>
@@ -9,7 +9,7 @@
     @endisset
 
     @isset($title)
-        <p class="card__title">{{ $title }}</p>
+        <p class="card-title card__title">{{ $title }}</p>
     @endisset
 
     <hr class="line line_bold">

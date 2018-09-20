@@ -5,7 +5,7 @@
     justify-content: space-between;
 
     &__item {
-        flex-basis: 24%;
+        width: 24.5%;
 
         @media screen and (max-width: 700px) {
             flex-basis: 100%;   

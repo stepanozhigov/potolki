@@ -2,9 +2,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.16), inset 0 -1px 0 rgba(0, 0, 0, 0.12);
-    border-radius: 5px;
-    background-color: $white;
     position: relative;
     text-decoration: none;
     will-change: transform;
@@ -20,11 +17,6 @@
     }
 
     &__title {
-        text-transform: uppercase;
-        font-family: 'Futura PT';
-        font-size: 26px;
-        text-align: center;
-        color: $grey_abbey;
         margin: 28px 0 15px 0;
         padding: 0 30px;
     }
@@ -51,7 +43,7 @@
     &__img {
        
         width: 100%;
-        height: 250px;
+        height: 220px;
         border-radius: 5px;
         margin: 0;
     }

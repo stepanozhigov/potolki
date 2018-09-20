@@ -7,10 +7,7 @@
     cursor: pointer;    
 
     &__body {
-        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.16), 0 0 4px rgba(0, 0, 0, 0.08);
-        border-radius: 5px;
-        background-color: $white;
-
+        z-index: 2;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -23,27 +20,16 @@
     }
 
     &__line {
-        width: 120px;
-        height: 0;
-        border: 0;
-        margin: 0;
-        border-bottom: 1px solid #b9bec3;
+        margin-bottom: 5px;
     }
 
     &__date {
-        text-align: center;
         color: #b9bec3;
-        font-family: "Helvetica Neue";
-        font-size: 14px;
-        font-weight: 300;
+        margin-bottom: 15px;
     }
 
     &__text {
         color: #475059;
-        font-family: "Helvetica Neue";
-        font-size: 14px;
-        font-weight: 300;
-        line-height: 20px;
         text-align: center;
         padding: 0 20px;
         margin-bottom: 30px;
@@ -52,17 +38,16 @@
     &__counters {
         width: 85px;
         color: #80878e;
-        font-family: "Helvetica Neue";
-        font-size: 14px;
-        font-weight: 300;
         display: flex;
         justify-content: space-between;
     }
 
     &__media {
         height: 13.125rem;
-        margin-top: -3px;
-        z-index: -1;
+        margin-top: -6px;
+        z-index: 1;
+        width: 100%;
+        overflow: hidden;
     }
 
     &__img {

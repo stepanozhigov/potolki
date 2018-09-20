@@ -1,9 +1,9 @@
 <a href="{{ $link ?? '' }}" class="person {{ $class ?? '' }}">
-    <img src="{{ $img }}" alt="" class="person__photo">
+    <img src="{{ $img }}" alt="" class="avatar person__photo">
     <div class="person__info">
         <p class="person__name">{{ $name }}</p> 
         @isset($line)
-            <hr class="line">
+            <hr class="line person__line">
         @endisset
 
         @isset($text)

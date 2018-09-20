@@ -27,3 +27,22 @@ const citySearch = new Vue({
 const windowCalc = new Vue({
     el: '#window-calc'
 });
+
+import typewriter from 'typewriter-effect/dist/core';
+
+let $writtenElements = $('.js-writen');
+
+$writtenElements.each((index, element) => {
+    var $element = $(element),
+        text = $element.text(),
+        additionalTexts = $element.data('texts');
+    
+    console.log(additionalTexts);
+    new typewriter(element, {
+        strings: [text].concat(additionalTexts),
+        autoStart: true,
+        loop: true,
+        delay: 50
+    });
+})
+

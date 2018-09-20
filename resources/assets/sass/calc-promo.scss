@@ -3,12 +3,12 @@
     flex-wrap: wrap;
     justify-content: flex-end;
     position: relative;
-    padding: 0 0 100px 0;
+    padding: 40px 0 100px 0;
 
     &:before {
         content: '';
         position: absolute;
-        top: 0;
+        top: 130px;
         left: 0;
         display: block;
         width: 31.6875rem;
@@ -17,20 +17,14 @@
         background-repeat: no-repeat;
         z-index: 0;
     }
-
-    &__title {
-        flex-basis: 60%;
-        text-align: start;
-        margin-bottom: 50px;
+    &__titles {
+        width: 60%;
+        align-items: flex-start;
         z-index: 1;
-
-        &:after {
-            right: initial;
-        }
     }
-
+   
     &__intro {
-        flex-basis: 60%;
+        margin-top: 30px;
         text-align: start;
         z-index: 1;
     }

@@ -145,7 +145,7 @@ body {
     align-items: center;
     justify-content: space-between;
     text-decoration: none;
-    
+
     &__icon {
         margin-right: 10px;
     }
@@ -499,4 +499,39 @@ body {
         right: -20px;
         border-radius: 50%;
     }
+}
+
+.avatar {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    border: .0625rem solid transparent;
+    box-shadow: 0 0.5rem 0.5rem rgba(0,0,0,.16), 0 0 0.5rem rgba(0,0,0,.08), 0.0625rem 0 rgba(0,0,0,.1);
+}
+
+.b-texture {
+    position: relative;
+    
+    &:before {
+        z-index: -1;
+        content: '';
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        width: 48.75rem;
+        height: 100%;
+        margin-right: auto;
+        margin-left: auto;
+        border-radius: .3125rem;
+        background-image: url(/img/gui/texture2.png);
+    }
+}
+
+.b-card {
+    background: $white;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.16), inset 0 -1px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 5px;
+    text-decoration: none;
 }

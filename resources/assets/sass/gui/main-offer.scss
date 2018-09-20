@@ -15,11 +15,12 @@
     }
 
     &__title {
+        min-height: 106px;
         color: $white;
         text-align: left;
         font-size: 58px;
         margin-bottom: 19px;
-        max-width: 650px;
+        max-width: 560px;
 
         &_center {
             text-align: center;

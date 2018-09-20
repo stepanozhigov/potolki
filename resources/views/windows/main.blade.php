@@ -6,7 +6,13 @@
     <section class="main-offer">
         <div class="main-offer__inner container">
             <p class="text main-offer__overtitle">Уникальное предложение</p>
-            <h1 class="title main-offer__title">Пластиковые окна со&nbspскидкой&nbsp30%</h1>
+            @php
+                $texts = json_encode([
+                    'Бесплатный выезд замерного мастера!',
+                    'Успейте заказать сейчас!'
+                ]);
+            @endphp
+            <h1 class="title main-offer__title js-writen" data-texts="{{$texts}}">Пластиковые окна со&nbspскидкой&nbsp30%</h1>
             <p class="main-offer__subtitle">Для получения скидки оставьте заявку</p>
 
             <form class="form main-offer__form" action="" id="offer-form">
@@ -49,19 +55,22 @@
     </section>
 
     <section class="calc-promo container">
-        @include('common.gui.titles', [
-            'secondTitle' => 'Калькулятор стоимости',
-            'intro' =>  "Для вашего удобства мы разработали онлайн калькулятор для предварительного расчета вашей конструкции.
-            Кликните на кнопку «Рассчитать» и выберите тип изделия для перехода в нужный раздел."
-        ])
+        <div class="titles calc-promo__titles">
+            <h2 class="second-title titles__second-title">Калькулятор стоимости</h2>   
+            <hr class="line titles__line">  
+            <p class="intro calc-promo__intro">
+                Для вашего удобства мы разработали онлайн калькулятор для предварительного расчета вашей конструкции.
+                Кликните на кнопку «Рассчитать» и выберите тип изделия для перехода в нужный раздел.
+            </p>
+        </div>
         
         <div class="calc-promo__footer">
-            <a href="" class="button button_inline button_red calc-promo__button">Рассчитать</a>
+            <a href="" class="button calc-promo__button">Рассчитать</a>
         </div>
 
     </section>
 
-    <section class="portfolio-list">
+    <section class="portfolio-list b-texture">
         @include('common.gui.titles', ['secondTitle' => 'Наши работы'])
         <div class="portfolio-list__list">
                 @include('common.gui.card', ['class' => 'portfolio-list__item', 'img' => 'http://okna-ts.ru/local/templates/windows/source/builds/static/img/assets/catalogueItem/catalogue-windows-1.jpg', 'title' => 'Окна', 'price' => '500'])
@@ -72,7 +81,7 @@
         </div>
     </section>
 
-    <section class="reviews container">
+    <section class="reviews container b-texture">
         @include('common.gui.titles', ['secondTitle' => 'Отзывы наших клиентов'])
 
         @foreach($reviews as $review)
@@ -80,7 +89,7 @@
         @endforeach
 
         <div class="reviews__buttons">
-            <a href="{{ route('reviews', $city) }}" class="button">Прочитать все отзывы</a>
+            <a href="{{ route('reviews', $city) }}" class="button button_gray">Прочитать все отзывы</a>
             <a href="{{ route('add-review', $city) }}" class="button">Оставить отзыв</a>
         </div>
     </section>
