@@ -1,6 +1,6 @@
 @extends('common.layout')
 @section('content')
-    @include('common.header')
+    @include('common.gui.header')
 
     <section class="calculator container">
         @include('common.gui.titles', [
@@ -15,5 +15,5 @@
 
     
 
-    @include('common.footer')
+    @include('common.gui.footer')
 @endsection

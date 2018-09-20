@@ -1,6 +1,5 @@
 @import 'mixins';
 @import 'variables';
-@import './gui/typography';
 
 .body {
     margin: 0;
@@ -43,7 +42,9 @@ body {
 .logo {
     display: flex;
     align-items: center;
-
+    &_white {
+        filter: brightness(0) invert(1);
+    }
     &__icon {
         margin-right: .625rem;
     }
@@ -72,9 +73,6 @@ body {
 }
 
 .dropdown {
-    color: $grey_abbey;
-    font-family: "Helvetica Neue";
-    font-size: 16px;
     cursor: pointer;
 
     &:hover {
@@ -85,16 +83,16 @@ body {
         }
 
         .dropdown__content {
-            max-height: initial;
-            transition: max-height 2s;
+            
             position: absolute;
             display: flex;
             box-shadow: 0 0 4px rgba(0, 0, 0, 0.08), 0 4px 4px rgba(0, 0, 0, 0.12), inset 0 -1px 0 rgba(0, 0, 0, 0.12);
             border-radius: 5px;
             background-color: $white;
-            padding: 30px 30px 23px 40px;
+            padding: 30px 20px 22px 23px;
             top: -30px;
-            left: -40px;
+            left: -25px;
+            z-index: 1;
 
         }
     }
@@ -103,7 +101,29 @@ body {
         flex-direction: column;
     }
 
+    &__title {
+        color: #a5aaaf;
+        font-family: $futura;
+        font-size: 16px;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin: 28px 0 15px 23px;
+    }
+
     &__item {
+        white-space: nowrap;
+        padding-left: 2px;
+
+        &_bordered {
+            padding: 0 15px 13px 23px;
+            &:not(:last-child) {
+                margin-bottom: 25px;
+                border-bottom: 1px solid #d0d2d4;
+            }
+            
+        }
+        
         &_active {
             display: flex;
             align-items: center
@@ -119,15 +139,13 @@ body {
 }
 
 .phone {
-    color: $grey_dove;
-    font-family: "Helvetica Neue";
     font-size: 18px;
-    text-decoration: none;
     flex-wrap: wrap;
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    text-decoration: none;
+    
     &__icon {
         margin-right: 10px;
     }
@@ -138,10 +156,12 @@ body {
 }
 
 .whatsapp {
+    display: flex;
+    align-items: center;
     color: $grey_dove;
-    font-family: "Helvetica Neue";
-    font-size: 16px;
-    text-decoration: none;
+    &__icon {
+        margin-right: 10px;
+    }
 }
 
 .switcher {

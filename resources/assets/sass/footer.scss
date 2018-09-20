@@ -4,7 +4,7 @@
     &__row {
         display: flex;
         justify-content: space-between;
-        padding: 45px 0;
+        padding: 45px 0 20px 0;
     }
     &__row_dark {
         background-color: #303336;
@@ -22,17 +22,29 @@
         flex-direction: column;
     }
 
+    &__logo {
+        margin: 0 0 23px -13px;
+    }
+
     &__phone {
         color: #e5e5e5;
         width: 200px;
         justify-content: flex-start;
+        margin-bottom: 23px;
     }
 
     &__time {
         color: #e5e5e5;
         font-size: 10px;
+        margin-left: 20px;
     }
 
+    &__icon {
+        margin-right: 4px;
+    }
+    &__mail {
+        margin-bottom: 23px;
+    }
     &__copyright {
         display: flex;
         justify-content: space-between;
@@ -48,10 +60,18 @@
     }
 
     &__item {
-        display: flex;
-        flex-direction: column;   
-        align-items: flex-start; 
         width: 25%;
         margin-bottom: 25px;
+    }
+}
+
+
+.nav-group {
+    display: flex;
+    flex-direction: column;   
+    align-items: flex-start; 
+
+    &__item {
+        margin-bottom: 10px;
     }
 }

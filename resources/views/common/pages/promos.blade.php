@@ -1,6 +1,6 @@
 @extends('common.layout')
     @section('content')
-        @include('common.header')
+        @include('common.gui.header')
         <section class="promos container">
             @include('common.gui.titles', [
                 'overtitle' =>  'Специальные предложения',
@@ -21,7 +21,7 @@
             @endforeach
         </section>
 
-        @include('common.footer')
+        @include('common.gui.footer')
 
 
     @endsection

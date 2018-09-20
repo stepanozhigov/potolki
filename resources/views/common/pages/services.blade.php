@@ -2,7 +2,7 @@
 
     @section('content')
 
-        @include('common.header')
+        @include('common.gui.header')
 
         <section class="services container">
             
@@ -26,5 +26,5 @@
             </div>
         </section>
 
-        @include('common.footer')
+        @include('common.gui.footer')
     @endsection

@@ -1,7 +1,7 @@
 @extends('common.layout')
 
 @section('content')
-    @include('common.header_light')
+    @include('common.gui.header_light')
 
     <section class="index-offer">
         <h1 class="title index-offer__title">Фабрика пластиковых окон «Твой&#160;стиль»</h1>

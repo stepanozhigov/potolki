@@ -1,19 +1,19 @@
 @extends('common.layout')
 
 @section('content')
-    @include('common.header')
+    @include('common.gui.header')
 
     <section class="main-offer">
         <div class="main-offer__inner container">
-            <p class="overtitle main-offer__overtitle">Уникальное предложение</p>
+            <p class="text main-offer__overtitle">Уникальное предложение</p>
             <h1 class="title main-offer__title">Пластиковые окна со&nbspскидкой&nbsp30%</h1>
-            <p class="main-offer__subtitle subtitle">Для получения скидки оставьте заявку</p>
+            <p class="main-offer__subtitle">Для получения скидки оставьте заявку</p>
 
             <form class="form main-offer__form" action="" id="offer-form">
-                <input class="input main-offer__input" type="text"  placeholder="Ваше имя">
-                <input class="input main-offer__input" type="tel"  placeholder="Ваш телефон">
+                <input class="input form__input" type="text"  placeholder="Ваше имя">
+                <input class="input form__input" type="tel"  placeholder="Ваш телефон">
 
-                <button class="button">Вызвать замерщика</button>
+                <button class="button form__button">Вызвать замерщика</button>
 
                 <p class="form__agreement subtext subtext_white">Оставляя контактную информацию, Вы соглашаетесь на обработку персональных данных</p>
             </form>
@@ -84,5 +84,5 @@
             <a href="{{ route('add-review', $city) }}" class="button">Оставить отзыв</a>
         </div>
     </section>
-    @include('common.footer')
+    @include('common.gui.footer')
 @endsection

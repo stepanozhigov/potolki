@@ -1,6 +1,6 @@
 @extends('common.layout')
     @section('content')
-        @include('common.header')
+        @include('common.gui.header')
 
         <section class="portfolio container">
 
@@ -27,5 +27,5 @@
             
         </section>
         
-        @include('common.footer')
+        @include('common.gui.footer')
     @endsection

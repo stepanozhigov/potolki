@@ -18,7 +18,7 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 Route::get('/', function () {
-    return view('common.index', [
+    return view('common.pages.index', [
         'directions' => Direction::where('id', '!=', 1)->get(),
         'cities'    =>  City::where('id', '!=', 1)->get(),
         'currentCity'   =>  City::find(1)

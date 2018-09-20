@@ -1,7 +1,7 @@
 @extends('common.layout')
 
 @section('content')
-    @include('common.header')
+    @include('common.gui.header')
 
     <div class="page__about">
         <div class="container">
@@ -67,5 +67,5 @@
     </div>
     @include('common.videogallery')
     @include('common.message-dir-open')
-    @include('common.footer')
+    @include('common.gui.footer')
 @endsection

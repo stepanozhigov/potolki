@@ -1,6 +1,6 @@
 @extends('common.layout')
     @section('content')
-    @include('common.header')
+    @include('common.gui.header')
         <section class="employees container">
             @include('common.gui.titles', [
                 'overtitle' =>  'Наша команда',
@@ -49,5 +49,5 @@
                 </div>
             </a>
         </section>
-    @include('common.footer')
+    @include('common.gui.footer')
 @endsection

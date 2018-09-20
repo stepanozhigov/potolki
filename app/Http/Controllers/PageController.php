@@ -22,7 +22,7 @@ class PageController extends Controller
     }
     public function photos (City $city, PhotoType $type = null)
     {
-        return view ('common.photos', [
+        return view ('common.pages.photos', [
             'city'  =>  $city,
             'types' =>  PhotoType::all(),
             'photos'    =>  $type->photos ?? Photo::all(),
@@ -32,14 +32,14 @@ class PageController extends Controller
 
     public function services (City $city)
     {
-        return view ('common.services', [
+        return view ('common.pages.services', [
             'city'  =>  $city
         ]);
     }
 
     public function promos (City $city)
     {
-        return view ('common.promos', [
+        return view ('common.pages.promos', [
             'city'  =>  $city,
             'promos'    =>  Promo::all()
         ]);

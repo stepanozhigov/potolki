@@ -118,7 +118,7 @@
 }
 
 .intro {
-    font-family: 'Helvetica Neue';
+    font-family: $helvetica;
     font-weight: 300;
     font-size: 22px;
     color: $grey_abbey;
@@ -133,11 +133,12 @@
     color: $grey_abbey;
     font-size: 16px;
     line-height: 22px;
-   
+    text-decoration: none;
+
     &_white {
-        color: $white;
+        color: #f8f8f8;
     }
-    
+
     &_bold {
         font-weight: 500;
     }
@@ -153,7 +154,11 @@
     text-decoration: none;
 
     &_white {
-        color: $white;
+        color: #f8f8f8;
+    }
+
+    &_center {
+        text-align: center;
     }
 
     &_center {

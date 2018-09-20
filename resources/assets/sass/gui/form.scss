@@ -6,10 +6,18 @@
     justify-content: space-between;
 
     &__input {
-        width: 33%;
+        margin-bottom: 20px;
+
+        &_horiz {
+            width: 32.5%;
+        }
     }
 
+    &__button {
+        margin-bottom: 20px;
+    }
     &__agreement {
         flex-basis: 100%;
+        font-size: 12px;
     }
 }
