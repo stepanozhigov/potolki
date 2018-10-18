@@ -1104,17 +1104,6 @@ body.no-scroll {
   margin: 0;
 }
 
-.card__plate {
-  font-family: "Futura PT - Light";
-  position: absolute;
-  background-color: rgba(255, 255, 255, 0.65);
-  border-radius: 0 0 4px 4px;
-  margin: 0;
-  padding: 16px 19px 15px 19px;
-  font-size: 18px;
-  color: #50555a;
-}
-
 @media screen and (max-width: 700px) {
   .card {
     -webkit-box-align: start;
@@ -1343,6 +1332,7 @@ body.no-scroll {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  padding-top: 90px;
 }
 
 .portfolio__switcher {
@@ -1355,6 +1345,37 @@ body.no-scroll {
   -ms-flex-preferred-size: 32.5%;
       flex-basis: 32.5%;
   margin-bottom: 30px;
+}
+
+.case {
+  overflow: hidden;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.case__img {
+  width: 100%;
+  height: 256px;
+}
+
+.case__totals {
+  font-family: "Futura PT", sans-serif;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.65);
+  border-radius: 0 0 4px 4px;
+  margin: 0;
+  padding: 10px 19px 15px 19px;
+  font-size: 18px;
+  color: #50555a;
 }
 
 .portfolio-list__list {
@@ -1373,6 +1394,10 @@ body.no-scroll {
       flex-basis: 19%;
 }
 
+.services {
+  padding: 90px 0 0 0;
+}
+
 .services__list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1386,12 +1411,31 @@ body.no-scroll {
 
 .services__card {
   margin: 0 .625rem 2rem .625rem;
-  -ms-flex-preferred-size: calc(25% - 20px);
-      flex-basis: calc(25% - 20px);
+  -ms-flex-preferred-size: 31%;
+      flex-basis: 31%;
+}
+
+.service-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+.service-card__img {
+  height: 270px;
+  width: 100%;
 }
 
 .promos {
-  padding: 0 0 80px 0;
+  padding: 90px 0 80px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3161,6 +3205,21 @@ body.no-scroll {
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #dc1414;
+}
+
+.calculator__type {
+  cursor: pointer;
+  position: relative;
+}
+
+.calculator__active {
+  position: absolute;
+  bottom: -31px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 .calculator__inner {
@@ -3179,16 +3238,18 @@ body.no-scroll {
           align-items: center;
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
+  background: #ffffff;
+  padding: 55px 50px 55px 100px;
 }
 
 .calculator__controls {
-  -ms-flex-preferred-size: 10%;
-      flex-basis: 10%;
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
 }
 
 .calculator__result {
-  -ms-flex-preferred-size: 10%;
-      flex-basis: 10%;
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
 }
 
 .calculator__area {
@@ -3198,6 +3259,10 @@ body.no-scroll {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  width: 54%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .calculator__heights {
@@ -3237,12 +3302,75 @@ body.no-scroll {
   padding: 0;
 }
 
+.calculator-result {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.calculator-result__head {
+  background: #dc1414;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 15px;
+}
+
+.calculator-result__summ {
+  font-family: "Futura PT", sans-serif;
+  font-size: 26px;
+  color: #ffffff;
+  font-weight: 300;
+}
+
+.calculator-result__body {
+  background-color: #f8f8f8;
+  padding: 30px 15px 20px 15px;
+}
+
+.calculator-result__input {
+  width: 100%;
+  height: 1.25rem;
+  padding-bottom: .3125rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #aaa;
+  border: 0;
+  border-bottom: .0625rem solid #aaa;
+  outline: 0;
+  background: 0 0;
+  margin-bottom: 20px;
+}
+
+.calculator-result__button {
+  width: 170px;
+}
+
+.calculator-result__attention {
+  font-size: .8125rem;
+  margin-top: 20px;
+}
+
+.jobs {
+  padding: 90px 0 70px 0;
+}
+
 .jobs__switcher {
   width: 100%;
   margin-bottom: 2.5rem;
 }
 
 .jobs__card {
+  padding: 10px 25px 25px 25px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3254,23 +3382,7 @@ body.no-scroll {
       -ms-flex-align: start;
           align-items: flex-start;
   width: calc(33.3% - 16px);
-  padding-top: 2.8125rem;
-  padding-right: 1.25rem;
-  padding-bottom: 3.125rem;
-  padding-left: 1.25rem;
-  margin: 0 0.5rem;
   margin-bottom: 1.5625rem;
-  text-decoration: none;
-  border-radius: 0.3125rem;
-  outline: none;
-  background-color: #ffffff;
-  -webkit-box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0), 0 0 0.125rem rgba(0, 0, 0, 0.08), inset 0 -0.0625rem 0 rgba(0, 0, 0, 0.12);
-          box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0), 0 0 0.125rem rgba(0, 0, 0, 0.08), inset 0 -0.0625rem 0 rgba(0, 0, 0, 0.12);
-}
-
-.jobs__card:hover {
-  -webkit-box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.12), 0 0 0.5rem rgba(0, 0, 0, 0.08), inset 0 -0.0625rem 0 rgba(0, 0, 0, 0.12);
-          box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.12), 0 0 0.5rem rgba(0, 0, 0, 0.08), inset 0 -0.0625rem 0 rgba(0, 0, 0, 0.12);
 }
 
 .questions {

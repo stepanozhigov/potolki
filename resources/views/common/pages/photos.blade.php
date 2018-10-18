@@ -1,14 +1,12 @@
 @extends('common.layout')
     @section('content')
         @include('common.gui.header')
-
-        <section class="portfolio container">
-
-            @include('common.gui.titles', [
-                'overtitle' =>  'Наши работы',
-                'title' =>  "Фото работ компании Твой стиль {$city->name_formatted}"
-            ])  
-                      
+        @include('common.gui.titles', [
+            'class' =>  'container',
+            'overtitle' =>  'Наши работы',
+            'title' =>  "Фото работ компании Твой стиль {$city->name_formatted}"
+        ])
+        <section class="portfolio container b-texture">
             <div class="switcher portfolio__switcher">
                 <a href="{{ route('photos', $city) }}" class="switcher__button {{ $currentType == null ? 'switcher__button_active':'' }}">Все работы</a>
                 
@@ -18,10 +16,10 @@
             </div>
 
             @foreach($photos as $photo)
-                <a class="card b-card portfolio__item">
-                    <p class="card__plate">{{ $photo->price }}  ₽ / {{ $photo->area }} м2</p>
-                    <img src="{{ Voyager::image( $photo->thumbnail('preview','src') ) }}" alt="Фотопечать" class="card__img">
-                    <p class="card-title card__title">{{ $photo->name }}</p>
+                <a class="case b-card portfolio__item">
+                    <p class="case__totals">{{ $photo->price }}  ₽ / {{ $photo->area }} м<sup>2</sup></p>
+                    <img src="{{ Voyager::image( $photo->thumbnail('preview','src') ) }}" alt="Фотопечать" class="case__img">
+                    <p class="card-title case__title">{{ $photo->name }}</p>
                 </a>
             @endforeach
             

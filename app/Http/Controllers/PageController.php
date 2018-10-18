@@ -61,35 +61,35 @@ class PageController extends Controller
 
     public function jobs (City $city)
     {
-        return view ('common.jobs', [
+        return view ('common.pages.jobs', [
             'city'  =>  $city
         ]);
     }
 
     public function contacts (City $city)
     {
-        return view ('common.contacts', [
+        return view ('common.pages.contacts', [
             'city'  =>  $city
         ]);
     }
 
     public function questions (City $city)
     {
-        return view ('common.questions', [
+        return view ('common.pages.questions', [
             'city'  =>  $city
         ]);
     }
 
     public function addReview (City $city)
     {
-        return view ('common.add-review', [
+        return view ('common.pages.add-review', [
             'city'  =>  $city
         ]);
     }
 
     public function reviews (City $city)
     {
-        return view('common.reviews', [
+        return view('common.pages.reviews', [
             'city'  =>  $city,
             'reviews'   =>  Review::all()
         ]);

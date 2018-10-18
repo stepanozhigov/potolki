@@ -1,4 +1,4 @@
-<div class="titles">
+<div class="titles {{ $class ?? '' }}">
     @isset($overtitle)
         <p class="overtitle titles__overtitle">{!! $overtitle !!}</p>    
     @endisset

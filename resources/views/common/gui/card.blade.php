@@ -1,9 +1,5 @@
 <a href="{{ $link ?? '' }}" class="card b-card {{ $class ?? '' }}">
 
-    @isset($plate)
-        <p class="card__plate">12000  ₽ / 8 м2</p>
-    @endisset
-
     @isset($img)
         <img src="{{ $img }}" alt="Фотопечать" class="card__img">
     @endisset

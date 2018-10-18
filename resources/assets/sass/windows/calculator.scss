@@ -2,9 +2,24 @@
     padding: 0;
 
     &__types {
+        
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+        padding-bottom: 30px;
+        border-bottom: 1px solid $red_crismon;
+    }
+
+    &__type {
+        cursor: pointer;
+        position: relative;
+    }
+
+    &__active {
+        position: absolute;
+        bottom: -31px;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     &__inner {
@@ -12,24 +27,29 @@
     }
 
     &__content {
+        
         display: flex;
         justify-content: space-between;
         align-items: center;
         flex-basis: 100%;
+        background: $white;
+        padding: 55px 50px 55px 100px;
     }
 
     &__controls {
-        flex-basis: 10%;
+        flex-basis: 20%;
     }
 
     &__result {
-        flex-basis: 10%;
+        flex-basis: 20%;
     }
     
     &__area {
         position: relative;
         display: flex;
         flex-wrap: wrap;
+        width: 54%;
+        justify-content: center;
     }
 
     &__heights {
@@ -56,5 +76,54 @@
         top: 46%;
         width: 73px;
         padding: 0;
+    }
+}
+
+.calculator-result {
+    display: flex;
+    border-radius: 5px;
+    overflow: hidden;
+   
+    &__head {
+        background: $red_crismon;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 15px;
+    }
+
+    &__summ {
+        font-family: $futura;
+        font-size: 26px;
+        color: $white;
+        font-weight: 300;
+    }
+
+    &__body {
+        background-color: #f8f8f8;
+        padding: 30px 15px 20px 15px;
+    }
+
+    &__input {
+        width: 100%;
+        height: 1.25rem;
+        padding-bottom: .3125rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #aaa;
+        border: 0;
+        border-bottom: .0625rem solid #aaa;
+        outline: 0;
+        background: 0 0;
+        margin-bottom: 20px;
+    }
+
+    &__button {
+        width: 170px;
+    }
+
+    &__attention {
+        font-size: .8125rem;
+        margin-top: 20px;
     }
 }

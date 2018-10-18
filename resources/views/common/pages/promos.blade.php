@@ -1,12 +1,13 @@
 @extends('common.layout')
     @section('content')
         @include('common.gui.header')
-        <section class="promos container">
-            @include('common.gui.titles', [
-                'overtitle' =>  'Специальные предложения',
-                'title' =>  "Акции на светопрозрачные конструкции {$city->name_formatted}",
-                'intro' =>  "Сотрудничайте с нами и Вас ждут выгодные акции на все конструкции от компании «Твой стиль». У нас Вы получите индивидуальную скидку при общении с персональным менеджером."
-            ])            
+        @include('common.gui.titles', [
+            'class' =>  'container',
+            'overtitle' =>  'Специальные предложения',
+            'title' =>  "Акции на светопрозрачные конструкции {$city->name_formatted}",
+            'intro' =>  "Сотрудничайте с нами и Вас ждут выгодные акции на все конструкции от компании «Твой стиль». У нас Вы получите индивидуальную скидку при общении с персональным менеджером."
+        ])  
+        <section class="promos b-texture container">
             @foreach($promos as $promo)
                 <a class="promo b-card promos__item">
                     <img src="{{ Storage::url($promo->image) }}" alt="Фотопечать" class="promo__img">

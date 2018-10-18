@@ -6,6 +6,7 @@
                 <input class="radio__input"  type="radio" name="type" :value="type.code" v-model="currentType">
                 <img v-if="currentType == type.code" class="calculator__type" :src="publicPath + type.form_img_selected" alt="">
                 <img v-else class="calculator__type" :src="publicPath + type.form_img" alt="">                                
+                <img v-if="currentType == type.code" class="calculator__active" :src="'/img/gui/active_calc.svg'" alt="">
             </label>            
         </div>
         <transition name="slide" mode="out-in">
@@ -22,24 +23,30 @@
                 
             </div>
             <div class="calculator__controls">
-                <label class="radio">
+                <label class="radio subtext">
                     <input name="install" type="radio" v-model="install" value=500 class="radio__input">
-                    <span class="radio__mark"></span>
+                    <span class=" radio__mark"></span>
                     С установкой
                 </label>
-                <label class="radio">
+                <label class="radio subtext">
                     <input name="install" type="radio" v-model="install" value=0 checked class="radio__input">
                     <span class="radio__mark"></span>
                     Без установки
                 </label>
             </div>
-            <form action="" class="form calculator__result">
-                Расчетная цена
-                <span>{{ summ }} Р</span>
-                <input type="text" placeholder="Введите ваше имя">
-                <input type="tel">
-                <button class="button">Заказать</button>
-                <p>Внимание! Стоимость является примерной. Более точная оценка требует выезда замерщика</p>
+            <form action="" class="form calculator__result calculator-result">
+                <div class="calculator-result__head">
+                    <p class="text text_white">Расчетная цена</p>
+                    <span class="calculator-result__summ">{{ summ }} Р</span>
+                </div>
+                
+                <div class="calculator-result__body">
+                    <input class="calculator-result__input" type="text" placeholder="Введите ваше имя">
+                    <input class="calculator-result__input" type="tel" placeholder="Введите ваш телефон">
+                    <button class="button button_gray calculator-result__button">Заказать</button>
+                </div>
+
+                <p class="subtext calculator-result__attention">Внимание! Стоимость является примерной. Более точная оценка требует выезда замерщика</p>
             </form>
         </div>
         </transition>

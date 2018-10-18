@@ -42,7 +42,7 @@ $writtenElements.each((index, element) => {
         strings: [text].concat(additionalTexts),
         autoStart: true,
         loop: true,
-        delay: 50
+        delay: 70
     });
 })
 
