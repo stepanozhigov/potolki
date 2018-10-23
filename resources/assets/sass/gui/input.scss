@@ -12,6 +12,10 @@
     display: flex;
     position: relative;
 
+    @media screen and (max-width: 1024px) {
+        flex-wrap: wrap;    
+    }
+
     &__icon {
         position: absolute;
         left: 24px;
@@ -22,13 +26,21 @@
         width: 100%;
         padding-left: 60px;
         height: 50px;
+
     }
 
     &__result {
         margin-left: 30px;
+        @media screen and (max-width: 1024px) {
+            margin: 0 auto;
+        }
     }
 
     &__button {
         margin-bottom: 30px;
+
+        @media screen and (max-width: 1024px) {
+            margin-top: 25px;
+        }
     }
 }

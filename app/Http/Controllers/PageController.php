@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Direction;
 use App\City;
-use App\PhotoType;
+use App\CatalogType;
 use App\Photo;
 use App\Promo;
 use App\Review;
@@ -17,14 +17,15 @@ class PageController extends Controller
     {
         return view('windows.main', [
             'city'  =>  $city,
-            'reviews'   =>  Review::all()
+            'reviews'   =>  Review::all(),
+            'catalogTypes'  => CatalogType::where(['direction_id' => 1])->get()
         ]);
     }
-    public function photos (City $city, PhotoType $type = null)
+    public function photos (City $city, CatalogType $type = null)
     {
         return view ('common.pages.photos', [
             'city'  =>  $city,
-            'types' =>  PhotoType::all(),
+            'types' =>  CatalogType::all(),
             'photos'    =>  $type->photos ?? Photo::all(),
             'currentType'  =>  $type
         ]);

@@ -4,17 +4,7 @@
     align-items: center;
     position: relative;
     text-decoration: none;
-    will-change: transform;
-    transition: transform 100ms linear;
-    transform: scale(1);
     padding: 0 0 25px 0;
-
-    &:hover {
-        will-change: transform;
-        transition: transform 100ms linear;
-        transform: scale(1.05);
-
-    }
 
     &__title {
         margin: 28px 0 15px 0;
@@ -38,6 +28,10 @@
         font-family: "Helvetica Neue";
         font-size: 24px;
         margin: 23px 0 0 0;
+    }
+
+    &__number {
+        font-size: 32px;
     }
 
     &__img {

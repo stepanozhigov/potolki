@@ -125,6 +125,10 @@
     margin: 0;
     text-align: center;
     line-height: 32px;
+
+    &_red {
+        color: $red_crismon;
+    }
 }
 
 .text {

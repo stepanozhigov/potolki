@@ -1,27 +1,19 @@
 // Variables
 @import 'variables';
 @import './gui/typography';
-
-@import 'header';
-
-@import 'common';
-
 @import './gui/main-offer';
-
 @import './gui/button';
-
 @import './gui/cities';
-
 @import './gui/card';
-
 @import './gui/directions';
-
 @import 'menu';
 
 @import './gui/form';
 
 @import './gui/catalog-cards';
+@import 'header';
 
+@import 'common';
 @import 'portfolio';
 
 @import 'services';
@@ -53,8 +45,6 @@
 @import 'gui/paginator';
 
 @import 'gui/radio';
-
-@import 'gui/form';
 
 @import 'windows/calculator';
 

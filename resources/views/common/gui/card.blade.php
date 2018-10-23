@@ -1,4 +1,4 @@
-<a href="{{ $link ?? '' }}" class="card b-card {{ $class ?? '' }}">
+<a href="{{ $link ?? '' }}" class="card b-card is-hoverable {{ $class ?? '' }}">
 
     @isset($img)
         <img src="{{ $img }}" alt="Фотопечать" class="card__img">

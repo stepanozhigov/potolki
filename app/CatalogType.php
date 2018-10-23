@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 
-class PhotoType extends Model
+class CatalogType extends Model
 {
     public function getRouteKeyName()
     {

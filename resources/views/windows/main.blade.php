@@ -33,10 +33,16 @@
             'intro' =>  "Фабрика окон №1 {$city->name_formatted}. Посмотрите каталог и ниже рассчитайте Ваш заказ за 5 секунд."
         ])
         
-        @include('common.gui.card', ['class' => 'catalog-cards__item', 'img' => 'http://okna-ts.ru/local/templates/windows/source/builds/static/img/assets/catalogueItem/catalogue-windows-1.jpg', 'title' => 'Окна', 'price' => '500'])
-        @include('common.gui.card', ['class' => 'catalog-cards__item', 'img' => 'http://okna-ts.ru/upload/okna-min/dveri-min.png', 'title' => 'Двери', 'price' => '500'])
-        @include('common.gui.card', ['class' => 'catalog-cards__item', 'img' => 'http://okna-ts.ru/upload/okna-min/balkoni-min.png', 'title' => 'Балконы', 'price' => '500'])
-        @include('common.gui.card', ['class' => 'catalog-cards__item', 'img' => 'http://okna-ts.ru/local/templates/windows/source/builds/static/img/assets/catalogueItem/catalogue-windows-4.jpg', 'title' => 'Перегородки', 'price' => '500'])
+        @foreach ($catalogTypes as $type)
+            <a href="" class=" catalog-cards__item b-card is-hoverable">
+                <img src="{{ Storage::url($type->img) }}" alt="{{ $type->name }}" class="card__img">
+                <p class="card-title card__title">{{ $type->name }}</p>
+                <hr class="line line_bold">
+                @if($type->price)
+                    <p class="card__price">от <span class="card__number">{{ number_format($type->price, 0, ',', ' ') }} Р</span></p>
+                @endif
+            </a>
+        @endforeach
     </section>
 
     <section class="manufacturers container">
@@ -44,12 +50,9 @@
         @include('common.gui.titles', ['secondTitle' => 'Производители профилей'])
 
         <div class="manufacturers__list">
-            <img src="http://okna-ts.ru/local/templates/windows/source/builds/static/img/assets/featuresCard/montblanc.png" alt="" class="manufacturers__item">
-            <img src="http://okna-ts.ru/local/templates/windows/source/builds/static/img/assets/featuresCard/salamander.png" alt="" class="manufacturers__item">
-            <img src="http://okna-ts.ru/local/templates/windows/source/builds/static/img/assets/featuresCard/montblanc.png" alt="" class="manufacturers__item">
-            <img src="http://okna-ts.ru/local/templates/windows/source/builds/static/img/assets/featuresCard/montblanc.png" alt="" class="manufacturers__item">
-            <img src="http://okna-ts.ru/local/templates/windows/source/builds/static/img/assets/featuresCard/montblanc.png" alt="" class="manufacturers__item">
-            <img src="http://okna-ts.ru/local/templates/windows/source/builds/static/img/assets/featuresCard/montblanc.png" alt="" class="manufacturers__item">
+            @foreach ($currentDirection->manufacturers as $manufacturer)
+                <img src="{{ Storage::url($manufacturer->logo) }}" alt="" class="manufacturers__item">    
+            @endforeach
         </div>
 
     </section>

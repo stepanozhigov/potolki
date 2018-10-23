@@ -547,13 +547,17 @@ __webpack_require__(11);
 Vue.component('window-calc', __webpack_require__(12));
 Vue.component('city-search', __webpack_require__(18));
 
-var citySearch = new Vue({
-    el: '#city-search'
-});
+if ($('#city-search').length > 0) {
+    var citySearch = new Vue({
+        el: '#city-search'
+    });
+}
 
-var windowCalc = new Vue({
-    el: '#window-calc'
-});
+if ($('#window-calc').length > 0) {
+    var windowCalc = new Vue({
+        el: '#window-calc'
+    });
+}
 
 
 
@@ -564,7 +568,6 @@ $writtenElements.each(function (index, element) {
         text = $element.text(),
         additionalTexts = $element.data('texts');
 
-    console.log(additionalTexts);
     new __WEBPACK_IMPORTED_MODULE_0_typewriter_effect_dist_core___default.a(element, {
         strings: [text].concat(additionalTexts),
         autoStart: true,
@@ -22371,7 +22374,12 @@ $('.js-show').on('click', function (event) {
     event.preventDefault();
 
     var source = $(this).data('src'),
+        $source = $(source),
         $overlay = $('.overlay');
+
+    if ($source.height() % 2 == 1) {
+        $source.height($source.height() + 1);
+    }
 
     $overlay.addClass('overlay_active');
     $(source).addClass('popup_active');

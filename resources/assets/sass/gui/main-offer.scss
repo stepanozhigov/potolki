@@ -70,10 +70,13 @@
 
     &__buttons {
         display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
     }
 
     &__button {
         margin-right: 15px;
+        margin-bottom: 15px;
     }
 
 }

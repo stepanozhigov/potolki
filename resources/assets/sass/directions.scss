@@ -4,6 +4,10 @@
     flex-wrap: wrap;
     justify-content: space-between;
     
+    @media screen and (max-width: 1024px) {
+        justify-content: space-evenly;
+    }
+
     &__item {
         flex-basis: 32.5%;
 

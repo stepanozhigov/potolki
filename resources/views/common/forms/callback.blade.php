@@ -1,8 +1,9 @@
-<form action="" class="form">
-    <p class="overtitle">Заказать звонок</p>
-    <hr class="line">
-    <p class="intro">Оставьте Ваши данные и специалист свяжется с Вами в течение 5 минут</p>
-    <input type="text" class="input">
-    <input type="text" class="input">
-    <button class="button">Заказать звонок</button>
+<form action="" class="form popup__form">
+    <p class="overtitle popup__title">Заказать звонок</p>
+    <hr class="line popup__line">
+    <p class="intro popup__intro">Оставьте Ваши данные и специалист свяжется с Вами <span class="intro_red">в&nbspтечение&nbsp5&nbspминут</span></p>
+    <input required placeholder="Ваше имя" type="text" class="input popup__input">
+    <input required placeholder="Ваш телефон" type="tel" class="input popup__input">
+    <button class="button popup__button">Заказать звонок</button>
+    <p class="text popup__agreement">Оставляя контактную информацию, Вы соглашаетесь на обработку персональных данных</p>
 </form>

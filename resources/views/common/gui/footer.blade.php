@@ -1,6 +1,6 @@
 @include('common.footer-offer')
 <div class="popup" id="popup_callback">
-    <img src="/img/close.svg" alt="" class="popup__close js-close">
+    <img src="/img/gui/close.svg" alt="" class="popup__close js-close">
     @include('common.forms.callback')
 </div>
 <div class="overlay js-close"></div>

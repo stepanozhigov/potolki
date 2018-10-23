@@ -31,7 +31,7 @@
             'secondTitle'  =>  'Другие направления компании'
         ])
         @foreach($directions as $direction)
-            <a href="{{ $direction->site }}" class="direction b-card directions__item">
+            <a href="{{ $direction->site }}" class="direction b-card is-hoverable directions__item">
                 <img class="direction__img" src="{{ Storage::url($direction->image) }}" alt="{{ $direction->name }}" >
                 <p class="card-title direction__title">{{ $direction->name }}</p>
             </a>

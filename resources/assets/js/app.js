@@ -20,13 +20,18 @@ require('./components/popup');
 Vue.component('window-calc', require('./components/WindowCalc.vue'));
 Vue.component('city-search', require('./components/CitySearch.vue'));
 
-const citySearch = new Vue({
-    el: '#city-search'
-});
+if ($('#city-search').length > 0) {
+    const citySearch = new Vue({
+        el: '#city-search'
+    });
+}
 
-const windowCalc = new Vue({
-    el: '#window-calc'
-});
+if ($('#window-calc').length > 0) {
+    const windowCalc = new Vue({
+        el: '#window-calc'
+    });
+}
+
 
 import typewriter from 'typewriter-effect/dist/core';
 
@@ -36,8 +41,7 @@ $writtenElements.each((index, element) => {
     var $element = $(element),
         text = $element.text(),
         additionalTexts = $element.data('texts');
-    
-    console.log(additionalTexts);
+
     new typewriter(element, {
         strings: [text].concat(additionalTexts),
         autoStart: true,
