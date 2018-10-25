@@ -110,4 +110,9 @@ class PageController extends Controller
         return view('common.forms.callback');
     }
 
+    public function dirMessage ()
+    {
+        return view('common.pages.dir-message');
+    }
+
 }

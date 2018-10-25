@@ -41,7 +41,7 @@
                 <a href="/asd" class="text menu__item">Информация</a>
                 <div class="dropdown__content dropdown__content_menu">
                     <a href="{{ route('about', request()->route()->city) }}" class="text menu__item dropdown__item_bordered">О компании</a>    
-                    <a href="{{ route('dirMessage') }}" class="text menu__item dropdown__item_bordered">Написать директору</a>
+                    <a href="{{ route('dirMessage', request()->route()->city) }}" class="text menu__item dropdown__item_bordered">Написать директору</a>
                 </div>
             </div>
         </nav>

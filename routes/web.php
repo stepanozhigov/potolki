@@ -27,8 +27,6 @@ Route::get('/', function () {
 
 Route::get('/forms/callback', 'PageController@callback');
 
-Route::get('/dir-message', 'PageController@dirMessage')->name('dirMessage');
-
 Route::prefix('/{city}')->group(function () {
 
     Route::get('/', 'PageController@main')->name('windows.main');
@@ -54,4 +52,6 @@ Route::prefix('/{city}')->group(function () {
     Route::get('/vopros-otvet', 'PageController@questions')->name('vopros-otvet');
 
     Route::get('/kontakty', 'PageController@contacts')->name('kontakty');
+
+    Route::get('/dir-message', 'PageController@dirMessage')->name('dirMessage');
 });
