@@ -5,11 +5,12 @@ $('.js-show').on('click', function(event) {
         $source = $(source),
         $overlay = $('.overlay');
     
-    
-    if ($source.height() % 2 == 1) {
-        $source.height($source.height() + 1);
+    $('body').addClass('overflowed');
+
+    if ($source.height() % 2 == 1 ) { 
+        $source.height($source.height() + 1); 
     }
-    
+
     $overlay.addClass('overlay_active');
     $(source).addClass('popup_active');
 });
@@ -17,6 +18,8 @@ $('.js-show').on('click', function(event) {
 $('.js-close').on('click', function(event) {
     event.preventDefault();
     
+    $('body').removeClass('overflowed');
+
     var $overlay = $('.overlay'),
         $popups = $('.popup');
     

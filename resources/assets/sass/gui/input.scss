@@ -44,3 +44,16 @@
         }
     }
 }
+
+.text-input {
+    position: relative;
+    &__value {
+        width: 100%;
+        padding: 10px;
+    }
+    &__label {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+}

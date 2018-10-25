@@ -6,7 +6,7 @@
 @import './gui/cities';
 @import './gui/card';
 @import './gui/directions';
-@import 'menu';
+@import './gui/menu';
 
 @import './gui/form';
 
@@ -22,7 +22,7 @@
 
 @import './gui/manufacturers';
 
-@import 'calc-promo';
+@import './gui/calc-promo';
 
 @import './gui/reviews';
 
@@ -60,4 +60,6 @@
 
 @import 'form-review';
 
-@import 'footer-offer';
+@import './gui/footer-offer';
+
+@import './gui/additional'; 

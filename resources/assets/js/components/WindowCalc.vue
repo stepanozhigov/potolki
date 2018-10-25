@@ -12,12 +12,20 @@
         <transition name="slide" mode="out-in">
         <div v-for="type in types" :key="type.id" v-if="currentType == type.code"class="calculator__content">
             <div class="calculator__area">
-                <img :src="publicPath + type.img" alt="">
+                <img class="calculator__img" ref="calculator__img" :src="publicPath + type.img" alt="">
                 <div class="calculator__heights">
-                    <input v-for="index in type.height_count" type="number" v-model.number="arrHeight[index]" class="input calculator__height" placeholder="Высота 1" name="height[]">
+                    <hr class="calculator__line calculator__line_vert">
+                    <div class="calculator__height text-input">
+                        <input v-for="index in type.height_count" type="text" v-model.number="arrHeight[index]" class="input text-input__value" name="height[]">
+                        <span class="text-input__label text">мм</span>
+                    </div>
                 </div>
-                <div class="calculator__widths">
-                     <input v-for="index in type.width_count" type="number" v-model.number="arrWidth[index]" class="input calculator__width" placeholder="Ширина 1" name="width[]">
+                <div class="calculator__widths" v-bind:style="{ width: pixelWidth + 'px' }">
+                    <hr class="calculator__line">
+                    <label class="calculator__width text-input">
+                        <input v-for="index in type.width_count" type="text" v-model.number="arrWidth[index]" class="input text-input__value" name="width[]">
+                        <span class="text-input__label text">мм</span>
+                    </label>
                 </div>
                
                 
@@ -70,16 +78,20 @@
     export default {
         data: function () {
             return {
-                currentType: 'simple',
+                currentType: 'odnostvorchatoe-okno',
                 areaMode: '',
                 install: 0,
                 arrWidth: [],
                 arrHeight: [],
                 multiplier: 3000,
+                pixelWidth: 0,
                 publicPath: '/storage/'
             }
         },
         props: ['types'],
+        updated: function () {            
+            this.pixelWidth = $(this.$refs.calculator__img).width();
+        },
         computed: {
             width () {
                 return this.arrWidth.length ? this.arrWidth.reduce( (total, current) => { return total + current } ): 0;
@@ -98,13 +110,17 @@
             }
         },
         watch: {
-            type: function (value, old) {
+            currentType: function (value, old) {
                this.arrWidth = [0, 0];
                this.arrHeight = [0, 0];
+               
+               
             }
         },
         mounted() {
-            console.log('Window calc Component mounted.')
+            console.log($(this.$refs.calculator__img).width());
+
+           this.pixelWidth = $(this.$refs.calculator__img).width(); 
         },
         methods: {
         }        

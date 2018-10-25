@@ -27,7 +27,7 @@ if ($('#city-search').length > 0) {
 }
 
 if ($('#window-calc').length > 0) {
-    const windowCalc = new Vue({
+    var windowCalc = new Vue({
         el: '#window-calc'
     });
 }

@@ -7,8 +7,15 @@
     padding: 50px 0 50px 0;
 
     &__item {
-        flex-basis: 32.5%;
+        width: 32.5%;
         margin-top: 70px;
+
+        @media screen and (max-width: 1024px) {
+            width: 42%;
+        }
+        @media screen and (max-width: 800px) {
+            width: 97%;
+        }
     }
 
     &__buttons {
@@ -16,10 +23,24 @@
         justify-content: space-between;
         margin: 50px auto 0 auto;
         flex-basis: 50%;
+
+        @media screen and (max-width: 800px) {
+            display: block;
+        }
     }
 
+    &__button {
+        margin-right: 15px;
+        @media screen and (max-width: 800px) {
+           margin-bottom: 20px;
+        }
+    }
     &__paginator {
         flex-basis: 100%;
         margin-top: 50px;
+    }
+
+    @media screen and (max-width: 1024px) {
+        justify-content: space-evenly;
     }
 }

@@ -18,6 +18,7 @@ class PageController extends Controller
         return view('windows.main', [
             'city'  =>  $city,
             'reviews'   =>  Review::all(),
+            'photos'    =>  Photo::all(),
             'catalogTypes'  => CatalogType::where(['direction_id' => 1])->get()
         ]);
     }

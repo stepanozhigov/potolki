@@ -3,9 +3,27 @@
     flex-direction: column;
     padding: 0 0 60px 0;
 
+    @media screen and (max-width: 640px){
+        display: none;
+    }
+
     &__list {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
+
+        @media screen and (max-width: 1024px){
+            justify-content: space-evenly;
+        }
+    }
+
+    &__item {
+        @media screen and (max-width: 1024px){
+            width: 24%;
+            object-fit: scale-down;
+            height: max-content;
+            margin-bottom: 25px;
+        }
     }
 }

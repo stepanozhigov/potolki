@@ -1,0 +1,35 @@
+<svg id="SVGDoc" width="40" height="22" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:avocode="https://avocode.com/" viewBox="0 0 40 22">
+	<defs>
+		<path d="M708,32.57895c0,-0.31974 0.2592,-0.57895 0.57895,-0.57895h38.84211c0.31974,0 0.57895,0.2592 0.57895,0.57895v0c0,0.31974 -0.2592,0.57895 -0.57895,0.57895h-38.84211c-0.31974,0 -0.57895,-0.2592 -0.57895,-0.57895z" id="Path-0" />
+		<path d="M708,43.60c0,-0.31974 0.2592,-0.57895 0.57895,-0.57895h38.84211c0.31974,0 0.57895,0.2592 0.57895,0.57895v0c0,0.31974 -0.2592,0.57895 -0.57895,0.57895h-38.84211c-0.31974,0 -0.57895,-0.2592 -0.57895,-0.57895z" id="Path-1" />
+		<path d="M708,53.42105c0,-0.31974 0.2592,-0.57895 0.57895,-0.57895h25.50877c0.31974,0 0.57895,0.2592 0.57895,0.57895v0c0,0.31974 -0.2592,0.57895 -0.57895,0.57895h-25.50877c-0.31974,0 -0.57895,-0.2592 -0.57895,-0.57895z" id="Path-2" />
+	</defs>
+	<desc>
+		Generated with Avocode.
+	</desc>
+	<g transform="matrix(1,0,0,1,-708,-32)">
+		<g>
+			<title>
+				Icons / Hamburger dark
+			</title>
+			<g>
+				<title>
+					Rectangle 24
+				</title>
+				<use xlink:href="#Path-0" fill="#a7aaad" fill-opacity="1" />
+			</g>
+			<g>
+				<title>
+					Rectangle 24
+				</title>
+				<use xlink:href="#Path-1" fill="#a7aaad" fill-opacity="1" />
+			</g>
+			<g>
+				<title>
+					Rectangle 24
+				</title>
+				<use xlink:href="#Path-2" fill="#a7aaad" fill-opacity="1" />
+			</g>
+		</g>
+	</g>
+</svg>

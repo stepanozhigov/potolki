@@ -2,7 +2,7 @@
     <div class="header__top container">
         <a href="/" class="header_logo logo">
             <img class="logo__icon" src="/img/gui/logo-icon.svg" alt="логотип Твой Стиль">
-            <img class="logo__text" src="/img/gui/logo-text.svg" alt="графема Твой Стиль">        
+            <img class="logo__text mobile-hide" src="/img/gui/logo-text.svg" alt="графема Твой Стиль">        
         </a>
         <div class="header__directions dropdown">
             <a class="text dropdown__item_active"><img class="dropdown__arrow" src="/img/gui/arrow.svg" alt="">{{ $currentDirection->name }}</a>
@@ -15,7 +15,7 @@
                 @endforeach
             </div>            
         </div>
-
+        <img src="/img/gui/nav_hamburger.svg" alt="" class="hamburger header__hamburger">
         <nav class="menu header__menu">
             <div class="dropdown menu__item menu__item_dropdown">
                 <a href="{{ route('calculator', request()->route()->city) }}" class="text menu__item">Калькулятор</a>

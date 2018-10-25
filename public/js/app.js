@@ -22377,6 +22377,8 @@ $('.js-show').on('click', function (event) {
         $source = $(source),
         $overlay = $('.overlay');
 
+    $('body').addClass('overflowed');
+
     if ($source.height() % 2 == 1) {
         $source.height($source.height() + 1);
     }
@@ -22387,6 +22389,8 @@ $('.js-show').on('click', function (event) {
 
 $('.js-close').on('click', function (event) {
     event.preventDefault();
+
+    $('body').removeClass('overflowed');
 
     var $overlay = $('.overlay'),
         $popups = $('.popup');
@@ -22593,20 +22597,32 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            currentType: 'simple',
+            currentType: 'odnostvorchatoe-okno',
             areaMode: '',
             install: 0,
             arrWidth: [],
             arrHeight: [],
             multiplier: 3000,
+            pixelWidth: 0,
             publicPath: '/storage/'
         };
     },
     props: ['types'],
+    updated: function updated() {
+        this.pixelWidth = $(this.$refs.calculator__img).width();
+    },
     computed: {
         width: function width() {
             return this.arrWidth.length ? this.arrWidth.reduce(function (total, current) {
@@ -22630,13 +22646,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
     },
     watch: {
-        type: function type(value, old) {
+        currentType: function currentType(value, old) {
             this.arrWidth = [0, 0];
             this.arrHeight = [0, 0];
         }
     },
     mounted: function mounted() {
-        console.log('Window calc Component mounted.');
+        console.log($(this.$refs.calculator__img).width());
+
+        this.pixelWidth = $(this.$refs.calculator__img).width();
     },
 
     methods: {}
@@ -22712,87 +22730,115 @@ var render = function() {
             ? _c("div", { key: type.id, staticClass: "calculator__content" }, [
                 _c("div", { staticClass: "calculator__area" }, [
                   _c("img", {
+                    ref: "calculator__img",
+                    refInFor: true,
+                    staticClass: "calculator__img",
                     attrs: { src: _vm.publicPath + type.img, alt: "" }
                   }),
                   _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "calculator__heights" },
-                    _vm._l(type.height_count, function(index) {
-                      return _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model.number",
-                            value: _vm.arrHeight[index],
-                            expression: "arrHeight[index]",
-                            modifiers: { number: true }
-                          }
-                        ],
-                        staticClass: "input calculator__height",
-                        attrs: {
-                          type: "number",
-                          placeholder: "Высота 1",
-                          name: "height[]"
-                        },
-                        domProps: { value: _vm.arrHeight[index] },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
+                  _c("div", { staticClass: "calculator__heights" }, [
+                    _c("hr", {
+                      staticClass: "calculator__line calculator__line_vert"
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "calculator__height text-input" },
+                      [
+                        _vm._l(type.height_count, function(index) {
+                          return _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model.number",
+                                value: _vm.arrHeight[index],
+                                expression: "arrHeight[index]",
+                                modifiers: { number: true }
+                              }
+                            ],
+                            staticClass: "input text-input__value",
+                            attrs: { type: "text", name: "height[]" },
+                            domProps: { value: _vm.arrHeight[index] },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.arrHeight,
+                                  index,
+                                  _vm._n($event.target.value)
+                                )
+                              },
+                              blur: function($event) {
+                                _vm.$forceUpdate()
+                              }
                             }
-                            _vm.$set(
-                              _vm.arrHeight,
-                              index,
-                              _vm._n($event.target.value)
-                            )
-                          },
-                          blur: function($event) {
-                            _vm.$forceUpdate()
-                          }
-                        }
-                      })
-                    })
-                  ),
+                          })
+                        }),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "text-input__label text" }, [
+                          _vm._v("мм")
+                        ])
+                      ],
+                      2
+                    )
+                  ]),
                   _vm._v(" "),
                   _c(
                     "div",
-                    { staticClass: "calculator__widths" },
-                    _vm._l(type.width_count, function(index) {
-                      return _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model.number",
-                            value: _vm.arrWidth[index],
-                            expression: "arrWidth[index]",
-                            modifiers: { number: true }
-                          }
+                    {
+                      staticClass: "calculator__widths",
+                      style: { width: _vm.pixelWidth + "px" }
+                    },
+                    [
+                      _c("hr", { staticClass: "calculator__line" }),
+                      _vm._v(" "),
+                      _c(
+                        "label",
+                        { staticClass: "calculator__width text-input" },
+                        [
+                          _vm._l(type.width_count, function(index) {
+                            return _c("input", {
+                              directives: [
+                                {
+                                  name: "model",
+                                  rawName: "v-model.number",
+                                  value: _vm.arrWidth[index],
+                                  expression: "arrWidth[index]",
+                                  modifiers: { number: true }
+                                }
+                              ],
+                              staticClass: "input text-input__value",
+                              attrs: { type: "text", name: "width[]" },
+                              domProps: { value: _vm.arrWidth[index] },
+                              on: {
+                                input: function($event) {
+                                  if ($event.target.composing) {
+                                    return
+                                  }
+                                  _vm.$set(
+                                    _vm.arrWidth,
+                                    index,
+                                    _vm._n($event.target.value)
+                                  )
+                                },
+                                blur: function($event) {
+                                  _vm.$forceUpdate()
+                                }
+                              }
+                            })
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "span",
+                            { staticClass: "text-input__label text" },
+                            [_vm._v("мм")]
+                          )
                         ],
-                        staticClass: "input calculator__width",
-                        attrs: {
-                          type: "number",
-                          placeholder: "Ширина 1",
-                          name: "width[]"
-                        },
-                        domProps: { value: _vm.arrWidth[index] },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.arrWidth,
-                              index,
-                              _vm._n($event.target.value)
-                            )
-                          },
-                          blur: function($event) {
-                            _vm.$forceUpdate()
-                          }
-                        }
-                      })
-                    })
+                        2
+                      )
+                    ]
                   )
                 ]),
                 _vm._v(" "),

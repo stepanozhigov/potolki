@@ -5,12 +5,23 @@
     &_light {
         align-items: center;
         padding: 2.5rem 0;
+
+        @media screen and (max-width: 650px){
+            padding: 1rem 0;
+        }
     }
 
     &__top {
         padding: 65px 0 25px 0;
         display: flex;
         align-items: center;
+
+        @media screen and (max-width: 1024px){
+            padding-top: 35px;
+        }
+        @media screen and (max-width: 650px){
+            padding: 15px 0;
+        }
     }
 
     &__line {
@@ -23,12 +34,20 @@
         padding: 22px 0 25px 2px;
         display: flex;
         align-items: center;
+
+        @media screen and (max-width: 650px){
+            padding: 15px 0;
+        }
     }
 
     &__directions {
         margin: -2px 0 0 44px;
         position: relative;
-        flex-basis: 30%;
+        width: 30%;
+
+        @media screen and (max-width: 650px){
+            margin-left: 0;
+        }
 
         &:before {
             content: '';
@@ -38,24 +57,59 @@
             width: .0625rem;
             height: 2.8125rem;
             background-color: #a7aaad;
+
+            @media screen and (max-width: 650px){
+                content: none;
+            }
+        }
+
+        @media screen and (max-width: 1024px){
+            width: initial;
         }
     }
     
     &__menu {
         flex-basis: 52.7%;
         margin-left: auto;
+
+        @media screen and (max-width: 1024px){
+            display: none;
+        }
+    }
+
+    &__offices {
+        @media screen and (max-width: 1024px){
+            display: none;
+        }
     }
 
     &__feedbacks {
-        flex-basis: 52.7%;
+        width: 52.7%;
         margin-left: auto;
         display: flex;
         justify-content: space-between;
+
+        @media screen and (max-width: 1024px){
+            width: 100%;
+            margin: 0;
+        }
     }
 
     &__callback {
         color: $red_crismon;
         text-decoration: underline;
+        @media screen and (max-width: 650px){
+            display: none;
+        }
+    }
+
+    &__hamburger {
+        display: none;
+
+        @media screen and (max-width: 1024px){
+            display: flex;
+            margin-left: auto;
+        }
     }
 
 }

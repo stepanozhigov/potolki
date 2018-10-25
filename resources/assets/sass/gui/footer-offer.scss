@@ -22,5 +22,11 @@
         flex-direction: row;
         flex-wrap: wrap;
         width: 80%;
+        @media screen and (max-width: 1024px) {
+            width: auto;
+        }
+        @media screen and (max-width: 800px) {
+            flex-direction: column;
+        }
     }
 }

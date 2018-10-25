@@ -15,7 +15,7 @@
             <h1 class="title main-offer__title js-writen" data-texts="{{$texts}}">Пластиковые окна со&nbspскидкой&nbsp30%</h1>
             <p class="main-offer__subtitle">Для получения скидки оставьте заявку</p>
 
-            <form class="form main-offer__form" action="" id="offer-form">
+            <form class="form main-offer__form mobile-hide" action="" id="offer-form">
                 <input class="input form__input" type="text"  placeholder="Ваше имя">
                 <input class="input form__input" type="tel"  placeholder="Ваш телефон">
 
@@ -23,23 +23,24 @@
 
                 <p class="form__agreement subtext subtext_white">Оставляя контактную информацию, Вы соглашаетесь на обработку персональных данных</p>
             </form>
+            <button data-src="#popup_callback" class="button main-offer__button mobile-only js-show">Вызвать замерщика</button>
         </div>
     </section>
 
     <section class="catalog-cards container">
         @include('common.gui.titles', [
             'overtitle' =>  'Каталог',
-            'title' =>  "Светопрозрачные конструкции {$city->name_formatted} от&nbspпроизводителя",
-            'intro' =>  "Фабрика окон №1 {$city->name_formatted}. Посмотрите каталог и ниже рассчитайте Ваш заказ за 5 секунд."
+            'title' =>  "Пластиковые окна {$city->name_formatted} от&nbspпроизводителя",
+            'intro' =>  "Фабрика окон №1 {$city->name_formatted}. Посмотрите каталог и ниже рассчитайте Ваш заказ <span class='intro_red'>за 5 секунд</span>."
         ])
         
         @foreach ($catalogTypes as $type)
             <a href="" class=" catalog-cards__item b-card is-hoverable">
-                <img src="{{ Storage::url($type->img) }}" alt="{{ $type->name }}" class="card__img">
-                <p class="card-title card__title">{{ $type->name }}</p>
-                <hr class="line line_bold">
+                <img src="{{ Storage::url($type->img) }}" alt="{{ $type->name }}" class="catalog-cards__img">
+                <p class="card-title catalog-cards__title">{{ $type->name }}</p>
+                <hr class="line line_bold catalog-cards__line">
                 @if($type->price)
-                    <p class="card__price">от <span class="card__number">{{ number_format($type->price, 0, ',', ' ') }} Р</span></p>
+                    <p class="price catalog-cards__price">от <span class="card__number">{{ number_format($type->price, 0, ',', ' ') }} Р</span></p>
                 @endif
             </a>
         @endforeach
@@ -73,14 +74,18 @@
 
     </section>
 
-    <section class="portfolio-list b-texture">
+    <section class="portfolio portfolio_slided b-texture">
         @include('common.gui.titles', ['secondTitle' => 'Наши работы'])
-        <div class="portfolio-list__list">
-                @include('common.gui.card', ['class' => 'portfolio-list__item', 'img' => 'http://okna-ts.ru/local/templates/windows/source/builds/static/img/assets/catalogueItem/catalogue-windows-1.jpg', 'title' => 'Окна', 'price' => '500'])
-                @include('common.gui.card', ['class' => 'portfolio-list__item', 'img' => 'http://okna-ts.ru/local/templates/windows/source/builds/static/img/assets/catalogueItem/catalogue-windows-1.jpg', 'title' => 'Окна', 'price' => '500'])
-                @include('common.gui.card', ['class' => 'portfolio-list__item', 'img' => 'http://okna-ts.ru/local/templates/windows/source/builds/static/img/assets/catalogueItem/catalogue-windows-1.jpg', 'title' => 'Окна', 'price' => '500'])
-                @include('common.gui.card', ['class' => 'portfolio-list__item', 'img' => 'http://okna-ts.ru/local/templates/windows/source/builds/static/img/assets/catalogueItem/catalogue-windows-1.jpg', 'title' => 'Окна', 'price' => '500'])
-                @include('common.gui.card', ['class' => 'portfolio-list__item', 'img' => 'http://okna-ts.ru/local/templates/windows/source/builds/static/img/assets/catalogueItem/catalogue-windows-1.jpg', 'title' => 'Окна', 'price' => '500'])
+        @foreach ($photos as $photo)
+             <a class="case b-card portfolio__item portfolio__item_slide">
+                <p class="case__totals">{{ $photo->price }}  ₽ / {{ $photo->area }} м<sup>2</sup></p>
+                <img src="{{ Voyager::image( $photo->thumbnail('preview','src') ) }}" alt="{{ $photo->name }}" class="case__img">
+                <p class="card-title case__title">{{ $photo->name }}</p>
+            </a>
+        @endforeach
+        <div class="portfolio__buttons">
+            <a href="{{ route('photos', $city) }}" class="button portfolio__button button_gray">Посмотреть все работы</a>
+            <button class="button js-show" data-src="#popup_callback">Вызвать замерщика</button>
         </div>
     </section>
 
@@ -92,9 +97,36 @@
         @endforeach
 
         <div class="reviews__buttons">
-            <a href="{{ route('reviews', $city) }}" class="button button_gray">Прочитать все отзывы</a>
-            <a href="{{ route('add-review', $city) }}" class="button">Оставить отзыв</a>
+            <a href="{{ route('reviews', $city) }}" class="button reviews__button button_gray">Прочитать все отзывы</a>
+            <a href="{{ route('add-review', $city) }}" class="button reviews__button">Оставить отзыв</a>
         </div>
     </section>
+
+    <section class="additional container b-texture">
+        @include('common.gui.titles', ['secondTitle' => 'Также вас может заинтересовать'])
+        <div class="additional__item b-card">
+            <p class="card-title">Жалюзи</p>
+            <hr class="line">
+            <div class="additional__row">
+                <img src="/img/windows/additional__zhaluzi.png" alt="" class="additional__img">
+                <p class="text additional__text">
+                    Если вы хотите защититься от палящих лучей летнего солнца – лучшего решения, чем купить жалюзи на окна, и не придумать.
+                </p>
+            </div>
+            <a href="" class="button button_gray additional__button">Перейти в каталог</a>
+        </div>
+        <div class="additional__item b-card">
+            <p class="card-title">Рассрочка до 3х лет</p>
+            <hr class="line">
+            <div class="additional__row">
+                <img src="/img/windows/additional__percent.png" alt="" class="additional__img">
+                <p class="text additional__text">
+                    Основной плюс рассрочки в отсутствии переплат. Итоговая сумма, прописанная в договоре рассрочки, не меняется с течением времени.
+                </p>
+            </div>
+            <a href="" class="button button_gray additional__button">Подробнее</a>
+        </div>
+    </section>
+
     @include('common.gui.footer')
 @endsection

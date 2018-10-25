@@ -5,7 +5,7 @@
 
     <section class="index-offer">
         <h1 class="title index-offer__title">Фабрика пластиковых окон «Твой&#160;стиль»</h1>
-        <p class="intro index-offer__intro">Выберите город, чтобы перейти на сайт</p>
+        <p class="intro index-offer__intro">Выберите город, чтобы перейти на&nbspсайт</p>
         <div class="index-offer__buttons">
             <a href="/" class="button index-offer__button">Выбрать Сочи</a>
             <a href="/" class="button button_gray index-offer__button">Выбрать другой город</a>
