@@ -15,8 +15,9 @@
                 @endforeach
             </div>            
         </div>
-        <img src="/img/gui/nav_hamburger.svg" alt="" class="hamburger header__hamburger">
+        <img src="/img/gui/nav_hamburger.svg" alt="" class="hamburger header__hamburger js-show-menu">
         <nav class="menu header__menu">
+            <img src="/img/gui/close.svg" alt="" class="menu__close js-close-menu">
             <div class="dropdown menu__item menu__item_dropdown">
                 <a href="{{ route('calculator', request()->route()->city) }}" class="text menu__item">Калькулятор</a>
                 <div class="dropdown__content dropdown__content_menu">
@@ -38,6 +39,10 @@
             
             <div class="dropdown menu__item menu__item_dropdown">
                 <a href="/asd" class="text menu__item">Информация</a>
+                <div class="dropdown__content dropdown__content_menu">
+                    <a href="{{ route('about', request()->route()->city) }}" class="text menu__item dropdown__item_bordered">О компании</a>    
+                    <a href="{{ route('dirMessage') }}" class="text menu__item dropdown__item_bordered">Написать директору</a>
+                </div>
             </div>
         </nav>
     </div>

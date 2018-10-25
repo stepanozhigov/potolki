@@ -78,6 +78,17 @@
 
         @media screen and (max-width: 1024px){
             display: none;
+
+            &_active {
+                display: flex;
+                position: absolute;
+                background: white;
+                z-index: 99;
+                width: 68vw;
+                flex-direction: column;
+                top: 0;
+                right: 0;
+            }
         }
     }
 
@@ -113,6 +124,8 @@
         @media screen and (max-width: 1024px){
             display: flex;
             margin-left: auto;
+            padding-bottom: 35px;
+            cursor: pointer;
         }
     }
 

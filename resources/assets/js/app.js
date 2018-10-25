@@ -48,5 +48,11 @@ $writtenElements.each((index, element) => {
         loop: true,
         delay: 70
     });
+});
+
+
+$('.js-show-menu').on('click', function (e) {
+    $('.header__menu').addClass('header__menu_active');
 })
+
 

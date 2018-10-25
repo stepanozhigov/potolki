@@ -96,7 +96,7 @@
 
     @media screen and (max-width: 650px){
         line-height: 31px;
-        font-size: 26px;
+        font-size: 32px;
     }
 }
 
@@ -193,6 +193,10 @@
     
     &__overtitle {
         margin-bottom: 3px;
+
+        @media screen and (max-width: 650px){
+            margin-bottom: 10px;
+        }
     }
 
     &__title {
@@ -205,6 +209,7 @@
 
     &__intro {
         margin: 50px 0 0 0;
+        
     }
 
     @media screen and (max-width: 650px){

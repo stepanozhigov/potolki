@@ -1,164 +1,23 @@
 .about {
-    &__quote {
-        position: relative;
-        z-index: 2;
-
-        display: flex;
-        height: rem(450);
-        padding-top: rem(95);
-        margin: 0;
-        margin-bottom: rem(62);
-
-        background: url('/img/factory.jpg');
-        background-position: bottom;
-        background-size: cover;
-
-        @include below($tablet) {
-            height: rem(420);
-            padding-top: rem(80);
-        }
-        @include below($mobile) {
-            height: rem(450);
-            padding-top: rem(90);
-            padding-bottom: rem(200);
-            margin-bottom: rem(70);
-        }
-
-        &::before {
-            content: '';
-
-            position: absolute;
-
-            background-color: rgba($black, .6);
-
-            @include stretch;
-        }
-
-        p {
-            position: relative;
-
-            width: rem(680);
-            padding-top: rem(85);
-            margin: 0;
-            margin-left: auto;
-
-            font-size: 2.5rem;
-            font-style: italic;
-            line-height: 1.1;
-            color: $white;
-            text-align: left;
-
-            @include below($tablet) {
-                width: rem(480);
-
-                font-size: rem(30);
-            }
-            @include below($mobile) {
-                width: 100%;
-                padding: 0;
-                padding-top: rem(70);
-                padding-left: rem(10);
-                margin: 0;
-
-                font-size: rem(24);
-            }
-
-            &::before {
-                content: '';
-
-                position: absolute;
-                top: 0;
-                left: 0;
-
-                width: rem(50);
-                height: rem(40);
-
-                background: url('/img/quoteWhite.png');
-                background-size: contain;
-
-                @include below($tablet) {
-                    left: rem(10);
-
-                    width: rem(40);
-                    height: rem(32);
-                }
-            }
-
-            &::after {
-                display: none;
-            }
-        }
-
-        .container {
-            @include below($tablet) {
-                width: 100%;
-            }
-        }
-    }
-
-    &__subtitle {
-
-    }
-
-    &__desc {
-
-        @include below($mobile) {
-            font-size: rem(18);
-        }
-    }
-
-    &__heading {
-        position: relative;
-        z-index: 3;
-
-        .about__desc,
-        .about__subtitle {
-            width: rem(980);
-            margin: 0 auto;
-
-            @include below($tablet) {
-                width: rem(480);
-            }
-            @include below($mobile) {
-                width: 100%;
-            }
-        }
-
-        .about__desc {
-            margin-bottom: rem(40);
-        }
-
-        .about__subtitle {
-            margin-bottom: rem(20);
-        }
-    }
-
     &__images {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        margin-right: rem(-10);
-        margin-bottom: rem(-30);
-        margin-left: rem(-10);
 
         @include below($mobile) {
-            width: calc(100% + 20px);
+            width: 100%;
             height: auto;
             max-height: rem(455);
             margin: 0;
-            margin-right: rem(-10);
+            margin-right: auto;
             margin-bottom: rem(20);
-            margin-left: rem(-10);
+            margin-left: auto;
             overflow: hidden;
-
-            &.js-opened {
-                max-height: 100%;
-            }
         }
-    }
+    }    
 
     &__image {
-        width: rem(380);
+        width: 30%;
         height: rem(255);
         margin: 0 rem(10);
         margin-bottom: rem(30);
@@ -195,17 +54,6 @@
             &:not(:last-of-type) {
                 margin-bottom: rem(10);
             }
-
-            &:last-of-type {
-                margin-bottom: rem(80);
-            }
-        }
-
-        h2 {
-            margin-bottom: rem(60);
-            @include below($tablet) {
-                font-size: rem(26);
-            }
         }
     }
 
@@ -236,16 +84,18 @@
         }
 
         img {
+            
             margin-bottom: rem(10);
         }
 
         h3 {
             margin: 0;
             margin-bottom: rem(10);
-
+            font-family: "Playfair Display";
             font-size: rem(20);
             text-align: center;
-
+            color: #50555a;
+            font-weight: 400;
         }
 
         p {
@@ -264,55 +114,8 @@
 
         @include below($tablet) {
             width: 100%;
-        }
-        @include below($mobile) {
-            width: auto;
-            height: rem(370);
-
-            animation: linesLeft 50s;
-            animation-timing-function: linear;
-                    animation-iteration-count: infinite;
-
-               -moz-animation-iteration-count: infinite;
-            -webkit-animation-iteration-count: infinite;
+            height: auto;
         }
     }
 
-    &__button {
-        position: relative;
-
-        display: none;
-        height: auto;
-        padding: 0;
-
-        font-family: $helvetica;
-        font-size: rem(20);
-        font-weight: 300;
-        color: #a5aaaf;
-        text-align: left;
-        text-decoration: underline;
-
-        border: none;
-        outline: none;
-        background: transparent;
-
-        @include below($mobile) {
-            display: flex;
-        }
-    }
-
-    .page__inner {
-        margin-bottom: rem(65);
-
-        @include below($tablet) {
-            &::after {
-                width: rem(350);
-            }
-        }
-        @include below($mobile) {
-            &::after {
-                width: rem(200);
-            }
-        }
-    }
 }

@@ -27,6 +27,8 @@ Route::get('/', function () {
 
 Route::get('/forms/callback', 'PageController@callback');
 
+Route::get('/dir-message', 'PageController@dirMessage')->name('dirMessage');
+
 Route::prefix('/{city}')->group(function () {
 
     Route::get('/', 'PageController@main')->name('windows.main');

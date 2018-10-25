@@ -576,6 +576,10 @@ $writtenElements.each(function (index, element) {
     });
 });
 
+$('.js-show-menu').on('click', function (e) {
+    $('.header__menu').addClass('header__menu_active');
+});
+
 /***/ }),
 /* 6 */
 /***/ (function(module, exports, __webpack_require__) {
