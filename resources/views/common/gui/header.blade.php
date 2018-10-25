@@ -1,6 +1,6 @@
 <header class="header">
     <div class="header__top container">
-        <a href="/" class="header_logo logo">
+        <a href="/" class="header__logo logo">
             <img class="logo__icon" src="/img/gui/logo-icon.svg" alt="логотип Твой Стиль">
             <img class="logo__text mobile-hide" src="/img/gui/logo-text.svg" alt="графема Твой Стиль">        
         </a>
@@ -19,9 +19,19 @@
         <nav class="menu header__menu">
             <div class="dropdown menu__item menu__item_dropdown">
                 <a href="{{ route('calculator', request()->route()->city) }}" class="text menu__item">Калькулятор</a>
+                <div class="dropdown__content dropdown__content_menu">
+                    <a href="{{ route('calculator', request()->route()->city) }}" class="text menu__item dropdown__item_bordered">Окна</a>    
+                    <a href="{{ route('calculator', request()->route()->city) }}" class="text menu__item dropdown__item_bordered">Балконы</a>    
+                    <a href="{{ route('calculator', request()->route()->city) }}" class="text menu__item dropdown__item_bordered">Двери</a>    
+                    <a href="{{ route('calculator', request()->route()->city) }}" class="text menu__item dropdown__item_bordered">Перегородки</a>    
+                    <a href="{{ route('calculator', request()->route()->city) }}" class="text menu__item dropdown__item_bordered">Жалюзи</a>
+                </div>
             </div>
             <div class="dropdown menu__item menu__item_dropdown">
                 <a href="{{ route('services', request()->route()->city) }}" class="text menu__item">Услуги</a>
+                <div class="dropdown__content dropdown__content_menu">
+                    <a href="{{ route('calculator', request()->route()->city) }}" class="text menu__item dropdown__item_bordered">Услуги</a>    
+                </div>
             </div>
             <a href="{{ route('promos', request()->route()->city) }}" class="text menu__item">Скидки</a>
             <a href="{{ route('photos', request()->route()->city) }}" class="text menu__item">Фото</a>

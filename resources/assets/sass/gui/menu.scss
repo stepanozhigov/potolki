@@ -5,7 +5,7 @@
 
     &__item {
         position: relative;
-
+        padding-bottom: 35px;
         &:hover {
             color: $red_crismon;
             /*
@@ -21,6 +21,8 @@
             }*/
         }
 
+        &_dropdown {
+        }
         &_dropdown:before {
             content: url('/img/gui/hamburger.svg');
             color: inherit;
