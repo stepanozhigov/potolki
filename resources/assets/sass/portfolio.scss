@@ -4,6 +4,10 @@
     justify-content: space-between;
     padding-top: 90px;
 
+    @media screen and (max-width: 1024px) {
+        justify-content: space-evenly
+    }
+
     @media screen and (max-width: 650px){
         padding: 0;
     }
@@ -27,6 +31,13 @@
         position: relative;
         text-decoration: none;
         padding: 0 0 25px 0;
+
+        @media screen and (max-width: 1024px) {
+            width: 45%;
+        }
+        @media screen and (max-width: 650px) {
+            width: 95%;
+        }
 
         &_slide {
             width: 19%;
