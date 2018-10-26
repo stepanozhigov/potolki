@@ -580,6 +580,66 @@ $('.js-show-menu').on('click', function (e) {
     $('.header__menu').addClass('header__menu_active');
 });
 
+var $mapContainer = $('#map'),
+    $offices = $('.office');
+
+if ($mapContainer.length > 0 && $offices.length > 0) {
+    var offsetCoordinats = function offsetCoordinats(coords) {
+        var screenWidth = $(document).width();
+
+        switch (true) {
+            case screenWidth < 1000:
+                return [coords[0], coords[1] - 0.005];
+
+            case screenWidth < 1500:
+                return [coords[0], coords[1] - 0.005];
+
+            default:
+                return coords;
+        }
+    };
+
+    var initMap = function initMap() {
+
+        var map = new ymaps.Map('map', {
+            center: offsetCoordinats($('.office_active').data('coords')),
+            zoom: 16,
+            controls: []
+        });
+
+        map.behaviors.disable('scrollZoom');
+
+        if ($(document).width() < 1024) {
+            map.behaviors.disable('drag');
+        }
+
+        $offices.each(function (index, office) {
+
+            var officePlacemark = new ymaps.Placemark(JSON.parse(office.dataset.coords), {
+                //balloonContent: 'цвет <strong>воды пляжа бонди</strong>'
+            }, {
+                iconLayout: 'default#image',
+                iconImageHref: $('#map').data('placemark'),
+                iconContent: 'asdasdasd'
+            });
+
+            map.geoObjects.add(officePlacemark);
+        });
+
+        $('.js-next-office').on('click', function (e) {
+            var $currentOffice = $('.office_active'),
+                $nextOffice = $currentOffice.next('.office').length > 0 ? $currentOffice.next('.office') : $('.office').eq(0);
+
+            $currentOffice.removeClass('office_active');
+            $nextOffice.addClass('office_active');
+
+            map.panTo($nextOffice.data('coords'), { 'duration': 1000 });
+        });
+    };
+
+    ymaps.ready(initMap);
+}
+
 /***/ }),
 /* 6 */
 /***/ (function(module, exports, __webpack_require__) {

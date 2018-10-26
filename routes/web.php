@@ -51,7 +51,7 @@ Route::prefix('/{city}')->group(function () {
 
     Route::get('/vopros-otvet', 'PageController@questions')->name('vopros-otvet');
 
-    Route::get('/kontakty', 'PageController@contacts')->name('kontakty');
+    Route::get('/contacts', 'PageController@contacts')->name('contacts');
 
     Route::get('/dir-message', 'PageController@dirMessage')->name('dirMessage');
 });
