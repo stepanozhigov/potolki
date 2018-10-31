@@ -182,8 +182,31 @@ body {
         margin-right: 10px;
     }
 
+    &__number {
+        display: flex;
+        align-items: center;
+    }
     &__time {
         text-align: center;
+        color: #aaaaaa;
+        font-size: 14px;
+        margin-left: 13px;
+    }
+}
+
+.socials {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mail {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+
+    &__icon {
+        margin-right: 10px;
     }
 }
 

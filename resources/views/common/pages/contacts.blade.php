@@ -29,6 +29,40 @@
                 @endif
             </div>
         @endif 
+
+        <div class="contacts__footer container">
+            <div class="contacts__item">
+                <p class="second-title">Единый номер</p>
+                <p class="phone text contacts__phone">
+                    <span class="phone__number">
+                        <img class="phone__icon" src="/img/gui/phone_rounded.svg" alt="">8 800 333-97-14
+                    </span>
+                    <span class="phone__time">круглосуточно | бесплатно</span>
+                </p>
+            </div>
+            <div class="contacts__item">
+                <p class="second-title">Почта</p>
+                <p class="mail text">
+                    <img src="/img/gui/mail_rounded.svg" alt="" class="mail__icon">sochi@mail-ts.ru</p>
+            </div>
+            <div class="contacts__item">
+                <p class="second-title">Социальные сети</p>
+                <div class="socials contacts__socials">
+                    <a href="" class="socials__item">
+                        <img src="/img/gui/social_gray_vk.svg" alt="">
+                    </a>
+                    <a href="" class="socials__item">
+                        <img src="/img/gui/social_gray_ok.svg" alt="">
+                    </a>
+                    <a href="" class="socials__item">
+                        <img src="/img/gui/social_gray_fb.svg" alt="">
+                    </a>
+                    <a href="" class="socials__item">
+                        <img src="/img/gui/social_gray_inst.svg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
         
     </section>
     @include('common.gui.footer')

@@ -584,10 +584,12 @@ var $mapContainer = $('#map'),
     $offices = $('.office');
 
 if ($mapContainer.length > 0 && $offices.length > 0) {
-    var offsetCoordinats = function offsetCoordinats(coords) {
+    var offsetCoordinates = function offsetCoordinates(coords) {
         var screenWidth = $(document).width();
 
         switch (true) {
+            case screenWidth < 600:
+                return [coords[0], coords[1]];
             case screenWidth < 1000:
                 return [coords[0], coords[1] - 0.005];
 
@@ -602,7 +604,7 @@ if ($mapContainer.length > 0 && $offices.length > 0) {
     var initMap = function initMap() {
 
         var map = new ymaps.Map('map', {
-            center: offsetCoordinats($('.office_active').data('coords')),
+            center: offsetCoordinates($('.office_active').data('coords')),
             zoom: 16,
             controls: []
         });
@@ -633,7 +635,7 @@ if ($mapContainer.length > 0 && $offices.length > 0) {
             $currentOffice.removeClass('office_active');
             $nextOffice.addClass('office_active');
 
-            map.panTo($nextOffice.data('coords'), { 'duration': 1000 });
+            map.panTo(offsetCoordinates($nextOffice.data('coords')), { 'duration': 1000 });
         });
     };
 
