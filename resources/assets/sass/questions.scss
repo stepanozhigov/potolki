@@ -29,6 +29,9 @@
             flex-direction: column;
             align-items: center;
             margin-bottom: rem(25);
+            margin-right: auto;
+            margin-left: auto;
+            width: 100%;
         }
     }
 
@@ -43,12 +46,16 @@
     &__tag {
         margin-right: 20px;
         margin-bottom: 20px;
+
+        @include below($mobile) {
+            margin-right: 0;
+        }
     }
     
     &__content {
         position: relative;
         z-index: 2;
-
+        align-items: flex-start;
         display: flex;
         flex-wrap: wrap;
 
@@ -65,7 +72,7 @@
     &__card {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         width: calc(33.3% - 16px);
         padding-top: rem(45);
         padding-right: rem(20);
@@ -75,14 +82,6 @@
         margin-bottom: rem(25);
         overflow: hidden;
 
-        text-decoration: none;
-
-        border-radius: rem(5);
-        outline: none;
-        background-color: $white;
-        box-shadow: 0 rem(8) rem(8) rgba(0, 0, 0, 0),
-        0 0 rem(2) rgba(0, 0, 0, .08),
-        inset 0 rem(-1) 0 rgba(0, 0, 0, .12);
 
         @include above($tablet) {
             transition: box-shadow .3s;
@@ -103,39 +102,30 @@
             0 0 rem(8) rgba(0, 0, 0, .08),
             inset 0 rem(-1) 0 rgba(0, 0, 0, .12);
         }
+        
+    }
+}
 
-        h2,
-        h3 {
-            position: relative;
+.question {
+    &__title {
+        font-size: 20px;
+        text-align: left;
+        margin-bottom: 25px;
+    }
 
-            width: 100%;
-            padding-bottom: rem(25);
-            margin: 0;
-            margin-bottom: rem(35);
-
-            font-weight: 400;
-
-            &::after {
-                content: '';
-
-                position: absolute;
-                bottom: 0;
-                left: 0;
-
-                width: rem(180);
-                height: rem(1);
-
-                background-color: $grey_chateau;
-            }
+    &__text {
+        max-height: 65px;
+        overflow: hidden;
+        
+        &_toggled {
+            max-height: initial;    
         }
+    }
 
-        p {
-            width: 100%;
-            margin: 0;
-
-            @include below($tablet-small) {
-                max-height: rem(87);
-            }
-        }
+    &__more {
+        text-decoration: underline;
+        cursor: pointer;
+        color: #a5aaaf;
+        
     }
 }

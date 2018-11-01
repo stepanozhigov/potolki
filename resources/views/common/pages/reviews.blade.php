@@ -1,6 +1,6 @@
 @extends('common.layout')
     @section('content')
-        @include('common.header')
+        @include('common.gui.header')
         <section class="reviews container">
             <p class="overtitle reviews__overtitle">ОБРАТНАЯ СВЯЗЬ</p>
             <h1 class="title reviews__title">Отзывы о компании "Твой стиль" {{ $city->name_formatted }}</h1>
@@ -19,5 +19,5 @@
                 <a href="" class="paginator__item">3</a>
             </div>
         </section>
-        @include('common.footer')
+        @include('common.gui.footer')
     @endsection

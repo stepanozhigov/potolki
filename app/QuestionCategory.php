@@ -11,4 +11,8 @@ class QuestionCategory extends Model
     {
         return 'code';
     }
+    public function questions ()
+    {
+        return $this->hasMany('App\Question');
+    }
 }

@@ -12,6 +12,7 @@ use App\Review;
 use App\Employee;
 use App\Vacancy;
 use App\QuestionCategory;
+use App\Question;
 use App\WindowCalcParam;
 
 class PageController extends Controller
@@ -84,7 +85,9 @@ class PageController extends Controller
     {
         return view ('common.pages.questions', [
             'city'  =>  $city,
-            'categories'    => QuestionCategory::all()
+            'categories'    => QuestionCategory::all(),
+            'currentCategory'  =>  $category,
+            'questions' =>  $category->questions ?? Question::all()
         ]);
     }
 

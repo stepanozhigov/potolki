@@ -45,6 +45,7 @@
                     <a href="{{ route('employees', request()->route()->city) }}" class="text menu__item dropdown__item_bordered">Сотрудники</a>
                     <a href="{{ route('vacancies', request()->route()->city) }}" class="text menu__item dropdown__item_bordered">Вакансии</a>
                     <a href="{{ route('questions', request()->route()->city) }}" class="text menu__item dropdown__item_bordered">Вопрос-ответ</a>
+                    <a href="{{ route('reviews', request()->route()->city) }}" class="text menu__item dropdown__item_bordered">Отзывы</a>
                     <a href="{{ route('dirMessage', request()->route()->city) }}" class="text menu__item dropdown__item_bordered">Написать директору</a>
                 </div>
             </div>

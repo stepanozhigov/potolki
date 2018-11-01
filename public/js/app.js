@@ -642,6 +642,18 @@ if ($mapContainer.length > 0 && $offices.length > 0) {
     ymaps.ready(initMap);
 }
 
+$('.question__more').on('click', function (e) {
+
+    var currentText = $(this).text(),
+        dataText = $(this).data('text');
+
+    $(this).text(dataText);
+
+    $(this).data('text', currentText);
+
+    $(this).prev('.question__text').toggleClass('question__text_toggled');
+});
+
 /***/ }),
 /* 6 */
 /***/ (function(module, exports, __webpack_require__) {
