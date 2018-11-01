@@ -41,15 +41,15 @@ Route::prefix('/{city}')->group(function () {
 
     Route::get('/about', 'PageController@about')->name('about');
 
-    Route::get('/sotrudniki', 'PageController@employers')->name('sotrudniki');
+    Route::get('/employees', 'PageController@employers')->name('employees');
 
     Route::get('/reviews', 'PageController@reviews')->name('reviews');
 
     Route::get('/reviews/add', 'PageController@addReview')->name('add-review');
 
-    Route::get('/vakansii', 'PageController@jobs')->name('vakansii');
+    Route::get('/vacancies', 'PageController@vacancies')->name('vacancies');
 
-    Route::get('/vopros-otvet', 'PageController@questions')->name('vopros-otvet');
+    Route::get('/questions/{category?}', 'PageController@questions')->name('questions');
 
     Route::get('/contacts', 'PageController@contacts')->name('contacts');
 

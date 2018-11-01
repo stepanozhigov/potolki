@@ -1,5 +1,8 @@
 .jobs {
     padding: 90px 0 70px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 
     &__switcher {
         width: 100%;
@@ -13,5 +16,13 @@
         align-items: flex-start;
         width: calc(33.3% - 16px);
         margin-bottom: rem(25);
+
+        @media screen and (max-width: 1024px) {
+            width: 48%;
+        }
+
+        @media screen and (max-width: 750px) {
+            width: 100%;
+        }
     }
 }

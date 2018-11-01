@@ -9,6 +9,9 @@ use App\CatalogType;
 use App\Photo;
 use App\Promo;
 use App\Review;
+use App\Employee;
+use App\Vacancy;
+use App\QuestionCategory;
 use App\WindowCalcParam;
 
 class PageController extends Controller
@@ -57,14 +60,16 @@ class PageController extends Controller
     public function employers (City $city)
     {
         return view ('common.pages.employers', [
-            'city'  =>  $city
+            'city'  =>  $city,
+            'employees' =>  Employee::all()
         ]);
     }
 
-    public function jobs (City $city)
+    public function vacancies (City $city)
     {
-        return view ('common.pages.jobs', [
-            'city'  =>  $city
+        return view ('common.pages.vacancies', [
+            'city'  =>  $city,
+            'vacancies' =>  Vacancy::all()
         ]);
     }
 
@@ -75,10 +80,11 @@ class PageController extends Controller
         ]);
     }
 
-    public function questions (City $city)
+    public function questions (City $city, QuestionCategory $category = null)
     {
         return view ('common.pages.questions', [
-            'city'  =>  $city
+            'city'  =>  $city,
+            'categories'    => QuestionCategory::all()
         ]);
     }
 

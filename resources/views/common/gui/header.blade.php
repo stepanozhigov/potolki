@@ -42,6 +42,9 @@
                 <div class="dropdown__content dropdown__content_menu">
                     <a href="{{ route('contacts', request()->route()->city) }}" class="text menu__item dropdown__item_bordered">Контакты</a>
                     <a href="{{ route('about', request()->route()->city) }}" class="text menu__item dropdown__item_bordered">О компании</a>    
+                    <a href="{{ route('employees', request()->route()->city) }}" class="text menu__item dropdown__item_bordered">Сотрудники</a>
+                    <a href="{{ route('vacancies', request()->route()->city) }}" class="text menu__item dropdown__item_bordered">Вакансии</a>
+                    <a href="{{ route('questions', request()->route()->city) }}" class="text menu__item dropdown__item_bordered">Вопрос-ответ</a>
                     <a href="{{ route('dirMessage', request()->route()->city) }}" class="text menu__item dropdown__item_bordered">Написать директору</a>
                 </div>
             </div>

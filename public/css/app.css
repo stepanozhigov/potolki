@@ -456,6 +456,34 @@
   border: none;
 }
 
+.tag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 30px;
+  border: 1px solid #a7aaad;
+  background-color: #ffffff;
+  color: #50555f;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  padding: 10px 30px;
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 300;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.tag_active {
+  border: 1px solid #dc1414;
+  color: #dc1414;
+}
+
 .cities {
   width: 780px;
   padding: 0 0 70px 0;
@@ -3318,6 +3346,7 @@ body.no-scroll {
 }
 
 .employees {
+  padding-top: 80px;
   margin-bottom: 5.625rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3374,11 +3403,26 @@ body.no-scroll {
   position: relative;
   padding: 0 0.9375rem;
   overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-decoration: none;
   border-radius: 0.3125rem;
   cursor: pointer;
   background-image: url("/img/additionally.jpg");
   background-size: cover;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: overlay;
   -webkit-box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0), 0 0 0.125rem rgba(0, 0, 0, 0.08), inset 0 -0.0625rem 0 rgba(0, 0, 0, 0.12);
           box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0), 0 0 0.125rem rgba(0, 0, 0, 0.08), inset 0 -0.0625rem 0 rgba(0, 0, 0, 0.12);
 }
@@ -3399,59 +3443,6 @@ body.no-scroll {
   .employees__additionally:hover::after {
     background-color: rgba(0, 0, 0, 0.6);
   }
-}
-
-.employees__additionally::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-@media screen and (min-width: 60rem) {
-  .employees__additionally::after {
-    -webkit-transition: background-color .3s;
-    transition: background-color .3s;
-  }
-}
-
-.employees__additionally-content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: 100%;
-}
-
-.employees__additionally-content h2 {
-  position: relative;
-  z-index: 2;
-  margin: 0;
-  margin-bottom: 1.875rem;
-  font-size: 1.25rem;
-  line-height: 1.2;
-  color: #ffffff;
-  text-align: center;
-}
-
-.employees__additionally-content h2::after {
-  background-color: #ffffff;
-}
-
-.employees__additionally-content p {
-  position: relative;
-  z-index: 2;
-  margin: 0;
-  color: #ffffff;
 }
 
 .employees__link {
@@ -3509,6 +3500,13 @@ body.no-scroll {
           box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0), 0 0 0.125rem rgba(0, 0, 0, 0.08), inset 0 -0.0625rem 0 rgba(0, 0, 0, 0.12);
 }
 
+@media screen and (max-width: 650px) {
+  .employee {
+    height: auto;
+    padding-bottom: 45px;
+  }
+}
+
 .employee__image {
   width: 100%;
   height: 22.5rem;
@@ -3522,12 +3520,23 @@ body.no-scroll {
 .employee__title {
   font-size: 20px;
   text-align: center;
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 .employee__text {
   text-align: center;
   margin: 30px 0 0 0;
+}
+
+.additionally__title {
+  color: white;
+  margin-top: -100px;
+  margin-bottom: 20px;
+}
+
+.additionally__line {
+  margin-bottom: 25px;
+  width: 85px;
 }
 
 .paginator {
@@ -3769,6 +3778,14 @@ body.no-scroll {
 
 .jobs {
   padding: 90px 0 70px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .jobs__switcher {
@@ -3792,45 +3809,22 @@ body.no-scroll {
   margin-bottom: 1.5625rem;
 }
 
+@media screen and (max-width: 1024px) {
+  .jobs__card {
+    width: 48%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .jobs__card {
+    width: 100%;
+  }
+}
+
 .questions {
   position: relative;
   padding-bottom: 5rem;
-}
-
-.questions::before {
-  content: '';
-  position: absolute;
-  top: 25%;
-  left: 0;
-  width: 21.875rem;
-  height: 31.25rem;
-  background-image: url("/img/tech-1.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-@media screen and (max-width: 44.9375rem) {
-  .questions::before {
-    display: none;
-  }
-}
-
-.questions::after {
-  content: '';
-  position: absolute;
-  top: 56%;
-  right: 0;
-  width: 19.375rem;
-  height: 45.3125rem;
-  background-image: url("/img/tech-2.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-@media screen and (max-width: 44.9375rem) {
-  .questions::after {
-    display: none;
-  }
+  padding-top: 70px;
 }
 
 .questions__filter {
@@ -3886,45 +3880,9 @@ body.no-scroll {
   }
 }
 
-.questions__filter-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: 2.5rem;
-  padding: 0.625rem 2rem;
-  margin: 0 0.5rem;
-  margin-bottom: 1.25rem;
-  line-height: 1;
-  white-space: nowrap;
-  background-color: #ffffff;
-}
-
-@media screen and (max-width: 60rem) {
-  .questions__filter-item {
-    height: 3.125rem;
-    padding: 0.9375rem 1.25rem;
-  }
-}
-
-@media screen and (max-width: 44.9375rem) {
-  .questions__filter-item {
-    padding: 0.625rem 0.625rem;
-    margin: 0;
-    margin-bottom: 1.5625rem;
-    font-size: 1.125rem;
-  }
+.questions__tag {
+  margin-right: 20px;
+  margin-bottom: 20px;
 }
 
 .questions__content {

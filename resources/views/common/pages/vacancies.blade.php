@@ -12,17 +12,19 @@
                         Сейчас в нашем представительстве {$city->name_formatted} открыты следующие вакансии:"
         ])
         <section class="jobs container b-texture">
-            <div class="switcher jobs__switcher">
+            <!--<div class="switcher jobs__switcher">
                 <a class="switcher__button switcher__button_active">Монтаж</a>
                 <a class="switcher__button">Производство</a>
                 <a class="switcher__button">Менеджмент</a>
                 <a class="switcher__button">Администрация</a>
-            </div>
-            <section class="jobs__card b-card">
-                <p class="card-title">Менеджер</p>
-                <hr class="line">
-                <p class="text">Замеры, составление договоров, пластиковых конструкций, монтаж натяжных потолков, установка корпусной мебели, установка кондиционеров.</p>
-            </section>
+            </div>-->
+            @foreach($vacancies as $vacancy)
+                <div class="jobs__card b-card">
+                    <p class="card-title">{{ $vacancy->name }}</p>
+                    <hr class="line">
+                    <p class="text">{{ $vacancy->desc }}</p>
+                </div>
+            @endforeach
         </section>
     @include('common.gui.footer')
 @endsection

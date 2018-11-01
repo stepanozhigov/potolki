@@ -43,4 +43,26 @@
             border: none;
         }
     }
+    
+}
+
+.tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    border: 1px solid $grey_chateau;
+    background-color: $white;
+    color: #50555f;
+    box-shadow: none;
+    padding: 10px 30px;
+    font-family: $helvetica;
+    font-weight: 300;
+    cursor: pointer;
+    text-decoration: none;
+    
+    &_active {
+        border: 1px solid $red_crismon;
+        color: $red_crismon;
+    }
 }
