@@ -26,6 +26,8 @@ Route::get('/', function () {
 })->name('index');
 
 Route::get('/forms/callback', 'PageController@callback');
+Route::post('/forms/add-comment', 'FeedbackController@addComment');
+
 
 Route::prefix('/{city}')->group(function () {
 

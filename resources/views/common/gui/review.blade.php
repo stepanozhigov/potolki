@@ -12,6 +12,6 @@
         </div>
     </div>
     <div class="review__media b-card">
-        <img class="review__img" src="{{ Storage::url($review->preview_img) }}" alt="">
+        <img class="review__preview" src="{{ Storage::url($review->preview_img) }}" alt="">
     </div>
 </div>

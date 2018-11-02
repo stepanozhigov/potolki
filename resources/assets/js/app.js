@@ -11,6 +11,8 @@ window.$ = window.jQuery = require('jquery');
 window.Vue = require('vue');
 
 require('./components/popup');
+//require('./components/social');
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -19,6 +21,15 @@ require('./components/popup');
 
 Vue.component('window-calc', require('./components/WindowCalc.vue'));
 Vue.component('city-search', require('./components/CitySearch.vue'));
+Vue.component('add-comment', require('./components/AddComment.vue'));
+
+$('.js-add-comment').each(function(index, element) {
+    var elementId = $(element).attr('id');
+    
+    new Vue({
+        el: '#' + elementId
+    })
+})
 
 if ($('#city-search').length > 0) {
     const citySearch = new Vue({

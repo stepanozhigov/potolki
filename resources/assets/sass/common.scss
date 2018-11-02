@@ -198,6 +198,10 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    &__item {
+        cursor: pointer;
+    }
 }
 
 .mail {
@@ -551,6 +555,13 @@ body {
         }
     }
 
+    &_review {
+        width: 580px;
+        display: block;
+        top: 15%;
+        position: absolute;
+        transform: translate(-50%);
+    }
     &__close {
         cursor: pointer;
         padding: 9px;
@@ -560,6 +571,7 @@ body {
         top: -20px;
         right: -20px;
         border-radius: 50%;
+        z-index: 9;
 
         @media screen and (max-width: 650px) {
             top: 15px;

@@ -538,6 +538,8 @@ window.$ = window.jQuery = __webpack_require__(6);
 window.Vue = __webpack_require__(7);
 
 __webpack_require__(11);
+//require('./components/social');
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -546,6 +548,15 @@ __webpack_require__(11);
 
 Vue.component('window-calc', __webpack_require__(12));
 Vue.component('city-search', __webpack_require__(18));
+Vue.component('add-comment', __webpack_require__(44));
+
+$('.js-add-comment').each(function (index, element) {
+    var elementId = $(element).attr('id');
+
+    new Vue({
+        el: '#' + elementId
+    });
+});
 
 if ($('#city-search').length > 0) {
     var citySearch = new Vue({
@@ -23272,6 +23283,313 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 25 */,
+/* 26 */,
+/* 27 */,
+/* 28 */,
+/* 29 */,
+/* 30 */,
+/* 31 */,
+/* 32 */,
+/* 33 */,
+/* 34 */,
+/* 35 */,
+/* 36 */,
+/* 37 */,
+/* 38 */,
+/* 39 */,
+/* 40 */,
+/* 41 */,
+/* 42 */,
+/* 43 */,
+/* 44 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(3)
+/* script */
+var __vue_script__ = __webpack_require__(45)
+/* template */
+var __vue_template__ = __webpack_require__(46)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/AddComment.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-7d9524f5", Component.options)
+  } else {
+    hotAPI.reload("data-v-7d9524f5", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 45 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            user: {},
+            message: ''
+        };
+    },
+    computed: {
+        placeholder: function placeholder() {
+            return this.user ? 'Введите ваше сообщение' : 'Авторизуйтесь, чтобы оставить комментарий.';
+        },
+        isValidated: function isValidated() {
+            return this.user && this.message.length > 0;
+        }
+    },
+    methods: {
+        send: function send() {
+            var $this = this;
+
+            $.ajax({
+                url: '/forms/add-comment',
+                method: 'post',
+                data: {
+                    _token: $('[name=token]').attr('content'),
+                    fio: $this.user.fullName,
+                    avatar: $this.user.avatar,
+                    text: $this.message,
+                    review_id: $this.review,
+                    type: 'client'
+                }
+            });
+        },
+
+        vkAuth: function vkAuth() {
+            var _this = this;
+
+            VK.init({
+                apiId: 5898289
+            });
+
+            VK.Auth.login(function (response) {
+                if (response.session) {
+                    var user = response.session.user;
+                    return VK.Api.call('users.get', { 'user_ids': user.id, fields: 'photo_200', v: '5.80' }, function (res) {
+                        var userData = {
+                            socialType: 'vk',
+                            userHref: user.href,
+                            fullName: user.first_name + ' ' + user.last_name,
+                            surname: user.last_name,
+                            avatar: res.response[0].photo_200
+                        };
+                        _this.user = userData;
+                        localStorage.setItem('socialUser', JSON.stringify(userData));
+                    });
+                }
+            });
+        }
+    },
+    props: ['review'],
+    mounted: function mounted() {
+        this.user = JSON.parse(localStorage.getItem('socialUser'));
+    }
+});
+
+/***/ }),
+/* 46 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "comment comment_client" }, [
+    _c("p", { staticClass: "third-title comment__title" }, [
+      _vm._v("Добавить комментарий")
+    ]),
+    _vm._v(" "),
+    _c("hr", { staticClass: "line comment__line" }),
+    _vm._v(" "),
+    _c("textarea", {
+      directives: [
+        {
+          name: "model",
+          rawName: "v-model",
+          value: _vm.message,
+          expression: "message"
+        }
+      ],
+      staticClass: "textarea comment__textarea",
+      attrs: {
+        disabled: !_vm.user,
+        name: "",
+        id: "",
+        placeholder: _vm.placeholder
+      },
+      domProps: { value: _vm.message },
+      on: {
+        input: function($event) {
+          if ($event.target.composing) {
+            return
+          }
+          _vm.message = $event.target.value
+        }
+      }
+    }),
+    _vm._v(" "),
+    _vm.user
+      ? _c("div", { staticClass: "comment__user comment__user_client user" }, [
+          _c("div", { staticClass: "user__left" }, [
+            _c("img", {
+              staticClass: "user__avatar",
+              attrs: { src: _vm.user.avatar, alt: "" }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "user__right" }, [
+            _c("p", { staticClass: "text user__name" }, [
+              _vm._v(_vm._s(_vm.user.fullName))
+            ])
+          ])
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    !_vm.user
+      ? _c("div", { staticClass: "comment__auth" }, [
+          _c("span", { staticClass: "third-title" }, [
+            _vm._v("Авторизуйтесь через")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "comment__socials socials" }, [
+            _c("img", {
+              staticClass: "socials__item",
+              attrs: { src: "/img/gui/social_gray_vk.svg", alt: "" },
+              on: {
+                click: function($event) {
+                  _vm.vkAuth()
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("img", {
+              staticClass: "socials__item js-social-auth",
+              attrs: {
+                "data-callback": "unlockComment",
+                "data-social": "vk",
+                src: "/img/gui/social_gray_ok.svg",
+                alt: ""
+              }
+            }),
+            _vm._v(" "),
+            _c("img", {
+              staticClass: "socials__item js-social-auth",
+              attrs: {
+                "data-callback": "unlockComment",
+                "data-social": "vk",
+                src: "/img/gui/social_gray_fb.svg",
+                alt: ""
+              }
+            }),
+            _vm._v(" "),
+            _c("img", {
+              staticClass: "socials__item js-social-auth",
+              attrs: {
+                "data-callback": "unlockComment",
+                "data-social": "vk",
+                src: "/img/gui/social_gray_inst.svg",
+                alt: ""
+              }
+            })
+          ])
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    _c("div", { staticClass: "comment__controls" }, [
+      _vm.isValidated
+        ? _c(
+            "span",
+            {
+              staticClass: "button button_red comment__sent",
+              on: {
+                click: function($event) {
+                  _vm.send()
+                }
+              }
+            },
+            [_vm._v("Отправить")]
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _c("span", { staticClass: "link comment__close js-close" }, [
+        _vm._v("Закрыть")
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-7d9524f5", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

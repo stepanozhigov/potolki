@@ -57,3 +57,16 @@
         top: 10px;
     }
 }
+
+.textarea {
+    border-radius: 5px;
+    border: 1px solid #e5e5e5;
+    background-color: $white;
+    outline: none;
+    padding: 25px 44px 25px 15px;
+    font-family: "Helvetica Neue";
+    font-size: 14px;
+    color: #50555f;
+    resize: none;
+    line-height: 25px;
+}
