@@ -8,6 +8,7 @@
             'intro' =>  "Сюда нужно добавить какой-нибудь текст про страницу. А так же о том, что пользователь может оставить отзыв и получить что-нибудь хорошее (например средство за уходом, скидку или другой подарок)."
         ])
         <section class="reviews container">
+            
             @foreach ($reviews as $review)
                 <div class="review reviews__item js-show" data-src="#popup_review_{{ $review->id }}">
                     <div class="review__body b-card">
@@ -103,6 +104,7 @@
                 <a href="" class="paginator__item">2</a>
                 <a href="" class="paginator__item">3</a>
             </div>
+            <a href="{{ route('add-review', $city) }}" class="button reviews__add">Оставить отзыв</a>
         </section>
         @include('common.gui.footer')
         <script src="https://vk.com/js/api/openapi.js?146" type="text/javascript"></script>

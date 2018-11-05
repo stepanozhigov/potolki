@@ -2580,6 +2580,10 @@ body.no-scroll {
   padding: 50px 0 50px 0;
 }
 
+.reviews__add {
+  margin: 20px auto 0 auto;
+}
+
 .reviews__item {
   width: 32.5%;
   margin-top: 70px;
@@ -4316,10 +4320,24 @@ body.no-scroll {
   padding: 40px 400px 80px 80px;
 }
 
+@media screen and (max-width: 1200px) {
+  .add-review {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
 .add-review__girl {
   position: absolute;
   right: 0;
   bottom: 0;
+  z-index: -1;
+}
+
+@media screen and (max-width: 800px) {
+  .add-review__girl {
+    width: 21%;
+  }
 }
 
 .add-review__avatar {
@@ -4354,6 +4372,13 @@ body.no-scroll {
   width: 100%;
 }
 
+@media screen and (max-width: 800px) {
+  .add-review__label {
+    margin-right: 0;
+    width: 100%;
+  }
+}
+
 .add-review__file {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4367,6 +4392,12 @@ body.no-scroll {
 
 .add-review__input {
   margin-top: 17px;
+}
+
+@media screen and (max-width: 800px) {
+  .add-review__input {
+    width: 100%;
+  }
 }
 
 .add-review__socials {

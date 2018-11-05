@@ -102,7 +102,7 @@ class PageController extends Controller
     {
         return view('common.pages.reviews', [
             'city'  =>  $city,
-            'reviews'   =>  Review::paginate(30)
+            'reviews'   =>  Review::where('is_active', 1)->paginate(30)
         ]);
     }
 

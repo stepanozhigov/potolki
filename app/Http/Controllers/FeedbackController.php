@@ -25,6 +25,7 @@ class FeedbackController extends Controller
         $review->avatar = $request->avatar;
         $review->title = $request->fio;
         $review->link = $request->link;
+        $review->city_id = $request->city;
 
         $review->save();
 

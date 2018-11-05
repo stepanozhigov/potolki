@@ -47,6 +47,7 @@
         components: {
             'social-auth': socialAuth
         },
+        props: ['city'],
         data: function () {
             return {
                 user: {
@@ -72,6 +73,7 @@
                 data.append('video', this.video);
                 data.append('fio', this.user.fullName);
                 data.append('text', this.text);
+                data.append('city', this.city);
 
                 if (this.user.avatar) {
                     data.append('avatar', this.user.avatar);

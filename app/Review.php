@@ -20,6 +20,9 @@ class Review extends Model
 
     public function avatar ()
     {
+        if (empty($this->avatar)) {
+            return '/img/gui/user_default.jpg';
+        }
         return strpos($this->avatar, 'http') !== false ? $this->avatar : Storage::url($this->avatar);
     }
 

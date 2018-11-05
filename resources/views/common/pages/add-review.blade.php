@@ -11,7 +11,7 @@
     ])
 
     <section class="container" id="add-review">
-        <add-review></add-review>
+        <add-review city={{ $city->id }}></add-review>
     </section>
     
     <script src="https://vk.com/js/api/openapi.js?146" type="text/javascript"></script>

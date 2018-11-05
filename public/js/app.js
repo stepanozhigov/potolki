@@ -23673,6 +23673,7 @@ var socialAuth = __webpack_require__(28);
     components: {
         'social-auth': socialAuth
     },
+    props: ['city'],
     data: function data() {
         return {
             user: {
@@ -23697,6 +23698,7 @@ var socialAuth = __webpack_require__(28);
             data.append('video', this.video);
             data.append('fio', this.user.fullName);
             data.append('text', this.text);
+            data.append('city', this.city);
 
             if (this.user.avatar) {
                 data.append('avatar', this.user.avatar);
