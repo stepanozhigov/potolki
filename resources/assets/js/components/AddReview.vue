@@ -30,7 +30,8 @@
                 <span class="subtext file__name">{{ video ? video.name: '' }}</span>
             </label>
         </div>
-        <button @click="send" class="button add-review__submit">Отправить</button>
+        <button v-if="!sended" @click="send" class="button add-review__submit">Отправить</button>
+        <p v-if="sended" class="intro add-review__submit">{{ resultText }}</p>
         <p class="subtext add-review__agreement">Оставляя контактную информацию, Вы соглашаетесь на обработку персональных данных</p>
         <img src="/img/photo-girl.png" class="add-review__girl" alt="">
     </div>
@@ -57,13 +58,18 @@
                 photos: [],
                 video: null,
                 previews: [],
-                videoPreview: null
+                videoPreview: null,
+                sended: false,
+                resultText: ''
             }
         },
         methods: {
             send: function ()
             {
-                var data = new FormData;
+                this.sended = true;
+                
+                var data = new FormData,
+                    $this = this;
 
                 this.photos.forEach(element => {
                     data.append('photos[]', element);
@@ -93,8 +99,20 @@
                     method: 'post',
                     processData: false,
                     contentType: false,
-                    success: function (response) {
+                    xhr: function() {
+                        var xhr = new window.XMLHttpRequest();
+                        xhr.upload.addEventListener("progress", function(evt) {
+                            if (evt.lengthComputable) {
+                                var percentComplete = evt.loaded / evt.total;
+                                $this.resultText = "Идет загрузка: "+ parseInt(percentComplete  * 100) + " %. Не закрывайте страницу";
+                            }
+                        }, false);
 
+                        return xhr;
+                    },
+                    success: function (response) {
+                        
+                        $this.resultText = "Отзыв отправлен!";
                     }
                 })
             },

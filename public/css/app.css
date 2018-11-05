@@ -2319,6 +2319,8 @@ body.no-scroll {
 
 .person__photo {
   margin-bottom: 30px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .person__name {
@@ -3692,6 +3694,7 @@ body.no-scroll {
 
 .calculator {
   padding: 0;
+  overflow: hidden;
 }
 
 .calculator__types {
@@ -3758,12 +3761,24 @@ body.no-scroll {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   width: 54%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.calculator__img-wrap {
+  margin-left: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .calculator__heights {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3775,6 +3790,69 @@ body.no-scroll {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   margin-left: 15px;
+  padding-bottom: 57px;
+}
+
+.calculator__line {
+  position: absolute;
+  top: 12px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  margin: 0;
+  background-color: #e3e3e3;
+  overflow: visible;
+  border: none;
+}
+
+.calculator__line::before,
+.calculator__line::after {
+  position: absolute;
+  content: '';
+  width: 2px;
+  height: 12px;
+  background-color: #e3e3e3;
+}
+
+.calculator__line::before {
+  top: -12px;
+  left: 0;
+}
+
+.calculator__line::after {
+  top: -12px;
+  right: 0;
+}
+
+.calculator__line_vert {
+  top: 0;
+  left: 12px;
+  width: 2px;
+  height: calc(100% - 57px);
+  margin: 0;
+  background-color: #e3e3e3;
+  overflow: visible;
+  border: none;
+}
+
+.calculator__line_vert::before,
+.calculator__line_vert::after {
+  position: absolute;
+  content: '';
+  width: 12px;
+  height: 2px;
+  background-color: #e3e3e3;
+}
+
+.calculator__line_vert::before {
+  top: 0;
+  left: -12px;
+}
+
+.calculator__line_vert::after {
+  bottom: 0;
+  top: auto;
+  left: -12px;
 }
 
 .calculator__widths {
@@ -3786,17 +3864,30 @@ body.no-scroll {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   width: 100%;
+  margin: 0 auto;
+  margin-top: 15px;
 }
 
 .calculator__width {
-  bottom: -20px;
   width: 73px;
   padding: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.calculator__width input {
+  padding-right: 32px;
 }
 
 .calculator__height {
-  width: 100px;
+  width: 75px;
   padding: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.calculator__height input {
+  padding-right: 32px;
 }
 
 .calculator-result {

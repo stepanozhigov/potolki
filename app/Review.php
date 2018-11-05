@@ -15,7 +15,7 @@ class Review extends Model
     public function video ()
     {
         $object = json_decode($this->video);
-        return $object[0]->download_link ?? false;
+        return $object[0]->download_link ?? $this->video;
     }
 
     public function avatar ()
@@ -34,10 +34,11 @@ class Review extends Model
     public function attaches ()
     {
         $attachCounts = 0;
+        $arPhotos = json_decode($this->photos);
 
-        if (!empty($this->photos) && is_array($this->photos))
+        if (!empty($arPhotos))
         {
-            $attachCounts += count($this->photos);
+            $attachCounts += count($arPhotos);
         }
 
         if (!empty($this->video))

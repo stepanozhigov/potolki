@@ -21,7 +21,8 @@
             </div>                                
         </div>
         <div class="comment__controls">
-            <span v-if="isValidated" class="button button_red comment__sent" @click="send()">Отправить</span>
+            <span v-if="isValidated && !isSended" class="button button_red comment__sent" @click="send()">Отправить</span>
+            <span class="intro" v-if="isSended">Комментарий отправлен!</span>
             <span class="link comment__close js-close">Закрыть</span>
         </div>
     </div>
@@ -32,7 +33,8 @@
         data: function () {
             return {
                user: {},
-               message: ''
+               message: '',
+               isSended: false
             }
         },
         computed: {
@@ -57,6 +59,9 @@
                         text: $this.message,
                         review_id: $this.review,
                         type: 'client'
+                    },
+                    success: function () {
+                        $this.isSended = true;
                     }
                 })
             },
@@ -86,7 +91,10 @@
         },
         props: ['review'],
         mounted () {
-            this.user = JSON.parse(localStorage.getItem('socialUser'))
+            if (localStorage.getItem('socialUser')) {
+                this.user = JSON.parse(localStorage.getItem('socialUser'))
+            }
+            
         }
     }
 </script>

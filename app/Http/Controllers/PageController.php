@@ -21,7 +21,7 @@ class PageController extends Controller
     {
         return view('windows.main', [
             'city'  =>  $city,
-            'reviews'   =>  Review::limit(3)->get(),
+            'reviews'   =>  Review::limit(3)->orderBy('sort', 'asc')->get(),
             'photos'    =>  Photo::all(),
             'catalogTypes'  => CatalogType::where(['direction_id' => 1])->get()
         ]);
@@ -102,7 +102,7 @@ class PageController extends Controller
     {
         return view('common.pages.reviews', [
             'city'  =>  $city,
-            'reviews'   =>  Review::where('is_active', 1)->paginate(30)
+            'reviews'   =>  Review::where('is_active', 1)->orderBy('sort', 'asc')->paginate(30)
         ]);
     }
 

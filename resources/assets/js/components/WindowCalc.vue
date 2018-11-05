@@ -1,34 +1,37 @@
 <template>
-    
+
     <div class="calculator__inner">
         <div class="calculator__types">
             <label v-for="type in types" class="radio">
                 <input class="radio__input"  type="radio" name="type" :value="type.code" v-model="currentType">
                 <img v-if="currentType == type.code" class="calculator__type" :src="publicPath + type.form_img_selected" alt="">
-                <img v-else class="calculator__type" :src="publicPath + type.form_img" alt="">                                
+                <img v-else class="calculator__type" :src="publicPath + type.form_img" alt="">
                 <img v-if="currentType == type.code" class="calculator__active" :src="'/img/gui/active_calc.svg'" alt="">
-            </label>            
+            </label>
         </div>
         <transition name="slide" mode="out-in">
         <div v-for="type in types" :key="type.id" v-if="currentType == type.code"class="calculator__content">
             <div class="calculator__area">
-                <img class="calculator__img" ref="calculator__img" :src="publicPath + type.img" alt="">
+                <div class="calculator__img-wrap">
+                    <img class="calculator__img" ref="calculator__img" :src="publicPath + type.img" alt="">
+                    <div class="calculator__widths">
+                        <hr class="calculator__line">
+                        <label v-for="index in type.width_count" class="calculator__width text-input">
+                            <input type="text" v-model.number="arrWidth[index]" class="input text-input__value" name="width[]">
+                            <span class="text-input__label text">мм</span>
+                        </label>
+                    </div>
+                </div>
                 <div class="calculator__heights">
                     <hr class="calculator__line calculator__line_vert">
-                    <div class="calculator__height text-input">
-                        <input v-for="index in type.height_count" type="text" v-model.number="arrHeight[index]" class="input text-input__value" name="height[]">
+                    <div v-for="index in type.height_count" class="calculator__height text-input">
+                        <input type="text" v-model.number="arrHeight[index]" class="input text-input__value" name="height[]">
                         <span class="text-input__label text">мм</span>
                     </div>
                 </div>
-                <div class="calculator__widths" v-bind:style="{ width: pixelWidth + 'px' }">
-                    <hr class="calculator__line">
-                    <label class="calculator__width text-input">
-                        <input v-for="index in type.width_count" type="text" v-model.number="arrWidth[index]" class="input text-input__value" name="width[]">
-                        <span class="text-input__label text">мм</span>
-                    </label>
-                </div>
-               
-                
+
+
+
             </div>
             <div class="calculator__controls">
                 <label class="radio subtext">
@@ -47,7 +50,7 @@
                     <p class="text text_white">Расчетная цена</p>
                     <span class="calculator-result__summ">{{ summ }} Р</span>
                 </div>
-                
+
                 <div class="calculator-result__body">
                     <input class="calculator-result__input" type="text" placeholder="Введите ваше имя">
                     <input class="calculator-result__input" type="tel" placeholder="Введите ваш телефон">
@@ -59,7 +62,7 @@
         </div>
         </transition>
     </div>
-   
+
 
 </template>
 <style>
@@ -89,7 +92,7 @@
             }
         },
         props: ['types'],
-        updated: function () {            
+        updated: function () {
             this.pixelWidth = $(this.$refs.calculator__img).width();
         },
         computed: {
@@ -113,16 +116,16 @@
             currentType: function (value, old) {
                this.arrWidth = [0, 0];
                this.arrHeight = [0, 0];
-               
-               
+
+
             }
         },
         mounted() {
             console.log($(this.$refs.calculator__img).width());
 
-           this.pixelWidth = $(this.$refs.calculator__img).width(); 
+           this.pixelWidth = $(this.$refs.calculator__img).width();
         },
         methods: {
-        }        
+        }
     }
 </script>

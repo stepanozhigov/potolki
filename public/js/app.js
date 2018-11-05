@@ -22705,6 +22705,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -22829,57 +22832,63 @@ var render = function() {
           return _vm.currentType == type.code
             ? _c("div", { key: type.id, staticClass: "calculator__content" }, [
                 _c("div", { staticClass: "calculator__area" }, [
-                  _c("img", {
-                    ref: "calculator__img",
-                    refInFor: true,
-                    staticClass: "calculator__img",
-                    attrs: { src: _vm.publicPath + type.img, alt: "" }
-                  }),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "calculator__heights" }, [
-                    _c("hr", {
-                      staticClass: "calculator__line calculator__line_vert"
+                  _c("div", { staticClass: "calculator__img-wrap" }, [
+                    _c("img", {
+                      ref: "calculator__img",
+                      refInFor: true,
+                      staticClass: "calculator__img",
+                      attrs: { src: _vm.publicPath + type.img, alt: "" }
                     }),
                     _vm._v(" "),
                     _c(
                       "div",
-                      { staticClass: "calculator__height text-input" },
+                      { staticClass: "calculator__widths" },
                       [
-                        _vm._l(type.height_count, function(index) {
-                          return _c("input", {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model.number",
-                                value: _vm.arrHeight[index],
-                                expression: "arrHeight[index]",
-                                modifiers: { number: true }
-                              }
-                            ],
-                            staticClass: "input text-input__value",
-                            attrs: { type: "text", name: "height[]" },
-                            domProps: { value: _vm.arrHeight[index] },
-                            on: {
-                              input: function($event) {
-                                if ($event.target.composing) {
-                                  return
-                                }
-                                _vm.$set(
-                                  _vm.arrHeight,
-                                  index,
-                                  _vm._n($event.target.value)
-                                )
-                              },
-                              blur: function($event) {
-                                _vm.$forceUpdate()
-                              }
-                            }
-                          })
-                        }),
+                        _c("hr", { staticClass: "calculator__line" }),
                         _vm._v(" "),
-                        _c("span", { staticClass: "text-input__label text" }, [
-                          _vm._v("мм")
-                        ])
+                        _vm._l(type.width_count, function(index) {
+                          return _c(
+                            "label",
+                            { staticClass: "calculator__width text-input" },
+                            [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model.number",
+                                    value: _vm.arrWidth[index],
+                                    expression: "arrWidth[index]",
+                                    modifiers: { number: true }
+                                  }
+                                ],
+                                staticClass: "input text-input__value",
+                                attrs: { type: "text", name: "width[]" },
+                                domProps: { value: _vm.arrWidth[index] },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.arrWidth,
+                                      index,
+                                      _vm._n($event.target.value)
+                                    )
+                                  },
+                                  blur: function($event) {
+                                    _vm.$forceUpdate()
+                                  }
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c(
+                                "span",
+                                { staticClass: "text-input__label text" },
+                                [_vm._v("мм")]
+                              )
+                            ]
+                          )
+                        })
                       ],
                       2
                     )
@@ -22887,38 +22896,37 @@ var render = function() {
                   _vm._v(" "),
                   _c(
                     "div",
-                    {
-                      staticClass: "calculator__widths",
-                      style: { width: _vm.pixelWidth + "px" }
-                    },
+                    { staticClass: "calculator__heights" },
                     [
-                      _c("hr", { staticClass: "calculator__line" }),
+                      _c("hr", {
+                        staticClass: "calculator__line calculator__line_vert"
+                      }),
                       _vm._v(" "),
-                      _c(
-                        "label",
-                        { staticClass: "calculator__width text-input" },
-                        [
-                          _vm._l(type.width_count, function(index) {
-                            return _c("input", {
+                      _vm._l(type.height_count, function(index) {
+                        return _c(
+                          "div",
+                          { staticClass: "calculator__height text-input" },
+                          [
+                            _c("input", {
                               directives: [
                                 {
                                   name: "model",
                                   rawName: "v-model.number",
-                                  value: _vm.arrWidth[index],
-                                  expression: "arrWidth[index]",
+                                  value: _vm.arrHeight[index],
+                                  expression: "arrHeight[index]",
                                   modifiers: { number: true }
                                 }
                               ],
                               staticClass: "input text-input__value",
-                              attrs: { type: "text", name: "width[]" },
-                              domProps: { value: _vm.arrWidth[index] },
+                              attrs: { type: "text", name: "height[]" },
+                              domProps: { value: _vm.arrHeight[index] },
                               on: {
                                 input: function($event) {
                                   if ($event.target.composing) {
                                     return
                                   }
                                   _vm.$set(
-                                    _vm.arrWidth,
+                                    _vm.arrHeight,
                                     index,
                                     _vm._n($event.target.value)
                                   )
@@ -22927,18 +22935,18 @@ var render = function() {
                                   _vm.$forceUpdate()
                                 }
                               }
-                            })
-                          }),
-                          _vm._v(" "),
-                          _c(
-                            "span",
-                            { staticClass: "text-input__label text" },
-                            [_vm._v("мм")]
-                          )
-                        ],
-                        2
-                      )
-                    ]
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "span",
+                              { staticClass: "text-input__label text" },
+                              [_vm._v("мм")]
+                            )
+                          ]
+                        )
+                      })
+                    ],
+                    2
                   )
                 ]),
                 _vm._v(" "),
@@ -23365,12 +23373,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
             user: {},
-            message: ''
+            message: '',
+            isSended: false
         };
     },
     computed: {
@@ -23395,6 +23405,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     text: $this.message,
                     review_id: $this.review,
                     type: 'client'
+                },
+                success: function success() {
+                    $this.isSended = true;
                 }
             });
         },
@@ -23426,7 +23439,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     props: ['review'],
     mounted: function mounted() {
-        this.user = JSON.parse(localStorage.getItem('socialUser'));
+        if (localStorage.getItem('socialUser')) {
+            this.user = JSON.parse(localStorage.getItem('socialUser'));
+        }
     }
 });
 
@@ -23540,7 +23555,7 @@ var render = function() {
       : _vm._e(),
     _vm._v(" "),
     _c("div", { staticClass: "comment__controls" }, [
-      _vm.isValidated
+      _vm.isValidated && !_vm.isSended
         ? _c(
             "span",
             {
@@ -23553,6 +23568,12 @@ var render = function() {
             },
             [_vm._v("Отправить")]
           )
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.isSended
+        ? _c("span", { staticClass: "intro" }, [
+            _vm._v("Комментарий отправлен!")
+          ])
         : _vm._e(),
       _vm._v(" "),
       _c("span", { staticClass: "link comment__close js-close" }, [
@@ -23662,6 +23683,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 $.ajaxSetup({
     headers: {
@@ -23683,12 +23705,17 @@ var socialAuth = __webpack_require__(28);
             photos: [],
             video: null,
             previews: [],
-            videoPreview: null
+            videoPreview: null,
+            sended: false,
+            resultText: ''
         };
     },
     methods: {
         send: function send() {
-            var data = new FormData();
+            this.sended = true;
+
+            var data = new FormData(),
+                $this = this;
 
             this.photos.forEach(function (element) {
                 data.append('photos[]', element);
@@ -23718,7 +23745,21 @@ var socialAuth = __webpack_require__(28);
                 method: 'post',
                 processData: false,
                 contentType: false,
-                success: function success(response) {}
+                xhr: function xhr() {
+                    var xhr = new window.XMLHttpRequest();
+                    xhr.upload.addEventListener("progress", function (evt) {
+                        if (evt.lengthComputable) {
+                            var percentComplete = evt.loaded / evt.total;
+                            $this.resultText = "Идет загрузка: " + parseInt(percentComplete * 100) + " %. Не закрывайте страницу";
+                        }
+                    }, false);
+
+                    return xhr;
+                },
+                success: function success(response) {
+
+                    $this.resultText = "Отзыв отправлен!";
+                }
             });
         },
         setUser: function setUser(user) {
@@ -24048,11 +24089,19 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _c(
-      "button",
-      { staticClass: "button add-review__submit", on: { click: _vm.send } },
-      [_vm._v("Отправить")]
-    ),
+    !_vm.sended
+      ? _c(
+          "button",
+          { staticClass: "button add-review__submit", on: { click: _vm.send } },
+          [_vm._v("Отправить")]
+        )
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.sended
+      ? _c("p", { staticClass: "intro add-review__submit" }, [
+          _vm._v(_vm._s(_vm.resultText))
+        ])
+      : _vm._e(),
     _vm._v(" "),
     _c("p", { staticClass: "subtext add-review__agreement" }, [
       _vm._v(
