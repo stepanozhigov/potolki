@@ -1,13 +1,19 @@
 @extends('common.layout')
 
 @section('content')
-    @include('common.header')
-    <section class="page__review">
-        <div class="container">
-            <p class="overtitle">Оставить отзыв</p>
-            <h1 class="title">Оставить отзыв о компании Твой Стиль</h1>
-        </div>
-		@include('common.form-review')
+    @include('common.gui.header')
+
+    @include('common.gui.titles', [
+        'class' =>  'container',
+        'overtitle' =>  'Обратная связь',
+        'title' =>  "Оставить отзыв о компании Твой Стиль {$city->name_formatted}",
+        'intro' =>  'Описать процесс оставления отзыва и что можно за это получить'
+    ])
+
+    <section class="container" id="add-review">
+        <add-review></add-review>
     </section>
-    @include('common.footer')
+    
+    <script src="https://vk.com/js/api/openapi.js?146" type="text/javascript"></script>
+    @include('common.gui.footer')    
 @endsection

@@ -1,12 +1,20 @@
 $('.js-show').on('click', function(event) {
     event.preventDefault();
-    
     var source = $(this).data('src'),
+        $this = $(this),
         $source = $(source),
         $overlay = $('.overlay');
     
-    $('body').addClass('overflowed');
+    if ($this.is('.review'))
+    {
+        $source.css('top', $(window).scrollTop() + 100);
+    }
+    else {
+        $('body').addClass('overflowed');
+    }
+    
 
+    
     if ($source.height() % 2 == 1 ) { 
         $source.height($source.height() + 1); 
     }

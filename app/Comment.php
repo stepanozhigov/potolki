@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Support\Facades\Storage;
 
 class Comment extends Model
 {
@@ -12,5 +12,9 @@ class Comment extends Model
     public function user ()
     {
         return $this->belongsTo('App\User');
+    }
+    public function avatar ()
+    {
+        return strpos($this->avatar, 'http') !== false ? $this->avatar : Storage::url($this->avatar);
     }
 }

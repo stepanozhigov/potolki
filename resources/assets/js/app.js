@@ -22,6 +22,7 @@ require('./components/popup');
 Vue.component('window-calc', require('./components/WindowCalc.vue'));
 Vue.component('city-search', require('./components/CitySearch.vue'));
 Vue.component('add-comment', require('./components/AddComment.vue'));
+Vue.component('add-review', require('./components/AddReview.vue'));
 
 $('.js-add-comment').each(function(index, element) {
     var elementId = $(element).attr('id');
@@ -43,6 +44,11 @@ if ($('#window-calc').length > 0) {
     });
 }
 
+if ($('#add-review').length > 0) {
+    new Vue({
+        el: '#add-review'
+    });
+}
 
 import typewriter from 'typewriter-effect/dist/core';
 

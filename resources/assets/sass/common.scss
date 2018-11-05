@@ -557,8 +557,8 @@ body {
 
     &_review {
         width: 580px;
-        display: block;
         top: 15%;
+        flex-direction: column;
         position: absolute;
         transform: translate(-50%);
     }
