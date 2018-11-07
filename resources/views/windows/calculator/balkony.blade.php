@@ -9,10 +9,10 @@
     ])
 
     <section class="calculator container b-texture">
-        <div id="window-calc">
-            <window-calc :types="{{ $params }}"></window-calc>
+        <div id="balcony-calc">
+            <balcony-calc :types="{{ $params }}"></balcony-calc>
         </div>
     </section>
-
+    
     @include('common.gui.footer')
 @endsection

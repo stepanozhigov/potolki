@@ -60,6 +60,12 @@ if ($('#window-calc').length > 0) {
     });
 }
 
+if ($('#balcony-calc').length > 0) {
+    var BalkonyCalc = new Vue({
+        el: '#balcony-calc'
+    });
+}
+
 if ($('#add-review').length > 0) {
     new Vue({
         el: '#add-review'
