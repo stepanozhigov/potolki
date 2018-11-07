@@ -3,7 +3,7 @@
 @section('content')
     @include('common.gui.header')
 
-    <section class="main-offer">
+    <section class="main-offer js-offer-slider" @if ($offers->count() > 1) data-offers="{{ $offers }}" id="js-offer-slider" @endif>
         <div class="main-offer__inner container">
             <p class="text main-offer__overtitle">Уникальное предложение</p>
             @php

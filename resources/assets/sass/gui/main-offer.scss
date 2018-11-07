@@ -16,6 +16,12 @@
         }
     }
 
+    &__social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 483px;
+    }
     &__overtitle {
         color: $white;
         line-height: 32px;

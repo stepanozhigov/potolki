@@ -20,13 +20,29 @@ require('./components/popup');
  */
 
 Vue.component('window-calc', require('./components/WindowCalc.vue'));
+Vue.component('balcony-calc', require('./components/BalkonyCalc.vue'));
 Vue.component('city-search', require('./components/CitySearch.vue'));
 Vue.component('add-comment', require('./components/AddComment.vue'));
 Vue.component('add-review', require('./components/AddReview.vue'));
+Vue.component('offer-slider', require('./components/OfferSlider.vue'));
+
+const offerSliderContainer = $('#js-offer-slider');
+
+if (offerSliderContainer.length > 0) {
+
+    const   offers = offerSliderContainer.data('offers'),
+            offerSlider = new Vue({
+                el: '#js-offer-slider',
+                template: `<offer-slider :offers="offers"></offer-slider>`,
+                data: {
+                    offers: offers
+                }
+            });
+}
 
 $('.js-add-comment').each(function(index, element) {
     var elementId = $(element).attr('id');
-    
+
     new Vue({
         el: '#' + elementId
     })
@@ -59,8 +75,12 @@ $writtenElements.each((index, element) => {
         text = $element.text(),
         additionalTexts = $element.data('texts');
 
+    if (additionalTexts) {
+        text = [text].concat(additionalTexts);
+    }
+    console.log(text);
     new typewriter(element, {
-        strings: [text].concat(additionalTexts),
+        strings: text,
         autoStart: true,
         loop: true,
         delay: 70
@@ -84,7 +104,7 @@ var $mapContainer = $('#map'),
     $offices = $('.office');
 
 if ($mapContainer.length > 0 && $offices.length > 0) {
-    
+
     function offsetCoordinates(coords) {
         var screenWidth = $(document).width();
         console.log(coords);
@@ -97,13 +117,13 @@ if ($mapContainer.length > 0 && $offices.length > 0) {
             case (screenWidth < 1000):
                 return [
                     coords[0],
-                    coords[1] - 0.005 
+                    coords[1] - 0.005
                 ];
 
             case (screenWidth < 1500):
                 return [
                     coords[0],
-                    coords[1] - 0.005 
+                    coords[1] - 0.005
                 ];
 
             default:
@@ -119,7 +139,7 @@ if ($mapContainer.length > 0 && $offices.length > 0) {
             zoom: 16,
             controls: []
         });
-        
+
         map.behaviors.disable('scrollZoom');
 
         if ($(document).width() < 1024) {
@@ -157,18 +177,18 @@ if ($mapContainer.length > 0 && $offices.length > 0) {
     }
 
     ymaps.ready(initMap)
-    
+
 }
 
 $('.question__more').on('click', function(e) {
-    
+
     var currentText = $(this).text(),
         dataText = $(this).data('text');
 
     $(this).text(dataText);
 
     $(this).data('text', currentText);
-    
+
     $(this).prev('.question__text').toggleClass('question__text_toggled');
 
 })

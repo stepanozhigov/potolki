@@ -44,6 +44,21 @@
         }
     }
     
+    &_insta {
+        width: 176px;
+        height: 50px;
+        box-shadow: 0 16px 16px rgba(0, 4, 8, 0.24);
+        border-radius: 5px;
+        background-image: url('/img/gui/button_insta.jpg');
+        color: #ffffff;
+        font-family: "Helvetica Neue";
+        font-size: 20px;
+        font-weight: 500;
+
+        &:hover {
+            box-shadow: 0 8px 8px rgba(0, 0, 0, 0.16), 0 0 8px rgba(0, 0, 0, 0.08), inset 0 -1px 0 #b9358b;
+        }
+    }
 }
 
 .tag {

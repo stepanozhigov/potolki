@@ -35,10 +35,82 @@
         flex-basis: 100%;
         background: $white;
         padding: 55px 50px 55px 100px;
+
+		@include below($tablet) {
+			padding: 0;
+			padding-top: rem(80);
+            flex-direction: column;
+        }
+
+        @include below($mobile) {
+            padding: 0;
+            padding-top: rem(59);
+            flex-direction: column;
+        }
+    }
+
+    &__title {
+        display: none;
+
+        color: #aaaaaa;
+        font-family: $helvetica;
+        font-size: rem(16);
+        font-weight: 400;
+
+        @include below($mobile) {
+            position: absolute;
+            top: rem(-25);
+            margin: 0;
+            left: 0;
+            display: block;
+        }
     }
 
     &__controls {
         flex-basis: 20%;
+
+		@include below($tablet) {
+			display: flex;
+            flex-direction: column;
+			margin-bottom: rem(60);
+        }
+
+        @include below($mobile) {
+			width: 100%;
+            position: relative;
+            align-items: flex-start;
+            padding: rem(10);
+
+            &::after {
+                position: absolute;
+                content: '';
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: rem(1);
+                border-top: 1px solid #c8c8c8;
+            }
+
+            &::before {
+                position: absolute;
+                content: '';
+                top: 0;
+                left: 0;
+                width: rem(10);
+                height: 100%;
+                border-left: 1px solid #c8c8c8;
+                border-bottom: 1px solid #c8c8c8;
+            }
+        }
+
+        .radio {
+
+			@include below($tablet) {
+				&:not(:last-of-type) {
+                    margin-bottom: rem(15);
+                }
+	        }
+        }
     }
 
     &__result {
@@ -51,12 +123,63 @@
         flex-wrap: wrap;
         width: 54%;
         justify-content: flex-start;
+
+		@include below($tablet) {
+            width: 100%;
+			padding-left: rem(90);
+			justify-content: center;
+			margin-bottom: rem(60);
+        }
+
+        @include below($mobile) {
+			padding-left: 0;
+            width: 100%;
+            flex-direction: column;
+            padding: rem(10);
+            margin-bottom: rem(60);
+
+            &::after {
+                position: absolute;
+                content: '';
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: rem(1);
+                border-top: 1px solid #c8c8c8;
+            }
+
+            &::before {
+                position: absolute;
+                content: '';
+                top: 0;
+                left: 0;
+                width: rem(10);
+                height: 100%;
+                border-left: 1px solid #c8c8c8;
+                border-bottom: 1px solid #c8c8c8;
+            }
+        }
     }
 
     &__img-wrap {
         margin-left: auto;
         display: flex;
         flex-direction: column;
+
+		@include below($tablet) {
+            margin-left: 0;
+        }
+
+        @include below($mobile) {
+            margin-left: 0;
+            margin-bottom: rem(10);
+        }
+    }
+
+    &__img {
+        @include below($mobile) {
+            display: none;
+        }
     }
 
     &__heights {
@@ -66,6 +189,11 @@
         justify-content: space-evenly;
         margin-left: 15px;
         padding-bottom: 57px;
+
+        @include below($mobile) {
+            margin: 0;
+            padding: 0;
+        }
     }
 
     &__line {
@@ -128,6 +256,10 @@
                 left: -12px;
             }
         }
+
+        @include below($mobile) {
+            display: none;
+        }
     }
 
     &__widths {
@@ -137,6 +269,48 @@
         width: 100%;
         margin: 0 auto;
         margin-top: 15px;
+
+        @include below($mobile) {
+            margin: 0;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+    }
+
+    &__height-desc {
+        display: none;
+        margin: 0;
+        color: #6b6b6b;
+        font-family: $helvetica;
+        font-size: rem(18);
+        font-weight: 300;
+
+        @include below($mobile) {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: rem(90);
+            display: block;
+            width: calc(100vw - 130px);
+        }
+    }
+
+    &__width-desc {
+        display: none;
+        margin: 0;
+        color: #6b6b6b;
+        font-family: $helvetica;
+        font-size: rem(18);
+        font-weight: 300;
+
+        @include below($mobile) {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: rem(90);
+            display: block;
+            width: calc(100vw - 130px);
+        }
     }
 
     &__width {
@@ -147,6 +321,12 @@
         input {
             padding-right: 32px
         }
+
+        @include below($mobile) {
+            &:not(:last-of-type) {
+                margin-bottom: rem(10);
+            }
+        }
     }
     &__height {
         width: 75px;
@@ -155,6 +335,12 @@
 
         input {
             padding-right: 32px
+        }
+
+        @include below($mobile) {
+            &:not(:last-of-type) {
+                margin-bottom: rem(10);
+            }
         }
     }
 }
@@ -170,6 +356,31 @@
         flex-direction: column;
         align-items: center;
         padding-bottom: 15px;
+
+        @include below($mobile) {
+            padding: rem(27);
+            padding-bottom: rem(32);
+            border-radius: rem(5);
+
+            p {
+                position: relative;
+                font-size: rem(20);
+                padding-bottom: rem(15);
+                margin: 0;
+                margin-bottom: rem(15);
+
+                &::after {
+                    position: absolute;
+                    content: '';
+                    bottom: 0;
+                    left: 50%;
+                    width: rem(50);
+                    height: rem(1);
+                    transform: translateX(-50%);
+                    background-color: #c61521;
+                }
+            }
+        }
     }
 
     &__summ {
@@ -182,6 +393,16 @@
     &__body {
         background-color: #f8f8f8;
         padding: 30px 15px 20px 15px;
+
+		@include below($tablet) {
+            display: flex;
+			flex-direction: column;
+			align-items: center;
+        }
+
+        @include below($mobile) {
+            display: none;
+        }
     }
 
     &__input {

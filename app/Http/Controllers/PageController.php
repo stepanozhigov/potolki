@@ -15,6 +15,7 @@ use App\QuestionCategory;
 use App\Question;
 use App\WindowCalcParam;
 use App\Service;
+use App\Offer;
 
 class PageController extends Controller
 {
@@ -24,6 +25,7 @@ class PageController extends Controller
             'city'  =>  $city,
             'reviews'   =>  Review::limit(3)->orderBy('sort', 'asc')->get(),
             'photos'    =>  Photo::all(),
+            'offers'    =>  Offer::where('is_active', 1)->get(),
             'catalogTypes'  => CatalogType::where(['direction_id' => 1])->get()
         ]);
     }
