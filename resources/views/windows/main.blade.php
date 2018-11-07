@@ -35,7 +35,7 @@
         ])
         
         @foreach ($catalogTypes as $type)
-            <a href="" class=" catalog-cards__item b-card is-hoverable">
+            <a href="{{ route('calculator', ['city' => $city, 'type' => $type]) }}" class=" catalog-cards__item b-card is-hoverable">
                 <img src="{{ Storage::url($type->img) }}" alt="{{ $type->name }}" class="catalog-cards__img">
                 <p class="card-title catalog-cards__title">{{ $type->name }}</p>
                 <hr class="line line_bold catalog-cards__line">
@@ -69,7 +69,7 @@
         </div>
         
         <div class="calc-promo__footer">
-            <a href="" class="button calc-promo__button">Рассчитать</a>
+            <a href="{{ route('calculator', $city) }}" class="button calc-promo__button">Рассчитать</a>
         </div>
 
     </section>

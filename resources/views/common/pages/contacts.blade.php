@@ -12,7 +12,7 @@
             <div class="map contacts__map" id="map" data-placemark="/img/gui/logo.png"></div>
             <div class="contacts__offices">
                 @foreach ($city->offices as $id => $office)
-                    <div class="office {{ $id == 1 ? 'office_active':'' }} contacts__office b-card" data-coords="{{ $office->coords }}">
+                    <div class="office {{ $id == 0 ? 'office_active':'' }} contacts__office b-card" data-coords="{{ $office->coords }}">
                         <img src="{{ Storage::url($office->img) }}" alt="" class="office__img">
                         <p class="office__title card-title"><img class="office__icon" src="/img/gui/coord_pin.png" alt=""> {{ $office->adres }}</p>
                         <p class="office__desc text">{{ $office->adres_desc }}</p>

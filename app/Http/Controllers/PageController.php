@@ -14,6 +14,7 @@ use App\Vacancy;
 use App\QuestionCategory;
 use App\Question;
 use App\WindowCalcParam;
+use App\Service;
 
 class PageController extends Controller
 {
@@ -36,10 +37,19 @@ class PageController extends Controller
         ]);
     }
 
-    public function services (City $city)
+    public function services (City $city, $type = null)
     {
-        return view ('common.pages.services', [
-            'city'  =>  $city
+        $view = 'common.pages.services';
+
+        if ($type)
+        {
+            $view = "windows.services.{$type}";
+        }
+
+        return view ($view, [
+            'city'  =>  $city,
+            'services'  =>  Service::all()
+
         ]);
     }
 

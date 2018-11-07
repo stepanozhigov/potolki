@@ -14,4 +14,15 @@ class City extends Model
     {
         return $this->hasMany('App\Office');
     }
+    public function mainOffice ()
+    {
+        $title = $this->name;
+        $office = $this->offices->first();
+
+        if ($office) {
+            $title .= ". {$office->adres}";
+        }
+        return $title;
+        
+    }
 }

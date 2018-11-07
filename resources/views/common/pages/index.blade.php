@@ -8,11 +8,11 @@
         <p class="intro index-offer__intro">Выберите город, чтобы перейти на&nbspсайт</p>
         <div class="index-offer__buttons">
             <a href="{{ route('windows.main', ['city' => 'sochi']) }}" class="button index-offer__button">Выбрать Сочи</a>
-            <a href="/" class="button button_gray index-offer__button">Выбрать другой город</a>
+            <a href="#cities" class="button button_gray index-offer__button">Выбрать другой город</a>
         </div>        
     </section>
 
-    <section class="cities">
+    <section class="cities" id="cities">
         @include('common.gui.titles', [
             'secondTitle'  =>  'Филиалы в других городах'
         ])

@@ -13,26 +13,12 @@
 
         <section class="services container b-texture">
             <div class="services__list">
-                <a href="" class="service-card b-card services__card">
-                    <img src="http://okna-ts.ru/upload/window-services/ustanovka.jpg" alt="" class="service-card__img">
-                    <p class="card-title service-card__title">Установка</p>
-                </a>
-                <a href="" class="service-card b-card services__card">
-                    <img src="http://okna-ts.ru/upload/window-services/ustanovka.jpg" alt="" class="service-card__img">
-                    <p class="card-title service-card__title">Установка</p>
-                </a>
-                <a href="" class="service-card b-card services__card">
-                    <img src="http://okna-ts.ru/upload/window-services/ustanovka.jpg" alt="" class="service-card__img">
-                    <p class="card-title service-card__title">Установка</p>
-                </a>
-                <a href="" class="service-card b-card services__card">
-                    <img src="http://okna-ts.ru/upload/window-services/ustanovka.jpg" alt="" class="service-card__img">
-                    <p class="card-title service-card__title">Установка</p>
-                </a>
-                <a href="" class="service-card b-card services__card">
-                    <img src="http://okna-ts.ru/upload/window-services/ustanovka.jpg" alt="" class="service-card__img">
-                    <p class="card-title service-card__title">Установка</p>
-                </a>
+                @foreach ($services as $service)
+                    <a href="{{ route('services', ['city' => $city, 'type' =>  $service->code]) }}" class="service-card b-card services__card is-hoverable">
+                        <img src="{{ Storage::url($service->img) }}" alt="" class="service-card__img">
+                        <p class="card-title service-card__title">{{ $service->name }}</p>
+                    </a>
+                @endforeach
             </div>
         </section>
 

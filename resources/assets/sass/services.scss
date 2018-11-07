@@ -30,3 +30,43 @@
         width: 100%;
     }
 }
+
+.service {
+
+    &__texture {
+        background-image: url(/img/windows/services/square-bg--2x.jpg);
+        background-repeat: repeat;
+    }
+
+    &__heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        position: relative;
+    }
+
+    &__left {
+        width: 57%;
+        padding-top: 70px;
+        padding-bottom: 100px;
+    }
+
+    &__intro {
+        text-align: left;
+        margin-bottom: 15px;
+    }
+    &__img {
+        width: 62%;
+        position: absolute;
+        right: -282px;
+        bottom: 0;
+
+        &_small {
+            width: 37%;
+            top: 50%;
+            transform: translate(0%, -50%);
+            right: -90px;
+        }
+    }
+}

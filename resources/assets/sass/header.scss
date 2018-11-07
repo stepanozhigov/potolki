@@ -75,24 +75,11 @@
     &__menu {
         flex-basis: 52.7%;
         margin-left: auto;
-
-        @media screen and (max-width: 1024px){
-            display: none;
-
-            &_active {
-                display: flex;
-                position: absolute;
-                background: white;
-                z-index: 99;
-                width: 68vw;
-                flex-direction: column;
-                top: 0;
-                right: 0;
-            }
-        }
+        
     }
 
     &__offices {
+        min-width: 350px;
         @media screen and (max-width: 1024px){
             display: none;
         }

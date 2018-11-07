@@ -594,9 +594,17 @@ $writtenElements.each(function (index, element) {
     });
 });
 
-$('.js-show-menu').on('click', function (e) {
-    $('.header__menu').addClass('header__menu_active');
+$('.js-toggle-menu').on('click', function (e) {
+    $('.header__menu').toggleClass('menu_active');
 });
+
+if ($(document).width() <= 1024) {
+    $('.js-toggle-submenu').on('click', function (event) {
+        event.preventDefault();
+        //$(this).siblings('.menu__item_dropdown').find('.menu__dropdown_toggled').removeClass('menu__dropdown_toggled');
+        $(this).next('.menu__dropdown').toggleClass('menu__dropdown_toggled');
+    });
+}
 
 var $mapContainer = $('#map'),
     $offices = $('.office');
@@ -604,7 +612,7 @@ var $mapContainer = $('#map'),
 if ($mapContainer.length > 0 && $offices.length > 0) {
     var offsetCoordinates = function offsetCoordinates(coords) {
         var screenWidth = $(document).width();
-
+        console.log(coords);
         switch (true) {
             case screenWidth < 600:
                 return [coords[0], coords[1]];
