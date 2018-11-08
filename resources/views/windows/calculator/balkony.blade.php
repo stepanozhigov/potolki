@@ -8,11 +8,11 @@
         'intro' =>  "Нужно описать процесс рассчета и т.д."
     ])
 
-    <section class="calculator container b-texture">
+    <section class="calculator calculator_balcony container b-texture">
         <div id="balcony-calc">
             <balcony-calc :types="{{ $params }}"></balcony-calc>
         </div>
     </section>
-    
+
     @include('common.gui.footer')
 @endsection

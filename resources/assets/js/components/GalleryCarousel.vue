@@ -1,15 +1,95 @@
 <template>
-    <div></div>
+    <div class="portfolio__carousel">
+        <a @click="toggleMode(index)" v-for="(photo, index) in showedItems" v-bind:key="photo.id" class="case b-card portfolio__item portfolio__item_slide">
+            <p class="case__totals">{{ photo.price }}  ₽ / {{ photo.area }} м<sup>2</sup></p>
+            <img :src="`/storage/${photo.src}`" alt="3" class="case__img">
+            <p class="card-title case__title">{{ photo.name }}</p>
+        </a>
+        <div @click="toggleMode" v-bind:class="['overlay', mode == 'detail' ? 'overlay_active':'']"></div>
+        <div v-if="mode == 'detail'" class="gallery">
+            <p class="gallery__totals">{{ showedItems[currentPhotoIndex].price }}  ₽ / {{ showedItems[currentPhotoIndex].area }} м<sup>2</sup></p>
+            <img @click="toggleMode" class="gallery__close" src="/img/gui/close.svg">
+            <img @click="prevItem" class="gallery__prev" src="/img/gui/arrow_top.png">
+            <img @click="nextItem" class="gallery__next" src="/img/gui/arrow_top.png">            
+            <img class="gallery__img b-card" :src="`/storage/${showedItems[currentPhotoIndex].src}`">
+        </div>
+    </div>
+    
 </template>
 
 <script>
     export default {
         data: function () {
+            return {
+                showCount: 5,
+                showPoint: 0,
+                interval: 0,
+                currentPhotoIndex: 0,
+                mode: 'list'
+            }
+        },
+        computed: {
+            showedItems: function () {
+                var itemsCount = this.photos.length,
+                    index = this.showPoint,
+                    items = [];
 
+                while (items.length < this.showCount) {
+                    if (!this.photos[index]) {
+                        index = 0;
+                    }
+                    items.push(this.photos[index]);
+
+                    index ++;
+                }
+
+                return items;
+            }
         },
         props:['photos'],
         methods: {
+            nextItem () {
+                this.currentPhotoIndex++;
 
+                if (!this.showedItems[this.currentPhotoIndex]) {
+                    this.currentPhotoIndex = 0
+                }
+            },
+            prevItem () {
+                this.currentPhotoIndex--;
+
+                if (!this.showedItems[this.currentPhotoIndex]) {
+                    this.currentPhotoIndex = this.showedItems.length - 1;
+                }
+            },
+            offsetShowPoint () {
+                const itemsCount = this.photos.length;
+
+                this.showPoint ++;
+
+                if (this.showPoint == itemsCount) {
+                    this.showPoint = 0;
+                }
+            },
+            startSliding () {
+                this.interval = setInterval(this.offsetShowPoint, 3000);
+            },
+            stopSliding () {
+                clearInterval(this.interval);   
+            },
+            toggleMode (index) {
+                if (this.mode == 'list') {
+                    this.currentPhotoIndex = index;
+                    this.stopSliding();
+                    this.mode = 'detail';
+                } else {
+                    this.mode = 'list';
+                    this.startSliding();
+                }                
+            }
+        },
+        mounted: function () {
+            this.startSliding();
         }
     }
 </script>

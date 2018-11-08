@@ -74,15 +74,17 @@
 
     </section>
 
-    <section class="portfolio portfolio_slided b-texture">
+    <section class="portfolio b-texture">
         @include('common.gui.titles', ['secondTitle' => 'Наши работы'])
-        @foreach ($photos as $photo)
-             <a class="case b-card portfolio__item portfolio__item_slide">
-                <p class="case__totals">{{ $photo->price }}  ₽ / {{ $photo->area }} м<sup>2</sup></p>
-                <img src="{{ Voyager::image( $photo->thumbnail('preview','src') ) }}" alt="{{ $photo->name }}" class="case__img">
-                <p class="card-title case__title">{{ $photo->name }}</p>
-            </a>
-        @endforeach
+        <div class="portfolio__carousel" id="portfolio__carousel" data-photos="{{ $photos }}">
+            @foreach ($photos as $photo)
+                <a class="case b-card portfolio__item portfolio__item_slide">
+                    <p class="case__totals">{{ $photo->price }}  ₽ / {{ $photo->area }} м<sup>2</sup></p>
+                    <img src="{{ Voyager::image( $photo->thumbnail('preview','src') ) }}" alt="{{ $photo->name }}" class="case__img">
+                    <p class="card-title case__title">{{ $photo->name }}</p>
+                </a>
+            @endforeach
+        </div>
         <div class="portfolio__buttons">
             <a href="{{ route('photos', $city) }}" class="button portfolio__button button_gray">Посмотреть все работы</a>
             <button class="button js-show" data-src="#popup_callback">Вызвать замерщика</button>

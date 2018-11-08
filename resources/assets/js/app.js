@@ -25,6 +25,21 @@ Vue.component('city-search', require('./components/CitySearch.vue'));
 Vue.component('add-comment', require('./components/AddComment.vue'));
 Vue.component('add-review', require('./components/AddReview.vue'));
 Vue.component('offer-slider', require('./components/OfferSlider.vue'));
+Vue.component('gallery-carousel', require('./components/GalleryCarousel.vue'));
+
+const portfolioCarouselContainer = $('.portfolio__carousel');
+
+if (portfolioCarouselContainer.length > 0) {
+    new Vue({
+        el: '#portfolio__carousel',
+        template: '<gallery-carousel :photos="photos"></gallery-carousel>',
+        data: function () {
+            return {
+                photos: portfolioCarouselContainer.data('photos')
+            }            
+        }
+    });
+}
 
 const offerSliderContainer = $('#js-offer-slider');
 

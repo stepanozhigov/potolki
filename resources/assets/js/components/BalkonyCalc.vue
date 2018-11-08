@@ -2,52 +2,56 @@
 
     <div class="calculator__inner">
         <div class="calculator__types">
-            <label v-for="type in types" class="radio">
-                <input class="radio__input"  type="radio" name="type" :value="type.code" v-model="currentType">
-                <img v-if="currentType == type.code" class="calculator__type" :src="publicPath + type.form_img_selected" alt="">
-                <img v-else class="calculator__type" :src="publicPath + type.form_img" alt="">
-                <img v-if="currentType == type.code" class="calculator__active" :src="'/img/gui/active_calc.svg'" alt="">
+            <label class="radio">
+                <input class="radio__input"  type="radio" name="type" v-model="currentType">
+                <img  class="/img/windows/calculator/balcony/balconies_with_ledge_long.png" alt="">
+                <img  src="/img/windows/calculator/balcony/balconies_with_ledge_long_red.png" alt="">
+                <img  class="calculator__active" src="/img/gui/active_calc.svg" alt="">
+            </label>
+            <label class="radio">
+                <input class="radio__input"  type="radio" name="type">
+                <img  class="/img/windows/calculator/balcony/balconies_with_ledge.png" alt="">
+                <img  src="/img/windows/calculator/balcony/balconies_with_ledge_red.png" alt="">
+                <img  class="calculator__active" src="/img/gui/active_calc.svg" alt="">
+            </label>
+            <label class="radio">
+                <input class="radio__input"  type="radio" name="type">
+                <img  class="/img/windows/calculator/balcony/balconies_with_sill_long.png" alt="">
+                <img  src="/img/windows/calculator/balcony/balconies_with_sill_long_red.png" alt="">
+                <img  class="calculator__active" src="/img/gui/active_calc.svg" alt="">
             </label>
         </div>
         <transition name="slide" mode="out-in">
-        <div v-for="type in types" :key="type.id" v-if="currentType == type.code"class="calculator__content">
+        <div class="calculator__content">
             <div class="calculator__area">
                 <p class="calculator__title">Укажите размеры окна</p>
                 <div class="calculator__img-wrap">
-                    <img class="calculator__img" ref="calculator__img" :src="publicPath + type.img" alt="">
+                    <img class="calculator__img" ref="calculator__img" src="/img/windows/calculator/balcony/balconies_with_ledge_long_big.png" alt="">
                     <div class="calculator__widths">
                         <hr class="calculator__line">
-                        <label v-for="index in type.width_count" class="calculator__width text-input">
-                            <input type="text" v-model.number="arrWidth[index]" class="input text-input__value" name="width[]">
+                        <label  class="calculator__width text-input">
+                            <input type="text" class="input text-input__value" name="width[]">
                             <span class="text-input__label text">мм</span>
                             <p class="calculator__width-desc">Ширина окна</p>
+                        </label>
+                    </div>
+                    <div class="calculator__depths">
+                        <hr class="calculator__line calculator__line_depth">
+                        <label  class="calculator__depth text-input">
+                            <input type="text" class="input text-input__value" name="width[]">
+                            <span class="text-input__label text">мм</span>
+                            <p class="calculator__depth-desc">Глубина окна</p>
                         </label>
                     </div>
                 </div>
                 <div class="calculator__heights">
                     <hr class="calculator__line calculator__line_vert">
-                    <div v-for="index in type.height_count" class="calculator__height text-input">
-                        <input type="text" v-model.number="arrHeight[index]" class="input text-input__value" name="height[]">
+                    <div class="calculator__height text-input">
+                        <input type="text" class="input text-input__value" name="height[]">
                         <span class="text-input__label text">мм</span>
                         <p class="calculator__height-desc">Высота окна</p>
                     </div>
                 </div>
-
-
-
-            </div>
-            <div class="calculator__controls">
-                <p class="calculator__title">Установка</p>
-                <label class="radio subtext">
-                    <input name="install" type="radio" v-model="install" value=500 class="radio__input">
-                    <span class=" radio__mark"></span>
-                    С установкой
-                </label>
-                <label class="radio subtext">
-                    <input name="install" type="radio" v-model="install" value=0 checked class="radio__input">
-                    <span class="radio__mark"></span>
-                    Без установки
-                </label>
             </div>
             <form action="" class="form calculator__result calculator-result">
                 <div class="calculator-result__head">
