@@ -16,6 +16,7 @@ use App\Question;
 use App\WindowCalcParam;
 use App\Service;
 use App\Offer;
+use App\Article;
 
 class PageController extends Controller
 {
@@ -134,6 +135,13 @@ class PageController extends Controller
     public function dirMessage ()
     {
         return view('common.pages.dir-message');
+    }
+
+    public function articles (City $city) {
+        return view('common.pages.articles', [
+            'city'  =>  $city,
+            'articles' => Article::orderBy('sort', 'asc')->get()
+        ]);
     }
 
 }

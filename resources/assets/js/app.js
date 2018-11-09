@@ -26,6 +26,7 @@ Vue.component('add-comment', require('./components/AddComment.vue'));
 Vue.component('add-review', require('./components/AddReview.vue'));
 Vue.component('offer-slider', require('./components/OfferSlider.vue'));
 Vue.component('gallery-carousel', require('./components/GalleryCarousel.vue'));
+Vue.component('gallery-list', require('./components/GalleryList.vue'));
 
 const portfolioCarouselContainer = $('.portfolio__carousel');
 
@@ -40,6 +41,23 @@ if (portfolioCarouselContainer.length > 0) {
         }
     });
 }
+
+const portfolioListContainer = $('.portfolio__list');
+
+if (portfolioListContainer.length > 0) {
+    new Vue({
+        el:'#portfolio__list',
+        template: '<gallery-list :photos="photos"></gallery-list>',
+        data: function () {
+            return {
+                photos: portfolioListContainer.data('photos')
+            }
+        }
+    })
+}
+
+
+
 
 const offerSliderContainer = $('#js-offer-slider');
 

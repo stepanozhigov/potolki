@@ -1,0 +1,44 @@
+.articles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 90px;
+
+    &__item {
+        width: 32%;
+        margin-bottom: 30px;
+    }
+}
+
+.article {
+    padding: 0 20px 16px 20px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    cursor: pointer;
+    
+    &__title {
+        color: $white;
+        font-size: 30px;
+        font-weight: 300;
+        line-height: 30px;
+        margin: 0;
+    }
+
+    &__intro {
+        margin: 0;
+        color: $white;
+        font-size: 18px;
+        font-weight: 300;
+        margin-top: 10px;
+    }
+
+    &__link {
+        margin-top: 40px;
+        color: $white;
+    }
+}

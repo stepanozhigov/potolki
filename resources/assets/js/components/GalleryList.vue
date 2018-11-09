@@ -1,17 +1,17 @@
 <template>
-    <div class="portfolio__carousel">
-        <a @click="toggleMode(index)" v-for="(photo, index) in showedItems" v-bind:key="photo.id" class="case b-card portfolio__item portfolio__item_slide">
+    <div class="portfolio__list">
+        <a @click="toggleMode(index)" v-for="(photo, index) in photos" v-bind:key="photo.id" class="case b-card portfolio__item">
             <p class="case__totals">{{ photo.price }}  ₽ / {{ photo.area }} м<sup>2</sup></p>
             <img :src="`/storage/${photo.src}`" alt="3" class="case__img">
             <p class="card-title case__title">{{ photo.name }}</p>
         </a>
-        <div @click="toggleMode" v-bind:class="['overlay', 'overlay_dark', mode == 'detail' ? 'overlay_active':'']"></div>
+        <div @click="toggleMode" v-bind:class="['overlay', mode == 'detail' ? 'overlay_active':'']"></div>
         <div v-if="mode == 'detail'" class="gallery">
-            <p class="gallery__totals">{{ showedItems[currentPhotoIndex].price }}  ₽ / {{ showedItems[currentPhotoIndex].area }} м<sup>2</sup></p>
+            <p class="gallery__totals">{{ photos[currentPhotoIndex].price }}  ₽ / {{ photos[currentPhotoIndex].area }} м<sup>2</sup></p>
             <img @click="toggleMode" class="gallery__close" src="/img/gui/close.svg">
             <img @click="prevItem" class="gallery__prev" src="/img/gui/arrow_top.png">
             <img @click="nextItem" class="gallery__next" src="/img/gui/arrow_top.png">            
-            <img class="gallery__img b-card" :src="`/storage/${showedItems[currentPhotoIndex].src}`">
+            <img class="gallery__img b-card" :src="`/storage/${photos[currentPhotoIndex].src}`">
         </div>
     </div>
     
@@ -51,45 +51,27 @@
             nextItem () {
                 this.currentPhotoIndex++;
 
-                if (!this.showedItems[this.currentPhotoIndex]) {
+                if (!this.photos[this.currentPhotoIndex]) {
                     this.currentPhotoIndex = 0
                 }
             },
             prevItem () {
                 this.currentPhotoIndex--;
 
-                if (!this.showedItems[this.currentPhotoIndex]) {
-                    this.currentPhotoIndex = this.showedItems.length - 1;
+                if (!this.photos[this.currentPhotoIndex]) {
+                    this.currentPhotoIndex = this.photos.length - 1;
                 }
-            },
-            offsetShowPoint () {
-                const itemsCount = this.photos.length;
-
-                this.showPoint ++;
-
-                if (this.showPoint == itemsCount) {
-                    this.showPoint = 0;
-                }
-            },
-            startSliding () {
-                this.interval = setInterval(this.offsetShowPoint, 3000);
-            },
-            stopSliding () {
-                clearInterval(this.interval);   
             },
             toggleMode (index) {
                 if (this.mode == 'list') {
                     this.currentPhotoIndex = index;
-                    this.stopSliding();
                     this.mode = 'detail';
                 } else {
                     this.mode = 'list';
-                    this.startSliding();
                 }                
             }
         },
         mounted: function () {
-            this.startSliding();
         }
     }
 </script>

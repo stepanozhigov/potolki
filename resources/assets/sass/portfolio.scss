@@ -1,17 +1,20 @@
 .portfolio {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
     padding-top: 90px;
-
-    @media screen and (max-width: 1024px) {
-        justify-content: space-evenly
-    }
 
     @media screen and (max-width: 650px){
         padding: 0;
     }
 
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        @media screen and (max-width: 1024px) {
+            justify-content: space-evenly
+        }
+
+    }
     &__carousel {
         width: 95%;
         margin: 0 auto;
@@ -150,19 +153,25 @@
         box-shadow: -2px 4px 4px rgba(0, 0, 0, 0.12), 0 0 4px rgba(0, 0, 0, 0.08);
         background-color: rgba(0, 0, 0, 0.5);
         position: absolute;
-        top: -20px;
-        right: -20px;
+        top: -14px;
+        right: -16px;
         border-radius: 50%;
         z-index: 9;
     }
 
     &__img {
-        max-height: 700px;
+        height: 80vh;
+        width: 80vw;
+        object-fit: cover;
+
+        @media screen and (max-width: 600px) {
+            height: 50vh;
+        }
     }
 
     &__next {
         position: absolute;
-        right: -80px;
+        right: -63px;
         top: 50%;
         transform: rotate(90deg) translate(-50%);
         cursor: pointer;
@@ -172,10 +181,14 @@
         border: 0;
         background: rgba(255, 255, 255, 0.4);
         background-color: rgba(0, 0, 0, 0.5);
+
+        @media screen and (max-width: 600px) {
+            right: -23px;
+        }
     }
     &__prev {
         position: absolute;
-        left: -80px;
+        left: -62px;
         top: 50%;
         transform: rotate(-90deg) translate(50%);
         cursor: pointer;
@@ -185,5 +198,9 @@
         border: 0;
         background: rgba(255, 255, 255, 0.4);
         background-color: rgba(0, 0, 0, 0.5);
+
+        @media screen and (max-width: 600px) {
+            left: -24px;
+        }
     }
 }

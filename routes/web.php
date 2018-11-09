@@ -57,4 +57,6 @@ Route::prefix('/{city}')->group(function () {
     Route::get('/contacts', 'PageController@contacts')->name('contacts');
 
     Route::get('/dir-message', 'PageController@dirMessage')->name('dirMessage');
+
+    Route::get('/articles', 'PageController@articles')->name('articles');
 });

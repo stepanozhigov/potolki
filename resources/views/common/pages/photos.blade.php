@@ -14,15 +14,15 @@
                     <a href="{{ route('photos', ['city' => $city, 'type' => $type]) }} " class="switcher__button {{ $type->id == ($currentType->id ?? null) ? 'switcher__button_active':'' }}">{{ $type->name }}</a>        
                 @endforeach
             </div>
-
-            @foreach($photos as $photo)
-                <a class="case b-card portfolio__item">
-                    <p class="case__totals">{{ $photo->price }}  ₽ / {{ $photo->area }} м<sup>2</sup></p>
-                    <img src="{{ Voyager::image( $photo->thumbnail('preview','src') ) }}" alt="Фотопечать" class="case__img">
-                    <p class="card-title case__title">{{ $photo->name }}</p>
-                </a>
-            @endforeach
-            
+            <div class="portfolio__list" id="portfolio__list" data-photos="{{ $photos }}">
+                @foreach($photos as $photo)
+                    <a class="case b-card portfolio__item">
+                        <p class="case__totals">{{ $photo->price }}  ₽ / {{ $photo->area }} м<sup>2</sup></p>
+                        <img src="{{ Voyager::image( $photo->thumbnail('preview','src') ) }}" alt="Фотопечать" class="case__img">
+                        <p class="card-title case__title">{{ $photo->name }}</p>
+                    </a>
+                @endforeach
+            </div>
         </section>
         
         @include('common.gui.footer')
