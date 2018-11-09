@@ -27,7 +27,8 @@ class PageController extends Controller
             'reviews'   =>  Review::limit(3)->orderBy('sort', 'asc')->get(),
             'photos'    =>  Photo::all(),
             'offers'    =>  Offer::where('is_active', 1)->get(),
-            'catalogTypes'  => CatalogType::where(['direction_id' => 1])->get()
+            'catalogTypes'  => CatalogType::where(['direction_id' => 1])->get(),
+            'articles'  =>  Article::where(['is_active' => 1, 'in_main' => 1])->get()
         ]);
     }
     public function photos (City $city, CatalogType $type = null)
@@ -140,7 +141,7 @@ class PageController extends Controller
     public function articles (City $city) {
         return view('common.pages.articles', [
             'city'  =>  $city,
-            'articles' => Article::orderBy('sort', 'asc')->get()
+            'articles' => Article::where('is_active', 1)->orderBy('sort', 'asc')->get()
         ]);
     }
 

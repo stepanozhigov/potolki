@@ -222,6 +222,11 @@
   margin: 50px 0 0 0;
 }
 
+.titles__socials {
+  width: 18%;
+  margin-top: 20px;
+}
+
 @media screen and (max-width: 650px) {
   .titles {
     padding: 40px 0;
@@ -513,6 +518,21 @@
 .tag_active {
   border: 1px solid #dc1414;
   color: #dc1414;
+}
+
+.buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.buttons__item {
+  margin-right: 15px;
 }
 
 .cities {
@@ -5344,6 +5364,10 @@ body.no-scroll {
 .articles__item {
   width: 32%;
   margin-bottom: 30px;
+}
+
+.articles__paginator {
+  width: 100%;
 }
 
 .article {

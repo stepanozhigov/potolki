@@ -81,3 +81,15 @@
         color: $red_crismon;
     }
 }
+
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+    
+    &__item {
+        margin-right: 15px;
+    }
+}

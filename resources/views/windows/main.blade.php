@@ -93,7 +93,7 @@
 
     <section class="reviews container b-texture">
         @include('common.gui.titles', ['secondTitle' => 'Отзывы наших клиентов'])
-
+        
         @foreach($reviews as $review)
             @include('common.gui.review', $review)
         @endforeach
@@ -101,6 +101,38 @@
         <div class="reviews__buttons">
             <a href="{{ route('reviews', $city) }}" class="button reviews__button button_gray">Прочитать все отзывы</a>
             <a href="{{ route('add-review', $city) }}" class="button reviews__button">Оставить отзыв</a>
+        </div>
+    </section>
+
+    <section class="articles container">
+        <div class="titles">
+            <h2 class="second-title titles__title">Статьи и полезная информация</h2>
+            <hr class="line titles__line">
+            <p class="intro titles__intro">Вы можете прочитать все статьи в удобной для вас социальной сети</p>
+            <div class="socials titles__socials">
+                <a href="" class="socials__item">
+                    <img src="/img/gui/social_gray_vk.svg" alt="">
+                </a>
+                <a href="" class="socials__item">
+                    <img src="/img/gui/social_gray_ok.svg" alt="">
+                </a>
+                <a href="" class="socials__item">
+                    <img src="/img/gui/social_gray_fb.svg" alt="">
+                </a>
+                <a href="" class="socials__item">
+                    <img src="/img/gui/social_gray_inst.svg" alt="">
+                </a>
+            </div>
+        </div>
+        @foreach ($articles as $article)
+            <div class="article b-card articles__item" style="background-image: url({{ Storage::url($article->preview_img) }}); @if($article->width) width: {{ $article->width }}%;  @endif">
+                <p class="text article__title">{{ $article->title }}</p>
+                <p class="text article__intro">{{ $article->preview_text }}</p>
+                <a class="link subtext article__link">Читать далее</a>
+            </div>
+        @endforeach
+        <div class="buttons articles__buttons">
+            <a href="{{ route('articles', $city) }}" class="button button_red">Читать остальные статьи</a>
         </div>
     </section>
 

@@ -3,10 +3,14 @@
     flex-wrap: wrap;
     justify-content: space-between;
     padding-bottom: 90px;
-
+    
     &__item {
         width: 32%;
         margin-bottom: 30px;
+    }
+
+    &__paginator {
+        width: 100%;
     }
 }
 
