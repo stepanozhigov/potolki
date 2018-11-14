@@ -108,7 +108,7 @@
         <div class="titles">
             <h2 class="second-title titles__title">Статьи и полезная информация</h2>
             <hr class="line titles__line">
-            <p class="intro titles__intro">Вы можете прочитать все статьи в удобной для вас социальной сети</p>
+            <p class="intro titles__intro">Больше полезной информации, конкурсы и розыгрыши<br> вы можете найти в наших социальных сетях:</p>
             <div class="socials titles__socials">
                 <a href="" class="socials__item">
                     <img src="/img/gui/social_gray_vk.svg" alt="">

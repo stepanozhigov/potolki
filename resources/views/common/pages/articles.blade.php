@@ -6,7 +6,7 @@
             <p class="overtitle titles__overtitle">Статьи</p>    
             <h1 class="title titles__title">Полезная информация о пластиковых окнах</h1>    
             <hr class="line titles__line">    
-            <p class="intro titles__intro">Вы можете прочитать все статьи в удобной для вас социальной сети</p>
+            <p class="intro titles__intro">Больше полезной информации, конкурсы и розыгрыши<br> вы можете найти в наших социальных сетях:</p>
             <div class="socials titles__socials">
                 <a href="" class="socials__item">
                     <img src="/img/gui/social_gray_vk.svg" alt="">
@@ -31,11 +31,11 @@
                 <a class="link subtext article__link">Читать далее</a>
             </div>
         @endforeach
-        <div class="paginator articles__paginator">
+        <!--<div class="paginator articles__paginator">
             <a href="" class="paginator__item paginator__item_active">1</a>
             <a href="" class="paginator__item">2</a>
             <a href="" class="paginator__item">3</a>
-        </div>
+        </div>-->
     </div>
 
     @include('common.gui.footer')
