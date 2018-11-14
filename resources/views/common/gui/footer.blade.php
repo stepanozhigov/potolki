@@ -71,8 +71,8 @@
     </div>
     <div class="footer__row footer__row_dark">
         <div class="container footer__copyright">
-            <p class="subtext subtext_white">&copy;  2003-2016  ООО «Твой Стиль»  Все права защищены</p>
-            <p class="subtext subtext_white">
+            <p class="subtext subtext_white footer__text">&copy;  2003-2016  ООО «Твой Стиль»  Все права защищены</p>
+            <p class="subtext subtext_white footer__text">
                 Разработка и продвижение – <a href="javascript:void(0);" class="text text_white" target="_blank">TREND PRO</a>
             </p>
         </div>

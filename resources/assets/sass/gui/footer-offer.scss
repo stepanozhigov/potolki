@@ -15,6 +15,16 @@
         font-size: 32px;
         font-weight: 300;
         text-align: center;
+
+        @media screen and (max-width: 650px){
+            font-size: 20px;
+        }
+    }
+
+    &__intro {
+        @media screen and (max-width: 650px){
+            display: none;
+        }
     }
 
     &__form {

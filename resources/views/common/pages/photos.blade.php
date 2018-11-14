@@ -4,6 +4,7 @@
         @include('common.gui.titles', [
             'class' =>  'container',
             'overtitle' =>  'Наши работы',
+            'intro' =>  'Разместить описание раздела',
             'title' =>  "Фото работ компании Твой стиль {$city->name_formatted}"
         ])
         <section class="portfolio container b-texture">

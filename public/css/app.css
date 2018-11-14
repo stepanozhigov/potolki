@@ -417,7 +417,7 @@
 
 .button {
   font-family: "Helvetica Neue", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   cursor: pointer;
   font-size: 20px;
   display: -webkit-box;
@@ -896,9 +896,9 @@
 }
 
 .catalog-cards__item {
-  width: 31%;
+  width: 24%;
   margin-right: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 32px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -910,7 +910,7 @@
       -ms-flex-align: center;
           align-items: center;
   text-decoration: none;
-  padding: 0 0 25px 0;
+  padding: 0 0 32px 0;
 }
 
 @media screen and (max-width: 700px) {
@@ -923,7 +923,7 @@
 }
 
 .catalog-cards__price {
-  margin: 23px 0 0 0;
+  margin: 24px 0 0 0;
 }
 
 .catalog-cards__img {
@@ -936,7 +936,7 @@
 }
 
 .catalog-cards__title {
-  margin: 28px 0 15px 0;
+  margin: 28px 0 8px 0;
   padding: 0 30px;
 }
 
@@ -981,7 +981,7 @@
 
 @media screen and (max-width: 650px) {
   .header__top {
-    padding: 15px 0;
+    padding: 15px 0 0 0;
   }
 }
 
@@ -1188,6 +1188,10 @@ body.no-scroll {
 .line_bold {
   width: 80px;
   border-bottom: 2px solid #d0d2d4;
+}
+
+.line_small {
+  width: 60px;
 }
 
 .dropdown {
@@ -3073,6 +3077,10 @@ body.no-scroll {
   .footer__item {
     width: auto;
   }
+}
+
+.footer__text {
+  text-align: center;
 }
 
 .nav-group {
@@ -5240,6 +5248,18 @@ body.no-scroll {
   font-size: 32px;
   font-weight: 300;
   text-align: center;
+}
+
+@media screen and (max-width: 650px) {
+  .footer-offer__title {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .footer-offer__intro {
+    display: none;
+  }
 }
 
 .footer-offer__form {

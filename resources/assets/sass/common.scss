@@ -69,9 +69,13 @@ body {
     width: 160px;
     border-bottom: 1px solid $grey_chalice;
 
+    
     &_bold {
         width: 80px;
         border-bottom: 2px solid #d0d2d4;        
+    }
+    &_small {
+        width: 60px;
     }
 }
 
