@@ -25342,6 +25342,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -25424,13 +25428,6 @@ var render = function() {
             }
           },
           [
-            _c("p", { staticClass: "case__totals" }, [
-              _vm._v(
-                _vm._s(photo.price) + "  ₽ / " + _vm._s(photo.area) + " м"
-              ),
-              _c("sup", [_vm._v("2")])
-            ]),
-            _vm._v(" "),
             _c("img", {
               staticClass: "case__img",
               attrs: { src: "/storage/" + photo.src, alt: "3" }
@@ -25438,6 +25435,21 @@ var render = function() {
             _vm._v(" "),
             _c("p", { staticClass: "card-title case__title" }, [
               _vm._v(_vm._s(photo.name))
+            ]),
+            _vm._v(" "),
+            _c("hr", { staticClass: "line line_small case__line" }),
+            _vm._v(" "),
+            _c("div", { staticClass: "case__totals" }, [
+              _c("p", { staticClass: "case__info text" }, [
+                _vm._v(
+                  "Стоиомость: " + _vm._s(photo.price.toLocaleString()) + "  р"
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "case__info text" }, [
+                _vm._v("Площадь: " + _vm._s(photo.area) + " м"),
+                _c("sup", [_vm._v("2")])
+              ])
             ])
           ]
         )

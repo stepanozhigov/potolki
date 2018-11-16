@@ -21,11 +21,11 @@
             <div class="menu__item menu__item_dropdown">
                 <a href="{{ route('calculator', request()->route()->city) }}" class="text menu__item js-toggle-submenu">Калькулятор</a>
                 <div class="menu__dropdown">
-                    <a href="{{ route('calculator', request()->route()->city) }}" class="text menu__item menu__item_bordered">Окна</a>    
-                    <a href="{{ route('calculator', request()->route()->city) }}" class="text menu__item menu__item_bordered">Балконы</a>    
-                    <a href="{{ route('calculator', request()->route()->city) }}" class="text menu__item menu__item_bordered">Двери</a>    
-                    <a href="{{ route('calculator', request()->route()->city) }}" class="text menu__item menu__item_bordered">Перегородки</a>    
-                    <a href="{{ route('calculator', request()->route()->city) }}" class="text menu__item menu__item_bordered">Жалюзи</a>
+                    <a href="{{ route('calculator', ['city' => $city, 'type' => 'okna']) }}" class="text menu__item menu__item_bordered">Окна</a>    
+                    <a href="{{ route('calculator', ['city' => $city, 'type' => 'balkony']) }}" class="text menu__item menu__item_bordered">Балконы</a>    
+                    <a href="{{ route('calculator', ['city' => $city, 'type' => 'dveri']) }}" class="text menu__item menu__item_bordered">Двери</a>    
+                    <a href="{{ route('calculator', ['city' => $city, 'type' => 'peregorodki']) }}" class="text menu__item menu__item_bordered">Перегородки</a>    
+                    <a href="{{ route('calculator', ['city' => $city, 'type' => 'zhalyuzi']) }}" class="text menu__item menu__item_bordered">Жалюзи</a>
                 </div>
             </div>
 
@@ -55,15 +55,15 @@
             <div class="dropdown__content">
                 <a class="text dropdown__item dropdown__item_active"><img class="dropdown__arrow" src="/img/gui/arrow.svg" alt="">{{ $city->mainOffice() }}</a>
                 <p class="dropdown__title">Другие города</p>
-                @foreach ($cities as $city)
-                    <a href="{{ route('windows.main', $city)}}" class="text dropdown__item dropdown__item_bordered">{{ $city->name }}</a>
+                @foreach ($cities as $arCity)
+                    <a href="{{ route('windows.main', $arCity)}}" class="text dropdown__item dropdown__item_bordered">{{ $arCity->name }}</a>
                 @endforeach
             </div>    
         </div>
         <div class="header__feedbacks">
-            <a href="" class="text phone header__phone"><img class="phone__icon" src="/img/gui/phone.svg" alt=""> 8 800 333-97-14</a>
-            <a href="" class="text whatsapp header__whatsapp"><img src="/img/gui/whatsapp.svg" alt="" class="whatsapp__icon"> Написать в WhatsApp</a>
-            <a href="" data-src="#popup_callback" class="text header__callback js-show">Заказать звонок</a>
+            <a href="https://api.whatsapp.com/send?phone={{ $city->whatsapp }}" class="text whatsapp header__whatsapp"><img src="/img/gui/whatsapp.svg" alt="" class="whatsapp__icon"> Написать в WhatsApp</a>
+            <a href="tel:{{ $city->phone }}" class="text phone header__phone"><img class="phone__icon" src="/img/gui/phone.svg" alt="">{{ $city->phone }}</a>
+            <a data-src="#popup_callback" class="text header__callback js-show">Заказать звонок</a>
         </div>
     </div>    
 </header>

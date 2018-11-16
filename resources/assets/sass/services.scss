@@ -1,5 +1,6 @@
 .services {
-    padding: 90px 0 0 0;
+    padding: 90px 0 32px 0;
+    margin-bottom: 80px;
     &__list {
         display: flex;
         flex-wrap: wrap;
@@ -8,7 +9,7 @@
     
     &__card {
         margin: 0 .625rem 2rem .625rem;
-        width: 31%;
+        width: 23%;
 
         @media screen and (max-width: 1024px) {
             width: 45%;
@@ -26,24 +27,42 @@
     overflow: hidden;
 
     &__img {
-        height: 270px;
         width: 100%;
     }
 }
 
 .service {
-
+    position: relative;
     &__texture {
-        background-image: url(/img/windows/services/square-bg--2x.jpg);
-        background-repeat: repeat;
+        &:before {
+            z-index: -1;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 100%;
+            width: 800px;
+            background-image: url(/img/windows/services/texture_squares.png);
+            background-repeat: repeat;
+        }
     }
 
+    &__form {
+        width: 42%;
+        padding-top: 70px;
+        padding-bottom: 100px;
+    }
     &__heading {
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
         flex-wrap: wrap;
         position: relative;
+
+        &_small {
+            width: 780px;
+        }
     }
 
     &__left {
@@ -57,9 +76,9 @@
         margin-bottom: 15px;
     }
     &__img {
-        width: 62%;
+        width: 64%;
         position: absolute;
-        right: -282px;
+        right: -68px;
         bottom: 0;
 
         &_small {

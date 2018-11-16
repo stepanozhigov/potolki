@@ -10,8 +10,7 @@
         'title' =>  'Окно, дверь, балкон или перегородка в рассрочку'
     ])
 
-    <section class="service">
-        <div class="service__texture">
+    <section class="service container service__texture">
             <div class="service__heading container">
                 <div class="service__left">
                     <p class="intro service__intro">
@@ -23,7 +22,7 @@
                     </p>
                 </div>
                 <img class="service__img service__img_small" src="/img/windows/services/credit.png" alt="Окно в рассрочку">
-            </div>            
+          
         </div>
         
     </section>

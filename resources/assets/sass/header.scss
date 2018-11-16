@@ -98,6 +98,7 @@
     }
 
     &__callback {
+        cursor: pointer;
         color: $red_crismon;
         text-decoration: underline;
         @media screen and (max-width: 650px){

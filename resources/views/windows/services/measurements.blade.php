@@ -7,28 +7,22 @@
     @include('common.gui.titles', [
         'class' =>  'container',
         'overtitle' =>  'Совершенно бесплатно',
-        'title' =>  'Вызвать замерного мастера'
+        'title' =>  'Вызвать замерного мастера',
+        'intro' =>  'Профессиональный мастер не только грамотно замерит помещение, но и учтет все нюансы, пожелания заказчика и архитектуру самого здания.
+                        Таким образом Вы получите конструкцию, которая идеально подойдет именно для Вашего помещения. '
     ])
 
-    <section class="service">
-        <div class="service__texture">
-            <div class="service__heading container">
-                <div class="service__left">
-                    <p class="intro service__intro">
-                        Профессиональный мастер не только грамотно замерит помещение, но и учтет все нюансы, пожелания заказчика и архитектуру самого здания.
-                        Таким образом Вы получите конструкцию, которая идеально подойдет именно для Вашего помещения. 
-                    </p>
-                    <p class="intro service__intro">
-                        Мастера компании «Твой стиль» - это полноценные торговые представители, которые выполнят все необходимые замеры, рассчитают конечную стоимость конструкции, помогут заключить договор и расскажут о скидках и специальных предложениях компании.
-                        А для того, чтобы выбрать подходящую конструкцию было еще проще, у каждого мастера с собой есть все образцы профиля и стеклопакетов.
-                    </p>
-                </div>
+    <section class="service container">
+            <div class="service__heading service__heading_small container">
+                <form action="" class="form service__form">
+                    <input type="text" placeholder="Ваше имя" class="input form__input">
+                    <input type="text" placeholder="Ваш телефон" class="input form__input">
+                    <button class="button button_red">Вызвать замерщика</button>
+                </form>
                 <img class="service__img" src="/img/windows/services/measurement.png" alt="Вызвать замерного мастера">
-            </div>            
-        </div>
-        
+            </div>        
     </section>
 
-    @include('common.gui.footer')
+    @include('common.gui.footer', ['skipOffer' => true])
 
 @endsection

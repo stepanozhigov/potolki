@@ -35,6 +35,7 @@
         ])
         
         @foreach ($catalogTypes as $type)
+            <? if ($type->id == 5) continue ?>
             <a href="{{ route('calculator', ['city' => $city, 'type' => $type]) }}" class=" catalog-cards__item b-card is-hoverable">
                 <img src="{{ Storage::url($type->img) }}" alt="{{ $type->name }}" class="catalog-cards__img">
                 <p class="card-title catalog-cards__title">{{ $type->name }}</p>
@@ -85,8 +86,8 @@
                 </a>
             @endforeach
         </div>
-        <div class="portfolio__buttons">
-            <a href="{{ route('photos', $city) }}" class="button portfolio__button button_gray">Посмотреть все работы</a>
+        <div class="buttons">
+            <a href="{{ route('photos', $city) }}" class="button buttons__item button_gray">Посмотреть все работы</a>
             <button class="button js-show" data-src="#popup_callback">Вызвать замерщика</button>
         </div>
     </section>
@@ -98,9 +99,9 @@
             @include('common.gui.review', $review)
         @endforeach
 
-        <div class="reviews__buttons">
-            <a href="{{ route('reviews', $city) }}" class="button reviews__button button_gray">Прочитать все отзывы</a>
-            <a href="{{ route('add-review', $city) }}" class="button reviews__button">Оставить отзыв</a>
+        <div class="buttons">
+            <a href="{{ route('reviews', $city) }}" class="button buttons__item button_gray">Прочитать все отзывы</a>
+            <a href="{{ route('add-review', $city) }}" class="button">Оставить отзыв</a>
         </div>
     </section>
 
@@ -147,7 +148,7 @@
                     Если вы хотите защититься от палящих лучей летнего солнца – лучшего решения, чем купить жалюзи на окна, и не придумать.
                 </p>
             </div>
-            <a href="" class="button button_gray additional__button">Перейти в каталог</a>
+            <a href="{{ route('calculator', ['city' => $city, 'type' => 'zhaluzi']) }}" class="button button_gray additional__button">Перейти в каталог</a>
         </div>
         <div class="additional__item b-card">
             <p class="card-title">Рассрочка до 3х лет</p>
@@ -158,7 +159,7 @@
                     Основной плюс рассрочки в отсутствии переплат. Итоговая сумма, прописанная в договоре рассрочки, не меняется с течением времени.
                 </p>
             </div>
-            <a href="" class="button button_gray additional__button">Подробнее</a>
+            <a href="{{ route('services', ['city' => $city, 'type' => 'credit']) }}" class="button button_gray additional__button">Подробнее</a>
         </div>
     </section>
 
