@@ -123,6 +123,7 @@
   font-family: "Futura PT", sans-serif;
   font-size: 26px;
   color: #50555a;
+  letter-spacing: 1.5px;
 }
 
 .intro {
@@ -2041,7 +2042,7 @@ body.no-scroll {
 }
 
 .portfolio {
-  padding-top: 90px;
+  padding-top: 0px;
 }
 
 @media screen and (max-width: 650px) {
@@ -2070,7 +2071,7 @@ body.no-scroll {
 }
 
 .portfolio__carousel {
-  width: 95%;
+  width: 80%;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2100,7 +2101,7 @@ body.no-scroll {
           align-items: center;
   position: relative;
   text-decoration: none;
-  padding: 0 0 25px 0;
+  padding: 0 0 32px 0;
 }
 
 @media screen and (max-width: 1024px) {
@@ -2207,18 +2208,27 @@ body.no-scroll {
 
 .case__img {
   width: 100%;
-  height: 256px;
+  height: 228px;
+}
+
+.case__line {
+  margin: 8px 0 16px 0;
+}
+
+.case__info {
+  margin: 0;
+  text-align: center;
 }
 
 .case__totals {
-  font-family: "Futura PT", sans-serif;
-  position: absolute;
   background-color: rgba(255, 255, 255, 0.65);
-  border-radius: 0 0 4px 4px;
   margin: 0;
-  padding: 10px 19px 15px 19px;
-  font-size: 18px;
-  color: #50555a;
+}
+
+.case__totals sup {
+  font-size: 12px;
+  font-weight: 400;
+  margin-left: 2px;
 }
 
 .case__title {
@@ -2873,7 +2883,7 @@ body.no-scroll {
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding: 50px 0 50px 0;
+  padding: 0px 0 32px 0;
 }
 
 .reviews__add {
@@ -2883,7 +2893,7 @@ body.no-scroll {
 .reviews__item {
   width: 32.5%;
   margin-top: 70px;
-  margin-bottom: 30px;
+  margin-bottom: 24px;
 }
 
 @media screen and (max-width: 1024px) {
@@ -2905,7 +2915,7 @@ body.no-scroll {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin: 50px auto 0 auto;
+  margin: 24px auto 32px auto;
   -ms-flex-preferred-size: 50%;
       flex-basis: 50%;
 }

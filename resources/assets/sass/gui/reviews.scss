@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 50px 0 50px 0;
+    padding: 0px 0 32px 0;
 
     &__add {
         margin: 20px auto 0 auto;
@@ -12,7 +12,7 @@
     &__item {
         width: 32.5%;
         margin-top: 70px;
-        margin-bottom: 30px;
+        margin-bottom: 24px;
 
         @media screen and (max-width: 1024px) {
             width: 42%;
@@ -25,7 +25,7 @@
     &__buttons {
         display: flex;
         justify-content: space-between;
-        margin: 50px auto 0 auto;
+        margin: 24px auto 32px auto;
         flex-basis: 50%;
 
         @media screen and (max-width: 800px) {

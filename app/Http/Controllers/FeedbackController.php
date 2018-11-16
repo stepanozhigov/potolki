@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use App\Comment;
 use App\Review;
+use App\Connectors\BitrixConnector;
 
 class FeedbackController extends Controller
 {
@@ -65,5 +67,30 @@ class FeedbackController extends Controller
             $review->save();
         }
         
+    }
+
+    public function proxyLead(Request $request)
+    {
+        $bitrixConnector = new BitrixConnector;
+
+        $comments = "";
+
+        foreach ($request->object['answers'] as $answer)
+        {
+            $comments.= "{$answer['question']}: {$answer['answer']} \r\n";
+        }
+
+        $bitrixConnector->addLead([
+            'title' =>  $request->object['form_name'],
+            'name'  =>  $request->object['answers'][0]['answer'],
+            'phone' =>  $request->object['answers'][1]['answer'],
+            'source'    =>  '21',
+            'city'  =>  $request->city ?? '',
+            'direction' =>  $request->direction ?? '',
+            'comment'   =>  $comments
+        ]);
+
+        echo 'ok';
+        die();
     }
 }

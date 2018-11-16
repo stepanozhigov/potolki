@@ -1,9 +1,13 @@
 <template>
     <div class="portfolio__carousel">
         <a @click="toggleMode(index)" v-for="(photo, index) in showedItems" v-bind:key="photo.id" class="case b-card portfolio__item portfolio__item_slide">
-            <p class="case__totals">{{ photo.price }}  ₽ / {{ photo.area }} м<sup>2</sup></p>
             <img :src="`/storage/${photo.src}`" alt="3" class="case__img">
             <p class="card-title case__title">{{ photo.name }}</p>
+            <hr class="line line_small case__line">
+            <div class="case__totals">
+                <p class="case__info text">Стоиомость: {{ photo.price.toLocaleString() }}  р</p>
+                <p class="case__info text">Площадь: {{ photo.area }} м<sup>2</sup></p>
+            </div>
         </a>
         <div @click="toggleMode" v-bind:class="['overlay', 'overlay_dark', mode == 'detail' ? 'overlay_active':'']"></div>
         <div v-if="mode == 'detail'" class="gallery">

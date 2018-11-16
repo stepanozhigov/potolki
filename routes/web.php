@@ -28,7 +28,7 @@ Route::get('/', function () {
 Route::get('/forms/callback', 'PageController@callback');
 Route::post('/forms/add-comment', 'FeedbackController@addComment');
 Route::post('/forms/add-review', 'FeedbackController@addReview');
-
+Route::post('/forms/proxy-lead', 'FeedbackController@proxyLead');
 
 Route::prefix('/{city}')->group(function () {
 
