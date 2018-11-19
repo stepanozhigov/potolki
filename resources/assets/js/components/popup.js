@@ -1,4 +1,4 @@
-$('.js-show').on('click', function(event) {
+$(document).on('click', '.js-show', function(event) {
     event.preventDefault();
     var source = $(this).data('src'),
         $this = $(this),

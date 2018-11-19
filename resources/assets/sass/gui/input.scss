@@ -89,3 +89,94 @@
         text-align: left;
     }
 }
+
+.range {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 400;
+
+    &__label {
+        margin-right: 16px;
+        width: 30%;
+        text-align: left;
+    }
+    &__value {
+        margin-left: auto;
+        width: 16%;
+        text-align: left;
+
+        @media screen and (max-width: 1024px){
+            margin-left: initial;
+        }
+    }
+    &__input {
+        cursor: pointer;
+        width: 50%;
+        outline: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        height: 8px;
+        box-shadow: inset 0 1px 0 $grey_chateau;
+        border-radius: 10px;
+        background-color: #d0d2d4;
+
+        &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 8px solid #f9fafb;
+            //box-shadow: -100vw 0 0 100vw #a01414;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), 0 0 4px rgba(0, 0, 0, 0.2), inset 0 -1px 0 #d0d2d4;
+        }
+        ::-moz-range-track {
+            height: 8px;
+            background-color: #d0d2d4;
+        }
+
+        ::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 8px solid #f9fafb;
+            //box-shadow: -100vw 0 0 100vw #a01414;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.12), 0 0 4px rgba(0, 0, 0, 0.08), inset 0 -1px 0 #d0d2d4;
+        }
+
+        ::-ms-fill-lower { 
+            background: #a01414;
+        }
+
+        ::-ms-thumb { 
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 8px solid #f9fafb;
+            //box-shadow: -100vw 0 0 100vw #a01414;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.12), 0 0 4px rgba(0, 0, 0, 0.08), inset 0 -1px 0 #d0d2d4;
+        }
+
+        ::-ms-ticks-after { 
+            display: none; 
+        }
+
+        ::-ms-ticks-before { 
+            display: none; 
+        }
+
+        ::-ms-track { 
+            background: #ddd;
+            color: transparent;
+            height: 40px;
+            border: none;
+        }
+
+        ::-ms-tooltip { 
+            display: none;
+        }
+    }
+}

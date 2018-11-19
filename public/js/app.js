@@ -560,6 +560,16 @@ Vue.component('add-review', __webpack_require__(32));
 Vue.component('offer-slider', __webpack_require__(38));
 Vue.component('gallery-carousel', __webpack_require__(41));
 Vue.component('gallery-list', __webpack_require__(44));
+Vue.component('credit-calc', __webpack_require__(66));
+
+var creditCalcContainer = $('#credit-calc');
+
+if (creditCalcContainer.length > 0) {
+    new Vue({
+        el: '#credit-calc',
+        template: '<credit-calc></credit-calc>'
+    });
+}
 
 var portfolioCarouselContainer = $('.portfolio__carousel');
 
@@ -22536,7 +22546,7 @@ process.umask = function() { return 0; };
 /* 12 */
 /***/ (function(module, exports) {
 
-$('.js-show').on('click', function (event) {
+$(document).on('click', '.js-show', function (event) {
     event.preventDefault();
     var source = $(this).data('src'),
         $this = $(this),
@@ -25517,6 +25527,261 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 48 */,
+/* 49 */,
+/* 50 */,
+/* 51 */,
+/* 52 */,
+/* 53 */,
+/* 54 */,
+/* 55 */,
+/* 56 */,
+/* 57 */,
+/* 58 */,
+/* 59 */,
+/* 60 */,
+/* 61 */,
+/* 62 */,
+/* 63 */,
+/* 64 */,
+/* 65 */,
+/* 66 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(67)
+/* template */
+var __vue_template__ = __webpack_require__(68)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/CreditCalc.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-122ac936", Component.options)
+  } else {
+    hotAPI.reload("data-v-122ac936", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 67 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            'sum': 0,
+            'deposit': 0,
+            'period': 0
+        };
+    },
+    methods: {
+        formatNum: function formatNum(num) {
+            return parseInt(num).toLocaleString();
+        }
+    },
+    computed: {
+        result: function result() {
+            if (this.sum > 0 && this.deposit > 0 && this.period > 0) {
+                return Math.floor((this.sum - this.deposit) / this.period);
+            }
+            return 0;
+        }
+    }
+});
+
+/***/ }),
+/* 68 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "credit-calc" }, [
+    _c("div", { staticClass: "range intro credit-calc__range" }, [
+      _c("span", { staticClass: "range__label" }, [
+        _vm._v("Стоимость покупки")
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.sum,
+            expression: "sum"
+          }
+        ],
+        staticClass: "range__input",
+        attrs: { step: "1000", max: "150000", type: "range" },
+        domProps: { value: _vm.sum },
+        on: {
+          __r: function($event) {
+            _vm.sum = $event.target.value
+          }
+        }
+      }),
+      _vm._v(" "),
+      _c("span", { staticClass: "range__value" }, [
+        _vm._v(_vm._s(_vm.formatNum(_vm.sum)) + " Р")
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "range intro credit-calc__range" }, [
+      _c("span", { staticClass: "range__label" }, [
+        _vm._v("Первоначальный взнос")
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.deposit,
+            expression: "deposit"
+          }
+        ],
+        staticClass: "range__input",
+        attrs: { step: "1000", max: _vm.sum, type: "range" },
+        domProps: { value: _vm.deposit },
+        on: {
+          __r: function($event) {
+            _vm.deposit = $event.target.value
+          }
+        }
+      }),
+      _vm._v(" "),
+      _c("span", { staticClass: "range__value" }, [
+        _vm._v(_vm._s(_vm.formatNum(_vm.deposit)) + "  Р")
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "range intro credit-calc__range" }, [
+      _c("span", { staticClass: "range__label" }, [_vm._v("Срок рассрочки")]),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.period,
+            expression: "period"
+          }
+        ],
+        staticClass: "range__input",
+        attrs: { max: "10", type: "range" },
+        domProps: { value: _vm.period },
+        on: {
+          __r: function($event) {
+            _vm.period = $event.target.value
+          }
+        }
+      }),
+      _vm._v(" "),
+      _c("span", { staticClass: "range__value" }, [
+        _vm._v(_vm._s(_vm.formatNum(_vm.period)) + "  мес.")
+      ])
+    ]),
+    _vm._v(" "),
+    _c("p", { staticClass: "intro credit-calc__text" }, [
+      _vm._v("Сумма ежемесячного платежа")
+    ]),
+    _vm._v(" "),
+    _c("p", { staticClass: "text credit-calc__subtext" }, [
+      _vm._v("данный расчет является примерным")
+    ]),
+    _vm._v(" "),
+    _c("span", { staticClass: "credit-calc__value" }, [
+      _vm._v(_vm._s(_vm.formatNum(_vm.result)) + " Р")
+    ]),
+    _vm._v(" "),
+    _vm._m(0)
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "buttons" }, [
+      _c(
+        "button",
+        {
+          staticClass: "button button_red js-show",
+          attrs: { "data-src": "#credit_popup" }
+        },
+        [_vm._v("Получить рассрочку")]
+      )
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-122ac936", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

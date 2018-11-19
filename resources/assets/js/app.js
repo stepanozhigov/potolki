@@ -27,6 +27,16 @@ Vue.component('add-review', require('./components/AddReview.vue'));
 Vue.component('offer-slider', require('./components/OfferSlider.vue'));
 Vue.component('gallery-carousel', require('./components/GalleryCarousel.vue'));
 Vue.component('gallery-list', require('./components/GalleryList.vue'));
+Vue.component('credit-calc', require('./components/CreditCalc.vue'));
+
+const creditCalcContainer = $('#credit-calc');
+
+if (creditCalcContainer.length > 0) {
+    new Vue({
+        el: '#credit-calc',
+        template: '<credit-calc></credit-calc>'
+    })
+}
 
 const portfolioCarouselContainer = $('.portfolio__carousel');
 

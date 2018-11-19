@@ -567,7 +567,7 @@ body {
     &__form {
         width: 90%;
         max-width: 360px;
-        margin: 70px 60px 80px 60px;
+        margin: 64px 48px 72px 48px;
         display: block;
 
         @media screen and (max-width: 650px) {
@@ -578,8 +578,9 @@ body {
     }
 
     &__title {
+        font-weight: normal;
         color: #50555f;
-        font-size: 30px;
+        font-size: 29px;
         letter-spacing: 3px;
     }
 
@@ -588,6 +589,7 @@ body {
     }
 
     &__intro {
+        line-height: initial;
         color: $grey_dove;
         font-size: 18px;
         font-weight: 300;
@@ -611,8 +613,8 @@ body {
         font-weight: 300;
         margin-top: 20px;
         text-align: center;
-        max-width: 280px;
         margin: 20px auto 0 auto;
+        line-height: 16px;
     }
 }
 
@@ -672,6 +674,18 @@ body {
     }
 }
 
+.banks {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 64px;
+    flex-wrap: wrap;
+
+    &__item {
+        object-fit: scale-down; 
+        width: 17%;
+    }
+}
+
 .price {
     color: #dc1414;
     line-height: 28px;
@@ -692,5 +706,48 @@ body {
     }
     .mobile-only {
         display: initial;
+    }
+}
+
+.credit-calc {
+    width: 58%;
+    padding-bottom: 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 80px;
+
+    &__range {
+        margin-bottom: 24px;
+        width: 100%;
+        @media screen and (max-width: 1024px){
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__text {
+        margin-top: 32px;
+        margin-bottom: 0;
+        text-align: center;
+        font-size: 32px;
+    }
+
+    &__subtext {
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 32px;
+        margin-top: 10px;
+    }
+
+    &__value {
+        text-shadow: 0 1px 1px $white;
+        color: $red_crismon;
+        font-family: "Helvetica Neue";
+        font-size: 48px;
+        font-weight: 500;
+        line-height: 48px;
+        margin-bottom: 32px;
     }
 }

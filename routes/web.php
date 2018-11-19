@@ -13,6 +13,8 @@
 use App\Direction;
 use App\City;
 
+Artisan::call('view:clear');
+
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });

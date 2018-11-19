@@ -21,7 +21,7 @@
                         Даже небольшие нарушения технологии монтажа могут привести к порче дорогостоящей конструкции и непредвиденным затратам именно по-этому профессиональный монтаж имеет такое большое значение.
                     </p>
                 </div>
-                <img class="service__img" src="/img/windows/services/install.png" alt="Установка пластиковых окон">
+                <img class="service__img service__img_small" src="/img/windows/services/install.png" alt="Установка пластиковых окон">
             </div>            
         </div>
         
