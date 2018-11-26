@@ -10,15 +10,19 @@
             <div class="socials titles__socials">
                 <a href="" class="socials__item">
                     <img src="/img/gui/social_gray_vk.svg" alt="">
+                    <span class="socials__name text">Вконтакте</span>
                 </a>
                 <a href="" class="socials__item">
                     <img src="/img/gui/social_gray_ok.svg" alt="">
+                    <span class="socials__name text">Одноклассники</span>
                 </a>
                 <a href="" class="socials__item">
                     <img src="/img/gui/social_gray_fb.svg" alt="">
+                    <span class="socials__name text">Facebook</span>
                 </a>
                 <a href="" class="socials__item">
                     <img src="/img/gui/social_gray_inst.svg" alt="">
+                    <span class="socials__name text">Instagram</span>
                 </a>
             </div>
         </div>

@@ -7,7 +7,7 @@
             'title' =>  "Отзывы о компании \"Твой стиль\" {{ $city->name_formatted }}",
             'intro' =>  "Сюда нужно добавить какой-нибудь текст про страницу. А так же о том, что пользователь может оставить отзыв и получить что-нибудь хорошее (например средство за уходом, скидку или другой подарок)."
         ])
-        <section class="reviews container">
+        <section class="reviews container b-texture">
             @foreach ($reviews as $review)
                 @include('common.gui.review', ['review' => $review])
             @endforeach

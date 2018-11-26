@@ -140,10 +140,19 @@ class PageController extends Controller
         ]);
     }
 
-    public function articles (City $city) {
+    public function articles (City $city)
+    {
         return view('common.pages.articles', [
             'city'  =>  $city,
             'articles' => Article::where('is_active', 1)->orderBy('sort', 'asc')->get()
+        ]);
+    }
+
+    public function article (City $city, Article $article)
+    {
+        return view('common.pages.article', [
+            'city'  =>  $city,
+            'article'   =>  $article
         ]);
     }
 

@@ -23,6 +23,81 @@
         </div>
         <transition name="slide" mode="out-in">
         <div class="calculator__content">
+            <div class="calculator__additional">
+                <section class="calculator__additional-block">
+                    <p class="calculator__additional-title">Установка</p>
+                    <div class="calculator__additional-item">
+                        <input type="radio" data-price="10%" id="install" name="installForWindow" value="install" class="calculator__additional-input calculator__additional-input_round" checked>
+                        <label for="install" class="calculator__additional-name">С установкой</label>
+                    </div>
+                    <div class="calculator__additional-item">
+                        <input type="radio" data-price="0%" id="withoutInstall" name="installForWindow" value="withoutInstall" class="calculator__additional-input calculator__additional-input_round">
+                        <label for="withoutInstall" class="calculator__additional-name">Без установки</label>
+                    </div>
+                </section>
+
+                <section class="calculator__additional-block">
+                    <p class="calculator__additional-title">Отделка</p>
+                    <div class="calculator__additional-item">
+                        <input type="checkbox" data-price="0" id="finishing" name="finishing" value="finishing" class="calculator__additional-input calculator__additional-input_square" checked>
+                        <label for="finishing" class="calculator__additional-name">Требуется отделка</label>
+                    </div>
+                    <div class="calculator__additional-item">
+                        <input type="checkbox" data-price="0" id="insulation" name="insulation" value="insulation" class="calculator__additional-input calculator__additional-input_square" checked>
+                        <label for="insulation" class="calculator__additional-name">Требуется утепление</label>
+                    </div>
+                </section>
+
+                <section class="calculator__additional-block">
+                    <div class="calculator__additional-finishing">
+                        <div class="calculator__additional-finishing-item ">
+                            <p class="calculator__additional-name">Пол</p>
+                            <div class="calculator__additional-area">
+                                <p>Площадь</p>
+                                <input type="number" name="area" value="" placeholder="м2">
+                            </div>
+                            <div class="calculator__additional-select-wrap">
+                                <select class="calculator__additional-select" name="liningInside">
+                                    <option data-price="2" selected value="tile">Материал</option>
+                                    <option data-price="2" value="tile">Кафель</option>
+                                    <option data-price="4" value="tile">Пластик</option>
+                                    <option data-price="0" value="tile">Кафель</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="calculator__additional-finishing-item ">
+                            <p class="calculator__additional-name">Стены</p>
+                            <div class="calculator__additional-area">
+                                <p>Площадь</p>
+                                <input type="number" name="area" value="" placeholder="м2">
+                            </div>
+                            <div class="calculator__additional-select-wrap">
+                                <select class="calculator__additional-select" name="liningInside">
+                                    <option data-price="2" selected value="tile">Материал</option>
+                                    <option data-price="2" value="tile">Кафель</option>
+                                    <option data-price="4" value="tile">Пластик</option>
+                                    <option data-price="0" value="tile">Кафель</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="calculator__additional-finishing-item ">
+                            <p class="calculator__additional-name">Потолок</p>
+                            <div class="calculator__additional-area">
+                                <p>Площадь</p>
+                                <input type="number" name="area" value="" placeholder="м2">
+                            </div>
+                            <div class="calculator__additional-select-wrap">
+                                <select class="calculator__additional-select" name="liningInside">
+                                    <option data-price="2" selected value="tile">Материал</option>
+                                    <option data-price="2" value="tile">Кафель</option>
+                                    <option data-price="4" value="tile">Пластик</option>
+                                    <option data-price="0" value="tile">Кафель</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
             <div class="calculator__area">
                 <p class="calculator__title">Укажите размеры окна</p>
                 <div class="calculator__img-wrap">

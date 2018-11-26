@@ -7,7 +7,11 @@ $(document).on('click', '.js-show', function(event) {
     
     if ($this.is('.review'))
     {
-        $source.css('top', $(window).scrollTop() + 100);
+        var offset = 0;
+
+        offset = $(window).scrollTop() - $('.reviews').offset().top;
+
+        $source.css('top', offset + 100);
     }
     else {
         $('body').addClass('overflowed');

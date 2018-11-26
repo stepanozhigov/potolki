@@ -113,15 +113,19 @@
             <div class="socials titles__socials">
                 <a href="" class="socials__item">
                     <img src="/img/gui/social_gray_vk.svg" alt="">
+                    <span class="socials__name text">Вконтакте</span>
                 </a>
                 <a href="" class="socials__item">
                     <img src="/img/gui/social_gray_ok.svg" alt="">
+                    <span class="socials__name text">Одноклассники</span>
                 </a>
                 <a href="" class="socials__item">
                     <img src="/img/gui/social_gray_fb.svg" alt="">
+                    <span class="socials__name text">Facebook</span>
                 </a>
                 <a href="" class="socials__item">
                     <img src="/img/gui/social_gray_inst.svg" alt="">
+                    <span class="socials__name text">Instagram</span>
                 </a>
             </div>
         </div>
@@ -129,7 +133,7 @@
             <div class="article b-card articles__item" style="background-image: url({{ Storage::url($article->preview_img) }}); @if($article->width) width: {{ $article->width }}%;  @endif">
                 <p class="text article__title">{{ $article->title }}</p>
                 <p class="text article__intro">{{ $article->preview_text }}</p>
-                <a class="link subtext article__link">Читать далее</a>
+                <a href="{{ route('article', [$city, $article]) }}" class="link subtext article__link">Читать далее</a>
             </div>
         @endforeach
         <div class="buttons articles__buttons">

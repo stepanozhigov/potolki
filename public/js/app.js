@@ -520,7 +520,7 @@ function applyToTag (styleElement, obj) {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(6);
-module.exports = __webpack_require__(47);
+module.exports = __webpack_require__(50);
 
 
 /***/ }),
@@ -560,7 +560,7 @@ Vue.component('add-review', __webpack_require__(32));
 Vue.component('offer-slider', __webpack_require__(38));
 Vue.component('gallery-carousel', __webpack_require__(41));
 Vue.component('gallery-list', __webpack_require__(44));
-Vue.component('credit-calc', __webpack_require__(66));
+Vue.component('credit-calc', __webpack_require__(47));
 
 var creditCalcContainer = $('#credit-calc');
 
@@ -22554,7 +22554,11 @@ $(document).on('click', '.js-show', function (event) {
         $overlay = $('.overlay');
 
     if ($this.is('.review')) {
-        $source.css('top', $(window).scrollTop() + 100);
+        var offset = 0;
+
+        offset = $(window).scrollTop() - $('.reviews').offset().top;
+
+        $source.css('top', offset + 100);
     } else {
         $('body').addClass('overflowed');
     }
@@ -23363,6 +23367,81 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -23478,6 +23557,323 @@ var render = function() {
       _vm._v(" "),
       _c("transition", { attrs: { name: "slide", mode: "out-in" } }, [
         _c("div", { staticClass: "calculator__content" }, [
+          _c("div", { staticClass: "calculator__additional" }, [
+            _c("section", { staticClass: "calculator__additional-block" }, [
+              _c("p", { staticClass: "calculator__additional-title" }, [
+                _vm._v("Установка")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "calculator__additional-item" }, [
+                _c("input", {
+                  staticClass:
+                    "calculator__additional-input calculator__additional-input_round",
+                  attrs: {
+                    type: "radio",
+                    "data-price": "10%",
+                    id: "install",
+                    name: "installForWindow",
+                    value: "install",
+                    checked: ""
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "calculator__additional-name",
+                    attrs: { for: "install" }
+                  },
+                  [_vm._v("С установкой")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "calculator__additional-item" }, [
+                _c("input", {
+                  staticClass:
+                    "calculator__additional-input calculator__additional-input_round",
+                  attrs: {
+                    type: "radio",
+                    "data-price": "0%",
+                    id: "withoutInstall",
+                    name: "installForWindow",
+                    value: "withoutInstall"
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "calculator__additional-name",
+                    attrs: { for: "withoutInstall" }
+                  },
+                  [_vm._v("Без установки")]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("section", { staticClass: "calculator__additional-block" }, [
+              _c("p", { staticClass: "calculator__additional-title" }, [
+                _vm._v("Отделка")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "calculator__additional-item" }, [
+                _c("input", {
+                  staticClass:
+                    "calculator__additional-input calculator__additional-input_square",
+                  attrs: {
+                    type: "checkbox",
+                    "data-price": "0",
+                    id: "finishing",
+                    name: "finishing",
+                    value: "finishing",
+                    checked: ""
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "calculator__additional-name",
+                    attrs: { for: "finishing" }
+                  },
+                  [_vm._v("Требуется отделка")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "calculator__additional-item" }, [
+                _c("input", {
+                  staticClass:
+                    "calculator__additional-input calculator__additional-input_square",
+                  attrs: {
+                    type: "checkbox",
+                    "data-price": "0",
+                    id: "insulation",
+                    name: "insulation",
+                    value: "insulation",
+                    checked: ""
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "calculator__additional-name",
+                    attrs: { for: "insulation" }
+                  },
+                  [_vm._v("Требуется утепление")]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("section", { staticClass: "calculator__additional-block" }, [
+              _c("div", { staticClass: "calculator__additional-finishing" }, [
+                _c(
+                  "div",
+                  { staticClass: "calculator__additional-finishing-item " },
+                  [
+                    _c("p", { staticClass: "calculator__additional-name" }, [
+                      _vm._v("Пол")
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "calculator__additional-area" }, [
+                      _c("p", [_vm._v("Площадь")]),
+                      _vm._v(" "),
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          name: "area",
+                          value: "",
+                          placeholder: "м2"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "calculator__additional-select-wrap" },
+                      [
+                        _c(
+                          "select",
+                          {
+                            staticClass: "calculator__additional-select",
+                            attrs: { name: "liningInside" }
+                          },
+                          [
+                            _c(
+                              "option",
+                              {
+                                attrs: {
+                                  "data-price": "2",
+                                  selected: "",
+                                  value: "tile"
+                                }
+                              },
+                              [_vm._v("Материал")]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "option",
+                              { attrs: { "data-price": "2", value: "tile" } },
+                              [_vm._v("Кафель")]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "option",
+                              { attrs: { "data-price": "4", value: "tile" } },
+                              [_vm._v("Пластик")]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "option",
+                              { attrs: { "data-price": "0", value: "tile" } },
+                              [_vm._v("Кафель")]
+                            )
+                          ]
+                        )
+                      ]
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "calculator__additional-finishing-item " },
+                  [
+                    _c("p", { staticClass: "calculator__additional-name" }, [
+                      _vm._v("Стены")
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "calculator__additional-area" }, [
+                      _c("p", [_vm._v("Площадь")]),
+                      _vm._v(" "),
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          name: "area",
+                          value: "",
+                          placeholder: "м2"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "calculator__additional-select-wrap" },
+                      [
+                        _c(
+                          "select",
+                          {
+                            staticClass: "calculator__additional-select",
+                            attrs: { name: "liningInside" }
+                          },
+                          [
+                            _c(
+                              "option",
+                              {
+                                attrs: {
+                                  "data-price": "2",
+                                  selected: "",
+                                  value: "tile"
+                                }
+                              },
+                              [_vm._v("Материал")]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "option",
+                              { attrs: { "data-price": "2", value: "tile" } },
+                              [_vm._v("Кафель")]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "option",
+                              { attrs: { "data-price": "4", value: "tile" } },
+                              [_vm._v("Пластик")]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "option",
+                              { attrs: { "data-price": "0", value: "tile" } },
+                              [_vm._v("Кафель")]
+                            )
+                          ]
+                        )
+                      ]
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "calculator__additional-finishing-item " },
+                  [
+                    _c("p", { staticClass: "calculator__additional-name" }, [
+                      _vm._v("Потолок")
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "calculator__additional-area" }, [
+                      _c("p", [_vm._v("Площадь")]),
+                      _vm._v(" "),
+                      _c("input", {
+                        attrs: {
+                          type: "number",
+                          name: "area",
+                          value: "",
+                          placeholder: "м2"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "calculator__additional-select-wrap" },
+                      [
+                        _c(
+                          "select",
+                          {
+                            staticClass: "calculator__additional-select",
+                            attrs: { name: "liningInside" }
+                          },
+                          [
+                            _c(
+                              "option",
+                              {
+                                attrs: {
+                                  "data-price": "2",
+                                  selected: "",
+                                  value: "tile"
+                                }
+                              },
+                              [_vm._v("Материал")]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "option",
+                              { attrs: { "data-price": "2", value: "tile" } },
+                              [_vm._v("Кафель")]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "option",
+                              { attrs: { "data-price": "4", value: "tile" } },
+                              [_vm._v("Пластик")]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "option",
+                              { attrs: { "data-price": "0", value: "tile" } },
+                              [_vm._v("Кафель")]
+                            )
+                          ]
+                        )
+                      ]
+                    )
+                  ]
+                )
+              ])
+            ])
+          ]),
+          _vm._v(" "),
           _c("div", { staticClass: "calculator__area" }, [
             _c("p", { staticClass: "calculator__title" }, [
               _vm._v("Укажите размеры окна")
@@ -23988,6 +24384,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         placeholder: function placeholder() {
             return this.user ? 'Введите ваше сообщение' : 'Авторизуйтесь, чтобы оставить комментарий.';
         },
+        isUserLogged: function isUserLogged() {
+            return Object.keys(this.user).length > 0;
+        },
         isValidated: function isValidated() {
             return this.user && this.message.length > 0;
         }
@@ -24072,7 +24471,7 @@ var render = function() {
       ],
       staticClass: "textarea comment__textarea",
       attrs: {
-        disabled: !_vm.user,
+        disabled: !_vm.isUserLogged,
         name: "",
         id: "",
         placeholder: _vm.placeholder
@@ -24088,7 +24487,7 @@ var render = function() {
       }
     }),
     _vm._v(" "),
-    _vm.user
+    _vm.isUserLogged
       ? _c("div", { staticClass: "comment__user comment__user_client user" }, [
           _c("div", { staticClass: "user__left" }, [
             _c("img", {
@@ -24105,7 +24504,7 @@ var render = function() {
         ])
       : _vm._e(),
     _vm._v(" "),
-    !_vm.user
+    !_vm.isUserLogged
       ? _c("div", { staticClass: "comment__auth" }, [
           _c("span", { staticClass: "third-title" }, [
             _vm._v("Авторизуйтесь через")
@@ -25524,38 +25923,14 @@ if (false) {
 
 /***/ }),
 /* 47 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 48 */,
-/* 49 */,
-/* 50 */,
-/* 51 */,
-/* 52 */,
-/* 53 */,
-/* 54 */,
-/* 55 */,
-/* 56 */,
-/* 57 */,
-/* 58 */,
-/* 59 */,
-/* 60 */,
-/* 61 */,
-/* 62 */,
-/* 63 */,
-/* 64 */,
-/* 65 */,
-/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(67)
+var __vue_script__ = __webpack_require__(48)
 /* template */
-var __vue_template__ = __webpack_require__(68)
+var __vue_template__ = __webpack_require__(49)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -25594,7 +25969,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 67 */
+/* 48 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -25649,7 +26024,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 68 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -25782,6 +26157,12 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-122ac936", module.exports)
   }
 }
+
+/***/ }),
+/* 50 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

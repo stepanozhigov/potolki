@@ -40,7 +40,7 @@ class BitrixConnector {
             'NAME'  =>  $data['name'],
             'SOURCE_ID' =>  $data['source'] ?? '',
             'PHONE_MOBILE' =>  $data['phone'],
-            'SOURCE_DESCRIPTION'   =>  $data['comment'],
+            'COMMENTS'   =>  $data['comment'],
             'UF_CRM_1478533058' => $data['city'],
             'ASSIGNED_BY_ID'    =>  551,
             'UF_CRM_1467050632' =>  $data['direction']

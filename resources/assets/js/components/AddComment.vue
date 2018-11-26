@@ -2,8 +2,8 @@
     <div class="comment comment_client">
         <p class="third-title comment__title">Добавить комментарий</p>
         <hr class="line comment__line">
-        <textarea class="textarea comment__textarea" v-bind:disabled="!user" name="" id="" v-bind:placeholder="placeholder" v-model="message"></textarea>
-        <div v-if="user" class="comment__user comment__user_client user">
+        <textarea class="textarea comment__textarea" v-bind:disabled="!isUserLogged" name="" id="" v-bind:placeholder="placeholder" v-model="message"></textarea>
+        <div v-if="isUserLogged" class="comment__user comment__user_client user">
             <div class="user__left">
                 <img v-bind:src="user.avatar" alt="" class="user__avatar">
             </div>
@@ -11,7 +11,7 @@
                 <p class="text user__name">{{ user.fullName }}</p>
             </div> 
         </div>
-        <div v-if="!user" class="comment__auth">
+        <div v-if="!isUserLogged" class="comment__auth">
             <span class="third-title">Авторизуйтесь через</span>
             <div class="comment__socials socials">
                 <img @click="vkAuth()" class="socials__item" src="/img/gui/social_gray_vk.svg" alt="">
@@ -40,6 +40,9 @@
         computed: {
             placeholder () {
                 return this.user ? 'Введите ваше сообщение':'Авторизуйтесь, чтобы оставить комментарий.'
+            },
+            isUserLogged () {
+                return Object.keys(this.user).length > 0;
             },
             isValidated () {
                 return this.user && this.message.length > 0

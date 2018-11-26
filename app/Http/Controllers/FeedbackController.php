@@ -77,7 +77,7 @@ class FeedbackController extends Controller
 
         foreach ($request->object['answers'] as $answer)
         {
-            $comments.= "{$answer['question']}: {$answer['answer']} \r\n";
+            $comments.= "{$answer['question']}: {$answer['answer']} <br>";
         }
 
         $bitrixConnector->addLead([
