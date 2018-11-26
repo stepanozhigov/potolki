@@ -1443,12 +1443,24 @@ body.no-scroll {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.socials__title {
+  padding-top: 32px;
+  border-top: 1px solid #d0d2d4;
+  margin-bottom: 15px;
+  width: 100%;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
 }
 
 .socials__item {
@@ -1459,6 +1471,10 @@ body.no-scroll {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.socials__icon {
+  width: 22px;
 }
 
 .socials__name {
@@ -6149,7 +6165,7 @@ body.no-scroll {
   width: 100%;
 }
 
-.article {
+.article-card {
   padding: 112px 20px 32px 20px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -6165,7 +6181,7 @@ body.no-scroll {
   cursor: pointer;
 }
 
-.article__title {
+.article-card__title {
   color: #ffffff;
   font-size: 30px;
   font-weight: 300;
@@ -6173,7 +6189,7 @@ body.no-scroll {
   margin: 0;
 }
 
-.article__intro {
+.article-card__intro {
   margin: 0;
   color: #ffffff;
   font-size: 18px;
@@ -6181,8 +6197,78 @@ body.no-scroll {
   margin-top: 10px;
 }
 
-.article__link {
+.article-card__link {
   margin-top: auto;
   color: #ffffff;
+}
+
+.article__heading {
+  padding: 160px 0 156px 0;
+}
+
+.article__title {
+  color: #ffffff;
+  font-size: 72px;
+  font-weight: 400;
+  line-height: 72px;
+}
+
+.article__intro {
+  margin-top: 20px;
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 40px;
+}
+
+.article__body {
+  padding: 34px 100px 96px 200px;
+}
+
+.article__body p {
+  color: #50555a;
+  font-family: "Helvetica Neue";
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 27px;
+}
+
+.article__body ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #50555a;
+  font-family: "Helvetica Neue";
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 27px;
+  list-style-type: circle;
+  padding-left: 20px;
+}
+
+.article__body ul li {
+  margin-bottom: 7px;
+}
+
+.article__body img {
+  border-radius: 5px;
+}
+
+.article__body img:nth-of-type(2n + 1) {
+  margin-left: -100px;
+  margin-right: 20px;
+}
+
+.article__body img:nth-of-type(2n) {
+  margin-right: -100px;
+}
+
+.article__socials {
+  width: 780px;
+  margin: 64px auto 90px auto;
 }
 

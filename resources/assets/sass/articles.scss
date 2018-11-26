@@ -14,7 +14,7 @@
     }
 }
 
-.article {
+.article-card {
     padding: 112px 20px 32px 20px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -43,5 +43,68 @@
     &__link {
         margin-top: auto;
         color: $white;
+    }
+}
+
+.article {
+    &__heading {
+        padding: 160px 0 156px 0;
+    }
+
+    &__title {
+        color: $white;
+        font-size: 72px;
+        font-weight: 400;
+        line-height: 72px;
+    }
+    &__intro {
+        margin-top: 20px;
+        color: $white;
+        font-size: 28px;
+        font-weight: 300;
+        line-height: 40px;
+    }
+    
+    &__body {
+        padding: 34px 100px 96px 200px;
+
+        p {
+            color: $grey_abbey;
+            font-family: "Helvetica Neue";
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 27px;
+        }
+        ul {
+            display: flex;
+            flex-direction: column;
+            color: $grey_abbey;
+            font-family: "Helvetica Neue";
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 27px;
+            list-style-type: circle;
+            padding-left: 20px;
+
+            li {
+                margin-bottom: 7px;
+            }
+        }
+        img {
+            border-radius: 5px;
+
+            &:nth-of-type(2n + 1) {
+                margin-left: -100px;
+                margin-right: 20px;
+            }
+            &:nth-of-type(2n) {
+                margin-right: -100px;
+            }
+        }
+    }
+
+    &__socials {
+        width: 780px;
+        margin: 64px auto 90px auto;
     }
 }

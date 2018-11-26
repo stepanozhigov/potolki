@@ -29,10 +29,10 @@
     
     <div class="articles container">
         @foreach ($articles as $article)
-            <div class="article b-card articles__item" style="background-image: url({{ Storage::url($article->preview_img) }}); @if($article->width) width: {{ $article->width }}%;  @endif">
-                <p class="text article__title">{{ $article->title }}</p>
-                <p class="text article__intro">{{ $article->preview_text }}</p>
-                <a class="link subtext article__link">Читать далее</a>
+            <div class="article-card b-card articles__item" style="background-image: url({{ Storage::url($article->preview_img) }}); @if($article->width) width: {{ $article->width }}%;  @endif">
+                <p class="text article-card__title">{{ $article->title }}</p>
+                <p class="text article-card__intro">{{ $article->preview_text }}</p>
+                <a href="{{ route('article', [$city, $article]) }}" class="link subtext article-card__link">Читать далее</a>
             </div>
         @endforeach
         <!--<div class="paginator articles__paginator">
