@@ -4,7 +4,7 @@
     @include('common.gui.header')
 
     <section class="article container">
-        <div class="article__heading" style="background: url({{ Storage::url($article->detail_img) }})">
+        <div class="article__heading" style="background: url({{ Storage::url($article->detail_img) }});background-size: cover; background-repeat: no-repeat;">
             <h1 class="article__title title">
                 {{ $article->title }}
             </h1>

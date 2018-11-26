@@ -47,8 +47,17 @@
 }
 
 .article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     &__heading {
         padding: 160px 0 156px 0;
+        width: 100%;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     &__title {
@@ -58,6 +67,7 @@
         line-height: 72px;
     }
     &__intro {
+        width: 780px;
         margin-top: 20px;
         color: $white;
         font-size: 28px;
@@ -105,6 +115,6 @@
 
     &__socials {
         width: 780px;
-        margin: 64px auto 90px auto;
+        margin: 0 auto 90px auto;
     }
 }
