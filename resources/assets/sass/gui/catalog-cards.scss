@@ -13,16 +13,32 @@
         align-items: center;
         text-decoration: none;
         padding: 0 0 32px 0;
-        @media screen and (max-width: 700px) {
-            flex-basis: 100%;   
+
+        @media screen and (max-width: 1100px) {
+            width: 40%;
+        }
+        @media screen and (max-width: 768px) {
+            width: 100%;   
             margin-bottom: 20px; 
             margin-right: 0;
+            align-items: center;
+            padding: 1.25rem 1.5625rem 1.25rem 1.25rem;        
+    
         }
 
     }
 
     &__price {
         margin: 24px 0 0 0;
+        font-weight: 500;
+        color: #dc1414;
+        line-height: 28px;
+        font-family: "Helvetica Neue";
+        font-size: 26px;
+    }
+    &__number {
+        font-size: 32px;
+        font-weight: 400;
     }
     &__img {
         object-fit: cover;
@@ -36,5 +52,26 @@
         padding: 0 30px;
     }
     
-
+    @media screen and (max-width: 768px) {
+        &__img {
+            display: none;
+        }
+        &__line {
+            display: none;
+        }
+        &__title {
+            padding: 0;
+            margin: 0;
+            font-size: 32px;
+        }
+        &__price {
+            margin: 0;
+            font-weight: 500;
+            font-size: 18px;
+        }
+        &__number {
+            font-size: 24px;
+            font-weight: 400;
+        }
+    }
 }

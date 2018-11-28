@@ -31,7 +31,7 @@
         @include('common.gui.titles', [
             'overtitle' =>  'Каталог',
             'title' =>  "Пластиковые окна {$city->name_formatted} от&nbspпроизводителя",
-            'intro' =>  "Фабрика окон №1 {$city->name_formatted}. Посмотрите каталог и ниже рассчитайте ваш заказ <span class='intro_red'>за 5 секунд</span>."
+            'intro' =>  "Фабрика окон №1 {$city->name_formatted}. Посмотрите каталог и ниже рассчитайте ваш заказ <span class='intro_red'>за&nbsp5&nbspсекунд</span>"
         ])
         
         @foreach ($catalogTypes as $type)
@@ -41,7 +41,7 @@
                 <p class="card-title catalog-cards__title">{{ $type->name }}</p>
                 <hr class="line line_bold line_small catalog-cards__line">
                 @if($type->price)
-                    <p class="price catalog-cards__price">от <span class="card__number">{{ number_format($type->price, 0, ',', ' ') }} Р</span></p>
+                    <p class="catalog-cards__price">от <span class="catalog-cards__number">{{ number_format($type->price, 0, ',', ' ') }} Р</span></p>
                 @endif
             </a>
         @endforeach

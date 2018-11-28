@@ -5,6 +5,11 @@
     background-size: cover;
     box-shadow: 0 rem(8) rem(8) rgba($black, .24), 0 0 rem(8) rgba($black, .12), inset 0 rem(-1) rem(1) #d1dadf;
 
+    @media screen and (max-width: 640px) {
+        background-image: url('/img/gui/footer-offer_mobile.jpg');
+        box-shadow: initial;
+    }
+
     &__content {
         display: flex;
         flex-direction: column;
@@ -17,7 +22,7 @@
         text-align: center;
 
         @media screen and (max-width: 650px){
-            font-size: 20px;
+            font-size: 26px;
         }
     }
 

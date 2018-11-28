@@ -7,40 +7,52 @@
         display: none;
 
         &_active {
-            overflow: scroll;
+            position: absolute;
+            top: rem(20);
+            overflow: hidden;
             display: flex;
             position: fixed;
-            background: white;
+            padding: rem(20);
             z-index: 99;
-            width: 76vw;
-            height: 100vh;
+            width: rem(300);
             flex-direction: column;
-            top: 0;
-            right: 0;
-            padding-top: 85px;
-            padding-left: 40px;
-            padding-right: 50px;
+            background-color: $white;
+            top: rem(70);
+            right: rem(10);
             flex-direction: column;
             justify-content: flex-start;
+            border-radius: rem(5);
             box-shadow: 0 0 0.25rem rgba(0,0,0,.08), 0 0.25rem 0.25rem rgba(0,0,0,.12), inset 0 -0.0625rem 0 rgba(0,0,0,.12);
         }
-       
-        
+
+
     }
 
     &__dropdown {
         display: none;
 
         &_toggled {
+            position: relative;
+            z-index: 2;
             display: flex;
+            width: calc(100% + 40px);
+            margin-top: rem(-17);
+            margin-left: rem(-20);
+            margin-right: rem(-20);
+            padding-left: rem(20);
+            padding-right: rem(20);
             flex-direction: column;
             background-color: #dfe1e3;
-            padding-top: 18px;
-            margin-top: -31px;
-            width: 100vw;
-            margin-left: -40px;
-            padding-left: 40px;
-            margin-bottom: 23px;
+            border-radius: rem(5);
+
+
+
+            .menu__item {
+                &:last-child {
+                    margin-bottom: 0;
+                    border: none;
+                }
+            }
         }
     }
     &__close {
@@ -49,18 +61,28 @@
         @media screen and (max-width: 1024px) {
             display: block;
             position: absolute;
-            top: 47px;
-            right: 36px;
+            top: rem(-42);
+            right: rem(18);
             width: 24px;
         }
     }
     &__item {
         position: relative;
         padding-bottom: 35px;
-    
+
+        &.js-toggle-submenu {
+            @extend .arrow;
+            @extend .arrow_vertical;
+
+            &::before,
+            &::after {
+                display: none;
+            }
+        }
+
         &_bordered {
             padding: 0 15px 13px 23px;
-            &:not(:last-child) {
+            &:not(:last-of-type) {
                 margin-bottom: 25px;
                 border-bottom: 1px solid #d0d2d4;
             }
@@ -68,22 +90,38 @@
         @media screen and (max-width: 1024px) {
             display: block;
             font-size: 20px;
-            padding-bottom: 10px;
+            padding-bottom: rem(16);
+            padding-top: rem(16);
+
+            &:not(.menu__item_dropdown) {
+                margin-bottom: rem(16);
+                border-bottom: .0625rem solid #b9bec3;
+            }
 
             &_dropdown {
                 margin-bottom: 0;
                 padding-bottom: 0;
+                padding-top: 0;
+
+                &:last-child {
+                    .menu__item:first-child {
+                        margin: 0;
+                        border: none;
+                        padding-bottom: 0;
+                    }
+                }
             }
 
-            &:not(.menu__item_dropdown) {
-                margin-bottom: 30px;
-                border-bottom: .0625rem solid #b9bec3;
-            }
-            &:last-child {
-                border-bottom: initial;
-                margin-bottom: 18px;
+            &.js-toggle-submenu {
+                &::before,
+                &::after {
+                    display: block;
+                    right: 0;
+                    left: auto;
+                }
             }
         }
+
         &:hover {
             color: $red_crismon;
         }
@@ -113,7 +151,7 @@
                         border-top-left-radius: 0;
                         border-top-right-radius: 0;
                         min-width: 15rem;
-                
+
                         &:before {
                             content: '';
                             position: absolute;
