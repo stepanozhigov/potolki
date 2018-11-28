@@ -29,6 +29,8 @@ Vue.component('gallery-carousel', require('./components/GalleryCarousel.vue'));
 Vue.component('gallery-list', require('./components/GalleryList.vue'));
 Vue.component('credit-calc', require('./components/CreditCalc.vue'));
 Vue.component('dveri-calc', require('./components/DveriCalc.vue'));
+Vue.component('peregorodki-calc', require('./components/Peregorodki.vue'));
+Vue.component('zhalyuzi-calc', require('./components/Zhalyuzi.vue'));
 
 const creditCalcContainer = $('#credit-calc');
 
@@ -113,6 +115,18 @@ if ($('#balcony-calc').length > 0) {
 if ($('#dveri-calc').length > 0) {
     var DveriCalc = new Vue({
         el: '#dveri-calc'
+    });
+}
+
+if ($('#peregorodki-calc').length > 0) {
+    var PeregorodkiCalc = new Vue({
+        el: '#peregorodki-calc'
+    });
+}
+
+if ($('#zhalyuzi-calc').length > 0) {
+    var ZhalyuziCalc = new Vue({
+        el: '#zhalyuzi-calc'
     });
 }
 

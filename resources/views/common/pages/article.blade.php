@@ -22,6 +22,10 @@
                 <span class="socials__name text">Вконтакте</span>
             </a>
             <a href="" class="socials__item">
+                <img class="socials__icon" src="/img/gui/social_gray_inst.svg" alt="">
+                <span class="socials__name text">Instagram</span>
+            </a>
+            <a href="" class="socials__item">
                 <img class="socials__icon" src="/img/gui/social_gray_ok.svg" alt="">
                 <span class="socials__name text">Одноклассники</span>
             </a>
@@ -29,10 +33,7 @@
                 <img class="socials__icon" src="/img/gui/social_gray_fb.svg" alt="">
                 <span class="socials__name text">Facebook</span>
             </a>
-            <a href="" class="socials__item">
-                <img class="socials__icon" src="/img/gui/social_gray_inst.svg" alt="">
-                <span class="socials__name text">Instagram</span>
-            </a>
+            
         </div>
     </section>
 

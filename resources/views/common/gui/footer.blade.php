@@ -20,13 +20,13 @@
                 <img class="logo__text" src="/img/gui/logo-text.svg" alt="графема Твой Стиль">        
             </a>
             <a href="tel:{{ $city->phone }}" class="text phone footer__phone">
-                <img class="phone__icon" src="/img/gui/phone.svg" alt="">
+                <img class="phone__icon" src="/img/gui/phone_new.png" alt="">
                 {{ $city->phone }}
                 <span class="subtext phone__time footer__time">Круглосуточно | Бесплатно</span>
             </a>               
-            <a href="mailto:{{ $city->email }}" class="text text_white footer__mail"><img class="footer__icon" src="/img/gui/mail.svg" alt="">{{ $city->email }}</a>
+            <a href="mailto:{{ $city->email }}" class="text text_white footer__mail"><img class="footer__icon" src="/img/gui/mail_new.png" alt="">{{ $city->email }}</a>
            
-            <a href="{{ route('contacts', $city) }}" class="text text_white footer__offices"><img class="footer__icon" src="/img/gui/pin.svg" alt=""> Наши офисы</a>
+            <a href="{{ route('contacts', $city) }}" class="text text_white footer__offices"><img class="footer__icon" src="/img/gui/pin_new.png" alt=""> Наши офисы</a>
 
         </div>
         <nav class="footer__nav">
@@ -78,9 +78,9 @@
     </div>
     <div class="footer__row footer__row_dark">
         <div class="container footer__copyright">
-            <p class="subtext subtext_white footer__text">&copy;  2003 – {{ date('Y') }}  ООО «Твой Стиль»  Все права защищены</p>
-            <p class="subtext subtext_white footer__text">
-                Разработка и продвижение — <a href="javascript:void(0);" class="text text_white" target="_blank">TREND PRO</a>
+            <p class="subtext footer__text">&copy;  2003 – {{ date('Y') }}  ООО «Твой Стиль»  Все права защищены</p>
+            <p class="subtext footer__text">
+                Разработка и продвижение — <a href="http://trend-p.ru" target="_blank" class="text footer__text" target="_blank">TREND PRO</a>
             </p>
         </div>
     </div>

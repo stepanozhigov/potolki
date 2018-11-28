@@ -59,11 +59,11 @@
     &__time {
         color: #e5e5e5;
         font-size: 11px;
-        margin-left: 20px;
+        margin-left: 26px;
     }
 
     &__icon {
-        width: 13px;
+        width: 16px;
         margin-right: 10px;
     }
     &__mail {
@@ -80,18 +80,19 @@
         }
     }
     &__title {
-        color: #e5e5e5;
+        color: white;
         font-size: 18px;
-        font-weight: 300;
+        font-weight: 400;
         border-bottom: .125rem solid #aaa;
         padding-bottom: 4px;
         margin-bottom: 12px;
         @media screen and (max-width: 1024px) {
-            width: 100%;
-            border-bottom-width: 1px;
+            
         }
 
         @media screen and (max-width: 650px) {
+            width: 100%;
+            border-bottom-width: 1px;
             text-align: center;
         }
     }
@@ -101,10 +102,11 @@
         margin-bottom: 25px;
 
         @media screen and (max-width: 1024px) {
-            width: auto;
+            width: 30%;
         }
 
         @media screen and (max-width: 650px) {
+            width: auto;
             display: flex;
             align-items: center;
         }
@@ -112,6 +114,7 @@
 
     &__text {
         text-align: center;
+        color: #a7aaad;
 
         @media screen and (max-width: 650px) {
             margin-top: 16px;

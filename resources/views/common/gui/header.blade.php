@@ -37,7 +37,7 @@
                 <a class="text menu__item">Информация</a>
                 <div class="menu__dropdown">
                     <a href="{{ route('contacts', request()->route()->city) }}" class="text menu__item menu__item_bordered">Контакты</a>
-                    <a href="{{ route('services', request()->route()->city) }}" class="text menu__item">Услуги</a>
+                    <a href="{{ route('services', request()->route()->city) }}" class="text menu__item menu__item_bordered">Услуги</a>
                     <a href="{{ route('about', request()->route()->city) }}" class="text menu__item menu__item_bordered">О компании</a>    
                     <a href="{{ route('employees', request()->route()->city) }}" class="text menu__item menu__item_bordered">Сотрудники</a>
                     <a href="{{ route('vacancies', request()->route()->city) }}" class="text menu__item menu__item_bordered">Вакансии</a>

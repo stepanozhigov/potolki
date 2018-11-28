@@ -562,6 +562,8 @@ Vue.component('gallery-carousel', __webpack_require__(41));
 Vue.component('gallery-list', __webpack_require__(44));
 Vue.component('credit-calc', __webpack_require__(47));
 Vue.component('dveri-calc', __webpack_require__(50));
+Vue.component('peregorodki-calc', __webpack_require__(74));
+Vue.component('zhalyuzi-calc', __webpack_require__(79));
 
 var creditCalcContainer = $('#credit-calc');
 
@@ -643,6 +645,18 @@ if ($('#balcony-calc').length > 0) {
 if ($('#dveri-calc').length > 0) {
     var DveriCalc = new Vue({
         el: '#dveri-calc'
+    });
+}
+
+if ($('#peregorodki-calc').length > 0) {
+    var PeregorodkiCalc = new Vue({
+        el: '#peregorodki-calc'
+    });
+}
+
+if ($('#zhalyuzi-calc').length > 0) {
+    var ZhalyuziCalc = new Vue({
+        el: '#zhalyuzi-calc'
     });
 }
 
@@ -26346,6 +26360,88 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -26518,6 +26614,418 @@ var render = function() {
             ])
           ]),
           _vm._v(" "),
+          _c("div", { staticClass: "calculator__additional" }, [
+            _c("section", { staticClass: "calculator__additional-block" }, [
+              _c("div", { staticClass: "calculator__additional-item" }, [
+                _c("input", {
+                  staticClass:
+                    "calculator__additional-input calculator__additional-input_square",
+                  attrs: {
+                    type: "checkbox",
+                    "data-price": "500",
+                    id: "shipping",
+                    name: "doorShipping",
+                    value: "shipping"
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "calculator__additional-name",
+                    attrs: { for: "shipping" }
+                  },
+                  [_vm._v("Доставка")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "calculator__additional-item" }, [
+                _c("input", {
+                  staticClass:
+                    "calculator__additional-input calculator__additional-input_square",
+                  attrs: {
+                    type: "checkbox",
+                    "data-price": "0",
+                    id: "dismantling",
+                    name: "doorDismantling",
+                    value: "dismantling",
+                    checked: ""
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "calculator__additional-name",
+                    attrs: { for: "dismantling" }
+                  },
+                  [_vm._v("Демонтаж")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "calculator__additional-item" }, [
+                _c("input", {
+                  staticClass:
+                    "calculator__additional-input calculator__additional-input_square",
+                  attrs: {
+                    type: "checkbox",
+                    "data-price": "800",
+                    id: "install",
+                    name: "doorInstall",
+                    value: "install",
+                    checked: ""
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "calculator__additional-name",
+                    attrs: { for: "install" }
+                  },
+                  [_vm._v("Монтаж")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "calculator__additional-item" }, [
+                _c("input", {
+                  staticClass:
+                    "calculator__additional-input calculator__additional-input_square",
+                  attrs: {
+                    type: "checkbox",
+                    "data-price": "1500",
+                    id: "garbage",
+                    name: "doorGarbage",
+                    value: "garbage"
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "calculator__additional-name",
+                    attrs: { for: "garbage" }
+                  },
+                  [_vm._v("Вывоз мусора")]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("section", { staticClass: "calculator__additional-block" }, [
+              _c("div", { staticClass: "calculator__additional-item" }, [
+                _c("input", {
+                  staticClass:
+                    "calculator__additional-input calculator__additional-input_round",
+                  attrs: {
+                    type: "radio",
+                    "data-price": "15%",
+                    id: "doorAluminium",
+                    name: "doorMaterial",
+                    value: "aluminium"
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "calculator__additional-name",
+                    attrs: { for: "doorAluminium" }
+                  },
+                  [_vm._v("Алюминиевая")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "calculator__additional-item" }, [
+                _c("input", {
+                  staticClass:
+                    "calculator__additional-input calculator__additional-input_round",
+                  attrs: {
+                    type: "radio",
+                    "data-price": "0%",
+                    id: "doorPlastic",
+                    name: "doorMaterial",
+                    value: "plastic",
+                    checked: ""
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "calculator__additional-name",
+                    attrs: { for: "doorPlastic" }
+                  },
+                  [_vm._v("Пластиковая")]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("section", { staticClass: "calculator__additional-block" }, [
+              _c("div", { staticClass: "calculator__additional-item" }, [
+                _c("input", {
+                  staticClass:
+                    "calculator__additional-input calculator__additional-input_round",
+                  attrs: {
+                    type: "radio",
+                    "data-price": "0%",
+                    id: "whiteDoor",
+                    name: "colorForDoor",
+                    value: "whiteDoor",
+                    checked: ""
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "calculator__additional-name",
+                    attrs: { for: "whiteDoor" }
+                  },
+                  [_vm._v("Белые окна")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "calculator__additional-item" }, [
+                _c("input", {
+                  staticClass:
+                    "calculator__additional-input calculator__additional-input_round",
+                  attrs: {
+                    type: "radio",
+                    "data-price": "10%",
+                    id: "colorDoor",
+                    name: "colorForDoor",
+                    value: "colorDoor"
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "calculator__additional-name",
+                    attrs: { for: "colorDoor" }
+                  },
+                  [_vm._v("Цветные")]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("section", { staticClass: "calculator__additional-block" }, [
+              _c("div", { staticClass: "calculator__additional-item" }, [
+                _c("input", {
+                  staticClass:
+                    "calculator__additional-input calculator__additional-input_round",
+                  attrs: {
+                    type: "radio",
+                    "data-price": "450",
+                    id: "frontDoor",
+                    name: "doorPlace",
+                    value: "front"
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "calculator__additional-name",
+                    attrs: { for: "frontDoor" }
+                  },
+                  [_vm._v("Входная дверь")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "calculator__additional-item" }, [
+                _c("input", {
+                  staticClass:
+                    "calculator__additional-input calculator__additional-input_round",
+                  attrs: {
+                    type: "radio",
+                    "data-price": "550",
+                    id: "interiorDoor",
+                    name: "doorPlace",
+                    value: "interior",
+                    checked: ""
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "calculator__additional-name",
+                    attrs: { for: "interiorDoor" }
+                  },
+                  [_vm._v("Межкомнатная дверь")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "calculator__additional-item" }, [
+                _c("input", {
+                  staticClass:
+                    "calculator__additional-input calculator__additional-input_round",
+                  attrs: {
+                    type: "radio",
+                    "data-price": "650",
+                    id: "balconyDoor",
+                    name: "doorPlace",
+                    value: "balcony"
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "calculator__additional-name",
+                    attrs: { for: "balconyDoor" }
+                  },
+                  [_vm._v("Балконная дверь")]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("section", { staticClass: "calculator__additional-block" }, [
+              _c("div", { staticClass: "calculator__additional-item" }, [
+                _c("input", {
+                  staticClass:
+                    "calculator__additional-input calculator__additional-input_round",
+                  attrs: {
+                    type: "radio",
+                    "data-price": "4500",
+                    id: "economy",
+                    name: "doorProfile",
+                    value: "economy",
+                    checked: ""
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "calculator__additional-name",
+                    attrs: { for: "economy" }
+                  },
+                  [_vm._v("Профиль эконом класса")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "calculator__additional-item" }, [
+                _c("input", {
+                  staticClass:
+                    "calculator__additional-input calculator__additional-input_round",
+                  attrs: {
+                    type: "radio",
+                    "data-price": "4560",
+                    id: "standart",
+                    name: "doorProfile",
+                    value: "standart"
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "calculator__additional-name",
+                    attrs: { for: "standart" }
+                  },
+                  [_vm._v("Профиль стандарт класса")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "calculator__additional-item" }, [
+                _c("input", {
+                  staticClass:
+                    "calculator__additional-input calculator__additional-input_round",
+                  attrs: {
+                    type: "radio",
+                    "data-price": "5000",
+                    id: "premium",
+                    name: "doorProfile",
+                    value: "premium"
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "calculator__additional-name",
+                    attrs: { for: "premium" }
+                  },
+                  [_vm._v("Профиль премиум класса")]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("section", { staticClass: "calculator__additional-block" }, [
+              _c("div", { staticClass: "calculator__additional-item" }, [
+                _c("input", {
+                  staticClass:
+                    "calculator__additional-input calculator__additional-input_round",
+                  attrs: {
+                    type: "radio",
+                    "data-price": "0%",
+                    id: "singleChamber",
+                    name: "doorChamber",
+                    value: "singleChamber",
+                    checked: ""
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "calculator__additional-name",
+                    attrs: { for: "singleChamber" }
+                  },
+                  [_vm._v("Однокамерные стеклопакеты")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "calculator__additional-item" }, [
+                _c("input", {
+                  staticClass:
+                    "calculator__additional-input calculator__additional-input_round",
+                  attrs: {
+                    type: "radio",
+                    "data-price": "10%",
+                    id: "doubleChamber",
+                    name: "doorChamber",
+                    value: "doubleChamber"
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "calculator__additional-name",
+                    attrs: { for: "doubleChamber" }
+                  },
+                  [_vm._v("Двухкамерные стеклопакеты")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "calculator__additional-item" }, [
+                _c("input", {
+                  staticClass:
+                    "calculator__additional-input calculator__additional-input_round",
+                  attrs: {
+                    type: "radio",
+                    "data-price": "20%",
+                    id: "threeChamber",
+                    name: "doorChamber",
+                    value: "threeChamber"
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "calculator__additional-name",
+                    attrs: { for: "threeChamber" }
+                  },
+                  [_vm._v("Трехкамерные стеклопакеты")]
+                )
+              ])
+            ])
+          ]),
+          _vm._v(" "),
           _c(
             "form",
             {
@@ -26668,6 +27176,1536 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 56 */,
+/* 57 */,
+/* 58 */,
+/* 59 */,
+/* 60 */,
+/* 61 */,
+/* 62 */,
+/* 63 */,
+/* 64 */,
+/* 65 */,
+/* 66 */,
+/* 67 */,
+/* 68 */,
+/* 69 */,
+/* 70 */,
+/* 71 */,
+/* 72 */,
+/* 73 */,
+/* 74 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(75)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(77)
+/* template */
+var __vue_template__ = __webpack_require__(78)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/Peregorodki.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-f84262a4", Component.options)
+  } else {
+    hotAPI.reload("data-v-f84262a4", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 75 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(76);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("8d2b8114", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-f84262a4\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Peregorodki.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-f84262a4\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Peregorodki.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 76 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.slide-leave-active,\n.slide-enter-active {\n-webkit-transition: .5s;\ntransition: .5s;\n}\n.slide-enter {\n-webkit-transform: translate(100%, 0);\n        transform: translate(100%, 0);\n}\n.slide-leave-to {\n-webkit-transform: translate(-150%, 0);\n        transform: translate(-150%, 0);\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 77 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            currentType: 'odnostvorchatoe-okno',
+            areaMode: '',
+            install: 0,
+            arrWidth: [],
+            arrHeight: [],
+            multiplier: 3000,
+            pixelWidth: 0,
+            publicPath: '/storage/'
+        };
+    },
+    props: ['types'],
+    updated: function updated() {
+        this.pixelWidth = $(this.$refs.calculator__img).width();
+    },
+    computed: {
+        width: function width() {
+            return this.arrWidth.length ? this.arrWidth.reduce(function (total, current) {
+                return total + current;
+            }) : 0;
+        },
+        height: function height() {
+            return this.arrHeight.length ? this.arrHeight.reduce(function (total, current) {
+                return total + current;
+            }) : 0;
+        },
+
+        area: function area() {
+            return this.width * this.height / 1000000;
+        },
+        installPrice: function installPrice() {
+            return this.install * this.area;
+        },
+        summ: function summ() {
+            return parseInt(this.area * this.multiplier + this.installPrice);
+        }
+    },
+    watch: {
+        currentType: function currentType(value, old) {
+            this.arrWidth = [0, 0];
+            this.arrHeight = [0, 0];
+        }
+    },
+    mounted: function mounted() {
+        console.log($(this.$refs.calculator__img).width());
+
+        this.pixelWidth = $(this.$refs.calculator__img).width();
+    },
+
+    methods: {}
+});
+
+/***/ }),
+/* 78 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "calculator__inner" },
+    [
+      _c("div", { staticClass: "calculator__types" }, [
+        _c("label", { staticClass: "radio" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.currentType,
+                expression: "currentType"
+              }
+            ],
+            staticClass: "radio__input",
+            attrs: { type: "radio", name: "type" },
+            domProps: { checked: _vm._q(_vm.currentType, null) },
+            on: {
+              change: function($event) {
+                _vm.currentType = null
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("img", {
+            staticClass:
+              "/img/windows/calculator/peregorodki/partition_simple.png",
+            attrs: { alt: "" }
+          }),
+          _vm._v(" "),
+          _c("img", {
+            attrs: {
+              src:
+                "/img/windows/calculator/peregorodki/partition_simple_red.png",
+              alt: ""
+            }
+          }),
+          _vm._v(" "),
+          _c("img", {
+            staticClass: "calculator__active",
+            attrs: { src: "/img/gui/active_calc.svg", alt: "" }
+          })
+        ]),
+        _vm._v(" "),
+        _vm._m(0)
+      ]),
+      _vm._v(" "),
+      _c("transition", { attrs: { name: "slide", mode: "out-in" } }, [
+        _c("div", { staticClass: "calculator__content" }, [
+          _c("div", { staticClass: "calculator__area" }, [
+            _c("p", { staticClass: "calculator__title" }, [
+              _vm._v("Укажите размеры окна")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "calculator__img-wrap" }, [
+              _c("img", {
+                ref: "calculator__img",
+                staticClass: "calculator__img",
+                attrs: {
+                  src:
+                    "/img/windows/calculator/peregorodki/partition_deaf_big.png",
+                  alt: ""
+                }
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "calculator__widths" }, [
+                _c("hr", { staticClass: "calculator__line" }),
+                _vm._v(" "),
+                _c("label", { staticClass: "calculator__width text-input" }, [
+                  _c("input", {
+                    staticClass: "input text-input__value",
+                    attrs: { type: "text", name: "width[]" }
+                  }),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "text-input__label text" }, [
+                    _vm._v("мм")
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "calculator__width-desc" }, [
+                    _vm._v("Ширина окна")
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "calculator__heights" }, [
+              _c("hr", {
+                staticClass: "calculator__line calculator__line_vert"
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "calculator__height text-input" }, [
+                _c("input", {
+                  staticClass: "input text-input__value",
+                  attrs: { type: "text", name: "height[]" }
+                }),
+                _vm._v(" "),
+                _c("span", { staticClass: "text-input__label text" }, [
+                  _vm._v("мм")
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "calculator__height-desc" }, [
+                  _vm._v("Высота окна")
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "calculator__additional" }, [
+            _c("section", { staticClass: "calculator__additional-block" }, [
+              _c("div", { staticClass: "calculator__additional-item" }, [
+                _c("input", {
+                  staticClass:
+                    "calculator__additional-input calculator__additional-input_square",
+                  attrs: {
+                    type: "checkbox",
+                    "data-price": "500",
+                    id: "shipping",
+                    name: "partitionShipping",
+                    value: "shipping"
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "calculator__additional-name",
+                    attrs: { for: "shipping" }
+                  },
+                  [_vm._v("Доставка")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "calculator__additional-item" }, [
+                _c("input", {
+                  staticClass:
+                    "calculator__additional-input calculator__additional-input_square",
+                  attrs: {
+                    type: "checkbox",
+                    "data-price": "0",
+                    id: "dismantling",
+                    name: "partitionDismantling",
+                    value: "dismantling",
+                    checked: ""
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "calculator__additional-name",
+                    attrs: { for: "dismantling" }
+                  },
+                  [_vm._v("Демонтаж")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "calculator__additional-item" }, [
+                _c("input", {
+                  staticClass:
+                    "calculator__additional-input calculator__additional-input_square",
+                  attrs: {
+                    type: "checkbox",
+                    "data-price": "800",
+                    id: "install",
+                    name: "partitionInstall",
+                    value: "install",
+                    checked: ""
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "calculator__additional-name",
+                    attrs: { for: "install" }
+                  },
+                  [_vm._v("Монтаж")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "calculator__additional-item" }, [
+                _c("input", {
+                  staticClass:
+                    "calculator__additional-input calculator__additional-input_square",
+                  attrs: {
+                    type: "checkbox",
+                    "data-price": "1500",
+                    id: "garbage",
+                    name: "partitionGarbage",
+                    value: "garbage"
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "calculator__additional-name",
+                    attrs: { for: "garbage" }
+                  },
+                  [_vm._v("Вывоз мусора")]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("section", { staticClass: "calculator__additional-block" }, [
+              _c("div", { staticClass: "calculator__additional-item" }, [
+                _c("input", {
+                  staticClass:
+                    "calculator__additional-input calculator__additional-input_round",
+                  attrs: {
+                    type: "radio",
+                    "data-price": "0%",
+                    id: "glazedСonstruction",
+                    name: "partitionConstruction",
+                    value: "glazedСonstruction",
+                    checked: ""
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "calculator__additional-name",
+                    attrs: { for: "glazedСonstruction" }
+                  },
+                  [_vm._v("Застекленная конструкция")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "calculator__additional-item" }, [
+                _c("input", {
+                  staticClass:
+                    "calculator__additional-input calculator__additional-input_round",
+                  attrs: {
+                    type: "radio",
+                    "data-price": "20%",
+                    id: "notGlazedСonstruction",
+                    name: "partitionConstruction",
+                    value: "notGlazedСonstruction"
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "calculator__additional-name",
+                    attrs: { for: "notGlazedСonstruction" }
+                  },
+                  [_vm._v("Непрозрачная конструкция")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "calculator__additional-item" }, [
+                _c("input", {
+                  staticClass:
+                    "calculator__additional-input calculator__additional-input_round",
+                  attrs: {
+                    type: "radio",
+                    "data-price": "10%",
+                    id: "mixedСonstruction",
+                    name: "partitionConstruction",
+                    value: "mixedСonstruction"
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "calculator__additional-name",
+                    attrs: { for: "mixedСonstruction" }
+                  },
+                  [_vm._v("В перемешку")]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("section", { staticClass: "calculator__additional-block" }, [
+              _c("div", { staticClass: "calculator__additional-item" }, [
+                _c("input", {
+                  staticClass:
+                    "calculator__additional-input calculator__additional-input_round",
+                  attrs: {
+                    type: "radio",
+                    "data-price": "0%",
+                    id: "aluminiumPartitionProfile",
+                    name: "partitionProfileMaterial",
+                    value: "aluminium"
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "calculator__additional-name",
+                    attrs: { for: "aluminiumPartitionProfile" }
+                  },
+                  [_vm._v("Алюминиевый профиль")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "calculator__additional-item" }, [
+                _c("input", {
+                  staticClass:
+                    "calculator__additional-input calculator__additional-input_round",
+                  attrs: {
+                    type: "radio",
+                    "data-price": "10%",
+                    id: "plasticPartitionProfile",
+                    name: "partitionProfileMaterial",
+                    value: "plastic",
+                    checked: ""
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "calculator__additional-name",
+                    attrs: { for: "plasticPartitionProfile" }
+                  },
+                  [_vm._v("Пластиковая профиль")]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("section", { staticClass: "calculator__additional-block" }, [
+              _c("div", { staticClass: "calculator__additional-item" }, [
+                _c("input", {
+                  staticClass:
+                    "calculator__additional-input calculator__additional-input_round",
+                  attrs: {
+                    type: "radio",
+                    "data-price": "4500",
+                    id: "economy",
+                    name: "partitionProfile",
+                    value: "economy",
+                    checked: ""
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "calculator__additional-name",
+                    attrs: { for: "economy" }
+                  },
+                  [_vm._v("Профиль эконом класса")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "calculator__additional-item" }, [
+                _c("input", {
+                  staticClass:
+                    "calculator__additional-input calculator__additional-input_round",
+                  attrs: {
+                    type: "radio",
+                    "data-price": "4560",
+                    id: "standart",
+                    name: "partitionProfile",
+                    value: "standart"
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "calculator__additional-name",
+                    attrs: { for: "standart" }
+                  },
+                  [_vm._v("Профиль стандарт класса")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "calculator__additional-item" }, [
+                _c("input", {
+                  staticClass:
+                    "calculator__additional-input calculator__additional-input_round",
+                  attrs: {
+                    type: "radio",
+                    "data-price": "5000",
+                    id: "premium",
+                    name: "partitionProfile",
+                    value: "premium"
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "calculator__additional-name",
+                    attrs: { for: "premium" }
+                  },
+                  [_vm._v("Профиль премиум класса")]
+                )
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c(
+            "form",
+            {
+              staticClass: "form calculator__result calculator-result",
+              attrs: { action: "" }
+            },
+            [
+              _c("div", { staticClass: "calculator-result__head" }, [
+                _c("p", { staticClass: "text text_white" }, [
+                  _vm._v("Расчетная цена")
+                ]),
+                _vm._v(" "),
+                _c("span", { staticClass: "calculator-result__summ" }, [
+                  _vm._v(_vm._s(_vm.summ) + " Р")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "calculator-result__body" }, [
+                _c("input", {
+                  staticClass: "calculator-result__input",
+                  attrs: { type: "text", placeholder: "Введите ваше имя" }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  staticClass: "calculator-result__input",
+                  attrs: { type: "tel", placeholder: "Введите ваш телефон" }
+                }),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "button button_gray calculator-result__button"
+                  },
+                  [_vm._v("Заказать")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "subtext calculator-result__attention" }, [
+                _vm._v(
+                  "Внимание! Стоимость является примерной. Более точная оценка требует выезда замерщика"
+                )
+              ])
+            ]
+          )
+        ])
+      ])
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { staticClass: "radio" }, [
+      _c("input", {
+        staticClass: "radio__input",
+        attrs: { type: "radio", name: "type" }
+      }),
+      _vm._v(" "),
+      _c("img", {
+        staticClass: "/img/windows/calculator/peregorodki/partition_deaf.png",
+        attrs: { alt: "" }
+      }),
+      _vm._v(" "),
+      _c("img", {
+        attrs: {
+          src: "/img/windows/calculator/peregorodki/partition_deaf_red.png",
+          alt: ""
+        }
+      }),
+      _vm._v(" "),
+      _c("img", {
+        staticClass: "calculator__active",
+        attrs: { src: "/img/gui/active_calc.svg", alt: "" }
+      })
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-f84262a4", module.exports)
+  }
+}
+
+/***/ }),
+/* 79 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(80)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(82)
+/* template */
+var __vue_template__ = __webpack_require__(83)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/Zhalyuzi.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-4a8ec1db", Component.options)
+  } else {
+    hotAPI.reload("data-v-4a8ec1db", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 80 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(81);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("4bd61b5b", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4a8ec1db\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Zhalyuzi.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4a8ec1db\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Zhalyuzi.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 81 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.slide-leave-active,\n.slide-enter-active {\n-webkit-transition: .5s;\ntransition: .5s;\n}\n.slide-enter {\n-webkit-transform: translate(100%, 0);\n        transform: translate(100%, 0);\n}\n.slide-leave-to {\n-webkit-transform: translate(-150%, 0);\n        transform: translate(-150%, 0);\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 82 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            currentType: 'odnostvorchatoe-okno',
+            areaMode: '',
+            install: 0,
+            arrWidth: [],
+            arrHeight: [],
+            multiplier: 3000,
+            pixelWidth: 0,
+            publicPath: '/storage/'
+        };
+    },
+    props: ['types'],
+    updated: function updated() {
+        this.pixelWidth = $(this.$refs.calculator__img).width();
+    },
+    computed: {
+        width: function width() {
+            return this.arrWidth.length ? this.arrWidth.reduce(function (total, current) {
+                return total + current;
+            }) : 0;
+        },
+        height: function height() {
+            return this.arrHeight.length ? this.arrHeight.reduce(function (total, current) {
+                return total + current;
+            }) : 0;
+        },
+
+        area: function area() {
+            return this.width * this.height / 1000000;
+        },
+        installPrice: function installPrice() {
+            return this.install * this.area;
+        },
+        summ: function summ() {
+            return parseInt(this.area * this.multiplier + this.installPrice);
+        }
+    },
+    watch: {
+        currentType: function currentType(value, old) {
+            this.arrWidth = [0, 0];
+            this.arrHeight = [0, 0];
+        }
+    },
+    mounted: function mounted() {
+        console.log($(this.$refs.calculator__img).width());
+
+        this.pixelWidth = $(this.$refs.calculator__img).width();
+    },
+
+    methods: {}
+});
+
+/***/ }),
+/* 83 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "calculator__inner" },
+    [
+      _c("div", { staticClass: "calculator__types" }, [
+        _c("label", { staticClass: "radio" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.currentType,
+                expression: "currentType"
+              }
+            ],
+            staticClass: "radio__input",
+            attrs: { type: "radio", name: "type" },
+            domProps: { checked: _vm._q(_vm.currentType, null) },
+            on: {
+              change: function($event) {
+                _vm.currentType = null
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("img", {
+            staticClass:
+              "/img/windows/calculator/zhalyuzi/blinds_horisontal.png",
+            attrs: { alt: "" }
+          }),
+          _vm._v(" "),
+          _c("img", {
+            attrs: {
+              src: "/img/windows/calculator/zhalyuzi/blinds_horisontal_red.png",
+              alt: ""
+            }
+          }),
+          _vm._v(" "),
+          _c("img", {
+            staticClass: "calculator__active",
+            attrs: { src: "/img/gui/active_calc.svg", alt: "" }
+          })
+        ]),
+        _vm._v(" "),
+        _vm._m(0),
+        _vm._v(" "),
+        _vm._m(1),
+        _vm._v(" "),
+        _vm._m(2)
+      ]),
+      _vm._v(" "),
+      _c("transition", { attrs: { name: "slide", mode: "out-in" } }, [
+        _c("div", { staticClass: "calculator__content" }, [
+          _c("div", { staticClass: "calculator__area" }, [
+            _c("p", { staticClass: "calculator__title" }, [
+              _vm._v("Укажите размеры окна")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "calculator__img-wrap" }, [
+              _c("img", {
+                ref: "calculator__img",
+                staticClass: "calculator__img",
+                attrs: {
+                  src:
+                    "/img/windows/calculator/zhalyuzi/blinds_horisontal_big.png",
+                  alt: ""
+                }
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "calculator__widths" }, [
+                _c("hr", { staticClass: "calculator__line" }),
+                _vm._v(" "),
+                _c("label", { staticClass: "calculator__width text-input" }, [
+                  _c("input", {
+                    staticClass: "input text-input__value",
+                    attrs: { type: "text", name: "width[]" }
+                  }),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "text-input__label text" }, [
+                    _vm._v("мм")
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "calculator__width-desc" }, [
+                    _vm._v("Ширина окна")
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "calculator__heights" }, [
+              _c("hr", {
+                staticClass: "calculator__line calculator__line_vert"
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "calculator__height text-input" }, [
+                _c("input", {
+                  staticClass: "input text-input__value",
+                  attrs: { type: "text", name: "height[]" }
+                }),
+                _vm._v(" "),
+                _c("span", { staticClass: "text-input__label text" }, [
+                  _vm._v("мм")
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "calculator__height-desc" }, [
+                  _vm._v("Высота окна")
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "calculator__additional" }, [
+            _c("section", { staticClass: "calculator__additional-block" }, [
+              _c("div", { staticClass: "calculator__additional-item" }, [
+                _c("input", {
+                  staticClass:
+                    "calculator__additional-input calculator__additional-input_round",
+                  attrs: {
+                    type: "radio",
+                    "data-price": "10%",
+                    id: "fabric",
+                    name: "blindsFacture",
+                    value: "fabric",
+                    checked: ""
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "calculator__additional-name",
+                    attrs: { for: "fabric" }
+                  },
+                  [_vm._v("Тканевые")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "calculator__additional-item" }, [
+                _c("input", {
+                  staticClass:
+                    "calculator__additional-input calculator__additional-input_round",
+                  attrs: {
+                    type: "radio",
+                    "data-price": "11%",
+                    id: "multiTexture",
+                    name: "blindsFacture",
+                    value: "multiTexture"
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "calculator__additional-name",
+                    attrs: { for: "multiTexture" }
+                  },
+                  [_vm._v("Мультифактурные")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "calculator__additional-item" }, [
+                _c("input", {
+                  staticClass:
+                    "calculator__additional-input calculator__additional-input_round",
+                  attrs: {
+                    type: "radio",
+                    "data-price": "12%",
+                    id: "wood",
+                    name: "blindsFacture",
+                    value: "wood"
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "calculator__additional-name",
+                    attrs: { for: "wood" }
+                  },
+                  [_vm._v("Деревянные")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "calculator__additional-item" }, [
+                _c("input", {
+                  staticClass:
+                    "calculator__additional-input calculator__additional-input_round",
+                  attrs: {
+                    type: "radio",
+                    "data-price": "13%",
+                    id: "aluminium",
+                    name: "blindsFacture",
+                    value: "aluminium"
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "calculator__additional-name",
+                    attrs: { for: "aluminium" }
+                  },
+                  [_vm._v("Алюминиевые")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "calculator__additional-item" }, [
+                _c("input", {
+                  staticClass:
+                    "calculator__additional-input calculator__additional-input_round",
+                  attrs: {
+                    type: "radio",
+                    "data-price": "14%",
+                    id: "breeze",
+                    name: "blindsFacture",
+                    value: "breeze"
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "calculator__additional-name",
+                    attrs: { for: "breeze" }
+                  },
+                  [_vm._v("Бриз")]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("section", { staticClass: "calculator__additional-block" }, [
+              _c("div", { staticClass: "calculator__additional-item" }, [
+                _c("input", {
+                  staticClass:
+                    "calculator__additional-input calculator__additional-input_square",
+                  attrs: {
+                    type: "checkbox",
+                    "data-price": "800",
+                    id: "install",
+                    name: "blindsInstall",
+                    value: "install"
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "calculator__additional-name",
+                    attrs: { for: "install" }
+                  },
+                  [_vm._v("Требуется установка")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "calculator__additional-item" }, [
+                _c("input", {
+                  staticClass:
+                    "calculator__additional-input calculator__additional-input_square",
+                  attrs: {
+                    type: "checkbox",
+                    "data-price": "1100",
+                    id: "remoteСontrol",
+                    name: "blindsRemoteСontrol",
+                    value: "remoteСontrol"
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "calculator__additional-name",
+                    attrs: { for: "remoteСontrol" }
+                  },
+                  [_vm._v("Электрические с пультом")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "calculator__additional-item" }, [
+                _c("input", {
+                  staticClass:
+                    "calculator__additional-input calculator__additional-input_square",
+                  attrs: {
+                    type: "checkbox",
+                    "data-price": "10%",
+                    id: "photoprint",
+                    name: "blindsPhotoprint",
+                    value: "photoprint"
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  {
+                    staticClass: "calculator__additional-name",
+                    attrs: { for: "photoprint" }
+                  },
+                  [_vm._v("Фотопечать изображения")]
+                )
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c(
+            "form",
+            {
+              staticClass: "form calculator__result calculator-result",
+              attrs: { action: "" }
+            },
+            [
+              _c("div", { staticClass: "calculator-result__head" }, [
+                _c("p", { staticClass: "text text_white" }, [
+                  _vm._v("Расчетная цена")
+                ]),
+                _vm._v(" "),
+                _c("span", { staticClass: "calculator-result__summ" }, [
+                  _vm._v(_vm._s(_vm.summ) + " Р")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "calculator-result__body" }, [
+                _c("input", {
+                  staticClass: "calculator-result__input",
+                  attrs: { type: "text", placeholder: "Введите ваше имя" }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  staticClass: "calculator-result__input",
+                  attrs: { type: "tel", placeholder: "Введите ваш телефон" }
+                }),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "button button_gray calculator-result__button"
+                  },
+                  [_vm._v("Заказать")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "subtext calculator-result__attention" }, [
+                _vm._v(
+                  "Внимание! Стоимость является примерной. Более точная оценка требует выезда замерщика"
+                )
+              ])
+            ]
+          )
+        ])
+      ])
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { staticClass: "radio" }, [
+      _c("input", {
+        staticClass: "radio__input",
+        attrs: { type: "radio", name: "type" }
+      }),
+      _vm._v(" "),
+      _c("img", {
+        staticClass: "/img/windows/calculator/zhalyuzi/blinds_vertical.png",
+        attrs: { alt: "" }
+      }),
+      _vm._v(" "),
+      _c("img", {
+        attrs: {
+          src: "/img/windows/calculator/zhalyuzi/blinds_vertical_red.png",
+          alt: ""
+        }
+      }),
+      _vm._v(" "),
+      _c("img", {
+        staticClass: "calculator__active",
+        attrs: { src: "/img/gui/active_calc.svg", alt: "" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { staticClass: "radio" }, [
+      _c("input", {
+        staticClass: "radio__input",
+        attrs: { type: "radio", name: "type" }
+      }),
+      _vm._v(" "),
+      _c("img", {
+        staticClass: "/img/windows/calculator/zhalyuzi/blinds_full.png",
+        attrs: { alt: "" }
+      }),
+      _vm._v(" "),
+      _c("img", {
+        attrs: {
+          src: "/img/windows/calculator/zhalyuzi/blinds_full_red.png",
+          alt: ""
+        }
+      }),
+      _vm._v(" "),
+      _c("img", {
+        staticClass: "calculator__active",
+        attrs: { src: "/img/gui/active_calc.svg", alt: "" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { staticClass: "radio" }, [
+      _c("input", {
+        staticClass: "radio__input",
+        attrs: { type: "radio", name: "type" }
+      }),
+      _vm._v(" "),
+      _c("img", {
+        staticClass: "/img/windows/calculator/zhalyuzi/blinds_accordion.png",
+        attrs: { alt: "" }
+      }),
+      _vm._v(" "),
+      _c("img", {
+        attrs: {
+          src: "/img/windows/calculator/zhalyuzi/blinds_accordion_red.png",
+          alt: ""
+        }
+      }),
+      _vm._v(" "),
+      _c("img", {
+        staticClass: "calculator__active",
+        attrs: { src: "/img/gui/active_calc.svg", alt: "" }
+      })
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-4a8ec1db", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

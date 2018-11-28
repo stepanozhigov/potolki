@@ -3,26 +3,14 @@
         <div class="calculator__types">
             <label class="radio">
                 <input class="radio__input"  type="radio" name="type" v-model="currentType">
-                <img  class="/img/windows/calculator/dveri/door_double.png" alt="">
-                <img  src="/img/windows/calculator/dveri/door_double_red.png" alt="">
+                <img  class="/img/windows/calculator/peregorodki/partition_simple.png" alt="">
+                <img  src="/img/windows/calculator/peregorodki/partition_simple_red.png" alt="">
                 <img  class="calculator__active" src="/img/gui/active_calc.svg" alt="">
             </label>
             <label class="radio">
                 <input class="radio__input"  type="radio" name="type">
-                <img  class="/img/windows/calculator/dveri/door_simple.png" alt="">
-                <img  src="/img/windows/calculator/dveri/door_simple_red.png" alt="">
-                <img  class="calculator__active" src="/img/gui/active_calc.svg" alt="">
-            </label>
-            <label class="radio">
-                <input class="radio__input"  type="radio" name="type">
-                <img  class="/img/windows/calculator/dveri/door_triple.png" alt="">
-                <img  src="/img/windows/calculator/dveri/door_triple_red.png" alt="">
-                <img  class="calculator__active" src="/img/gui/active_calc.svg" alt="">
-            </label>
-            <label class="radio">
-                <input class="radio__input"  type="radio" name="type">
-                <img  class="/img/windows/calculator/dveri/door_sliding.png" alt="">
-                <img  src="/img/windows/calculator/dveri/door_sliding_red.png" alt="">
+                <img  class="/img/windows/calculator/peregorodki/partition_deaf.png" alt="">
+                <img  src="/img/windows/calculator/peregorodki/partition_deaf_red.png" alt="">
                 <img  class="calculator__active" src="/img/gui/active_calc.svg" alt="">
             </label>
         </div>
@@ -31,7 +19,7 @@
             <div class="calculator__area">
                 <p class="calculator__title">Укажите размеры окна</p>
                 <div class="calculator__img-wrap">
-                    <img class="calculator__img" ref="calculator__img" src="/img/windows/calculator/dveri/door_double_big.png" alt="">
+                    <img class="calculator__img" ref="calculator__img" src="/img/windows/calculator/peregorodki/partition_deaf_big.png" alt="">
                     <div class="calculator__widths">
                         <hr class="calculator__line">
                         <label class="calculator__width text-input">
@@ -53,82 +41,61 @@
             <div class="calculator__additional">
                 <section class="calculator__additional-block">
                     <div class="calculator__additional-item">
-                        <input type="checkbox" data-price="500" id="shipping" name="doorShipping" value="shipping" class="calculator__additional-input calculator__additional-input_square">
+                        <input type="checkbox" data-price="500" id="shipping" name="partitionShipping" value="shipping" class="calculator__additional-input calculator__additional-input_square">
                         <label for="shipping" class="calculator__additional-name">Доставка</label>
                     </div>
                     <div class="calculator__additional-item">
-                        <input type="checkbox" data-price="0" id="dismantling" name="doorDismantling" value="dismantling" class="calculator__additional-input calculator__additional-input_square" checked>
+                        <input type="checkbox" data-price="0" id="dismantling" name="partitionDismantling" value="dismantling" class="calculator__additional-input calculator__additional-input_square" checked>
                         <label for="dismantling" class="calculator__additional-name">Демонтаж</label>
                     </div>
                     <div class="calculator__additional-item">
-                        <input type="checkbox" data-price="800" id="install" name="doorInstall" value="install" class="calculator__additional-input calculator__additional-input_square" checked>
+                        <input type="checkbox" data-price="800" id="install" name="partitionInstall" value="install" class="calculator__additional-input calculator__additional-input_square" checked>
                         <label for="install" class="calculator__additional-name">Монтаж</label>
                     </div>
                     <div class="calculator__additional-item">
-                        <input type="checkbox" data-price="1500" id="garbage" name="doorGarbage" value="garbage" class="calculator__additional-input calculator__additional-input_square">
+                        <input type="checkbox" data-price="1500" id="garbage" name="partitionGarbage" value="garbage" class="calculator__additional-input calculator__additional-input_square">
                         <label for="garbage" class="calculator__additional-name">Вывоз мусора</label>
                     </div>
                 </section>
+
                 <section class="calculator__additional-block">
                     <div class="calculator__additional-item">
-                        <input type="radio" data-price="15%" id="doorAluminium" name="doorMaterial" value="aluminium" class="calculator__additional-input calculator__additional-input_round">
-                        <label for="doorAluminium" class="calculator__additional-name">Алюминиевая</label>
+                        <input type="radio" data-price="0%" id="glazedСonstruction" name="partitionConstruction" value="glazedСonstruction" class="calculator__additional-input calculator__additional-input_round" checked>
+                        <label for="glazedСonstruction" class="calculator__additional-name">Застекленная конструкция</label>
                     </div>
                     <div class="calculator__additional-item">
-                        <input type="radio" data-price="0%" id="doorPlastic" name="doorMaterial" value="plastic" class="calculator__additional-input calculator__additional-input_round" checked>
-                        <label for="doorPlastic" class="calculator__additional-name">Пластиковая</label>
+                        <input type="radio" data-price="20%" id="notGlazedСonstruction" name="partitionConstruction" value="notGlazedСonstruction" class="calculator__additional-input calculator__additional-input_round">
+                        <label for="notGlazedСonstruction" class="calculator__additional-name">Непрозрачная конструкция</label>
+                    </div>
+                    <div class="calculator__additional-item">
+                        <input type="radio" data-price="10%" id="mixedСonstruction" name="partitionConstruction" value="mixedСonstruction" class="calculator__additional-input calculator__additional-input_round">
+                        <label for="mixedСonstruction" class="calculator__additional-name">В перемешку</label>
                     </div>
                 </section>
+
                 <section class="calculator__additional-block">
                     <div class="calculator__additional-item">
-                        <input type="radio" data-price="0%" id="whiteDoor" name="colorForDoor" value="whiteDoor" class="calculator__additional-input calculator__additional-input_round" checked>
-                        <label for="whiteDoor" class="calculator__additional-name">Белые окна</label>
+                        <input type="radio" data-price="0%" id="aluminiumPartitionProfile" name="partitionProfileMaterial" value="aluminium" class="calculator__additional-input calculator__additional-input_round">
+                        <label for="aluminiumPartitionProfile" class="calculator__additional-name">Алюминиевый профиль</label>
                     </div>
                     <div class="calculator__additional-item">
-                        <input type="radio" data-price="10%" id="colorDoor" name="colorForDoor" value="colorDoor" class="calculator__additional-input calculator__additional-input_round">
-                        <label for="colorDoor" class="calculator__additional-name">Цветные</label>
+                        <input type="radio" data-price="10%" id="plasticPartitionProfile" name="partitionProfileMaterial" value="plastic" class="calculator__additional-input calculator__additional-input_round" checked>
+                        <label for="plasticPartitionProfile" class="calculator__additional-name">Пластиковая профиль</label>
                     </div>
                 </section>
+
                 <section class="calculator__additional-block">
                     <div class="calculator__additional-item">
-                        <input type="radio" data-price="450" id="frontDoor" name="doorPlace" value="front" class="calculator__additional-input calculator__additional-input_round">
-                        <label for="frontDoor" class="calculator__additional-name">Входная дверь</label>
-                    </div>
-                    <div class="calculator__additional-item">
-                        <input type="radio" data-price="550" id="interiorDoor" name="doorPlace" value="interior" class="calculator__additional-input calculator__additional-input_round" checked>
-                        <label for="interiorDoor" class="calculator__additional-name">Межкомнатная дверь</label>
-                    </div>
-                    <div class="calculator__additional-item">
-                        <input type="radio" data-price="650" id="balconyDoor" name="doorPlace" value="balcony" class="calculator__additional-input calculator__additional-input_round">
-                        <label for="balconyDoor" class="calculator__additional-name">Балконная дверь</label>
-                    </div>
-                </section>
-                <section class="calculator__additional-block">
-                    <div class="calculator__additional-item">
-                        <input type="radio" data-price="4500" id="economy" name="doorProfile" value="economy" class="calculator__additional-input calculator__additional-input_round" checked>
+                        <input type="radio" data-price="4500" id="economy" name="partitionProfile" value="economy" class="calculator__additional-input calculator__additional-input_round" checked>
                         <label for="economy" class="calculator__additional-name">Профиль эконом класса</label>
                     </div>
                     <div class="calculator__additional-item">
-                        <input type="radio" data-price="4560" id="standart" name="doorProfile" value="standart" class="calculator__additional-input calculator__additional-input_round">
+                        <input type="radio" data-price="4560" id="standart" name="partitionProfile" value="standart" class="calculator__additional-input calculator__additional-input_round">
                         <label for="standart" class="calculator__additional-name">Профиль стандарт класса</label>
                     </div>
                     <div class="calculator__additional-item">
-                        <input type="radio" data-price="5000" id="premium" name="doorProfile" value="premium" class="calculator__additional-input calculator__additional-input_round">
+                        <input type="radio" data-price="5000" id="premium" name="partitionProfile" value="premium" class="calculator__additional-input calculator__additional-input_round">
                         <label for="premium" class="calculator__additional-name">Профиль премиум класса</label>
-                    </div>
-                </section>
-                <section class="calculator__additional-block">
-                    <div class="calculator__additional-item">
-                        <input type="radio" data-price="0%" id="singleChamber" name="doorChamber" value="singleChamber" class="calculator__additional-input calculator__additional-input_round" checked>
-                        <label for="singleChamber" class="calculator__additional-name">Однокамерные стеклопакеты</label>
-                    </div>
-                    <div class="calculator__additional-item">
-                        <input type="radio" data-price="10%" id="doubleChamber" name="doorChamber" value="doubleChamber" class="calculator__additional-input calculator__additional-input_round">
-                        <label for="doubleChamber" class="calculator__additional-name">Двухкамерные стеклопакеты</label>
-                    </div>
-                    <div class="calculator__additional-item">
-                        <input type="radio" data-price="20%" id="threeChamber" name="doorChamber" value="threeChamber" class="calculator__additional-input calculator__additional-input_round">
-                        <label for="threeChamber" class="calculator__additional-name">Трехкамерные стеклопакеты</label>
                     </div>
                 </section>
             </div>

@@ -131,11 +131,11 @@
         </div>
         <div class="articles__preview">
             @foreach ($articles as $article)
-                <div class="article-card b-card articles__item" style="background-image: url({{ Storage::url($article->preview_img) }});">
+                <a href="{{ route('article', [$city, $article]) }}" class="article-card b-card articles__item" style="background-image: url({{ Storage::url($article->preview_img) }});">
                     <p class="text article-card__title">{{ $article->title }}</p>
                     <p class="text article-card__intro">{{ $article->preview_text }}</p>
-                    <a href="{{ route('article', [$city, $article]) }}" class="link subtext article-card__link">Читать далее</a>
-                </div>
+                    <span class="link subtext article-card__link">Читать далее</span>
+                </a>
             @endforeach
         </div>        
         <div class="buttons articles__buttons">

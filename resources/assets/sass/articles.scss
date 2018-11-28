@@ -46,7 +46,7 @@
         margin-bottom: 30px;
 
         @media screen and (max-width: 768px) {
-            width: 100%;
+            width: 100% !important;
         }
     }
 
@@ -87,6 +87,17 @@
     &__link {
         margin-top: auto;
         color: $white;
+    }
+
+    @media screen and (max-width: 640px) {
+        padding: 112px 20px 26px 20px;
+
+        &__title {
+            font-size: 26px;
+        }  
+        &__intro {
+            font-size: 16px;
+        }  
     }
 }
 
@@ -160,5 +171,56 @@
     &__socials {
         width: 780px;
         margin: 0 auto 90px auto;
+    }
+
+    @media screen and (max-width: 1024px) {
+        &__title {
+            font-size: 48px;
+            width: 70%;
+        }
+        &__intro {
+            font-size: 20px;
+            width: 80%;
+        }
+        &__body {
+            padding: 34px 100px 96px 132px;
+        }
+        &__socials {
+            width: 90%;
+        }
+    }
+
+    @media screen and (max-width: 640px) {
+        width: 100%;
+        margin: 0;
+
+        &__heading {
+            border-radius: 0;
+        }
+        &__title {
+            font-size: 30px;
+            line-height: 30px
+        }
+        &__intro {
+            font-size: 16px;
+            line-height: 24px;
+            width: 95%;
+        }
+        &__body {
+            padding: 48px 0 96px 0;
+            p {
+                margin: 16px 10px;
+            }
+            img {
+                float: initial !important;
+                margin: 0 !important;
+                width: 100%;
+                border-radius: 0;
+            }
+            ul {
+                padding-left: 35px;
+            }
+        }
+        
     }
 }

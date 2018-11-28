@@ -677,6 +677,290 @@
 	        }
 	    }
 	}
+
+	&_dveri {
+        .calculator__area {
+            width: auto;
+        }
+
+        .calculator__additional {
+            flex-direction: column;
+            width: auto;
+            margin-bottom: 0;
+
+
+            @include below($tablet) {
+                padding-left: rem(85);
+                margin-right: 0;
+                margin-bottom: rem(40);
+            }
+            @include below($tablet-small) {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                align-items: center;
+                width: 100%;
+                padding: 0;
+                margin-bottom: rem(40);
+            }
+
+            &-block {
+                padding: rem(10) rem(20);
+
+                @extend .lines_vertical_left;
+                @include below($tablet-small) {
+                    width: rem(225);
+                }
+                @include below($mobile) {
+                    width: 100%;
+                }
+
+                &:not(:last-of-type) {
+                    margin-bottom: rem(20);
+                }
+
+                &:after {
+                    left: 0;
+
+                    width: rem(12);
+                }
+
+                .additionalBlockDoor__item {
+                    &:not(:last-of-type) {
+                        margin-bottom: rem(8);
+                    }
+                }
+            }
+
+            &-input {
+                @extend .radiobutton;
+                @extend .radiobutton_small;
+
+                &_square {
+                    @extend .radiobutton_square;
+                }
+
+                &_round {
+                    @extend .radiobutton_round;
+                }
+            }
+
+            &-name {
+                display: block;
+
+                font-size: rem(12);
+
+                @extend .text;
+                @include below($mobile) {
+                    font-size: rem(18);
+                }
+            }
+        }
+	}
+
+	&_peregorodki {
+
+        .calculator__types {
+            justify-content: space-evenly;
+        }
+
+        .calculator__area {
+            width: auto;
+        }
+
+        .calculator__additional {
+            flex-direction: column;
+            width: auto;
+            margin-bottom: 0;
+
+
+            @include below($tablet) {
+                padding-left: rem(85);
+                margin-right: 0;
+                margin-bottom: rem(40);
+            }
+            @include below($tablet-small) {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                align-items: center;
+                width: 100%;
+                padding: 0;
+                margin-bottom: rem(40);
+            }
+
+            &-block {
+                padding: rem(10) rem(20);
+
+                @extend .lines_vertical_left;
+                @include below($tablet-small) {
+                    width: rem(225);
+                }
+                @include below($mobile) {
+                    width: 100%;
+                }
+
+                &:not(:last-of-type) {
+                    margin-bottom: rem(20);
+                }
+
+                &:after {
+                    left: 0;
+
+                    width: rem(12);
+                }
+
+                .additionalBlockDoor__item {
+                    &:not(:last-of-type) {
+                        margin-bottom: rem(8);
+                    }
+                }
+            }
+
+            &-input {
+                @extend .radiobutton;
+                @extend .radiobutton_small;
+
+                &_square {
+                    @extend .radiobutton_square;
+                }
+
+                &_round {
+                    @extend .radiobutton_round;
+                }
+            }
+
+            &-name {
+                display: block;
+
+                font-size: rem(12);
+
+                @extend .text;
+                @include below($mobile) {
+                    font-size: rem(18);
+                }
+            }
+        }
+	}
+
+	&_zhalyuzi {
+
+
+        .calculator__area {
+            width: auto;
+            position: relative;
+            padding-left: rem(50);
+            padding-bottom: rem(20);
+
+            &::after {
+                position: absolute;
+                content: '';
+                bottom: 0;
+                left: 0;
+                width: rem(450);
+                height: rem(280);
+                border-radius: rem(5);
+                background-image: radial-gradient(circle 575px at 90% 294.31%,#cdd6db 0%,#80929e 100%);
+            }
+        }
+
+        .calculator__title,
+        .calculator__img-wrap,
+        .calculator__heights {
+            position: relative;
+            z-index: 2;
+        }
+
+        .calculator__widths {
+            width: calc(100% - 90px);
+            margin-top: 0;
+            transform: translateX(10px);
+        }
+
+        .calculator__heights {
+            padding-bottom: rem(90);
+        }
+
+        .calculator__line {
+            &_vert {
+                height: calc(100% - 90px);
+            }
+        }
+
+        .calculator__additional {
+            flex-direction: column;
+            width: auto;
+            margin-bottom: 0;
+
+
+            @include below($tablet) {
+                padding-left: rem(85);
+                margin-right: 0;
+                margin-bottom: rem(40);
+            }
+            @include below($tablet-small) {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                align-items: center;
+                width: 100%;
+                padding: 0;
+                margin-bottom: rem(40);
+            }
+
+            &-block {
+                padding: rem(10) rem(20);
+
+                @extend .lines_vertical_left;
+                @include below($tablet-small) {
+                    width: rem(225);
+                }
+                @include below($mobile) {
+                    width: 100%;
+                }
+
+                &:not(:last-of-type) {
+                    margin-bottom: rem(20);
+                }
+
+                &:after {
+                    left: 0;
+
+                    width: rem(12);
+                }
+
+                .additionalBlockDoor__item {
+                    &:not(:last-of-type) {
+                        margin-bottom: rem(8);
+                    }
+                }
+            }
+
+            &-input {
+                @extend .radiobutton;
+                @extend .radiobutton_small;
+
+                &_square {
+                    @extend .radiobutton_square;
+                }
+
+                &_round {
+                    @extend .radiobutton_round;
+                }
+            }
+
+            &-name {
+                display: block;
+
+                font-size: rem(12);
+
+                @extend .text;
+                @include below($mobile) {
+                    font-size: rem(18);
+                }
+            }
+        }
+	}
 }
 
 .calculator-result {
