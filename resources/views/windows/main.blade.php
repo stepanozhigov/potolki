@@ -112,30 +112,32 @@
             <p class="intro titles__intro">Больше полезной информации, конкурсы и розыгрыши<br> вы можете найти в наших социальных сетях:</p>
             <div class="socials titles__socials">
                 <a href="" class="socials__item">
-                    <img src="/img/gui/social_gray_vk.svg" alt="">
+                    <img class="socials__icon" src="/img/gui/social_gray_vk.svg" alt="">
                     <span class="socials__name text">Вконтакте</span>
                 </a>
                 <a href="" class="socials__item">
-                    <img src="/img/gui/social_gray_ok.svg" alt="">
+                    <img class="socials__icon" src="/img/gui/social_gray_ok.svg" alt="">
                     <span class="socials__name text">Одноклассники</span>
                 </a>
                 <a href="" class="socials__item">
-                    <img src="/img/gui/social_gray_fb.svg" alt="">
+                    <img class="socials__icon" src="/img/gui/social_gray_fb.svg" alt="">
                     <span class="socials__name text">Facebook</span>
                 </a>
                 <a href="" class="socials__item">
-                    <img src="/img/gui/social_gray_inst.svg" alt="">
+                    <img class="socials__icon" src="/img/gui/social_gray_inst.svg" alt="">
                     <span class="socials__name text">Instagram</span>
                 </a>
             </div>
         </div>
-        @foreach ($articles as $article)
-            <div class="article-card b-card articles__item" style="background-image: url({{ Storage::url($article->preview_img) }}); @if($article->width) width: {{ $article->width }}%;  @endif">
-                <p class="text article-card__title">{{ $article->title }}</p>
-                <p class="text article-card__intro">{{ $article->preview_text }}</p>
-                <a href="{{ route('article', [$city, $article]) }}" class="link subtext article-card__link">Читать далее</a>
-            </div>
-        @endforeach
+        <div class="articles__preview">
+            @foreach ($articles as $article)
+                <div class="article-card b-card articles__item" style="background-image: url({{ Storage::url($article->preview_img) }});">
+                    <p class="text article-card__title">{{ $article->title }}</p>
+                    <p class="text article-card__intro">{{ $article->preview_text }}</p>
+                    <a href="{{ route('article', [$city, $article]) }}" class="link subtext article-card__link">Читать далее</a>
+                </div>
+            @endforeach
+        </div>        
         <div class="buttons articles__buttons">
             <a href="{{ route('articles', $city) }}" class="button button_red">Читать остальные статьи</a>
         </div>

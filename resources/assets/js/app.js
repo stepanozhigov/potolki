@@ -28,6 +28,7 @@ Vue.component('offer-slider', require('./components/OfferSlider.vue'));
 Vue.component('gallery-carousel', require('./components/GalleryCarousel.vue'));
 Vue.component('gallery-list', require('./components/GalleryList.vue'));
 Vue.component('credit-calc', require('./components/CreditCalc.vue'));
+Vue.component('dveri-calc', require('./components/DveriCalc.vue'));
 
 const creditCalcContainer = $('#credit-calc');
 
@@ -47,7 +48,7 @@ if (portfolioCarouselContainer.length > 0) {
         data: function () {
             return {
                 photos: portfolioCarouselContainer.data('photos')
-            }            
+            }
         }
     });
 }
@@ -106,6 +107,12 @@ if ($('#window-calc').length > 0) {
 if ($('#balcony-calc').length > 0) {
     var BalkonyCalc = new Vue({
         el: '#balcony-calc'
+    });
+}
+
+if ($('#dveri-calc').length > 0) {
+    var DveriCalc = new Vue({
+        el: '#dveri-calc'
     });
 }
 

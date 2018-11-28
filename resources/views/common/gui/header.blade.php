@@ -29,7 +29,7 @@
                 </div>
             </div>
 
-            <a href="{{ route('services', request()->route()->city) }}" class="text menu__item">Услуги</a>
+            <a href="{{ route('services', [request()->route()->city, 'measurements']) }}" class="text menu__item">Бесплатный замер</a>
             <a href="{{ route('promos', request()->route()->city) }}" class="text menu__item">Скидки</a>
             <a href="{{ route('photos', request()->route()->city) }}" class="text menu__item">Фото</a>
             
@@ -37,6 +37,7 @@
                 <a class="text menu__item">Информация</a>
                 <div class="menu__dropdown">
                     <a href="{{ route('contacts', request()->route()->city) }}" class="text menu__item menu__item_bordered">Контакты</a>
+                    <a href="{{ route('services', request()->route()->city) }}" class="text menu__item">Услуги</a>
                     <a href="{{ route('about', request()->route()->city) }}" class="text menu__item menu__item_bordered">О компании</a>    
                     <a href="{{ route('employees', request()->route()->city) }}" class="text menu__item menu__item_bordered">Сотрудники</a>
                     <a href="{{ route('vacancies', request()->route()->city) }}" class="text menu__item menu__item_bordered">Вакансии</a>
