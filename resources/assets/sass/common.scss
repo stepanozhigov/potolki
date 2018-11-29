@@ -220,12 +220,55 @@ body {
 }
 
 .whatsapp {
-    display: flex;
+    display: inline;
     align-items: center;
     color: $grey_dove;
     &__icon {
         margin-right: 10px;
     }
+
+	&.header__whatsapp {
+        position: relative;
+
+
+
+        @media screen and (max-width: 650px){
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding-left: 24px;
+        }
+
+		.whatsapp__mobile-text {
+			display: none;
+            color: $grey_stone;
+            font-family: $helvetica;
+            font-size: 12px;
+            font-weight: 300;
+            line-height: 1;
+            text-decoration: underline;
+
+            @media screen and (max-width: 650px){
+                display: inline;
+            }
+		}
+
+		.whatsapp__write-text {
+            @media screen and (max-width: 650px){
+                display: none;
+            }
+		}
+
+        .whatsapp__icon {
+            @media screen and (max-width: 650px){
+                position: absolute;
+                left: 0;
+                top: 1px;
+                margin: 0;
+            }
+        }
+	}
+
 }
 
 .switcher {

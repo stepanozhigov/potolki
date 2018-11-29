@@ -9,9 +9,7 @@
         &_active {
             position: absolute;
             top: rem(20);
-            overflow: hidden;
             display: flex;
-            position: fixed;
             padding: rem(20);
             z-index: 99;
             width: rem(300);
@@ -36,13 +34,13 @@
             z-index: 2;
             display: flex;
             width: calc(100% + 40px);
-            margin-top: rem(-17);
+            margin-top: rem(-9);
             margin-left: rem(-20);
             margin-right: rem(-20);
             padding-left: rem(20);
             padding-right: rem(20);
             flex-direction: column;
-            background-color: #dfe1e3;
+            background-color: #f3f5f7;;
             border-radius: rem(5);
 
 
@@ -61,24 +59,16 @@
         @media screen and (max-width: 1024px) {
             display: block;
             position: absolute;
-            top: rem(-42);
-            right: rem(18);
-            width: 24px;
+            top: rem(-36);
+            right: rem(-8);
+            padding: 0 rem(20);
+            width: rem(64);
+            background-color: #ffffff;
         }
     }
     &__item {
         position: relative;
         padding-bottom: 35px;
-
-        &.js-toggle-submenu {
-            @extend .arrow;
-            @extend .arrow_vertical;
-
-            &::before,
-            &::after {
-                display: none;
-            }
-        }
 
         &_bordered {
             padding: 0 15px 13px 23px;
@@ -94,8 +84,9 @@
             padding-top: rem(16);
 
             &:not(.menu__item_dropdown) {
-                margin-bottom: rem(16);
+                margin-bottom: rem(8);
                 border-bottom: .0625rem solid #b9bec3;
+                padding-left: rem(25);
             }
 
             &_dropdown {
@@ -113,11 +104,34 @@
             }
 
             &.js-toggle-submenu {
-                &::before,
+                position: relative;
+
                 &::after {
-                    display: block;
+                    position: absolute;
+                    content: '';
                     right: 0;
-                    left: auto;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: rem(18);
+                    height: rem(9);
+
+                    background-image: url('/img/gui/arrow_mobile.svg');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                }
+
+                &::before {
+                    position: absolute;
+                    content: '';
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: rem(16);
+                    height: rem(11);
+
+                    background-image: url('/img/gui/hamburger-nav.png');
+                    background-size: contain;
+                    background-repeat: no-repeat;
                 }
             }
         }

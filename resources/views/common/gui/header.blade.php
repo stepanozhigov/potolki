@@ -62,8 +62,8 @@
             </div>
         </div>
         <div class="header__feedbacks">
-            <a href="https://api.whatsapp.com/send?phone={{ $city->whatsapp }}" class="text whatsapp header__whatsapp"><img src="/img/gui/whatsapp.svg" alt="" class="whatsapp__icon"> Написать в WhatsApp</a>
-            <a href="tel:{{ $city->phone }}" class="text phone header__phone"><img class="phone__icon" src="/img/gui/phone.svg" alt="">{{ $city->phone }}</a>
+            <a href="https://api.whatsapp.com/send?phone={{ $city->whatsapp }}" class="text whatsapp header__whatsapp"><img src="/img/gui/whatsapp.svg" alt="" class="whatsapp__icon"> <span class="whatsapp__write-text">Написать в</span> WhatsApp <span class="whatsapp__mobile-text">написать</span></a>
+            <a href="tel:{{ $city->phone }}" class="text phone header__phone"><img class="phone__icon" src="/img/gui/phone.svg" alt="">{{ $city->phone }} <span>заказать звонок</span></a>
             <a data-src="#popup_callback" class="text header__callback js-show">Заказать звонок</a>
         </div>
     </div>
