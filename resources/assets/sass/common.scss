@@ -746,6 +746,8 @@ body {
 }
 
 .red-hoverable {
+    transition: color .3s;
+    will-change: transform;
     &:hover {
         color: #dc1414;
     }

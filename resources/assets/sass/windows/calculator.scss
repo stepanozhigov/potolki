@@ -396,6 +396,15 @@
     }
 
     &_balcony {
+
+		.calculator__content {
+			padding-left: rem(50);
+
+			@include below($mobile) {
+				padding-left: 0;
+			}
+		}
+
         .calculator__area {
             width: auto;
 

@@ -17,7 +17,10 @@
                 <a href="" class="paginator__item">2</a>
                 <a href="" class="paginator__item">3</a>
             </div>-->
-            <a href="{{ route('add-review', $city) }}" class="button reviews__add">Оставить отзыв</a>
+            <div class="buttons">
+                <a href="{{ route('add-review', $city) }}" class="button reviews__add">Оставить отзыв</a>
+            </div>
+            
         </section>
         @include('common.gui.footer')
         <script src="https://vk.com/js/api/openapi.js?146" type="text/javascript"></script>

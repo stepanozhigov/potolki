@@ -496,6 +496,8 @@
   color: #ffffff;
   border: none;
   max-width: 100%;
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 .button:hover {
@@ -2284,6 +2286,12 @@ body.no-scroll {
   }
 }
 
+.red-hoverable {
+  -webkit-transition: color .3s;
+  transition: color .3s;
+  will-change: transform;
+}
+
 .red-hoverable:hover {
   color: #dc1414;
 }
@@ -2856,7 +2864,7 @@ body.no-scroll {
     border-radius: 5px;
     background-color: #ffffff;
     padding: 30px 20px 22px 23px;
-    z-index: 1;
+    z-index: 99;
     left: -50%;
     border-top: .0625rem solid #e4e6e8;
     top: 57px;
@@ -4735,7 +4743,7 @@ body.no-scroll {
 .employees__card,
 .employees__additionally {
   width: calc(25% - 20px);
-  height: 39.1875rem;
+  min-height: 39.1875rem;
   margin: 0 0.625rem;
   margin-bottom: 2.5rem;
 }
@@ -4891,6 +4899,7 @@ body.no-scroll {
 .employee__text {
   text-align: center;
   margin: 30px 0 0 0;
+  width: 85%;
 }
 
 .additionally__title {
@@ -5468,6 +5477,16 @@ body.no-scroll {
   display: flex;
   width: 7.5rem;
   height: 2.8125rem;
+}
+
+.calculator_balcony .calculator__content {
+  padding-left: 3.125rem;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .calculator_balcony .calculator__content {
+    padding-left: 0;
+  }
 }
 
 .calculator_balcony .calculator__area {
