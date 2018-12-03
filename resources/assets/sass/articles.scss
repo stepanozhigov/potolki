@@ -4,6 +4,9 @@
     justify-content: space-between;
     padding-bottom: 90px;
     
+    &__buttons {
+        margin-top: 24px;
+    }
     &__preview {
         display: flex;
         flex-direction: column;

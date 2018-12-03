@@ -86,7 +86,7 @@
                 </a>
             @endforeach
         </div>
-        <div class="buttons">
+        <div class="buttons portfolio__buttons">
             <a href="{{ route('photos', $city) }}" class="button buttons__item button_gray">Посмотреть все работы</a>
             <button class="button js-show" data-src="#popup_callback">Вызвать замерщика</button>
         </div>
@@ -99,7 +99,7 @@
             @include('common.gui.review', $review)
         @endforeach
 
-        <div class="buttons">
+        <div class="buttons reviews__buttons">
             <a href="{{ route('reviews', $city) }}" class="button buttons__item button_gray">Прочитать все отзывы</a>
             <a href="{{ route('add-review', $city) }}" class="button">Оставить отзыв</a>
         </div>
@@ -111,21 +111,21 @@
             <hr class="line titles__line">
             <p class="intro titles__intro">Больше полезной информации, конкурсы и розыгрыши<br> вы можете найти в наших социальных сетях:</p>
             <div class="socials titles__socials">
-                <a href="" class="socials__item">
+                <a href="" class="socials__item red-hoverable">
                     <img class="socials__icon" src="/img/gui/social_gray_vk.svg" alt="">
-                    <span class="socials__name text">Вконтакте</span>
+                    <span class="socials__name text red-hoverable">Вконтакте</span>
                 </a>
-                <a href="" class="socials__item">
+                <a href="" class="socials__item red-hoverable">
                     <img class="socials__icon" src="/img/gui/social_gray_ok.svg" alt="">
-                    <span class="socials__name text">Одноклассники</span>
+                    <span class="socials__name text red-hoverable">Одноклассники</span>
                 </a>
-                <a href="" class="socials__item">
+                <a href="" class="socials__item red-hoverable">
                     <img class="socials__icon" src="/img/gui/social_gray_fb.svg" alt="">
-                    <span class="socials__name text">Facebook</span>
+                    <span class="socials__name text red-hoverable">Facebook</span>
                 </a>
-                <a href="" class="socials__item">
+                <a href="" class="socials__item red-hoverable">
                     <img class="socials__icon" src="/img/gui/social_gray_inst.svg" alt="">
-                    <span class="socials__name text">Instagram</span>
+                    <span class="socials__name text red-hoverable">Instagram</span>
                 </a>
             </div>
         </div>

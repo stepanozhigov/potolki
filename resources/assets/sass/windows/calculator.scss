@@ -131,7 +131,7 @@
         display: flex;
         flex-wrap: wrap;
         width: 54%;
-        justify-content: flex-start;
+        justify-content: center;
 
 		@include below($tablet) {
             width: 100%;
@@ -171,7 +171,6 @@
     }
 
     &__img-wrap {
-        margin-left: auto;
         display: flex;
         flex-direction: column;
 
@@ -195,7 +194,7 @@
         position: relative;
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: center;
         margin-left: 15px;
         padding-bottom: 57px;
 
@@ -279,7 +278,7 @@
     &__widths {
         position: relative;
         display: flex;
-        justify-content: space-evenly;
+        justify-content: center;
         width: 100%;
         margin: 0 auto;
         margin-top: 15px;
@@ -333,6 +332,10 @@
         padding: 0;
         flex-shrink: 0;
 
+		&:not(:last-of-type) {
+			margin-right: rem(58);
+		}
+
         input {
             padding-right: 32px
         }
@@ -366,6 +369,10 @@
         width: 75px;
         padding: 0;
         flex-shrink: 0;
+
+		&:not(:last-of-type) {
+			margin-bottom: rem(135);
+		}
 
         input {
             padding-right: 32px

@@ -745,6 +745,12 @@ body {
     }
 }
 
+.red-hoverable {
+    &:hover {
+        color: #dc1414;
+    }
+}
+
 .banks {
     display: flex;
     justify-content: space-between;

@@ -565,6 +565,17 @@ Vue.component('dveri-calc', __webpack_require__(50));
 Vue.component('peregorodki-calc', __webpack_require__(55));
 Vue.component('zhalyuzi-calc', __webpack_require__(60));
 
+$(document).on('scroll', function () {
+    var scrollPosition = $(window).scrollTop(),
+        $header = $('.header_hidden').length > 0 ? $('.header_hidden') : $('.header_sticky');
+
+    if (scrollPosition > 200) {
+        $header.addClass('header_sticky').removeClass('header_hidden');
+    } else {
+        $header.removeClass('header_sticky').addClass('header_hidden');
+    }
+});
+
 var creditCalcContainer = $('#credit-calc');
 
 if (creditCalcContainer.length > 0) {

@@ -11,7 +11,7 @@
                 <a class="text dropdown__item dropdown__item_active"><img class="dropdown__arrow" src="/img/gui/arrow.svg" alt="">{{ $currentDirection->name }}</a>
                 <p class="dropdown__title">Другие направления</p>
                 @foreach ($directions as $direction)
-                    <a href="{{ $direction->site }}" class="text dropdown__item dropdown__item_bordered">{{ $direction->name }}</a>
+                    <a href="{{ $direction->site }}" class="text dropdown__item dropdown__item_bordered  red-hoverable">{{ $direction->name }}</a>
                 @endforeach
             </div>
         </div>
@@ -57,14 +57,25 @@
                 <a class="text dropdown__item dropdown__item_active"><img class="dropdown__arrow" src="/img/gui/arrow.svg" alt="">{{ $city->mainOffice() }}</a>
                 <p class="dropdown__title">Другие города</p>
                 @foreach ($cities as $arCity)
-                    <a href="{{ route('windows.main', $arCity)}}" class="text dropdown__item dropdown__item_bordered">{{ $arCity->name }}</a>
+                    <a href="{{ route('windows.main', $arCity)}}" class="text dropdown__item dropdown__item_bordered  red-hoverable">{{ $arCity->name }}</a>
                 @endforeach
             </div>
         </div>
         <div class="header__feedbacks">
-            <a href="https://api.whatsapp.com/send?phone={{ $city->whatsapp }}" class="text whatsapp header__whatsapp"><img src="/img/gui/whatsapp.svg" alt="" class="whatsapp__icon"> <span class="whatsapp__write-text">Написать в&nbsp</span>WhatsApp <span class="whatsapp__mobile-text">написать</span></a>
-            <a href="tel:{{ $city->phone }}" class="text phone header__phone"><img class="phone__icon" src="/img/gui/phone.svg" alt="">{{ $city->phone }} <span>заказать звонок</span></a>
+            <a href="https://api.whatsapp.com/send?phone={{ $city->whatsapp }}" class="text whatsapp header__whatsapp red-hoverable"><img src="/img/gui/whatsapp.svg" alt="" class="whatsapp__icon"> <span class="whatsapp__write-text">Написать в&nbsp</span>WhatsApp <span class="whatsapp__mobile-text">написать</span></a>
+            <a href="tel:{{ $city->phone }}" class="text phone header__phone  red-hoverable"><img class="phone__icon" src="/img/gui/phone.svg" alt="">{{ $city->phone }} <span>заказать звонок</span></a>
             <a data-src="#popup_callback" class="text header__callback js-show">Заказать звонок</a>
         </div>
     </div>
 </header>
+<div class="header header_hidden header_sticky">
+    <a href="/" class="logo">
+        <img class="logo__icon" src="/img/gui/logo-icon.svg" alt="логотип Твой Стиль">
+        <img class="logo__text mobile-hide" src="/img/gui/logo-text.svg" alt="графема Твой Стиль">
+    </a>
+    <div class="header__feedbacks">
+        <a href="https://api.whatsapp.com/send?phone={{ $city->whatsapp }}" class="text whatsapp header__whatsapp red-hoverable"><img src="/img/gui/whatsapp.svg" alt="" class="whatsapp__icon"> <span class="whatsapp__write-text">Написать в&nbsp</span>WhatsApp <span class="whatsapp__mobile-text">написать</span></a>
+        <a href="tel:{{ $city->phone }}" class="text phone header__phone  red-hoverable"><img class="phone__icon" src="/img/gui/phone.svg" alt="">{{ $city->phone }} <span>заказать звонок</span></a>
+        <a data-src="#popup_callback" class="text header__callback js-show">Заказать звонок</a>
+    </div>
+</div>

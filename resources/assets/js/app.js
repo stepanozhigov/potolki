@@ -32,6 +32,19 @@ Vue.component('dveri-calc', require('./components/DveriCalc.vue'));
 Vue.component('peregorodki-calc', require('./components/Peregorodki.vue'));
 Vue.component('zhalyuzi-calc', require('./components/Zhalyuzi.vue'));
 
+
+$(document).on('scroll', function () {
+    var scrollPosition = $(window).scrollTop(),
+        $header = $('.header_hidden').length > 0 ? $('.header_hidden'): $('.header_sticky');
+
+    if (scrollPosition > 200) {
+        $header.addClass('header_sticky').removeClass('header_hidden');
+    }
+    else {
+        $header.removeClass('header_sticky').addClass('header_hidden');
+    }
+});
+
 const creditCalcContainer = $('#credit-calc');
 
 if (creditCalcContainer.length > 0) {
