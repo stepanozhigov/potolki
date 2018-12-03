@@ -34,7 +34,7 @@
             <a href="{{ route('photos', request()->route()->city) }}" class="text menu__item">Фото</a>
 
             <div class="menu__item menu__item_dropdown">
-                <a class="text menu__item">Информация</a>
+                <a class="text menu__item js-toggle-submenu">Информация</a>
                 <div class="menu__dropdown">
                     <a href="{{ route('contacts', request()->route()->city) }}" class="text menu__item menu__item_bordered">Контакты</a>
                     <a href="{{ route('services', request()->route()->city) }}" class="text menu__item menu__item_bordered">Услуги</a>
@@ -62,7 +62,7 @@
             </div>
         </div>
         <div class="header__feedbacks">
-            <a href="https://api.whatsapp.com/send?phone={{ $city->whatsapp }}" class="text whatsapp header__whatsapp"><img src="/img/gui/whatsapp.svg" alt="" class="whatsapp__icon"> <span class="whatsapp__write-text">Написать в</span> WhatsApp <span class="whatsapp__mobile-text">написать</span></a>
+            <a href="https://api.whatsapp.com/send?phone={{ $city->whatsapp }}" class="text whatsapp header__whatsapp"><img src="/img/gui/whatsapp.svg" alt="" class="whatsapp__icon"> <span class="whatsapp__write-text">Написать в&nbsp</span>WhatsApp <span class="whatsapp__mobile-text">написать</span></a>
             <a href="tel:{{ $city->phone }}" class="text phone header__phone"><img class="phone__icon" src="/img/gui/phone.svg" alt="">{{ $city->phone }} <span>заказать звонок</span></a>
             <a data-src="#popup_callback" class="text header__callback js-show">Заказать звонок</a>
         </div>

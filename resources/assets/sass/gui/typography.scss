@@ -95,8 +95,8 @@
     line-height: 53px;
 
     @media screen and (max-width: 650px){
-        line-height: 31px;
-        font-size: 32px;
+        line-height: 36px;
+        font-size: 26px;
     }
 }
 
@@ -156,7 +156,7 @@
     font-size: 16px;
     line-height: 22px;
     text-decoration: none;
-    
+
     &_white {
         color: #f8f8f8;
     }
@@ -195,7 +195,7 @@
     padding: 75px 0 60px 0;
     width: 100%;
     z-index: 1;
-    
+
     &__overtitle {
         margin-bottom: 3px;
 
@@ -214,7 +214,7 @@
 
     &__intro {
         margin: 50px 0 0 0;
-        
+
     }
 
     &__socials {

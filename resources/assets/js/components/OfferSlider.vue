@@ -1,5 +1,6 @@
 <template>
     <div class="main-offers">
+        <img @click="nextSlide" class="main-offers__arrow main-offers__arrow_prev" src="/img/gui/arrow_dark.png">        
         <section v-for="(offer, index) in offers" v-if="index == currentOfferIndex" class="main-offer js-offer-slider" :style="{ 'background-image': backgroundImage}">
             <div v-if="offer.type == 'form'" class="main-offer__inner container">
                 <p class="text main-offer__overtitle">{{ offer.overtitle }}</p>
@@ -18,6 +19,7 @@
                 <a target="_blank" class="button button_insta" :href="offer.link">Подписаться</a>
             </div>
         </section>
+        <img @click="nextSlide" class="main-offers__arrow" src="/img/gui/arrow_dark.png">
     </div>
 </template>
 
@@ -39,7 +41,8 @@
                 return this.offers[this.currentOfferIndex];
             },
             backgroundImage: function () {
-                return `url(/storage/${this.currentOffer.background_img})`;
+                var img = $(document).width() > 640 ? this.currentOffer.background_img : this.currentOffer.background_mobile ? this.currentOffer.background_mobile : this.currentOffer.background_img;
+                return `url(/storage/${img})`;
             }
         },
         methods: {
@@ -82,7 +85,7 @@
         },
         mounted: function () {
             this.initTypeWriter();
-            this.initSliding();
+           // this.initSliding();
         }
     }
 </script>

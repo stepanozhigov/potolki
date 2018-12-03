@@ -154,7 +154,7 @@
                 left: 0;
                 width: 100%;
                 height: rem(1);
-                border-top: 1px solid #c8c8c8;
+                border-top: 2px solid #c8c8c8;
             }
 
             &::before {
@@ -164,8 +164,8 @@
                 left: 0;
                 width: rem(10);
                 height: 100%;
-                border-left: 1px solid #c8c8c8;
-                border-bottom: 1px solid #c8c8c8;
+                border-left: 2px solid #c8c8c8;
+                border-bottom: 2px solid #c8c8c8;
             }
         }
     }
@@ -391,6 +391,10 @@
     &_balcony {
         .calculator__area {
             width: auto;
+
+			@include below($mobile) {
+				width: 100%;
+			}
         }
 
         .calculator__line {
@@ -441,6 +445,16 @@
             }
         }
 
+        .calculator__depths,
+		.calculator__depth {
+			@include below($mobile) {
+				left: 0;
+				top: 0;
+				right: auto;
+				position: relative;
+			}
+        }
+
         .calculator__img-wrap {
             position: relative;
         }
@@ -449,11 +463,38 @@
             margin: 0;
             position: absolute;
             bottom: rem(10);
+
+			@include below($mobile) {
+				position: static;
+				margin-bottom: rem(10);
+			}
         }
 
         .calculator__heights {
             padding: 0;
         }
+
+		.calculator__additional-item:not(:last-of-type) {
+			@include below($mobile) {
+				margin-bottom: rem(15);
+			}
+		}
+
+		.calculator__additional-finishing-item {
+			@include below($mobile) {
+				flex-direction: column;
+			    align-items: flex-start;
+
+				&:not(:last-of-type) {
+					margin-bottom: rem(25);
+				}
+
+				.calculator__additional-name,
+				.calculator__additional-area {
+					margin-bottom: rem(10);
+				}
+			}
+		}
     }
 
     &__additional {
@@ -681,7 +722,18 @@
 	&_dveri {
         .calculator__area {
             width: auto;
+
+			@include below($mobile) {
+				width: 100%;
+				margin-bottom: rem(20);
+			}
         }
+
+		.calculator__additional-item:not(:last-of-type) {
+			@include below($mobile) {
+				margin-bottom: rem(15);
+			}
+		}
 
         .calculator__additional {
             flex-direction: column;
@@ -766,7 +818,18 @@
 
         .calculator__area {
             width: auto;
+
+			@include below($mobile) {
+				width: 100%;
+				margin-bottom: rem(20);
+			}
         }
+
+		.calculator__additional-item:not(:last-of-type) {
+			@include below($mobile) {
+				margin-bottom: rem(15);
+			}
+		}
 
         .calculator__additional {
             flex-direction: column;
@@ -844,8 +907,6 @@
 	}
 
 	&_zhalyuzi {
-
-
         .calculator__area {
             width: auto;
             position: relative;
@@ -861,7 +922,22 @@
                 height: rem(280);
                 border-radius: rem(5);
                 background-image: radial-gradient(circle 575px at 90% 294.31%,#cdd6db 0%,#80929e 100%);
+
+				@include below($mobile) {
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 0.0625rem;
+					border-top: 2px solid #c8c8c8;
+					background-image: none;
+				}
             }
+
+			@include below($mobile) {
+				padding: rem(10);
+			    width: 100%;
+				margin-bottom: rem(20);
+			}
         }
 
         .calculator__title,
@@ -871,14 +947,29 @@
             z-index: 2;
         }
 
+		.calculator__title {
+			@include below($mobile) {
+				position: absolute;
+			}
+		}
+
         .calculator__widths {
             width: calc(100% - 90px);
             margin-top: 0;
             transform: translateX(10px);
+
+			@include below($mobile) {
+				width: 100%;
+				transform: none;
+			}
         }
 
         .calculator__heights {
             padding-bottom: rem(90);
+
+			@include below($mobile) {
+				padding-bottom: 0;
+			}
         }
 
         .calculator__line {
@@ -959,6 +1050,14 @@
                     font-size: rem(18);
                 }
             }
+
+			&-item {
+				@include below($mobile) {
+                    &:not(:last-of-type) {
+						margin-bottom: rem(10);
+					}
+                }
+			}
         }
 	}
 }
@@ -1045,5 +1144,4 @@
         font-size: .8125rem;
         margin-top: 20px;
     }
-
 }

@@ -262,3 +262,16 @@ $('.question__more').on('click', function(e) {
     $(this).prev('.question__text').toggleClass('question__text_toggled');
 
 })
+
+let onResize = function () {
+    if ($(window).width() <= 768) {
+        $('.footer__title').off();
+        $('.footer__title').on('click', function() {
+        	$(this).parent('.nav-group').toggleClass('nav-group_opened');
+        });
+
+    }
+};
+
+$(document).ready(onResize);
+$(window).resize(onResize);

@@ -13,7 +13,7 @@
     position: relative;
 
     @media screen and (max-width: 1024px) {
-        flex-wrap: wrap;    
+        flex-wrap: wrap;
     }
 
     &__icon {
@@ -100,6 +100,13 @@
         margin-right: 16px;
         width: 30%;
         text-align: left;
+
+		@media screen and (max-width: 1024px){
+            width: 100%;
+			margin-right: 0;
+			margin-bottom: 16px;
+			text-align: center;
+        }
     }
     &__value {
         margin-left: auto;
@@ -108,6 +115,9 @@
 
         @media screen and (max-width: 1024px){
             margin-left: initial;
+			width: 100%;
+			margin-right: 0;
+			text-align: center;
         }
     }
     &__input {
@@ -121,6 +131,11 @@
         box-shadow: inset 0 1px 0 $grey_chateau;
         border-radius: 10px;
         background-color: #d0d2d4;
+
+		@media screen and (max-width: 1024px){
+            width: 100%;
+			margin-bottom: 16px;
+        }
 
         &::-webkit-slider-thumb {
             -webkit-appearance: none;
@@ -147,11 +162,11 @@
             box-shadow: 0 0 4px rgba(0, 0, 0, 0.12), 0 0 4px rgba(0, 0, 0, 0.08), inset 0 -1px 0 #d0d2d4;
         }
 
-        ::-ms-fill-lower { 
+        ::-ms-fill-lower {
             background: #a01414;
         }
 
-        ::-ms-thumb { 
+        ::-ms-thumb {
             width: 24px;
             height: 24px;
             border-radius: 50%;
@@ -160,22 +175,22 @@
             box-shadow: 0 0 4px rgba(0, 0, 0, 0.12), 0 0 4px rgba(0, 0, 0, 0.08), inset 0 -1px 0 #d0d2d4;
         }
 
-        ::-ms-ticks-after { 
-            display: none; 
+        ::-ms-ticks-after {
+            display: none;
         }
 
-        ::-ms-ticks-before { 
-            display: none; 
+        ::-ms-ticks-before {
+            display: none;
         }
 
-        ::-ms-track { 
+        ::-ms-track {
             background: #ddd;
             color: transparent;
             height: 40px;
             border: none;
         }
 
-        ::-ms-tooltip { 
+        ::-ms-tooltip {
             display: none;
         }
     }

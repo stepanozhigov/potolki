@@ -1,4 +1,6 @@
 @import './gui/input';
+@import 'mixins';
+@import 'variables';
 
 .form {
     display: flex;
@@ -8,13 +10,20 @@
     &__input {
         margin-bottom: 20px;
 
+		@include below($mobile) {
+			width: 100%;
+		}
+
         &_horiz {
             width: 32.5%;
             @media screen and (max-width: 1024px) {
                 width: auto;
-                flex: 1;
                 margin-right: 15px;
             }
+
+            @include below($mobile) {
+    			margin-right: 0;
+    		}
         }
     }
 
@@ -22,12 +31,14 @@
         margin-bottom: 20px;
         @media screen and (max-width: 1024px) {
             width: auto;
-            flex: 1;
             margin-right: 15px;
+        }
+
+        @include below($mobile) {
+            margin-right: 0;
         }
     }
     &__agreement {
-        flex-basis: 100%;
         font-size: 12px;
     }
 }

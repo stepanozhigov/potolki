@@ -32,12 +32,8 @@ body {
     margin: 0 auto;
 
     @include below($tablet) {
-        width: 95%;
+        width: calc(100% - 40px);
         margin: 0 rem(20);
-    }
-
-    @include below($mobile) {
-        margin: 0 rem(10);
     }
 }
 
@@ -121,6 +117,10 @@ body {
     &__item {
         white-space: nowrap;
         padding-left: 2px;
+
+		@include below($mobile) {
+			white-space: normal;
+		}
 
         &_bordered {
             padding: 0 15px 13px 23px;
@@ -220,11 +220,10 @@ body {
 }
 
 .whatsapp {
-    display: inline;
+    display: inline-flex;
     align-items: center;
-    color: $grey_dove;
     &__icon {
-        margin-right: 10px;
+        margin-right: 7px;
     }
 
 	&.header__whatsapp {
@@ -641,9 +640,11 @@ body {
         display: block;
 
         @media screen and (max-width: 650px) {
-            margin: 65px 25px 80px 25px;
+            padding: 65px 25px 80px 25px;
+			margin: 0;
             overflow: auto;
             max-width: initial;
+			width: 100%;
         }
     }
 
@@ -787,6 +788,10 @@ body {
     align-items: center;
     margin: 0 auto;
     margin-bottom: 80px;
+
+	@media screen and (max-width: 1024px) {
+		width: 100%;
+	}
 
     &__range {
         margin-bottom: 24px;

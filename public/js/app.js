@@ -773,6 +773,18 @@ $('.question__more').on('click', function (e) {
     $(this).prev('.question__text').toggleClass('question__text_toggled');
 });
 
+var onResize = function onResize() {
+    if ($(window).width() <= 768) {
+        $('.footer__title').off();
+        $('.footer__title').on('click', function () {
+            $(this).parent('.nav-group').toggleClass('nav-group_opened');
+        });
+    }
+};
+
+$(document).ready(onResize);
+$(window).resize(onResize);
+
 /***/ }),
 /* 7 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -25224,6 +25236,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -25242,7 +25256,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             return this.offers[this.currentOfferIndex];
         },
         backgroundImage: function backgroundImage() {
-            return 'url(/storage/' + this.currentOffer.background_img + ')';
+            var img = $(document).width() > 640 ? this.currentOffer.background_img : this.currentOffer.background_mobile ? this.currentOffer.background_mobile : this.currentOffer.background_img;
+            return 'url(/storage/' + img + ')';
         }
     },
     methods: {
@@ -25284,7 +25299,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     mounted: function mounted() {
         this.initTypeWriter();
-        this.initSliding();
+        // this.initSliding();
     }
 });
 
@@ -25299,130 +25314,146 @@ var render = function() {
   return _c(
     "div",
     { staticClass: "main-offers" },
-    _vm._l(_vm.offers, function(offer, index) {
-      return index == _vm.currentOfferIndex
-        ? _c(
-            "section",
-            {
-              staticClass: "main-offer js-offer-slider",
-              style: { "background-image": _vm.backgroundImage }
-            },
-            [
-              offer.type == "form"
-                ? _c("div", { staticClass: "main-offer__inner container" }, [
-                    _c("p", { staticClass: "text main-offer__overtitle" }, [
-                      _vm._v(_vm._s(offer.overtitle))
-                    ]),
-                    _vm._v(" "),
-                    _c("h1", {
-                      staticClass: "title main-offer__title js-title"
-                    }),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "main-offer__subtitle" }, [
-                      _vm._v(_vm._s(offer.text))
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "form",
-                      {
-                        staticClass: "form main-offer__form mobile-hide",
-                        attrs: { action: "", id: "offer-form" }
-                      },
-                      [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.name,
-                              expression: "name"
-                            }
-                          ],
-                          staticClass: "input form__input",
-                          attrs: { type: "text", placeholder: "Ваше имя" },
-                          domProps: { value: _vm.name },
-                          on: {
-                            focus: _vm.pauseSliding,
-                            focusout: _vm.initSliding,
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
+    [
+      _c("img", {
+        staticClass: "main-offers__arrow main-offers__arrow_prev",
+        attrs: { src: "/img/gui/arrow_dark.png" },
+        on: { click: _vm.nextSlide }
+      }),
+      _vm._v(" "),
+      _vm._l(_vm.offers, function(offer, index) {
+        return index == _vm.currentOfferIndex
+          ? _c(
+              "section",
+              {
+                staticClass: "main-offer js-offer-slider",
+                style: { "background-image": _vm.backgroundImage }
+              },
+              [
+                offer.type == "form"
+                  ? _c("div", { staticClass: "main-offer__inner container" }, [
+                      _c("p", { staticClass: "text main-offer__overtitle" }, [
+                        _vm._v(_vm._s(offer.overtitle))
+                      ]),
+                      _vm._v(" "),
+                      _c("h1", {
+                        staticClass: "title main-offer__title js-title"
+                      }),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "main-offer__subtitle" }, [
+                        _vm._v(_vm._s(offer.text))
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "form",
+                        {
+                          staticClass: "form main-offer__form mobile-hide",
+                          attrs: { action: "", id: "offer-form" }
+                        },
+                        [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.name,
+                                expression: "name"
                               }
-                              _vm.name = $event.target.value
-                            }
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.phone,
-                              expression: "phone"
-                            }
-                          ],
-                          staticClass: "input form__input",
-                          attrs: { type: "tel", placeholder: "Ваш телефон" },
-                          domProps: { value: _vm.phone },
-                          on: {
-                            focus: _vm.pauseSliding,
-                            focusout: _vm.initSliding,
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
+                            ],
+                            staticClass: "input form__input",
+                            attrs: { type: "text", placeholder: "Ваше имя" },
+                            domProps: { value: _vm.name },
+                            on: {
+                              focus: _vm.pauseSliding,
+                              focusout: _vm.initSliding,
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.name = $event.target.value
                               }
-                              _vm.phone = $event.target.value
                             }
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("button", { staticClass: "button form__button" }, [
-                          _vm._v("Вызвать замерщика")
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "p",
-                          {
-                            staticClass: "form__agreement subtext subtext_white"
-                          },
-                          [
-                            _vm._v(
-                              "Оставляя контактную информацию, Вы соглашаетесь на обработку персональных данных"
-                            )
-                          ]
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass:
-                          "button main-offer__button mobile-only js-show",
-                        attrs: { "data-src": "#popup_callback" }
-                      },
-                      [_vm._v("Вызвать замерщика")]
-                    )
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              offer.type == "link"
-                ? _c("div", { staticClass: "container main-offer__social" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "button button_insta",
-                        attrs: { target: "_blank", href: offer.link }
-                      },
-                      [_vm._v("Подписаться")]
-                    )
-                  ])
-                : _vm._e()
-            ]
-          )
-        : _vm._e()
-    })
+                          }),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.phone,
+                                expression: "phone"
+                              }
+                            ],
+                            staticClass: "input form__input",
+                            attrs: { type: "tel", placeholder: "Ваш телефон" },
+                            domProps: { value: _vm.phone },
+                            on: {
+                              focus: _vm.pauseSliding,
+                              focusout: _vm.initSliding,
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.phone = $event.target.value
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("button", { staticClass: "button form__button" }, [
+                            _vm._v("Вызвать замерщика")
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "p",
+                            {
+                              staticClass:
+                                "form__agreement subtext subtext_white"
+                            },
+                            [
+                              _vm._v(
+                                "Оставляя контактную информацию, Вы соглашаетесь на обработку персональных данных"
+                              )
+                            ]
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass:
+                            "button main-offer__button mobile-only js-show",
+                          attrs: { "data-src": "#popup_callback" }
+                        },
+                        [_vm._v("Вызвать замерщика")]
+                      )
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                offer.type == "link"
+                  ? _c("div", { staticClass: "container main-offer__social" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "button button_insta",
+                          attrs: { target: "_blank", href: offer.link }
+                        },
+                        [_vm._v("Подписаться")]
+                      )
+                    ])
+                  : _vm._e()
+              ]
+            )
+          : _vm._e()
+      }),
+      _vm._v(" "),
+      _c("img", {
+        staticClass: "main-offers__arrow",
+        attrs: { src: "/img/gui/arrow_dark.png" },
+        on: { click: _vm.nextSlide }
+      })
+    ],
+    2
   )
 }
 var staticRenderFns = []

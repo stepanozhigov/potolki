@@ -12,14 +12,14 @@
     ])
 
     <section class="service container">
-            <div class="service__heading service__heading_small container">
+            <div class="service__heading service__heading_small">
                 <form action="" class="form service__form">
                     <input required type="text" placeholder="Ваше имя" class="input form__input">
                     <input required type="tel" placeholder="Ваш телефон" class="input form__input">
                     <button class="button button_red">Вызвать замерщика</button>
                 </form>
                 <img class="service__img" src="/img/windows/services/measurement.png" alt="Вызвать замерного мастера">
-            </div>        
+            </div>
     </section>
 
     @include('common.gui.footer', ['skipOffer' => true])
