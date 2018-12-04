@@ -23,6 +23,14 @@ use App\SeoBlock;
 
 class PageController extends Controller
 {
+    public function index () {
+        return view('common.pages.index', [
+            'directions' => Direction::where('id', '!=', 1)->get(),
+            'cities'    =>  City::where('id', '!=', 1)->get(),
+            'currentCity'   =>  City::find(1),
+            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
+        ]);
+    }
     public function main (City $city, Request $request)
     {
         return view('windows.main', [
@@ -41,7 +49,8 @@ class PageController extends Controller
             'city'  =>  $city,
             'types' =>  CatalogType::all(),
             'photos'    =>  $type->photos ?? Photo::all(),
-            'currentType'  =>  $type
+            'currentType'  =>  $type,
+            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
     }
 
@@ -56,8 +65,8 @@ class PageController extends Controller
 
         return view ($view, [
             'city'  =>  $city,
-            'services'  =>  Service::all()
-
+            'services'  =>  Service::all(),
+            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
     }
 
@@ -65,14 +74,16 @@ class PageController extends Controller
     {
         return view ('common.pages.promos', [
             'city'  =>  $city,
-            'promos'    =>  Promo::all()
+            'promos'    =>  Promo::all(),
+            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
     }
 
     public function about (City $city)
     {
         return view ('common.pages.about', [
-            'city'  =>  $city
+            'city'  =>  $city,
+            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
     }
 
@@ -80,7 +91,8 @@ class PageController extends Controller
     {
         return view ('common.pages.employers', [
             'city'  =>  $city,
-            'employees' =>  Employee::all()
+            'employees' =>  Employee::all(),
+            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
     }
 
@@ -88,14 +100,16 @@ class PageController extends Controller
     {
         return view ('common.pages.vacancies', [
             'city'  =>  $city,
-            'vacancies' =>  Vacancy::all()
+            'vacancies' =>  Vacancy::all(),
+            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
     }
 
     public function contacts (City $city)
     {
         return view ('common.pages.contacts', [
-            'city'  =>  $city
+            'city'  =>  $city,
+            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
     }
 
@@ -105,14 +119,16 @@ class PageController extends Controller
             'city'  =>  $city,
             'categories'    => QuestionCategory::all(),
             'currentCategory'  =>  $category,
-            'questions' =>  $category->questions ?? Question::all()
+            'questions' =>  $category->questions ?? Question::all(),
+            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
     }
 
     public function addReview (City $city)
     {
         return view ('common.pages.add-review', [
-            'city'  =>  $city
+            'city'  =>  $city,
+            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
     }
 
@@ -120,7 +136,8 @@ class PageController extends Controller
     {
         return view('common.pages.reviews', [
             'city'  =>  $city,
-            'reviews'   =>  Review::where('is_active', 1)->orderBy('sort', 'asc')->paginate(30)
+            'reviews'   =>  Review::where('is_active', 1)->orderBy('sort', 'asc')->paginate(30),
+            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
     }
 
@@ -140,7 +157,8 @@ class PageController extends Controller
     public function dirMessage (City $city)
     {
         return view('common.pages.dir-message', [
-            'city'  =>  $city
+            'city'  =>  $city,
+            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
     }
 
@@ -148,7 +166,8 @@ class PageController extends Controller
     {
         return view('common.pages.articles', [
             'city'  =>  $city,
-            'articles' => Article::where('is_active', 1)->orderBy('sort', 'asc')->get()
+            'articles' => Article::where('is_active', 1)->orderBy('sort', 'asc')->get(),
+            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
     }
 

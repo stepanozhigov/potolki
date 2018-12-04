@@ -800,6 +800,40 @@ body {
     }
 }
 
+.seo-block {
+    width: 100%;
+    padding: 80px 0;
+
+    &__content {
+        background: white;
+        border-radius: 5px;
+        padding: 80px 70px 64px 100px;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__item {
+        width: 26%;
+
+        h3 {
+            color: $grey_abbey;
+            font-family: "Playfair Display";
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 24px;
+        }
+        p {
+            color: $grey_abbey;
+            font-family: "Helvetica Neue";
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 19px;
+        }
+    }
+    &__img {
+        margin-top: 25px;
+    }
+}
+
 .credit-calc {
     width: 58%;
     padding-bottom: 64px;

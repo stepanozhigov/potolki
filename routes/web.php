@@ -19,14 +19,7 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
-Route::get('/', function () {
-    return view('common.pages.index', [
-        'directions' => Direction::where('id', '!=', 1)->get(),
-        'cities'    =>  City::where('id', '!=', 1)->get(),
-        'currentCity'   =>  City::find(1)
-        ]);
-})->name('index');
-
+Route::get('/', 'PageController@index')->name('index');
 Route::get('/forms/callback', 'PageController@callback');
 Route::post('/forms/add-comment', 'FeedbackController@addComment');
 Route::post('/forms/add-review', 'FeedbackController@addReview');

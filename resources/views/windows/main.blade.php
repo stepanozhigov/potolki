@@ -1,4 +1,4 @@
-@extends('common.layout')
+@extends('common.layout', ['seoData' => $seoData])
 
 @section('content')
     @include('common.gui.header')
@@ -169,19 +169,28 @@
         </div>
     </section>
 
-    <section class="seo-block">
+    <section class="seo-block" @if($seoData->background_image) style="background: url({{ Storage::url($seoData->background_image) }})" @endif>
         <div class="seo-block__content container">
             <div class="seo-block__item">
-                <h3>{{ $seoData->first_title }}</h3>
+                <h3>{!! str_replace('#city_title#', $city->name_formatted, $seoData->first_title) !!}</h3>
                 {!! $seoData->first_text !!}
+                @if ($seoData->firm_img)
+                    <img src="{{ Storage::url($seoData->firm_img) }}" alt="" class="seo-block__img">
+                @endif
             </div>
             <div class="seo-block__item">
+                @if ($seoData->second_img)
+                    <img src="{{ Storage::url($seoData->second_img) }}" alt="" class="seo-block__img">
+                @endif
                 <h3>{{ $seoData->second_title }}</h3>
                 {!! $seoData->second_text !!}
             </div>
             <div class="seo-block__item">
                 <h3>{{ $seoData->third_title }}</h3>
                 {!! $seoData->third_text !!}
+                @if ($seoData->third_img)
+                    <img src="{{ Storage::url($seoData->third_img) }}" alt="" class="seo-block__img">
+                @endif
             </div>
         </div>
     </section>
