@@ -130,12 +130,11 @@
         position: relative;
         display: flex;
         flex-wrap: wrap;
-        width: 54%;
+        width: 58%;
         justify-content: center;
 
 		@include below($tablet) {
             width: 100%;
-			padding-left: rem(90);
 			justify-content: center;
 			margin-bottom: rem(60);
         }
@@ -303,7 +302,7 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            left: rem(90);
+            left: rem(120);
             display: block;
             width: calc(100vw - 130px);
         }
@@ -321,19 +320,19 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            left: rem(90);
+            left: rem(120);
             display: block;
             width: calc(100vw - 130px);
         }
     }
 
     &__width {
-        width: 73px;
+        width: rem(103);
         padding: 0;
         flex-shrink: 0;
 
 		&:not(:last-of-type) {
-			margin-right: rem(58);
+			margin-right: rem(36);
 		}
 
         input {
@@ -351,7 +350,7 @@
         top: rem(-20);
         left: rem(25);
 
-        width: 73px;
+        width: rem(103);
         padding: 0;
         flex-shrink: 0;
 
@@ -366,7 +365,7 @@
         }
     }
     &__height {
-        width: 75px;
+        width: rem(103);
         padding: 0;
         flex-shrink: 0;
 
@@ -396,14 +395,6 @@
     }
 
     &_balcony {
-
-		.calculator__content {
-			padding-left: rem(50);
-
-			@include below($mobile) {
-				padding-left: 0;
-			}
-		}
 
         .calculator__area {
             width: auto;

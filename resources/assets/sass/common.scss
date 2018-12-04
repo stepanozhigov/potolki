@@ -47,6 +47,14 @@ body {
         margin-right: .625rem;
     }
 
+    &:hover {
+        .logo__icon {
+            transform: rotateY(360deg);
+
+            transition: .6s;
+        }
+    }
+
 }
 
 .link {
@@ -96,6 +104,10 @@ body {
             top: -30px;
             left: -25px;
             z-index: 1;
+
+            @include below($tablet) {
+                width: calc(100% + 45px);
+            }
         }
     }
     &__content {

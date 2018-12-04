@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+
 use App\Direction;
 use App\City;
 use App\CatalogType;
@@ -17,10 +19,11 @@ use App\WindowCalcParam;
 use App\Service;
 use App\Offer;
 use App\Article;
+use App\SeoBlock;
 
 class PageController extends Controller
 {
-    public function main (City $city)
+    public function main (City $city, Request $request)
     {
         return view('windows.main', [
             'city'  =>  $city,
@@ -28,7 +31,8 @@ class PageController extends Controller
             'photos'    =>  Photo::all(),
             'offers'    =>  Offer::where('is_active', 1)->get(),
             'catalogTypes'  => CatalogType::where(['direction_id' => 1])->get(),
-            'articles'  =>  Article::where(['is_active' => 1, 'in_main' => 1])->get()
+            'articles'  =>  Article::where(['is_active' => 1, 'in_main' => 1])->get(),
+            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
     }
     public function photos (City $city, CatalogType $type = null)

@@ -169,5 +169,21 @@
         </div>
     </section>
 
+    <section class="seo-block">
+        <div class="seo-block__content container">
+            <div class="seo-block__item">
+                <h3>{{ $seoData->first_title }}</h3>
+                {!! $seoData->first_text !!}
+            </div>
+            <div class="seo-block__item">
+                <h3>{{ $seoData->second_title }}</h3>
+                {!! $seoData->second_text !!}
+            </div>
+            <div class="seo-block__item">
+                <h3>{{ $seoData->third_title }}</h3>
+                {!! $seoData->third_text !!}
+            </div>
+        </div>
+    </section>
     @include('common.gui.footer')
 @endsection

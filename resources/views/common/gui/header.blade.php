@@ -77,5 +77,38 @@
         <a href="https://api.whatsapp.com/send?phone={{ $city->whatsapp }}" class="text whatsapp header__whatsapp red-hoverable"><img src="/img/gui/whatsapp.svg" alt="" class="whatsapp__icon"> <span class="whatsapp__write-text">Написать в&nbsp</span>WhatsApp <span class="whatsapp__mobile-text">написать</span></a>
         <a href="tel:{{ $city->phone }}" class="text phone header__phone  red-hoverable"><img class="phone__icon" src="/img/gui/phone.svg" alt="">{{ $city->phone }} <span>заказать звонок</span></a>
         <a data-src="#popup_callback" class="text header__callback js-show">Заказать звонок</a>
+        <img src="/img/gui/nav_hamburger.svg" alt="" class="hamburger header__hamburger js-toggle-menu">
+        <nav class="menu header__menu">
+            <img src="/img/gui/mobile-menu-close.svg" alt="" class="menu__close js-toggle-menu">
+            <div class="menu__item menu__item_dropdown">
+                <a href="{{ route('calculator', request()->route()->city) }}" class="text menu__item js-toggle-submenu">Калькулятор</a>
+                <div class="menu__dropdown">
+                    <a href="{{ route('calculator', ['city' => $city, 'type' => 'okna']) }}" class="text menu__item menu__item_bordered">Окна</a>
+                    <a href="{{ route('calculator', ['city' => $city, 'type' => 'balkony']) }}" class="text menu__item menu__item_bordered">Балконы</a>
+                    <a href="{{ route('calculator', ['city' => $city, 'type' => 'dveri']) }}" class="text menu__item menu__item_bordered">Двери</a>
+                    <a href="{{ route('calculator', ['city' => $city, 'type' => 'peregorodki']) }}" class="text menu__item menu__item_bordered">Перегородки</a>
+                    <a href="{{ route('calculator', ['city' => $city, 'type' => 'zhalyuzi']) }}" class="text menu__item menu__item_bordered">Жалюзи</a>
+                </div>
+            </div>
+
+            <a href="{{ route('services', [request()->route()->city, 'measurements']) }}" class="text menu__item">Бесплатный замер</a>
+            <a href="{{ route('promos', request()->route()->city) }}" class="text menu__item">Скидки</a>
+            <a href="{{ route('photos', request()->route()->city) }}" class="text menu__item">Фото</a>
+
+            <div class="menu__item menu__item_dropdown">
+                <a class="text menu__item js-toggle-submenu">Информация</a>
+                <div class="menu__dropdown">
+                    <a href="{{ route('contacts', request()->route()->city) }}" class="text menu__item menu__item_bordered">Контакты</a>
+                    <a href="{{ route('services', request()->route()->city) }}" class="text menu__item menu__item_bordered">Услуги</a>
+                    <a href="{{ route('about', request()->route()->city) }}" class="text menu__item menu__item_bordered">О компании</a>
+                    <a href="{{ route('employees', request()->route()->city) }}" class="text menu__item menu__item_bordered">Сотрудники</a>
+                    <a href="{{ route('vacancies', request()->route()->city) }}" class="text menu__item menu__item_bordered">Вакансии</a>
+                    <a href="{{ route('questions', request()->route()->city) }}" class="text menu__item menu__item_bordered">Вопрос-ответ</a>
+                    <a href="{{ route('reviews', request()->route()->city) }}" class="text menu__item menu__item_bordered">Отзывы</a>
+                    <a href="{{ route('articles', request()->route()->city) }}" class="text menu__item menu__item_bordered">Статьи</a>
+                    <a href="{{ route('dirMessage', request()->route()->city) }}" class="text menu__item menu__item_bordered">Написать директору</a>
+                </div>
+            </div>
+        </nav>
     </div>
 </div>

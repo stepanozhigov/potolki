@@ -12,7 +12,7 @@
 </div>
 <div class="overlay js-close"></div>
 
-<footer class="footer">
+<footer role="contentinfo" class="footer">
     <div class="footer__row container">
         <div class="footer__contacts">
             <a href="/" class="logo logo_white footer__logo">

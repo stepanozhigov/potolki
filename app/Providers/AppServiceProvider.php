@@ -4,7 +4,9 @@ namespace App\Providers;
 
 use App\City;
 use App\Direction;
+use App\SeoBlock;
 
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use TCG\Voyager\Http\Controllers\ContentTypes\Image as tcgImage;
