@@ -10,6 +10,7 @@ window.$ = window.jQuery = require('jquery');
 
 window.Vue = require('vue');
 
+var Inputmask = require('inputmask');
 require('./components/popup');
 //require('./components/social');
 
@@ -31,7 +32,6 @@ Vue.component('credit-calc', require('./components/CreditCalc.vue'));
 Vue.component('dveri-calc', require('./components/DveriCalc.vue'));
 Vue.component('peregorodki-calc', require('./components/Peregorodki.vue'));
 Vue.component('zhalyuzi-calc', require('./components/Zhalyuzi.vue'));
-
 
 $(document).on('scroll', function () {
     var scrollPosition = $(window).scrollTop(),
@@ -295,3 +295,8 @@ let onResize = function () {
 
 $(document).ready(onResize);
 $(window).resize(onResize);
+
+
+var phoneMask = new Inputmask({
+    "mask": "+7 999 999-99-99"
+}).mask('[type="tel"]');
