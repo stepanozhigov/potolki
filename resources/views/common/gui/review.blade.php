@@ -1,8 +1,12 @@
 <div class="review reviews__item js-show" data-src="#popup_review_{{ $review->id }}">
     <div class="review__body b-card">
         <a class="person review__person">
-            <img src="{{ $review->avatar() }}" alt="" class="avatar person__photo">
-            <img src="/img/gui/{{ $review->social }}_hover.svg" alt="" class="person__social">
+            <div class="avatar person__photo">
+                <img src="{{ $review->avatar() }}" alt="" class="avatar person__photo">
+                <img src="/img/gui/{{ $review->social }}_hover.svg" alt="" class="person__social">
+            </div>
+            
+            
             <div class="person__info">
                 <p class="person__name">{{ $review->fio }}</p> 
             </div>

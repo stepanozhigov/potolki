@@ -88,7 +88,7 @@
         </div>
         <div class="buttons portfolio__buttons">
             <a href="{{ route('photos', $city) }}" class="button buttons__item button_gray">Посмотреть все работы</a>
-            <button class="button js-show" data-src="#popup_callback">Вызвать замерщика</button>
+            <button class="button js-show" data-src="#popup_callback" data-title="Вызов замерщика" data-button="Вызвать замерщика">Вызвать замерщика</button>
         </div>
     </section>
 

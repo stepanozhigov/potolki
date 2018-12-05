@@ -126,11 +126,13 @@
 
     &__close {
         display: none;
+        width: rem(24);
+        height: rem(24);
+        margin-left: auto;
+        background-color: #ffffff;
 
         @media screen and (max-width: 1024px) {
-            width: rem(24);
-            height: rem(24);
-            background-color: #ffffff;
+
 
             &.active {
                 display: block;

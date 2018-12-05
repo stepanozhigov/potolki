@@ -1362,15 +1362,13 @@
 
 .header__close {
   display: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-left: auto;
+  background-color: #ffffff;
 }
 
 @media screen and (max-width: 1024px) {
-  .header__close {
-    width: 1.5rem;
-    height: 1.5rem;
-    background-color: #ffffff;
-  }
-
   .header__close.active {
     display: block;
   }
@@ -3031,6 +3029,11 @@ body.no-scroll {
     background-size: contain;
     background-repeat: no-repeat;
   }
+
+  .menu__item.js-toggle-submenu_opened::after {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
 }
 
 .menu__item:hover {
@@ -3763,7 +3766,14 @@ body.no-scroll {
       flex-basis: 74%;
 }
 
+.person__social {
+  position: absolute;
+  right: 2px;
+  bottom: 4px;
+}
+
 .person__photo {
+  position: relative;
   margin-bottom: 30px;
   -o-object-fit: cover;
      object-fit: cover;

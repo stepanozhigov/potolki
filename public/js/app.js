@@ -705,6 +705,10 @@ $('.js-toggle-menu').on('click', function (e) {
     $('.header__close').toggleClass('active');
 });
 
+$('.js-toggle-submenu').on('click', function (e) {
+    $(this).toggleClass('menu__item_opened');
+});
+
 if ($(document).width() <= 1024) {
     $('.js-toggle-submenu').on('click', function (event) {
         event.preventDefault();

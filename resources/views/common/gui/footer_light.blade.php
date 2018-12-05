@@ -7,7 +7,7 @@
             </a>
             <p class="subtext subtext_white footer__text">&copy;  2003-2018  ООО «Твой Стиль»  Все права защищены</p>
             <p class="subtext subtext_white footer__text">
-                Разработка и продвижение – <a href="javascript:void(0);" class="text text_white" target="_blank">TREND PRO</a>
+                Разработка и продвижение – <a href="http://trend-p.ru" class="text text_white" target="_blank">TREND PRO</a>
             </p>
         </div>
     </div>
