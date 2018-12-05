@@ -19,10 +19,16 @@
         .menu,
         .header__hamburger {
             display: none;
+
+            &.active {
+                display: block;
+            }
         }
 
         .menu_active {
             display: flex;
+			overflow-y: scroll;
+		    max-height: calc(100vh - 80px);
         }
 
         .logo {
@@ -53,7 +59,9 @@
             padding: rem(20) rem(10);
 
             .header__hamburger {
-                display: block;
+                &.active {
+                    display: block;
+                }
             }
 
             .logo {
@@ -75,17 +83,16 @@
             .header__feedbacks {
                 flex-direction: row;
                 justify-content: space-between;
+                align-items: center;
             }
 
             .menu_active {
-                top: rem(75);
+                top: rem(77);
             }
 
-            .menu__close {
-                top: rem(-47);
-                right: 0;
+            .header__close {
                 width: rem(23);
-                padding: 0;
+                height: rem(23);
             }
         }
     }
@@ -114,6 +121,20 @@
         @media screen and (max-width: 650px){
             padding: rem(18) 0;
             align-items: center;
+        }
+    }
+
+    &__close {
+        display: none;
+
+        @media screen and (max-width: 1024px) {
+            width: rem(24);
+            height: rem(24);
+            background-color: #ffffff;
+
+            &.active {
+                display: block;
+            }
         }
     }
 
@@ -149,6 +170,7 @@
         @media screen and (max-width: 650px){
             margin-left: 0;
             padding: 0;
+            margin-top: 2px;
         }
 
         &:before {
@@ -253,10 +275,13 @@
         display: none;
 
         @media screen and (max-width: 1024px){
-            display: flex;
             margin-left: auto;
             padding-bottom: 35px;
             cursor: pointer;
+
+            &.active {
+                display: flex;
+            }
         }
         @media screen and (max-width: 650px){
             padding: 0;

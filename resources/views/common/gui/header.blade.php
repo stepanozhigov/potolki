@@ -15,9 +15,9 @@
                 @endforeach
             </div>
         </div>
-        <img src="/img/gui/nav_hamburger.svg" alt="" class="hamburger header__hamburger js-toggle-menu">
+        <img src="/img/gui/nav_hamburger.svg" alt="" class="hamburger header__hamburger active js-toggle-menu">
+		<img src="/img/gui/mobile-menu-close.svg" alt="" class="header__close js-toggle-menu">
         <nav class="menu header__menu">
-            <img src="/img/gui/mobile-menu-close.svg" alt="" class="menu__close js-toggle-menu">
             <div class="menu__item menu__item_dropdown">
                 <a href="{{ route('calculator', request()->route()->city) }}" class="text menu__item js-toggle-submenu">Калькулятор</a>
                 <div class="menu__dropdown">
@@ -77,9 +77,9 @@
         <a href="https://api.whatsapp.com/send?phone={{ $city->whatsapp }}" class="text whatsapp header__whatsapp red-hoverable"><img src="/img/gui/whatsapp.svg" alt="" class="whatsapp__icon"> <span class="whatsapp__write-text">Написать в&nbsp</span>WhatsApp <span class="whatsapp__mobile-text">написать</span></a>
         <a href="tel:{{ $city->phone }}" class="text phone header__phone  red-hoverable"><img class="phone__icon" src="/img/gui/phone.svg" alt="">{{ $city->phone }} <span>заказать звонок</span></a>
         <a data-src="#popup_callback" class="text header__callback js-show">Заказать звонок</a>
-        <img src="/img/gui/nav_hamburger.svg" alt="" class="hamburger header__hamburger js-toggle-menu">
+        <img src="/img/gui/nav_hamburger.svg" alt="" class="hamburger header__hamburger active js-toggle-menu">
+		<img src="/img/gui/mobile-menu-close.svg" alt="" class="header__close js-toggle-menu">
         <nav class="menu header__menu">
-            <img src="/img/gui/mobile-menu-close.svg" alt="" class="menu__close js-toggle-menu">
             <div class="menu__item menu__item_dropdown">
                 <a href="{{ route('calculator', request()->route()->city) }}" class="text menu__item js-toggle-submenu">Калькулятор</a>
                 <div class="menu__dropdown">

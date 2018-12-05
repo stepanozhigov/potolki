@@ -21,6 +21,8 @@
             border-radius: rem(5);
             box-shadow: 0 0 0.25rem rgba(0,0,0,.08), 0 0.25rem 0.25rem rgba(0,0,0,.12), inset 0 -0.0625rem 0 rgba(0,0,0,.12);
 			padding-bottom: 0;
+			overflow-y: scroll;
+		    max-height: calc(100vh - 80px);
         }
 
 
@@ -59,19 +61,7 @@
             }
         }
     }
-    &__close {
-        display: none;
 
-        @media screen and (max-width: 1024px) {
-            display: block;
-            position: absolute;
-            top: rem(-65);
-            right: rem(-8);
-            padding: rem(20);
-            width: rem(64);
-            background-color: #ffffff;
-        }
-    }
 
     &__item {
         position: relative;

@@ -17,7 +17,19 @@ $(document).on('click', '.js-show', function(event) {
         $('body').addClass('overflowed');
     }
     
+    if ($this.data('title')) {
+        $source.find('.overtitle').html($this.data('title'))
+    }
+    else {
+        $source.find('.overtitle').html('Заказать звонок');
+    }
 
+    if ($this.data('button')) {
+        $source.find('button').html($this.data('button'))
+    }
+    else {
+        $source.find('button').html('Заказать звонок');
+    }
     
     if ($source.height() % 2 == 1 ) { 
         $source.height($source.height() + 1); 

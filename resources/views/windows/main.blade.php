@@ -41,7 +41,7 @@
                 <p class="card-title catalog-cards__title">{{ $type->name }}</p>
                 <hr class="line line_bold line_small catalog-cards__line">
                 @if($type->price)
-                    <p class="catalog-cards__price">от <span class="catalog-cards__number">{{ number_format($type->price, 0, ',', ' ') }} Р</span></p>
+                    <p class="catalog-cards__price">от <span class="catalog-cards__number">{{ number_format($type->price, 0, ',', ' ') }} ₽</span></p>
                 @endif
             </a>
         @endforeach

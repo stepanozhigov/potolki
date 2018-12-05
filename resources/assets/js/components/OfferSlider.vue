@@ -13,7 +13,7 @@
                     <button class="button form__button">Вызвать замерщика</button>
                     <p class="form__agreement subtext subtext_white">Оставляя контактную информацию, Вы соглашаетесь на обработку персональных данных</p>
                 </form>
-                <button data-src="#popup_callback" class="button main-offer__button mobile-only js-show">Вызвать замерщика</button>
+                <button data-src="#popup_callback" class="button main-offer__button mobile-only js-show" data-title="Вызов замерщика" data-button="Вызвать замерщика">Вызвать замерщика</button>
             </div>
             <div v-if="offer.type == 'link'" class="container main-offer__social">
                 <a target="_blank" class="button button_insta" :href="offer.link">Подписаться</a>

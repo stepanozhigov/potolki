@@ -173,7 +173,10 @@ $writtenElements.each((index, element) => {
 
 $('.js-toggle-menu').on('click', function (e) {
     $('.header__menu').toggleClass('menu_active');
-})
+    $('body').toggleClass('no-scroll');
+    $('.header__hamburger').toggleClass('active');
+    $('.header__close').toggleClass('active');
+});
 
 if ($(document).width() <= 1024) {
     $('.js-toggle-submenu').on('click', function (event) {

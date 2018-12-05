@@ -700,6 +700,9 @@ $writtenElements.each(function (index, element) {
 
 $('.js-toggle-menu').on('click', function (e) {
     $('.header__menu').toggleClass('menu_active');
+    $('body').toggleClass('no-scroll');
+    $('.header__hamburger').toggleClass('active');
+    $('.header__close').toggleClass('active');
 });
 
 if ($(document).width() <= 1024) {
@@ -22607,6 +22610,18 @@ $(document).on('click', '.js-show', function (event) {
         $('body').addClass('overflowed');
     }
 
+    if ($this.data('title')) {
+        $source.find('.overtitle').html($this.data('title'));
+    } else {
+        $source.find('.overtitle').html('Заказать звонок');
+    }
+
+    if ($this.data('button')) {
+        $source.find('button').html($this.data('button'));
+    } else {
+        $source.find('button').html('Заказать звонок');
+    }
+
     if ($source.height() % 2 == 1) {
         $source.height($source.height() + 1);
     }
@@ -25434,7 +25449,11 @@ var render = function() {
                         {
                           staticClass:
                             "button main-offer__button mobile-only js-show",
-                          attrs: { "data-src": "#popup_callback" }
+                          attrs: {
+                            "data-src": "#popup_callback",
+                            "data-title": "Вызов замерщика",
+                            "data-button": "Вызвать замерщика"
+                          }
                         },
                         [_vm._v("Вызвать замерщика")]
                       )

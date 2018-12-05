@@ -14,8 +14,6 @@ html, body {
 
 body {
     &.no-scroll {
-        position: fixed;
-
         height: 100vh;
         overflow: hidden;
     }
@@ -807,8 +805,9 @@ body {
     &__content {
         background: white;
         border-radius: 5px;
-        padding: 80px 70px 64px 100px;
+        padding: 80px 100px 64px 100px;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
     }
     &__item {
@@ -831,6 +830,26 @@ body {
     }
     &__img {
         margin-top: 25px;
+        width: 100%;
+    }
+
+    @media screen and (max-width: 1024px) {
+        &__item {
+            width: 31%;
+        }
+    }
+    @media screen and (max-width: 640px) {
+        background: none !important;
+        padding: 0;
+        &__content {
+            padding: 0;
+        }
+        &__item {
+            width: 100%;
+        }
+        &__img {
+            display: none;
+        }
     }
 }
 
