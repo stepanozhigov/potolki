@@ -4,7 +4,7 @@
         @include('common.gui.titles', [
             'class' =>  'container',
             'overtitle' =>  'Наша команда',
-            'title' =>  "Сотрудники компании Твой Стиль {$city->name_formatted}",
+            'title' =>  "Сотрудники компании «Твой стиль» {$city->name_formatted}",
             'intro' =>  "В нашей компании работают только опытные сотрудники,
                         которые постоянно проходят курсы повышения квалификации.
                         Весь штат работников имеет не один год практики в производстве и монтаже натяжных потолков любой сложности"
@@ -17,15 +17,17 @@
                 <a class="switcher__button">Монтажники</a>
             </div>-->
             @foreach ($employees as $employee)
-                <div class="employee employees__card">
+                <section class="employee employees__card">
                     <img src="{{ Storage::url($employee->photo) }}" alt="" class="employee__image">
-                    <p class="card-title employee__title">{{ $employee->fio }}</p>
-                    <hr class="line employee__line">
-                    <p class="subtext employee__text">{{ $employee->desc }}</p>
-                </div>
+                    <div class="employee__content">
+                        <p>Администрация</p>
+                        <h2>{{ $employee->fio }}</h2>
+                        <p>{{ $employee->desc }}</p>
+                    </div>
+                </section>
             @endforeach
-            
-            
+
+
             <a href="javascript:void(0);" class="additionally employees__additionally">
                 <p class="card-title additionally__title">Вакансии</h2>
                 <hr class="line additionally__line">

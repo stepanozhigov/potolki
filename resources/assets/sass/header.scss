@@ -2,100 +2,7 @@
     display: flex;
     flex-direction: column;
 
-    &_sticky {
-        display: flex;
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background: white;
-        z-index: 99;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        left: 0;
-        box-sizing: border-box;
-        padding: 20px 7.5%;
-        flex-direction: row;
-        align-items: center;
 
-        .menu,
-        .header__hamburger {
-            display: none;
-
-            &.active {
-                display: block;
-            }
-        }
-
-        .menu_active {
-            display: flex;
-			overflow-y: scroll;
-		    max-height: calc(100vh - 80px);
-        }
-
-        .logo {
-            margin-right: rem(15);
-        }
-
-        .header__feedbacks {
-            width: 56%;
-        }
-
-        @include below($tablet) {
-            .header__hamburger {
-                display: none;
-            }
-
-            .header__feedbacks {
-                width: 100%;
-            }
-        }
-
-        @include below($tablet-small) {
-            .logo__text {
-                display: none;
-            }
-        }
-
-        @include below($mobile) {
-            padding: rem(20) rem(10);
-
-            .header__hamburger {
-                &.active {
-                    display: block;
-                }
-            }
-
-            .logo {
-                display: none;
-            }
-
-            .header__phone {
-                order: -1;
-            }
-
-            .header__hamburger {
-                width: rem(23);
-                height: rem(20);
-                margin: 0;
-                padding: 0;
-                align-self: center;
-            }
-
-            .header__feedbacks {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-            }
-
-            .menu_active {
-                top: rem(77);
-            }
-
-            .header__close {
-                width: rem(23);
-                height: rem(23);
-            }
-        }
-    }
 
     &_hidden {
         display: none;
@@ -111,9 +18,13 @@
     }
 
     &__top {
+        border-bottom: rem(1) solid #e4e6e8;
+    }
+
+    &__top-content {
         padding: 65px 0 0 0;
         display: flex;
-        align-items: flex-end;
+        align-items: center;
 
         @media screen and (max-width: 1024px){
             padding-top: 35px;
@@ -125,18 +36,24 @@
     }
 
     &__close {
+        position: relative;
         display: none;
         width: rem(24);
-        height: rem(24);
+        height: rem(49);
         margin-left: auto;
-        background-color: #ffffff;
+        padding-bottom: rem(25);
+        z-index: 3;
 
         @media screen and (max-width: 1024px) {
-
-
             &.active {
                 display: block;
             }
+        }
+
+        @media screen and (max-width: 650px){
+            margin-left: auto;
+            height: rem(24);
+            padding: 0;
         }
     }
 
@@ -157,8 +74,7 @@
     }
 
     &__logo {
-        padding-bottom: 25px;
-
+        padding-bottom: rem(25);
         @media screen and (max-width: 650px){
             padding: 0;
         }
@@ -167,7 +83,7 @@
         margin: -2px 0 0 44px;
         position: relative;
         width: 30%;
-        padding-bottom: 35px;
+        padding-bottom: rem(25);
 
         @media screen and (max-width: 650px){
             margin-left: 0;
@@ -267,26 +183,134 @@
     &__callback {
         cursor: pointer;
         color: $red_crismon;
-        text-decoration: underline;
+        border-bottom: rem(1) dashed $red_crismon;
+        line-height: 21px;
         @media screen and (max-width: 650px){
             display: none;
         }
     }
 
     &__hamburger {
+        position: relative;
         display: none;
+        cursor: pointer;
+        margin-left: auto;
+        padding-bottom: rem(25);
+        z-index: 3;
 
         @media screen and (max-width: 1024px){
-            margin-left: auto;
-            padding-bottom: 35px;
-            cursor: pointer;
-
             &.active {
                 display: flex;
+
             }
         }
         @media screen and (max-width: 650px){
+
             padding: 0;
+        }
+    }
+
+    &_sticky {
+        display: flex;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: white;
+        z-index: 99;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        left: 0;
+        box-sizing: border-box;
+        padding: 20px 7.5%;
+        flex-direction: row;
+        align-items: center;
+
+        .menu,
+        .header__hamburger {
+            display: none;
+
+        }
+        .header__hamburger {
+            &.active {
+                margin-left: 0;
+                padding: 0;
+            }
+
+        }
+
+        .menu_active {
+            display: flex;
+			overflow-y: scroll;
+		    max-height: calc(100vh - 80px);
+        }
+
+        .logo {
+            margin-right: rem(15);
+        }
+
+        .header__feedbacks {
+            width: 56%;
+        }
+
+        @include below($tablet) {
+            .header__hamburger {
+                display: none;
+            }
+
+            .header__feedbacks {
+                width: 100%;
+            }
+        }
+
+        @include below($tablet-small) {
+            .logo__text {
+                display: none;
+            }
+        }
+
+        @include below($mobile) {
+            padding: rem(20) rem(10);
+
+            .header__hamburger {
+                &.active {
+                    display: block;
+                }
+            }
+
+            .logo {
+                display: none;
+            }
+
+            .header__phone {
+                order: -1;
+            }
+
+            .header__hamburger {
+                width: rem(23);
+                height: rem(20);
+                margin: 0;
+                padding: 0;
+                align-self: center;
+            }
+
+            .header__feedbacks {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .menu_active {
+                top: rem(65);
+                box-shadow: 0 0 rem(4) rgba(0, 0, 0, 0.24), 0 rem(4) rem(4) rgba(0, 0, 0, 0.12), inset 0 -0.0625rem 0 rgba(0, 0, 0, 0);
+            }
+
+            .header__close {
+                &.active {
+                    width: rem(23);
+                    height: rem(23);
+                    margin: 0;
+                    padding: 0;
+                }
+            }
         }
     }
 

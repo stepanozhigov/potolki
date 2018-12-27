@@ -21,7 +21,7 @@
 
                 <button class="button form__button">Вызвать замерщика</button>
 
-                <p class="form__agreement subtext subtext_white">Оставляя контактную информацию, Вы соглашаетесь на обработку персональных данных</p>
+                <p class="form__agreement subtext subtext_white">Оставляя контактную информацию, вы соглашаетесь на обработку персональных данных</p>
             </form>
             <button data-src="#popup_callback" class="button main-offer__button mobile-only js-show">Вызвать замерщика</button>
         </div>
@@ -33,7 +33,7 @@
             'title' =>  "Пластиковые окна {$city->name_formatted} от&nbspпроизводителя",
             'intro' =>  "Фабрика окон №1 {$city->name_formatted}. Посмотрите каталог и ниже рассчитайте ваш заказ <span class='intro_red'>за&nbsp5&nbspсекунд</span>"
         ])
-        
+
         @foreach ($catalogTypes as $type)
             <? if ($type->id == 5) continue ?>
             <a href="{{ route('calculator', ['city' => $city, 'type' => $type]) }}" class=" catalog-cards__item b-card is-hoverable">
@@ -53,7 +53,7 @@
 
         <div class="manufacturers__list">
             @foreach ($currentDirection->manufacturers as $manufacturer)
-                <img src="{{ Storage::url($manufacturer->logo) }}" alt="" class="manufacturers__item">    
+                <img src="{{ Storage::url($manufacturer->logo) }}" alt="" class="manufacturers__item">
             @endforeach
         </div>
 
@@ -61,22 +61,19 @@
 
     <section class="calc-promo container">
         <div class="titles calc-promo__titles">
-            <h2 class="second-title titles__second-title">Калькулятор стоимости</h2>   
-            <hr class="line titles__line">  
+            <h2 class="second-title titles__second-title">Калькулятор стоимости</h2>
+            <hr class="line titles__line">
             <p class="intro calc-promo__intro">
-                Для вашего удобства мы разработали онлайн калькулятор для предварительного расчета вашей конструкции.
-                Кликните на кнопку «Рассчитать» и выберите тип изделия для перехода в нужный раздел.
+                Специально для вашего удобства мы&nbsp;разработали онлайн калькулятор стоимости будущего окна, балкона или двери. Вы&nbsp;можете прикинуть цену не&nbsp;выходя из&nbsp;дома и&nbsp;не&nbsp;дожидаясь замерщика. Выберите тип окна или балконного блока,
+а&nbsp;так&nbsp;же размеры и&nbsp;другие параметры окна.
             </p>
-        </div>
-        
-        <div class="calc-promo__footer">
             <a href="{{ route('calculator', $city) }}" class="button calc-promo__button">Рассчитать</a>
         </div>
-
+        <img src="/img/windows/img_calculator.jpg" alt="">
     </section>
 
-    <section class="portfolio b-texture">
-        @include('common.gui.titles', ['secondTitle' => 'Наши работы'])
+    <section class="portfolio b-texture b-texture_square">
+        @include('common.gui.titles', ['secondTitle' => 'Примеры наших работ'])
         <div class="portfolio__carousel" id="portfolio__carousel" data-photos="{{ $photos }}">
             @foreach ($photos as $photo)
                 <a class="case b-card portfolio__item portfolio__item_slide">
@@ -92,9 +89,9 @@
         </div>
     </section>
 
-    <section class="reviews container b-texture">
+    <section class="reviews container b-texture b-texture_square">
         @include('common.gui.titles', ['secondTitle' => 'Отзывы наших клиентов'])
-        
+
         @foreach($reviews as $review)
             @include('common.gui.review', $review)
         @endforeach
@@ -137,38 +134,36 @@
                     <span class="link subtext article-card__link">Читать далее</span>
                 </a>
             @endforeach
-        </div>        
+        </div>
         <div class="buttons articles__buttons">
             <a href="{{ route('articles', $city) }}" class="button button_red">Читать остальные статьи</a>
         </div>
     </section>
 
-    <section class="additional container b-texture">
+    <section class="additional container">
         @include('common.gui.titles', ['secondTitle' => 'Также вас может заинтересовать'])
-        <div class="additional__item b-card">
-            <p class="card-title">Жалюзи</p>
-            <hr class="line">
-            <div class="additional__row">
-                <img src="/img/windows/additional__zhaluzi.png" alt="" class="additional__img">
-                <p class="text additional__text">
-                    Если вы хотите защититься от палящих лучей летнего солнца – лучшего решения, чем купить жалюзи на окна, и не придумать.
-                </p>
+        <div class="additional__list">
+            <div class="additional__item">
+                <div class="additional__row">
+                    <p class="card-title">Жалюзи</p>
+                    <p class="text additional__text">
+                        Если вы хотите защититься от палящих лучей летнего солнца – лучшего решения, чем купить жалюзи на окна, и не придумать.
+                    </p>
+                </div>
+                <img src="/img/windows/additional__zhaluzi.png" alt="" width="201" height="166" class="additional__img">
             </div>
-            <a href="{{ route('calculator', ['city' => $city, 'type' => 'zhaluzi']) }}" class="button button_gray additional__button">Перейти в каталог</a>
-        </div>
-        <div class="additional__item b-card">
-            <p class="card-title">Рассрочка до 3х лет</p>
-            <hr class="line">
-            <div class="additional__row">
-                <img src="/img/windows/additional__percent.png" alt="" class="additional__img">
-                <p class="text additional__text">
-                    Основной плюс рассрочки в отсутствии переплат. Итоговая сумма, прописанная в договоре рассрочки, не меняется с течением времени.
-                </p>
+            <div class="additional__item">
+                <div class="additional__row">
+                    <p class="card-title">Рассрочка до 3х лет</p>
+                    <p class="text additional__text">
+                        Основной плюс рассрочки в отсутствии переплат. Итоговая сумма, прописанная в договоре рассрочки, не меняется с течением времени.
+                    </p>
+                </div>
+                <img src="/img/windows/additional__percent.png" alt="" width="205" height="134" class="additional__img">
             </div>
-            <a href="{{ route('services', ['city' => $city, 'type' => 'credit']) }}" class="button button_gray additional__button">Подробнее</a>
         </div>
     </section>
-
+    @include('common.gui.survey')
     <section class="seo-block" @if($seoData->background_image) style="background: url({{ Storage::url($seoData->background_image) }})" @endif>
         <div class="seo-block__content container">
             <div class="seo-block__item">

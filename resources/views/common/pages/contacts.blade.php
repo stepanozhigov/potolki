@@ -5,10 +5,10 @@
 @section('content')
     @include('common.gui.header')
     @include('common.gui.titles', [
-        'title' =>  "Контакты фабрики окон \"Твой стиль\" {$city->name_formatted}"
+        'title' =>  "Контакты фабрики окон «Твой стиль» {$city->name_formatted}"
     ])
     <section class="contacts">
-        @if(count($city->offices) > 0) 
+        @if(count($city->offices) > 0)
             <div class="map contacts__map" id="map" data-placemark="/img/gui/logo.png"></div>
             <div class="contacts__offices">
                 @foreach ($city->offices as $id => $office)
@@ -21,14 +21,14 @@
                     </div>
                 @endforeach
 
-                @if(count($city->offices) > 1) 
+                @if(count($city->offices) > 1)
                     <div class="contacts__nav">
                         <img class="js-next-office contacts__arrow" src="/img/gui/arrow_top.png" alt="">
                         <img class="js-next-office contacts__arrow contacts__arrow_down" src="/img/gui/arrow_top.png" alt="">
                     </div>
                 @endif
             </div>
-        @endif 
+        @endif
 
         <div class="contacts__footer container">
             <div class="contacts__item">
@@ -63,7 +63,7 @@
                 </div>
             </div>
         </div>
-        
+
     </section>
     @include('common.gui.footer')
 @endsection

@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     cursor: pointer;
+    align-self: flex-end;
 
     @media screen and (max-width: 1024px) {
         display: none;
@@ -10,6 +11,8 @@
             position: absolute;
             display: flex;
             padding: rem(20);
+            padding-top: rem(8);
+            padding-bottom: rem(16);
             z-index: 99;
             width: rem(300);
             flex-direction: column;
@@ -20,7 +23,6 @@
             justify-content: flex-start;
             border-radius: rem(5);
             box-shadow: 0 0 0.25rem rgba(0,0,0,.08), 0 0.25rem 0.25rem rgba(0,0,0,.12), inset 0 -0.0625rem 0 rgba(0,0,0,.12);
-			padding-bottom: 0;
 			overflow-y: scroll;
 		    max-height: calc(100vh - 80px);
         }
@@ -31,6 +33,7 @@
 	@media screen and (max-width: 650px) {
 		&_active {
             top: rem(70);
+            width: calc(100% - 20px);
         }
 	}
 
@@ -65,7 +68,7 @@
 
     &__item {
         position: relative;
-        padding-bottom: 35px;
+        padding-bottom: rem(35);
 
         &_bordered {
             padding: 0 15px 13px 23px;
@@ -163,7 +166,7 @@
         }
 
         &_dropdown {
-            @media screen and (min-width: 1024px) {
+            @media screen and (min-width: 1025px) {
                 &:before {
                     content: url('/img/gui/hamburger.svg');
                     color: inherit;

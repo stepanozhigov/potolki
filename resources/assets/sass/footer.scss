@@ -101,7 +101,6 @@
                 top: calc(50% - 4px);
                 width: 12px;
                 height: 6px;
-                background-image: url('');
                 background-size: contain;
                 background-repeat: no-repeat;
                 transform: translateY(-50%);
@@ -126,7 +125,34 @@
 
     &__text {
         text-align: center;
-        color: #a7aaad;
+        color: $white;
+
+        @media screen and (max-width: 768px) {
+            margin-top: 16px;
+        }
+    }
+
+    &__survey {
+        position: relative;
+        margin: 0;
+        padding-left: rem(20);
+        color: $white;
+        font-family: $helvetica;
+        font-size: rem(14);
+        text-decoration: underline;
+
+        &::before {
+            position: absolute;
+            content: '';
+            left: 0;
+            top: 50%;
+            width: rem(14);
+            height: rem(14);
+            background-image: url('/img/star.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            transform: translateY(-50%);
+        }
 
         @media screen and (max-width: 768px) {
             margin-top: 16px;

@@ -1,6 +1,7 @@
 @empty($skipOffer)
     @include('common.footer-offer')
 @endempty
+
 <div class="popup" id="popup_callback">
     <img src="/img/gui/close.svg" alt="" class="popup__close js-close">
     @include('common.forms.callback')
@@ -10,8 +11,13 @@
     <img src="/img/gui/close.svg" alt="" class="popup__close js-close">
     @include('common.forms.credit')
 </div>
-<div class="overlay js-close"></div>
 
+<div class="popup" id="popup_survey">
+    <img src="/img/gui/close.svg" alt="" class="popup__close js-close">
+    @include('common.forms.survey')
+</div>
+<div class="overlay js-close"></div>
+</main>
 <footer role="contentinfo" class="footer">
     <div class="footer__row container">
         <div class="footer__contacts">
@@ -79,6 +85,7 @@
     <div class="footer__row footer__row_dark">
         <div class="container footer__copyright">
             <p class="subtext footer__text">&copy;  2003 – {{ date('Y') }}  ООО «Твой Стиль»  Все права защищены</p>
+			<a data-title="Оценить сайт" data-button="Отправить отзыв" data-src="#popup_survey" class="footer__survey js-showup" href="javascript:void(0);">Оценить сайт</a>
             <p class="subtext footer__text">
                 Разработка и продвижение — <a href="http://trend-p.ru" target="_blank" class="text footer__text red-hoverable" target="_blank">TREND PRO</a>
             </p>

@@ -10,7 +10,6 @@ window.$ = window.jQuery = require('jquery');
 
 window.Vue = require('vue');
 
-var Inputmask = require('inputmask');
 require('./components/popup');
 //require('./components/social');
 
@@ -32,6 +31,7 @@ Vue.component('credit-calc', require('./components/CreditCalc.vue'));
 Vue.component('dveri-calc', require('./components/DveriCalc.vue'));
 Vue.component('peregorodki-calc', require('./components/Peregorodki.vue'));
 Vue.component('zhalyuzi-calc', require('./components/Zhalyuzi.vue'));
+
 
 $(document).on('scroll', function () {
     var scrollPosition = $(window).scrollTop(),
@@ -170,6 +170,11 @@ $writtenElements.each((index, element) => {
     });
 });
 
+$('.survey__no').on('click', function () {
+    $(this).closest('.survey').addClass('survey_opened');
+});
+
+
 
 $('.js-toggle-menu').on('click', function (e) {
     $('.header__menu').toggleClass('menu_active');
@@ -281,22 +286,43 @@ $('.question__more').on('click', function(e) {
 
     $(this).prev('.question__text').toggleClass('question__text_toggled');
 
-})
+});
+
+$('.calculator__type').on('click', function () {
+    $(this).siblings().removeClass('active');
+    $(this).addClass('active');
+});
+
+
 
 let onResize = function () {
     if ($(window).width() <= 768) {
         $('.footer__title').off();
+        // $('.calculator__type').off();
         $('.footer__title').on('click', function() {
         	$(this).parent('.nav-group').toggleClass('nav-group_opened');
         });
 
+        $('.calculator__type').on('click', function () {
+            let list = $(this).prevAll('.calculator__type');
+            let thisWidth = $(this).outerWidth();
+            let width = 0;
+
+
+            for (var i = 0; i < list.length; i++) {
+                let element = list[i];
+                let elementWidth = $(element).outerWidth();
+                width += elementWidth;
+            }
+
+            let offset = thisWidth / 2 + width;
+            let value = 'calc(50% - ' + offset + 'px)';
+            $('.calculator__types').css("left", value);
+        });
+    } else {
+        $('.calculator__types').css("left", 0);
     }
 };
 
 $(document).ready(onResize);
 $(window).resize(onResize);
-
-
-var phoneMask = new Inputmask({
-    "mask": "+7 999 999-99-99"
-}).mask('[type="tel"]');

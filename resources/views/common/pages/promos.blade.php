@@ -5,8 +5,8 @@
             'class' =>  'container',
             'overtitle' =>  'Специальные предложения',
             'title' =>  "Акции на светопрозрачные конструкции {$city->name_formatted}",
-            'intro' =>  "Сотрудничайте с нами и Вас ждут выгодные акции на все конструкции от компании «Твой стиль». У нас Вы получите индивидуальную скидку при общении с персональным менеджером."
-        ])  
+            'intro' =>  "Сотрудничайте с нами и вас ждут выгодные акции на все конструкции от компании «Твой стиль». У нас вы получите индивидуальную скидку при общении с персональным менеджером."
+        ])
         <section class="promos b-texture container">
             @foreach($promos as $promo)
                 <a class="promo b-card promos__item">
@@ -17,7 +17,7 @@
                         <p class="text promo__text">{!! $promo->intro !!}</p>
                         <p class="text promo__text"><span class="text_bold">Условия акции:</span> {!! $promo->conditions !!}</p>
                         <p class="text promo__text"><span class="text_bold">Дополнительно:</span> {!! $promo->additional !!}</p>
-                    </div>                    
+                    </div>
                 </a>
             @endforeach
         </section>

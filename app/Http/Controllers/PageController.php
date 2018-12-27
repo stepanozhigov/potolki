@@ -113,6 +113,14 @@ class PageController extends Controller
         ]);
     }
 
+    public function whyus (City $city)
+    {
+        return view ('common.pages.whyus', [
+            'city'  =>  $city,
+            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
+        ]);
+    }
+
     public function questions (City $city, QuestionCategory $category = null)
     {
         return view ('common.pages.questions', [

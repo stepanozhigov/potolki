@@ -20,9 +20,9 @@ class City extends Model
         $office = $this->offices->first();
 
         if ($office) {
-            $title .= ". {$office->adres}";
+            $title .= ", {$office->adres}";
         }
         return $title;
-        
+
     }
 }

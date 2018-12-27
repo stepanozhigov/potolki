@@ -5,7 +5,7 @@
     @include('common.gui.header')
 
     <section class="service container">
-        
+
         <div class="service__heading service__heading_small">
             <div class="titles service__titles">
                 <p class="service__overtitle overtitle">бесплатно</p>

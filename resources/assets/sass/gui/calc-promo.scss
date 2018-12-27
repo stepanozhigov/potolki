@@ -1,36 +1,30 @@
 .calc-promo {
+	width: rem(780);
     display: flex;
-    flex-wrap: wrap;
     justify-content: flex-end;
-    position: relative;
-    padding: 40px 0 100px 0;
+    padding-top: rem(36);
+	margin-bottom: rem(90);
 
     @media screen and (max-width: 800px) {
         display: none;
     }
 
-    &:before {
-        content: '';
-        position: absolute;
-        top: 130px;
-        left: 0;
-        display: block;
-        width: 31.6875rem;
-        height: 21.9375rem;
-        background-image: url(/img/calculator.jpg);
-        background-repeat: no-repeat;
-        z-index: 0;
-    }
     &__titles {
-        width: 60%;
+        width: rem(780);
+		padding: 0;
         align-items: flex-start;
         z-index: 1;
     }
-   
+
     &__intro {
         margin-top: 30px;
-        text-align: start;
-        z-index: 1;
+		margin-bottom: rem(48);
+		color: #808890;
+		font-family: $helvetica;
+		font-size: rem(16);
+		font-weight: 300;
+		line-height: 22px;
+		text-align: left;
     }
 
     &__footer {

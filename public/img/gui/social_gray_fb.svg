@@ -1,1 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40"><defs><path id="yv6ba" d="M270 1837a20 20 0 1 1 40 0 20 20 0 0 1-40 0zm21.97 11.56v-10.7h3.6l.57-4.36h-4.17v-3.04c0-.85.69-1.53 1.54-1.53h2.7V1825h-3.77a4.83 4.83 0 0 0-4.83 4.83v3.67H284v4.37h3.6v10.7z"/></defs><g><g transform="translate(-270 -1817)"><use fill="#a7aaad" xlink:href="#yv6ba"/></g></g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>social_gray_fb</title>
+    <desc>Created with Sketch.</desc>
+    <g id="GUI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-722.000000, -1511.000000)" fill="#BABEC2" id="social_gray_fb">
+            <path d="M737,1541 C728.715729,1541 722,1534.28427 722,1526 C722,1517.71573 728.715729,1511 737,1511 C745.284271,1511 752,1517.71573 752,1526 C752,1534.28427 745.284271,1541 737,1541 Z M735.204286,1534.67294 L738.479877,1534.67294 L738.479877,1526.64905 L741.171446,1526.64905 L741.603092,1523.37346 L738.479877,1523.37346 L738.479877,1521.09659 C738.479877,1520.46088 738.995254,1519.9455 739.630964,1519.9455 L741.653914,1519.9455 L741.653914,1517 L738.826789,1517 C736.826128,1517 735.204286,1518.62184 735.204286,1520.6225 L735.204286,1523.37342 L732.5,1523.37342 L732.5,1526.64901 L735.204286,1526.64901 L735.204286,1534.67294 Z"></path>
+        </g>
+    </g>
+</svg>

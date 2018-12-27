@@ -12,9 +12,9 @@
 
     <section class="questions container b-texture">
         <div class="questions__filter">
-            <a href="{{ route('questions', request()->route()->city) }}" class="tag questions__tag {{ $currentCategory ? '':'tag_active' }}">Все</a>    
+            <a href="{{ route('questions', request()->route()->city) }}" class="tag questions__tag {{ $currentCategory ? '':'tag_active' }}">Все</a>
             @foreach ($categories as $category)
-                <a href="{{ route('questions', ['city' => request()->route()->city, 'code' => $category->code]) }}" class="tag questions__tag {{ $category->name == ($currentCategory->name ?? null) ? 'tag_active':'' }}">{{ $category->name }}</a>    
+                <a href="{{ route('questions', ['city' => request()->route()->city, 'code' => $category->code]) }}" class="tag questions__tag {{ $category->name == ($currentCategory->name ?? null) ? 'tag_active':'' }}">{{ $category->name }}</a>
             @endforeach
         </div>
         <div class="questions__content" id="questions-ajax-content">
@@ -22,11 +22,11 @@
                 <div class="questions__card question b-card">
                     <p class="second-title question__title">{{ $question->text }}</p>
                     <hr class="line">
-                    <p class="text question__text">{{ $question->answer }}</p> 
+                    <p class="text question__text">{{ $question->answer }}</p>
                     @if (strlen($question->answer) > 200)
-                        <span class="question__more text" data-text="Свернуть описание">Читать далее</span>
+                        <span class="question__more text" data-text="Свернуть описание">Подробнее</span>
                     @endif
-                </div>    
+                </div>
             @endforeach
         </div>
     </section>

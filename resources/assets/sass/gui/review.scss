@@ -4,7 +4,7 @@
 .review {
     display: flex;
     flex-direction: column;
-    cursor: pointer;    
+    cursor: pointer;
 
     &__body {
         z-index: 2;
@@ -21,6 +21,7 @@
 
     &__line {
         margin-bottom: 5px;
+		width: 120px;
     }
 
     &__date {
@@ -97,6 +98,11 @@
     flex-direction: column;
     align-items: flex-end;
 
+	@include below($mobile) {
+		padding: 20px;
+		align-items: flex-start;
+	}
+
     &_manager {
         background-color: #f3f5f7;
         align-items: flex-start;
@@ -130,11 +136,21 @@
         display: flex;
         margin: 30px auto 0 0;
         align-items: center;
+
+		@include below($mobile) {
+			flex-wrap: wrap;
+		}
     }
 
     &__socials {
         margin-left: 20px;
         width: 45%;
+
+		@include below($mobile) {
+			width: 100%;
+			margin: 0;
+			margin-top: 20px;
+		}
     }
 
     &__controls {
@@ -166,7 +182,7 @@
         font-size: 14px;
         color: #50555f;
         margin: 0;
-    }  
+    }
 
     &__position {
         font-size: 14px;
@@ -174,5 +190,5 @@
         font-weight: 300;
         margin: 0;
         text-align: end;
-    }  
+    }
 }

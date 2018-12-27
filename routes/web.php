@@ -56,4 +56,6 @@ Route::prefix('/{city}')->group(function () {
     Route::get('/articles', 'PageController@articles')->name('articles');
 
     Route::get('/articles/{article}', 'PageController@article')->name('article');
+
+    Route::get('/whyus', 'PageController@whyus')->name('whyus');
 });

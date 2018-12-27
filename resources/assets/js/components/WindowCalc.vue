@@ -1,71 +1,87 @@
 <template>
-
-    <div class="calculator__inner">
-        <div class="calculator__types">
-            <label v-for="type in types" class="radio">
-                <input class="radio__input"  type="radio" name="type" :value="type.code" v-model="currentType">
-                <img v-if="currentType == type.code" class="calculator__type" :src="publicPath + type.form_img_selected" alt="">
-                <img v-else class="calculator__type" :src="publicPath + type.form_img" alt="">
-                <img v-if="currentType == type.code" class="calculator__active" :src="'/img/gui/active_calc.svg'" alt="">
-            </label>
-        </div>
-        <transition name="slide" mode="out-in">
-        <div v-for="type in types" :key="type.id" v-if="currentType == type.code"class="calculator__content">
-            <div class="calculator__area">
-                <p class="calculator__title">Укажите размеры окна</p>
-                <div class="calculator__img-wrap">
-                    <img class="calculator__img" ref="calculator__img" :src="publicPath + type.img" alt="">
-                    <div class="calculator__widths">
-                        <hr class="calculator__line">
-                        <label v-for="index in type.width_count" class="calculator__width text-input">
-                            <input type="text" v-model.number="arrWidth[index]" class="input text-input__value" name="width[]">
-                            <span class="text-input__label text">мм</span>
-                            <p class="calculator__width-desc">Ширина окна</p>
-                        </label>
-                    </div>
-                </div>
-                <div class="calculator__heights">
-                    <hr class="calculator__line calculator__line_vert">
-                    <div v-for="index in type.height_count" class="calculator__height text-input">
-                        <input type="text" v-model.number="arrHeight[index]" class="input text-input__value" name="height[]">
-                        <span class="text-input__label text">мм</span>
-                        <p class="calculator__height-desc">Высота окна</p>
-                    </div>
-                </div>
-
-
-
-            </div>
-            <div class="calculator__controls">
-                <p class="calculator__title">Установка</p>
-                <label class="radio subtext">
-                    <input name="install" type="radio" v-model="install" value=500 class="radio__input">
-                    <span class=" radio__mark"></span>
-                    С установкой
-                </label>
-                <label class="radio subtext">
-                    <input name="install" type="radio" v-model="install" value=0 checked class="radio__input">
-                    <span class="radio__mark"></span>
-                    Без установки
-                </label>
-            </div>
-            <form action="" class="form calculator__result calculator-result">
-                <div class="calculator-result__head">
-                    <p class="text text_white">Расчетная цена</p>
-                    <span class="calculator-result__summ">{{ summ }} Р</span>
-                </div>
-
-                <div class="calculator-result__body">
-                    <input class="calculator-result__input" type="text" placeholder="Введите ваше имя">
-                    <input class="calculator-result__input" type="tel" placeholder="Введите ваш телефон">
-                    <button class="button button_gray calculator-result__button">Заказать</button>
-                </div>
-
-                <p class="subtext calculator-result__attention">Внимание! Стоимость является примерной. Более точная оценка требует выезда замерщика</p>
-            </form>
-        </div>
-        </transition>
+<div class="calculator__inner">
+    <div class="calculator__types">
+        <label class="calculator__type active">
+            <input class="calculator__type-input"  type="radio" name="type">
+            <img class="calculator__type-image" src="/img/windows/calculator/windows/win-calc_01.svg" alt="">
+            <p class="calculator__type-name">Трёхстворчатое <br> окно</p>
+        </label>
+        <label class="calculator__type">
+            <input class="calculator__type-input"  type="radio" name="type">
+            <img class="calculator__type-image" src="/img/windows/calculator/windows/win-calc_02.svg" alt="">
+            <p class="calculator__type-name">Двустворчатое <br> окно</p>
+        </label>
+        <label class="calculator__type">
+            <input class="calculator__type-input"  type="radio" name="type">
+            <img class="calculator__type-image" src="/img/windows/calculator/windows/win-calc_03.svg" alt="">
+            <p class="calculator__type-name">Одностворчатое <br> окно</p>
+        </label>
+        <label class="calculator__type">
+            <input class="calculator__type-input"  type="radio" name="type">
+            <img class="calculator__type-image" src="/img/windows/calculator/windows/win-calc_04.svg" alt="">
+            <p class="calculator__type-name">Балконный блок <br> двустворчатый</p>
+        </label>
+        <label class="calculator__type">
+            <input class="calculator__type-input"  type="radio" name="type">
+            <img class="calculator__type-image" src="/img/windows/calculator/windows/win-calc_05.svg" alt="">
+            <p class="calculator__type-name">Балконный блок <br> одностворчатый</p>
+        </label>
     </div>
+    <div class="calculator__content">
+        <div class="calculator__main">
+            <img class="calculator__image" src="/img/windows/calculator/windows/win-calc-big_01.png" alt="">
+            <div class="calculator__width">
+                <input type="number" class="calculator__input" name="height[]">
+                <span class="calculator__input-unit">мм</span>
+                <span class="calculator__input-val">2 400</span>
+            </div>
+            <div class="calculator__height">
+                <input type="number" class="calculator__input" name="height[]">
+                <span class="calculator__input-unit">мм</span>
+                <span class="calculator__input-val">2 400</span>
+            </div>
+        </div>
+        <div class="calculator__info">
+            <div class="calculator__params">
+                <h3 class="calculator__title">Параметры окна</h3>
+                <p class="calculator__text">Указаны стандартные размеры оконных рам. Введите свои параметры для расчёта стоимости.</p>
+                <div class="calculator__size">
+                    <p class="calculator__size-name">Ширина</p>
+                    <div class="calculator__width">
+                        <input type="number" pattern="\d*" class="calculator__input" name="height[]">
+                        <span class="calculator__input-unit">мм</span>
+                    </div>
+                </div>
+                <div class="calculator__size">
+                <p class="calculator__size-name">Высота</p>
+                    <div class="calculator__height">
+                        <input type="number" pattern="\d*" class="calculator__input" name="height[]">
+                        <span class="calculator__input-unit">мм</span>
+                    </div>
+                </div>
+            </div>
+            <div class="calculator__service">
+                <h3 class="calculator__title">Сервис</h3>
+                <label class="checkbox">
+                    <input name="shipping" type="checkbox" class="checkbox__input">
+                    <span class=" checkbox__mark"></span>
+                     Доставка
+                </label>
+                <label class="checkbox">
+                    <input name="install" type="checkbox" class="checkbox__input">
+                    <span class=" checkbox__mark"></span>
+                    Установка
+                </label>
+            </div>
+            <div class="calculator__price">
+                <h3 class="calculator__title">Стоимость</h3>
+                <p class="calculator__text">Является примерной. Точная оценка и расчёт нетиповых конфигураций требует бесплатного выезда замерщика.</p>
+                <p class="calculator__summ">5 800 ₽</p>
+                <button class="calculator__button js-show" data-src="#popup_callback" data-title="Вызов замерщика" data-button="Вызвать замерщика">Вызвать замерщика</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 </template>

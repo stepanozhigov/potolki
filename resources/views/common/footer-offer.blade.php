@@ -6,7 +6,7 @@
             <input class="input form__input form__input_horiz" type="text" placeholder="Ваше имя">
             <input class="input form__input form__input_horiz" type="tel" placeholder="Ваш телефон">
             <button class="button form__button">Вызвать замерщика</button>
-            <p class="subtext subtext_center form__agreement">Оставляя контактную информацию, Вы соглашаетесь на обработку персональных данных</p>
+            <p class="subtext subtext_center form__agreement">Оставляя контактную информацию, вы соглашаетесь на обработку персональных данных</p>
         </form>
     </div>
 </section>

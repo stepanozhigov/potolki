@@ -1,1154 +1,492 @@
+@import 'mixins';
+@import 'variables';
+
 .calculator {
-    padding: 0;
-    overflow: hidden;
+    position: relative;
+    padding-bottom: rem(65);
+
+    &:before {
+        content: '';
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 50%;
+        position: absolute;
+        width: rem(780);
+        height: 100%;
+        border-radius: .3125rem;
+        transform: translateX(-50%);
+        background-image: url(/img/gui/square-bg--2x.jpg);
+    }
+
+    &__inner {
+        position: relative;
+        z-index: 2;
+        @extend .container;
+    }
 
     &__types {
-
         display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        padding-bottom: 30px;
-        border-bottom: 1px solid $red_crismon;
+        position: relative;
+        bottom: rem(-1);
+        z-index: 2;
+        transition: left .3s;
 
-		@include below($mobile) {
-            justify-content: center;
+        @include below($mobile) {
+            left: calc(50% - 67.5px);
         }
     }
 
     &__type {
-        cursor: pointer;
         position: relative;
-    }
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 20%;
+        padding: 0 rem(25);
+        padding-top: rem(24);
+        padding-bottom: rem(20);
+        border-radius: rem(5) rem(5) 0 0;
+        border: rem(1) solid transparent;
+        border-bottom: none;
+        cursor: pointer;
 
-    &__active {
-        position: absolute;
-        bottom: -31px;
-        left: 50%;
-        transform: translateX(-50%);
+        @include below($tablet) {
+            padding: 0 rem(15);
+            padding-top: rem(24);
+            padding-bottom: rem(15);
+        }
 
-		@include below($mobile) {
+        @include below($mobile) {
+            width: auto;
+
+            &:not(.active) {
+                opacity: .6;
+            }
+        }
+
+        &-image {
+            margin-bottom: rem(15);
+
+            @include below($tablet) {
+                margin-bottom: rem(8);
+            }
+        }
+
+        &-input {
             display: none;
         }
-    }
 
-    &__inner {
-        padding: 65px 0px;
+        &-name {
+            margin: 0;
+            color: #50555a;
+            font-family: $futura;
+            font-size: rem(16);
+            font-weight: 300;
+            line-height: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+
+            @include below($tablet) {
+                font-size: rem(12);
+            }
+        }
+
+
+        &.active {
+            background-color: $white;
+            border: rem(1) solid #d0d2d4;
+            border-bottom: none;
+        }
+
+        &:first-of-type {
+            &.active {
+                &::before {
+                    position: absolute;
+                    content: '';
+
+                    @include below($mobile) {
+                        display: none;
+                    }
+                }
+
+                &::before {
+                    left: rem(-1);
+                    bottom: rem(-3);
+                    width: rem(5);
+                    height: rem(5);
+                    background-color: $white;
+                    border-left: rem(1) solid #d0d2d4;
+                }
+            }
+        }
+        &:last-of-type {
+            &.active {
+                &::after {
+                    position: absolute;
+                    content: '';
+
+                    @include below($mobile) {
+                        display: none;
+                    }
+                }
+                &::after {
+                    right: rem(-1);
+                    bottom: rem(-3);
+                    width: rem(5);
+                    height: rem(5);
+                    background-color: $white;
+                    border-right: rem(1) solid #d0d2d4;
+                }
+            }
+        }
     }
 
     &__content {
-
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        flex-basis: 100%;
-        background: $white;
-        padding: 55px 50px 55px 100px;
-
-		@include below($tablet) {
-			padding: 0;
-			padding-top: rem(80);
-            flex-direction: column;
-        }
-
-        @include below($mobile) {
-            padding: 0;
-            padding-top: rem(59);
-            flex-direction: column;
-        }
-    }
-
-    &__title {
-        display: none;
-
-        color: #aaaaaa;
-        font-family: $helvetica;
-        font-size: rem(16);
-        font-weight: 400;
-
-        @include below($mobile) {
-            position: absolute;
-            top: rem(-25);
-            margin: 0;
-            left: 0;
-            display: block;
-        }
-    }
-
-    &__controls {
-        flex-basis: 20%;
-
-		@include below($tablet) {
-			display: flex;
-            flex-direction: column;
-			margin-bottom: rem(60);
-        }
-
-        @include below($mobile) {
-			width: 100%;
-            position: relative;
-            align-items: flex-start;
-            padding: rem(10);
-
-            &::after {
-                position: absolute;
-                content: '';
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: rem(1);
-                border-top: 1px solid #c8c8c8;
-            }
-
-            &::before {
-                position: absolute;
-                content: '';
-                top: 0;
-                left: 0;
-                width: rem(10);
-                height: 100%;
-                border-left: 1px solid #c8c8c8;
-                border-bottom: 1px solid #c8c8c8;
-            }
-        }
-
-        .radio {
-
-			@include below($tablet) {
-				&:not(:last-of-type) {
-                    margin-bottom: rem(15);
-                }
-	        }
-        }
-    }
-
-    &__result {
-        flex-basis: 20%;
-    }
-
-    &__area {
-        position: relative;
-        display: flex;
-        flex-wrap: wrap;
-        width: 58%;
         justify-content: center;
+        align-items: flex-start;
+        background-color: $white;
+        padding: rem(55);
+        border: rem(1) solid #d0d2d4;
+        border-radius: rem(5);
 
-		@include below($tablet) {
-            width: 100%;
-			justify-content: center;
-			margin-bottom: rem(60);
+        @include below($tablet) {
+            padding: rem(55) rem(26);
+            padding-bottom: rem(356);
         }
 
         @include below($mobile) {
-			padding-left: 0;
-            width: 100%;
             flex-direction: column;
-            padding: rem(10);
-            margin-bottom: rem(60);
-
-            &::after {
-                position: absolute;
-                content: '';
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: rem(1);
-                border-top: 2px solid #c8c8c8;
-            }
-
-            &::before {
-                position: absolute;
-                content: '';
-                top: 0;
-                left: 0;
-                width: rem(10);
-                height: 100%;
-                border-left: 2px solid #c8c8c8;
-                border-bottom: 2px solid #c8c8c8;
-            }
+            padding: rem(35) rem(16);
+            padding-bottom: rem(65);
         }
     }
 
-    &__img-wrap {
-        display: flex;
-        flex-direction: column;
-
-		@include below($tablet) {
-            margin-left: 0;
-        }
-
-        @include below($mobile) {
-            margin-left: 0;
-            margin-bottom: rem(10);
-        }
-    }
-
-    &__img {
-        @include below($mobile) {
-            display: none;
-        }
-    }
-
-    &__heights {
+    &__main {
         position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin-left: 15px;
-        padding-bottom: 57px;
+        padding-right: rem(80);
+        padding-bottom: rem(80);
+        margin-right: rem(80);
+
+        @include below($tablet) {
+            padding-right: rem(60);
+            padding-bottom: rem(60);
+            margin-right: rem(40);
+        }
 
         @include below($mobile) {
-            margin: 0;
-            padding: 0;
+            width: 100%;
+            padding-right: rem(30);
+            padding-bottom: rem(30);
+            margin-right: 0;
+            margin-bottom: rem(31);
         }
-    }
-
-    &__line {
-        position: absolute;
-        top: 12px;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        margin: 0;
-        background-color: #e3e3e3;
-        overflow: visible;
-        border: none;
 
         &::before,
-        &::after  {
+        &::after {
             position: absolute;
             content: '';
-            width: 2px;
-            height: 12px;
-            background-color: #e3e3e3;
+            background-color: #babec2;
         }
 
         &::before {
-            top: -12px;
+            width: calc(100% - 80px);
+            height: rem(1);
             left: 0;
+            bottom: rem(24);
+
+            @include below($tablet) {
+                width: calc(100% - 60px);
+            }
+
+            @include below($mobile) {
+                bottom: rem(10);
+                width: calc(100% - 30px);
+            }
         }
 
         &::after {
-            top: -12px;
-            right: 0;
-        }
-
-        &_vert {
+            height: calc(100% - 80px);
+            width: rem(1);
+            right: rem(24);
             top: 0;
-            left: 12px;
-            width: 2px;
-            height: calc(100% - 57px);
-            margin: 0;
-            background-color: #e3e3e3;
-            overflow: visible;
-            border: none;
 
-            &::before,
-            &::after  {
-                position: absolute;
-                content: '';
-                width: 12px;
-                height: 2px;
-                background-color: #e3e3e3;
+            @include below($tablet) {
+                height: calc(100% - 60px);
             }
 
-            &::before {
-                top: 0;
-                left: -12px;
-            }
-
-            &::after {
-                bottom: 0;
-                top: auto;
-                left: -12px;
+            @include below($mobile) {
+                right: rem(10);
+                height: calc(100% - 30px);
             }
         }
 
-        &_depth {
-            width: 100%;
-            transform: skew(45deg);
-        }
-
-        @include below($mobile) {
-            display: none;
+        .calculator__input {
+            @include below($mobile) {
+                display: none;
+            }
         }
     }
 
-    &__widths {
-        position: relative;
+    &__width,
+    &__height {
+        position: absolute;
+        width: rem(112);
+        height: rem(48);
         display: flex;
         justify-content: center;
-        width: 100%;
-        margin: 0 auto;
-        margin-top: 15px;
+        z-index: 2;
+
 
         @include below($mobile) {
-            margin: 0;
-            align-items: flex-start;
-            flex-direction: column;
-        }
-    }
-
-    &__depth-desc,
-    &__height-desc {
-        display: none;
-        margin: 0;
-        color: #6b6b6b;
-        font-family: $helvetica;
-        font-size: rem(18);
-        font-weight: 300;
-
-        @include below($mobile) {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            left: rem(120);
-            display: block;
-            width: calc(100vw - 130px);
-        }
-    }
-
-    &__width-desc {
-        display: none;
-        margin: 0;
-        color: #6b6b6b;
-        font-family: $helvetica;
-        font-size: rem(18);
-        font-weight: 300;
-
-        @include below($mobile) {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            left: rem(120);
-            display: block;
-            width: calc(100vw - 130px);
+            width: rem(75);
+            height: rem(20);
+            background-color: $white;
         }
     }
 
     &__width {
-        width: rem(103);
-        padding: 0;
-        flex-shrink: 0;
-
-		&:not(:last-of-type) {
-			margin-right: rem(36);
-		}
-
-        input {
-            padding-right: 32px
-        }
+        left: calc(50% - 40px);
+        transform: translateX(-50%);
+        bottom: 0;
 
         @include below($mobile) {
-            &:not(:last-of-type) {
-                margin-bottom: rem(10);
-            }
+            left: calc(50% - 15px);
+            bottom: 0;
         }
     }
-    &__depth {
-        position: absolute;
-        top: rem(-20);
-        left: rem(25);
 
-        width: rem(103);
-        padding: 0;
-        flex-shrink: 0;
-
-        input {
-            padding-right: 32px
-        }
-
-        @include below($mobile) {
-            &:not(:last-of-type) {
-                margin-bottom: rem(10);
-            }
-        }
-    }
     &__height {
-        width: rem(103);
-        padding: 0;
-        flex-shrink: 0;
+        transform: rotate(-90deg);
+        right: rem(-32);
+        top: calc(50% - 56px);
 
-		&:not(:last-of-type) {
-			margin-bottom: rem(135);
-		}
+        @include below($mobile) {
+            top: calc(50% - 15px);
+            right: rem(-27);
+        }
+    }
 
-        input {
-            padding-right: 32px
+    &__input {
+        position: relative;
+        @extend .input;
+        width: 100%;
+        color: #808890;
+        font-family: $helvetica;
+        font-size: rem(18);
+        font-weight: 300;
+
+        &-unit {
+            position: absolute;
+            top: 50%;
+            right: rem(10);
+            width: rem(30);
+            height: rem(20);
+            color: #808890;
+            font-family: $helvetica;
+            font-size: rem(18);
+            font-weight: 300;
+            transform: translateY(-50%);
+            background-color: $white;
+
+            @include below($mobile) {
+                height: auto;
+                width: auto;
+                font-size: rem(14);
+                background-color: transparent;
+            }
+        }
+
+        &-val {
+            display: none;
+
+            @include below($mobile) {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                padding-right: rem(28);
+                padding-left: rem(5);
+                color: #808890;
+                font-family: $helvetica;
+                font-size: rem(14);
+                font-weight: 300;
+            }
+        }
+    }
+
+    &__image {
+        box-shadow: 0 0 32px rgba(0, 0, 0, 0.16), 0 0 12px rgba(0, 0, 0, 0.12);
+
+        @include below($tablet) {
+            max-width: rem(360);
         }
 
         @include below($mobile) {
-            &:not(:last-of-type) {
-                margin-bottom: rem(10);
-            }
+            width: 100%;
+            max-width: none;
+            box-shadow: 0 0 32px rgba(0, 0, 0, 0.12), 0 0 12px rgba(0, 0, 0, 0.08);
         }
     }
 
-    &__depths {
-        position: absolute;
-        bottom: rem(10);
-        z-index: 2;
-        right: rem(-149);
-        display: flex;
-        width: rem(120);
-        height: rem(45);
-    }
-
-    &_balcony {
-
-        .calculator__area {
-            width: auto;
-
-			@include below($mobile) {
-				width: 100%;
-			}
-        }
-
-        .calculator__line {
-            width: calc(100% - 140px);
-            left: 50%;
-            top: rem(20);
-            transform: translateX(-50%);
-            background-color: #ffffff;
-
-            &::before,
-            &::after {
-                background-color: #ffffff;
-            }
-
-            &_vert {
-                height: calc(100% - 110px);
-                top: rem(55);
-                left: 12px;
-                width: 2px;
-                background-color: #e3e3e3;
-
-                &::before,
-                &::after {
-                    background-color: #e3e3e3;
-                }
-            }
-
-            &_depth {
-                width: rem(2);
-                height: 100%;
-                left: rem(20);
-                top: 0;
-                background-color: #e3e3e3;
-                transform: skew(45deg);
-
-                &::after {
-                    width: rem(13);
-                    left: rem(-13);
-                    bottom: 0;
-                    top: auto;
-                    height: rem(2);
-                    background-color: #e3e3e3;
-                }
-
-                &::before {
-                    display: none;
-                }
-            }
-        }
-
-        .calculator__depths,
-		.calculator__depth {
-			@include below($mobile) {
-				left: 0;
-				top: 0;
-				right: auto;
-				position: relative;
-			}
-        }
-
-        .calculator__img-wrap {
-            position: relative;
-        }
-
-        .calculator__widths {
-            margin: 0;
-            position: absolute;
-            bottom: rem(10);
-
-			@include below($mobile) {
-				position: static;
-				margin-bottom: rem(10);
-			}
-        }
-
-        .calculator__heights {
-            padding: 0;
-        }
-
-		.calculator__additional-item:not(:last-of-type) {
-			@include below($mobile) {
-				margin-bottom: rem(15);
-			}
-		}
-
-		.calculator__additional-finishing-item {
-			@include below($mobile) {
-				flex-direction: column;
-			    align-items: flex-start;
-
-				&:not(:last-of-type) {
-					margin-bottom: rem(25);
-				}
-
-				.calculator__additional-name,
-				.calculator__additional-area {
-					margin-bottom: rem(10);
-				}
-			}
-		}
-    }
-
-    &__additional {
-	    display: flex;
-	    align-items: flex-start;
-	    justify-content: space-between;
-	    width: 100%;
-	    margin-bottom: rem(60);
-
-	    @include below($mobile) {
-	        display: flex;
-	        flex-direction: column;
-	        align-items: center;
-	        width: rem(213);
-	        width: 100%;
-	        padding: 0;
-	        padding-left: 0;
-	        margin-right: 0;
-	        margin-bottom: 0;
-	    }
-
-	    &-block {
-	        padding: rem(10) rem(20);
-	        padding-right: 0;
-
-	        @extend .lines_vertical_left;
-	        @include below($mobile) {
-	            width: 100%;
-	            margin-bottom: rem(60);
-	        }
-
-	        &:after {
-	            left: 0;
-
-	            width: rem(12);
-	        }
-
-	        .additionalBlockBalconies__item {
-	            &:not(:last-of-type) {
-	                margin-bottom: rem(8);
-	            }
-	        }
-	    }
-
-	    &-title {
-	        position: absolute;
-	        top: rem(-24);
-	        left: 0;
-
-	        display: none;
-	        margin: 0;
-
-	        color: $grey_chalice;
-
-	        @include below($mobile) {
-	            display: block;
-	        }
-	    }
-
-	    &-input {
-	        @extend .radiobutton;
-	        @extend .radiobutton_small;
-
-	        &_square {
-	            @extend .radiobutton_square;
-	        }
-
-	        &_round {
-	            @extend .radiobutton_round;
-	        }
-	    }
-
-	    &-name {
-	        display: flex;
-	        align-items: center;
-
-	        font-size: .75rem;
-	        font-size: rem(12);
-
-	        @extend .text;
-	        @include below($mobile) {
-	            font-size: rem(18);
-	        }
-
-	        p {
-	            display: flex;
-	            flex-direction: column;
-
-	            span {
-	                color: $grey_chalice;
-	            }
-	        }
-	    }
-
-	    &-finishing-item {
-	        display: flex;
-	        align-items: center;
-	        width: rem(250);
-	        margin-bottom: rem(5);
-
-	        @include below($mobile) {
-	            justify-content: space-between;
-	            width: 100%;
-	        }
-
-	        &:nth-of-type(odd) {
-	            margin-right: auto;
-	        }
-
-	        p {
-	            margin: 0;
-	            margin-right: auto;
-	        }
-	    }
-
-	    &-finishing {
-	        display: flex;
-	        flex-wrap: wrap;
-	        max-width: rem(550);
-	        margin-bottom: rem(-5);
-
-	        @include below($tablet-small) {
-	            flex-direction: column;
-	        }
-	        @include below($mobile) {
-	            margin-bottom: 0;
-	        }
-	    }
-
-	    &-area {
-	        display: flex;
-	        align-items: center;
-	        margin-right: rem(15);
-
-	        p {
-	            margin: 0;
-	            margin-right: rem(5);
-
-	            font-size: rem(12);
-	            color: $grey_abbey;
-
-	            @extend .text;
-	            @include below($mobile) {
-	                font-size: rem(18);
-	            }
-	        }
-
-	        input {
-	            width: rem(32);
-	            height: rem(20);
-	            padding: rem(2) rem(8);
-
-	            font-size: rem(12);
-
-	            border: rem(1) solid #c8c8c8;
-	            border-radius: rem(5);
-	            outline: none;
-
-	            -moz-appearance: textfield;
-
-	            @include below($mobile) {
-	                width: rem(65);
-	                height: rem(40);
-	            }
-
-	            &::-webkit-outer-spin-button,
-	            &::-webkit-inner-spin-button {
-	                -webkit-appearance: none;
-	            }
-	        }
-	    }
-
-	    &-select-wrap {
-	        @extend .arrow;
-	        @extend .arrow_vertical;
-
-	        &:before,
-	        &:after {
-	            top: rem(5);
-	            right: 0;
-	            left: auto;
-	        }
-	    }
-
-	    &-image {
-	        &:nth-of-type(1) {
-	            width: rem(59);
-	            height: rem(79);
-	        }
-
-	        &:nth-of-type(2) {
-	            width: rem(54);
-	            height: rem(73);
-	        }
-	    }
-
-	    &-select {
-	        padding: 0;
-	        padding-right: rem(25);
-	        margin: 0;
-
-	        font-size: rem(12);
-	        text-decoration: underline;
-
-	        border: none;
-	        cursor: pointer;
-	        outline: none;
-	        background-color: transparent;
-
-	        -webkit-appearance: none;
-	           -moz-appearance: none;
-	                appearance: none;
-
-	        @extend .text;
-	        @include below($mobile) {
-	            font-size: rem(18);
-	        }
-
-	        &::-ms-expand {
-	            display: none;
-	        }
-	    }
-	}
-
-	&_dveri {
-        .calculator__area {
-            width: auto;
-
-			@include below($mobile) {
-				width: 100%;
-				margin-bottom: rem(20);
-			}
-        }
-
-		.calculator__additional-item:not(:last-of-type) {
-			@include below($mobile) {
-				margin-bottom: rem(15);
-			}
-		}
-
-        .calculator__additional {
-            flex-direction: column;
-            width: auto;
-            margin-bottom: 0;
-
-
-            @include below($tablet) {
-                padding-left: rem(85);
-                margin-right: 0;
-                margin-bottom: rem(40);
-            }
-            @include below($tablet-small) {
-                display: flex;
-                flex-direction: column;
-                flex-wrap: wrap;
-                align-items: center;
-                width: 100%;
-                padding: 0;
-                margin-bottom: rem(40);
-            }
-
-            &-block {
-                padding: rem(10) rem(20);
-
-                @extend .lines_vertical_left;
-                @include below($tablet-small) {
-                    width: rem(225);
-                }
-                @include below($mobile) {
-                    width: 100%;
-                }
-
-                &:not(:last-of-type) {
-                    margin-bottom: rem(20);
-                }
-
-                &:after {
-                    left: 0;
-
-                    width: rem(12);
-                }
-
-                .additionalBlockDoor__item {
-                    &:not(:last-of-type) {
-                        margin-bottom: rem(8);
-                    }
-                }
-            }
-
-            &-input {
-                @extend .radiobutton;
-                @extend .radiobutton_small;
-
-                &_square {
-                    @extend .radiobutton_square;
-                }
-
-                &_round {
-                    @extend .radiobutton_round;
-                }
-            }
-
-            &-name {
-                display: block;
-
-                font-size: rem(12);
-
-                @extend .text;
-                @include below($mobile) {
-                    font-size: rem(18);
-                }
-            }
-        }
-	}
-
-	&_peregorodki {
-
-        .calculator__types {
-            justify-content: space-evenly;
-        }
-
-        .calculator__area {
-            width: auto;
-
-			@include below($mobile) {
-				width: 100%;
-				margin-bottom: rem(20);
-			}
-        }
-
-		.calculator__additional-item:not(:last-of-type) {
-			@include below($mobile) {
-				margin-bottom: rem(15);
-			}
-		}
-
-        .calculator__additional {
-            flex-direction: column;
-            width: auto;
-            margin-bottom: 0;
-
-
-            @include below($tablet) {
-                padding-left: rem(85);
-                margin-right: 0;
-                margin-bottom: rem(40);
-            }
-            @include below($tablet-small) {
-                display: flex;
-                flex-direction: column;
-                flex-wrap: wrap;
-                align-items: center;
-                width: 100%;
-                padding: 0;
-                margin-bottom: rem(40);
-            }
-
-            &-block {
-                padding: rem(10) rem(20);
-
-                @extend .lines_vertical_left;
-                @include below($tablet-small) {
-                    width: rem(225);
-                }
-                @include below($mobile) {
-                    width: 100%;
-                }
-
-                &:not(:last-of-type) {
-                    margin-bottom: rem(20);
-                }
-
-                &:after {
-                    left: 0;
-
-                    width: rem(12);
-                }
-
-                .additionalBlockDoor__item {
-                    &:not(:last-of-type) {
-                        margin-bottom: rem(8);
-                    }
-                }
-            }
-
-            &-input {
-                @extend .radiobutton;
-                @extend .radiobutton_small;
-
-                &_square {
-                    @extend .radiobutton_square;
-                }
-
-                &_round {
-                    @extend .radiobutton_round;
-                }
-            }
-
-            &-name {
-                display: block;
-
-                font-size: rem(12);
-
-                @extend .text;
-                @include below($mobile) {
-                    font-size: rem(18);
-                }
-            }
-        }
-	}
-
-	&_zhalyuzi {
-        .calculator__area {
-            width: auto;
-            position: relative;
-            padding-left: rem(50);
-            padding-bottom: rem(20);
-
-            &::after {
-                position: absolute;
-                content: '';
-                bottom: 0;
-                left: 0;
-                width: rem(450);
-                height: rem(280);
-                border-radius: rem(5);
-                background-image: radial-gradient(circle 575px at 90% 294.31%,#cdd6db 0%,#80929e 100%);
-
-				@include below($mobile) {
-					top: 0;
-					left: 0;
-					width: 100%;
-					height: 0.0625rem;
-					border-top: 2px solid #c8c8c8;
-					background-image: none;
-				}
-            }
-
-			@include below($mobile) {
-				padding: rem(10);
-			    width: 100%;
-				margin-bottom: rem(20);
-			}
-        }
-
-        .calculator__title,
-        .calculator__img-wrap,
-        .calculator__heights {
-            position: relative;
-            z-index: 2;
-        }
-
-		.calculator__title {
-			@include below($mobile) {
-				position: absolute;
-			}
-		}
-
-        .calculator__widths {
-            width: calc(100% - 90px);
-            margin-top: 0;
-            transform: translateX(10px);
-
-			@include below($mobile) {
-				width: 100%;
-				transform: none;
-			}
-        }
-
-        .calculator__heights {
-            padding-bottom: rem(90);
-
-			@include below($mobile) {
-				padding-bottom: 0;
-			}
-        }
-
-        .calculator__line {
-            &_vert {
-                height: calc(100% - 90px);
-            }
-        }
-
-        .calculator__additional {
-            flex-direction: column;
-            width: auto;
-            margin-bottom: 0;
-
-
-            @include below($tablet) {
-                padding-left: rem(85);
-                margin-right: 0;
-                margin-bottom: rem(40);
-            }
-            @include below($tablet-small) {
-                display: flex;
-                flex-direction: column;
-                flex-wrap: wrap;
-                align-items: center;
-                width: 100%;
-                padding: 0;
-                margin-bottom: rem(40);
-            }
-
-            &-block {
-                padding: rem(10) rem(20);
-
-                @extend .lines_vertical_left;
-                @include below($tablet-small) {
-                    width: rem(225);
-                }
-                @include below($mobile) {
-                    width: 100%;
-                }
-
-                &:not(:last-of-type) {
-                    margin-bottom: rem(20);
-                }
-
-                &:after {
-                    left: 0;
-
-                    width: rem(12);
-                }
-
-                .additionalBlockDoor__item {
-                    &:not(:last-of-type) {
-                        margin-bottom: rem(8);
-                    }
-                }
-            }
-
-            &-input {
-                @extend .radiobutton;
-                @extend .radiobutton_small;
-
-                &_square {
-                    @extend .radiobutton_square;
-                }
-
-                &_round {
-                    @extend .radiobutton_round;
-                }
-            }
-
-            &-name {
-                display: block;
-
-                font-size: rem(12);
-
-                @extend .text;
-                @include below($mobile) {
-                    font-size: rem(18);
-                }
-            }
-
-			&-item {
-				@include below($mobile) {
-                    &:not(:last-of-type) {
-						margin-bottom: rem(10);
-					}
-                }
-			}
-        }
-	}
-}
-
-.calculator-result {
-    display: flex;
-    border-radius: 5px;
-    overflow: hidden;
-
-    &__head {
-        background: $red_crismon;
+    &__info {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        padding-bottom: 15px;
+        align-items: flex-start;
+        width: rem(280);
+
+        @include below($tablet) {
+            width: rem(200);
+        }
 
         @include below($mobile) {
-            padding: rem(27);
-            padding-bottom: rem(32);
-            border-radius: rem(5);
+            width: 100%;
+        }
+    }
 
-            p {
-                position: relative;
-                font-size: rem(20);
-                padding-bottom: rem(15);
-                margin: 0;
-                margin-bottom: rem(15);
+    &__title {
+        margin: 0;
+        margin-bottom: rem(10);
+        color: #485058;
+        font-family: $playfair;
+        font-size: rem(20);
+        font-weight: 400;
 
-                &::after {
-                    position: absolute;
-                    content: '';
-                    bottom: 0;
-                    left: 50%;
-                    width: rem(50);
-                    height: rem(1);
-                    transform: translateX(-50%);
-                    background-color: #c61521;
-                }
+        @include below($mobile) {
+            font-size: rem(18);
+        }
+    }
+
+    &__text {
+        margin: 0;
+        margin-bottom: rem(31);
+        color: #485058;
+        font-family: $helvetica;
+        font-size: rem(12);
+        font-weight: 300;
+        line-height: 20px;
+
+        @include below($tablet) {
+            font-size: rem(14);
+        }
+
+        &_large {
+            font-size: rem(16);
+        }
+    }
+
+    &__service {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: rem(70);
+
+        .checkbox {
+            &:not(:last-of-type) {
+                margin-bottom: rem(20);
             }
         }
     }
 
     &__summ {
-        font-family: $futura;
-        font-size: 26px;
-        color: $white;
-        font-weight: 300;
-    }
-
-    &__body {
-        background-color: #f8f8f8;
-        padding: 30px 15px 20px 15px;
-
-		@include below($tablet) {
-            display: flex;
-			flex-direction: column;
-			align-items: center;
-        }
-
-        @include below($mobile) {
-            display: none;
-        }
-    }
-
-    &__input {
-        width: 100%;
-        height: 1.25rem;
-        padding-bottom: .3125rem;
-        font-size: 1rem;
-        line-height: 1.5;
-        color: #aaa;
-        border: 0;
-        border-bottom: .0625rem solid #aaa;
-        outline: 0;
-        background: 0 0;
-        margin-bottom: 20px;
+        margin: 0;
+        margin-bottom: rem(45);
+        color: $red_crismon;
+        font-family: $helvetica;
+        font-size: rem(48);
     }
 
     &__button {
-        width: 170px;
+        @extend .button;
+
+        @include below($mobile) {
+            width: 100%;
+        }
     }
 
-    &__attention {
-        font-size: .8125rem;
-        margin-top: 20px;
+    &__price {
+        @include below($tablet) {
+            position: absolute;
+            left: 50%;
+            bottom: rem(65);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: rem(420);
+            transform: translateX(-50%);
+
+            .calculator__title {
+                width: 100%;
+                text-align: center;
+
+                @include below($mobile) {
+                    text-align: left;
+                }
+            }
+        }
+
+        @include below($mobile) {
+            position: static;
+            transform: none;
+            width: 100%;
+        }
     }
+
+    &__params {
+        @include below($mobile) {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: rem(32);
+        }
+    }
+
+    &__size {
+        display: none;
+        justify-content: space-between;
+        align-items: baseline;
+
+        &:not(:last-of-type) {
+            margin-bottom: rem(16);
+        }
+
+        @include below($mobile) {
+            display: flex;
+        }
+
+        &-name {
+            margin: 0;
+            margin-bottom: rem(31);
+            color: #485058;
+            font-family: $helvetica;
+            ont-size: rem(16);
+            font-weight: 300;
+            line-height: 20px;
+        }
+
+        .calculator__width,
+        .calculator__height {
+            position: relative;
+            transform: none;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            height: auto;
+            width: rem(140);
+
+            .calculator__input-unit {
+                background-color: $white;
+                height: rem(20);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}
+
+.titles {
+    position: relative;
+    z-index: 2;
 }

@@ -1,38 +1,38 @@
 <template>
     <div class="add-review">
-        <div v-if="!user.fullName" class="add-review__label intro">
-            Авторизуйтесь через
+        <div v-if="!user.fullName" class="add-review__label">
+            <p>Авторизуйтесь через</p>
             <social-auth v-on:logged="setUser" mix='add-review__socials'></social-auth>
         </div>
-        <div :class="['add-review__label', 'intro', {'add-review__label_person': user.avatar} ]">
-            <span v-if="!user.fullName">Или представьтесь</span>
+        <div :class="['add-review__label', {'add-review__label_person': user.avatar} ]">
+            <p v-if="!user.fullName">Или представьтесь</p>
             <img class="add-review__avatar" :src="user.avatar">
             <input type="text" class="input add-review__input" v-model="user.fullName" placeholder="Ваше имя *">
         </div>
 
-        <div class="add-review__label add-review__label_full intro">
-            Сформулируйте Ваше сообщение
+        <div class="add-review__label add-review__label_full">
+            <p>Сформулируйте Ваше сообщение</p>
             <textarea v-model="text" name="" id="" class="textarea add-review__textarea" placeholder="Ваше сообщение. Просим Вас соблюдать нормативную лексику и нормы уважения. В противном случае отзыв может быть удалён."></textarea>
         </div>
-        <div class="add-review__label intro">
-            Прикрепите фотографии
+        <div class="add-review__label">
+            <p>Прикрепите фотографии</p>
             <label class="file add-review__file">
-                <img v-for="preview in previews" v-bind:src="preview" class="file__preview add-review__preview">
                 <img src="/img/gui/add-file.png" alt="" class="file__preview">
                 <input v-on:change="handlePhoto"  type="file" class="file__input">
+                <img v-for="preview in previews" v-bind:src="preview" class="file__preview add-review__preview">
             </label>
         </div>
-        <div class="add-review__label intro">
-            Прикрепите видео
+        <div class="add-review__label">
+            <p>или видео</p>
             <label class="file add-review__file">
                 <img src="/img/gui/add-file.png" alt="" class="file__preview">
                 <input v-on:change="handleVideo" type="file" class="file__input">
                 <span class="subtext file__name">{{ video ? video.name: '' }}</span>
             </label>
         </div>
-        <button v-if="!sended" @click="send" class="button add-review__submit">Отправить</button>
+        <button v-if="!sended" @click="send" class="button add-review__submit">Оставить отзыв</button>
         <p v-if="sended" class="intro add-review__submit">{{ resultText }}</p>
-        <p class="subtext add-review__agreement">Оставляя контактную информацию, Вы соглашаетесь на обработку персональных данных</p>
+        <p class="subtext add-review__agreement">Оставляя контактную информацию, Вы соглашаетесь на <a href="javascript:void(0);">обработку персональных данных</a></p>
         <img src="/img/photo-girl.png" class="add-review__girl" alt="">
     </div>
 </template>
@@ -67,14 +67,14 @@
             send: function ()
             {
                 this.sended = true;
-                
+
                 var data = new FormData,
                     $this = this;
 
                 this.photos.forEach(element => {
                     data.append('photos[]', element);
                 });
-                
+
                 data.append('direction_id', 1);
                 data.append('video', this.video);
                 data.append('fio', this.user.fullName);
@@ -111,7 +111,7 @@
                         return xhr;
                     },
                     success: function (response) {
-                        
+
                         $this.resultText = "Отзыв отправлен!";
                     }
                 })
@@ -123,7 +123,7 @@
             handleVideo(event) {
                 var input = event.target;
 
-                this.video = input.files[0];                
+                this.video = input.files[0];
 
             },
             handlePhoto(event) {
@@ -131,7 +131,7 @@
                     $previews = this.previews,
                     reader = new FileReader;
 
-                this.photos.push(input.files[0]);                
+                this.photos.push(input.files[0]);
 
                 reader.onload = function (event) {
                     $previews.push(event.target.result);

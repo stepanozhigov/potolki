@@ -3,7 +3,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     padding-bottom: 90px;
-    
+
     &__buttons {
         margin-top: 24px;
     }
@@ -41,7 +41,7 @@
                 margin-bottom: 0;
             }
         }
-        
+
     }
 
     &__item {
@@ -67,7 +67,7 @@
     display: inline-flex;
     flex-direction: column;
     cursor: pointer;
-    
+
     &:hover {
         box-shadow: 0 8px 8px rgba(0, 0, 0, 0.16), 0 0 8px rgba(0, 0, 0, 0.08), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
     }
@@ -97,10 +97,10 @@
 
         &__title {
             font-size: 26px;
-        }  
+        }
         &__intro {
             font-size: 16px;
-        }  
+        }
     }
 }
 
@@ -132,7 +132,7 @@
         font-weight: 300;
         line-height: 40px;
     }
-    
+
     &__body {
         padding: 34px 100px 96px 200px;
 
@@ -224,6 +224,6 @@
                 padding-left: 35px;
             }
         }
-        
+
     }
 }

@@ -125,6 +125,8 @@
     font-size: 26px;
     color: $grey_abbey;
     letter-spacing: 1.5px;
+    margin: 0;
+    margin-bottom: rem(15);
 
     &_red {
         color: $red_crismon;
@@ -193,6 +195,7 @@
     flex-direction: column;
     align-items: center;
     padding: 75px 0 60px 0;
+	padding-bottom: rem(64);
     width: 100%;
     z-index: 1;
 

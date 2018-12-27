@@ -1,4 +1,6 @@
 .about {
+	padding-top: rem(48);
+	margin-bottom: rem(-80);
     &__images {
         display: flex;
         flex-wrap: wrap;
@@ -14,13 +16,14 @@
             margin-left: auto;
             overflow: hidden;
         }
-    }    
+    }
 
     &__image {
         width: 30%;
         height: rem(255);
         margin: 0 rem(10);
         margin-bottom: rem(30);
+		object-fit: cover;
 
         @include below($tablet) {
             width: rem(350);
@@ -41,7 +44,7 @@
         overflow: hidden;
 
         .about__desc {
-            width: rem(770);
+            width: rem(980);
             margin: 0 auto;
 
             @include below($tablet) {
@@ -84,7 +87,7 @@
         }
 
         img {
-            
+
             margin-bottom: rem(10);
         }
 
