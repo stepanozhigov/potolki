@@ -3,248 +3,181 @@
 
 .videogallery {
     position: relative;
-
-    height: rem(715);
-    margin-bottom: rem(80);
+    padding-top: rem(80);
+    padding-bottom: rem(112);
     overflow: hidden;
 
     @include below($mobile) {
-        height: rem(400);
-    }
-
-    &::after {
-        content: '';
-
-        position: absolute;
-        top: 0;
-        left: 0;
-
         width: 100%;
-        height: 100%;
-
-        background-color: rgba($black, .45);
-    }
-
-    &__background {
-        width: 100%;
-        height: 100%;
-
-        background-image: url('%=static=%assets/videogallery/01.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
-
-        filter: blur(15px) grayscale(100%);
-    }
-
-    &__content {
-        position: relative;
-        z-index: 999;
-        top: -100%;
-
-        display: flex;
-        width: rem(1280);
-        height: 100%;
-        margin: 0 auto;
-        overflow: hidden;
-
-        @include below($tablet) {
-            width: 100%;
-        }
     }
 
     &__slider {
+        @extend .container;
         display: flex;
         align-items: center;
-        width: 100%;
-        height: 100%;
+
+        @include below($tablet) {
+            justify-content: center;
+        }
     }
 
     &__slide {
-        display: flex!important;
+        position: relative;
+        display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
-        width: rem(580)!important;
-        height: auto;
-        margin: 0 auto;
 
-        @include below($mobile) {
-            width: 100%!important;
-        }
 
-        img {
-            width: 100%;
-            height: 100%;
-        }
 
         h2 {
-            position: absolute;
-            z-index: 99999999;
-            top: 50%;
-
-            width: 100%;
+            position: relative;
+            padding: 0;
+            margin: 0;
+            padding-bottom: rem(18);
             margin: 0;
             margin-bottom: rem(40);
-
-            color: $white;
+            color: $grey_abbey;
+            font-family: $playfair;
+            font-size: rem(32);
+            font-weight: 400;
+            line-height: rem(38);
             text-align: center;
-
-            transform: translateY(-50%);
+            z-index: 3;
 
             &::after {
-                background-color: $white;
+                position: absolute;
+                content: '';
+                bottom: 0;
+                left: 50%;
+                width: rem(160);
+                height: rem(1);
+                background-color: #808890;
+                transform: translateX(-50%);
+            }
+
+            @include below($mobile) {
+                margin-bottom: rem(20);
+            }
+        }
+
+        iframe {
+            width: 560px;
+            height: 315px;
+            margin-bottom: rem(40);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.24), 0 0 16px rgba(0, 0, 0, 0.16);
+
+            @include below($mobile) {
+                width: 100%;
+                height: rem(315);
+                margin: 0;
             }
         }
 
         p {
-            display: none;
             margin: 0;
-
-            color: $white;
+            color: #485058;
+            font-family: $helvetica;
+            font-size: rem(16);
+            font-weight: 300;
             text-align: center;
 
-        }
-    }
-
-    &__image-wrap {
-        position: relative;
-
-        width: 100%;
-        height: rem(325);
-        margin-bottom: 0;
-
-        cursor: pointer;
-        box-shadow: 0 rem(16) rem(32) rgba($black, .24), 0 0 rem(16) rgba($black, .16);
-
-        @include below($mobile) {
-            height: rem(180);
-        }
-
-        &::after {
-            content: '';
-
-            position: absolute;
-            top: 50%;
-            left: 50%;
-
-            display: none;
-
-            transform: translate(-50%,-50%);
-        }
-
-        &::before {
-            content: '';
-
-            position: absolute;
-            z-index: 999999;
-
-            width: 100%;
-            height: 100%;
-
-            background-color: rgba($black, .3);
-        }
-    }
-
-    .slick-arrow {
-        position: absolute;
-        top: calc(50% - 30px);
-
-        @include below($tablet-small) {
-            background: rgba($black, .4)!important;
-        }
-        @include below($mobile) {
-            top: calc(50% + 20px);
-        }
-    }
-
-    .slick-next {
-        right: 0;
-
-        @include below($tablet-small) {
-            border-top-right-radius: 0!important;
-            border-bottom-right-radius: 0!important;
-        }
-    }
-
-    .slick-prev {
-        z-index: 999;
-        left: 0;
-
-        @include below($tablet-small) {
-            border-top-left-radius: 0!important;
-            border-bottom-left-radius: 0!important;
-        }
-    }
-
-    .slick-slide {
-        margin: 0 rem(-70);
-
-        outline: none;
-        transform: scale(.625);
-
-        @include above($tablet-small) {
-            transition: transform .3s;
-        }
-        @include below($mobile) {
-            opacity: 0;
-        }
-    }
-
-    .slick-track {
-        display: flex;
-        align-items: center;
-    }
-
-    .slick-current {
-        position: relative;
-        z-index: 99999999;
-
-        transform: scale(1);
-
-        @include below($mobile) {
-            opacity: 1;
-        }
-
-        .videogallery__image-wrap {
-            margin-bottom: rem(40);
-
-            &::after {
-                display: block;
-            }
-
-            &::before {
+            @include below($mobile) {
                 display: none;
             }
         }
 
-        .videogallery__slide {
-            p {
-                display: block;
+        &:not(.active) {
 
-                @include below($mobile) {
+            &::after {
+                position: absolute;
+                content: '';
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.6);
+            }
+
+            h2 {
+                position: absolute;
+                top: 50%;
+                color: $white;
+                font-size: rem(22);
+                font-weight: 300;
+
+                &::after {
                     display: none;
                 }
             }
 
-            h2 {
-                position: relative;
-                top: 0;
-
+            iframe {
                 margin: 0;
-                margin-bottom: rem(40);
+                width: rem(360);
+                height: rem(210);
+            }
+            p {
+                display: none;
+            }
 
-                color: $white;
+            @include below($tablet) {
+	            display: none;
+	        }
+        }
 
-                transform: translateY(0);
+        &.active {
+            margin-left: rem(-63);
+            margin-right: rem(-63);
+            z-index: 5;
 
-                @include below($mobile) {
-                    font-size: rem(22);
-                }
+            @include below($tablet) {
+                width: rem(580);
+	            margin: 0;
+	        }
 
-                &::after {
-                    background-color: $white;
-                }
+            @include below($mobile) {
+                width: calc(100% + 16px);
+                margin-left: rem(-8);
+                margin-right: rem(-8);
             }
         }
+    }
+
+    &__prev,
+    &__next {
+        position: absolute;
+        top: rem(315);
+        left: 0;
+        padding: 0;
+        border: none;
+        outline: none;
+        width: rem(60);
+        height: rem(60);
+        border-radius: 0 50% 50% 0;
+        background-color: rgba(0, 9, 18, 0.4);
+        cursor: pointer;
+
+
+        &::after {
+            position: absolute;
+            content: '';
+            top: 50%;
+            left: 50%;
+            width: rem(10);
+            height: rem(16);
+            background-image: url('/img/arrow-left-white.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            transform: translate(-50%, -50%);
+        }
+
+        @include below($mobile) {
+            z-index: 99;
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+    }
+
+    &__next  {
+        right: 0;
+        left: auto;
+        transform: rotate(180deg);
     }
 }

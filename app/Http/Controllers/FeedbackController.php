@@ -93,4 +93,10 @@ class FeedbackController extends Controller
         echo 'ok';
         die();
     }
+
+    public function searchPhoneInMessage(Request $request)
+    {
+        Log::info($request);
+        echo 'ok';
+    }
 }

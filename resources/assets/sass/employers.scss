@@ -111,57 +111,52 @@
     0 0 rem(2) rgba(0, 0, 0, .08),
     inset 0 rem(-1) 0 rgba(0, 0, 0, .12);
 
-    @include above($tablet-small) {
-        transition: box-shadow .3s;
-
-        &:hover {
-            box-shadow: 0 rem(8) rem(8) rgba(0, 0, 0, .12),
-            0 0 rem(8) rgba(0, 0, 0, .08),
-            inset 0 rem(-1) 0 rgba(0, 0, 0, .12);
-        }
-    }
+    transition: box-shadow .3s;
 
     &:hover {
-        @include above($tablet-small) {
-            .employee__image {
-                height: 100%;
-				object-position: top;
-            }
 
-            .employee__content {
-                height: 100%;
+        box-shadow: 0 rem(8) rem(8) rgba(0, 0, 0, .12),
+        0 0 rem(8) rgba(0, 0, 0, .08),
+        inset 0 rem(-1) 0 rgba(0, 0, 0, .12);
 
-                background-color: rgba($black, .6);
-            }
+        .employee__image {
+            height: 100%;
+            object-position: top;
+        }
 
-            p {
-                max-height: none;
+        .employee__content {
+            height: 100%;
+
+            background-color: rgba($black, .6);
+        }
+
+        p {
+            max-height: none;
+
+            color: $white;
+            text-align: left;
+
+            &:first-of-type {
+                margin-bottom: rem(15);
 
                 color: $white;
-                text-align: left;
-
-                &:first-of-type {
-                    margin-bottom: rem(15);
-
-                    color: $white;
-                }
-
-                &:last-of-type {
-                    @include below($mobile) {
-                        display: block;
-                    }
-                }
             }
 
-            h2 {
-                color: $white;
+            &:last-of-type {
+                @include below($mobile) {
+                    display: block;
+                }
+            }
+        }
 
-                &::after {
-                    background-color: $white;
+        h2 {
+            color: $white;
 
-                    @include below($mobile) {
-                        display: block;
-                    }
+            &::after {
+                background-color: $white;
+
+                @include below($mobile) {
+                    display: block;
                 }
             }
         }
@@ -178,10 +173,9 @@
         0 0 rem(2) rgba(0, 0, 0, .08),
         inset 0 rem(-1) 0 rgba(0, 0, 0, .12);
 
-        @include above($tablet-small) {
-            transition: height .7s;
-            transition-timing-function: ease-out;
-        }
+        transition: height .7s;
+        transition-timing-function: ease-out;
+
         @include below($mobile) {
             margin-bottom: 0;
         }
@@ -201,10 +195,9 @@
 
         border-radius: rem(5);
 
-        @include above($tablet-small) {
-            transition: height .5s, background-color .8s;
-            transition-timing-function: ease-out;
-        }
+        transition: height .5s, background-color .8s;
+        transition-timing-function: ease-out;
+
         @include below($mobile) {
             height: rem(155);
         }
@@ -339,5 +332,9 @@
         width: 85px;
     }
 
+    .subtext {
+        text-align: center;
+        line-height: 24px;
+    }
 
 }

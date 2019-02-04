@@ -68,6 +68,9 @@
 	font-style: normal;
 }
 
+@import 'mixins';
+@import 'variables';
+
 .overtitle {
     color: #a5aaaf;
     font-family: $futura;
@@ -94,6 +97,10 @@
     position: relative;
     line-height: 53px;
 
+    @include below($tablet) {
+        font-size: 32px;
+    }
+
     @media screen and (max-width: 650px){
         line-height: 36px;
         font-size: 26px;
@@ -107,6 +114,10 @@
     text-align: center;
     color: $grey_abbey;
     margin: 0;
+
+    @include below($mobile) {
+        font-size: 26px;
+    }
 }
 
 .third-title {
@@ -131,6 +142,10 @@
     &_red {
         color: $red_crismon;
     }
+
+    @include below($mobile) {
+        font-size: 22px;
+    }
 }
 
 .intro {
@@ -148,6 +163,11 @@
 
     @media screen and (max-width: 650px){
         font-size: 20px;
+    }
+
+    @include below($mobile) {
+        max-height: rem(90);
+        overflow: hidden;
     }
 }
 
@@ -199,6 +219,8 @@
     width: 100%;
     z-index: 1;
 
+
+
     &__overtitle {
         margin-bottom: 3px;
 
@@ -224,12 +246,51 @@
         width: 56%;
         margin-top: 20px;
 
-        @media screen and (max-width: 768px) {
+        @include below($tablet) {
             width: 90%;
         }
     }
 
+    &__arrow {
+        display: none;
+        width: rem(18);
+        height: rem(9);
+        padding: 0;
+        margin-top: 30px;
+        background-image: url('/img/arrow-down.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        background-color: transparent;
+    }
+
     @media screen and (max-width: 650px){
         padding: 40px 0;
+    }
+
+    @include below($mobile) {
+        &.container {
+            margin-bottom: rem(50);
+
+            .intro + .titles__arrow {
+                display: block;
+            }
+
+            .intro {
+                &.opened {
+                    max-height: none;
+
+                    & + .titles__arrow {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        }
+
+
+
+
     }
 }

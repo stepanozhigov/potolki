@@ -26,7 +26,62 @@
             <button data-src="#popup_callback" class="button main-offer__button mobile-only js-show">Вызвать замерщика</button>
         </div>
     </section>
-
+    <section class="whyus">
+        @include('common.gui.titles', [
+            'overtitle' =>  'Наши преимущества',
+            'title' =>  "Звонят многим, заказывают у нас. Почему? ",
+            'intro' =>  "Фабрика натяжных потолков &laquo;Твой стиль&raquo; основана в&nbsp;2003 году является лидером <br> по&nbsp;производству и&nbsp;установке натяжных потолков на&nbsp;Дальнем Востоке"
+        ])
+        <div class="whyus__content">
+            <div class="whyus__item">
+                <div class="whyus__item-info">
+                    <h3 class="whyus__item-title">Наши преимущества</h3>
+                    <ul>
+                        <li class="whyus__item-text">— Контроль качества после установки</li>
+                        <li class="whyus__item-text">— Собственное производство</li>
+                        <li class="whyus__item-text">— Сервисное обслуживание</li>
+                        <li class="whyus__item-text">— Услуга «Договор на дому»</li>
+                        <li class="whyus__item-text">— 16 лет успешной работы</li>
+                        <li class="whyus__item-text">— Гарантия низкой цены</li>
+                        <li class="whyus__item-text">— Установка за 1 день</li>
+                        <li class="whyus__item-text">— Контроль качества</li>
+                    </ul>
+                </div>
+                <img class="whyus__item-image" src="/img/img_factory.jpg" alt="Производство">
+            </div>
+            <div class="whyus__item whyus__item_reverse">
+                <div class="whyus__item-info">
+                    <h3 class="whyus__item-title">Директор всегда на связи</h3>
+                    <p class="whyus__item-text">
+                        Я лично контролирую все этапы работы с помощью прямого контакта со своими клиентами. Вы можете написать мне в любую социальную сеть или позвонить. <br> Прямая линия обеспечивает ответственную работу каждого сотрудника. Считаю это самым важным фактором для моих клиентов.
+                    </p>
+                    <div class="signature">
+                        <p>А. А. Репин</p>
+                        <img src="/img/signature.png" alt="signature">
+                    </div>
+                    <div class="socials">
+                        <a href="" class="socials__item">
+                            <div class="socials__icon socials__icon_vk"></div>
+                        </a>
+                        <a href="" class="socials__item">
+                            <div class="socials__icon socials__icon_youtube"></div>
+                        </a>
+                        <a href="" class="socials__item red-hoverable">
+                            <div class="socials__icon socials__icon_fb"></div>
+                        </a>
+                        <a href="" class="socials__item">
+                            <div class="socials__icon socials__icon_inst"></div>
+                        </a>
+                        <a href="" class="socials__item">
+                            <div class="socials__icon socials__icon_whatsapp"></div>
+                        </a>
+                    </div>
+                </div>
+                <img class="whyus__item-image" src="/img/img_director.jpg" alt="Директор">
+            </div>
+        </div>
+        <a href="http://89.108.103.224/sochi/whyus" class="button buttons__item button_gray">Остальные преимущества</a>
+    </section>
     <section class="catalog-cards container">
         @include('common.gui.titles', [
             'overtitle' =>  'Каталог',
@@ -52,8 +107,12 @@
         @include('common.gui.titles', ['secondTitle' => 'Производители профилей'])
 
         <div class="manufacturers__list">
+
             @foreach ($currentDirection->manufacturers as $manufacturer)
-                <img src="{{ Storage::url($manufacturer->logo) }}" alt="" class="manufacturers__item">
+                <div class="manufacturers__item">
+                    <img src="{{ Storage::url($manufacturer->logo) }}" alt="" class="manufacturers__item-image">
+                    <p class="manufacturers__country"> Китай </p>
+                </div>
             @endforeach
         </div>
 
@@ -74,6 +133,7 @@
 
     <section class="portfolio b-texture b-texture_square">
         @include('common.gui.titles', ['secondTitle' => 'Примеры наших работ'])
+        <button type="button" class="portfolio__prev" name="button"><img src="/img/gui/arrow_dark.png"></button>
         <div class="portfolio__carousel" id="portfolio__carousel" data-photos="{{ $photos }}">
             @foreach ($photos as $photo)
                 <a class="case b-card portfolio__item portfolio__item_slide">
@@ -83,13 +143,14 @@
                 </a>
             @endforeach
         </div>
+        <button type="button" class="portfolio__next" name="button"><img src="/img/gui/arrow_dark.png"></button>
         <div class="buttons portfolio__buttons">
             <a href="{{ route('photos', $city) }}" class="button buttons__item button_gray">Посмотреть все работы</a>
             <button class="button js-show" data-src="#popup_callback" data-title="Вызов замерщика" data-button="Вызвать замерщика">Вызвать замерщика</button>
         </div>
     </section>
 
-    <section class="reviews container b-texture b-texture_square">
+    <section class="reviews reviews_main container b-texture b-texture_square">
         @include('common.gui.titles', ['secondTitle' => 'Отзывы наших клиентов'])
 
         @foreach($reviews as $review)
@@ -101,44 +162,7 @@
             <a href="{{ route('add-review', $city) }}" class="button">Оставить отзыв</a>
         </div>
     </section>
-
-    <section class="articles container">
-        <div class="titles">
-            <h2 class="second-title titles__title">Статьи и полезная информация</h2>
-            <hr class="line titles__line">
-            <p class="intro titles__intro">Больше полезной информации, конкурсы и розыгрыши<br> вы можете найти в наших социальных сетях:</p>
-            <div class="socials titles__socials">
-                <a href="" class="socials__item red-hoverable">
-                    <img class="socials__icon" src="/img/gui/social_gray_vk.svg" alt="">
-                    <span class="socials__name text red-hoverable">Вконтакте</span>
-                </a>
-                <a href="" class="socials__item red-hoverable">
-                    <img class="socials__icon" src="/img/gui/social_gray_ok.svg" alt="">
-                    <span class="socials__name text red-hoverable">Одноклассники</span>
-                </a>
-                <a href="" class="socials__item red-hoverable">
-                    <img class="socials__icon" src="/img/gui/social_gray_fb.svg" alt="">
-                    <span class="socials__name text red-hoverable">Facebook</span>
-                </a>
-                <a href="" class="socials__item red-hoverable">
-                    <img class="socials__icon" src="/img/gui/social_gray_inst.svg" alt="">
-                    <span class="socials__name text red-hoverable">Instagram</span>
-                </a>
-            </div>
-        </div>
-        <div class="articles__preview">
-            @foreach ($articles as $article)
-                <a href="{{ route('article', [$city, $article]) }}" class="article-card b-card articles__item" style="background-image: url({{ Storage::url($article->preview_img) }});">
-                    <p class="text article-card__title">{{ $article->title }}</p>
-                    <p class="text article-card__intro">{{ $article->preview_text }}</p>
-                    <span class="link subtext article-card__link">Читать далее</span>
-                </a>
-            @endforeach
-        </div>
-        <div class="buttons articles__buttons">
-            <a href="{{ route('articles', $city) }}" class="button button_red">Читать остальные статьи</a>
-        </div>
-    </section>
+    @include('common.ourArticles')
 
     <section class="additional container">
         @include('common.gui.titles', ['secondTitle' => 'Также вас может заинтересовать'])

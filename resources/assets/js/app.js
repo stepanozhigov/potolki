@@ -289,18 +289,56 @@ $('.question__more').on('click', function(e) {
 });
 
 $('.calculator__type').on('click', function () {
+    $(this).addClass('active').siblings().removeClass('active')
+    $(this).closest('.calculator__inner').find('.calculator__main').removeClass('active').eq($(this).index()).addClass('active');
+});
+
+$('.facture').on('click', '.facture__item', function () {
     $(this).siblings().removeClass('active');
     $(this).addClass('active');
 });
 
+$('.titles__arrow').on('click', function () {
+    $(this).prev('.intro ').toggleClass('opened');
+});
 
+
+
+$('.js-link').on('click', function (e) {
+    let href = $(this).attr('href');
+    if (href) {
+        window.open(href, '_blank');
+    }
+    console.log(href);
+});
 
 let onResize = function () {
     if ($(window).width() <= 768) {
-        $('.footer__title').off();
-        // $('.calculator__type').off();
-        $('.footer__title').on('click', function() {
-        	$(this).parent('.nav-group').toggleClass('nav-group_opened');
+        $('.promos__item').off();
+        $('.promos').on('click', '.promos__item', function () {
+            $(this).siblings().removeClass('opened');
+            $(this).toggleClass('opened');
+            $('html, body').animate({
+                scrollTop: $(this).offset().top - 80
+            }, 500);
+        });
+
+        $('.ourArticle__more').off();
+        $('.ourArticle__more').on('click', function () {
+            $(this).closest('.ourArticle').siblings().removeClass('opened');
+            $(this).closest('.ourArticle').toggleClass('opened');
+
+            if ($(this).text() === 'Подробнее') {
+                $(this).text('Свернуть');
+            } else {
+                $(this).text('Подробнее');
+            }
+
+        });
+
+        $('.nav-group').off();
+        $('.nav-group').on('click', function() {
+        	$(this).toggleClass('nav-group_opened');
         });
 
         $('.calculator__type').on('click', function () {

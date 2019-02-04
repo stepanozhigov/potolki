@@ -22,7 +22,7 @@
                     <div class="employee__content">
                         <p>Администрация</p>
                         <h2>{{ $employee->fio }}</h2>
-                        <p>{{ $employee->desc }}</p>
+                        <p>{!! $employee->desc !!}</p>
                     </div>
                 </section>
             @endforeach
@@ -31,7 +31,7 @@
             <a href="javascript:void(0);" class="additionally employees__additionally">
                 <p class="card-title additionally__title">Вакансии</h2>
                 <hr class="line additionally__line">
-                <p class="subtext subtext_white">Мечтаете о работе в крупной и стабильной компании? Считаете себя профессионалом своего дела? Тогда именно для вас мы открываем дополнительные вакансии в нашем представительстве в городе Сочи</p>
+                <p class="subtext subtext_white">Мечтаете о&nbsp;работе в&nbsp;крупной и&nbsp;стабильной компании? Считаете себя профессионалом своего дела? Тогда именно для вас мы&nbsp;открываем дополнительные вакансии в&nbsp;нашем представительстве в&nbsp;городе Сочи</p>
             </a>
         </section>
     @include('common.gui.footer')

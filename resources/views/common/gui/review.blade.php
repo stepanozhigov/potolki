@@ -1,6 +1,6 @@
 <div class="review reviews__item js-show" data-src="#popup_review_{{ $review->id }}">
     <div class="review__body b-card">
-        <a class="person review__person">
+        <a target="_blank" @if(!empty($review->link)) href="{{ $review->link }}" @endif class="person review__person js-link">
             <div class="avatar person__photo">
                 <img src="{{ $review->avatar() }}" alt="" class="avatar person__photo">
                 <img src="/img/gui/{{ $review->social }}_hover.svg" alt="" class="person__social">
@@ -36,7 +36,6 @@
                 <img src="{{ $review->avatar() }}" alt="" class="avatar person__photo">
                 <div class="person__info">
                     <p class="person__name">{{ $review->fio }}</p> 
-                    <hr class="line person__line">
                 </div>
             </a>
             <hr class="line review__line">

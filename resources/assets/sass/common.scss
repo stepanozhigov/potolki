@@ -49,6 +49,11 @@ body {
         width: calc(100% - 40px);
         margin: 0 rem(20);
     }
+
+    @include below($mobile) {
+        width: calc(100% - 16px);
+        margin: 0 rem(8);
+    }
 }
 
 .logo {
@@ -78,6 +83,12 @@ body {
 
     &__red {
         color: #dc1414;
+    }
+}
+
+.page {
+    &_index {
+        padding-bottom: rem(80);
     }
 }
 
@@ -173,8 +184,8 @@ body {
 
 .phone {
     font-size: 18px;
-    flex-wrap: wrap;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     text-decoration: none;
@@ -206,6 +217,11 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    color: #50555a;
+
+    &:hover {
+        color: #dc1414;
+    }
 
     &__title {
         padding-top: 32px;
@@ -217,26 +233,131 @@ body {
         line-height: 24px;
     }
     &__item {
-        width: 32px;
-        height: 32px;
         cursor: pointer;
         display: flex;
         align-items: center;
-
-        img {
-            width: 100%;
-            height: 100%;
-
-        }
 
         @media screen and (max-width: 768px) {
             margin-bottom: 20px;
             width: auto;
         }
+
+        @include below($mobile) {
+            width: 50%;
+        }
+
+        &:hover {
+            .socials__icon {
+                &::after {
+                    opacity: 0;
+                }
+                &::before {
+                    opacity: 1;
+                }
+            }
+        }
     }
 
     &__icon {
-        width: 22px;
+        position: relative;
+        width: 32px;
+        height: 32px;
+        transition: opacity .3s;
+
+        &::after {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: contain;
+            background-repeat: no-repeat;
+            transition: opacity .3s;
+        }
+
+        &::before {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity .3s;
+        }
+
+        &_inst {
+            &::after {
+                position: absolute;
+                content: '';
+                background-image: url('/img/gui/social_gray_inst.svg');
+            }
+
+            &::before {
+                position: absolute;
+                content: '';
+                background-image: url('/img/gui/social_color_inst.svg');
+            }
+        }
+
+        &_fb {
+            &::after {
+                position: absolute;
+                content: '';
+                background-image: url('/img/gui/social_gray_fb.svg');
+            }
+
+            &::before {
+                position: absolute;
+                content: '';
+                background-image: url('/img/gui/social_color_fb.svg');
+            }
+        }
+
+        &_youtube {
+            &::after {
+                position: absolute;
+                content: '';
+                background-image: url('/img/gui/social_gray_youtube.svg');
+            }
+
+            &::before {
+                position: absolute;
+                content: '';
+                background-image: url('/img/gui/social_color_youtube.svg');
+            }
+        }
+
+        &_vk {
+            &::after {
+                position: absolute;
+                content: '';
+                background-image: url('/img/gui/social_gray_vk.svg');
+            }
+
+            &::before {
+                position: absolute;
+                content: '';
+                background-image: url('/img/gui/social_color_vk.svg');
+            }
+        }
+
+        &_whatsapp {
+            &::after {
+                position: absolute;
+                content: '';
+                background-image: url('/img/gui/social_gray_whatsapp.svg');
+            }
+
+            &::before {
+                position: absolute;
+                content: '';
+                background-image: url('/img/gui/social_color_whatsapp.svg');
+            }
+        }
     }
 
     &__name {
@@ -311,8 +432,12 @@ body {
     align-items: center;
     justify-content: center;
     padding: .25rem;
-    border-radius: 1.875rem;
+    border-radius: 22px;
     background-image: linear-gradient(180deg,#787878 0%,#a8a8a8 100%);
+
+    @include below($mobile) {
+        flex-direction: column;
+    }
 
     &__button {
         text-decoration: none;
@@ -330,9 +455,18 @@ body {
         flex-grow: 3;
         will-change: transform;
         transition: all .3s;
+        text-align: center;
+
+        @include below($mobile) {
+            width: 100%;
+        }
 
         &:not(:last-of-type) {
             margin-right: .25rem;
+
+            @include below($mobile) {
+                margin: 0;
+            }
         }
 
         &:hover {
@@ -602,18 +736,19 @@ body {
 }
 
 
-.overlay {
+.overlay,
+#overlay {
     display: none;
     background: rgba(0, 0, 0, 0.5);
     width: 100vw;
     height: 120vh;
 
-    &_dark {
+    &.overlay_dark {
         background: rgba(0, 0, 0, 0.8);
     }
 
-    &_active {
-        z-index: 9;
+    &.overlay_active {
+        z-index: 11;
         display: block;
         position: fixed;
         top: 0;
@@ -627,7 +762,7 @@ body {
 
     &_active {
         background: white;
-        z-index: 10;
+        z-index: 13;
         display: flex;
         position: fixed;
         top: 50%;
@@ -637,7 +772,7 @@ body {
 
         @media screen and (max-width: 650px) {
             width: 100vw;
-            height: 100vh;
+            height: 100vh!important;
             border-radius: 0;
         }
     }
@@ -755,6 +890,17 @@ body {
         margin: 20px auto 0 auto;
         line-height: 16px;
     }
+
+
+}
+
+#popup_articles {
+    border-radius: rem(16);
+
+    .popup__close {
+        top: -15px;
+        right: -15px;
+    }
 }
 
 #popup_survey {
@@ -803,7 +949,11 @@ body {
         background-image: url(/img/gui/texture2.png);
 
         @media screen and (max-width: 1024px) {
-            width: 90%;
+            width: 480px;
+        }
+
+        @include below($mobile) {
+            width: 64vw;
         }
     }
 
@@ -816,9 +966,10 @@ body {
 
 .b-card {
     background: #ffffff;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.16), inset 0 -1px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.16),0 0 rem(8) rgba(0, 0, 0, 0), inset 0 -1px 0 rgba(0, 0, 0, 0.12);
     border-radius: 5px;
     text-decoration: none;
+    transition: box-shadow .3s;
 }
 
 .is-hoverable {
@@ -893,6 +1044,10 @@ body {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+
+        @include below($tablet) {
+            padding: 40px 60px 30px 60px;
+        }
     }
     &__item {
         width: 26%;
@@ -911,16 +1066,15 @@ body {
             font-weight: 300;
             line-height: 19px;
         }
+
+        @include below($tablet) {
+            width: calc(33.3% - 30px);
+            margin: 0 15px;
+        }
     }
     &__img {
         margin-top: 25px;
         width: 100%;
-    }
-
-    @media screen and (max-width: 1024px) {
-        &__item {
-            width: 31%;
-        }
     }
     @media screen and (max-width: 640px) {
         background: none !important;
@@ -1202,6 +1356,58 @@ body {
     }
 }
 
+.agreement {
+    width: 780px;
+    margin: 0 auto;
+    padding-top: 20px;
+
+    &__title {
+        color: $grey_abbey;
+        font-family: 'Playfair Display';
+        text-align: center;
+        font-size: 43px;
+        font-weight: 400;
+        margin: 0;
+        margin-bottom: 56px;
+        padding: 0;
+        position: relative;
+        line-height: 53px;
+
+        @media screen and (max-width: 650px){
+            line-height: 36px;
+            font-size: 26px;
+        }
+    }
+
+    p {
+        margin: 0;
+        font-family: $helvetica;
+        font-size: 16px;
+        line-height: 19px;
+        font-weight: 300;
+        color: #50555a;
+
+        &:not(:last-of-type) {
+            margin-bottom: 10px;
+        }
+    }
+
+    ul {
+        padding: 0;
+        margin: 0;
+        margin-bottom: 10px;
+        list-style-type: none;
+
+        li {
+            font-family: $helvetica;
+            font-size: 14px;
+            line-height: 19px;
+            font-weight: 300;
+            color: #50555a;
+        }
+    }
+}
+
 @keyframes showup {
   from {
     bottom: -100%;
@@ -1210,4 +1416,104 @@ body {
   to {
     bottom: 0;
   }
+}
+
+#popup_callback {
+    z-index: 100;
+
+}
+
+.signature {
+    display: flex;
+    align-items: center;
+
+    p {
+        margin: 0;
+        margin-right: rem(16);
+        color: #485058;
+        font-family: $helvetica;
+        font-size: rem(16);
+        font-weight: 300;
+        line-height: rem(24);
+    }
+
+    img {
+        width: rem(85);
+        height: rem(80);
+    }
+}
+
+.scale {
+    position: relative;
+    display: flex;
+    height: rem(16);
+    flex-direction: row-reverse;
+    padding: rem(2) rem(1);
+    border-radius: rem(4);
+    border: rem(1) solid #babec2;
+
+    &__block {
+        display: none;
+        width: calc(20% - 2px);
+        height: 100%;
+        margin: 0 rem(1);
+        box-shadow: inset 0 -1px 0 #a01414;
+        border-radius: rem(1);
+        background-color: $red_crismon;
+    }
+
+    &__value {
+        position: absolute;
+        right: 0;
+        top: 100%;
+        color: #babec2;
+        font-family: $helvetica;
+        font-size: rem(12);
+        font-weight: 300;
+        line-height: rem(20);
+    }
+
+    &_one {
+        .scale__block {
+            &:nth-of-type(1) {
+                display: block;
+            }
+        }
+    }
+
+    &_two {
+        .scale__block {
+            &:nth-of-type(1),
+            &:nth-of-type(2) {
+                display: block;
+            }
+        }
+    }
+
+    &_three {
+        .scale__block {
+            &:nth-of-type(1),
+            &:nth-of-type(2),
+            &:nth-of-type(3) {
+                display: block;
+            }
+        }
+    }
+
+    &_fourth {
+        .scale__block {
+            &:nth-of-type(1),
+            &:nth-of-type(2),
+            &:nth-of-type(3),
+            &:nth-of-type(4) {
+                display: block;
+            }
+        }
+    }
+
+    &_fifth {
+        .scale__block {
+            display: block;
+        }
+    }
 }

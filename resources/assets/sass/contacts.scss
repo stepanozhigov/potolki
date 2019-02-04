@@ -33,15 +33,19 @@
         display: flex;
         flex-direction: row;
         align-items: center;
+        z-index: 2;
 
-        @media screen and (max-width: 1024px) {
-            position: static;
-            order: 1;
-            margin-bottom: -144px;
-            z-index: 2;
-            align-items: center;
+        @include below($tablet) {
+            height: calc(100% - 265px);
+            bottom: auto;
+            top: 0;
+            left: 20px;
+        }
+
+        @include below($mobile) {
+            height: calc(100% - 500px);
+            left: 0;
             justify-content: center;
-            flex-direction: column;
         }
     }
     &__office {
@@ -53,9 +57,16 @@
         flex-direction: column;
         margin-left: 15px;
 
-        @media screen and (max-width: 1024px) {
-            flex-direction: row;
-            margin-left: 0;
+        @include below($tablet) {
+            position: absolute;
+            margin: 0;
+            height: 100%;
+            left: calc(50% - 20px);
+            transform: translateX(-50%);
+        }
+
+        @include below($mobile) {
+            left: calc(50% - 30px);
         }
     }
     &__arrow {
@@ -67,16 +78,20 @@
         background: rgba(255,255,255,.4);
         background-color: rgba(0,0,0,.5);
 
-        @media screen and (max-width: 1024px) {
-            transform: rotate(-90deg);
+        @include below($tablet) {
+            position: absolute;
+            top: 0;
+            border-radius: 1px 1px 40px 40px;
         }
+
         &_down {
             margin-top: 1px;
             transform: rotate(180deg);
-            @media screen and (max-width: 1024px) {
-                transform: rotate(90deg);
-                margin-top: 0;
-                margin-left: 5px;
+
+            @include below($tablet) {
+                top: auto;
+                bottom: 0;
+                border-radius: 1px 1px 40px 40px;
             }
         }
     }
@@ -86,10 +101,53 @@
         flex-wrap: wrap;
         justify-content: space-between;
         padding: 40px 0;
+        padding-bottom: 0;
 
-        @media screen and (max-width: 1024px){
-            flex-direction: column;
-            align-items: center;
+        @include below($tablet) {
+            order: 2;
+            padding-left: 65px;
+            padding-right: 65px;
+
+            .contacts__item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                max-width: 215px;
+
+                &:last-of-type {
+                    max-width: none;
+                    width: 100%;
+                }
+            }
+
+            .socials__icon {
+                width: 50px;
+                height: 50px;
+            }
+
+            .socials__item {
+                margin: 0;
+                width: auto;
+
+                &:not(:last-of-type) {
+                    margin-right: 25px;
+                }
+            }
+        }
+
+        @include below($mobile) {
+            padding: 0;
+            padding-top: 90px;
+
+            .contacts__item {
+                width: 100%;
+                max-width: none;
+                margin: 0;
+
+                &:not(:last-of-type) {
+                    margin-bottom: 40px;
+                }
+            }
         }
     }
 
@@ -106,6 +164,16 @@
 
     &__socials {
         margin-top: 15px;
+
+        @include below($tablet) {
+            justify-content: center;
+        }
+    }
+
+    .second-title {
+        @include below($tablet) {
+            font-size: 24px;
+        }
     }
 }
 
@@ -116,9 +184,10 @@
     display: none;
     min-height: 440px;
 
-    @media screen and (max-width: 1024px) {
-        width: 100%;
+    @include below($mobile) {
+        width: calc(100% - 20px);
     }
+
     &_active {
         display: block;
     }

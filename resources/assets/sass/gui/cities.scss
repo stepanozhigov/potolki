@@ -17,11 +17,30 @@
     &__title {
         flex-basis: 100%;
         margin-bottom: 63px;
+
+
     }
 
     &__item {
         max-width: 236px;
         margin-bottom: 30px;
+
+        @include below($tablet) {
+            max-width: none;
+            width: calc(33.3% - 24px);
+            margin: 0 12px;
+            margin-bottom: 30px;
+        }
+
+        @include below($mobile) {
+            max-width: none;
+            width: 100%;
+            margin: 0;
+
+            &:not(:last-of-type) {
+                margin-bottom: rem(30);
+            }
+        }
     }
 
     &__intro {
@@ -31,5 +50,12 @@
 
     &__search {
         flex-basis: 100%;
+    }
+
+    .second-title {
+        @include below($mobile) {
+            font-size: rem(26);
+            line-height: rem(32);
+        }
     }
 }

@@ -49,16 +49,16 @@
                 <p class="second-title">Социальные сети</p>
                 <div class="socials contacts__socials">
                     <a href="" class="socials__item">
-                        <img src="/img/gui/social_gray_vk.svg" alt="">
+                        <div class="socials__icon socials__icon_vk"></div>
                     </a>
                     <a href="" class="socials__item">
-                        <img src="/img/gui/social_gray_ok.svg" alt="">
+                        <div class="socials__icon socials__icon_youtube"></div>
                     </a>
                     <a href="" class="socials__item">
-                        <img src="/img/gui/social_gray_fb.svg" alt="">
+                        <div class="socials__icon socials__icon_fb"></div>
                     </a>
                     <a href="" class="socials__item">
-                        <img src="/img/gui/social_gray_inst.svg" alt="">
+                        <div class="socials__icon socials__icon_inst"></div>
                     </a>
                 </div>
             </div>

@@ -24,6 +24,7 @@ Route::get('/forms/callback', 'PageController@callback');
 Route::post('/forms/add-comment', 'FeedbackController@addComment');
 Route::post('/forms/add-review', 'FeedbackController@addReview');
 Route::post('/forms/proxy-lead', 'FeedbackController@proxyLead');
+Route::post('/forms/search-phone', 'FeedbackController@searchPhoneInMessage');
 
 Route::prefix('/{city}')->group(function () {
 
@@ -58,4 +59,8 @@ Route::prefix('/{city}')->group(function () {
     Route::get('/articles/{article}', 'PageController@article')->name('article');
 
     Route::get('/whyus', 'PageController@whyus')->name('whyus');
+
+    Route::get('/agreement', 'PageController@agreement')->name('agreement');
+
+    Route::get('/catalogue', 'PageController@catalogue')->name('catalogue');
 });

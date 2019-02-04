@@ -13,11 +13,16 @@
             <div class="whyus__content">
                 <div class="whyus__item">
                     <div class="whyus__item-info">
-                        <h3 class="whyus__item-title">Собственное производство</h3>
+                        <h3 class="whyus__item-title">Наши преимущества</h3>
                         <ul>
-                            <li class="whyus__item-text">— Обеспечивает гарантию низкой цены</li>
-                            <li class="whyus__item-text">— Снимает любые ограничения на цвет, конфигурацию и фактуру натяжного полотна</li>
-                            <li class="whyus__item-text">— 549 вариантов фактур и оттенков</li>
+                            <li class="whyus__item-text">— Контроль качества после установки</li>
+                            <li class="whyus__item-text">— Собственное производство</li>
+                            <li class="whyus__item-text">— Сервисное обслуживание</li>
+                            <li class="whyus__item-text">— Услуга «Договор на дому»</li>
+                            <li class="whyus__item-text">— 16 лет успешной работы</li>
+                            <li class="whyus__item-text">— Гарантия низкой цены</li>
+                            <li class="whyus__item-text">— Установка за 1 день</li>
+                            <li class="whyus__item-text">— Контроль качества</li>
                         </ul>
                     </div>
                     <img class="whyus__item-image" src="/img/img_factory.jpg" alt="Производство">
@@ -26,21 +31,27 @@
                     <div class="whyus__item-info">
                         <h3 class="whyus__item-title">Директор всегда на связи</h3>
                         <p class="whyus__item-text">
-                            Я принимаю абсолютно все жалобы и предложения для улучшения качества работы и сервиса. В течении 24 часов ваше обращение будет мною рассмотрено и вы получите ответ.
+                            Я лично контролирую все этапы работы с помощью прямого контакта со своими клиентами. Вы можете написать мне в любую социальную сеть или позвонить. <br> Прямая линия обеспечивает ответственную работу каждого сотрудника. Считаю это самым важным фактором для моих клиентов.
                         </p>
-                        <p class="whyus__item-text">
-                            Вы можете использовать для связи привычную социальную сеть или
-                            <a href="javascript:void(0);">форму обратной связи.</a>
-                        </p>
-                        <div class="whyus__social">
-                            <a href="javascript:void(0);">
-                                <img src="/img/gui/social_gray_inst.svg" alt="Инстаграм">
+                        <div class="signature">
+                            <p>А. А. Репин</p>
+                            <img src="/img/signature.png" alt="signature">
+                        </div>
+                        <div class="socials">
+                            <a href="" class="socials__item">
+                                <div class="socials__icon socials__icon_vk"></div>
                             </a>
-                            <a href="javascript:void(0);">
-                                <img src="/img/gui/social_gray_fb.svg" alt="Фейсбук">
+                            <a href="" class="socials__item">
+                                <div class="socials__icon socials__icon_youtube"></div>
                             </a>
-                            <a href="javascript:void(0);">
-                                <img src="/img/gui/social_gray_vk.svg" alt="Вконтакте">
+                            <a href="" class="socials__item red-hoverable">
+                                <div class="socials__icon socials__icon_fb"></div>
+                            </a>
+                            <a href="" class="socials__item">
+                                <div class="socials__icon socials__icon_inst"></div>
+                            </a>
+                            <a href="" class="socials__item">
+                                <div class="socials__icon socials__icon_whatsapp"></div>
                             </a>
                         </div>
                     </div>
@@ -62,31 +73,23 @@
                 </div>
             </div>
             <div class="whyus__advantages">
-                <div class="whyus__advantages-list">
-                    <div class="whyus__advantages-item">
-                        <img class="whyus__advantages-icon" src="/img/athome.svg" alt="Договор">
-                        <p class="whyus__advantages-text">Договор и замер <br> на дому</p>
-                    </div>
-                    <div class="whyus__advantages-item">
-                        <img class="whyus__advantages-icon" src="/img/colors.svg" alt="1548 цветов">
-                        <p class="whyus__advantages-text">1548 цветов <br> плёнки</p>
-                    </div>
-                    <div class="whyus__advantages-item">
-                        <img class="whyus__advantages-icon" src="/img/sertificates.svg" alt="Сертификаты">
-                        <p class="whyus__advantages-text">Сертификаты <br> качества</p>
-                    </div>
-                    <div class="whyus__advantages-item">
-                        <img class="whyus__advantages-icon" src="/img/pay.svg" alt="Рассрочка">
-                        <p class="whyus__advantages-text">Рассрочка <br> экспресс</p>
-                    </div>
+                <div class="whyus__advantages-item">
+                    <img class="whyus__advantages-icon" src="/img/athome.svg" alt="Договор">
+                    <p class="whyus__advantages-text">Договор на дому</p>
+                </div>
+                <div class="whyus__advantages-item">
+                    <img class="whyus__advantages-icon" src="/img/colors.svg" alt="1548 цветов">
+                    <p class="whyus__advantages-text">Любой цвет</p>
+                </div>
+                <div class="whyus__advantages-item">
+                    <img class="whyus__advantages-icon" src="/img/sertificates.svg" alt="Сертификаты">
+                    <p class="whyus__advantages-text">Сертификаты</p>
+                </div>
+                <div class="whyus__advantages-item">
+                    <img class="whyus__advantages-icon" src="/img/pay.svg" alt="Рассрочка">
+                    <p class="whyus__advantages-text">Рассрочка</p>
                 </div>
             </div>
-            <div class="whyus__machine">
-                <h3 class="whyus__title">Современный высокотехнологичный станок <br> для фотопечати DYSS Apollo GH 3200</h3>
-                <p class="whyus__subtitle">Пьезоструйная УФ-печать с технологией переменного объема капли. Разрешение 1200х1270 dpi, 24 печатающие <br> головки, печать в 6 красок. Безупречное фотографическое качество отпечатка, экологичность, высокая <br> производительность и экономичность.</p>
-                <img class="whyus__machine-img" src="/img/printer.png" alt="Принтер">
-            </div>
-
         </section>
     @include('common.gui.footer')
 @endsection

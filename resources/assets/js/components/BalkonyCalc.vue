@@ -1,150 +1,130 @@
 <template>
-
-    <div class="calculator__inner">
-        <div class="calculator__types">
-            <label class="radio">
-                <input class="radio__input"  type="radio" name="type" v-model="currentType">
-                <img  class="/img/windows/calculator/balcony/balconies_with_ledge_long.png" alt="">
-                <img  src="/img/windows/calculator/balcony/balconies_with_ledge_long_red.png" alt="">
-                <img  class="calculator__active" src="/img/gui/active_calc.svg" alt="">
-            </label>
-            <label class="radio">
-                <input class="radio__input"  type="radio" name="type">
-                <img  class="/img/windows/calculator/balcony/balconies_with_ledge.png" alt="">
-                <img  src="/img/windows/calculator/balcony/balconies_with_ledge_red.png" alt="">
-                <img  class="calculator__active" src="/img/gui/active_calc.svg" alt="">
-            </label>
-            <label class="radio">
-                <input class="radio__input"  type="radio" name="type">
-                <img  class="/img/windows/calculator/balcony/balconies_with_sill_long.png" alt="">
-                <img  src="/img/windows/calculator/balcony/balconies_with_sill_long_red.png" alt="">
-                <img  class="calculator__active" src="/img/gui/active_calc.svg" alt="">
-            </label>
-        </div>
-        <transition name="slide" mode="out-in">
-        <div class="calculator__content">
-            <div class="calculator__additional">
-                <section class="calculator__additional-block">
-                    <p class="calculator__additional-title">Установка</p>
-                    <div class="calculator__additional-item">
-                        <input type="radio" data-price="10%" id="install" name="installForWindow" value="install" class="calculator__additional-input calculator__additional-input_round" checked>
-                        <label for="install" class="calculator__additional-name">С установкой</label>
-                    </div>
-                    <div class="calculator__additional-item">
-                        <input type="radio" data-price="0%" id="withoutInstall" name="installForWindow" value="withoutInstall" class="calculator__additional-input calculator__additional-input_round">
-                        <label for="withoutInstall" class="calculator__additional-name">Без установки</label>
-                    </div>
-                </section>
-
-                <section class="calculator__additional-block">
-                    <p class="calculator__additional-title">Отделка</p>
-                    <div class="calculator__additional-item">
-                        <input type="checkbox" data-price="0" id="finishing" name="finishing" value="finishing" class="calculator__additional-input calculator__additional-input_square" checked>
-                        <label for="finishing" class="calculator__additional-name">Требуется отделка</label>
-                    </div>
-                    <div class="calculator__additional-item">
-                        <input type="checkbox" data-price="0" id="insulation" name="insulation" value="insulation" class="calculator__additional-input calculator__additional-input_square" checked>
-                        <label for="insulation" class="calculator__additional-name">Требуется утепление</label>
-                    </div>
-                </section>
-
-                <section class="calculator__additional-block">
-                    <div class="calculator__additional-finishing">
-                        <div class="calculator__additional-finishing-item ">
-                            <p class="calculator__additional-name">Пол</p>
-                            <div class="calculator__additional-area">
-                                <p>Площадь</p>
-                                <input type="number" name="area" value="" placeholder="м2">
-                            </div>
-                            <div class="calculator__additional-select-wrap">
-                                <select class="calculator__additional-select" name="liningInside">
-                                    <option data-price="2" selected value="tile">Материал</option>
-                                    <option data-price="2" value="tile">Кафель</option>
-                                    <option data-price="4" value="tile">Пластик</option>
-                                    <option data-price="0" value="tile">Кафель</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="calculator__additional-finishing-item ">
-                            <p class="calculator__additional-name">Стены</p>
-                            <div class="calculator__additional-area">
-                                <p>Площадь</p>
-                                <input type="number" name="area" value="" placeholder="м2">
-                            </div>
-                            <div class="calculator__additional-select-wrap">
-                                <select class="calculator__additional-select" name="liningInside">
-                                    <option data-price="2" selected value="tile">Материал</option>
-                                    <option data-price="2" value="tile">Кафель</option>
-                                    <option data-price="4" value="tile">Пластик</option>
-                                    <option data-price="0" value="tile">Кафель</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="calculator__additional-finishing-item ">
-                            <p class="calculator__additional-name">Потолок</p>
-                            <div class="calculator__additional-area">
-                                <p>Площадь</p>
-                                <input type="number" name="area" value="" placeholder="м2">
-                            </div>
-                            <div class="calculator__additional-select-wrap">
-                                <select class="calculator__additional-select" name="liningInside">
-                                    <option data-price="2" selected value="tile">Материал</option>
-                                    <option data-price="2" value="tile">Кафель</option>
-                                    <option data-price="4" value="tile">Пластик</option>
-                                    <option data-price="0" value="tile">Кафель</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-            <div class="calculator__area">
-                <p class="calculator__title">Укажите размеры окна</p>
-                <div class="calculator__img-wrap">
-                    <img class="calculator__img" ref="calculator__img" src="/img/windows/calculator/balcony/balconies_with_ledge_long_big.png" alt="">
-                    <div class="calculator__widths">
-                        <hr class="calculator__line">
-                        <label  class="calculator__width text-input">
-                            <input type="text" class="input text-input__value" name="width[]">
-                            <span class="text-input__label text">мм</span>
-                            <p class="calculator__width-desc">Ширина окна</p>
-                        </label>
-                    </div>
-                    <div class="calculator__depths">
-                        <hr class="calculator__line calculator__line_depth">
-                        <label  class="calculator__depth text-input">
-                            <input type="text" class="input text-input__value" name="width[]">
-                            <span class="text-input__label text">мм</span>
-                            <p class="calculator__depth-desc">Глубина окна</p>
-                        </label>
-                    </div>
-                </div>
-                <div class="calculator__heights">
-                    <hr class="calculator__line calculator__line_vert">
-                    <div class="calculator__height text-input">
-                        <input type="text" class="input text-input__value" name="height[]">
-                        <span class="text-input__label text">мм</span>
-                        <p class="calculator__height-desc">Высота окна</p>
-                    </div>
-                </div>
-            </div>
-            <form action="" class="form calculator__result calculator-result">
-                <div class="calculator-result__head">
-                    <p class="text text_white">Расчетная цена</p>
-                    <span class="calculator-result__summ">{{ summ }} Р</span>
-                </div>
-
-                <div class="calculator-result__body">
-                    <input class="calculator-result__input" type="text" placeholder="Введите ваше имя">
-                    <input class="calculator-result__input" type="tel" placeholder="Введите ваш телефон">
-                    <button class="button button_gray calculator-result__button">Заказать</button>
-                </div>
-
-                <p class="subtext calculator-result__attention">Внимание! Стоимость является примерной. Более точная оценка требует выезда замерщика</p>
-            </form>
-        </div>
-        </transition>
+<div class="calculator__inner">
+    <div class="calculator__types">
+        <label class="calculator__type active">
+            <input class="calculator__type-input"  type="radio" name="type">
+            <img class="calculator__type-image" src="/img/windows/calculator/balcony/balcony-calc_01.svg" alt="">
+            <p class="calculator__type-name">Лоджия <br> трёхстворчатая</p>
+        </label>
+        <label class="calculator__type">
+            <input class="calculator__type-input"  type="radio" name="type">
+            <img class="calculator__type-image" src="/img/windows/calculator/balcony/balcony-calc_02.svg" alt="">
+            <p class="calculator__type-name">Лоджия <br> четырёхстворчатая</p>
+        </label>
+        <label class="calculator__type">
+            <input class="calculator__type-input"  type="radio" name="type">
+            <img class="calculator__type-image" src="/img/windows/calculator/balcony/balcony-calc_03.svg" alt="">
+            <p class="calculator__type-name">Балкон <br> трёхстворчатый</p>
+        </label>
+        <label class="calculator__type">
+            <input class="calculator__type-input"  type="radio" name="type">
+            <img class="calculator__type-image" src="/img/windows/calculator/balcony/balcony-calc_04.svg" alt="">
+            <p class="calculator__type-name">Балкон <br> четырёхстворчатый</p>
+        </label>
     </div>
+    <div class="calculator__content">
+        <div class="calculator__main calculator__main_loggia-tricuspid active">
+            <img class="calculator__image" src="/img/windows/calculator/balcony/balcony-calc-big_01.png" srcset="/img/windows/calculator/balcony/balcony-calc-big_01@2x.png 2x" alt="">
+            <img class="calculator__window-left" src="/img/windows/calculator/balcony/balcony-calc-big_11.png" srcset="/img/windows/calculator/balcony/balcony-calc-big_11@2x.png 2x" alt="">
+            <div class="calculator__width">
+                <input type="number" class="calculator__input" name="height[]">
+                <span class="calculator__input-unit">мм</span>
+                <span class="calculator__input-val">2 400</span>
+            </div>
+            <div class="calculator__height">
+                <input type="number" class="calculator__input" name="height[]">
+                <span class="calculator__input-unit">мм</span>
+                <span class="calculator__input-val">2 400</span>
+            </div>
+        </div>
+        <div class="calculator__main calculator__main_loggia-four-leaved">
+            <img class="calculator__image" src="/img/windows/calculator/balcony/balcony-calc-big_02.png" srcset="/img/windows/calculator/balcony/balcony-calc-big_02@2x.png 2x" alt="">
+            <img class="calculator__window-left" src="/img/windows/calculator/balcony/balcony-calc-big_11.png" srcset="/img/windows/calculator/balcony/balcony-calc-big_11@2x.png 2x" alt="">
+            <div class="calculator__width">
+                <input type="number" class="calculator__input" name="height[]">
+                <span class="calculator__input-unit">мм</span>
+                <span class="calculator__input-val">2 400</span>
+            </div>
+            <div class="calculator__height">
+                <input type="number" class="calculator__input" name="height[]">
+                <span class="calculator__input-unit">мм</span>
+                <span class="calculator__input-val">2 400</span>
+            </div>
+        </div>
+        <div class="calculator__main calculator__main_balcon-tricuspid">
+            <img class="calculator__image" src="/img/windows/calculator/balcony/balcony-calc-big_03.png" srcset="/img/windows/calculator/balcony/balcony-calc-big_03@2x.png 2x" alt="">
+            <img class="calculator__window-left" src="/img/windows/calculator/balcony/balcony-calc-big_11.png" srcset="/img/windows/calculator/balcony/balcony-calc-big_11@2x.png 2x" alt="">
+            <div class="calculator__width">
+                <input type="number" class="calculator__input" name="height[]">
+                <span class="calculator__input-unit">мм</span>
+                <span class="calculator__input-val">2 400</span>
+            </div>
+            <div class="calculator__height">
+                <input type="number" class="calculator__input" name="height[]">
+                <span class="calculator__input-unit">мм</span>
+                <span class="calculator__input-val">2 400</span>
+            </div>
+        </div>
+        <div class="calculator__main calculator__main_balcon-four-leaved">
+            <img class="calculator__image" src="/img/windows/calculator/balcony/balcony-calc-big_04.png" srcset="/img/windows/calculator/balcony/balcony-calc-big_04@2x.png 2x" alt="">
+            <img class="calculator__window-left" src="/img/windows/calculator/balcony/balcony-calc-big_11.png" srcset="/img/windows/calculator/balcony/balcony-calc-big_11@2x.png 2x" alt="">
+            <div class="calculator__width">
+                <input type="number" class="calculator__input" name="height[]">
+                <span class="calculator__input-unit">мм</span>
+                <span class="calculator__input-val">2 400</span>
+            </div>
+            <div class="calculator__height">
+                <input type="number" class="calculator__input" name="height[]">
+                <span class="calculator__input-unit">мм</span>
+                <span class="calculator__input-val">2 400</span>
+            </div>
+        </div>
+        <div class="calculator__info">
+            <div class="calculator__params">
+                <h3 class="calculator__title">Параметры окна</h3>
+                <p class="calculator__text">Указаны стандартные размеры оконных рам. Введите свои параметры для расчёта стоимости.</p>
+                <div class="calculator__size">
+                    <p class="calculator__size-name">Ширина</p>
+                    <div class="calculator__width">
+                        <input type="number" pattern="\d*" class="calculator__input" name="height[]">
+                        <span class="calculator__input-unit">мм</span>
+                    </div>
+                </div>
+                <div class="calculator__size">
+                <p class="calculator__size-name">Высота</p>
+                    <div class="calculator__height">
+                        <input type="number" pattern="\d*" class="calculator__input" name="height[]">
+                        <span class="calculator__input-unit">мм</span>
+                    </div>
+                </div>
+            </div>
+            <div class="calculator__service">
+                <h3 class="calculator__title">Сервис</h3>
+                <label class="checkbox">
+                    <input name="shipping" type="checkbox" class="checkbox__input">
+                    <span class=" checkbox__mark"></span>
+                     Доставка
+                </label>
+                <label class="checkbox">
+                    <input name="install" type="checkbox" class="checkbox__input">
+                    <span class=" checkbox__mark"></span>
+                    Установка
+                </label>
+            </div>
+            <div class="calculator__finishing">
+                <h3 class="calculator__title">Отделка балкона</h3>
+                <p class="calculator__text">Для рассчёта отделки позвоните по номеру</p>
+                <a href="tel:8 800 333-97-14" class="calculator__call">8 800 333–97–14</a>
+            </div>
+            <div class="calculator__price">
+                <h3 class="calculator__title">Стоимость</h3>
+                <p class="calculator__text">Является примерной. Точная оценка и расчёт нетиповых конфигураций требует бесплатного выезда замерщика.</p>
+                <p class="calculator__summ">5 800 ₽</p>
+                <button class="calculator__button js-show" data-src="#popup_callback" data-title="Вызов замерщика" data-button="Вызвать замерщика">Вызвать замерщика</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 </template>

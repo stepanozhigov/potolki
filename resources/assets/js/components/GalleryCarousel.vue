@@ -14,11 +14,10 @@
             <p class="gallery__totals">{{ showedItems[currentPhotoIndex].price }}  ₽ / {{ showedItems[currentPhotoIndex].area }} м<sup>2</sup></p>
             <img @click="toggleMode" class="gallery__close" src="/img/gui/close.svg">
             <img @click="prevItem" class="gallery__prev" src="/img/gui/arrow_top.png">
-            <img @click="nextItem" class="gallery__next" src="/img/gui/arrow_top.png">            
+            <img @click="nextItem" class="gallery__next" src="/img/gui/arrow_top.png">
             <img class="gallery__img b-card" :src="`/storage/${showedItems[currentPhotoIndex].src}`">
         </div>
     </div>
-    
 </template>
 
 <script>
@@ -79,7 +78,7 @@
                 this.interval = setInterval(this.offsetShowPoint, 3000);
             },
             stopSliding () {
-                clearInterval(this.interval);   
+                clearInterval(this.interval);
             },
             toggleMode (index) {
                 if (this.mode == 'list') {
@@ -89,7 +88,7 @@
                 } else {
                     this.mode = 'list';
                     this.startSliding();
-                }                
+                }
             }
         },
         mounted: function () {

@@ -19,15 +19,25 @@
             <label class="file add-review__file">
                 <img src="/img/gui/add-file.png" alt="" class="file__preview">
                 <input v-on:change="handlePhoto"  type="file" class="file__input">
-                <img v-for="preview in previews" v-bind:src="preview" class="file__preview add-review__preview">
+                <div class="file__preview add-review__preview">
+                    <img v-for="preview in previews" v-bind:src="preview">
+                </div>
+                <div class="file__preview add-review__preview">
+                    <img v-for="preview in previews" v-bind:src="preview">
+                </div>
+                <div class="file__preview add-review__preview disable">
+                    <img v-for="preview in previews" v-bind:src="preview">
+                </div>
             </label>
         </div>
         <div class="add-review__label">
             <p>или видео</p>
-            <label class="file add-review__file">
+            <label class="file file_video add-review__file">
                 <img src="/img/gui/add-file.png" alt="" class="file__preview">
                 <input v-on:change="handleVideo" type="file" class="file__input">
-                <span class="subtext file__name">{{ video ? video.name: '' }}</span>
+                <div class="file__preview add-review__preview">
+                    <img v-for="preview in previews" v-bind:src="preview">
+                </div>
             </label>
         </div>
         <button v-if="!sended" @click="send" class="button add-review__submit">Оставить отзыв</button>

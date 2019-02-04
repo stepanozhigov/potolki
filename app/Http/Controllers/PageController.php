@@ -170,6 +170,13 @@ class PageController extends Controller
         ]);
     }
 
+    public function agreement (City $city)
+    {
+        return view('common.pages.agreement', [
+            'city'  =>  $city
+        ]);
+    }
+
     public function articles (City $city)
     {
         return view('common.pages.articles', [
@@ -184,6 +191,13 @@ class PageController extends Controller
         return view('common.pages.article', [
             'city'  =>  $city,
             'article'   =>  $article
+        ]);
+    }
+
+    public function catalogue (City $city)
+    {
+        return view('windows.services.catalogue', [
+            'city'  =>  $city
         ]);
     }
 

@@ -3,33 +3,95 @@
     <div class="calculator__types">
         <label class="calculator__type active">
             <input class="calculator__type-input"  type="radio" name="type">
-            <img class="calculator__type-image" src="/img/windows/calculator/windows/win-calc_01.svg" alt="">
+            <img class="calculator__type-image" width="31" height="24" src="/img/windows/calculator/windows/win-calc_01.svg" alt="">
             <p class="calculator__type-name">Трёхстворчатое <br> окно</p>
         </label>
         <label class="calculator__type">
             <input class="calculator__type-input"  type="radio" name="type">
-            <img class="calculator__type-image" src="/img/windows/calculator/windows/win-calc_02.svg" alt="">
+            <img class="calculator__type-image" width="21" height="24" src="/img/windows/calculator/windows/win-calc_02.svg" alt="">
             <p class="calculator__type-name">Двустворчатое <br> окно</p>
         </label>
         <label class="calculator__type">
             <input class="calculator__type-input"  type="radio" name="type">
-            <img class="calculator__type-image" src="/img/windows/calculator/windows/win-calc_03.svg" alt="">
+            <img class="calculator__type-image" width="11" height="24" src="/img/windows/calculator/windows/win-calc_03.svg" alt="">
             <p class="calculator__type-name">Одностворчатое <br> окно</p>
         </label>
         <label class="calculator__type">
             <input class="calculator__type-input"  type="radio" name="type">
-            <img class="calculator__type-image" src="/img/windows/calculator/windows/win-calc_04.svg" alt="">
+            <img class="calculator__type-image" width="32" height="32" src="/img/windows/calculator/windows/win-calc_04.svg" alt="">
             <p class="calculator__type-name">Балконный блок <br> двустворчатый</p>
         </label>
         <label class="calculator__type">
             <input class="calculator__type-input"  type="radio" name="type">
-            <img class="calculator__type-image" src="/img/windows/calculator/windows/win-calc_05.svg" alt="">
+            <img class="calculator__type-image" width="22" height="32" src="/img/windows/calculator/windows/win-calc_05.svg" alt="">
             <p class="calculator__type-name">Балконный блок <br> одностворчатый</p>
         </label>
     </div>
     <div class="calculator__content">
-        <div class="calculator__main">
+        <div class="calculator__main calculator__main_tricuspid active">
             <img class="calculator__image" src="/img/windows/calculator/windows/win-calc-big_01.png" alt="">
+            <img class="calculator__window-left" src="/img/windows/calculator/windows/win-calc-big_011.png" alt="">
+            <img class="calculator__window-right" src="/img/windows/calculator/windows/win-calc-big_012.png" alt="">
+            <div class="calculator__width">
+                <input type="number" class="calculator__input" name="height[]">
+                <span class="calculator__input-unit">мм</span>
+                <span class="calculator__input-val">2 400</span>
+            </div>
+            <div class="calculator__height">
+                <input type="number" class="calculator__input" name="height[]">
+                <span class="calculator__input-unit">мм</span>
+                <span class="calculator__input-val">2 400</span>
+            </div>
+        </div>
+        <div class="calculator__main calculator__main_bivalve ">
+            <img class="calculator__image" src="/img/windows/calculator/windows/win-calc-big_02.png" alt="">
+            <img class="calculator__window-left" src="/img/windows/calculator/windows/win-calc-big_021.png" alt="">
+            <div class="calculator__width">
+                <input type="number" class="calculator__input" name="height[]">
+                <span class="calculator__input-unit">мм</span>
+                <span class="calculator__input-val">2 400</span>
+            </div>
+            <div class="calculator__height">
+                <input type="number" class="calculator__input" name="height[]">
+                <span class="calculator__input-unit">мм</span>
+                <span class="calculator__input-val">2 400</span>
+            </div>
+        </div>
+        <div class="calculator__main calculator__main_single">
+            <img class="calculator__image" src="/img/windows/calculator/windows/win-calc-big_03.png" alt="">
+            <img class="calculator__window-left" src="/img/windows/calculator/windows/win-calc-big_031.png" alt="">
+            <div class="calculator__width">
+                <input type="number" class="calculator__input" name="height[]">
+                <span class="calculator__input-unit">мм</span>
+                <span class="calculator__input-val">2 400</span>
+            </div>
+            <div class="calculator__height">
+                <input type="number" class="calculator__input" name="height[]">
+                <span class="calculator__input-unit">мм</span>
+                <span class="calculator__input-val">2 400</span>
+            </div>
+        </div>
+        <div class="calculator__main calculator__main_block-bivalve">
+            <img class="calculator__image" src="/img/windows/calculator/windows/win-calc-big_04.png" alt="">
+            <img class="calculator__window-left" src="/img/windows/calculator/windows/win-calc-big_041.png" alt="">
+            <div class="calculator__shadow calculator__shadow_horizontal"></div>
+            <div class="calculator__shadow calculator__shadow_vertical"></div>
+            <div class="calculator__width">
+                <input type="number" class="calculator__input" name="height[]">
+                <span class="calculator__input-unit">мм</span>
+                <span class="calculator__input-val">2 400</span>
+            </div>
+            <div class="calculator__height">
+                <input type="number" class="calculator__input" name="height[]">
+                <span class="calculator__input-unit">мм</span>
+                <span class="calculator__input-val">2 400</span>
+            </div>
+        </div>
+        <div class="calculator__main calculator__main_block-single">
+            <img class="calculator__image" src="/img/windows/calculator/windows/win-calc-big_05.png" alt="">
+            <img class="calculator__window-left" src="/img/windows/calculator/windows/win-calc-big_051.png" alt="">
+            <div class="calculator__shadow calculator__shadow_horizontal"></div>
+            <div class="calculator__shadow calculator__shadow_vertical"></div>
             <div class="calculator__width">
                 <input type="number" class="calculator__input" name="height[]">
                 <span class="calculator__input-unit">мм</span>

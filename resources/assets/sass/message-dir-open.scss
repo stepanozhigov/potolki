@@ -1,15 +1,34 @@
+@import 'mixins';
+@import 'variables';
+
 .dir-message {
     padding-top: 80px;
     margin-bottom: 80px;
     &__person {
         margin-bottom: -35px;
+
+        @include below($mobile) {
+            margin: 0;
+        }
     }
     &__form {
         display: flex;
         flex-wrap: wrap;
-        width: 85%;
+        width: 780px;
         margin: 0 auto;
-        padding: 60px 0 100px 0;
+        padding: 60px 0 60px 0;
+
+        &::before {
+            width: 580px;
+
+            @include below($mobile) {
+                width: 64vw;
+            }
+        }
+
+        @include below($tablet) {
+            width: 100%;
+        }
 
     }
 
@@ -37,15 +56,14 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        flex-direction: column;
         width: 100%;
         margin: 0 rem(10);
 
         @include below($tablet) {
             flex-wrap: wrap;
             justify-content: center;
-        }
-        @include below($phablet) {
-            flex-direction: column;
+            flex-direction: column-reverse;
         }
     }
 
@@ -53,6 +71,7 @@
         width: rem(200);
         padding-right: rem(40);
         padding-left: rem(40);
+        margin-bottom: 16px;
 
         font-size: rem(20);
 
@@ -87,14 +106,13 @@
     }
 
     &__rules {
-        width: rem(280);
         margin: 0;
 
         font-size: rem(12);
 
         @include below($tablet) {
             width: 100%;
-            margin-top: rem(20);
+            margin-bottom: rem(20);
 
             text-align: center;
         }

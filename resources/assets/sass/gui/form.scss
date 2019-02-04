@@ -40,5 +40,10 @@
     }
     &__agreement {
         font-size: 12px;
+        width: 100%;
+
+        a {
+            color: #50555a;
+        }
     }
 }

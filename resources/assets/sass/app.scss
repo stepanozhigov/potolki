@@ -17,6 +17,7 @@
 
 @import 'common';
 @import './gui/menu';
+@import './windows/catalogue';
 @import 'portfolio';
 
 @import 'services';
@@ -36,6 +37,10 @@
 @import 'personal-data';
 
 @import 'about';
+
+@import 'turnkey';
+
+@import 'facture';
 
 @import 'videogallery';
 
@@ -66,3 +71,5 @@
 @import './articles';
 
 @import './whyus';
+
+@import './ourArticles';

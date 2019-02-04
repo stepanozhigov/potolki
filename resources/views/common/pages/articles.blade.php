@@ -3,43 +3,195 @@
     @include('common.gui.header')
 
         <div class="titles container">
-            <p class="overtitle titles__overtitle">Статьи</p>
+            <p class="overtitle titles__overtitle">Статьи и новости</p>
             <h1 class="title titles__title">Полезная информация о пластиковых окнах</h1>
             <hr class="line titles__line">
             <p class="intro titles__intro">Больше полезной информации, конкурсы и розыгрыши вы можете найти в наших социальных сетях:</p>
             <div class="socials titles__socials">
                 <a href="" class="socials__item red-hoverable">
-                    <img class="socials__icon" src="/img/gui/social_gray_vk.svg" alt="">
+                    <div class="socials__icon socials__icon_vk"></div>
                     <span class="socials__name text red-hoverable">Вконтакте</span>
                 </a>
                 <a href="" class="socials__item red-hoverable">
-                    <img class="socials__icon" src="/img/gui/social_gray_ok.svg" alt="">
+                    <div class="socials__icon socials__icon_youtube"></div>
                     <span class="socials__name text red-hoverable">Одноклассники</span>
                 </a>
                 <a href="" class="socials__item red-hoverable">
-                    <img class="socials__icon" src="/img/gui/social_gray_fb.svg" alt="">
+                    <div class="socials__icon socials__icon_fb"></div>
                     <span class="socials__name text red-hoverable">Facebook</span>
                 </a>
                 <a href="" class="socials__item red-hoverable">
-                    <img class="socials__icon" src="/img/gui/social_gray_inst.svg" alt="">
+                    <div class="socials__icon socials__icon_inst"></div>
                     <span class="socials__name text red-hoverable">Instagram</span>
                 </a>
             </div>
         </div>
 
     <div class="articles container">
-        @foreach ($articles as $article)
-            <a href="{{ route('article', [$city, $article]) }}" class="article-card b-card articles__item" style="background-image: url({{ Storage::url($article->preview_img) }}); @if($article->width) width: {{ $article->width }}%;  @endif">
-                <p class="text article-card__title">{{ $article->title }}</p>
-                <p class="text article-card__intro">{{ $article->preview_text }}</p>
-                <span class="link subtext article-card__link">Читать далее</span>
-            </a>
-        @endforeach
-        <!--<div class="paginator articles__paginator">
-            <a href="" class="paginator__item paginator__item_active">1</a>
-            <a href="" class="paginator__item">2</a>
-            <a href="" class="paginator__item">3</a>
-        </div>-->
+        <div class="articles__content">
+            <article class="ourArticle">
+                <div class="ourArticle__gallery">
+                    <img src="/img/ourArticle_1.png" class="ourArticle__img active" alt="">
+                    <img src="/img/ourArticle_2.png" class="ourArticle__img" alt="">
+                    <img src="/img/ourArticle_3.png" class="ourArticle__img" alt="">
+                    <button class="ourArticle__gallery-prev"></button>
+                    <button class="ourArticle__gallery-next"></button>
+                    <div class="ourArticle__dots">
+                        <button class="ourArticle__dot active"></button>
+                        <button class="ourArticle__dot"></button>
+                        <button class="ourArticle__dot"></button>
+                    </div>
+                </div>
+                <div class="ourArticle__desc">
+                    <h3>Сделать из лоджии личный кабинет или лаунж зону? Легко!</h3>
+                    <p>Помимо производства и&nbsp;установки конструкций, мы&nbsp;можем эксклюзивно для вас составить дизайн-проект. А&nbsp;также дополнительно утеплить балкон, увеличить его площадь, провести освещение, установить тёплый пол и&nbsp;многое другое.</p>
+                    <p>Сохраняйте пост в&nbsp;закладки, чтобы не&nbsp;потерять. Или закажите звонок в&nbsp;шапке нашего профиля @okna_vladivostok, и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время.</p>
+                </div>
+                <a data-src="#popup_articles" class="ourArticle__more js-show" href="javascript:void(0);">Подробнее</a>
+            </article>
+            <article class="ourArticle">
+                <div class="ourArticle__gallery">
+                    <img src="/img/ourArticle_2.png" class="ourArticle__img active" alt="">
+                    <img src="/img/ourArticle_2.png" class="ourArticle__img" alt="">
+                    <img src="/img/ourArticle_3.png" class="ourArticle__img" alt="">
+                    <button class="ourArticle__gallery-prev"></button>
+                    <button class="ourArticle__gallery-next"></button>
+                    <div class="ourArticle__dots">
+                        <button class="ourArticle__dot active"></button>
+                        <button class="ourArticle__dot"></button>
+                        <button class="ourArticle__dot"></button>
+                    </div>
+                </div>
+                <div class="ourArticle__desc">
+                    <h3>Сделать из лоджии личный кабинет или лаунж зону? Легко!</h3>
+                    <p>Помимо производства и&nbsp;установки конструкций, мы&nbsp;можем эксклюзивно для вас составить дизайн-проект. А&nbsp;также дополнительно утеплить балкон, увеличить его площадь, провести освещение, установить тёплый пол и&nbsp;многое другое.</p>
+                    <p>Сохраняйте пост в&nbsp;закладки, чтобы не&nbsp;потерять. Или закажите звонок в&nbsp;шапке нашего профиля @okna_vladivostok, и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время.</p>
+                </div>
+                <a data-src="#popup_articles" class="ourArticle__more js-show" href="javascript:void(0);">Подробнее</a>
+            </article>
+            <article class="ourArticle">
+                <div class="ourArticle__gallery">
+                    <img src="/img/ourArticle_3.png" class="ourArticle__img active" alt="">
+                    <img src="/img/ourArticle_2.png" class="ourArticle__img" alt="">
+                    <img src="/img/ourArticle_3.png" class="ourArticle__img" alt="">
+                    <button class="ourArticle__gallery-prev"></button>
+                    <button class="ourArticle__gallery-next"></button>
+                    <div class="ourArticle__dots">
+                        <button class="ourArticle__dot active"></button>
+                        <button class="ourArticle__dot"></button>
+                        <button class="ourArticle__dot"></button>
+                    </div>
+                </div>
+                <div class="ourArticle__desc">
+                    <h3>Сделать из лоджии личный кабинет или лаунж зону? Легко!</h3>
+                    <p>Помимо производства и&nbsp;установки конструкций, мы&nbsp;можем эксклюзивно для вас составить дизайн-проект. А&nbsp;также дополнительно утеплить балкон, увеличить его площадь, провести освещение, установить тёплый пол и&nbsp;многое другое.</p>
+                    <p>Сохраняйте пост в&nbsp;закладки, чтобы не&nbsp;потерять. Или закажите звонок в&nbsp;шапке нашего профиля @okna_vladivostok, и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время.</p>
+                </div>
+                <a data-src="#popup_articles" class="ourArticle__more js-show" href="javascript:void(0);">Подробнее</a>
+            </article>
+
+            <article class="ourArticle">
+                <div class="ourArticle__gallery">
+                    <img src="/img/ourArticle_4.png" class="ourArticle__img active" alt="">
+                    <img src="/img/ourArticle_2.png" class="ourArticle__img" alt="">
+                    <img src="/img/ourArticle_3.png" class="ourArticle__img" alt="">
+                    <button class="ourArticle__gallery-prev"></button>
+                    <button class="ourArticle__gallery-next"></button>
+                    <div class="ourArticle__dots">
+                        <button class="ourArticle__dot active"></button>
+                        <button class="ourArticle__dot"></button>
+                        <button class="ourArticle__dot"></button>
+                    </div>
+                </div>
+                <div class="ourArticle__desc">
+                    <h3>Сделать из лоджии личный кабинет или лаунж зону? Легко!</h3>
+                    <p>Помимо производства и&nbsp;установки конструкций, мы&nbsp;можем эксклюзивно для вас составить дизайн-проект. А&nbsp;также дополнительно утеплить балкон, увеличить его площадь, провести освещение, установить тёплый пол и&nbsp;многое другое.</p>
+                    <p>Сохраняйте пост в&nbsp;закладки, чтобы не&nbsp;потерять. Или закажите звонок в&nbsp;шапке нашего профиля @okna_vladivostok, и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время.</p>
+                </div>
+                <a data-src="#popup_articles" class="ourArticle__more js-show" href="javascript:void(0);">Подробнее</a>
+            </article>
+            <img src="/img/ourArticle_5.png" class="ourArticle__textimg" alt="">
+            <article class="ourArticle">
+                <div class="ourArticle__gallery">
+                    <img src="/img/ourArticle_6.png" class="ourArticle__img active" alt="">
+                    <img src="/img/ourArticle_2.png" class="ourArticle__img" alt="">
+                    <img src="/img/ourArticle_3.png" class="ourArticle__img" alt="">
+                    <button class="ourArticle__gallery-prev"></button>
+                    <button class="ourArticle__gallery-next"></button>
+                    <div class="ourArticle__dots">
+                        <button class="ourArticle__dot active"></button>
+                        <button class="ourArticle__dot"></button>
+                        <button class="ourArticle__dot"></button>
+                    </div>
+                </div>
+                <div class="ourArticle__desc">
+                    <h3>Сделать из лоджии личный кабинет или лаунж зону? Легко!</h3>
+                    <p>Помимо производства и&nbsp;установки конструкций, мы&nbsp;можем эксклюзивно для вас составить дизайн-проект. А&nbsp;также дополнительно утеплить балкон, увеличить его площадь, провести освещение, установить тёплый пол и&nbsp;многое другое.</p>
+                    <p>Сохраняйте пост в&nbsp;закладки, чтобы не&nbsp;потерять. Или закажите звонок в&nbsp;шапке нашего профиля @okna_vladivostok, и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время.</p>
+                </div>
+                <a data-src="#popup_articles" class="ourArticle__more js-show" href="javascript:void(0);">Подробнее</a>
+            </article>
+            <article class="ourArticle">
+                <div class="ourArticle__gallery">
+                    <img src="/img/ourArticle_7.png" class="ourArticle__img active" alt="">
+                    <img src="/img/ourArticle_2.png" class="ourArticle__img" alt="">
+                    <img src="/img/ourArticle_3.png" class="ourArticle__img" alt="">
+                    <button class="ourArticle__gallery-prev"></button>
+                    <button class="ourArticle__gallery-next"></button>
+                    <div class="ourArticle__dots">
+                        <button class="ourArticle__dot active"></button>
+                        <button class="ourArticle__dot"></button>
+                        <button class="ourArticle__dot"></button>
+                    </div>
+                </div>
+                <div class="ourArticle__desc">
+                    <h3>Сделать из лоджии личный кабинет или лаунж зону? Легко!</h3>
+                    <p>Помимо производства и&nbsp;установки конструкций, мы&nbsp;можем эксклюзивно для вас составить дизайн-проект. А&nbsp;также дополнительно утеплить балкон, увеличить его площадь, провести освещение, установить тёплый пол и&nbsp;многое другое.</p>
+                    <p>Сохраняйте пост в&nbsp;закладки, чтобы не&nbsp;потерять. Или закажите звонок в&nbsp;шапке нашего профиля @okna_vladivostok, и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время.</p>
+                </div>
+                <a data-src="#popup_articles" class="ourArticle__more js-show" href="javascript:void(0);">Подробнее</a>
+            </article>
+            <article class="ourArticle">
+                <div class="ourArticle__gallery">
+                    <img src="/img/ourArticle_8.png" class="ourArticle__img active" alt="">
+                    <img src="/img/ourArticle_2.png" class="ourArticle__img" alt="">
+                    <img src="/img/ourArticle_3.png" class="ourArticle__img" alt="">
+                    <button class="ourArticle__gallery-prev"></button>
+                    <button class="ourArticle__gallery-next"></button>
+                    <div class="ourArticle__dots">
+                        <button class="ourArticle__dot active"></button>
+                        <button class="ourArticle__dot"></button>
+                        <button class="ourArticle__dot"></button>
+                    </div>
+                </div>
+                <div class="ourArticle__desc">
+                    <h3>Сделать из лоджии личный кабинет или лаунж зону? Легко!</h3>
+                    <p>Помимо производства и&nbsp;установки конструкций, мы&nbsp;можем эксклюзивно для вас составить дизайн-проект. А&nbsp;также дополнительно утеплить балкон, увеличить его площадь, провести освещение, установить тёплый пол и&nbsp;многое другое.</p>
+                    <p>Сохраняйте пост в&nbsp;закладки, чтобы не&nbsp;потерять. Или закажите звонок в&nbsp;шапке нашего профиля @okna_vladivostok, и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время.</p>
+                </div>
+                <a data-src="#popup_articles" class="ourArticle__more js-show" href="javascript:void(0);">Подробнее</a>
+            </article>
+            <article class="ourArticle">
+                <div class="ourArticle__gallery">
+                    <img src="/img/ourArticle_9.png" class="ourArticle__img active" alt="">
+                    <img src="/img/ourArticle_2.png" class="ourArticle__img" alt="">
+                    <img src="/img/ourArticle_3.png" class="ourArticle__img" alt="">
+                    <button class="ourArticle__gallery-prev"></button>
+                    <button class="ourArticle__gallery-next"></button>
+                    <div class="ourArticle__dots">
+                        <button class="ourArticle__dot active"></button>
+                        <button class="ourArticle__dot"></button>
+                        <button class="ourArticle__dot"></button>
+                    </div>
+                </div>
+                <div class="ourArticle__desc">
+                    <h3>Сделать из лоджии личный кабинет или лаунж зону? Легко!</h3>
+                    <p>Помимо производства и&nbsp;установки конструкций, мы&nbsp;можем эксклюзивно для вас составить дизайн-проект. А&nbsp;также дополнительно утеплить балкон, увеличить его площадь, провести освещение, установить тёплый пол и&nbsp;многое другое.</p>
+                    <p>Сохраняйте пост в&nbsp;закладки, чтобы не&nbsp;потерять. Или закажите звонок в&nbsp;шапке нашего профиля @okna_vladivostok, и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время.</p>
+                </div>
+                <a data-src="#popup_articles" class="ourArticle__more js-show" href="javascript:void(0);">Подробнее</a>
+            </article>
+        </div>
     </div>
 
     @include('common.gui.footer')

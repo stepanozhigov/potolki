@@ -1,9 +1,17 @@
 <template>
     <div :class="[mix, 'socials']">
-        <img @click="vkAuth()" class="socials__item" src="/img/gui/social_gray_vk.svg" alt="">
-        <img class="socials__item" src="/img/gui/social_gray_ok.svg" alt="">
-        <img class="socials__item" src="/img/gui/social_gray_fb.svg" alt="">
-        <img class="socials__item" src="/img/gui/social_gray_inst.svg" alt="">
+        <a @click="vkAuth()" href="" class="socials__item">
+            <div class="socials__icon socials__icon_vk"></div>
+        </a>
+        <a href="" class="socials__item">
+            <div class="socials__icon socials__icon_ok"></div>
+        </a>
+        <a href="" class="socials__item">
+            <div class="socials__icon socials__icon_fb"></div>
+        </a>
+        <a href="" class="socials__item">
+            <div class="socials__icon socials__icon_inst"></div>
+        </a>
     </div>
 </template>
 
@@ -15,7 +23,7 @@
                 user: {}
             }
         },
-        props: ['mix'], 
+        props: ['mix'],
         methods: {
             vkAuth: function () {
                 VK.init({
@@ -48,7 +56,7 @@
                 if (val) {
                     this.$emit('logged', val);
                 }
-                
+
             }
         }
     };

@@ -1,8 +1,30 @@
+@import 'mixins';
+@import 'variables';
 .articles {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding-bottom: 90px;
+    align-items: baseline;
+
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        width: calc(100% + 20px);
+        margin-left: -10px;
+        margin-right: -10px;
+        margin-bottom: -90px;
+        align-items: center;
+
+        @include below($tablet) {
+            justify-content: space-around;
+        }
+
+        .ourArticle {
+            margin: 0 10px;
+            margin-bottom: 90px;
+        }
+    }
 
     &__buttons {
         margin-top: 24px;
@@ -50,6 +72,10 @@
 
         @media screen and (max-width: 768px) {
             width: 100% !important;
+
+            &:nth-of-type(n + 2) {
+                display: none;
+            }
         }
     }
 

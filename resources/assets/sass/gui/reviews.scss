@@ -2,13 +2,14 @@
 
 .reviews {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     padding: 0px 0 32px 0;
 	padding-top: 48px;
 
     &__buttons {
         margin-top: 32px;
+        width: 100%;
     }
     &__add {
         margin: 20px auto 0 auto;
@@ -21,27 +22,38 @@
         @media screen and (max-width: 1024px) {
             width: 42%;
         }
-        @media screen and (max-width: 800px) {
+        @include below($mobile) {
             width: 97%;
         }
     }
 
     &__buttons {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         margin: 24px auto 32px auto;
-        flex-basis: 50%;
+        width: 100%;
 
         @media screen and (max-width: 800px) {
-            display: block;
+            flex-direction: column;
+            align-items: center;
+
+
+        }
+
+        .button {
+            @media screen and (max-width: 800px) {
+                margin: 0;
+
+                &:not(:last-of-type) {
+                    margin-bottom: 20px;
+                }
+            }
         }
     }
 
     &__button {
         margin-right: 15px;
-        @media screen and (max-width: 800px) {
-           margin-bottom: 20px;
-        }
+
     }
     &__paginator {
         flex-basis: 100%;
@@ -50,5 +62,25 @@
 
     @media screen and (max-width: 1024px) {
         justify-content: space-evenly;
+    }
+
+    &_main {
+        .reviews__item {
+            @include below($tablet) {
+                &:nth-of-type(n + 4) {
+                    display: none;
+
+                }
+            }
+
+            @include below($mobile) {
+                width: 97%;
+
+                &:nth-of-type(n + 3) {
+                    display: none;
+
+                }
+            }
+        }
     }
 }

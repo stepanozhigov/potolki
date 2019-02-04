@@ -1,8 +1,11 @@
 .jobs {
-    padding: 90px 0 70px 0;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    padding: 60px 0 60px 0;
+
+
+    -moz-column-width: calc(393px - 16px);
+    -webkit-column-width: calc(393px - 16px);
+    -moz-column-gap: 16px;
+    -webkit-column-gap: 16px;
 
     &__switcher {
         width: 100%;
@@ -12,18 +15,22 @@
     &__card {
         padding: 40px 20px;
 		padding-bottom: 50px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        width: calc(33.3% - 16px);
+        // display: flex;
+        // flex-direction: column;
+        // align-items: flex-start;
+        // width: calc(33.3% - 16px);
+        // margin-bottom: rem(25);
+
+        display: inline-block;
+        width:  100%;
         margin-bottom: rem(25);
-
-        @media screen and (max-width: 1024px) {
-            width: 48%;
-        }
-
-        @media screen and (max-width: 750px) {
-            width: 100%;
-        }
+        // 
+        // @media screen and (max-width: 1024px) {
+        //     width: 48%;
+        // }
+        //
+        // @media screen and (max-width: 750px) {
+        //     width: 100%;
+        // }
     }
 }

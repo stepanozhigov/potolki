@@ -4,6 +4,12 @@
     flex-wrap: wrap;
     justify-content: center;
 
+    &.container {
+        @include below($mobile) {
+            margin-bottom: 40px;
+        }
+    }
+
     &__item {
         width: 23.5%;
         margin-right: 15px;
@@ -17,13 +23,13 @@
         @media screen and (max-width: 1100px) {
             width: 40%;
         }
-        @media screen and (max-width: 768px) {
-            width: 100%;   
-            margin-bottom: 20px; 
+        @media screen and (max-width: 767px) {
+            width: 100%;
+            margin-bottom: 20px;
             margin-right: 0;
             align-items: center;
-            padding: 1.25rem 1.5625rem 1.25rem 1.25rem;        
-    
+            padding: 1.25rem 1.5625rem 1.25rem 1.25rem;
+
         }
 
     }
@@ -51,7 +57,7 @@
         margin: 28px 0 8px 0;
         padding: 0 30px;
     }
-    
+
     @media screen and (max-width: 768px) {
         &__img {
             display: none;

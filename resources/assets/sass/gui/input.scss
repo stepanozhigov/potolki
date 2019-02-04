@@ -23,24 +23,31 @@
     }
 
     &__input {
-        width: 100%;
+        flex-grow: 99;
         padding-left: 60px;
         height: 50px;
+        transition: width .3s;
 
+        @include below($mobile) {
+            width: 100%;
+            margin-bottom: 30px;
+        }
     }
 
     &__result {
         margin-left: 30px;
-        @media screen and (max-width: 1024px) {
-            margin: 0 auto;
+
+        @include below($mobile) {
+            margin: 0;
+            width: 100%;
         }
     }
 
     &__button {
         margin-bottom: 30px;
 
-        @media screen and (max-width: 1024px) {
-            margin-top: 25px;
+        @include below($mobile) {
+            width: 100%;
         }
     }
 }

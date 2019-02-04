@@ -2,9 +2,14 @@
 @import 'variables';
 
 .whyus {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	
 	&__content {
 		@extend .container;
 		@extend .b-texture;
+		@extend .b-texture_square;
 		padding: 0 rem(100);
 		padding-top: rem(50);
 		padding-bottom: rem(65);
@@ -23,6 +28,10 @@
 
 		&:not(:last-of-type) {
 			margin-bottom: rem(112);
+		}
+
+		@include below($tablet) {
+			align-items: flex-start;
 		}
 
 		@include below($mobile) {
@@ -78,6 +87,10 @@
 				padding: 0;
 			}
 		}
+
+		.signature {
+			margin-left: auto;
+		}
 	}
 
 	&__item-image {
@@ -106,7 +119,7 @@
 
 		@include below($mobile) {
 			margin-bottom: rem(222);
-			font-size: rem(22);
+			font-size: rem(26);
 			text-align: center;
 		}
 	}
@@ -117,6 +130,7 @@
 		font-family: $helvetica;
 		font-size: rem(16);
 		font-weight: 300;
+		line-height: rem(24);
 
 		@include below($mobile) {
 			font-size: rem(18);
@@ -138,24 +152,34 @@
 		}
 	}
 
-	&__social {
+	.socials {
 		display: flex;
-		margin-top: rem(32);
+		margin-top: rem(10);
+		justify-content: flex-start;
 
 		@include below($mobile) {
-			justify-content: center;
+			justify-content: space-between;
 		}
 
-		a {
-			display: block;
-			text-decoration: none;
+		.socials__item {
+			@include below($mobile) {
+				width: auto;
+				margin: 0;
+			}
 
 			&:not(:last-of-type) {
 				margin-right: rem(16);
 
 				@include below($mobile) {
-					margin-right: rem(48);
+					margin: 0;
 				}
+			}
+		}
+
+		.socials__icon {
+			@include below($tablet) {
+				width: rem(48);
+				height: rem(48);
 			}
 		}
 	}
@@ -235,17 +259,14 @@
 	}
 
 	&__advantages {
-		padding-top: rem(112);
-		padding-bottom: rem(95);
-		background-color: #f4f6f8;
-		margin-bottom: rem(112);
-	}
-
-	&__advantages-list {
 		@extend .container;
 		display: flex;
 		justify-content: space-between;
 		align-items: baseline;
+		padding-top: rem(112);
+		padding-bottom: rem(95);
+		border-top: rem(1) solid #f4f6f8;
+		margin-bottom: rem(-80);
 
 		@include below($tablet) {
 			flex-wrap: wrap;
@@ -347,6 +368,26 @@
 
 		@include below($mobile) {
 			font-size: rem(18);
+		}
+	}
+
+	&_main {
+		width: rem(1022);
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-bottom: rem(29);
+
+		.whyus__item-image {
+			width: rem(480);
+			height: rem(320);
+			box-shadow: 0 rem(8) rem(8) rgba(0, 0, 0, 0.16), 0 0 rem(8) rgba(0, 0, 0, 0.08);
+			border-radius: rem(8);
+		}
+
+		.button {
+			margin-top: rem(80);
 		}
 	}
 }

@@ -16,7 +16,11 @@
     <img src="/img/gui/close.svg" alt="" class="popup__close js-close">
     @include('common.forms.survey')
 </div>
-<div class="overlay js-close"></div>
+<div class="popup" id="popup_articles">
+    <img src="/img/gui/close.svg" alt="" class="popup__close js-close">
+    @include('common.article-form')
+</div>
+<div id="overlay" class="overlay js-close"></div>
 </main>
 <footer role="contentinfo" class="footer">
     <div class="footer__row container">
@@ -37,15 +41,15 @@
         </div>
         <nav class="footer__nav">
             <div class="nav-group footer__item">
-                <a class="card-title footer__title js-open">Каталог</a>
+                <a href="javascript:void(0);" class="card-title footer__title js-open">Каталог</a>
                 <a href="{{ route('calculator', ['city' => $city, 'type' => 'okna']) }}" class="red-hoverable subtext subtext_white nav-group__item">Окна</a>
                 <a href="{{ route('calculator', ['city' => $city, 'type' => 'balkony']) }}" class="red-hoverable subtext subtext_white nav-group__item">Балконы</a>
-                <a href="{{ route('calculator', ['city' => $city, 'type' => 'dveri']) }}" class="red-hoverable subtext subtext_white nav-group__item">Двери</a>
+                <!--<a href="{{ route('calculator', ['city' => $city, 'type' => 'dveri']) }}" class="red-hoverable subtext subtext_white nav-group__item">Двери</a>
                 <a href="{{ route('calculator', ['city' => $city, 'type' => 'peregorodki']) }}" class="red-hoverable subtext subtext_white nav-group__item">Перегородки</a>
-                <a href="{{ route('calculator', ['city' => $city, 'type' => 'zhalyuzi']) }}" class="red-hoverable subtext subtext_white nav-group__item">Жалюзи</a>
+                <a href="{{ route('calculator', ['city' => $city, 'type' => 'zhalyuzi']) }}" class="red-hoverable subtext subtext_white nav-group__item">Жалюзи</a>-->
             </div>
             <div class="nav-group footer__item">
-                <a class="card-title footer__title js-open">Услуги</a>
+                <a href="javascript:void(0);" class="card-title footer__title js-open">Услуги</a>
                 <a href="{{ route('services', ['city' => $city, 'type' => 'measurements']) }}" class="red-hoverable subtext subtext_white nav-group__item">Бесплатный замер</a>
                 <a href="{{ route('services', ['city' => $city, 'type' => 'manufacture']) }}" class="red-hoverable subtext subtext_white nav-group__item">Изготовление</a>
                 <a href="{{ route('services', ['city' => $city, 'type' => 'delivery']) }}" class="red-hoverable subtext subtext_white nav-group__item">Доставка</a>
@@ -53,7 +57,7 @@
                 <a href="{{ route('services', ['city' => $city, 'type' => 'repair']) }}" class="red-hoverable subtext subtext_white nav-group__item">Ремонт</a>
             </div>
             <div class="nav-group footer__item">
-                <a class="card-title footer__title js-open">Наши работы</a>
+                <a href="javascript:void(0);" class="card-title footer__title js-open">Наши работы</a>
                 <a href="{{ route('photos', ['city' => $city, 'type' => 'okna']) }}" class="red-hoverable subtext subtext_white nav-group__item">Окна</a>
                 <a href="{{ route('photos', ['city' => $city, 'type' => 'balkony']) }}" class="red-hoverable subtext subtext_white nav-group__item">Балконы</a>
                 <a href="{{ route('photos', ['city' => $city, 'type' => 'dveri']) }}" class="red-hoverable subtext subtext_white nav-group__item">Двери</a>
@@ -61,7 +65,7 @@
                 <a href="{{ route('photos', ['city' => $city, 'type' => 'zhalyuzi']) }}" class="red-hoverable subtext subtext_white nav-group__item">Жалюзи</a>
             </div>
             <div class="nav-group footer__item">
-                <a class="card-title footer__title js-open">Информация</a>
+                <a href="javascript:void(0);" class="card-title footer__title js-open">Информация</a>
                 <a href="{{ route('contacts', request()->route()->city) }}" class="red-hoverable subtext subtext_white nav-group__item">Контакты</a>
                 <a href="{{ route('about', request()->route()->city) }}" class="red-hoverable subtext subtext_white nav-group__item">О компании</a>
                 <a href="{{ route('employees', request()->route()->city) }}" class="red-hoverable subtext subtext_white nav-group__item">Сотрудники</a>

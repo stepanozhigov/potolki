@@ -3,7 +3,7 @@ $(document).on('click', '.js-show', function(event) {
     var source = $(this).data('src'),
         $this = $(this),
         $source = $(source),
-        $overlay = $('.overlay');
+        $overlay = $('#overlay');
 
     if ($this.is('.review'))
     {
@@ -44,7 +44,7 @@ $(document).on('click', '.js-showup', function(event) {
     var source = $(this).data('src'),
         $this = $(this),
         $source = $(source),
-        $overlay = $('.overlay');
+        $overlay = $('#overlay');
 
 
     if ($this.data('title')) {
@@ -68,7 +68,7 @@ $('.js-close').on('click', function(event) {
 
     $('body').removeClass('overflowed');
 
-    var $overlay = $('.overlay'),
+    var $overlay = $('#overlay'),
         $popups = $('.popup');
 
     $overlay.removeClass('overlay_active');

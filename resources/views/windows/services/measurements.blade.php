@@ -14,8 +14,6 @@
             <form action="" class="form service__form">
                 <input required type="text" placeholder="Ваше имя" class="input service__input">
                 <input required type="tel" placeholder="Ваш телефон" class="input service__input">
-                <input required type="text" placeholder="Ваш адрес" class="input service__input">
-                <input required type="text" placeholder="Дата и время" class="input service__input">
                 <button class="button button_red service__button">Вызвать замерщика</button>
                 <p class="service__agreement subtext">Оставляя контактную информацию, Вы соглашаетесь на обработку персональных данных</p>
             </form>

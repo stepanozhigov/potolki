@@ -5,21 +5,31 @@
         @include('common.gui.titles', [
             'class' =>  'container',
             'overtitle' =>  'ИНФОРМАЦИЯ О КОМПАНИИ',
-            'title' =>  "Фабрика пластиковых окон «Твой стиль» {$city->name_formatted}",
-            'intro' =>  "За&nbsp;более чем 10&nbsp;лет работы фабрика пластиковых окон &laquo;Твой стиль&raquo; из&nbsp;небольшого офиса в&nbsp;Хабаровске выросла в&nbsp;крупную сеть,
-						 которая сейчас насчитывает 8&nbsp;представительств в&nbsp;России, в&nbsp;том числе и&nbsp;офис {$city->name_formatted}. Мы&nbsp;заслужили доверие сотни заказчиков по&nbsp;всей стране,
-						 благодаря качественному производству, профессиональной команде и&nbsp;высокому уровню предоставляемых услуг."
+            'title' =>  "Фабрика пластиковых окон «Твой&nbsp;стиль»&nbsp;{$city->name_formatted}"
         ])
-        <section class="about b-texture container">
-            <div class="about__images">
-                <img src="/img/about/01.jpg" alt="" class="about__image fitImage">
-                <img src="/img/about/02.jpg" alt="" class="about__image fitImage">
-                <img src="/img/about/03.jpg" alt="" class="about__image fitImage">
-                <img src="/img/about/04.jpg" alt="" class="about__image fitImage">
-                <img src="/img/about/05.jpg" alt="" class="about__image fitImage">
-                <img src="/img/about/06.jpg" alt="" class="about__image fitImage">
+        <section class="about">
+            <div class="b-texture">
+                <blockquote class="about__quote">
+                    <div class="container">
+                        <p>Собственное производство снимает любые ограничения на цвет, конфигурацию и фактуру натяжного полотна</p>
+                    </div>
+                </blockquote>
+                <p class="about__subtext">За&nbsp;более чем 10&nbsp;лет работы фабрика пластиковых окон &laquo;Твой стиль&raquo; из&nbsp;небольшого офиса в&nbsp;Хабаровске выросла в&nbsp;крупную сеть,
+    						 которая сейчас насчитывает 8&nbsp;представительств в&nbsp;России, в&nbsp;том числе и&nbsp;офис Сочи. Мы&nbsp;заслужили доверие сотни заказчиков по&nbsp;всей стране,
+    						 благодаря качественному производству, профессиональной команде и&nbsp;высокому уровню предоставляемых услуг.
+                </p>
+                <p class="about__desc">
+                    Именно мы&nbsp;одними из&nbsp;первых в&nbsp;России стали применять технологию фотопечати для натяжных потолков, и&nbsp;мы&nbsp;не&nbsp;планируем останавливаться на&nbsp;достигнутом. Специалисты компании &laquo;Твой стиль&raquo; всегда в&nbsp;курсе последних тенденций мира натяжных потолков и&nbsp;готовы предложить вам самые неожиданные и&nbsp;сложные дизайн-проекты для вашего помещения.
+                </p>
+                <div class="about__images">
+                    <img src="/img/about/01.jpg" alt="" class="about__image fitImage">
+                    <img src="/img/about/02.jpg" alt="" class="about__image fitImage">
+                    <img src="/img/about/03.jpg" alt="" class="about__image fitImage">
+                    <img src="/img/about/04.jpg" alt="" class="about__image fitImage">
+                    <img src="/img/about/05.jpg" alt="" class="about__image fitImage">
+                    <img src="/img/about/06.jpg" alt="" class="about__image fitImage">
+                </div>
             </div>
-
             <div class="about__content">
                     <p class="about__desc text">
                         Надежные ПВХ-системы и легкие алюминиевые конструкции — самые оптимальные варианты не только для остекления помещений, но и для изготовления перегородок, а также входных и межкомнатных дверей. У нас есть собственная фабрика, где мы производим стандартные конструкции и системы по индивидуальным проектам с учетом всех особенностей помещения и пожеланий заказчика.
@@ -46,8 +56,11 @@
                             на Дальем Востоке–2012»</p>
                         </div>
                     </div>
-                    <img src="/img/about/group-photo.jpg" alt="" class="about__staff">
+                    <div class="about__staff">
+                        <img src="/img/about/group-photo.png" alt="">
+                    </div>
             </div>
+            @include('common.videogallery')
         </section>
     @include('common.gui.footer')
 @endsection

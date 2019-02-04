@@ -2,6 +2,10 @@
     display: flex;
     flex-direction: column;
 
+    .phone {
+        flex-wrap: nowrap;
+    }
+
 
 
     &_hidden {
@@ -64,7 +68,7 @@
     }
 
     &__bottom {
-        padding: 22px 0 25px 2px;
+        padding: 22px 0 22px 2px;
         display: flex;
         align-items: center;
 
@@ -185,6 +189,10 @@
         color: $red_crismon;
         border-bottom: rem(1) dashed $red_crismon;
         line-height: 21px;
+
+        @include below($tablet) {
+            line-height: 20px;
+        }
         @media screen and (max-width: 650px){
             display: none;
         }
