@@ -249,7 +249,7 @@
                 transform-origin: 0% 50% 0px;
                 transform: perspective(800px) rotateY(-40deg);
 
-                animation: openReverce 3s ease-in-out;
+                animation: openReverce 2s ease-in-out;
                 animation-delay: 1s;
 
                 @include below($tablet) {
@@ -270,7 +270,7 @@
                 top: rem(21);
                 right: rem(101);
 
-                animation: openright 3s ease-in-out;
+                animation: openright 2s ease-in-out;
                 animation-delay: 1s;
 
                 @include below($tablet) {
@@ -296,7 +296,7 @@
                 top: rem(21);
                 left: rem(24);
 
-                animation: open 3s ease-in-out;
+                animation: open 2s ease-in-out;
 
                 @include below($tablet) {
                     top: rem(19);
@@ -322,7 +322,7 @@
                 top: rem(21);
                 left: rem(24);
 
-                animation: open 3s ease-in-out;
+                animation: open 2s ease-in-out;
 
                 @include below($tablet) {
                     left: rem(22);
@@ -352,7 +352,7 @@
                 top: rem(23);
                 left: rem(23);
 
-                animation: open 3s ease-in-out;
+                animation: open 2s ease-in-out;
 
                 @include below($tablet) {
                     top: rem(15);
@@ -424,7 +424,7 @@
                 top: rem(23);
                 left: rem(23);
 
-                animation: open 3s ease-in-out;
+                animation: open 2s ease-in-out;
 
                 @include below($tablet) {
                     top: rem(21);
@@ -491,7 +491,7 @@
                 height: rem(225);
                 width: rem(110);
 
-                animation: open 3s ease-in-out;
+                animation: open 2s ease-in-out;
 
                 @include below($tablet) {
                     top: rem(28);
@@ -519,7 +519,7 @@
                 height: rem(225);
                 width: rem(110);
 
-                animation: open 3s ease-in-out;
+                animation: open 2s ease-in-out;
 
                 @include below($tablet) {
                     top: rem(23);
@@ -546,7 +546,7 @@
                 height: rem(225);
                 width: rem(110);
 
-                animation: open 3s ease-in-out;
+                animation: open 2s ease-in-out;
 
                 @include below($tablet) {
                     top: rem(28);
@@ -574,7 +574,7 @@
                 height: rem(225);
                 width: rem(110);
 
-                animation: open 3s ease-in-out;
+                animation: open 2s ease-in-out;
 
                 @include below($tablet) {
                     top: rem(23);

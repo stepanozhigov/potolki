@@ -7,7 +7,8 @@
     @include('common.gui.titles', [
         'class' =>  'container',
         'overtitle' =>  'каталог',
-        'title' =>  "Каталог пластиковых окон"
+        'title' =>  "Каталог пластиковых окон",
+        'intro' =>  "Для вашего удобства мы&nbsp;разделили профили на&nbsp;3&nbsp;категории: эконом, стандарт, премиум. Пластиковые окна и&nbsp;двери, остекление балконов и&nbsp;лоджий, перегородки&nbsp;&mdash; все эти профили подойдут вам."
     ])
     <section class="catalogue">
         <div class="catalogue__list">

@@ -330,6 +330,19 @@ body {
                 background-image: url('/img/gui/social_color_youtube.svg');
             }
         }
+        &_ok {
+            &::after {
+                position: absolute;
+                content: '';
+                background-image: url('/img/gui/social_gray_ok.svg');
+            }
+
+            &::before {
+                position: absolute;
+                content: '';
+                background-image: url('/img/gui/social_color_ok.svg');
+            }
+        }
 
         &_vk {
             &::after {

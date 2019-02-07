@@ -19,6 +19,7 @@
 
     .intro {
         margin: 0;
+        margin-bottom: rem(32);
 
         @include below($mobile) {
             width: calc(100% - 16px);
@@ -28,11 +29,18 @@
     }
 
     .socials {
-        width: rem(768);
-        margin-bottom: rem(64);
+        justify-content: center;
+        margin-bottom: rem(32);
 
-        @include below($tablet-small) {
-            width: auto;
+        .socials__item {
+            &:not(:last-of-type) {
+                margin-right: rem(16);
+            }
+
+            @include below($mobile) {
+                width: auto;
+                margin-bottom: 0;
+            }
         }
     }
 
@@ -231,7 +239,6 @@
         overflow: hidden;
 
         p {
-            display: none;
             margin: 0;
             font-family: $helvetica;
             font-size: rem(16);

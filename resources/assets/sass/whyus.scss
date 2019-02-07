@@ -5,19 +5,25 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	
+
 	&__content {
 		@extend .container;
 		@extend .b-texture;
 		@extend .b-texture_square;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 		padding: 0 rem(100);
 		padding-top: rem(50);
 		padding-bottom: rem(65);
-		margin-bottom: rem(112);
 
 		@include below($tablet) {
 			padding-left: 0;
 			padding-right: 0;
+		}
+
+		.button {
+			margin-top: rem(48);
 		}
 	}
 
@@ -94,6 +100,9 @@
 	}
 
 	&__item-image {
+		width: auto;
+		height: rem(320);
+
 		@include below($tablet) {
 			width: rem(352);
 			height: rem(260);
@@ -372,22 +381,6 @@
 	}
 
 	&_main {
-		width: rem(1022);
-		margin: 0 auto;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		margin-bottom: rem(29);
-
-		.whyus__item-image {
-			width: rem(480);
-			height: rem(320);
-			box-shadow: 0 rem(8) rem(8) rgba(0, 0, 0, 0.16), 0 0 rem(8) rgba(0, 0, 0, 0.08);
-			border-radius: rem(8);
-		}
-
-		.button {
-			margin-top: rem(80);
-		}
+		margin-bottom: rem(32)
 	}
 }

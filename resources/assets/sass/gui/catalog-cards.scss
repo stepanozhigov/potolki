@@ -11,8 +11,8 @@
     }
 
     &__item {
-        width: 23.5%;
-        margin-right: 15px;
+        width: calc(25% - 16px);
+        margin: 0 rem(8);
         margin-bottom: 32px;
         display: flex;
         flex-direction: column;
@@ -79,5 +79,9 @@
             font-size: 24px;
             font-weight: 400;
         }
+    }
+
+    .buttons {
+        margin-top: rem(16);
     }
 }

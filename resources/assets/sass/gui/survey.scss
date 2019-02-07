@@ -12,6 +12,17 @@
         display: flex;
     }
 
+    &__thankyou {
+        display: none;
+        margin: 0;
+        font-weight: 300;
+        font-size: rem(22);
+        color: #50555a;
+        margin: 0;
+        text-align: center;
+        line-height: rem(32);
+    }
+
     &__title {
         width: 100%;
         margin: 0;

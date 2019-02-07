@@ -31,6 +31,7 @@ Vue.component('credit-calc', require('./components/CreditCalc.vue'));
 Vue.component('dveri-calc', require('./components/DveriCalc.vue'));
 Vue.component('peregorodki-calc', require('./components/Peregorodki.vue'));
 Vue.component('zhalyuzi-calc', require('./components/Zhalyuzi.vue'));
+Vue.component('posts', require('./components/Articles.vue'));
 
 
 $(document).on('scroll', function () {
@@ -44,6 +45,14 @@ $(document).on('scroll', function () {
         $header.removeClass('header_sticky').addClass('header_hidden');
     }
 });
+
+const articles = $('#articles');
+
+if (articles.length > 0) {
+    new Vue({
+        el: '#articles'
+    })
+}
 
 const creditCalcContainer = $('#credit-calc');
 
@@ -172,6 +181,11 @@ $writtenElements.each((index, element) => {
 
 $('.survey__no').on('click', function () {
     $(this).closest('.survey').addClass('survey_opened');
+});
+
+$('.survey__yes').on('click', function () {
+    $('.survey__buttons').slideUp();
+    $('.survey__thankyou').slideDown();
 });
 
 

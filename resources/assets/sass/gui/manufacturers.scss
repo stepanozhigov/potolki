@@ -32,12 +32,19 @@
     }
 
     &__country {
+        font-family: $helvetica;
+        font-size: rem(16);
+        line-height: rem(22);
         width: 120px;
         padding-top: 10px;
         margin: 0;
         margin-top: 1.25rem;
-        color: #a7aaad;
+        color: #babec2;
         text-align: center;
         border-top: 1px solid #a7aaad;
+    }
+
+    &_main {
+        
     }
 }

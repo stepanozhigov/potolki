@@ -148,4 +148,20 @@
 
         text-align: center;
     }
+
+    .socials {
+        justify-content: center;
+        margin-bottom: rem(48);
+
+        .socials__item {
+            &:not(:last-of-type) {
+                margin-right: rem(16);
+            }
+
+            @include below($mobile) {
+                width: auto;
+                margin-bottom: 0;
+            }
+        }
+    }
 }

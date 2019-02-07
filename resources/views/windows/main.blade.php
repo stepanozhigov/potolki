@@ -26,7 +26,7 @@
             <button data-src="#popup_callback" class="button main-offer__button mobile-only js-show">Вызвать замерщика</button>
         </div>
     </section>
-    <section class="whyus">
+    <section class="whyus whyus_main">
         @include('common.gui.titles', [
             'overtitle' =>  'Наши преимущества',
             'title' =>  "Звонят многим, заказывают у нас. Почему? ",
@@ -79,19 +79,19 @@
                 </div>
                 <img class="whyus__item-image" src="/img/img_director.jpg" alt="Директор">
             </div>
+            <a href="http://89.108.103.224/sochi/whyus" class="button button_gray">Остальные преимущества</a>
         </div>
-        <a href="http://89.108.103.224/sochi/whyus" class="button buttons__item button_gray">Остальные преимущества</a>
     </section>
     <section class="catalog-cards container">
         @include('common.gui.titles', [
             'overtitle' =>  'Каталог',
-            'title' =>  "Пластиковые окна {$city->name_formatted} от&nbspпроизводителя",
+            'secondTitle' =>  "Пластиковые окна {$city->name_formatted} от&nbspпроизводителя",
             'intro' =>  "Фабрика окон №1 {$city->name_formatted}. Посмотрите каталог и ниже рассчитайте ваш заказ <span class='intro_red'>за&nbsp5&nbspсекунд</span>"
         ])
 
         @foreach ($catalogTypes as $type)
             <? if ($type->id == 5) continue ?>
-            <a href="{{ route('calculator', ['city' => $city, 'type' => $type]) }}" class=" catalog-cards__item b-card is-hoverable">
+            <a href="{{ route('catalogue', ['city' => $city]) }}" class=" catalog-cards__item b-card is-hoverable">
                 <img src="{{ Storage::url($type->img) }}" alt="{{ $type->name }}" class="catalog-cards__img">
                 <p class="card-title catalog-cards__title">{{ $type->name }}</p>
                 <hr class="line line_bold line_small catalog-cards__line">
@@ -100,9 +100,13 @@
                 @endif
             </a>
         @endforeach
+        <div class="buttons">
+            <a href="{{ route('catalogue', $city) }}" class="button buttons__item button_gray">Перейти в каталог</a>
+            <button class="button js-show" data-src="#popup_callback" data-title="Вызов замерщика" data-button="Вызвать замерщика">Вызвать замерщика</button>
+        </div>
     </section>
 
-    <section class="manufacturers container">
+    <section class="manufacturers manufacturers_main container">
 
         @include('common.gui.titles', ['secondTitle' => 'Производители профилей'])
 
@@ -150,7 +154,7 @@
         </div>
     </section>
 
-    <section class="reviews reviews_main container b-texture b-texture_square">
+    <section class="reviews reviews_main container">
         @include('common.gui.titles', ['secondTitle' => 'Отзывы наших клиентов'])
 
         @foreach($reviews as $review)
@@ -168,22 +172,32 @@
         @include('common.gui.titles', ['secondTitle' => 'Также вас может заинтересовать'])
         <div class="additional__list">
             <div class="additional__item">
-                <div class="additional__row">
-                    <p class="card-title">Жалюзи</p>
-                    <p class="text additional__text">
-                        Если вы хотите защититься от палящих лучей летнего солнца – лучшего решения, чем купить жалюзи на окна, и не придумать.
-                    </p>
-                </div>
                 <img src="/img/windows/additional__zhaluzi.png" alt="" width="201" height="166" class="additional__img">
+                <p class="card-title">Жалюзи</p>
+                <p class="text additional__text">
+                    Если вы хотите защититься от палящих лучей летнего солнца – лучшего решения, чем купить жалюзи на окна, и не придумать.
+                </p>
             </div>
             <div class="additional__item">
-                <div class="additional__row">
-                    <p class="card-title">Рассрочка до 3х лет</p>
-                    <p class="text additional__text">
-                        Основной плюс рассрочки в отсутствии переплат. Итоговая сумма, прописанная в договоре рассрочки, не меняется с течением времени.
-                    </p>
-                </div>
+                <img src="/img/windows/home_deal.png" alt="" width="201" height="166" class="additional__img">
+                <p class="card-title">Договор на дому</p>
+                <p class="text additional__text">
+                    Наш специалист приедет в удобное для вас время, произведет демонстрацию и даст все необходимые консультации
+                </p>
+            </div>
+            <div class="additional__item">
+                <img src="/img/windows/free_measure.png" alt="" width="201" height="166" class="additional__img">
+                <p class="card-title">Бесплатный замер</p>
+                <p class="text additional__text">
+                    Технолог нашей компании произведет точный замер и расчет стоимости заказа в удобное для вас время
+                </p>
+            </div>
+            <div class="additional__item">
                 <img src="/img/windows/additional__percent.png" alt="" width="205" height="134" class="additional__img">
+                <p class="card-title">Рассрочка до 3х лет</p>
+                <p class="text additional__text">
+                    Основной плюс рассрочки в отсутствии переплат. Итоговая сумма, не меняется с течением времени.
+                </p>
             </div>
         </div>
     </section>

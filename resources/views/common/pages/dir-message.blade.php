@@ -12,7 +12,25 @@
                     'intro' =>  'Я принимаю абсолютно все жалобы и предложения для улучшения качества работы и сервиса.
                                  В течении 24 часов ваше обращение будет мною рассмотрено и вы получите ответ.'
                 ])
-                
+
+                <div class="socials">
+                    <a href="" class="socials__item">
+                        <div class="socials__icon socials__icon_inst"></div>
+                    </a>
+                    <a href="" class="socials__item red-hoverable">
+                        <div class="socials__icon socials__icon_fb"></div>
+                    </a>
+                    <a href="" class="socials__item">
+                        <div class="socials__icon socials__icon_vk"></div>
+                    </a>
+                    <a href="" class="socials__item">
+                        <div class="socials__icon socials__icon_whatsapp"></div>
+                    </a>
+                    <a href="" class="socials__item">
+                        <div class="socials__icon socials__icon_ok"></div>
+                    </a>
+                </div>
+
                 <form method="post" class="dir-message__form b-texture">
                     <label class="dir-message__input-wrap">
                         <input type="text" name="name" value="" class="input dir-message__input" placeholder="Ваше имя*" required>
@@ -38,6 +56,5 @@
                 </form>
         </section>
 
-    @include('common.gui.footer')    
+    @include('common.gui.footer')
 @endsection
-

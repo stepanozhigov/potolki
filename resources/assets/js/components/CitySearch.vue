@@ -32,7 +32,7 @@
                 if (this.search.length < 2) {
                     return false
                 }
-                return this.cities.filter(city => city.name.includes(this.search));
+                return this.cities.filter(city => city.name.toLowerCase().includes(this.search.toLowerCase()));
             }
         },
         mounted() {

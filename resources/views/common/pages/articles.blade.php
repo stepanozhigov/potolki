@@ -27,9 +27,9 @@
             </div>
         </div>
 
-    <div class="articles container">
-        <div class="articles__content">
-            <article class="ourArticle">
+    <div class="articles container" id="articles">
+            <posts :posts="{{ $articles }}"></posts>
+            <!--<article class="ourArticle">
                 <div class="ourArticle__gallery">
                     <img src="/img/ourArticle_1.png" class="ourArticle__img active" alt="">
                     <img src="/img/ourArticle_2.png" class="ourArticle__img" alt="">
@@ -190,8 +190,7 @@
                     <p>Сохраняйте пост в&nbsp;закладки, чтобы не&nbsp;потерять. Или закажите звонок в&nbsp;шапке нашего профиля @okna_vladivostok, и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время.</p>
                 </div>
                 <a data-src="#popup_articles" class="ourArticle__more js-show" href="javascript:void(0);">Подробнее</a>
-            </article>
-        </div>
+            </article>-->
     </div>
 
     @include('common.gui.footer')

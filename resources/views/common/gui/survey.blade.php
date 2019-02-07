@@ -5,6 +5,7 @@
         <button class="survey__yes button button_gray" type="button" name="button">Да</button>
         <button class="survey__no button button_gray" type="button" name="button">Нет</button>
     </div>
+    <p class="survey__thankyou">Спасибо за ваш отзыв</p>
     <form class="survey__form" action="" method="post">
         <textarea class="textarea survey__textarea" name="survey" placeholder="Введите ваше сообщение."></textarea>
         <button class="button" type="submit" name="surveysubmit">Отправить отзыв</button>

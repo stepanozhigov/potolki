@@ -75,6 +75,10 @@
         @media screen and (max-width: 650px){
             padding: 15px 0;
         }
+
+        .dropdown:hover .dropdown__content {
+            left: -23px;
+        }
     }
 
     &__logo {

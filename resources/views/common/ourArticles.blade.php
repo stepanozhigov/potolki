@@ -5,21 +5,22 @@
     </p>
     <div class="socials titles__socials container">
         <a href="" class="socials__item red-hoverable">
-            <div class="socials__icon socials__icon_vk"></div>
-            <span class="socials__name text red-hoverable">Вконтакте</span>
-        </a>
-        <a href="" class="socials__item red-hoverable">
-            <div class="socials__icon socials__icon_youtube"></div>
-            <span class="socials__name text red-hoverable">Одноклассники</span>
+            <div class="socials__icon socials__icon_inst"></div>
         </a>
         <a href="" class="socials__item red-hoverable">
             <div class="socials__icon socials__icon_fb"></div>
-            <span class="socials__name text red-hoverable">Facebook</span>
         </a>
         <a href="" class="socials__item red-hoverable">
-            <div class="socials__icon socials__icon_inst"></div>
-            <span class="socials__name text red-hoverable">Instagram</span>
+            <div class="socials__icon socials__icon_vk"></div>
         </a>
+        <a href="" class="socials__item red-hoverable">
+            <div class="socials__icon socials__icon_ok"></div>
+        </a>
+        <a href="" class="socials__item red-hoverable">
+            <div class="socials__icon socials__icon_youtube"></div>
+        </a>
+
+
     </div>
     <div class="ourArticles__list">
         <div class="ourArticles__content">
