@@ -82,6 +82,8 @@
         flex-wrap: wrap;
         justify-content: center;
 		margin-bottom: rem(-30);
+		@extend .container;
+
 
         @include below($mobile) {
             width: 100%;
@@ -150,6 +152,8 @@
         margin: 0 rem(10);
         margin-bottom: rem(30);
 		object-fit: cover;
+		border-radius: rem(5);
+		overflow: hidden;
 
         @include below($tablet) {
             width: rem(350);

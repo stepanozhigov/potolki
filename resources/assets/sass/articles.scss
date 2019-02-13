@@ -86,13 +86,16 @@
         position: relative;
         display: flex;
         width: 100%;
-        margin-bottom: rem(48);
+
+        overflow: hidden;
 
         .article {
             &:not(:last-of-type) {
                 margin-right: rem(20);
             }
         }
+
+
     }
 
     &__button {
@@ -160,6 +163,11 @@
 
         .articles__list {
             @extend .container;
+
+
+            &.container {
+                margin-bottom: rem(48);
+            }
         }
     }
 }

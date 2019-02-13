@@ -421,6 +421,7 @@
   .titles.catalogue,
   .titles.promos__content,
   .titles.reviews__content,
+  .titles.about__images,
   .titles.turnkey,
   .titles.facture__content,
   .titles.videogallery__slider,
@@ -439,6 +440,7 @@
   .titles.catalogue .intro + .titles__arrow,
   .titles.promos__content .intro + .titles__arrow,
   .titles.reviews__content .intro + .titles__arrow,
+  .titles.about__images .intro + .titles__arrow,
   .titles.turnkey .intro + .titles__arrow,
   .titles.facture__content .intro + .titles__arrow,
   .titles.videogallery__slider .intro + .titles__arrow,
@@ -454,6 +456,7 @@
   .titles.catalogue .titles__intro + .titles__arrow,
   .titles.promos__content .titles__intro + .titles__arrow,
   .titles.reviews__content .titles__intro + .titles__arrow,
+  .titles.about__images .titles__intro + .titles__arrow,
   .titles.turnkey .titles__intro + .titles__arrow,
   .titles.facture__content .titles__intro + .titles__arrow,
   .titles.videogallery__slider .titles__intro + .titles__arrow,
@@ -1600,6 +1603,7 @@
   .catalog-cards.catalogue,
   .catalog-cards.promos__content,
   .catalog-cards.reviews__content,
+  .catalog-cards.about__images,
   .catalog-cards.turnkey,
   .catalog-cards.facture__content,
   .catalog-cards.videogallery__slider,
@@ -1978,28 +1982,21 @@
   position: relative;
   cursor: pointer;
   color: #dc1414;
-  border-bottom: 0.0625rem dashed #dc1414;
   line-height: 16px;
 }
 
-.header__callback:after {
+.header__callback::after {
   position: absolute;
   width: 100%;
   bottom: -0.0625rem;
   display: block;
   content: '';
-  border-bottom: 0.0625rem solid #dc1414;
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-  -webkit-transition: -webkit-transform 250ms ease-in-out;
-  transition: -webkit-transform 250ms ease-in-out;
-  transition: transform 250ms ease-in-out;
-  transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+  border-bottom: 0.0625rem dashed #dc1414;
 }
 
-.header__callback:hover:after {
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
+.header__callback:hover::after {
+  -webkit-animation: dush .3s ease;
+          animation: dush .3s ease;
 }
 
 @media screen and (max-width: 79.9375rem) {
@@ -2158,6 +2155,34 @@
   }
 }
 
+@-webkit-keyframes dush {
+  from {
+    bottom: -0.0625rem;
+  }
+
+  50% {
+    bottom: -0.25rem;
+  }
+
+  to {
+    bottom: -0.0625rem;
+  }
+}
+
+@keyframes dush {
+  from {
+    bottom: -0.0625rem;
+  }
+
+  50% {
+    bottom: -0.25rem;
+  }
+
+  to {
+    bottom: -0.0625rem;
+  }
+}
+
 .body {
   margin: 0;
 }
@@ -2209,6 +2234,7 @@ body.no-scroll {
 .catalogue,
 .promos__content,
 .reviews__content,
+.about__images,
 .turnkey,
 .facture__content,
 .videogallery__slider,
@@ -2229,6 +2255,7 @@ body.no-scroll {
   .catalogue,
   .promos__content,
   .reviews__content,
+  .about__images,
   .turnkey,
   .facture__content,
   .videogallery__slider,
@@ -2250,6 +2277,7 @@ body.no-scroll {
   .catalogue,
   .promos__content,
   .reviews__content,
+  .about__images,
   .turnkey,
   .facture__content,
   .videogallery__slider,
@@ -6194,6 +6222,8 @@ body.no-scroll {
   margin-bottom: 1.875rem;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 0.3125rem;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 79.9375rem) {
@@ -10018,7 +10048,7 @@ body.no-scroll {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  margin-bottom: 3rem;
+  overflow: hidden;
 }
 
 .articles__list .article:not(:last-of-type) {
@@ -10101,6 +10131,25 @@ body.no-scroll {
   padding-top: 5rem;
   padding-bottom: 4rem;
   background-color: #f4f6f8;
+}
+
+.articles_main .articles__list.container,
+.articles_main .articles__list.survey,
+.articles_main .articles__list.catalogue,
+.articles_main .articles__list.promos__content,
+.articles_main .articles__list.reviews__content,
+.articles_main .articles__list.about__images,
+.articles_main .articles__list.turnkey,
+.articles_main .articles__list.facture__content,
+.articles_main .articles__list.videogallery__slider,
+.articles_main .articles__list.calculator__inner,
+.articles_main .articles__list.articles__content,
+.articles_main .articles__list,
+.articles_main .articles__list.whyus__content,
+.articles_main .articles__list.whyus__stat,
+.articles_main .articles__list.whyus__advantages,
+.articles_main .articles__list.whyus__machine {
+  margin-bottom: 3rem;
 }
 
 .article {
@@ -10961,5 +11010,22 @@ body.no-scroll {
 
 .whyus_main .titles {
   margin-bottom: 3rem;
+}
+
+.whyus_ceilings {
+  margin-bottom: 2rem;
+}
+
+.whyus_ceilings .whyus__stat {
+  display: none;
+  margin-bottom: 0;
+}
+
+.whyus_ceilings .titles {
+  margin-bottom: 3rem;
+}
+
+.whyus_ceilings .whyus__content::before {
+  display: none;
 }
 

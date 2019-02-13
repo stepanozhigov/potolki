@@ -30,7 +30,7 @@
         @include('common.gui.titles', [
             'overtitle' =>  'Наши преимущества',
             'title' =>  "Звонят многим, заказывают у нас. Почему? ",
-            'intro' =>  "Фабрика натяжных потолков &laquo;Твой стиль&raquo; основана в&nbsp;2003 году является лидером <br> по&nbsp;производству и&nbsp;установке натяжных потолков на&nbsp;Дальнем Востоке"
+            'intro' =>  "Фабрика пластиковых окон &laquo;Твой стиль&raquo; основана в&nbsp;2003 году является лидером <br> по&nbsp;производству и&nbsp;установке натяжных потолков на&nbsp;Дальнем Востоке"
         ])
         <div class="whyus__content">
             <div class="whyus__item">
@@ -60,19 +60,16 @@
                         <img src="/img/signature.png" alt="signature">
                     </div>
                     <div class="socials">
-                        <a href="" class="socials__item">
+                        <a target="_blank" href="https://vk.com/business.repin" class="socials__item">
                             <div class="socials__icon socials__icon_vk"></div>
                         </a>
-                        <a href="" class="socials__item">
-                            <div class="socials__icon socials__icon_youtube"></div>
+                        <a target="_blank" href="https://ok.ru/profile/589436377360" class="socials__item">
+                            <div class="socials__icon socials__icon_ok"></div>
                         </a>
-                        <a href="" class="socials__item red-hoverable">
-                            <div class="socials__icon socials__icon_fb"></div>
-                        </a>
-                        <a href="" class="socials__item">
+                        <a target="_blank" href="https://www.instagram.com/business_repin/" class="socials__item">
                             <div class="socials__icon socials__icon_inst"></div>
                         </a>
-                        <a href="" class="socials__item">
+                        <a target="_blank" href="https://api.whatsapp.com/send?phone=79996516666" class="socials__item">
                             <div class="socials__icon socials__icon_whatsapp"></div>
                         </a>
                     </div>
@@ -129,7 +126,7 @@
             @foreach ($currentDirection->manufacturers as $manufacturer)
                 <div class="manufacturers__item">
                     <img src="{{ Storage::url($manufacturer->logo) }}" alt="" class="manufacturers__item-image">
-                    <p class="manufacturers__country"> Китай </p>
+                    <!--<p class="manufacturers__country"> Китай </p>-->
                 </div>
             @endforeach
         </div>

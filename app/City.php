@@ -9,6 +9,11 @@ class City extends Model
     public function getRouteKeyName() {
         return 'code';
     }
+    
+    public function photos ()
+    {
+        return json_decode($this->photos) ?? [];
+    }
 
     public function offices ()
     {

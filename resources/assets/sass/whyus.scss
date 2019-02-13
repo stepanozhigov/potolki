@@ -399,4 +399,23 @@
 			margin-bottom: rem(48);
 		}
 	}
+
+	&_ceilings {
+		margin-bottom: rem(32);
+
+		.whyus__stat {
+			display: none;
+			margin-bottom: 0;
+		}
+
+		.titles {
+			margin-bottom: rem(48);
+		}
+
+		.whyus__content {
+			&::before {
+				display: none;
+			}
+		}
+	}
 }

@@ -1,7 +1,7 @@
 <header class="header">
     <div class="header__top ">
 		<div class="header__top-content container">
-			<a href="/" class="header__logo logo">
+			<a href="{{ route('windows.main', $city) }}" class="header__logo logo">
 	            <img class="logo__icon" src="/img/gui/logo-icon.svg" alt="логотип Твой Стиль">
 	            <img class="logo__text mobile-hide" src="/img/gui/logo-text.svg" alt="графема Твой Стиль">
 	        </a>

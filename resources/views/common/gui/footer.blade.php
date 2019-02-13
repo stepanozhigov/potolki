@@ -25,7 +25,7 @@
 <footer role="contentinfo" class="footer">
     <div class="footer__row container">
         <div class="footer__contacts">
-            <a href="/" class="logo logo_white footer__logo">
+            <a href="{{ route('windows.main', $city) }}" class="logo logo_white footer__logo">
                 <img class="logo__icon" src="/img/gui/logo-icon.svg" alt="логотип Твой Стиль">
                 <img class="logo__text" src="/img/gui/logo-text.svg" alt="графема Твой Стиль">
             </a>

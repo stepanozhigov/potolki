@@ -11,7 +11,7 @@
             <div class="b-texture">
                 <blockquote class="about__quote">
                     <div class="container">
-                        <p>Собственное производство обеспечивает качество продукции, кототкие сроки от&nbsp;заказа до&nbsp;установки и&nbsp;конечно самое важное для вас&nbsp;&mdash; низкую стоимость!</p>
+                        <p>Собственное производство обеспечивает качество продукции, короткие сроки от&nbsp;заказа до&nbsp;установки и&nbsp;конечно самое важное для вас&nbsp;&mdash; низкую стоимость!</p>
                     </div>
                 </blockquote>
                 <p class="about__subtext">За&nbsp;более чем 10&nbsp;лет работы фабрика пластиковых окон &laquo;Твой стиль&raquo; из&nbsp;небольшого офиса в&nbsp;Хабаровске выросла в&nbsp;крупную сеть,
@@ -19,12 +19,14 @@
     						 благодаря качественному производству, профессиональной команде и&nbsp;высокому уровню предоставляемых услуг.
                 </p>
                 <div class="about__images">
-                    <img src="/img/about/01.jpg" alt="" class="about__image fitImage">
-                    <img src="/img/about/02.jpg" alt="" class="about__image fitImage">
-                    <img src="/img/about/03.jpg" alt="" class="about__image fitImage">
-                    <img src="/img/about/04.jpg" alt="" class="about__image fitImage">
-                    <img src="/img/about/05.jpg" alt="" class="about__image fitImage">
-                    <img src="/img/about/06.jpg" alt="" class="about__image fitImage">
+                    @foreach($city->photos() as $photo)
+                        <img src="{{ Storage::url($photo) }}" alt="" class="about__image">
+                    @endforeach
+                    <!--<img src="/img/about/02.jpg" alt="" class="about__image">
+                    <img src="/img/about/03.jpg" alt="" class="about__image">
+                    <img src="/img/about/04.jpg" alt="" class="about__image">
+                    <img src="/img/about/05.jpg" alt="" class="about__image">
+                    <img src="/img/about/06.jpg" alt="" class="about__image">-->
                 </div>
             </div>
             <div class="about__content">

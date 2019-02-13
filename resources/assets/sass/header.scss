@@ -193,22 +193,20 @@
         position: relative;
         cursor: pointer;
         color: $red_crismon;
-        border-bottom: rem(1) dashed $red_crismon;
         line-height: 16px;
-        &:after {
+
+        &::after {
             position: absolute;
             width: 100%;
             bottom: rem(-1);
             display:block;
             content: '';
-            border-bottom: rem(1) solid $red_crismon;
-            transform: scaleX(0);
-            transition: transform 250ms ease-in-out;
+            border-bottom: rem(1) dashed $red_crismon;
         }
 
         &:hover {
-            &:after {
-                transform: scaleX(1);
+            &::after {
+                animation: dush .3s ease;
             }
         }
 
@@ -344,4 +342,18 @@
         }
     }
 
+}
+
+@keyframes dush {
+ from {
+     bottom: rem(-1);
+ }
+
+ 50% {
+     bottom: rem(-4);
+ }
+
+ to {
+    bottom: rem(-1);
+ }
 }

@@ -9,6 +9,7 @@
 window.$ = window.jQuery = require('jquery');
 
 window.Vue = require('vue');
+var Inputmask = require('inputmask');
 
 require('./components/popup');
 //require('./components/social');
@@ -392,3 +393,10 @@ let onResize = function () {
 
 $(document).ready(onResize);
 $(window).resize(onResize);
+
+
+
+var phoneMask = new Inputmask('+7 999 999-99-99'),
+    $phones = $('[type=tel]');
+
+phoneMask.mask($phones);

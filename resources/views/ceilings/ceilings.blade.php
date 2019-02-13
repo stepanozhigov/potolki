@@ -26,34 +26,28 @@
             <button data-src="#popup_callback" class="button main-offer__button mobile-only js-show">Вызвать замерщика</button>
         </div>
     </section>
-    <section class="whyus whyus_main">
+    <section class="whyus whyus_ceilings">
         @include('common.gui.titles', [
             'overtitle' =>  'Наши преимущества',
             'title' =>  "Звонят многим, заказывают у нас. Почему? ",
-            'intro' =>  "Фабрика натяжных потолков &laquo;Твой стиль&raquo; основана в&nbsp;2003 году является лидером <br> по&nbsp;производству и&nbsp;установке натяжных потолков на&nbsp;Дальнем Востоке"
+            'intro' =>  "Фабрика натяжных потолков &laquo;Твой стиль&raquo; основана в&nbsp;2003 году является лидером <br> по&nbsp;производству и&nbsp;установке установке пластиковых конструкций на&nbsp;Дальнем Востоке"
         ])
         <div class="whyus__content">
             <div class="whyus__item">
                 <div class="whyus__item-info">
-                    <h3 class="whyus__item-title">Наши преимущества</h3>
-                    <ul>
-                        <li class="whyus__item-text">— Контроль качества после установки</li>
-                        <li class="whyus__item-text">— Собственное производство</li>
-                        <li class="whyus__item-text">— Сервисное обслуживание</li>
-                        <li class="whyus__item-text">— Услуга «Договор на дому»</li>
-                        <li class="whyus__item-text">— 16 лет успешной работы</li>
-                        <li class="whyus__item-text">— Гарантия низкой цены</li>
-                        <li class="whyus__item-text">— Установка за 1 день</li>
-                        <li class="whyus__item-text">— Контроль качества</li>
-                    </ul>
+                    <h3 class="whyus__item-title">Собственное производство</h3>
+                    <p class="whyus__item-text">
+                        Обеспечивает гарантию низкой цены, снимает любые ограничения на&nbsp;цвет, конфигурацию и&nbsp;фактуру натяжного полотна.
+                    </p>
                 </div>
                 <img class="whyus__item-image" src="/img/img_factory.jpg" alt="Производство">
             </div>
             <div class="whyus__item whyus__item_reverse">
                 <div class="whyus__item-info">
-                    <h3 class="whyus__item-title">Директор всегда на связи</h3>
+                    <h3 class="whyus__item-title">Генеральный директор всегда на&nbsp;связи с&nbsp;клиентами</h3>
                     <p class="whyus__item-text">
-                        Я лично контролирую все этапы работы с помощью прямого контакта со своими клиентами. Вы можете написать мне в любую социальную сеть или позвонить. <br> Прямая линия обеспечивает ответственную работу каждого сотрудника. Считаю это самым важным фактором для моих клиентов.
+                        Я&nbsp;принимаю абсолютно все жалобы и&nbsp;предложения для улучшения качества работы и&nbsp;сервиса. В&nbsp;течении 24&nbsp;часов ваше обращение будет мною рассмотрено и&nbsp;вы&nbsp;получите ответ.
+Вы&nbsp;можете использовать для связи привычную социальную сеть или форму обратной связи.
                     </p>
                     <div class="signature">
                         <p>А. А. Репин</p>
@@ -96,10 +90,10 @@
             </div>
         </div>
     </section>
-    <section class="catalog-cards container">
+    <section class="catalog-cards container b-texture">
         @include('common.gui.titles', [
             'overtitle' =>  'Каталог',
-            'secondTitle' =>  "Пластиковые окна {$city->name_formatted} от&nbspпроизводителя",
+            'secondTitle' =>  "Натяжные потолки {$city->name_formatted} от&nbspпроизводителя",
             'intro' =>  "Фабрика окон №1 {$city->name_formatted}. Посмотрите каталог и ниже рассчитайте ваш заказ <span class='intro_red'>за&nbsp5&nbspсекунд</span>"
         ])
 
