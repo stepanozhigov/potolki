@@ -727,6 +727,16 @@ $('.js-toggle-submenu').on('click', function (e) {
     $(this).toggleClass('menu__item_opened');
 });
 
+$('.whyus__button').on('click', function () {
+    $('.whyus__stat').slideToggle({
+        start: function start() {
+            $(this).css({
+                display: "flex"
+            });
+        }
+    });
+});
+
 if ($(document).width() <= 1024) {
     $('.js-toggle-submenu').on('click', function (event) {
         event.preventDefault();
@@ -22686,9 +22696,12 @@ $(document).on('click', '.js-show', function (event) {
     if ($this.is('.review')) {
         var offset = 0;
 
-        offset = $(window).scrollTop() - $('.reviews').offset().top;
+        offset = $(window).scrollTop() - $('.reviews__content').offset().top;
+        console.log($(window).scrollTop());
+        console.log($('.reviews').offset().top);
+        console.log(offset);
 
-        $source.css('top', offset + 100);
+        $source.css('top', offset + 150);
     } else {
         $('body').addClass('overflowed');
     }
@@ -25886,7 +25899,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            showCount: 5,
+            showCount: 9,
             showPoint: 0,
             interval: 0,
             currentPhotoIndex: 0,

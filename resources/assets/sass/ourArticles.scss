@@ -14,7 +14,6 @@
     .titles {
         padding: 0;
         margin: 0;
-        margin-bottom: rem(40);
     }
 
     .intro {
@@ -372,6 +371,7 @@
                 font-weight: 400;
                 line-height: rem(24);
                 color: #485058;
+                max-height: none;
 
                 &::after {
                     position: absolute;

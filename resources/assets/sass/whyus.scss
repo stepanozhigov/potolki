@@ -125,6 +125,7 @@
 		font-family: $playfair;
 		font-size: rem(32);
 		font-weight: 400;
+		line-height: rem(38);
 
 		@include below($mobile) {
 			margin-bottom: rem(222);
@@ -157,7 +158,7 @@
 		}
 
 		&:not(:last-of-type) {
-			margin-bottom: rem(15);
+			margin-bottom: rem(10);
 		}
 	}
 
@@ -193,12 +194,18 @@
 		}
 	}
 
+	&__button {
+		@extend .button;
+		@extend .button_gray;
+	}
+
 	&__stat {
 		@extend .container;
 		display: flex;
 		justify-content: center;
 		align-items: baseline;
 		margin-bottom: rem(80);
+		margin-top: rem(86);
 
 		@include below($tablet) {
 			padding: 0 rem(15);
@@ -381,6 +388,15 @@
 	}
 
 	&_main {
-		margin-bottom: rem(32)
+		margin-bottom: rem(32);
+
+		.whyus__stat {
+			display: none;
+			margin-bottom: 0;
+		}
+
+		.titles {
+			margin-bottom: rem(48);
+		}
 	}
 }

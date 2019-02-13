@@ -13,7 +13,7 @@
         align-items: center;
         flex-shrink: 0;
 
-        padding: 0 0 40px 0;
+        padding-bottom: rem(32);
     }
 
     &__person {
@@ -29,21 +29,40 @@
 
     &__date {
         color: #b9bec3;
-        margin-bottom: 15px;
+        margin-bottom: rem(16);
         flex-shrink: 0;
     }
 
     &__text {
+        position: relative;
         color: #475059;
         text-align: center;
         padding: 0 20px;
-        margin-bottom: 30px;
-        max-height: 60px;
+        margin-bottom: rem(16);
+        max-height: rem(80);
         overflow: hidden;
         flex-shrink: 0;
 
+        &::after {
+            position: absolute;
+            content: '';
+            width: rem(80    );
+            height: rem(15);
+            right: rem(20);
+            bottom: rem(5);
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0), #fff 50%);
+            text-align: right;
+            font-size: rem(12);
+            font-family: $helvetica;
+            color: #475059;
+        }
+
         &_full {
             max-height: initial;
+
+            &::after {
+                display: none;
+            }
         }
     }
 
@@ -155,6 +174,11 @@
     &__socials {
         margin-left: 20px;
         width: 45%;
+
+        img {
+            width: 30px;
+            height: 30px;
+        }
 
 		@include below($mobile) {
 			width: 100%;

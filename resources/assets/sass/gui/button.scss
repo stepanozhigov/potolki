@@ -17,7 +17,8 @@
 	background-color: $red_crismon;
     border: none;
 	cursor: pointer;
-	transition: .3s;
+	box-shadow: 0 8px 8px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0), inset 0 -1px 0 rgba(0, 0, 0, 0);
+	transition: all .3s;
 
     &:hover {
         box-shadow: 0 8px 8px rgba(0, 0, 0, 0.16), 0 0 8px rgba(0, 0, 0, 0.08), inset 0 -1px 0 #a01414;
@@ -25,7 +26,7 @@
 
 	&_gray {
 	    background-color: $grey_chateau;
-        box-shadow: inset 0 -1px 0 #646973;
+		box-shadow: 0 8px 8px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0), inset 0 -1px 0 #646973;
 	    color: $white;
 
         &:hover {

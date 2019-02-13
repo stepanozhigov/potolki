@@ -79,7 +79,21 @@
                 </div>
                 <img class="whyus__item-image" src="/img/img_director.jpg" alt="Директор">
             </div>
-            <a href="http://89.108.103.224/sochi/whyus" class="button button_gray">Остальные преимущества</a>
+            <button class="whyus__button" type="button" name="button">Преимущества в цифрах</button>
+        </div>
+        <div class="whyus__stat">
+            <div class="whyus__stat-item">
+                <p class="whyus__stat-num">15</p>
+                <p class="whyus__stat-text">лет гарантия на наши потолки, с сервисным обсуживанием</p>
+            </div>
+            <div class="whyus__stat-item">
+                <p class="whyus__stat-num">3</p>
+                <p class="whyus__stat-text">часа устанавливается потолок площадью 16 квадратных метров</p>
+            </div>
+            <div class="whyus__stat-item">
+                <p class="whyus__stat-num">397</p>
+                <p class="whyus__stat-text">квадратных метров устанавливаем за день, это 26 910 в месяц</p>
+            </div>
         </div>
     </section>
     <section class="catalog-cards container">
@@ -123,19 +137,18 @@
     </section>
 
     <section class="calc-promo container">
-        <div class="titles calc-promo__titles">
-            <h2 class="second-title titles__second-title">Калькулятор стоимости</h2>
-            <hr class="line titles__line">
+        <div class="calc-promo__titles">
+            <h2 class="titles__second-title">Калькулятор стоимости</h2>
             <p class="intro calc-promo__intro">
-                Специально для вашего удобства мы&nbsp;разработали онлайн калькулятор стоимости будущего окна, балкона или двери. Вы&nbsp;можете прикинуть цену не&nbsp;выходя из&nbsp;дома и&nbsp;не&nbsp;дожидаясь замерщика. Выберите тип окна или балконного блока,
-а&nbsp;так&nbsp;же размеры и&nbsp;другие параметры окна.
+                Калькулятор стоимости
+Стоимость&nbsp;&mdash; один из&nbsp;важных факторов принятие решения в&nbsp;выборе компании. Нажмите кнопку &laquo;Рассчитать&raquo; и&nbsp;за&nbsp;5&nbsp;секунд вы&nbsp;будете знать стоимость вашего изделия. Акция &laquo;Найдете дешевле&nbsp;&mdash; Снизим цену&raquo; дает вам гарантию самой низкой цены {{$city->name_formatted}}.
             </p>
             <a href="{{ route('calculator', $city) }}" class="button calc-promo__button">Рассчитать</a>
         </div>
         <img src="/img/windows/img_calculator.jpg" alt="">
     </section>
 
-    <section class="portfolio b-texture b-texture_square">
+    <section class="portfolio portfolio_main b-texture b-texture_square">
         @include('common.gui.titles', ['secondTitle' => 'Примеры наших работ'])
         <button type="button" class="portfolio__prev" name="button"><img src="/img/gui/arrow_dark.png"></button>
         <div class="portfolio__carousel" id="portfolio__carousel" data-photos="{{ $photos }}">
@@ -157,9 +170,11 @@
     <section class="reviews reviews_main container">
         @include('common.gui.titles', ['secondTitle' => 'Отзывы наших клиентов'])
 
-        @foreach($reviews as $review)
-            @include('common.gui.review', $review)
-        @endforeach
+        <div class="reviews__content">
+            @foreach($reviews as $review)
+                @include('common.gui.review', $review)
+            @endforeach
+        </div>
 
         <div class="buttons reviews__buttons">
             <a href="{{ route('reviews', $city) }}" class="button buttons__item button_gray">Прочитать все отзывы</a>
@@ -173,28 +188,28 @@
         <div class="additional__list">
             <div class="additional__item">
                 <img src="/img/windows/additional__zhaluzi.png" alt="" width="201" height="166" class="additional__img">
-                <p class="card-title">Жалюзи</p>
+                <h3 class="additional__title">Жалюзи</h3>
                 <p class="text additional__text">
                     Если вы хотите защититься от палящих лучей летнего солнца – лучшего решения, чем купить жалюзи на окна, и не придумать.
                 </p>
             </div>
             <div class="additional__item">
                 <img src="/img/windows/home_deal.png" alt="" width="201" height="166" class="additional__img">
-                <p class="card-title">Договор на дому</p>
+                <h3 class="additional__title">Договор на дому</h3>
                 <p class="text additional__text">
                     Наш специалист приедет в удобное для вас время, произведет демонстрацию и даст все необходимые консультации
                 </p>
             </div>
             <div class="additional__item">
                 <img src="/img/windows/free_measure.png" alt="" width="201" height="166" class="additional__img">
-                <p class="card-title">Бесплатный замер</p>
+                <h3 class="additional__title">Бесплатный замер</h3>
                 <p class="text additional__text">
                     Технолог нашей компании произведет точный замер и расчет стоимости заказа в удобное для вас время
                 </p>
             </div>
             <div class="additional__item">
                 <img src="/img/windows/additional__percent.png" alt="" width="205" height="134" class="additional__img">
-                <p class="card-title">Рассрочка до 3х лет</p>
+                <h3 class="additional__title">Рассрочка до 3х лет</h3>
                 <p class="text additional__text">
                     Основной плюс рассрочки в отсутствии переплат. Итоговая сумма, не меняется с течением времени.
                 </p>

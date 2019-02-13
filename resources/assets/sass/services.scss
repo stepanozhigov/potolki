@@ -1,10 +1,12 @@
 .services {
-    padding: 90px 0 32px 0;
+
     margin-bottom: 80px;
+
     &__list {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        padding: 48px 0 32px 0;
     }
 
     &__card {
@@ -17,6 +19,10 @@
         @media screen and (max-width: 650px) {
             width: 95%;
         }
+    }
+
+    .titles {
+        margin-bottom: rem(64);
     }
 }
 
@@ -54,10 +60,18 @@
 
     &__titles {
         align-items: flex-start;
-        padding-bottom: 0;
+
+        &.titles {
+            margin-bottom: 0;
+        }
     }
     &__title {
         text-align: start;
+
+        &::after {
+            left: 0;
+            transform: none;
+        }
     }
     &__form {
         width: 78%;

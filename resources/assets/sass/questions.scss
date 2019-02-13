@@ -2,9 +2,16 @@
 @import 'variables';
 
 .questions {
-    position: relative;
-    padding-bottom: rem(80);
-    padding-top: 70px;
+
+    .titles {
+        margin-bottom: rem(64);
+    }
+
+    &__content {
+        position: relative;
+        padding-bottom: rem(39);
+        padding-top: rem(48);
+    }
 
     &__filter {
         position: relative;
@@ -16,7 +23,7 @@
         padding: 0 15%;
         margin: 0 auto;
         margin-right: rem(-10);
-        margin-bottom: rem(20);
+        margin-bottom: rem(40);
         margin-left: rem(-10);
 
         @include below($tablet) {
@@ -52,7 +59,7 @@
         }
     }
 
-    &__content {
+    &__list {
         position: relative;
         z-index: 2;
         // align-items: flex-start;
@@ -110,14 +117,26 @@
 
 .question {
     &__title {
-        font-size: 20px;
-        text-align: left;
-        margin-bottom: 25px;
+        position: relative;
+        padding-bottom: rem(18);
+        margin-bottom: rem(30);
+
+        &::after {
+            position: absolute;
+            content: '';
+
+            bottom: 0;
+            left: 0;
+            width: rem(120);
+            height: rem(1);
+            background-color: #9ba0a5;
+        }
     }
 
     &__text {
-        max-height: 65px;
+        max-height: 68px;
         overflow: hidden;
+        margin-bottom: rem(8);
 
         &_toggled {
             max-height: initial;

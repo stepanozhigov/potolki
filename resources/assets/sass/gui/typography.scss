@@ -81,111 +81,159 @@
 @import 'variables';
 
 .overtitle {
-    color: #a5aaaf;
+    color: #babec2;
     font-family: $futura;
-    font-size: 22px;
+    font-size: rem(22);
     font-weight: 300;
+    letter-spacing: rem(7);
     text-transform: uppercase;
-    letter-spacing: 7px;
     text-align: center;
     margin: 0;
 
-    @media screen and (max-width: 650px){
-        font-size: 18px;
+    @include below($tablet) {
+        font-size: rem(18);
+        letter-spacing: rem(5);
+        text-transform: uppercase;
+    }
+
+    @include below($mobile) {
+        font-size: rem(17);
+        letter-spacing: rem(4.72);
+        text-transform: uppercase;
     }
 }
 
 .title {
-    color: $grey_abbey;
-    font-family: 'Playfair Display';
-    text-align: center;
-    font-size: 43px;
-    font-weight: 400;
-    margin: 0;
-    padding: 0;
     position: relative;
-    line-height: 53px;
+    margin: 0;
+    padding-bottom: rem(32);
+    color: #485058;
+    font-family: $playfair;
+    font-size: rem(43);
+    font-weight: 400;
+    line-height: rem(51);
+    text-align: center;
 
-    @include below($tablet) {
-        font-size: 32px;
+    &::after {
+        position: absolute;
+        content: '';
+        bottom: 0;
+        left: 50%;
+        width: rem(160);
+        height: rem(1);
+        background-color: #babec2;
+        transform: translateX(-50%);
+
+        @include below($mobile) {
+            width: rem(110);
+        }
     }
 
-    @media screen and (max-width: 650px){
-        line-height: 36px;
-        font-size: 26px;
+    @include below($tablet) {
+        font-size: rem(32);
+        line-height: rem(38);
+    }
+
+    @include below($mobile) {
+        padding-bottom: rem(24);
+        font-size: rem(26);
+        line-height: 1;
     }
 }
 
 .second-title {
-    font-family: 'Playfair Display';
-    font-weight: 400;
-    font-size: 32px;
-    text-align: center;
-    color: $grey_abbey;
+    position: relative;
     margin: 0;
+    padding-bottom: rem(24);
+    color: #485058;
+    font-family: $playfair;
+    font-size: rem(32);
+    font-weight: 400;
+    line-height: rem(38);
+    text-align: center;
+
+    &::after {
+        position: absolute;
+        content: '';
+        bottom: 0;
+        left: 50%;
+        width: rem(160);
+        height: rem(1);
+        background-color: #babec2;
+        transform: translateX(-50%);
+
+        @include below($mobile) {
+            width: rem(110);
+        }
+    }
+
+    @include below($tablet) {
+        font-size: rem(32);
+        line-height: rem(38);
+    }
 
     @include below($mobile) {
-        font-size: 26px;
+        font-size: rem(26);
+        line-height: 1;
     }
 }
 
 .third-title {
-    color: $grey_abbey;
-    font-family: "Playfair Display";
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 24px;
     margin: 0;
+    font-family: $playfair;
+    font-size: rem(20);
+    font-weight: 400;
+    line-height: rem(24);
+    color: $grey_abbey;
+
+    @include below($mobile) {
+        font-size: rem(18);
+        line-height: rem(21);
+    }
 }
 
 .card-title {
+    color: #485058;
+    font-family: $futura;
+    font-size: rem(26);
+    font-weight: 300;
+    letter-spacing: rem(1.5);
+    line-height: 32px;
     text-transform: uppercase;
     text-decoration: none;
-    font-family: $futura;
-    font-size: 26px;
-    color: $grey_abbey;
-    letter-spacing: 1.5px;
-    margin: 0;
-    margin-bottom: rem(15);
 
     &_red {
         color: $red_crismon;
-    }
-
-    @include below($mobile) {
-        font-size: 22px;
     }
 }
 
 .intro {
-    font-family: $helvetica;
-    font-weight: 300;
-    font-size: 22px;
-    color: $grey_abbey;
     margin: 0;
     text-align: center;
-    line-height: 32px;
+    color: #485058;
+    font-family: $helvetica;
+    font-size: rem(22);
+    font-weight: 300;
+    line-height: rem(32);
 
     &_red {
         color: $red_crismon;
     }
 
-    @media screen and (max-width: 650px){
-        font-size: 20px;
-    }
 
     @include below($mobile) {
-        max-height: rem(90);
-        overflow: hidden;
+        font-size: rem(20);
+        line-height: rem(30);
     }
 }
 
 .text {
+    margin: 0;
+    color: #485058;
     font-family: $helvetica;
+    font-size: rem(16);
     font-weight: 300;
-    color: $grey_abbey;
-    font-size: 16px;
-    line-height: 22px;
+    line-height: rem(24);
     text-decoration: none;
 
     &_white {
@@ -195,14 +243,19 @@
     &_bold {
         font-weight: 500;
     }
+
+    @include below($tablet) {
+        font-size: rem(18);
+        line-height: rem(26);
+    }
 }
 
 .subtext {
-    color: $grey_abbey;
+    color: #485058;
     font-family: $helvetica;
-    font-size: 14px;
+    font-size: rem(12);
     font-weight: 300;
-    line-height: 19px;
+    line-height: rem(20);
     margin: 0;
     text-decoration: none;
 
@@ -217,37 +270,66 @@
     &_center {
         text-align: center;
     }
+
+    @include below($tablet) {
+        font-size: rem(14);
+        line-height: rem(24);
+    }
 }
 
 .titles {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 75px 0 60px 0;
-	padding-bottom: rem(64);
+    padding-top: rem(80);
     width: 100%;
     z-index: 1;
 
-
-
     &__overtitle {
-        margin-bottom: 3px;
+        @extend .overtitle;
 
-        @media screen and (max-width: 650px){
-            margin-bottom: 10px;
+        margin-bottom: rem(1);
+
+        @include below($tablet) {
+            margin-bottom: rem(10);
+        }
+
+        @include below($mobile) {
+            margin-bottom: rem(13);
         }
     }
 
     &__title {
-        margin-bottom: 25px;
+        @extend .title;
+
+        margin-bottom: rem(48);
     }
 
     &__second-title {
-        margin-bottom: 24px;
+        @extend .second-title;
+
+        margin-bottom: rem(48);
     }
 
     &__intro {
-        margin: 50px 0 0 0;
+        @extend .intro;
+        width: rem(980);
+
+        margin-top: rem(-8);
+        max-height: 125px;
+        overflow: hidden;
+
+        &.opened {
+            max-height: none;
+
+            & + .titles__arrow {
+                transform: rotate(180deg);
+            }
+        }
+
+        @include below($tablet) {
+            width: 100%;
+        }
 
     }
 
@@ -273,6 +355,14 @@
         outline: none;
         cursor: pointer;
         background-color: transparent;
+
+        &_longtext {
+            display: block;
+
+            @include below($mobile) {
+                display: none;
+            }
+        }
     }
 
     @media screen and (max-width: 650px){
@@ -286,20 +376,6 @@
             .intro + .titles__arrow {
                 display: block;
             }
-
-            .intro {
-                &.opened {
-                    max-height: none;
-
-                    & + .titles__arrow {
-                        transform: rotate(180deg);
-                    }
-                }
-            }
         }
-
-
-
-
     }
 }

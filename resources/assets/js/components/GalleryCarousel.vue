@@ -24,7 +24,7 @@
     export default {
         data: function () {
             return {
-                showCount: 5,
+                showCount: 9,
                 showPoint: 0,
                 interval: 0,
                 currentPhotoIndex: 0,

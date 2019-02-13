@@ -951,12 +951,15 @@
             }
         }
     }
+
+    .titles {
+        position: relative;
+        z-index: 2;
+        margin-bottom: rem(48);
+    }
 }
 
-.titles {
-    position: relative;
-    z-index: 2;
-}
+
 
 
 

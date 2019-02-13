@@ -9,9 +9,12 @@ $(document).on('click', '.js-show', function(event) {
     {
         var offset = 0;
 
-        offset = $(window).scrollTop() - $('.reviews').offset().top;
+        offset = $(window).scrollTop() - $('.reviews__content').offset().top;
+        console.log($(window).scrollTop());
+        console.log($('.reviews').offset().top);
+        console.log(offset);
 
-        $source.css('top', offset + 100);
+        $source.css('top', offset + 150);
     }
     else {
         $('body').addClass('overflowed');

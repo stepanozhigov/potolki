@@ -201,6 +201,18 @@ $('.js-toggle-submenu').on('click', function (e) {
     $(this).toggleClass('menu__item_opened');
 });
 
+$('.whyus__button').on('click', function () {
+    $('.whyus__stat').slideToggle({
+      start: function () {
+        $(this).css({
+          display: "flex"
+        })
+      }
+    });
+});
+
+
+
 if ($(document).width() <= 1024) {
     $('.js-toggle-submenu').on('click', function (event) {
         event.preventDefault();
@@ -315,6 +327,8 @@ $('.facture').on('click', '.facture__item', function () {
 $('.titles__arrow').on('click', function () {
     $(this).prev('.intro ').toggleClass('opened');
 });
+
+
 
 
 

@@ -3,6 +3,10 @@
 
 .body {
     margin: 0;
+
+}
+
+*, ::after, ::before, body, html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -154,6 +158,7 @@ body {
     &__item {
         white-space: nowrap;
         padding-left: 2px;
+        text-decoration: none;
 
 		@include below($mobile) {
 			white-space: normal;
@@ -977,20 +982,16 @@ body {
     }
 }
 
-.b-card {
-    background: #ffffff;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.16),0 0 rem(8) rgba(0, 0, 0, 0), inset 0 -1px 0 rgba(0, 0, 0, 0.12);
-    border-radius: 5px;
-    text-decoration: none;
-    transition: box-shadow .3s;
-}
+
 
 .is-hoverable {
     will-change: transform;
     transform: scale(1);
-    transition: transform 100ms linear;
+    box-shadow: 0 0.75rem 0.75rem rgba(0,0,0,0), 0 0 0.75rem rgba(0,0,0,0), inset 0 -0.0625rem 0 rgba(0,0,0,0);
+    transition: all 100ms linear;
 
     &:hover {
+        position: relative;
         transition: transform 100ms linear;
         transform: scale(1.05);
         z-index: 9;
@@ -1008,6 +1009,14 @@ body {
     &:hover {
         color: #dc1414;
     }
+}
+
+.b-card {
+    background: #ffffff;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.16),0 0 rem(8) rgba(0, 0, 0, 0), inset 0 -1px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all .3s;
 }
 
 .banks {

@@ -2,12 +2,13 @@
 @section('content')
     @include('common.gui.header')
 
-        <div class="titles container">
-            <p class="overtitle titles__overtitle">Статьи и новости</p>
-            <h1 class="title titles__title">Полезная информация о пластиковых окнах</h1>
-            <hr class="line titles__line">
-            <p class="intro titles__intro">Больше полезной информации, конкурсы и розыгрыши вы можете найти в наших социальных сетях:</p>
-            <div class="socials titles__socials">
+    <div class="articles container" id="articles">
+            @include('common.gui.titles', [
+                'overtitle' =>  'Статьи и новости',
+                'title' =>  "Полезная информация о пластиковых окнах",
+                'intro' =>  "Больше полезной информации, конкурсы и&nbsp;розыгрыши <br> вы&nbsp;можете найти в&nbsp;наших социальных сетях:"
+            ])
+            <div class="socials articles__socials">
                 <a href="" class="socials__item red-hoverable">
                     <div class="socials__icon socials__icon_vk"></div>
                     <span class="socials__name text red-hoverable">Вконтакте</span>
@@ -25,9 +26,6 @@
                     <span class="socials__name text red-hoverable">Instagram</span>
                 </a>
             </div>
-        </div>
-
-    <div class="articles container" id="articles">
             <posts :posts="{{ $articles }}"></posts>
             <!--<article class="ourArticle">
                 <div class="ourArticle__gallery">

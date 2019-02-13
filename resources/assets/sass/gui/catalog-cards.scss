@@ -3,6 +3,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-bottom: rem(48);
 
     &.container {
         @include below($mobile) {
@@ -83,5 +84,9 @@
 
     .buttons {
         margin-top: rem(16);
+    }
+
+    .titles {
+        margin-bottom: rem(48);
     }
 }

@@ -171,6 +171,7 @@
         margin-left: auto;
         display: flex;
         justify-content: space-between;
+        align-items: center;
 
         @media screen and (max-width: 1024px){
             width: 100%;
@@ -192,7 +193,7 @@
         cursor: pointer;
         color: $red_crismon;
         border-bottom: rem(1) dashed $red_crismon;
-        line-height: 21px;
+        line-height: 16px;
 
         @include below($tablet) {
             line-height: 20px;

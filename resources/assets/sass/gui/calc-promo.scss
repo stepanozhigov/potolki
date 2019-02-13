@@ -14,6 +14,15 @@
 		padding: 0;
         align-items: flex-start;
         z-index: 1;
+
+		.titles__second-title {
+			text-align: left;
+
+			&::after {
+				left: 0;
+				transform: none;
+			}
+		}
     }
 
     &__intro {

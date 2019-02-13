@@ -1,10 +1,17 @@
 .employees {
-    padding-top: 80px;
-    margin-bottom: rem(90);
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: center;
+    .titles {
+        margin-bottom: rem(64);
+    }
+
+    &__content {
+        padding-top: rem(48);
+        padding-bottom: rem(24);
+        margin-bottom: rem(90);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: center;
+    }
 
     &__switcher {
         flex-basis: 77%;

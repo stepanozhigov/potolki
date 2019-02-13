@@ -13,6 +13,12 @@
         background-position: right;
     }
 
+    &__inner {
+        @include below($tablet) {
+            height: auto;
+        }
+    }
+
     &__social {
         display: flex;
         justify-content: center;
@@ -39,6 +45,7 @@
         font-size: 58px;
         margin-bottom: 19px;
         max-width: 560px;
+        height: 134px;
 
         &_center {
             text-align: center;
@@ -115,6 +122,8 @@
             font-size: 30px;
         }
     }
+
+
 
     &__intro {
         color: $white;

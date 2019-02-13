@@ -1,11 +1,18 @@
 .jobs {
-    padding: 60px 0 60px 0;
+
+    .titles {
+        margin-bottom: rem(64);
+    }
+
+    &__content {
+        padding: 48px 0 39px 0;
 
 
-    -moz-column-width: calc(393px - 16px);
-    -webkit-column-width: calc(393px - 16px);
-    -moz-column-gap: 16px;
-    -webkit-column-gap: 16px;
+        -moz-column-width: calc(393px - 16px);
+        -webkit-column-width: calc(393px - 16px);
+        -moz-column-gap: 16px;
+        -webkit-column-gap: 16px;
+    }
 
     &__switcher {
         width: 100%;
@@ -24,7 +31,7 @@
         display: inline-block;
         width:  100%;
         margin-bottom: rem(25);
-        // 
+        //
         // @media screen and (max-width: 1024px) {
         //     width: 48%;
         // }

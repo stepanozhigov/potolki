@@ -1,11 +1,29 @@
 @import './gui/review';
 
 .reviews {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    padding: 0px 0 32px 0;
-	padding-top: 48px;
+
+    .titles {
+        margin-bottom: rem(64);
+    }
+
+
+    &__content {
+        position: relative;
+        @extend .container;
+
+
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    	padding-top: rem(48);
+        padding-bottom: rem(64);
+    }
+
+    &:not(.reviews_main) {
+        .reviews__content {
+            @extend .b-texture;
+        }
+    }
 
     &__buttons {
         margin-top: 32px;
@@ -16,7 +34,7 @@
     }
     &__item {
         width: 32.5%;
-        margin-top: 70px;
+        margin-top: rem(60);
         margin-bottom: 24px;
 
         @media screen and (max-width: 1024px) {
@@ -30,7 +48,8 @@
     &__buttons {
         display: flex;
         justify-content: center;
-        margin: 24px auto 32px auto;
+        margin: 0 auto;
+        margin-top: rem(24);
         width: 100%;
 
         @media screen and (max-width: 800px) {
@@ -65,6 +84,17 @@
     }
 
     &_main {
+
+        padding-bottom: rem(80);
+
+        .titles {
+            margin-bottom: 0;
+        }
+
+        .reviews__content {
+            padding-bottom: rem(40);
+        }
+
         .reviews__item {
             @include below($tablet) {
                 &:nth-of-type(n + 4) {
