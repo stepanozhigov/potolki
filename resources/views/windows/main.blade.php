@@ -177,7 +177,7 @@
         </div>
 
         <div class="buttons reviews__buttons">
-            <a href="{{ route('reviews', $city) }}" class="button buttons__item button_gray">Прочитать все отзывы</a>
+            <a href="{{ route('reviews', $city) }}" class="button buttons__item button_gray">Все отзывы</a>
             <a href="{{ route('add-review', $city) }}" class="button">Оставить отзыв</a>
         </div>
     </section>

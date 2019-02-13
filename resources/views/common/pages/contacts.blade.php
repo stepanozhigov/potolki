@@ -5,7 +5,7 @@
 @section('content')
     @include('common.gui.header')
     @include('common.gui.titles', [
-        'title' =>  "Контакты фабрики окон «Твой стиль» {$city->name_formatted}"
+        'title' =>  "Контакты компании «Твой стиль» {$city->name_formatted}"
     ])
     <section class="contacts">
         @if(count($city->offices) > 0)

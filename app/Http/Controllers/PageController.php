@@ -39,8 +39,8 @@ class PageController extends Controller
             'photos'    =>  Photo::all(),
             'offers'    =>  Offer::where('is_active', 1)->get(),
             'catalogTypes'  => CatalogType::where(['direction_id' => 1])->get(),
-            'articles'  =>  Article::where(['is_active' => 1, 'in_main' => 1])->get(),
-            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
+            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first(),
+            'articles' => Article::where(['is_active' => 1, 'in_main' => 1])->orderBy('sort', 'asc')->get()
         ]);
     }
     public function photos (City $city, CatalogType $type = null)

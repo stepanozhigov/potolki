@@ -1162,7 +1162,7 @@
   }
 }
 
-.survey__textarea {
+.survey__textarea.textarea {
   width: 36.25rem;
   margin-bottom: 1.875rem;
   color: #808890;
@@ -1174,12 +1174,12 @@
 }
 
 @media screen and (max-width: 79.9375rem) {
-  .survey__textarea {
+  .survey__textarea.textarea {
     width: 100%;
   }
 }
 
-.survey__textarea::-webkit-input-placeholder {
+.survey__textarea.textarea::-webkit-input-placeholder {
   color: #808890;
   font-family: "Helvetica Neue", sans-serif;
   font-size: 1.125rem;
@@ -1187,7 +1187,7 @@
   line-height: 20px;
 }
 
-.survey__textarea::-moz-placeholder {
+.survey__textarea.textarea::-moz-placeholder {
   color: #808890;
   font-family: "Helvetica Neue", sans-serif;
   font-size: 1.125rem;
@@ -1195,7 +1195,7 @@
   line-height: 20px;
 }
 
-.survey__textarea:-moz-placeholderr {
+.survey__textarea.textarea:-moz-placeholderr {
   color: #808890;
   font-family: "Helvetica Neue", sans-serif;
   font-size: 1.125rem;
@@ -1203,7 +1203,7 @@
   line-height: 20px;
 }
 
-.survey__textarea:-ms-input-placeholde {
+.survey__textarea.textarea:-ms-input-placeholde {
   color: #808890;
   font-family: "Helvetica Neue", sans-serif;
   font-size: 1.125rem;
@@ -10921,6 +10921,7 @@ body.no-scroll {
   width: 23.75rem;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 79.9375rem) {

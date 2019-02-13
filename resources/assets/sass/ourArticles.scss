@@ -130,6 +130,7 @@
     align-items: flex-start;
     width: rem(380);
     flex-shrink: 0;
+    cursor: pointer;
 
     @include below($tablet) {
         width: rem(336);
