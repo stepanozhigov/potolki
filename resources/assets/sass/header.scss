@@ -190,10 +190,27 @@
     }
 
     &__callback {
+        position: relative;
         cursor: pointer;
         color: $red_crismon;
         border-bottom: rem(1) dashed $red_crismon;
         line-height: 16px;
+        &:after {
+            position: absolute;
+            width: 100%;
+            bottom: rem(-1);
+            display:block;
+            content: '';
+            border-bottom: rem(1) solid $red_crismon;
+            transform: scaleX(0);
+            transition: transform 250ms ease-in-out;
+        }
+
+        &:hover {
+            &:after {
+                transform: scaleX(1);
+            }
+        }
 
         @include below($tablet) {
             line-height: 20px;

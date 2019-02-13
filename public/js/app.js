@@ -29302,63 +29302,59 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c(
-      "article",
-      { staticClass: "ourArticle", on: { click: _vm.toggleMode } },
-      [
-        _c(
-          "div",
-          { staticClass: "ourArticle__gallery" },
-          [
-            _vm._l(_vm.slides, function(slide, index) {
-              return index == _vm.activeSlide
-                ? _c("img", {
-                    staticClass: "ourArticle__img active",
-                    attrs: { src: _vm.imgPath + slide, alt: "" }
-                  })
-                : _vm._e()
-            }),
-            _vm._v(" "),
-            _vm.slides.length > 1
-              ? _c("button", {
-                  staticClass: "ourArticle__gallery-prev",
-                  on: { click: _vm.nextSlide }
-                })
-              : _vm._e(),
-            _vm._v(" "),
-            _vm.slides.length > 1
-              ? _c("button", {
-                  staticClass: "ourArticle__gallery-next",
-                  on: { click: _vm.nextSlide }
+    _c("article", { staticClass: "article", on: { click: _vm.toggleMode } }, [
+      _c(
+        "div",
+        { staticClass: "article__gallery" },
+        [
+          _vm._l(_vm.slides, function(slide, index) {
+            return index == _vm.activeSlide
+              ? _c("img", {
+                  staticClass: "article__img active",
+                  attrs: { src: _vm.imgPath + slide, alt: "" }
                 })
               : _vm._e()
-          ],
-          2
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "ourArticle__desc" }, [
-          _c("h3", [_vm._v(_vm._s(_vm.post.title))]),
+          }),
           _vm._v(" "),
-          _vm.mode == "expanded"
-            ? _c("p", { domProps: { innerHTML: _vm._s(_vm.post.text) } })
+          _vm.slides.length > 1
+            ? _c("button", {
+                staticClass: "article__gallery-prev",
+                on: { click: _vm.nextSlide }
+              })
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.slides.length > 1
+            ? _c("button", {
+                staticClass: "article__gallery-next",
+                on: { click: _vm.nextSlide }
+              })
             : _vm._e()
-        ]),
+        ],
+        2
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "article__desc" }, [
+        _c("h3", [_vm._v(_vm._s(_vm.post.title))]),
         _vm._v(" "),
-        _vm.post.title || _vm.device == "mobile"
-          ? _c(
-              "a",
-              {
-                staticClass: "ourArticle__more",
-                attrs: {
-                  "data-src": "#popup_articles",
-                  href: "javascript:void(0);"
-                }
-              },
-              [_vm._v("Подробнее")]
-            )
+        _vm.mode == "expanded"
+          ? _c("p", { domProps: { innerHTML: _vm._s(_vm.post.text) } })
           : _vm._e()
-      ]
-    ),
+      ]),
+      _vm._v(" "),
+      _vm.post.title || _vm.device == "mobile"
+        ? _c(
+            "a",
+            {
+              staticClass: "article__more",
+              attrs: {
+                "data-src": "#popup_articles",
+                href: "javascript:void(0);"
+              }
+            },
+            [_vm._v("Подробнее")]
+          )
+        : _vm._e()
+    ]),
     _vm._v(" "),
     _vm.mode == "detail"
       ? _c("div", {
@@ -29381,15 +29377,15 @@ var render = function() {
               on: { click: _vm.toggleMode }
             }),
             _vm._v(" "),
-            _c("section", { staticClass: "ourArticle ourArticle_popup" }, [
+            _c("section", { staticClass: "article article_popup" }, [
               _c(
                 "div",
-                { staticClass: "ourArticle__gallery" },
+                { staticClass: "article__gallery" },
                 [
                   _vm._l(_vm.slides, function(slide, index) {
                     return index == _vm.activeSlide
                       ? _c("img", {
-                          staticClass: "ourArticle__img active",
+                          staticClass: "article__img active",
                           attrs: { src: _vm.imgPath + slide, alt: "" }
                         })
                       : _vm._e()
@@ -29397,14 +29393,14 @@ var render = function() {
                   _vm._v(" "),
                   _vm.slides.length > 1
                     ? _c("button", {
-                        staticClass: "ourArticle__gallery-prev",
+                        staticClass: "article__gallery-prev",
                         on: { click: _vm.nextSlide }
                       })
                     : _vm._e(),
                   _vm._v(" "),
                   _vm.slides.length > 1
                     ? _c("button", {
-                        staticClass: "ourArticle__gallery-next",
+                        staticClass: "article__gallery-next",
                         on: { click: _vm.nextSlide }
                       })
                     : _vm._e()
@@ -29412,7 +29408,7 @@ var render = function() {
                 2
               ),
               _vm._v(" "),
-              _c("div", { staticClass: "ourArticle__desc" }, [
+              _c("div", { staticClass: "article__desc" }, [
                 _vm.post.title
                   ? _c("h3", [_vm._v(_vm._s(_vm.post.title))])
                   : _vm._e(),
