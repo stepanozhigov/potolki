@@ -1,6 +1,9 @@
 .additional {
-    padding-bottom: 64px;
-    margin-bottom: 80px;
+    margin-bottom: rem(96);
+
+    @include below($mobile) {
+        margin-bottom: 0;
+    }
 
     &__list {
         display: flex;
@@ -10,7 +13,7 @@
         margin-right: rem(-10);
 
         @include below($tablet) {
-            margin-bottom: rem(-80);
+            margin-bottom: rem(-112);
         }
 
         @include below($mobile) {
@@ -32,7 +35,7 @@
 
         @include below($tablet) {
             width: calc(50% - 20px);
-            margin-bottom: rem(80);
+            margin-bottom: rem(112);
         }
 
         @include below($mobile) {
@@ -75,6 +78,14 @@
     }
 
     .titles {
-        margin-bottom: rem(46);
+        margin-bottom: rem(112);
+
+        .second-title {
+            margin: 0;
+        }
+
+        @include below($mobile) {
+            padding: 0;
+        }
     }
 }

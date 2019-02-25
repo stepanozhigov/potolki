@@ -5,8 +5,8 @@
     <div class="articles container" id="articles">
             @include('common.gui.titles', [
                 'overtitle' =>  'Статьи и новости',
-                'title' =>  "Полезная информация о пластиковых окнах",
-                'intro' =>  "Больше полезной информации, конкурсы и&nbsp;розыгрыши <br> вы&nbsp;можете найти в&nbsp;наших социальных сетях:"
+                'title' =>  "Полезная информация о&nbsp;пластиковых окнах",
+                'intro' =>  "Больше полезной информации, конкурсы и&nbsp;розыгрыши вы&nbsp;можете найти в&nbsp;наших социальных сетях:"
             ])
             <div class="socials titles__socials container">
                 <a href="" class="socials__item red-hoverable">

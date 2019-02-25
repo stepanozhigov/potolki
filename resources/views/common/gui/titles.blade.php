@@ -13,9 +13,13 @@
 
     @isset($intro)
         <p class="intro titles__intro">{!! $intro !!}</p>
-        @if (strlen($intro) > 367)
-            <button class="titles__arrow titles__arrow_longtext" type="button"></button>
+        @if (mb_strlen($intro) > 367)
+            <button class="titles__arrow titles__arrow_longtext" type="button">
+                <img src="/img/arrow-down.svg" alt="">
+            </button>
         @endif
     @endisset
-    <button class="titles__arrow" type="button"></button>
+    <button class="titles__arrow" type="button">
+        <img src="/img/arrow-down.svg" alt="">
+    </button>
 </div>

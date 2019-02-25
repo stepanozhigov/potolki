@@ -5,6 +5,7 @@
     position: relative;
     padding-bottom: rem(65);
     overflow: hidden;
+    margin-bottom: rem(96);
 
     &:before {
         content: '';
@@ -61,6 +62,7 @@
 
         @include below($mobile) {
             width: auto;
+            flex-shrink: 0;
 
             &:not(.active) {
                 opacity: .6;
@@ -89,6 +91,7 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             text-align: center;
+            hyphens: none;
 
             @include below($tablet) {
                 font-size: rem(12);

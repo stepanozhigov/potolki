@@ -1,22 +1,30 @@
 <template>
-    <div class="portfolio__carousel">
-        <a @click="toggleMode(index)" v-for="(photo, index) in showedItems" v-bind:key="photo.id" class="case b-card portfolio__item portfolio__item_slide">
-            <img :src="`/storage/${photo.src}`" alt="3" class="case__img">
-            <p class="card-title case__title">{{ photo.name }}</p>
-            <hr class="line line_small case__line">
-            <div class="case__totals">
-                <p class="case__info text">Стоиомость: {{ photo.price.toLocaleString() }}  р</p>
-                <p class="case__info text">Площадь: {{ photo.area }} м<sup>2</sup></p>
+    <div class="portfolio__wrapper">
+        <button @click="offsetBackShowPoint(true)" type="button" class="portfolio__prev" name="button">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="16" viewBox="0 0 10 16"><defs><path id="83zha" d="M1412.064 530l-6.715-6.14a1.013 1.013 0 0 1 0-1.53c.48-.44 1.27-.44 1.75 0l7.552 6.905a1.013 1.013 0 0 1 0 1.53l-7.551 6.905c-.48.44-1.27.44-1.751 0a1.013 1.013 0 0 1 0-1.53z"/></defs><g><g transform="translate(-1405 -522)"><use fill="" xlink:href="#83zha"/></g></g></svg>
+        </button>
+        <div class="portfolio__carousel">
+            <a @click="toggleMode(index)" v-for="(photo, index) in showedItems" v-bind:key="photo.id" class="case b-card portfolio__item portfolio__item_slide">
+                <img :src="`/storage/${photo.src}`" alt="3" class="case__img">
+                <p class="card-title case__title">{{ photo.name }}</p>
+                <hr class="line line_small case__line">
+                <div class="case__totals">
+                    <p class="case__info text">Стоиомость: {{ photo.price.toLocaleString() }}  ₽</p>
+                    <p class="case__info text">Площадь: {{ photo.area }} м<sup>2</sup></p>
+                </div>
+            </a>
+            <div @click="toggleMode" v-bind:class="['overlay', 'overlay_dark', mode == 'detail' ? 'overlay_active':'']"></div>
+            <div v-if="mode == 'detail'" class="gallery">
+                <p class="gallery__totals">{{ showedItems[currentPhotoIndex].price }}  ₽ / {{ showedItems[currentPhotoIndex].area }} м<sup>2</sup></p>
+                <img @click="toggleMode" class="gallery__close" src="/img/gui/close.svg">
+                <img @click="prevItem" class="gallery__prev" src="/img/gui/arrow_top.png">
+                <img @click="nextItem" class="gallery__next" src="/img/gui/arrow_top.png">
+                <img class="gallery__img b-card" :src="`/storage/${showedItems[currentPhotoIndex].src}`">
             </div>
-        </a>
-        <div @click="toggleMode" v-bind:class="['overlay', 'overlay_dark', mode == 'detail' ? 'overlay_active':'']"></div>
-        <div v-if="mode == 'detail'" class="gallery">
-            <p class="gallery__totals">{{ showedItems[currentPhotoIndex].price }}  ₽ / {{ showedItems[currentPhotoIndex].area }} м<sup>2</sup></p>
-            <img @click="toggleMode" class="gallery__close" src="/img/gui/close.svg">
-            <img @click="prevItem" class="gallery__prev" src="/img/gui/arrow_top.png">
-            <img @click="nextItem" class="gallery__next" src="/img/gui/arrow_top.png">
-            <img class="gallery__img b-card" :src="`/storage/${showedItems[currentPhotoIndex].src}`">
         </div>
+        <button @click="offsetShowPoint(true)" type="button" class="portfolio__next" name="button">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="16" viewBox="0 0 10 16"><defs><path id="83zha" d="M1412.064 530l-6.715-6.14a1.013 1.013 0 0 1 0-1.53c.48-.44 1.27-.44 1.75 0l7.552 6.905a1.013 1.013 0 0 1 0 1.53l-7.551 6.905c-.48.44-1.27.44-1.751 0a1.013 1.013 0 0 1 0-1.53z"/></defs><g><g transform="translate(-1405 -522)"><use fill="" xlink:href="#83zha"/></g></g></svg>
+        </button>
     </div>
 </template>
 
@@ -65,13 +73,30 @@
                     this.currentPhotoIndex = this.showedItems.length - 1;
                 }
             },
-            offsetShowPoint () {
+            offsetShowPoint (stop = false) {
+                if (stop) {
+                    this.stopSliding();
+                }
+
                 const itemsCount = this.photos.length;
 
                 this.showPoint ++;
 
                 if (this.showPoint == itemsCount) {
                     this.showPoint = 0;
+                }
+            },
+            offsetBackShowPoint (stop = false) {
+                if (stop) {
+                    this.stopSliding();
+                }
+
+                const itemsCount = this.photos.length;
+
+                this.showPoint --;
+
+                if (this.showPoint <= 0) {
+                    this.showPoint = itemsCount;
                 }
             },
             startSliding () {

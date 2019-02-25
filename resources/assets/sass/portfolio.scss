@@ -12,27 +12,34 @@
         padding-top: rem(40);
     }
 
-    @media screen and (max-width: 650px){
-        padding: 0;
-    }
-
     &__next,
     &__prev {
         position: absolute;
-        top: 50%;
+        top: 38%;
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
         width: rem(60);
         height: rem(60);
-        padding: 0;
+        padding: rem(22) rem(25);
         border: none;
-        background-color: #B7B8B9;
+        background-color: rgba(255, 255, 255, 0.4);
         transform: translateY(-50%);
         outline: none;
         cursor: pointer;
         z-index: 9;
+        transition: background-color .3s;
+
+        svg {
+            transition: fill .3s;
+            fill: #babec2;
+        }
+
+        @include below($tablet-small) {
+            display: none;
+        }
+
     }
 
     &__next {
@@ -80,6 +87,26 @@
         }
 
     }
+
+    &__wrapper {
+        &:hover {
+
+            .portfolio__next,
+            .portfolio__prev {
+                background-color: rgba(255, 255, 255, 0.7);
+
+                svg {
+                    fill: #808890;
+                }
+
+                &:hover {
+                    svg {
+                        fill: #dc1414;
+                    }
+                }
+            }
+        }
+    }
     &__carousel {
         margin: 0 auto;
         display: flex;
@@ -87,10 +114,16 @@
         margin-left: rem(-140);
         margin-right: rem(-140);
 
+
+
         @include below($tablet) {
             justify-content: center;
-            margin-left: 0;
+            margin-left: rem(-300);
             margin-right: 0;
+        }
+
+        @include below($mobile) {
+            margin-left: 0;
         }
     }
 
@@ -120,6 +153,16 @@
         .titles {
             padding-top: rem(48);
             margin-bottom: 0;
+
+            @include below($mobile) {
+                margin-bottom: rem(48);
+            }
+
+            .second-title {
+                @include below($mobile) {
+                    margin-bottom: 0;
+                }
+            }
         }
     }
 

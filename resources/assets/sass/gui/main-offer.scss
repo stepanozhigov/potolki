@@ -8,10 +8,9 @@
     flex-direction: column;
     align-items: flex-start;
     padding: 87px 0 80px 0;
+    background-position: bottom;
 
-    @include below($tablet) {
-        background-position: right;
-    }
+
 
     &__inner {
         @include below($tablet) {
@@ -23,7 +22,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        min-height: 483px;
+        min-height: 492px;
     }
     &__overtitle {
         color: $white;
@@ -74,10 +73,16 @@
         text-align: left;
         color: $white;
 
-        @media screen and (max-width: 650px){
-            font-size: 23px;
+        @include below($tablet) {
+            font-family: $futura;
+            font-weight: 300;
+            font-size: 22px;
+            text-align: left;
+        }
+
+        @include below($mobile) {
+            padding: 0 40px;
             text-align: center;
-            margin-top: 0;
         }
     }
 
@@ -156,6 +161,23 @@
 .main-offers {
     position: relative;
     height: 650px;
+
+    &:hover {
+
+        .main-offers__arrow {
+            background-color: rgba(255, 255, 255, 0.7);
+
+            svg {
+                fill: #808890;
+            }
+
+            &:hover {
+                svg {
+                    fill: #dc1414;
+                }
+            }
+        }
+    }
     &__arrow {
         cursor: pointer;
         position: absolute;
@@ -166,6 +188,18 @@
         border-top-left-radius: 33px;
         border-bottom-left-radius: 33px;
         transform: translateY(-50%);
+        border: none;
+        transition: background-color .3s;
+        outline: none;
+
+        svg {
+            transition: fill .3s;
+            fill: #babec2;
+        }
+
+
+
+
 
         &_prev {
             left: 0;

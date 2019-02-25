@@ -3,6 +3,7 @@
 
 .contacts {
     position: relative;
+    margin-bottom: rem(80);
 
     @media screen and (max-width: 1024px) {
         display: flex;

@@ -77,6 +77,14 @@
     font-display: swap;
 }
 
+@font-face {
+	font-family: 'rouble';
+    src: url('/fonts/RUBSR.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+    font-display: swap;
+}
+
 @import 'mixins';
 @import 'variables';
 
@@ -98,7 +106,7 @@
 
     @include below($mobile) {
         font-size: rem(17);
-        letter-spacing: rem(4.72);
+        letter-spacing: rem(4.5);
         text-transform: uppercase;
     }
 }
@@ -137,7 +145,7 @@
     @include below($mobile) {
         padding-bottom: rem(24);
         font-size: rem(26);
-        line-height: 1;
+        line-height: rem(34);
     }
 }
 
@@ -173,8 +181,8 @@
     }
 
     @include below($mobile) {
-        font-size: rem(26);
-        line-height: 1;
+        font-size: rem(22);
+        line-height: rem(26);
     }
 }
 
@@ -188,7 +196,7 @@
 
     @include below($mobile) {
         font-size: rem(18);
-        line-height: rem(21);
+        line-height: rem(22);
     }
 }
 
@@ -196,9 +204,9 @@
     color: #485058;
     font-family: $futura;
     font-size: rem(26);
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: rem(1.5);
-    line-height: 32px;
+    line-height: rem(32);
     text-transform: uppercase;
     text-decoration: none;
 
@@ -344,17 +352,18 @@
 
     &__arrow {
         display: none;
-        width: rem(18);
-        height: rem(9);
-        padding: 0;
-        margin-top: 30px;
-        background-image: url('/img/arrow-down.svg');
-        background-size: contain;
-        background-repeat: no-repeat;
+
+        padding: rem(10);
+
         border: none;
         outline: none;
         cursor: pointer;
         background-color: transparent;
+
+        img {
+            width: rem(18);
+            height: rem(9);
+        }
 
         &_longtext {
             display: block;
@@ -365,14 +374,14 @@
         }
     }
 
-    @media screen and (max-width: 650px){
-        padding: 40px 0;
-    }
-
     @include below($mobile) {
         &.container {
             margin-bottom: rem(50);
 
+
+        }
+
+        & {
             .intro + .titles__arrow {
                 display: block;
             }

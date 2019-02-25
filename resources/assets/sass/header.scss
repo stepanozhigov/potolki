@@ -132,6 +132,11 @@
     }
 
     &__phone {
+        margin-right: rem(32);
+
+        @include below($tablet) {
+            margin-right: 0;
+        }
 
         &.phone {
             @media screen and (max-width: 650px){
@@ -167,15 +172,15 @@
     }
 
     &__feedbacks {
-        width: 52.7%;
         margin-left: auto;
         display: flex;
         justify-content: space-between;
         align-items: center;
 
-        @media screen and (max-width: 1024px){
+        @include below($tablet) {
             width: 100%;
             margin: 0;
+            justify-content: space-between;
         }
 
 		@media screen and (max-width: 650px){
@@ -186,6 +191,14 @@
         @media screen and (max-width: 359px){
             flex-direction: row-reverse;
             justify-content: space-between;
+        }
+    }
+
+    &__whatsapp {
+        margin-right: rem(64);
+
+        @include below($tablet) {
+            margin: 0;
         }
     }
 
@@ -248,9 +261,14 @@
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         left: 0;
         box-sizing: border-box;
-        padding: 20px 7.5%;
+        padding: 20px 0;
         flex-direction: row;
         align-items: center;
+
+        .header__content {
+            @extend .container;
+            display: flex;
+        }
 
         .menu,
         .header__hamburger {
@@ -268,26 +286,13 @@
         .menu_active {
             display: flex;
 			overflow-y: scroll;
-		    max-height: calc(100vh - 80px);
+		    max-height: calc(100vh - 220px);
         }
 
         .logo {
             margin-right: rem(15);
         }
 
-        .header__feedbacks {
-            width: 56%;
-        }
-
-        @include below($tablet) {
-            .header__hamburger {
-                display: none;
-            }
-
-            .header__feedbacks {
-                width: 100%;
-            }
-        }
 
         @include below($tablet-small) {
             .logo__text {
@@ -295,7 +300,7 @@
             }
         }
 
-        @include below($mobile) {
+        @include below($tablet) {
             padding: rem(20) rem(10);
 
             .header__hamburger {

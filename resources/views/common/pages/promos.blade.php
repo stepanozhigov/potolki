@@ -2,6 +2,7 @@
     @section('content')
         @include('common.gui.header')
 
+
         <section class="promos">
             @include('common.gui.titles', [
                 'class' =>  'container',

@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 8);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -274,7 +274,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(23)
+var listToStyles = __webpack_require__(25)
 
 /*
 type StyleObject = {
@@ -496,7 +496,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 (function(factory) {
     if (true) {
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(16), __webpack_require__(5) ], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(16), __webpack_require__(6) ], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -3237,439 +3237,6 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 /***/ }),
 /* 4 */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_RESULT__;/*!
-* global/window.js
-* https://github.com/RobinHerbots/Inputmask
-* Copyright (c) 2010 - 2018 Robin Herbots
-* Licensed under the MIT license (http://www.opensource.org/licenses/mit-license.php)
-* Version: 4.0.4
-*/
-
-if (true) !(__WEBPACK_AMD_DEFINE_RESULT__ = (function() {
-    return typeof window !== "undefined" ? window : new (eval("require('jsdom').JSDOM"))("").window;
-}).call(exports, __webpack_require__, exports, module),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)); else if (typeof exports === "object") module.exports = typeof window !== "undefined" ? window : new (eval("require('jsdom').JSDOM"))("").window;
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
-!function(t,e){ true?module.exports=e():"function"==typeof define&&define.amd?define("Typewriter",[],e):"object"==typeof exports?exports.Typewriter=e():t.Typewriter=e()}(window,function(){return function(t){var e={};function n(r){if(e[r])return e[r].exports;var o=e[r]={i:r,l:!1,exports:{}};return t[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=t,n.c=e,n.d=function(t,e,r){n.o(t,e)||Object.defineProperty(t,e,{enumerable:!0,get:r})},n.r=function(t){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})},n.t=function(t,e){if(1&e&&(t=n(t)),8&e)return t;if(4&e&&"object"==typeof t&&t&&t.__esModule)return t;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var o in t)n.d(r,o,function(e){return t[e]}.bind(null,o));return r},n.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return n.d(e,"a",e),e},n.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},n.p="",n(n.s=53)}([function(t,e,n){var r=n(27)("wks"),o=n(15),i=n(1).Symbol,u="function"==typeof i;(t.exports=function(t){return r[t]||(r[t]=u&&i[t]||(u?i:o)("Symbol."+t))}).store=r},function(t,e){var n=t.exports="undefined"!=typeof window&&window.Math==Math?window:"undefined"!=typeof self&&self.Math==Math?self:Function("return this")();"number"==typeof __g&&(__g=n)},function(t,e,n){var r=n(8),o=n(36),i=n(23),u=Object.defineProperty;e.f=n(3)?Object.defineProperty:function(t,e,n){if(r(t),e=i(e,!0),r(n),o)try{return u(t,e,n)}catch(t){}if("get"in n||"set"in n)throw TypeError("Accessors not supported!");return"value"in n&&(t[e]=n.value),t}},function(t,e,n){t.exports=!n(6)(function(){return 7!=Object.defineProperty({},"a",{get:function(){return 7}}).a})},function(t,e,n){var r=n(1),o=n(11),i=n(7),u=n(9),a=n(18),s=function(t,e,n){var c,f,l,p,v=t&s.F,d=t&s.G,h=t&s.S,y=t&s.P,m=t&s.B,g=d?r:h?r[e]||(r[e]={}):(r[e]||{}).prototype,E=d?o:o[e]||(o[e]={}),b=E.prototype||(E.prototype={});for(c in d&&(n=e),n)l=((f=!v&&g&&void 0!==g[c])?g:n)[c],p=m&&f?a(l,r):y&&"function"==typeof l?a(Function.call,l):l,g&&u(g,c,l,t&s.U),E[c]!=l&&i(E,c,p),y&&b[c]!=l&&(b[c]=l)};r.core=o,s.F=1,s.G=2,s.S=4,s.P=8,s.B=16,s.W=32,s.U=64,s.R=128,t.exports=s},function(t,e){t.exports=function(t){return"object"==typeof t?null!==t:"function"==typeof t}},function(t,e){t.exports=function(t){try{return!!t()}catch(t){return!0}}},function(t,e,n){var r=n(2),o=n(14);t.exports=n(3)?function(t,e,n){return r.f(t,e,o(1,n))}:function(t,e,n){return t[e]=n,t}},function(t,e,n){var r=n(5);t.exports=function(t){if(!r(t))throw TypeError(t+" is not an object!");return t}},function(t,e,n){var r=n(1),o=n(7),i=n(10),u=n(15)("src"),a=Function.toString,s=(""+a).split("toString");n(11).inspectSource=function(t){return a.call(t)},(t.exports=function(t,e,n,a){var c="function"==typeof n;c&&(i(n,"name")||o(n,"name",e)),t[e]!==n&&(c&&(i(n,u)||o(n,u,t[e]?""+t[e]:s.join(String(e)))),t===r?t[e]=n:a?t[e]?t[e]=n:o(t,e,n):(delete t[e],o(t,e,n)))})(Function.prototype,"toString",function(){return"function"==typeof this&&this[u]||a.call(this)})},function(t,e){var n={}.hasOwnProperty;t.exports=function(t,e){return n.call(t,e)}},function(t,e){var n=t.exports={version:"2.5.7"};"number"==typeof __e&&(__e=n)},function(t,e,n){var r=n(39),o=n(21);t.exports=function(t){return r(o(t))}},,function(t,e){t.exports=function(t,e){return{enumerable:!(1&t),configurable:!(2&t),writable:!(4&t),value:e}}},function(t,e){var n=0,r=Math.random();t.exports=function(t){return"Symbol(".concat(void 0===t?"":t,")_",(++n+r).toString(36))}},function(t,e){t.exports={}},function(t,e,n){var r=n(43),o=n(29);t.exports=Object.keys||function(t){return r(t,o)}},function(t,e,n){var r=n(55);t.exports=function(t,e,n){if(r(t),void 0===e)return t;switch(n){case 1:return function(n){return t.call(e,n)};case 2:return function(n,r){return t.call(e,n,r)};case 3:return function(n,r,o){return t.call(e,n,r,o)}}return function(){return t.apply(e,arguments)}}},function(t,e){var n={}.toString;t.exports=function(t){return n.call(t).slice(8,-1)}},function(t,e,n){var r=n(21);t.exports=function(t){return Object(r(t))}},function(t,e){t.exports=function(t){if(void 0==t)throw TypeError("Can't call method on  "+t);return t}},function(t,e){t.exports=!1},function(t,e,n){var r=n(5);t.exports=function(t,e){if(!r(t))return t;var n,o;if(e&&"function"==typeof(n=t.toString)&&!r(o=n.call(t)))return o;if("function"==typeof(n=t.valueOf)&&!r(o=n.call(t)))return o;if(!e&&"function"==typeof(n=t.toString)&&!r(o=n.call(t)))return o;throw TypeError("Can't convert object to primitive value")}},function(t,e,n){var r=n(25),o=Math.min;t.exports=function(t){return t>0?o(r(t),9007199254740991):0}},function(t,e){var n=Math.ceil,r=Math.floor;t.exports=function(t){return isNaN(t=+t)?0:(t>0?r:n)(t)}},function(t,e,n){var r=n(19);t.exports=Array.isArray||function(t){return"Array"==r(t)}},function(t,e,n){var r=n(11),o=n(1),i=o["__core-js_shared__"]||(o["__core-js_shared__"]={});(t.exports=function(t,e){return i[t]||(i[t]=void 0!==e?e:{})})("versions",[]).push({version:r.version,mode:n(22)?"pure":"global",copyright:"© 2018 Denis Pushkarev (zloirock.ru)"})},function(t,e,n){var r=n(27)("keys"),o=n(15);t.exports=function(t){return r[t]||(r[t]=o(t))}},function(t,e){t.exports="constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf".split(",")},function(t,e,n){var r=n(2).f,o=n(10),i=n(0)("toStringTag");t.exports=function(t,e,n){t&&!o(t=n?t:t.prototype,i)&&r(t,i,{configurable:!0,value:e})}},function(t,e,n){"use strict";var r=n(8);t.exports=function(){var t=r(this),e="";return t.global&&(e+="g"),t.ignoreCase&&(e+="i"),t.multiline&&(e+="m"),t.unicode&&(e+="u"),t.sticky&&(e+="y"),e}},function(t,e){e.f={}.propertyIsEnumerable},function(t,e,n){var r=n(43),o=n(29).concat("length","prototype");e.f=Object.getOwnPropertyNames||function(t){return r(t,o)}},function(t,e,n){(function(e){for(var r=n(90),o="undefined"==typeof window?e:window,i=["moz","webkit"],u="AnimationFrame",a=o["request"+u],s=o["cancel"+u]||o["cancelRequest"+u],c=0;!a&&c<i.length;c++)a=o[i[c]+"Request"+u],s=o[i[c]+"Cancel"+u]||o[i[c]+"CancelRequest"+u];if(!a||!s){var f=0,l=0,p=[];a=function(t){if(0===p.length){var e=r(),n=Math.max(0,1e3/60-(e-f));f=n+e,setTimeout(function(){var t=p.slice(0);p.length=0;for(var e=0;e<t.length;e++)if(!t[e].cancelled)try{t[e].callback(f)}catch(t){setTimeout(function(){throw t},0)}},Math.round(n))}return p.push({handle:++l,callback:t,cancelled:!1}),l},s=function(t){for(var e=0;e<p.length;e++)p[e].handle===t&&(p[e].cancelled=!0)}}t.exports=function(t){return a.call(o,t)},t.exports.cancel=function(){s.apply(o,arguments)},t.exports.polyfill=function(t){t||(t=o),t.requestAnimationFrame=a,t.cancelAnimationFrame=s}}).call(this,n(89))},function(t,e,n){var r=n(8),o=n(61),i=n(29),u=n(28)("IE_PROTO"),a=function(){},s=function(){var t,e=n(37)("iframe"),r=i.length;for(e.style.display="none",n(64).appendChild(e),e.src="javascript:",(t=e.contentWindow.document).open(),t.write("<script>document.F=Object<\/script>"),t.close(),s=t.F;r--;)delete s.prototype[i[r]];return s()};t.exports=Object.create||function(t,e){var n;return null!==t?(a.prototype=r(t),n=new a,a.prototype=null,n[u]=t):n=s(),void 0===e?n:o(n,e)}},function(t,e,n){t.exports=!n(3)&&!n(6)(function(){return 7!=Object.defineProperty(n(37)("div"),"a",{get:function(){return 7}}).a})},function(t,e,n){var r=n(5),o=n(1).document,i=r(o)&&r(o.createElement);t.exports=function(t){return i?o.createElement(t):{}}},function(t,e,n){var r=n(18),o=n(39),i=n(20),u=n(24),a=n(56);t.exports=function(t,e){var n=1==t,s=2==t,c=3==t,f=4==t,l=6==t,p=5==t||l,v=e||a;return function(e,a,d){for(var h,y,m=i(e),g=o(m),E=r(a,d,3),b=u(g.length),T=0,w=n?v(e,b):s?v(e,0):void 0;b>T;T++)if((p||T in g)&&(y=E(h=g[T],T,m),t))if(n)w[T]=y;else if(y)switch(t){case 3:return!0;case 5:return h;case 6:return T;case 2:w.push(h)}else if(f)return!1;return l?-1:c||f?f:w}}},function(t,e,n){var r=n(19);t.exports=Object("z").propertyIsEnumerable(0)?Object:function(t){return"String"==r(t)?t.split(""):Object(t)}},function(t,e,n){"use strict";var r=n(6);t.exports=function(t,e){return!!t&&r(function(){e?t.call(null,function(){},1):t.call(null)})}},function(t,e,n){"use strict";var r=n(58),o=n(59),i=n(16),u=n(12);t.exports=n(42)(Array,"Array",function(t,e){this._t=u(t),this._i=0,this._k=e},function(){var t=this._t,e=this._k,n=this._i++;return!t||n>=t.length?(this._t=void 0,o(1)):o(0,"keys"==e?n:"values"==e?t[n]:[n,t[n]])},"values"),i.Arguments=i.Array,r("keys"),r("values"),r("entries")},function(t,e,n){"use strict";var r=n(22),o=n(4),i=n(9),u=n(7),a=n(16),s=n(60),c=n(30),f=n(65),l=n(0)("iterator"),p=!([].keys&&"next"in[].keys()),v=function(){return this};t.exports=function(t,e,n,d,h,y,m){s(n,e,d);var g,E,b,T=function(t){if(!p&&t in S)return S[t];switch(t){case"keys":case"values":return function(){return new n(this,t)}}return function(){return new n(this,t)}},w=e+" Iterator",_="values"==h,A=!1,S=t.prototype,O=S[l]||S["@@iterator"]||h&&S[h],x=O||T(h),L=h?_?T("entries"):x:void 0,N="Array"==e&&S.entries||O;if(N&&(b=f(N.call(new t)))!==Object.prototype&&b.next&&(c(b,w,!0),r||"function"==typeof b[l]||u(b,l,v)),_&&O&&"values"!==O.name&&(A=!0,x=function(){return O.call(this)}),r&&!m||!p&&!A&&S[l]||u(S,l,x),a[e]=x,a[w]=v,h)if(g={values:_?x:T("values"),keys:y?x:T("keys"),entries:L},m)for(E in g)E in S||i(S,E,g[E]);else o(o.P+o.F*(p||A),e,g);return g}},function(t,e,n){var r=n(10),o=n(12),i=n(62)(!1),u=n(28)("IE_PROTO");t.exports=function(t,e){var n,a=o(t),s=0,c=[];for(n in a)n!=u&&r(a,n)&&c.push(n);for(;e.length>s;)r(a,n=e[s++])&&(~i(c,n)||c.push(n));return c}},function(t,e,n){var r=n(1),o=n(11),i=n(22),u=n(45),a=n(2).f;t.exports=function(t){var e=o.Symbol||(o.Symbol=i?{}:r.Symbol||{});"_"==t.charAt(0)||t in e||a(e,t,{value:u.f(t)})}},function(t,e,n){e.f=n(0)},function(t,e){e.f=Object.getOwnPropertySymbols},function(t,e,n){var r=n(32),o=n(14),i=n(12),u=n(23),a=n(10),s=n(36),c=Object.getOwnPropertyDescriptor;e.f=n(3)?c:function(t,e){if(t=i(t),e=u(e,!0),s)try{return c(t,e)}catch(t){}if(a(t,e))return o(!r.f.call(t,e),t[e])}},function(t,e,n){var r=n(5),o=n(19),i=n(0)("match");t.exports=function(t){var e;return r(t)&&(void 0!==(e=t[i])?!!e:"RegExp"==o(t))}},function(t,e,n){n(44)("asyncIterator")},function(t,e,n){"use strict";var r=n(1),o=n(10),i=n(3),u=n(4),a=n(9),s=n(80).KEY,c=n(6),f=n(27),l=n(30),p=n(15),v=n(0),d=n(45),h=n(44),y=n(81),m=n(26),g=n(8),E=n(5),b=n(12),T=n(23),w=n(14),_=n(35),A=n(82),S=n(47),O=n(2),x=n(17),L=S.f,N=O.f,C=A.f,R=r.Symbol,M=r.JSON,j=M&&M.stringify,P=v("_hidden"),D=v("toPrimitive"),k={}.propertyIsEnumerable,I=f("symbol-registry"),F=f("symbols"),H=f("op-symbols"),U=Object.prototype,V="function"==typeof R,G=r.QObject,B=!G||!G.prototype||!G.prototype.findChild,Q=i&&c(function(){return 7!=_(N({},"a",{get:function(){return N(this,"a",{value:7}).a}})).a})?function(t,e,n){var r=L(U,e);r&&delete U[e],N(t,e,n),r&&t!==U&&N(U,e,r)}:N,Y=function(t){var e=F[t]=_(R.prototype);return e._k=t,e},q=V&&"symbol"==typeof R.iterator?function(t){return"symbol"==typeof t}:function(t){return t instanceof R},J=function(t,e,n){return t===U&&J(H,e,n),g(t),e=T(e,!0),g(n),o(F,e)?(n.enumerable?(o(t,P)&&t[P][e]&&(t[P][e]=!1),n=_(n,{enumerable:w(0,!1)})):(o(t,P)||N(t,P,w(1,{})),t[P][e]=!0),Q(t,e,n)):N(t,e,n)},W=function(t,e){g(t);for(var n,r=y(e=b(e)),o=0,i=r.length;i>o;)J(t,n=r[o++],e[n]);return t},z=function(t){var e=k.call(this,t=T(t,!0));return!(this===U&&o(F,t)&&!o(H,t))&&(!(e||!o(this,t)||!o(F,t)||o(this,P)&&this[P][t])||e)},$=function(t,e){if(t=b(t),e=T(e,!0),t!==U||!o(F,e)||o(H,e)){var n=L(t,e);return!n||!o(F,e)||o(t,P)&&t[P][e]||(n.enumerable=!0),n}},K=function(t){for(var e,n=C(b(t)),r=[],i=0;n.length>i;)o(F,e=n[i++])||e==P||e==s||r.push(e);return r},X=function(t){for(var e,n=t===U,r=C(n?H:b(t)),i=[],u=0;r.length>u;)!o(F,e=r[u++])||n&&!o(U,e)||i.push(F[e]);return i};V||(a((R=function(){if(this instanceof R)throw TypeError("Symbol is not a constructor!");var t=p(arguments.length>0?arguments[0]:void 0),e=function(n){this===U&&e.call(H,n),o(this,P)&&o(this[P],t)&&(this[P][t]=!1),Q(this,t,w(1,n))};return i&&B&&Q(U,t,{configurable:!0,set:e}),Y(t)}).prototype,"toString",function(){return this._k}),S.f=$,O.f=J,n(33).f=A.f=K,n(32).f=z,n(46).f=X,i&&!n(22)&&a(U,"propertyIsEnumerable",z,!0),d.f=function(t){return Y(v(t))}),u(u.G+u.W+u.F*!V,{Symbol:R});for(var Z="hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables".split(","),tt=0;Z.length>tt;)v(Z[tt++]);for(var et=x(v.store),nt=0;et.length>nt;)h(et[nt++]);u(u.S+u.F*!V,"Symbol",{for:function(t){return o(I,t+="")?I[t]:I[t]=R(t)},keyFor:function(t){if(!q(t))throw TypeError(t+" is not a symbol!");for(var e in I)if(I[e]===t)return e},useSetter:function(){B=!0},useSimple:function(){B=!1}}),u(u.S+u.F*!V,"Object",{create:function(t,e){return void 0===e?_(t):W(_(t),e)},defineProperty:J,defineProperties:W,getOwnPropertyDescriptor:$,getOwnPropertyNames:K,getOwnPropertySymbols:X}),M&&u(u.S+u.F*(!V||c(function(){var t=R();return"[null]"!=j([t])||"{}"!=j({a:t})||"{}"!=j(Object(t))})),"JSON",{stringify:function(t){for(var e,n,r=[t],o=1;arguments.length>o;)r.push(arguments[o++]);if(n=e=r[1],(E(e)||void 0!==t)&&!q(t))return m(e)||(e=function(t,e){if("function"==typeof n&&(e=n.call(this,t,e)),!q(e))return e}),r[1]=e,j.apply(M,r)}}),R.prototype[D]||n(7)(R.prototype,D,R.prototype.valueOf),l(R,"Symbol"),l(Math,"Math",!0),l(r.JSON,"JSON",!0)},function(t,e,n){var r=n(4);r(r.S+r.F*!n(3),"Object",{defineProperty:n(2).f})},function(t,e,n){var r=n(5),o=n(8),i=function(t,e){if(o(t),!r(e)&&null!==e)throw TypeError(e+": can't set as prototype!")};t.exports={set:Object.setPrototypeOf||("__proto__"in{}?function(t,e,r){try{(r=n(18)(Function.call,n(47).f(Object.prototype,"__proto__").set,2))(t,[]),e=!(t instanceof Array)}catch(t){e=!0}return function(t,n){return i(t,n),e?t.__proto__=n:r(t,n),t}}({},!1):void 0),check:i}},function(t,e,n){"use strict";n.r(e);n(54),n(41),n(66),n(68),n(70),n(77),n(79),n(49),n(50),n(83),n(51),n(84),n(85),n(87),n(88);var r=n(34),o=n.n(r),i=(n(92),function(t){return new RegExp(/<[a-z][\s\S]*>/i).test(t)}),u=function(t){var e=document.createElement("div");return e.innerHTML=t,e.firstChild},a=function(t,e){return Math.floor(Math.random()*(e-t+1))+t};n(95);function s(t){return function(t){if(Array.isArray(t)){for(var e=0,n=new Array(t.length);e<t.length;e++)n[e]=t[e];return n}}(t)||function(t){if(Symbol.iterator in Object(t)||"[object Arguments]"===Object.prototype.toString.call(t))return Array.from(t)}(t)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance")}()}function c(t,e){for(var n=0;n<e.length;n++){var r=e[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(t,r.key,r)}}function f(t,e,n){return e in t?Object.defineProperty(t,e,{value:n,enumerable:!0,configurable:!0,writable:!0}):t[e]=n,t}var l=function(){function t(e,n){var r=this;if(function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,t),f(this,"eventNames",{TYPE_CHARACTER:"TYPE_CHARACTER",REMOVE_CHARACTER:"REMOVE_CHARACTER",REMOVE_ALL:"REMOVE_ALL",REMOVE_LAST_VISIBLE_NODE:"REMOVE_LAST_VISIBLE_NODE",PAUSE_FOR:"PAUSE_FOR",CALL_FUNCTION:"CALL_FUNCTION",ADD_HTML_TAG_ELEMENT:"ADD_HTML_TAG_ELEMENT",REMOVE_HTML_TAG_ELEMENT:"REMOVE_HTML_TAG_ELEMENT",CHANGE_DELETE_SPEED:"CHANGE_DELETE_SPEED",CHANGE_DELAY:"CHANGE_DELAY"}),f(this,"visibleNodeTypes",{HTML_TAG:"HTML_TAG",TEXT_NODE:"TEXT_NODE"}),f(this,"state",{cursorAnimation:null,lastFrameTime:null,pauseUntil:null,eventQueue:[],eventLoop:null,eventLoopPaused:!1,reverseCalledEvents:[],calledEvents:[],visibleNodes:[],initialOptions:null,elements:{container:null,wrapper:document.createElement("span"),cursor:document.createElement("span")}}),f(this,"options",{strings:null,cursor:"|",delay:"natural",deleteSpeed:"natural",loop:!1,autoStart:!1,devMode:!1,wrapperClassName:"Typewriter__wrapper",cursorClassName:"Typewriter__cursor"}),f(this,"setupWrapperElement",function(){r.state.elements.wrapper.className=r.options.wrapperClassName,r.state.elements.cursor.className=r.options.cursorClassName,r.state.elements.cursor.innerHTML=r.options.cursor,r.state.elements.container.innerHTML="",r.state.elements.container.appendChild(r.state.elements.wrapper),r.state.elements.container.appendChild(r.state.elements.cursor)}),f(this,"start",function(){return r.state.eventLoopPaused=!1,r.runEventLoop(),r}),f(this,"pause",function(){return r.state.eventLoopPaused=!0,r}),f(this,"stop",function(){return r.state.eventLoop&&o.a.cancel(r.state.eventLoop),r}),f(this,"pauseFor",function(t){return r.addEventToQueue(r.eventNames.PAUSE_FOR,{ms:t}),r}),f(this,"typeOutAllStrings",function(){return"string"==typeof r.options.strings?(r.typeString(r.options.strings).pauseFor(1500),r):(r.options.strings.forEach(function(t,e){r.typeString(t).pauseFor(1500).deleteAll()}),r)}),f(this,"typeString",function(t){return i(t)?r.typeOutHTMLString(t):(t.split("").forEach(function(t){r.addEventToQueue(r.eventNames.TYPE_CHARACTER,{character:t})}),r)}),f(this,"typeOutHTMLString",function(t){var e=u(t),n=e.innerText.split("");return n.length?(e.innerText="",r.addEventToQueue(r.eventNames.ADD_HTML_TAG_ELEMENT,{htmlTagElement:e}),n.forEach(function(t){r.addEventToQueue(r.eventNames.TYPE_CHARACTER,{character:t,htmlTagElement:e})}),r):r}),f(this,"deleteAll",function(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"natural";return r.addEventToQueue(r.eventNames.REMOVE_ALL,{speed:t}),r}),f(this,"changeDeleteSpeed",function(t){return r.addEventToQueue(r.eventNames.CHANGE_DELETE_SPEED,{speed:t}),r}),f(this,"changeDelay",function(t){return r.addEventToQueue(r.eventNames.CHANGE_DELAY,{delay:t}),r}),f(this,"deleteChars",function(t){for(var e=0;e<t;e++)r.addEventToQueue(r.eventNames.REMOVE_CHARACTER);return r}),f(this,"callFunction",function(t,e){return"function"==typeof t&&r.addEventToQueue(r.eventNames.CALL_FUNCTION,{cb:t,thisArg:e}),r}),f(this,"typeCharacters",function(t){return t.forEach(function(t){r.addEventToQueue(r.eventNames.TYPE_CHARACTER,{character:t})}),r}),f(this,"removeCharacters",function(t){return t.forEach(function(){r.addEventToQueue(r.eventNames.REMOVE_CHARACTER)}),r}),f(this,"addEventToQueue",function(t,e){var n=arguments.length>2&&void 0!==arguments[2]&&arguments[2];return r.addEventToStateProperty(t,e,n,"eventQueue")}),f(this,"addReverseCalledEvent",function(t,e){var n=arguments.length>2&&void 0!==arguments[2]&&arguments[2];return r.options.loop?r.addEventToStateProperty(t,e,n,"reverseCalledEvents"):r}),f(this,"addEventToStateProperty",function(t,e){var n=arguments.length>2&&void 0!==arguments[2]&&arguments[2],o=arguments.length>3?arguments[3]:void 0,i={eventName:t,eventArgs:e||{}};return r.state[o]=n?[i].concat(s(r.state[o])):s(r.state[o]).concat([i]),r}),f(this,"runEventLoop",function(){r.state.lastFrameTime||(r.state.lastFrameTime=Date.now());var t=Date.now(),e=t-r.state.lastFrameTime;if(!r.state.eventQueue.length){if(!r.options.loop)return;r.state.eventQueue=r.state.calledEvents,r.state.calledEvents=[],r.options=r.state.initialOptions,r.addEventToQueue(r.eventNames.REMOVE_ALL,null,!0)}if(r.state.eventLoop=o()(r.runEventLoop),!r.state.eventLoopPaused){if(r.state.pauseUntil){if(t<r.state.pauseUntil)return;r.state.pauseUntil=null}var n=s(r.state.eventQueue),i=n.shift();if(!(e<=(i.eventName===r.eventNames.REMOVE_LAST_VISIBLE_NODE||i.eventName===r.eventNames.REMOVE_CHARACTER?"natural"===r.options.deleteSpeed?a(40,80):r.options.deleteSpeed:"natural"===r.options.delay?a(120,160):r.options.delay))){var u=i.eventName,c=i.eventArgs;switch(r.logInDevMode({currentEvent:i,state:r.state}),u){case r.eventNames.TYPE_CHARACTER:var f=c.character,l=c.htmlTagElement,p=document.createTextNode(f);l?l.appendChild(p):r.state.elements.wrapper.appendChild(p),r.state.visibleNodes=s(r.state.visibleNodes).concat([{type:r.visibleNodeTypes.TEXT_NODE,node:p}]);break;case r.eventNames.REMOVE_CHARACTER:n.unshift({eventName:r.eventNames.REMOVE_LAST_VISIBLE_NODE,eventArgs:{removingCharacterNode:!0}});break;case r.eventNames.PAUSE_FOR:var v=i.eventArgs.ms;r.state.pauseUntil=Date.now()+parseInt(v);break;case r.eventNames.CALL_FUNCTION:var d=i.eventArgs,h=d.cb,y=d.thisArg;h.call(y,{elements:r.state.elements});break;case r.eventNames.ADD_HTML_TAG_ELEMENT:var m=i.eventArgs.htmlTagElement;r.state.elements.wrapper.appendChild(m),r.state.visibleNodes=s(r.state.visibleNodes).concat([{type:r.visibleNodeTypes.HTML_TAG,node:m}]);break;case r.eventNames.REMOVE_ALL:var g=r.state.visibleNodes,E=c.speed,b=[];E&&b.push({eventName:r.eventNames.CHANGE_DELETE_SPEED,eventArgs:{speed:E}});for(var T=0,w=g.length;T<w;T++)b.push({eventName:r.eventNames.REMOVE_LAST_VISIBLE_NODE,eventArgs:{removingCharacterNode:!1}});E&&b.push({eventName:r.eventNames.CHANGE_DELETE_SPEED,eventArgs:{speed:r.options.deleteSpeed}}),n.unshift.apply(n,b);break;case r.eventNames.REMOVE_LAST_VISIBLE_NODE:var _=i.eventArgs.removingCharacterNode;if(r.state.visibleNodes.length){var A=r.state.visibleNodes.pop(),S=A.type;A.node.remove(),S===r.visibleNodeTypes.HTML_TAG&&_&&n.unshift({eventName:r.eventNames.REMOVE_LAST_VISIBLE_NODE,eventArgs:{}})}break;case r.eventNames.CHANGE_DELETE_SPEED:r.options.deleteSpeed=i.eventArgs.speed;break;case r.eventNames.CHANGE_DELAY:r.options.delay=i.eventArgs.delay}r.options.loop&&(i.eventName===r.eventNames.REMOVE_ALL&&i.eventName===r.eventNames.REMOVE_LAST_VISIBLE_NODE||(r.state.calledEvents=s(r.state.calledEvents).concat([i]))),r.state.eventQueue=n,r.state.lastFrameTime=t}}}),!e)throw new Error("No container element was provided");if("string"==typeof e){var c=document.querySelector(e);if(!c)throw new Error("Could not find container element");this.state.elements.container=c}else this.state.elements.container=e;n&&(this.options=function(t){for(var e=1;e<arguments.length;e++){var n=null!=arguments[e]?arguments[e]:{},r=Object.keys(n);"function"==typeof Object.getOwnPropertySymbols&&(r=r.concat(Object.getOwnPropertySymbols(n).filter(function(t){return Object.getOwnPropertyDescriptor(n,t).enumerable}))),r.forEach(function(e){f(t,e,n[e])})}return t}({},this.options,n)),this.state.initialOptions=this.options,this.init()}return function(t,e,n){e&&c(t.prototype,e),n&&c(t,n)}(t,[{key:"init",value:function(){this.setupWrapperElement(),!0===this.options.autoStart&&this.options.strings&&this.typeOutAllStrings().start()}},{key:"logInDevMode",value:function(t){this.options.devMode&&console.log(t)}}]),t}();n.d(e,"default",function(){return l})},function(t,e,n){"use strict";var r=n(4),o=n(38)(2);r(r.P+r.F*!n(40)([].filter,!0),"Array",{filter:function(t){return o(this,t,arguments[1])}})},function(t,e){t.exports=function(t){if("function"!=typeof t)throw TypeError(t+" is not a function!");return t}},function(t,e,n){var r=n(57);t.exports=function(t,e){return new(r(t))(e)}},function(t,e,n){var r=n(5),o=n(26),i=n(0)("species");t.exports=function(t){var e;return o(t)&&("function"!=typeof(e=t.constructor)||e!==Array&&!o(e.prototype)||(e=void 0),r(e)&&null===(e=e[i])&&(e=void 0)),void 0===e?Array:e}},function(t,e,n){var r=n(0)("unscopables"),o=Array.prototype;void 0==o[r]&&n(7)(o,r,{}),t.exports=function(t){o[r][t]=!0}},function(t,e){t.exports=function(t,e){return{value:e,done:!!t}}},function(t,e,n){"use strict";var r=n(35),o=n(14),i=n(30),u={};n(7)(u,n(0)("iterator"),function(){return this}),t.exports=function(t,e,n){t.prototype=r(u,{next:o(1,n)}),i(t,e+" Iterator")}},function(t,e,n){var r=n(2),o=n(8),i=n(17);t.exports=n(3)?Object.defineProperties:function(t,e){o(t);for(var n,u=i(e),a=u.length,s=0;a>s;)r.f(t,n=u[s++],e[n]);return t}},function(t,e,n){var r=n(12),o=n(24),i=n(63);t.exports=function(t){return function(e,n,u){var a,s=r(e),c=o(s.length),f=i(u,c);if(t&&n!=n){for(;c>f;)if((a=s[f++])!=a)return!0}else for(;c>f;f++)if((t||f in s)&&s[f]===n)return t||f||0;return!t&&-1}}},function(t,e,n){var r=n(25),o=Math.max,i=Math.min;t.exports=function(t,e){return(t=r(t))<0?o(t+e,0):i(t,e)}},function(t,e,n){var r=n(1).document;t.exports=r&&r.documentElement},function(t,e,n){var r=n(10),o=n(20),i=n(28)("IE_PROTO"),u=Object.prototype;t.exports=Object.getPrototypeOf||function(t){return t=o(t),r(t,i)?t[i]:"function"==typeof t.constructor&&t instanceof t.constructor?t.constructor.prototype:t instanceof Object?u:null}},function(t,e,n){var r=n(20),o=n(17);n(67)("keys",function(){return function(t){return o(r(t))}})},function(t,e,n){var r=n(4),o=n(11),i=n(6);t.exports=function(t,e){var n=(o.Object||{})[t]||Object[t],u={};u[t]=e(n),r(r.S+r.F*i(function(){n(1)}),"Object",u)}},function(t,e,n){"use strict";var r=n(69)(!0);n(42)(String,"String",function(t){this._t=String(t),this._i=0},function(){var t,e=this._t,n=this._i;return n>=e.length?{value:void 0,done:!0}:(t=r(e,n),this._i+=t.length,{value:t,done:!1})})},function(t,e,n){var r=n(25),o=n(21);t.exports=function(t){return function(e,n){var i,u,a=String(o(e)),s=r(n),c=a.length;return s<0||s>=c?t?"":void 0:(i=a.charCodeAt(s))<55296||i>56319||s+1===c||(u=a.charCodeAt(s+1))<56320||u>57343?t?a.charAt(s):i:t?a.slice(s,s+2):u-56320+(i-55296<<10)+65536}}},function(t,e,n){"use strict";var r=n(18),o=n(4),i=n(20),u=n(71),a=n(72),s=n(24),c=n(73),f=n(74);o(o.S+o.F*!n(76)(function(t){Array.from(t)}),"Array",{from:function(t){var e,n,o,l,p=i(t),v="function"==typeof this?this:Array,d=arguments.length,h=d>1?arguments[1]:void 0,y=void 0!==h,m=0,g=f(p);if(y&&(h=r(h,d>2?arguments[2]:void 0,2)),void 0==g||v==Array&&a(g))for(n=new v(e=s(p.length));e>m;m++)c(n,m,y?h(p[m],m):p[m]);else for(l=g.call(p),n=new v;!(o=l.next()).done;m++)c(n,m,y?u(l,h,[o.value,m],!0):o.value);return n.length=m,n}})},function(t,e,n){var r=n(8);t.exports=function(t,e,n,o){try{return o?e(r(n)[0],n[1]):e(n)}catch(e){var i=t.return;throw void 0!==i&&r(i.call(t)),e}}},function(t,e,n){var r=n(16),o=n(0)("iterator"),i=Array.prototype;t.exports=function(t){return void 0!==t&&(r.Array===t||i[o]===t)}},function(t,e,n){"use strict";var r=n(2),o=n(14);t.exports=function(t,e,n){e in t?r.f(t,e,o(0,n)):t[e]=n}},function(t,e,n){var r=n(75),o=n(0)("iterator"),i=n(16);t.exports=n(11).getIteratorMethod=function(t){if(void 0!=t)return t[o]||t["@@iterator"]||i[r(t)]}},function(t,e,n){var r=n(19),o=n(0)("toStringTag"),i="Arguments"==r(function(){return arguments}());t.exports=function(t){var e,n,u;return void 0===t?"Undefined":null===t?"Null":"string"==typeof(n=function(t,e){try{return t[e]}catch(t){}}(e=Object(t),o))?n:i?r(e):"Object"==(u=r(e))&&"function"==typeof e.callee?"Arguments":u}},function(t,e,n){var r=n(0)("iterator"),o=!1;try{var i=[7][r]();i.return=function(){o=!0},Array.from(i,function(){throw 2})}catch(t){}t.exports=function(t,e){if(!e&&!o)return!1;var n=!1;try{var i=[7],u=i[r]();u.next=function(){return{done:n=!0}},i[r]=function(){return u},t(i)}catch(t){}return n}},function(t,e,n){"use strict";n(78);var r=n(8),o=n(31),i=n(3),u=/./.toString,a=function(t){n(9)(RegExp.prototype,"toString",t,!0)};n(6)(function(){return"/a/b"!=u.call({source:"a",flags:"b"})})?a(function(){var t=r(this);return"/".concat(t.source,"/","flags"in t?t.flags:!i&&t instanceof RegExp?o.call(t):void 0)}):"toString"!=u.name&&a(function(){return u.call(this)})},function(t,e,n){n(3)&&"g"!=/./g.flags&&n(2).f(RegExp.prototype,"flags",{configurable:!0,get:n(31)})},function(t,e,n){var r=Date.prototype,o=r.toString,i=r.getTime;new Date(NaN)+""!="Invalid Date"&&n(9)(r,"toString",function(){var t=i.call(this);return t==t?o.call(this):"Invalid Date"})},function(t,e,n){var r=n(15)("meta"),o=n(5),i=n(10),u=n(2).f,a=0,s=Object.isExtensible||function(){return!0},c=!n(6)(function(){return s(Object.preventExtensions({}))}),f=function(t){u(t,r,{value:{i:"O"+ ++a,w:{}}})},l=t.exports={KEY:r,NEED:!1,fastKey:function(t,e){if(!o(t))return"symbol"==typeof t?t:("string"==typeof t?"S":"P")+t;if(!i(t,r)){if(!s(t))return"F";if(!e)return"E";f(t)}return t[r].i},getWeak:function(t,e){if(!i(t,r)){if(!s(t))return!0;if(!e)return!1;f(t)}return t[r].w},onFreeze:function(t){return c&&l.NEED&&s(t)&&!i(t,r)&&f(t),t}}},function(t,e,n){var r=n(17),o=n(46),i=n(32);t.exports=function(t){var e=r(t),n=o.f;if(n)for(var u,a=n(t),s=i.f,c=0;a.length>c;)s.call(t,u=a[c++])&&e.push(u);return e}},function(t,e,n){var r=n(12),o=n(33).f,i={}.toString,u="object"==typeof window&&window&&Object.getOwnPropertyNames?Object.getOwnPropertyNames(window):[];t.exports.f=function(t){return u&&"[object Window]"==i.call(t)?function(t){try{return o(t)}catch(t){return u.slice()}}(t):o(r(t))}},function(t,e,n){var r=n(4);r(r.S,"Array",{isArray:n(26)})},function(t,e,n){var r=n(4);r(r.S,"Date",{now:function(){return(new Date).getTime()}})},function(t,e,n){n(86)("split",2,function(t,e,r){"use strict";var o=n(48),i=r,u=[].push;if("c"=="abbc".split(/(b)*/)[1]||4!="test".split(/(?:)/,-1).length||2!="ab".split(/(?:ab)*/).length||4!=".".split(/(.?)(.?)/).length||".".split(/()()/).length>1||"".split(/.?/).length){var a=void 0===/()??/.exec("")[1];r=function(t,e){var n=String(this);if(void 0===t&&0===e)return[];if(!o(t))return i.call(n,t,e);var r,s,c,f,l,p=[],v=(t.ignoreCase?"i":"")+(t.multiline?"m":"")+(t.unicode?"u":"")+(t.sticky?"y":""),d=0,h=void 0===e?4294967295:e>>>0,y=new RegExp(t.source,v+"g");for(a||(r=new RegExp("^"+y.source+"$(?!\\s)",v));(s=y.exec(n))&&!((c=s.index+s[0].length)>d&&(p.push(n.slice(d,s.index)),!a&&s.length>1&&s[0].replace(r,function(){for(l=1;l<arguments.length-2;l++)void 0===arguments[l]&&(s[l]=void 0)}),s.length>1&&s.index<n.length&&u.apply(p,s.slice(1)),f=s[0].length,d=c,p.length>=h));)y.lastIndex===s.index&&y.lastIndex++;return d===n.length?!f&&y.test("")||p.push(""):p.push(n.slice(d)),p.length>h?p.slice(0,h):p}}else"0".split(void 0,0).length&&(r=function(t,e){return void 0===t&&0===e?[]:i.call(this,t,e)});return[function(n,o){var i=t(this),u=void 0==n?void 0:n[e];return void 0!==u?u.call(n,i,o):r.call(String(i),n,o)},r]})},function(t,e,n){"use strict";var r=n(7),o=n(9),i=n(6),u=n(21),a=n(0);t.exports=function(t,e,n){var s=a(t),c=n(u,s,""[t]),f=c[0],l=c[1];i(function(){var e={};return e[s]=function(){return 7},7!=""[t](e)})&&(o(String.prototype,t,f),r(RegExp.prototype,s,2==e?function(t,e){return l.call(t,this,e)}:function(t){return l.call(t,this)}))}},function(t,e,n){for(var r=n(41),o=n(17),i=n(9),u=n(1),a=n(7),s=n(16),c=n(0),f=c("iterator"),l=c("toStringTag"),p=s.Array,v={CSSRuleList:!0,CSSStyleDeclaration:!1,CSSValueList:!1,ClientRectList:!1,DOMRectList:!1,DOMStringList:!1,DOMTokenList:!0,DataTransferItemList:!1,FileList:!1,HTMLAllCollection:!1,HTMLCollection:!1,HTMLFormElement:!1,HTMLSelectElement:!1,MediaList:!0,MimeTypeArray:!1,NamedNodeMap:!1,NodeList:!0,PaintRequestList:!1,Plugin:!1,PluginArray:!1,SVGLengthList:!1,SVGNumberList:!1,SVGPathSegList:!1,SVGPointList:!1,SVGStringList:!1,SVGTransformList:!1,SourceBufferList:!1,StyleSheetList:!0,TextTrackCueList:!1,TextTrackList:!1,TouchList:!1},d=o(v),h=0;h<d.length;h++){var y,m=d[h],g=v[m],E=u[m],b=E&&E.prototype;if(b&&(b[f]||a(b,f,p),b[l]||a(b,l,m),s[m]=p,g))for(y in r)b[y]||i(b,y,r[y],!0)}},function(t,e,n){"use strict";var r=n(4),o=n(38)(0),i=n(40)([].forEach,!0);r(r.P+r.F*!i,"Array",{forEach:function(t){return o(this,t,arguments[1])}})},function(t,e){var n;n=function(){return this}();try{n=n||Function("return this")()||(0,eval)("this")}catch(t){"object"==typeof window&&(n=window)}t.exports=n},function(t,e,n){(function(e){(function(){var n,r,o,i,u,a;"undefined"!=typeof performance&&null!==performance&&performance.now?t.exports=function(){return performance.now()}:void 0!==e&&null!==e&&e.hrtime?(t.exports=function(){return(n()-u)/1e6},r=e.hrtime,i=(n=function(){var t;return 1e9*(t=r())[0]+t[1]})(),a=1e9*e.uptime(),u=i-a):Date.now?(t.exports=function(){return Date.now()-o},o=Date.now()):(t.exports=function(){return(new Date).getTime()-o},o=(new Date).getTime())}).call(this)}).call(this,n(91))},function(t,e){var n,r,o=t.exports={};function i(){throw new Error("setTimeout has not been defined")}function u(){throw new Error("clearTimeout has not been defined")}function a(t){if(n===setTimeout)return setTimeout(t,0);if((n===i||!n)&&setTimeout)return n=setTimeout,setTimeout(t,0);try{return n(t,0)}catch(e){try{return n.call(null,t,0)}catch(e){return n.call(this,t,0)}}}!function(){try{n="function"==typeof setTimeout?setTimeout:i}catch(t){n=i}try{r="function"==typeof clearTimeout?clearTimeout:u}catch(t){r=u}}();var s,c=[],f=!1,l=-1;function p(){f&&s&&(f=!1,s.length?c=s.concat(c):l=-1,c.length&&v())}function v(){if(!f){var t=a(p);f=!0;for(var e=c.length;e;){for(s=c,c=[];++l<e;)s&&s[l].run();l=-1,e=c.length}s=null,f=!1,function(t){if(r===clearTimeout)return clearTimeout(t);if((r===u||!r)&&clearTimeout)return r=clearTimeout,clearTimeout(t);try{r(t)}catch(e){try{return r.call(null,t)}catch(e){return r.call(this,t)}}}(t)}}function d(t,e){this.fun=t,this.array=e}function h(){}o.nextTick=function(t){var e=new Array(arguments.length-1);if(arguments.length>1)for(var n=1;n<arguments.length;n++)e[n-1]=arguments[n];c.push(new d(t,e)),1!==c.length||f||a(v)},d.prototype.run=function(){this.fun.apply(null,this.array)},o.title="browser",o.browser=!0,o.env={},o.argv=[],o.version="",o.versions={},o.on=h,o.addListener=h,o.once=h,o.off=h,o.removeListener=h,o.removeAllListeners=h,o.emit=h,o.prependListener=h,o.prependOnceListener=h,o.listeners=function(t){return[]},o.binding=function(t){throw new Error("process.binding is not supported")},o.cwd=function(){return"/"},o.chdir=function(t){throw new Error("process.chdir is not supported")},o.umask=function(){return 0}},function(t,e,n){var r=n(1),o=n(93),i=n(2).f,u=n(33).f,a=n(48),s=n(31),c=r.RegExp,f=c,l=c.prototype,p=/a/g,v=/a/g,d=new c(p)!==p;if(n(3)&&(!d||n(6)(function(){return v[n(0)("match")]=!1,c(p)!=p||c(v)==v||"/a/i"!=c(p,"i")}))){c=function(t,e){var n=this instanceof c,r=a(t),i=void 0===e;return!n&&r&&t.constructor===c&&i?t:o(d?new f(r&&!i?t.source:t,e):f((r=t instanceof c)?t.source:t,r&&i?s.call(t):e),n?this:l,c)};for(var h=function(t){t in c||i(c,t,{configurable:!0,get:function(){return f[t]},set:function(e){f[t]=e}})},y=u(f),m=0;y.length>m;)h(y[m++]);l.constructor=c,c.prototype=l,n(9)(r,"RegExp",c)}n(94)("RegExp")},function(t,e,n){var r=n(5),o=n(52).set;t.exports=function(t,e,n){var i,u=e.constructor;return u!==n&&"function"==typeof u&&(i=u.prototype)!==n.prototype&&r(i)&&o&&o(t,i),t}},function(t,e,n){"use strict";var r=n(1),o=n(2),i=n(3),u=n(0)("species");t.exports=function(t){var e=r[t];i&&e&&!e[u]&&o.f(e,u,{configurable:!0,get:function(){return this}})}},function(t,e,n){var r=n(96);"string"==typeof r&&(r=[[t.i,r,""]]);var o={hmr:!0,transform:void 0,insertInto:void 0};n(98)(r,o);r.locals&&(t.exports=r.locals)},function(t,e,n){(t.exports=n(97)(!1)).push([t.i,".Typewriter__cursor{-webkit-animation:Typewriter-cursor 1s infinite;animation:Typewriter-cursor 1s infinite;margin-left:1px}@-webkit-keyframes Typewriter-cursor{0%{opacity:0}50%{opacity:1}to{opacity:0}}@keyframes Typewriter-cursor{0%{opacity:0}50%{opacity:1}to{opacity:0}}",""])},function(t,e){t.exports=function(t){var e=[];return e.toString=function(){return this.map(function(e){var n=function(t,e){var n=t[1]||"",r=t[3];if(!r)return n;if(e&&"function"==typeof btoa){var o=function(t){return"/*# sourceMappingURL=data:application/json;charset=utf-8;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(t))))+" */"}(r),i=r.sources.map(function(t){return"/*# sourceURL="+r.sourceRoot+t+" */"});return[n].concat(i).concat([o]).join("\n")}return[n].join("\n")}(e,t);return e[2]?"@media "+e[2]+"{"+n+"}":n}).join("")},e.i=function(t,n){"string"==typeof t&&(t=[[null,t,""]]);for(var r={},o=0;o<this.length;o++){var i=this[o][0];"number"==typeof i&&(r[i]=!0)}for(o=0;o<t.length;o++){var u=t[o];"number"==typeof u[0]&&r[u[0]]||(n&&!u[2]?u[2]=n:n&&(u[2]="("+u[2]+") and ("+n+")"),e.push(u))}},e}},function(t,e,n){var r={},o=function(t){var e;return function(){return void 0===e&&(e=t.apply(this,arguments)),e}}(function(){return window&&document&&document.all&&!window.atob}),i=function(t){var e={};return function(t,n){if("function"==typeof t)return t();if(void 0===e[t]){var r=function(t,e){return e?e.querySelector(t):document.querySelector(t)}.call(this,t,n);if(window.HTMLIFrameElement&&r instanceof window.HTMLIFrameElement)try{r=r.contentDocument.head}catch(t){r=null}e[t]=r}return e[t]}}(),u=null,a=0,s=[],c=n(99);function f(t,e){for(var n=0;n<t.length;n++){var o=t[n],i=r[o.id];if(i){i.refs++;for(var u=0;u<i.parts.length;u++)i.parts[u](o.parts[u]);for(;u<o.parts.length;u++)i.parts.push(y(o.parts[u],e))}else{var a=[];for(u=0;u<o.parts.length;u++)a.push(y(o.parts[u],e));r[o.id]={id:o.id,refs:1,parts:a}}}}function l(t,e){for(var n=[],r={},o=0;o<t.length;o++){var i=t[o],u=e.base?i[0]+e.base:i[0],a={css:i[1],media:i[2],sourceMap:i[3]};r[u]?r[u].parts.push(a):n.push(r[u]={id:u,parts:[a]})}return n}function p(t,e){var n=i(t.insertInto);if(!n)throw new Error("Couldn't find a style target. This probably means that the value for the 'insertInto' parameter is invalid.");var r=s[s.length-1];if("top"===t.insertAt)r?r.nextSibling?n.insertBefore(e,r.nextSibling):n.appendChild(e):n.insertBefore(e,n.firstChild),s.push(e);else if("bottom"===t.insertAt)n.appendChild(e);else{if("object"!=typeof t.insertAt||!t.insertAt.before)throw new Error("[Style Loader]\n\n Invalid value for parameter 'insertAt' ('options.insertAt') found.\n Must be 'top', 'bottom', or Object.\n (https://github.com/webpack-contrib/style-loader#insertat)\n");var o=i(t.insertAt.before,n);n.insertBefore(e,o)}}function v(t){if(null===t.parentNode)return!1;t.parentNode.removeChild(t);var e=s.indexOf(t);e>=0&&s.splice(e,1)}function d(t){var e=document.createElement("style");if(void 0===t.attrs.type&&(t.attrs.type="text/css"),void 0===t.attrs.nonce){var r=function(){0;return n.nc}();r&&(t.attrs.nonce=r)}return h(e,t.attrs),p(t,e),e}function h(t,e){Object.keys(e).forEach(function(n){t.setAttribute(n,e[n])})}function y(t,e){var n,r,o,i;if(e.transform&&t.css){if(!(i=e.transform(t.css)))return function(){};t.css=i}if(e.singleton){var s=a++;n=u||(u=d(e)),r=g.bind(null,n,s,!1),o=g.bind(null,n,s,!0)}else t.sourceMap&&"function"==typeof URL&&"function"==typeof URL.createObjectURL&&"function"==typeof URL.revokeObjectURL&&"function"==typeof Blob&&"function"==typeof btoa?(n=function(t){var e=document.createElement("link");return void 0===t.attrs.type&&(t.attrs.type="text/css"),t.attrs.rel="stylesheet",h(e,t.attrs),p(t,e),e}(e),r=function(t,e,n){var r=n.css,o=n.sourceMap,i=void 0===e.convertToAbsoluteUrls&&o;(e.convertToAbsoluteUrls||i)&&(r=c(r));o&&(r+="\n/*# sourceMappingURL=data:application/json;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(o))))+" */");var u=new Blob([r],{type:"text/css"}),a=t.href;t.href=URL.createObjectURL(u),a&&URL.revokeObjectURL(a)}.bind(null,n,e),o=function(){v(n),n.href&&URL.revokeObjectURL(n.href)}):(n=d(e),r=function(t,e){var n=e.css,r=e.media;r&&t.setAttribute("media",r);if(t.styleSheet)t.styleSheet.cssText=n;else{for(;t.firstChild;)t.removeChild(t.firstChild);t.appendChild(document.createTextNode(n))}}.bind(null,n),o=function(){v(n)});return r(t),function(e){if(e){if(e.css===t.css&&e.media===t.media&&e.sourceMap===t.sourceMap)return;r(t=e)}else o()}}t.exports=function(t,e){if("undefined"!=typeof DEBUG&&DEBUG&&"object"!=typeof document)throw new Error("The style-loader cannot be used in a non-browser environment");(e=e||{}).attrs="object"==typeof e.attrs?e.attrs:{},e.singleton||"boolean"==typeof e.singleton||(e.singleton=o()),e.insertInto||(e.insertInto="head"),e.insertAt||(e.insertAt="bottom");var n=l(t,e);return f(n,e),function(t){for(var o=[],i=0;i<n.length;i++){var u=n[i];(a=r[u.id]).refs--,o.push(a)}t&&f(l(t,e),e);for(i=0;i<o.length;i++){var a;if(0===(a=o[i]).refs){for(var s=0;s<a.parts.length;s++)a.parts[s]();delete r[a.id]}}}};var m=function(){var t=[];return function(e,n){return t[e]=n,t.filter(Boolean).join("\n")}}();function g(t,e,n,r){var o=n?"":r.css;if(t.styleSheet)t.styleSheet.cssText=m(e,o);else{var i=document.createTextNode(o),u=t.childNodes;u[e]&&t.removeChild(u[e]),u.length?t.insertBefore(i,u[e]):t.appendChild(i)}}},function(t,e){t.exports=function(t){var e="undefined"!=typeof window&&window.location;if(!e)throw new Error("fixUrls requires window.location");if(!t||"string"!=typeof t)return t;var n=e.protocol+"//"+e.host,r=n+e.pathname.replace(/\/[^\/]*$/,"/");return t.replace(/url\s*\(((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)\)/gi,function(t,e){var o,i=e.trim().replace(/^"(.*)"$/,function(t,e){return e}).replace(/^'(.*)'$/,function(t,e){return e});return/^(#|data:|http:\/\/|https:\/\/|file:\/\/\/|\s*$)/i.test(i)?t:(o=0===i.indexOf("//")?i:0===i.indexOf("/")?n+i:r+i.replace(/^\.\//,""),"url("+JSON.stringify(o)+")")})}}]).default});
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(8);
-module.exports = __webpack_require__(78);
-
-
-/***/ }),
-/* 8 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_typewriter_effect_dist_core__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_typewriter_effect_dist_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_typewriter_effect_dist_core__);
-
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
-//require('./bootstrap');
-window.$ = window.jQuery = __webpack_require__(9);
-
-window.Vue = __webpack_require__(10);
-var Inputmask = __webpack_require__(14);
-
-__webpack_require__(19);
-//require('./components/social');
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
-Vue.component('window-calc', __webpack_require__(20));
-Vue.component('balcony-calc', __webpack_require__(26));
-Vue.component('city-search', __webpack_require__(31));
-Vue.component('add-comment', __webpack_require__(36));
-Vue.component('add-review', __webpack_require__(39));
-Vue.component('offer-slider', __webpack_require__(45));
-Vue.component('gallery-carousel', __webpack_require__(48));
-Vue.component('gallery-list', __webpack_require__(51));
-Vue.component('credit-calc', __webpack_require__(54));
-Vue.component('dveri-calc', __webpack_require__(57));
-Vue.component('peregorodki-calc', __webpack_require__(62));
-Vue.component('zhalyuzi-calc', __webpack_require__(67));
-Vue.component('posts', __webpack_require__(72));
-
-$(document).on('scroll', function () {
-    var scrollPosition = $(window).scrollTop(),
-        $header = $('.header_hidden').length > 0 ? $('.header_hidden') : $('.header_sticky');
-
-    if (scrollPosition > 200) {
-        $header.addClass('header_sticky').removeClass('header_hidden');
-    } else {
-        $header.removeClass('header_sticky').addClass('header_hidden');
-    }
-});
-
-var articles = $('#articles');
-
-if (articles.length > 0) {
-    new Vue({
-        el: '#articles'
-    });
-}
-
-var creditCalcContainer = $('#credit-calc');
-
-if (creditCalcContainer.length > 0) {
-    new Vue({
-        el: '#credit-calc',
-        template: '<credit-calc></credit-calc>'
-    });
-}
-
-var portfolioCarouselContainer = $('.portfolio__carousel');
-
-if (portfolioCarouselContainer.length > 0) {
-    new Vue({
-        el: '#portfolio__carousel',
-        template: '<gallery-carousel :photos="photos"></gallery-carousel>',
-        data: function data() {
-            return {
-                photos: portfolioCarouselContainer.data('photos')
-            };
-        }
-    });
-}
-
-var portfolioListContainer = $('.portfolio__list');
-
-if (portfolioListContainer.length > 0) {
-    new Vue({
-        el: '#portfolio__list',
-        template: '<gallery-list :photos="photos"></gallery-list>',
-        data: function data() {
-            return {
-                photos: portfolioListContainer.data('photos')
-            };
-        }
-    });
-}
-
-var offerSliderContainer = $('#js-offer-slider');
-
-if (offerSliderContainer.length > 0) {
-
-    var offers = offerSliderContainer.data('offers'),
-        offerSlider = new Vue({
-        el: '#js-offer-slider',
-        template: '<offer-slider :offers="offers"></offer-slider>',
-        data: {
-            offers: offers
-        }
-    });
-}
-
-$('.js-add-comment').each(function (index, element) {
-    var elementId = $(element).attr('id');
-
-    new Vue({
-        el: '#' + elementId
-    });
-});
-
-if ($('#city-search').length > 0) {
-    var citySearch = new Vue({
-        el: '#city-search'
-    });
-}
-
-if ($('#window-calc').length > 0) {
-    var windowCalc = new Vue({
-        el: '#window-calc'
-    });
-}
-
-if ($('#balcony-calc').length > 0) {
-    var BalkonyCalc = new Vue({
-        el: '#balcony-calc'
-    });
-}
-
-if ($('#dveri-calc').length > 0) {
-    var DveriCalc = new Vue({
-        el: '#dveri-calc'
-    });
-}
-
-if ($('#peregorodki-calc').length > 0) {
-    var PeregorodkiCalc = new Vue({
-        el: '#peregorodki-calc'
-    });
-}
-
-if ($('#zhalyuzi-calc').length > 0) {
-    var ZhalyuziCalc = new Vue({
-        el: '#zhalyuzi-calc'
-    });
-}
-
-if ($('#add-review').length > 0) {
-    new Vue({
-        el: '#add-review'
-    });
-}
-
-
-
-var $writtenElements = $('.js-writen');
-
-$writtenElements.each(function (index, element) {
-    var $element = $(element),
-        text = $element.text(),
-        additionalTexts = $element.data('texts');
-
-    if (additionalTexts) {
-        text = [text].concat(additionalTexts);
-    }
-    console.log(text);
-    new __WEBPACK_IMPORTED_MODULE_0_typewriter_effect_dist_core___default.a(element, {
-        strings: text,
-        autoStart: true,
-        loop: true,
-        delay: 70
-    });
-});
-
-$('.survey__no').on('click', function () {
-    $(this).closest('.survey').addClass('survey_opened');
-});
-
-$('.survey__yes').on('click', function () {
-    $('.survey__buttons').slideUp();
-    $('.survey__thankyou').slideDown();
-});
-
-$('.js-toggle-menu').on('click', function (e) {
-    $('.header__menu').toggleClass('menu_active');
-    $('body').toggleClass('no-scroll');
-    $('.header__hamburger').toggleClass('active');
-    $('.header__close').toggleClass('active');
-});
-
-$('.js-toggle-submenu').on('click', function (e) {
-    $(this).toggleClass('menu__item_opened');
-});
-
-$('.whyus__button').on('click', function () {
-    $('.whyus__stat').slideToggle({
-        start: function start() {
-            $(this).css({
-                display: "flex"
-            });
-        }
-    });
-});
-
-if ($(document).width() <= 1024) {
-    $('.js-toggle-submenu').on('click', function (event) {
-        event.preventDefault();
-        //$(this).siblings('.menu__item_dropdown').find('.menu__dropdown_toggled').removeClass('menu__dropdown_toggled');
-        $(this).next('.menu__dropdown').toggleClass('menu__dropdown_toggled');
-    });
-}
-
-var $mapContainer = $('#map'),
-    $offices = $('.office');
-
-if ($mapContainer.length > 0 && $offices.length > 0) {
-    var offsetCoordinates = function offsetCoordinates(coords) {
-        var screenWidth = $(document).width();
-        console.log(coords);
-        switch (true) {
-            case screenWidth < 600:
-                return [coords[0], coords[1]];
-            case screenWidth < 1000:
-                return [coords[0], coords[1] - 0.005];
-
-            case screenWidth < 1500:
-                return [coords[0], coords[1] - 0.005];
-
-            default:
-                return coords;
-        }
-    };
-
-    var initMap = function initMap() {
-
-        var map = new ymaps.Map('map', {
-            center: offsetCoordinates($('.office_active').data('coords')),
-            zoom: 16,
-            controls: []
-        });
-
-        map.behaviors.disable('scrollZoom');
-
-        if ($(document).width() < 1024) {
-            map.behaviors.disable('drag');
-        }
-
-        $offices.each(function (index, office) {
-
-            var officePlacemark = new ymaps.Placemark(JSON.parse(office.dataset.coords), {
-                //balloonContent: 'цвет <strong>воды пляжа бонди</strong>'
-            }, {
-                iconLayout: 'default#image',
-                iconImageHref: $('#map').data('placemark'),
-                iconContent: 'asdasdasd'
-            });
-
-            map.geoObjects.add(officePlacemark);
-        });
-
-        $('.js-next-office').on('click', function (e) {
-            var $currentOffice = $('.office_active'),
-                $nextOffice = $currentOffice.next('.office').length > 0 ? $currentOffice.next('.office') : $('.office').eq(0);
-
-            $currentOffice.removeClass('office_active');
-            $nextOffice.addClass('office_active');
-
-            map.panTo(offsetCoordinates($nextOffice.data('coords')), { 'duration': 1000 });
-        });
-    };
-
-    ymaps.ready(initMap);
-}
-
-$('.question__more').on('click', function (e) {
-
-    var currentText = $(this).text(),
-        dataText = $(this).data('text');
-
-    $(this).text(dataText);
-
-    $(this).data('text', currentText);
-
-    $(this).prev('.question__text').toggleClass('question__text_toggled');
-});
-
-$('.calculator__type').on('click', function () {
-    $(this).addClass('active').siblings().removeClass('active');
-    $(this).closest('.calculator__inner').find('.calculator__main').removeClass('active').eq($(this).index()).addClass('active');
-});
-
-$('.facture').on('click', '.facture__item', function () {
-    $(this).siblings().removeClass('active');
-    $(this).addClass('active');
-});
-
-$('.titles__arrow').on('click', function () {
-    $(this).prev('.intro ').toggleClass('opened');
-});
-
-$('.js-link').on('click', function (e) {
-    var href = $(this).attr('href');
-    if (href) {
-        window.open(href, '_blank');
-    }
-    console.log(href);
-});
-
-var onResize = function onResize() {
-    if ($(window).width() <= 768) {
-        $('.promos__item').off();
-        $('.promos').on('click', '.promos__item', function () {
-            $(this).siblings().removeClass('opened');
-            $(this).toggleClass('opened');
-            $('html, body').animate({
-                scrollTop: $(this).offset().top - 80
-            }, 500);
-        });
-
-        $('.ourArticle__more').off();
-        $('.ourArticle__more').on('click', function () {
-            $(this).closest('.ourArticle').siblings().removeClass('opened');
-            $(this).closest('.ourArticle').toggleClass('opened');
-
-            if ($(this).text() === 'Подробнее') {
-                $(this).text('Свернуть');
-            } else {
-                $(this).text('Подробнее');
-            }
-        });
-
-        $('.nav-group').off();
-        $('.nav-group').on('click', function () {
-            $(this).toggleClass('nav-group_opened');
-        });
-
-        $('.calculator__type').on('click', function () {
-            var list = $(this).prevAll('.calculator__type');
-            var thisWidth = $(this).outerWidth();
-            var width = 0;
-
-            for (var i = 0; i < list.length; i++) {
-                var element = list[i];
-                var elementWidth = $(element).outerWidth();
-                width += elementWidth;
-            }
-
-            var offset = thisWidth / 2 + width;
-            var value = 'calc(50% - ' + offset + 'px)';
-            $('.calculator__types').css("left", value);
-        });
-    } else {
-        $('.calculator__types').css("left", 0);
-    }
-};
-
-$(document).ready(onResize);
-$(window).resize(onResize);
-
-var phoneMask = new Inputmask('+7 999 999-99-99'),
-    $phones = $('[type=tel]');
-
-phoneMask.mask($phones);
-
-/***/ }),
-/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -14038,6 +13605,485 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_RESULT__;/*!
+* global/window.js
+* https://github.com/RobinHerbots/Inputmask
+* Copyright (c) 2010 - 2018 Robin Herbots
+* Licensed under the MIT license (http://www.opensource.org/licenses/mit-license.php)
+* Version: 4.0.4
+*/
+
+if (true) !(__WEBPACK_AMD_DEFINE_RESULT__ = (function() {
+    return typeof window !== "undefined" ? window : new (eval("require('jsdom').JSDOM"))("").window;
+}).call(exports, __webpack_require__, exports, module),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)); else if (typeof exports === "object") module.exports = typeof window !== "undefined" ? window : new (eval("require('jsdom').JSDOM"))("").window;
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+!function(t,e){ true?module.exports=e():"function"==typeof define&&define.amd?define("Typewriter",[],e):"object"==typeof exports?exports.Typewriter=e():t.Typewriter=e()}(window,function(){return function(t){var e={};function n(r){if(e[r])return e[r].exports;var o=e[r]={i:r,l:!1,exports:{}};return t[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=t,n.c=e,n.d=function(t,e,r){n.o(t,e)||Object.defineProperty(t,e,{enumerable:!0,get:r})},n.r=function(t){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})},n.t=function(t,e){if(1&e&&(t=n(t)),8&e)return t;if(4&e&&"object"==typeof t&&t&&t.__esModule)return t;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var o in t)n.d(r,o,function(e){return t[e]}.bind(null,o));return r},n.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return n.d(e,"a",e),e},n.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},n.p="",n(n.s=53)}([function(t,e,n){var r=n(27)("wks"),o=n(15),i=n(1).Symbol,u="function"==typeof i;(t.exports=function(t){return r[t]||(r[t]=u&&i[t]||(u?i:o)("Symbol."+t))}).store=r},function(t,e){var n=t.exports="undefined"!=typeof window&&window.Math==Math?window:"undefined"!=typeof self&&self.Math==Math?self:Function("return this")();"number"==typeof __g&&(__g=n)},function(t,e,n){var r=n(8),o=n(36),i=n(23),u=Object.defineProperty;e.f=n(3)?Object.defineProperty:function(t,e,n){if(r(t),e=i(e,!0),r(n),o)try{return u(t,e,n)}catch(t){}if("get"in n||"set"in n)throw TypeError("Accessors not supported!");return"value"in n&&(t[e]=n.value),t}},function(t,e,n){t.exports=!n(6)(function(){return 7!=Object.defineProperty({},"a",{get:function(){return 7}}).a})},function(t,e,n){var r=n(1),o=n(11),i=n(7),u=n(9),a=n(18),s=function(t,e,n){var c,f,l,p,v=t&s.F,d=t&s.G,h=t&s.S,y=t&s.P,m=t&s.B,g=d?r:h?r[e]||(r[e]={}):(r[e]||{}).prototype,E=d?o:o[e]||(o[e]={}),b=E.prototype||(E.prototype={});for(c in d&&(n=e),n)l=((f=!v&&g&&void 0!==g[c])?g:n)[c],p=m&&f?a(l,r):y&&"function"==typeof l?a(Function.call,l):l,g&&u(g,c,l,t&s.U),E[c]!=l&&i(E,c,p),y&&b[c]!=l&&(b[c]=l)};r.core=o,s.F=1,s.G=2,s.S=4,s.P=8,s.B=16,s.W=32,s.U=64,s.R=128,t.exports=s},function(t,e){t.exports=function(t){return"object"==typeof t?null!==t:"function"==typeof t}},function(t,e){t.exports=function(t){try{return!!t()}catch(t){return!0}}},function(t,e,n){var r=n(2),o=n(14);t.exports=n(3)?function(t,e,n){return r.f(t,e,o(1,n))}:function(t,e,n){return t[e]=n,t}},function(t,e,n){var r=n(5);t.exports=function(t){if(!r(t))throw TypeError(t+" is not an object!");return t}},function(t,e,n){var r=n(1),o=n(7),i=n(10),u=n(15)("src"),a=Function.toString,s=(""+a).split("toString");n(11).inspectSource=function(t){return a.call(t)},(t.exports=function(t,e,n,a){var c="function"==typeof n;c&&(i(n,"name")||o(n,"name",e)),t[e]!==n&&(c&&(i(n,u)||o(n,u,t[e]?""+t[e]:s.join(String(e)))),t===r?t[e]=n:a?t[e]?t[e]=n:o(t,e,n):(delete t[e],o(t,e,n)))})(Function.prototype,"toString",function(){return"function"==typeof this&&this[u]||a.call(this)})},function(t,e){var n={}.hasOwnProperty;t.exports=function(t,e){return n.call(t,e)}},function(t,e){var n=t.exports={version:"2.5.7"};"number"==typeof __e&&(__e=n)},function(t,e,n){var r=n(39),o=n(21);t.exports=function(t){return r(o(t))}},,function(t,e){t.exports=function(t,e){return{enumerable:!(1&t),configurable:!(2&t),writable:!(4&t),value:e}}},function(t,e){var n=0,r=Math.random();t.exports=function(t){return"Symbol(".concat(void 0===t?"":t,")_",(++n+r).toString(36))}},function(t,e){t.exports={}},function(t,e,n){var r=n(43),o=n(29);t.exports=Object.keys||function(t){return r(t,o)}},function(t,e,n){var r=n(55);t.exports=function(t,e,n){if(r(t),void 0===e)return t;switch(n){case 1:return function(n){return t.call(e,n)};case 2:return function(n,r){return t.call(e,n,r)};case 3:return function(n,r,o){return t.call(e,n,r,o)}}return function(){return t.apply(e,arguments)}}},function(t,e){var n={}.toString;t.exports=function(t){return n.call(t).slice(8,-1)}},function(t,e,n){var r=n(21);t.exports=function(t){return Object(r(t))}},function(t,e){t.exports=function(t){if(void 0==t)throw TypeError("Can't call method on  "+t);return t}},function(t,e){t.exports=!1},function(t,e,n){var r=n(5);t.exports=function(t,e){if(!r(t))return t;var n,o;if(e&&"function"==typeof(n=t.toString)&&!r(o=n.call(t)))return o;if("function"==typeof(n=t.valueOf)&&!r(o=n.call(t)))return o;if(!e&&"function"==typeof(n=t.toString)&&!r(o=n.call(t)))return o;throw TypeError("Can't convert object to primitive value")}},function(t,e,n){var r=n(25),o=Math.min;t.exports=function(t){return t>0?o(r(t),9007199254740991):0}},function(t,e){var n=Math.ceil,r=Math.floor;t.exports=function(t){return isNaN(t=+t)?0:(t>0?r:n)(t)}},function(t,e,n){var r=n(19);t.exports=Array.isArray||function(t){return"Array"==r(t)}},function(t,e,n){var r=n(11),o=n(1),i=o["__core-js_shared__"]||(o["__core-js_shared__"]={});(t.exports=function(t,e){return i[t]||(i[t]=void 0!==e?e:{})})("versions",[]).push({version:r.version,mode:n(22)?"pure":"global",copyright:"© 2018 Denis Pushkarev (zloirock.ru)"})},function(t,e,n){var r=n(27)("keys"),o=n(15);t.exports=function(t){return r[t]||(r[t]=o(t))}},function(t,e){t.exports="constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf".split(",")},function(t,e,n){var r=n(2).f,o=n(10),i=n(0)("toStringTag");t.exports=function(t,e,n){t&&!o(t=n?t:t.prototype,i)&&r(t,i,{configurable:!0,value:e})}},function(t,e,n){"use strict";var r=n(8);t.exports=function(){var t=r(this),e="";return t.global&&(e+="g"),t.ignoreCase&&(e+="i"),t.multiline&&(e+="m"),t.unicode&&(e+="u"),t.sticky&&(e+="y"),e}},function(t,e){e.f={}.propertyIsEnumerable},function(t,e,n){var r=n(43),o=n(29).concat("length","prototype");e.f=Object.getOwnPropertyNames||function(t){return r(t,o)}},function(t,e,n){(function(e){for(var r=n(90),o="undefined"==typeof window?e:window,i=["moz","webkit"],u="AnimationFrame",a=o["request"+u],s=o["cancel"+u]||o["cancelRequest"+u],c=0;!a&&c<i.length;c++)a=o[i[c]+"Request"+u],s=o[i[c]+"Cancel"+u]||o[i[c]+"CancelRequest"+u];if(!a||!s){var f=0,l=0,p=[];a=function(t){if(0===p.length){var e=r(),n=Math.max(0,1e3/60-(e-f));f=n+e,setTimeout(function(){var t=p.slice(0);p.length=0;for(var e=0;e<t.length;e++)if(!t[e].cancelled)try{t[e].callback(f)}catch(t){setTimeout(function(){throw t},0)}},Math.round(n))}return p.push({handle:++l,callback:t,cancelled:!1}),l},s=function(t){for(var e=0;e<p.length;e++)p[e].handle===t&&(p[e].cancelled=!0)}}t.exports=function(t){return a.call(o,t)},t.exports.cancel=function(){s.apply(o,arguments)},t.exports.polyfill=function(t){t||(t=o),t.requestAnimationFrame=a,t.cancelAnimationFrame=s}}).call(this,n(89))},function(t,e,n){var r=n(8),o=n(61),i=n(29),u=n(28)("IE_PROTO"),a=function(){},s=function(){var t,e=n(37)("iframe"),r=i.length;for(e.style.display="none",n(64).appendChild(e),e.src="javascript:",(t=e.contentWindow.document).open(),t.write("<script>document.F=Object<\/script>"),t.close(),s=t.F;r--;)delete s.prototype[i[r]];return s()};t.exports=Object.create||function(t,e){var n;return null!==t?(a.prototype=r(t),n=new a,a.prototype=null,n[u]=t):n=s(),void 0===e?n:o(n,e)}},function(t,e,n){t.exports=!n(3)&&!n(6)(function(){return 7!=Object.defineProperty(n(37)("div"),"a",{get:function(){return 7}}).a})},function(t,e,n){var r=n(5),o=n(1).document,i=r(o)&&r(o.createElement);t.exports=function(t){return i?o.createElement(t):{}}},function(t,e,n){var r=n(18),o=n(39),i=n(20),u=n(24),a=n(56);t.exports=function(t,e){var n=1==t,s=2==t,c=3==t,f=4==t,l=6==t,p=5==t||l,v=e||a;return function(e,a,d){for(var h,y,m=i(e),g=o(m),E=r(a,d,3),b=u(g.length),T=0,w=n?v(e,b):s?v(e,0):void 0;b>T;T++)if((p||T in g)&&(y=E(h=g[T],T,m),t))if(n)w[T]=y;else if(y)switch(t){case 3:return!0;case 5:return h;case 6:return T;case 2:w.push(h)}else if(f)return!1;return l?-1:c||f?f:w}}},function(t,e,n){var r=n(19);t.exports=Object("z").propertyIsEnumerable(0)?Object:function(t){return"String"==r(t)?t.split(""):Object(t)}},function(t,e,n){"use strict";var r=n(6);t.exports=function(t,e){return!!t&&r(function(){e?t.call(null,function(){},1):t.call(null)})}},function(t,e,n){"use strict";var r=n(58),o=n(59),i=n(16),u=n(12);t.exports=n(42)(Array,"Array",function(t,e){this._t=u(t),this._i=0,this._k=e},function(){var t=this._t,e=this._k,n=this._i++;return!t||n>=t.length?(this._t=void 0,o(1)):o(0,"keys"==e?n:"values"==e?t[n]:[n,t[n]])},"values"),i.Arguments=i.Array,r("keys"),r("values"),r("entries")},function(t,e,n){"use strict";var r=n(22),o=n(4),i=n(9),u=n(7),a=n(16),s=n(60),c=n(30),f=n(65),l=n(0)("iterator"),p=!([].keys&&"next"in[].keys()),v=function(){return this};t.exports=function(t,e,n,d,h,y,m){s(n,e,d);var g,E,b,T=function(t){if(!p&&t in S)return S[t];switch(t){case"keys":case"values":return function(){return new n(this,t)}}return function(){return new n(this,t)}},w=e+" Iterator",_="values"==h,A=!1,S=t.prototype,O=S[l]||S["@@iterator"]||h&&S[h],x=O||T(h),L=h?_?T("entries"):x:void 0,N="Array"==e&&S.entries||O;if(N&&(b=f(N.call(new t)))!==Object.prototype&&b.next&&(c(b,w,!0),r||"function"==typeof b[l]||u(b,l,v)),_&&O&&"values"!==O.name&&(A=!0,x=function(){return O.call(this)}),r&&!m||!p&&!A&&S[l]||u(S,l,x),a[e]=x,a[w]=v,h)if(g={values:_?x:T("values"),keys:y?x:T("keys"),entries:L},m)for(E in g)E in S||i(S,E,g[E]);else o(o.P+o.F*(p||A),e,g);return g}},function(t,e,n){var r=n(10),o=n(12),i=n(62)(!1),u=n(28)("IE_PROTO");t.exports=function(t,e){var n,a=o(t),s=0,c=[];for(n in a)n!=u&&r(a,n)&&c.push(n);for(;e.length>s;)r(a,n=e[s++])&&(~i(c,n)||c.push(n));return c}},function(t,e,n){var r=n(1),o=n(11),i=n(22),u=n(45),a=n(2).f;t.exports=function(t){var e=o.Symbol||(o.Symbol=i?{}:r.Symbol||{});"_"==t.charAt(0)||t in e||a(e,t,{value:u.f(t)})}},function(t,e,n){e.f=n(0)},function(t,e){e.f=Object.getOwnPropertySymbols},function(t,e,n){var r=n(32),o=n(14),i=n(12),u=n(23),a=n(10),s=n(36),c=Object.getOwnPropertyDescriptor;e.f=n(3)?c:function(t,e){if(t=i(t),e=u(e,!0),s)try{return c(t,e)}catch(t){}if(a(t,e))return o(!r.f.call(t,e),t[e])}},function(t,e,n){var r=n(5),o=n(19),i=n(0)("match");t.exports=function(t){var e;return r(t)&&(void 0!==(e=t[i])?!!e:"RegExp"==o(t))}},function(t,e,n){n(44)("asyncIterator")},function(t,e,n){"use strict";var r=n(1),o=n(10),i=n(3),u=n(4),a=n(9),s=n(80).KEY,c=n(6),f=n(27),l=n(30),p=n(15),v=n(0),d=n(45),h=n(44),y=n(81),m=n(26),g=n(8),E=n(5),b=n(12),T=n(23),w=n(14),_=n(35),A=n(82),S=n(47),O=n(2),x=n(17),L=S.f,N=O.f,C=A.f,R=r.Symbol,M=r.JSON,j=M&&M.stringify,P=v("_hidden"),D=v("toPrimitive"),k={}.propertyIsEnumerable,I=f("symbol-registry"),F=f("symbols"),H=f("op-symbols"),U=Object.prototype,V="function"==typeof R,G=r.QObject,B=!G||!G.prototype||!G.prototype.findChild,Q=i&&c(function(){return 7!=_(N({},"a",{get:function(){return N(this,"a",{value:7}).a}})).a})?function(t,e,n){var r=L(U,e);r&&delete U[e],N(t,e,n),r&&t!==U&&N(U,e,r)}:N,Y=function(t){var e=F[t]=_(R.prototype);return e._k=t,e},q=V&&"symbol"==typeof R.iterator?function(t){return"symbol"==typeof t}:function(t){return t instanceof R},J=function(t,e,n){return t===U&&J(H,e,n),g(t),e=T(e,!0),g(n),o(F,e)?(n.enumerable?(o(t,P)&&t[P][e]&&(t[P][e]=!1),n=_(n,{enumerable:w(0,!1)})):(o(t,P)||N(t,P,w(1,{})),t[P][e]=!0),Q(t,e,n)):N(t,e,n)},W=function(t,e){g(t);for(var n,r=y(e=b(e)),o=0,i=r.length;i>o;)J(t,n=r[o++],e[n]);return t},z=function(t){var e=k.call(this,t=T(t,!0));return!(this===U&&o(F,t)&&!o(H,t))&&(!(e||!o(this,t)||!o(F,t)||o(this,P)&&this[P][t])||e)},$=function(t,e){if(t=b(t),e=T(e,!0),t!==U||!o(F,e)||o(H,e)){var n=L(t,e);return!n||!o(F,e)||o(t,P)&&t[P][e]||(n.enumerable=!0),n}},K=function(t){for(var e,n=C(b(t)),r=[],i=0;n.length>i;)o(F,e=n[i++])||e==P||e==s||r.push(e);return r},X=function(t){for(var e,n=t===U,r=C(n?H:b(t)),i=[],u=0;r.length>u;)!o(F,e=r[u++])||n&&!o(U,e)||i.push(F[e]);return i};V||(a((R=function(){if(this instanceof R)throw TypeError("Symbol is not a constructor!");var t=p(arguments.length>0?arguments[0]:void 0),e=function(n){this===U&&e.call(H,n),o(this,P)&&o(this[P],t)&&(this[P][t]=!1),Q(this,t,w(1,n))};return i&&B&&Q(U,t,{configurable:!0,set:e}),Y(t)}).prototype,"toString",function(){return this._k}),S.f=$,O.f=J,n(33).f=A.f=K,n(32).f=z,n(46).f=X,i&&!n(22)&&a(U,"propertyIsEnumerable",z,!0),d.f=function(t){return Y(v(t))}),u(u.G+u.W+u.F*!V,{Symbol:R});for(var Z="hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables".split(","),tt=0;Z.length>tt;)v(Z[tt++]);for(var et=x(v.store),nt=0;et.length>nt;)h(et[nt++]);u(u.S+u.F*!V,"Symbol",{for:function(t){return o(I,t+="")?I[t]:I[t]=R(t)},keyFor:function(t){if(!q(t))throw TypeError(t+" is not a symbol!");for(var e in I)if(I[e]===t)return e},useSetter:function(){B=!0},useSimple:function(){B=!1}}),u(u.S+u.F*!V,"Object",{create:function(t,e){return void 0===e?_(t):W(_(t),e)},defineProperty:J,defineProperties:W,getOwnPropertyDescriptor:$,getOwnPropertyNames:K,getOwnPropertySymbols:X}),M&&u(u.S+u.F*(!V||c(function(){var t=R();return"[null]"!=j([t])||"{}"!=j({a:t})||"{}"!=j(Object(t))})),"JSON",{stringify:function(t){for(var e,n,r=[t],o=1;arguments.length>o;)r.push(arguments[o++]);if(n=e=r[1],(E(e)||void 0!==t)&&!q(t))return m(e)||(e=function(t,e){if("function"==typeof n&&(e=n.call(this,t,e)),!q(e))return e}),r[1]=e,j.apply(M,r)}}),R.prototype[D]||n(7)(R.prototype,D,R.prototype.valueOf),l(R,"Symbol"),l(Math,"Math",!0),l(r.JSON,"JSON",!0)},function(t,e,n){var r=n(4);r(r.S+r.F*!n(3),"Object",{defineProperty:n(2).f})},function(t,e,n){var r=n(5),o=n(8),i=function(t,e){if(o(t),!r(e)&&null!==e)throw TypeError(e+": can't set as prototype!")};t.exports={set:Object.setPrototypeOf||("__proto__"in{}?function(t,e,r){try{(r=n(18)(Function.call,n(47).f(Object.prototype,"__proto__").set,2))(t,[]),e=!(t instanceof Array)}catch(t){e=!0}return function(t,n){return i(t,n),e?t.__proto__=n:r(t,n),t}}({},!1):void 0),check:i}},function(t,e,n){"use strict";n.r(e);n(54),n(41),n(66),n(68),n(70),n(77),n(79),n(49),n(50),n(83),n(51),n(84),n(85),n(87),n(88);var r=n(34),o=n.n(r),i=(n(92),function(t){return new RegExp(/<[a-z][\s\S]*>/i).test(t)}),u=function(t){var e=document.createElement("div");return e.innerHTML=t,e.firstChild},a=function(t,e){return Math.floor(Math.random()*(e-t+1))+t};n(95);function s(t){return function(t){if(Array.isArray(t)){for(var e=0,n=new Array(t.length);e<t.length;e++)n[e]=t[e];return n}}(t)||function(t){if(Symbol.iterator in Object(t)||"[object Arguments]"===Object.prototype.toString.call(t))return Array.from(t)}(t)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance")}()}function c(t,e){for(var n=0;n<e.length;n++){var r=e[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(t,r.key,r)}}function f(t,e,n){return e in t?Object.defineProperty(t,e,{value:n,enumerable:!0,configurable:!0,writable:!0}):t[e]=n,t}var l=function(){function t(e,n){var r=this;if(function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,t),f(this,"eventNames",{TYPE_CHARACTER:"TYPE_CHARACTER",REMOVE_CHARACTER:"REMOVE_CHARACTER",REMOVE_ALL:"REMOVE_ALL",REMOVE_LAST_VISIBLE_NODE:"REMOVE_LAST_VISIBLE_NODE",PAUSE_FOR:"PAUSE_FOR",CALL_FUNCTION:"CALL_FUNCTION",ADD_HTML_TAG_ELEMENT:"ADD_HTML_TAG_ELEMENT",REMOVE_HTML_TAG_ELEMENT:"REMOVE_HTML_TAG_ELEMENT",CHANGE_DELETE_SPEED:"CHANGE_DELETE_SPEED",CHANGE_DELAY:"CHANGE_DELAY"}),f(this,"visibleNodeTypes",{HTML_TAG:"HTML_TAG",TEXT_NODE:"TEXT_NODE"}),f(this,"state",{cursorAnimation:null,lastFrameTime:null,pauseUntil:null,eventQueue:[],eventLoop:null,eventLoopPaused:!1,reverseCalledEvents:[],calledEvents:[],visibleNodes:[],initialOptions:null,elements:{container:null,wrapper:document.createElement("span"),cursor:document.createElement("span")}}),f(this,"options",{strings:null,cursor:"|",delay:"natural",deleteSpeed:"natural",loop:!1,autoStart:!1,devMode:!1,wrapperClassName:"Typewriter__wrapper",cursorClassName:"Typewriter__cursor"}),f(this,"setupWrapperElement",function(){r.state.elements.wrapper.className=r.options.wrapperClassName,r.state.elements.cursor.className=r.options.cursorClassName,r.state.elements.cursor.innerHTML=r.options.cursor,r.state.elements.container.innerHTML="",r.state.elements.container.appendChild(r.state.elements.wrapper),r.state.elements.container.appendChild(r.state.elements.cursor)}),f(this,"start",function(){return r.state.eventLoopPaused=!1,r.runEventLoop(),r}),f(this,"pause",function(){return r.state.eventLoopPaused=!0,r}),f(this,"stop",function(){return r.state.eventLoop&&o.a.cancel(r.state.eventLoop),r}),f(this,"pauseFor",function(t){return r.addEventToQueue(r.eventNames.PAUSE_FOR,{ms:t}),r}),f(this,"typeOutAllStrings",function(){return"string"==typeof r.options.strings?(r.typeString(r.options.strings).pauseFor(1500),r):(r.options.strings.forEach(function(t,e){r.typeString(t).pauseFor(1500).deleteAll()}),r)}),f(this,"typeString",function(t){return i(t)?r.typeOutHTMLString(t):(t.split("").forEach(function(t){r.addEventToQueue(r.eventNames.TYPE_CHARACTER,{character:t})}),r)}),f(this,"typeOutHTMLString",function(t){var e=u(t),n=e.innerText.split("");return n.length?(e.innerText="",r.addEventToQueue(r.eventNames.ADD_HTML_TAG_ELEMENT,{htmlTagElement:e}),n.forEach(function(t){r.addEventToQueue(r.eventNames.TYPE_CHARACTER,{character:t,htmlTagElement:e})}),r):r}),f(this,"deleteAll",function(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"natural";return r.addEventToQueue(r.eventNames.REMOVE_ALL,{speed:t}),r}),f(this,"changeDeleteSpeed",function(t){return r.addEventToQueue(r.eventNames.CHANGE_DELETE_SPEED,{speed:t}),r}),f(this,"changeDelay",function(t){return r.addEventToQueue(r.eventNames.CHANGE_DELAY,{delay:t}),r}),f(this,"deleteChars",function(t){for(var e=0;e<t;e++)r.addEventToQueue(r.eventNames.REMOVE_CHARACTER);return r}),f(this,"callFunction",function(t,e){return"function"==typeof t&&r.addEventToQueue(r.eventNames.CALL_FUNCTION,{cb:t,thisArg:e}),r}),f(this,"typeCharacters",function(t){return t.forEach(function(t){r.addEventToQueue(r.eventNames.TYPE_CHARACTER,{character:t})}),r}),f(this,"removeCharacters",function(t){return t.forEach(function(){r.addEventToQueue(r.eventNames.REMOVE_CHARACTER)}),r}),f(this,"addEventToQueue",function(t,e){var n=arguments.length>2&&void 0!==arguments[2]&&arguments[2];return r.addEventToStateProperty(t,e,n,"eventQueue")}),f(this,"addReverseCalledEvent",function(t,e){var n=arguments.length>2&&void 0!==arguments[2]&&arguments[2];return r.options.loop?r.addEventToStateProperty(t,e,n,"reverseCalledEvents"):r}),f(this,"addEventToStateProperty",function(t,e){var n=arguments.length>2&&void 0!==arguments[2]&&arguments[2],o=arguments.length>3?arguments[3]:void 0,i={eventName:t,eventArgs:e||{}};return r.state[o]=n?[i].concat(s(r.state[o])):s(r.state[o]).concat([i]),r}),f(this,"runEventLoop",function(){r.state.lastFrameTime||(r.state.lastFrameTime=Date.now());var t=Date.now(),e=t-r.state.lastFrameTime;if(!r.state.eventQueue.length){if(!r.options.loop)return;r.state.eventQueue=r.state.calledEvents,r.state.calledEvents=[],r.options=r.state.initialOptions,r.addEventToQueue(r.eventNames.REMOVE_ALL,null,!0)}if(r.state.eventLoop=o()(r.runEventLoop),!r.state.eventLoopPaused){if(r.state.pauseUntil){if(t<r.state.pauseUntil)return;r.state.pauseUntil=null}var n=s(r.state.eventQueue),i=n.shift();if(!(e<=(i.eventName===r.eventNames.REMOVE_LAST_VISIBLE_NODE||i.eventName===r.eventNames.REMOVE_CHARACTER?"natural"===r.options.deleteSpeed?a(40,80):r.options.deleteSpeed:"natural"===r.options.delay?a(120,160):r.options.delay))){var u=i.eventName,c=i.eventArgs;switch(r.logInDevMode({currentEvent:i,state:r.state}),u){case r.eventNames.TYPE_CHARACTER:var f=c.character,l=c.htmlTagElement,p=document.createTextNode(f);l?l.appendChild(p):r.state.elements.wrapper.appendChild(p),r.state.visibleNodes=s(r.state.visibleNodes).concat([{type:r.visibleNodeTypes.TEXT_NODE,node:p}]);break;case r.eventNames.REMOVE_CHARACTER:n.unshift({eventName:r.eventNames.REMOVE_LAST_VISIBLE_NODE,eventArgs:{removingCharacterNode:!0}});break;case r.eventNames.PAUSE_FOR:var v=i.eventArgs.ms;r.state.pauseUntil=Date.now()+parseInt(v);break;case r.eventNames.CALL_FUNCTION:var d=i.eventArgs,h=d.cb,y=d.thisArg;h.call(y,{elements:r.state.elements});break;case r.eventNames.ADD_HTML_TAG_ELEMENT:var m=i.eventArgs.htmlTagElement;r.state.elements.wrapper.appendChild(m),r.state.visibleNodes=s(r.state.visibleNodes).concat([{type:r.visibleNodeTypes.HTML_TAG,node:m}]);break;case r.eventNames.REMOVE_ALL:var g=r.state.visibleNodes,E=c.speed,b=[];E&&b.push({eventName:r.eventNames.CHANGE_DELETE_SPEED,eventArgs:{speed:E}});for(var T=0,w=g.length;T<w;T++)b.push({eventName:r.eventNames.REMOVE_LAST_VISIBLE_NODE,eventArgs:{removingCharacterNode:!1}});E&&b.push({eventName:r.eventNames.CHANGE_DELETE_SPEED,eventArgs:{speed:r.options.deleteSpeed}}),n.unshift.apply(n,b);break;case r.eventNames.REMOVE_LAST_VISIBLE_NODE:var _=i.eventArgs.removingCharacterNode;if(r.state.visibleNodes.length){var A=r.state.visibleNodes.pop(),S=A.type;A.node.remove(),S===r.visibleNodeTypes.HTML_TAG&&_&&n.unshift({eventName:r.eventNames.REMOVE_LAST_VISIBLE_NODE,eventArgs:{}})}break;case r.eventNames.CHANGE_DELETE_SPEED:r.options.deleteSpeed=i.eventArgs.speed;break;case r.eventNames.CHANGE_DELAY:r.options.delay=i.eventArgs.delay}r.options.loop&&(i.eventName===r.eventNames.REMOVE_ALL&&i.eventName===r.eventNames.REMOVE_LAST_VISIBLE_NODE||(r.state.calledEvents=s(r.state.calledEvents).concat([i]))),r.state.eventQueue=n,r.state.lastFrameTime=t}}}),!e)throw new Error("No container element was provided");if("string"==typeof e){var c=document.querySelector(e);if(!c)throw new Error("Could not find container element");this.state.elements.container=c}else this.state.elements.container=e;n&&(this.options=function(t){for(var e=1;e<arguments.length;e++){var n=null!=arguments[e]?arguments[e]:{},r=Object.keys(n);"function"==typeof Object.getOwnPropertySymbols&&(r=r.concat(Object.getOwnPropertySymbols(n).filter(function(t){return Object.getOwnPropertyDescriptor(n,t).enumerable}))),r.forEach(function(e){f(t,e,n[e])})}return t}({},this.options,n)),this.state.initialOptions=this.options,this.init()}return function(t,e,n){e&&c(t.prototype,e),n&&c(t,n)}(t,[{key:"init",value:function(){this.setupWrapperElement(),!0===this.options.autoStart&&this.options.strings&&this.typeOutAllStrings().start()}},{key:"logInDevMode",value:function(t){this.options.devMode&&console.log(t)}}]),t}();n.d(e,"default",function(){return l})},function(t,e,n){"use strict";var r=n(4),o=n(38)(2);r(r.P+r.F*!n(40)([].filter,!0),"Array",{filter:function(t){return o(this,t,arguments[1])}})},function(t,e){t.exports=function(t){if("function"!=typeof t)throw TypeError(t+" is not a function!");return t}},function(t,e,n){var r=n(57);t.exports=function(t,e){return new(r(t))(e)}},function(t,e,n){var r=n(5),o=n(26),i=n(0)("species");t.exports=function(t){var e;return o(t)&&("function"!=typeof(e=t.constructor)||e!==Array&&!o(e.prototype)||(e=void 0),r(e)&&null===(e=e[i])&&(e=void 0)),void 0===e?Array:e}},function(t,e,n){var r=n(0)("unscopables"),o=Array.prototype;void 0==o[r]&&n(7)(o,r,{}),t.exports=function(t){o[r][t]=!0}},function(t,e){t.exports=function(t,e){return{value:e,done:!!t}}},function(t,e,n){"use strict";var r=n(35),o=n(14),i=n(30),u={};n(7)(u,n(0)("iterator"),function(){return this}),t.exports=function(t,e,n){t.prototype=r(u,{next:o(1,n)}),i(t,e+" Iterator")}},function(t,e,n){var r=n(2),o=n(8),i=n(17);t.exports=n(3)?Object.defineProperties:function(t,e){o(t);for(var n,u=i(e),a=u.length,s=0;a>s;)r.f(t,n=u[s++],e[n]);return t}},function(t,e,n){var r=n(12),o=n(24),i=n(63);t.exports=function(t){return function(e,n,u){var a,s=r(e),c=o(s.length),f=i(u,c);if(t&&n!=n){for(;c>f;)if((a=s[f++])!=a)return!0}else for(;c>f;f++)if((t||f in s)&&s[f]===n)return t||f||0;return!t&&-1}}},function(t,e,n){var r=n(25),o=Math.max,i=Math.min;t.exports=function(t,e){return(t=r(t))<0?o(t+e,0):i(t,e)}},function(t,e,n){var r=n(1).document;t.exports=r&&r.documentElement},function(t,e,n){var r=n(10),o=n(20),i=n(28)("IE_PROTO"),u=Object.prototype;t.exports=Object.getPrototypeOf||function(t){return t=o(t),r(t,i)?t[i]:"function"==typeof t.constructor&&t instanceof t.constructor?t.constructor.prototype:t instanceof Object?u:null}},function(t,e,n){var r=n(20),o=n(17);n(67)("keys",function(){return function(t){return o(r(t))}})},function(t,e,n){var r=n(4),o=n(11),i=n(6);t.exports=function(t,e){var n=(o.Object||{})[t]||Object[t],u={};u[t]=e(n),r(r.S+r.F*i(function(){n(1)}),"Object",u)}},function(t,e,n){"use strict";var r=n(69)(!0);n(42)(String,"String",function(t){this._t=String(t),this._i=0},function(){var t,e=this._t,n=this._i;return n>=e.length?{value:void 0,done:!0}:(t=r(e,n),this._i+=t.length,{value:t,done:!1})})},function(t,e,n){var r=n(25),o=n(21);t.exports=function(t){return function(e,n){var i,u,a=String(o(e)),s=r(n),c=a.length;return s<0||s>=c?t?"":void 0:(i=a.charCodeAt(s))<55296||i>56319||s+1===c||(u=a.charCodeAt(s+1))<56320||u>57343?t?a.charAt(s):i:t?a.slice(s,s+2):u-56320+(i-55296<<10)+65536}}},function(t,e,n){"use strict";var r=n(18),o=n(4),i=n(20),u=n(71),a=n(72),s=n(24),c=n(73),f=n(74);o(o.S+o.F*!n(76)(function(t){Array.from(t)}),"Array",{from:function(t){var e,n,o,l,p=i(t),v="function"==typeof this?this:Array,d=arguments.length,h=d>1?arguments[1]:void 0,y=void 0!==h,m=0,g=f(p);if(y&&(h=r(h,d>2?arguments[2]:void 0,2)),void 0==g||v==Array&&a(g))for(n=new v(e=s(p.length));e>m;m++)c(n,m,y?h(p[m],m):p[m]);else for(l=g.call(p),n=new v;!(o=l.next()).done;m++)c(n,m,y?u(l,h,[o.value,m],!0):o.value);return n.length=m,n}})},function(t,e,n){var r=n(8);t.exports=function(t,e,n,o){try{return o?e(r(n)[0],n[1]):e(n)}catch(e){var i=t.return;throw void 0!==i&&r(i.call(t)),e}}},function(t,e,n){var r=n(16),o=n(0)("iterator"),i=Array.prototype;t.exports=function(t){return void 0!==t&&(r.Array===t||i[o]===t)}},function(t,e,n){"use strict";var r=n(2),o=n(14);t.exports=function(t,e,n){e in t?r.f(t,e,o(0,n)):t[e]=n}},function(t,e,n){var r=n(75),o=n(0)("iterator"),i=n(16);t.exports=n(11).getIteratorMethod=function(t){if(void 0!=t)return t[o]||t["@@iterator"]||i[r(t)]}},function(t,e,n){var r=n(19),o=n(0)("toStringTag"),i="Arguments"==r(function(){return arguments}());t.exports=function(t){var e,n,u;return void 0===t?"Undefined":null===t?"Null":"string"==typeof(n=function(t,e){try{return t[e]}catch(t){}}(e=Object(t),o))?n:i?r(e):"Object"==(u=r(e))&&"function"==typeof e.callee?"Arguments":u}},function(t,e,n){var r=n(0)("iterator"),o=!1;try{var i=[7][r]();i.return=function(){o=!0},Array.from(i,function(){throw 2})}catch(t){}t.exports=function(t,e){if(!e&&!o)return!1;var n=!1;try{var i=[7],u=i[r]();u.next=function(){return{done:n=!0}},i[r]=function(){return u},t(i)}catch(t){}return n}},function(t,e,n){"use strict";n(78);var r=n(8),o=n(31),i=n(3),u=/./.toString,a=function(t){n(9)(RegExp.prototype,"toString",t,!0)};n(6)(function(){return"/a/b"!=u.call({source:"a",flags:"b"})})?a(function(){var t=r(this);return"/".concat(t.source,"/","flags"in t?t.flags:!i&&t instanceof RegExp?o.call(t):void 0)}):"toString"!=u.name&&a(function(){return u.call(this)})},function(t,e,n){n(3)&&"g"!=/./g.flags&&n(2).f(RegExp.prototype,"flags",{configurable:!0,get:n(31)})},function(t,e,n){var r=Date.prototype,o=r.toString,i=r.getTime;new Date(NaN)+""!="Invalid Date"&&n(9)(r,"toString",function(){var t=i.call(this);return t==t?o.call(this):"Invalid Date"})},function(t,e,n){var r=n(15)("meta"),o=n(5),i=n(10),u=n(2).f,a=0,s=Object.isExtensible||function(){return!0},c=!n(6)(function(){return s(Object.preventExtensions({}))}),f=function(t){u(t,r,{value:{i:"O"+ ++a,w:{}}})},l=t.exports={KEY:r,NEED:!1,fastKey:function(t,e){if(!o(t))return"symbol"==typeof t?t:("string"==typeof t?"S":"P")+t;if(!i(t,r)){if(!s(t))return"F";if(!e)return"E";f(t)}return t[r].i},getWeak:function(t,e){if(!i(t,r)){if(!s(t))return!0;if(!e)return!1;f(t)}return t[r].w},onFreeze:function(t){return c&&l.NEED&&s(t)&&!i(t,r)&&f(t),t}}},function(t,e,n){var r=n(17),o=n(46),i=n(32);t.exports=function(t){var e=r(t),n=o.f;if(n)for(var u,a=n(t),s=i.f,c=0;a.length>c;)s.call(t,u=a[c++])&&e.push(u);return e}},function(t,e,n){var r=n(12),o=n(33).f,i={}.toString,u="object"==typeof window&&window&&Object.getOwnPropertyNames?Object.getOwnPropertyNames(window):[];t.exports.f=function(t){return u&&"[object Window]"==i.call(t)?function(t){try{return o(t)}catch(t){return u.slice()}}(t):o(r(t))}},function(t,e,n){var r=n(4);r(r.S,"Array",{isArray:n(26)})},function(t,e,n){var r=n(4);r(r.S,"Date",{now:function(){return(new Date).getTime()}})},function(t,e,n){n(86)("split",2,function(t,e,r){"use strict";var o=n(48),i=r,u=[].push;if("c"=="abbc".split(/(b)*/)[1]||4!="test".split(/(?:)/,-1).length||2!="ab".split(/(?:ab)*/).length||4!=".".split(/(.?)(.?)/).length||".".split(/()()/).length>1||"".split(/.?/).length){var a=void 0===/()??/.exec("")[1];r=function(t,e){var n=String(this);if(void 0===t&&0===e)return[];if(!o(t))return i.call(n,t,e);var r,s,c,f,l,p=[],v=(t.ignoreCase?"i":"")+(t.multiline?"m":"")+(t.unicode?"u":"")+(t.sticky?"y":""),d=0,h=void 0===e?4294967295:e>>>0,y=new RegExp(t.source,v+"g");for(a||(r=new RegExp("^"+y.source+"$(?!\\s)",v));(s=y.exec(n))&&!((c=s.index+s[0].length)>d&&(p.push(n.slice(d,s.index)),!a&&s.length>1&&s[0].replace(r,function(){for(l=1;l<arguments.length-2;l++)void 0===arguments[l]&&(s[l]=void 0)}),s.length>1&&s.index<n.length&&u.apply(p,s.slice(1)),f=s[0].length,d=c,p.length>=h));)y.lastIndex===s.index&&y.lastIndex++;return d===n.length?!f&&y.test("")||p.push(""):p.push(n.slice(d)),p.length>h?p.slice(0,h):p}}else"0".split(void 0,0).length&&(r=function(t,e){return void 0===t&&0===e?[]:i.call(this,t,e)});return[function(n,o){var i=t(this),u=void 0==n?void 0:n[e];return void 0!==u?u.call(n,i,o):r.call(String(i),n,o)},r]})},function(t,e,n){"use strict";var r=n(7),o=n(9),i=n(6),u=n(21),a=n(0);t.exports=function(t,e,n){var s=a(t),c=n(u,s,""[t]),f=c[0],l=c[1];i(function(){var e={};return e[s]=function(){return 7},7!=""[t](e)})&&(o(String.prototype,t,f),r(RegExp.prototype,s,2==e?function(t,e){return l.call(t,this,e)}:function(t){return l.call(t,this)}))}},function(t,e,n){for(var r=n(41),o=n(17),i=n(9),u=n(1),a=n(7),s=n(16),c=n(0),f=c("iterator"),l=c("toStringTag"),p=s.Array,v={CSSRuleList:!0,CSSStyleDeclaration:!1,CSSValueList:!1,ClientRectList:!1,DOMRectList:!1,DOMStringList:!1,DOMTokenList:!0,DataTransferItemList:!1,FileList:!1,HTMLAllCollection:!1,HTMLCollection:!1,HTMLFormElement:!1,HTMLSelectElement:!1,MediaList:!0,MimeTypeArray:!1,NamedNodeMap:!1,NodeList:!0,PaintRequestList:!1,Plugin:!1,PluginArray:!1,SVGLengthList:!1,SVGNumberList:!1,SVGPathSegList:!1,SVGPointList:!1,SVGStringList:!1,SVGTransformList:!1,SourceBufferList:!1,StyleSheetList:!0,TextTrackCueList:!1,TextTrackList:!1,TouchList:!1},d=o(v),h=0;h<d.length;h++){var y,m=d[h],g=v[m],E=u[m],b=E&&E.prototype;if(b&&(b[f]||a(b,f,p),b[l]||a(b,l,m),s[m]=p,g))for(y in r)b[y]||i(b,y,r[y],!0)}},function(t,e,n){"use strict";var r=n(4),o=n(38)(0),i=n(40)([].forEach,!0);r(r.P+r.F*!i,"Array",{forEach:function(t){return o(this,t,arguments[1])}})},function(t,e){var n;n=function(){return this}();try{n=n||Function("return this")()||(0,eval)("this")}catch(t){"object"==typeof window&&(n=window)}t.exports=n},function(t,e,n){(function(e){(function(){var n,r,o,i,u,a;"undefined"!=typeof performance&&null!==performance&&performance.now?t.exports=function(){return performance.now()}:void 0!==e&&null!==e&&e.hrtime?(t.exports=function(){return(n()-u)/1e6},r=e.hrtime,i=(n=function(){var t;return 1e9*(t=r())[0]+t[1]})(),a=1e9*e.uptime(),u=i-a):Date.now?(t.exports=function(){return Date.now()-o},o=Date.now()):(t.exports=function(){return(new Date).getTime()-o},o=(new Date).getTime())}).call(this)}).call(this,n(91))},function(t,e){var n,r,o=t.exports={};function i(){throw new Error("setTimeout has not been defined")}function u(){throw new Error("clearTimeout has not been defined")}function a(t){if(n===setTimeout)return setTimeout(t,0);if((n===i||!n)&&setTimeout)return n=setTimeout,setTimeout(t,0);try{return n(t,0)}catch(e){try{return n.call(null,t,0)}catch(e){return n.call(this,t,0)}}}!function(){try{n="function"==typeof setTimeout?setTimeout:i}catch(t){n=i}try{r="function"==typeof clearTimeout?clearTimeout:u}catch(t){r=u}}();var s,c=[],f=!1,l=-1;function p(){f&&s&&(f=!1,s.length?c=s.concat(c):l=-1,c.length&&v())}function v(){if(!f){var t=a(p);f=!0;for(var e=c.length;e;){for(s=c,c=[];++l<e;)s&&s[l].run();l=-1,e=c.length}s=null,f=!1,function(t){if(r===clearTimeout)return clearTimeout(t);if((r===u||!r)&&clearTimeout)return r=clearTimeout,clearTimeout(t);try{r(t)}catch(e){try{return r.call(null,t)}catch(e){return r.call(this,t)}}}(t)}}function d(t,e){this.fun=t,this.array=e}function h(){}o.nextTick=function(t){var e=new Array(arguments.length-1);if(arguments.length>1)for(var n=1;n<arguments.length;n++)e[n-1]=arguments[n];c.push(new d(t,e)),1!==c.length||f||a(v)},d.prototype.run=function(){this.fun.apply(null,this.array)},o.title="browser",o.browser=!0,o.env={},o.argv=[],o.version="",o.versions={},o.on=h,o.addListener=h,o.once=h,o.off=h,o.removeListener=h,o.removeAllListeners=h,o.emit=h,o.prependListener=h,o.prependOnceListener=h,o.listeners=function(t){return[]},o.binding=function(t){throw new Error("process.binding is not supported")},o.cwd=function(){return"/"},o.chdir=function(t){throw new Error("process.chdir is not supported")},o.umask=function(){return 0}},function(t,e,n){var r=n(1),o=n(93),i=n(2).f,u=n(33).f,a=n(48),s=n(31),c=r.RegExp,f=c,l=c.prototype,p=/a/g,v=/a/g,d=new c(p)!==p;if(n(3)&&(!d||n(6)(function(){return v[n(0)("match")]=!1,c(p)!=p||c(v)==v||"/a/i"!=c(p,"i")}))){c=function(t,e){var n=this instanceof c,r=a(t),i=void 0===e;return!n&&r&&t.constructor===c&&i?t:o(d?new f(r&&!i?t.source:t,e):f((r=t instanceof c)?t.source:t,r&&i?s.call(t):e),n?this:l,c)};for(var h=function(t){t in c||i(c,t,{configurable:!0,get:function(){return f[t]},set:function(e){f[t]=e}})},y=u(f),m=0;y.length>m;)h(y[m++]);l.constructor=c,c.prototype=l,n(9)(r,"RegExp",c)}n(94)("RegExp")},function(t,e,n){var r=n(5),o=n(52).set;t.exports=function(t,e,n){var i,u=e.constructor;return u!==n&&"function"==typeof u&&(i=u.prototype)!==n.prototype&&r(i)&&o&&o(t,i),t}},function(t,e,n){"use strict";var r=n(1),o=n(2),i=n(3),u=n(0)("species");t.exports=function(t){var e=r[t];i&&e&&!e[u]&&o.f(e,u,{configurable:!0,get:function(){return this}})}},function(t,e,n){var r=n(96);"string"==typeof r&&(r=[[t.i,r,""]]);var o={hmr:!0,transform:void 0,insertInto:void 0};n(98)(r,o);r.locals&&(t.exports=r.locals)},function(t,e,n){(t.exports=n(97)(!1)).push([t.i,".Typewriter__cursor{-webkit-animation:Typewriter-cursor 1s infinite;animation:Typewriter-cursor 1s infinite;margin-left:1px}@-webkit-keyframes Typewriter-cursor{0%{opacity:0}50%{opacity:1}to{opacity:0}}@keyframes Typewriter-cursor{0%{opacity:0}50%{opacity:1}to{opacity:0}}",""])},function(t,e){t.exports=function(t){var e=[];return e.toString=function(){return this.map(function(e){var n=function(t,e){var n=t[1]||"",r=t[3];if(!r)return n;if(e&&"function"==typeof btoa){var o=function(t){return"/*# sourceMappingURL=data:application/json;charset=utf-8;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(t))))+" */"}(r),i=r.sources.map(function(t){return"/*# sourceURL="+r.sourceRoot+t+" */"});return[n].concat(i).concat([o]).join("\n")}return[n].join("\n")}(e,t);return e[2]?"@media "+e[2]+"{"+n+"}":n}).join("")},e.i=function(t,n){"string"==typeof t&&(t=[[null,t,""]]);for(var r={},o=0;o<this.length;o++){var i=this[o][0];"number"==typeof i&&(r[i]=!0)}for(o=0;o<t.length;o++){var u=t[o];"number"==typeof u[0]&&r[u[0]]||(n&&!u[2]?u[2]=n:n&&(u[2]="("+u[2]+") and ("+n+")"),e.push(u))}},e}},function(t,e,n){var r={},o=function(t){var e;return function(){return void 0===e&&(e=t.apply(this,arguments)),e}}(function(){return window&&document&&document.all&&!window.atob}),i=function(t){var e={};return function(t,n){if("function"==typeof t)return t();if(void 0===e[t]){var r=function(t,e){return e?e.querySelector(t):document.querySelector(t)}.call(this,t,n);if(window.HTMLIFrameElement&&r instanceof window.HTMLIFrameElement)try{r=r.contentDocument.head}catch(t){r=null}e[t]=r}return e[t]}}(),u=null,a=0,s=[],c=n(99);function f(t,e){for(var n=0;n<t.length;n++){var o=t[n],i=r[o.id];if(i){i.refs++;for(var u=0;u<i.parts.length;u++)i.parts[u](o.parts[u]);for(;u<o.parts.length;u++)i.parts.push(y(o.parts[u],e))}else{var a=[];for(u=0;u<o.parts.length;u++)a.push(y(o.parts[u],e));r[o.id]={id:o.id,refs:1,parts:a}}}}function l(t,e){for(var n=[],r={},o=0;o<t.length;o++){var i=t[o],u=e.base?i[0]+e.base:i[0],a={css:i[1],media:i[2],sourceMap:i[3]};r[u]?r[u].parts.push(a):n.push(r[u]={id:u,parts:[a]})}return n}function p(t,e){var n=i(t.insertInto);if(!n)throw new Error("Couldn't find a style target. This probably means that the value for the 'insertInto' parameter is invalid.");var r=s[s.length-1];if("top"===t.insertAt)r?r.nextSibling?n.insertBefore(e,r.nextSibling):n.appendChild(e):n.insertBefore(e,n.firstChild),s.push(e);else if("bottom"===t.insertAt)n.appendChild(e);else{if("object"!=typeof t.insertAt||!t.insertAt.before)throw new Error("[Style Loader]\n\n Invalid value for parameter 'insertAt' ('options.insertAt') found.\n Must be 'top', 'bottom', or Object.\n (https://github.com/webpack-contrib/style-loader#insertat)\n");var o=i(t.insertAt.before,n);n.insertBefore(e,o)}}function v(t){if(null===t.parentNode)return!1;t.parentNode.removeChild(t);var e=s.indexOf(t);e>=0&&s.splice(e,1)}function d(t){var e=document.createElement("style");if(void 0===t.attrs.type&&(t.attrs.type="text/css"),void 0===t.attrs.nonce){var r=function(){0;return n.nc}();r&&(t.attrs.nonce=r)}return h(e,t.attrs),p(t,e),e}function h(t,e){Object.keys(e).forEach(function(n){t.setAttribute(n,e[n])})}function y(t,e){var n,r,o,i;if(e.transform&&t.css){if(!(i=e.transform(t.css)))return function(){};t.css=i}if(e.singleton){var s=a++;n=u||(u=d(e)),r=g.bind(null,n,s,!1),o=g.bind(null,n,s,!0)}else t.sourceMap&&"function"==typeof URL&&"function"==typeof URL.createObjectURL&&"function"==typeof URL.revokeObjectURL&&"function"==typeof Blob&&"function"==typeof btoa?(n=function(t){var e=document.createElement("link");return void 0===t.attrs.type&&(t.attrs.type="text/css"),t.attrs.rel="stylesheet",h(e,t.attrs),p(t,e),e}(e),r=function(t,e,n){var r=n.css,o=n.sourceMap,i=void 0===e.convertToAbsoluteUrls&&o;(e.convertToAbsoluteUrls||i)&&(r=c(r));o&&(r+="\n/*# sourceMappingURL=data:application/json;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(o))))+" */");var u=new Blob([r],{type:"text/css"}),a=t.href;t.href=URL.createObjectURL(u),a&&URL.revokeObjectURL(a)}.bind(null,n,e),o=function(){v(n),n.href&&URL.revokeObjectURL(n.href)}):(n=d(e),r=function(t,e){var n=e.css,r=e.media;r&&t.setAttribute("media",r);if(t.styleSheet)t.styleSheet.cssText=n;else{for(;t.firstChild;)t.removeChild(t.firstChild);t.appendChild(document.createTextNode(n))}}.bind(null,n),o=function(){v(n)});return r(t),function(e){if(e){if(e.css===t.css&&e.media===t.media&&e.sourceMap===t.sourceMap)return;r(t=e)}else o()}}t.exports=function(t,e){if("undefined"!=typeof DEBUG&&DEBUG&&"object"!=typeof document)throw new Error("The style-loader cannot be used in a non-browser environment");(e=e||{}).attrs="object"==typeof e.attrs?e.attrs:{},e.singleton||"boolean"==typeof e.singleton||(e.singleton=o()),e.insertInto||(e.insertInto="head"),e.insertAt||(e.insertAt="bottom");var n=l(t,e);return f(n,e),function(t){for(var o=[],i=0;i<n.length;i++){var u=n[i];(a=r[u.id]).refs--,o.push(a)}t&&f(l(t,e),e);for(i=0;i<o.length;i++){var a;if(0===(a=o[i]).refs){for(var s=0;s<a.parts.length;s++)a.parts[s]();delete r[a.id]}}}};var m=function(){var t=[];return function(e,n){return t[e]=n,t.filter(Boolean).join("\n")}}();function g(t,e,n,r){var o=n?"":r.css;if(t.styleSheet)t.styleSheet.cssText=m(e,o);else{var i=document.createTextNode(o),u=t.childNodes;u[e]&&t.removeChild(u[e]),u.length?t.insertBefore(i,u[e]):t.appendChild(i)}}},function(t,e){t.exports=function(t){var e="undefined"!=typeof window&&window.location;if(!e)throw new Error("fixUrls requires window.location");if(!t||"string"!=typeof t)return t;var n=e.protocol+"//"+e.host,r=n+e.pathname.replace(/\/[^\/]*$/,"/");return t.replace(/url\s*\(((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)\)/gi,function(t,e){var o,i=e.trim().replace(/^"(.*)"$/,function(t,e){return e}).replace(/^'(.*)'$/,function(t,e){return e});return/^(#|data:|http:\/\/|https:\/\/|file:\/\/\/|\s*$)/i.test(i)?t:(o=0===i.indexOf("//")?i:0===i.indexOf("/")?n+i:r+i.replace(/^\.\//,""),"url("+JSON.stringify(o)+")")})}}]).default});
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(9);
+module.exports = __webpack_require__(86);
+
+
+/***/ }),
+/* 9 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_typewriter_effect_dist_core__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_typewriter_effect_dist_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_typewriter_effect_dist_core__);
+
+/**
+ * First we will load all of this project's JavaScript dependencies which
+ * includes Vue and other libraries. It is a great starting point when
+ * building robust, powerful web applications using Vue and Laravel.
+ */
+
+//require('./bootstrap');
+window.$ = window.jQuery = __webpack_require__(4);
+
+window.Vue = __webpack_require__(10);
+var Inputmask = __webpack_require__(14);
+var ionRangeSlider = __webpack_require__(19);
+
+__webpack_require__(21);
+//require('./components/social');
+
+/**
+ * Next, we will create a fresh Vue application instance and attach it to
+ * the page. Then, you may begin adding components to this application
+ * or customize the JavaScript scaffolding to fit your unique needs.
+ */
+
+Vue.component('window-calc', __webpack_require__(22));
+Vue.component('balcony-calc', __webpack_require__(28));
+Vue.component('ceilings-calc', __webpack_require__(33));
+Vue.component('city-search', __webpack_require__(35));
+Vue.component('add-comment', __webpack_require__(40));
+Vue.component('add-review', __webpack_require__(43));
+Vue.component('offer-slider', __webpack_require__(49));
+Vue.component('gallery-carousel', __webpack_require__(52));
+Vue.component('gallery-list', __webpack_require__(55));
+Vue.component('credit-calc', __webpack_require__(58));
+Vue.component('dveri-calc', __webpack_require__(61));
+Vue.component('peregorodki-calc', __webpack_require__(66));
+Vue.component('zhalyuzi-calc', __webpack_require__(71));
+Vue.component('posts', __webpack_require__(76));
+Vue.component('manufacturers', __webpack_require__(82));
+
+$(document).on('scroll', function () {
+    var scrollPosition = $(window).scrollTop(),
+        $header = $('.header_hidden').length > 0 ? $('.header_hidden') : $('.header_sticky');
+
+    if (scrollPosition > 200) {
+        $header.addClass('header_sticky').removeClass('header_hidden');
+    } else {
+        $header.removeClass('header_sticky').addClass('header_hidden');
+    }
+});
+
+var articles = $('#articles');
+
+if (articles.length > 0) {
+    new Vue({
+        el: '#articles'
+    });
+}
+
+var manufacturers = $('#manufacturers__list');
+
+if (manufacturers.length > 0) {
+    new Vue({
+        el: '#manufacturers__list',
+        template: '<manufacturers></manufacturers>'
+    });
+}
+
+var creditCalcContainer = $('#credit-calc');
+
+if (creditCalcContainer.length > 0) {
+    new Vue({
+        el: '#credit-calc',
+        template: '<credit-calc></credit-calc>'
+    });
+}
+
+var portfolioCarouselContainer = $('.portfolio__carousel');
+
+if (portfolioCarouselContainer.length > 0) {
+    new Vue({
+        el: '#portfolio__carousel',
+        template: '<gallery-carousel :photos="photos"></gallery-carousel>',
+        data: function data() {
+            return {
+                photos: portfolioCarouselContainer.data('photos')
+            };
+        }
+    });
+}
+
+var portfolioListContainer = $('.portfolio__list');
+
+if (portfolioListContainer.length > 0) {
+    new Vue({
+        el: '#portfolio__list',
+        template: '<gallery-list :photos="photos"></gallery-list>',
+        data: function data() {
+            return {
+                photos: portfolioListContainer.data('photos')
+            };
+        }
+    });
+}
+
+var offerSliderContainer = $('#js-offer-slider');
+
+if (offerSliderContainer.length > 0) {
+
+    var offers = offerSliderContainer.data('offers'),
+        offerSlider = new Vue({
+        el: '#js-offer-slider',
+        template: '<offer-slider :offers="offers"></offer-slider>',
+        data: {
+            offers: offers
+        }
+    });
+}
+
+$('.js-add-comment').each(function (index, element) {
+    var elementId = $(element).attr('id');
+
+    new Vue({
+        el: '#' + elementId
+    });
+});
+
+if ($('#city-search').length > 0) {
+    var citySearch = new Vue({
+        el: '#city-search'
+    });
+}
+
+if ($('#window-calc').length > 0) {
+    var windowCalc = new Vue({
+        el: '#window-calc'
+    });
+}
+
+if ($('#balcony-calc').length > 0) {
+    var BalkonyCalc = new Vue({
+        el: '#balcony-calc'
+    });
+}
+
+if ($('#ceilings-calc').length > 0) {
+    var CeilingsCalc = new Vue({
+        el: '#ceilings-calc'
+    });
+}
+
+if ($('#dveri-calc').length > 0) {
+    var DveriCalc = new Vue({
+        el: '#dveri-calc'
+    });
+}
+
+if ($('#peregorodki-calc').length > 0) {
+    var PeregorodkiCalc = new Vue({
+        el: '#peregorodki-calc'
+    });
+}
+
+if ($('#zhalyuzi-calc').length > 0) {
+    var ZhalyuziCalc = new Vue({
+        el: '#zhalyuzi-calc'
+    });
+}
+
+if ($('#add-review').length > 0) {
+    new Vue({
+        el: '#add-review'
+    });
+}
+
+
+
+var $writtenElements = $('.js-writen');
+
+$writtenElements.each(function (index, element) {
+    var $element = $(element),
+        text = $element.text(),
+        additionalTexts = $element.data('texts');
+
+    if (additionalTexts) {
+        text = [text].concat(additionalTexts);
+    }
+    console.log(text);
+    new __WEBPACK_IMPORTED_MODULE_0_typewriter_effect_dist_core___default.a(element, {
+        strings: text,
+        autoStart: true,
+        loop: true,
+        delay: 70
+    });
+});
+
+$('.survey__no').on('click', function () {
+    $(this).closest('.survey').addClass('survey_opened');
+});
+
+$('.survey__yes').on('click', function () {
+    $('.survey__buttons').slideUp();
+    $('.survey__thankyou').slideDown();
+});
+
+var bodyScrollLock = __webpack_require__(85);
+var disableBodyScroll = bodyScrollLock.disableBodyScroll;
+var enableBodyScroll = bodyScrollLock.enableBodyScroll;
+
+// 2. Get a target element that you want to persist scrolling for (such as a modal/lightbox/flyout/nav).
+var targetElement = document.querySelector("#mobileMenu");
+var targetElementTwo = document.querySelector("#fixedMobileMenu");
+
+$('.hamburger').on('click', function (e) {
+    $('.header__menu').addClass('menu_active');
+    $('body').addClass('no-scroll');
+    $('.header__hamburger').removeClass('active');
+    $('.header__close').addClass('active');
+
+    disableBodyScroll(targetElement);
+    disableBodyScroll(targetElementTwo);
+});
+
+$('.header__close').on('click', function (e) {
+    $('.header__menu').removeClass('menu_active');
+    $('body').removeClass('no-scroll');
+    $('.header__hamburger').addClass('active');
+    $('.header__close').removeClass('active');
+    enableBodyScroll(targetElement);
+    enableBodyScroll(targetElementTwo);
+});
+
+$('.whyus__button').on('click', function () {
+    $('.whyus__stat').slideToggle({
+        start: function start() {
+            $(this).css({
+                display: "flex"
+            });
+        }
+    });
+});
+
+if ($(document).width() <= 1024) {
+    $('.js-toggle-submenu').on('click', function (event) {
+        event.preventDefault();
+        //$(this).siblings('.menu__item_dropdown').find('.menu__dropdown_toggled').removeClass('menu__dropdown_toggled');
+        $(this).closest('.menu').addClass('opened');
+        $(this).next('.menu__dropdown').addClass('opened');
+    });
+
+    $('.menu__item-nav').on('click', function () {
+        $(this).closest('.menu').removeClass('opened');
+        $(this).closest('.menu__dropdown').removeClass('opened');
+    });
+}
+
+var $mapContainer = $('#map'),
+    $offices = $('.office');
+
+if ($mapContainer.length > 0 && $offices.length > 0) {
+    var offsetCoordinates = function offsetCoordinates(coords) {
+        var screenWidth = $(document).width();
+        console.log(coords);
+        switch (true) {
+            case screenWidth < 600:
+                return [coords[0], coords[1]];
+            case screenWidth < 1000:
+                return [coords[0], coords[1] - 0.005];
+
+            case screenWidth < 1500:
+                return [coords[0], coords[1] - 0.005];
+
+            default:
+                return coords;
+        }
+    };
+
+    var initMap = function initMap() {
+
+        var map = new ymaps.Map('map', {
+            center: offsetCoordinates($('.office_active').data('coords')),
+            zoom: 16,
+            controls: []
+        });
+
+        map.behaviors.disable('scrollZoom');
+
+        if ($(document).width() < 1024) {
+            map.behaviors.disable('drag');
+        }
+
+        $offices.each(function (index, office) {
+
+            var officePlacemark = new ymaps.Placemark(JSON.parse(office.dataset.coords), {
+                //balloonContent: 'цвет <strong>воды пляжа бонди</strong>'
+            }, {
+                iconLayout: 'default#image',
+                iconImageHref: $('#map').data('placemark'),
+                iconContent: 'asdasdasd'
+            });
+
+            map.geoObjects.add(officePlacemark);
+        });
+
+        $('.js-next-office').on('click', function (e) {
+            var $currentOffice = $('.office_active'),
+                $nextOffice = $currentOffice.next('.office').length > 0 ? $currentOffice.next('.office') : $('.office').eq(0);
+
+            $currentOffice.removeClass('office_active');
+            $nextOffice.addClass('office_active');
+
+            map.panTo(offsetCoordinates($nextOffice.data('coords')), { 'duration': 1000 });
+        });
+    };
+
+    ymaps.ready(initMap);
+}
+
+$('.question__more').on('click', function (e) {
+
+    var currentText = $(this).text(),
+        dataText = $(this).data('text');
+
+    $(this).text(dataText);
+
+    $(this).data('text', currentText);
+
+    $(this).prev('.question__text').toggleClass('question__text_toggled');
+});
+
+$('.calculator__type').on('click', function () {
+    $(this).addClass('active').siblings().removeClass('active');
+    $(this).closest('.calculator__inner').find('.calculator__main').removeClass('active').eq($(this).index()).addClass('active');
+});
+
+$('.facture').on('click', '.facture__item', function () {
+    $(this).siblings().removeClass('active');
+    $(this).addClass('active');
+});
+
+$('.titles__arrow').on('click', function () {
+    $(this).prev('.intro ').toggleClass('opened');
+});
+
+$('.js-link').on('click', function (e) {
+    var href = $(this).attr('href');
+    if (href) {
+        window.open(href, '_blank');
+    }
+    console.log(href);
+});
+
+var onResize = function onResize() {
+    if ($(window).width() <= 768) {
+        $('.promos__item').off();
+        $('.promos').on('click', '.promos__item', function () {
+            $(this).siblings().removeClass('opened');
+            $(this).toggleClass('opened');
+            $('html, body').animate({
+                scrollTop: $(this).offset().top - 80
+            }, 500);
+        });
+
+        $('.ourArticle__more').off();
+        $('.ourArticle__more').on('click', function () {
+            $(this).closest('.ourArticle').siblings().removeClass('opened');
+            $(this).closest('.ourArticle').toggleClass('opened');
+
+            if ($(this).text() === 'Подробнее') {
+                $(this).text('Свернуть');
+            } else {
+                $(this).text('Подробнее');
+            }
+        });
+
+        $('.nav-group').off();
+        $('.nav-group').on('click', function () {
+            $(this).toggleClass('nav-group_opened');
+        });
+
+        $('.calculator__type').on('click', function () {
+            var list = $(this).prevAll('.calculator__type');
+            var thisWidth = $(this).outerWidth();
+            var width = 0;
+
+            for (var i = 0; i < list.length; i++) {
+                var element = list[i];
+                var elementWidth = $(element).outerWidth();
+                width += elementWidth;
+            }
+
+            var offset = thisWidth / 2 + width;
+            var value = 'calc(50% - ' + offset + 'px)';
+            $('.calculator__types').css("left", value);
+        });
+    } else {
+        $('.calculator__types').css("left", 0);
+    }
+};
+
+$(document).ready(onResize);
+$(window).resize(onResize);
+
+var phoneMask = new Inputmask('+7 999 999-99-99'),
+    $phones = $('[type=tel]');
+
+phoneMask.mask($phones);
+
+$('.range').ionRangeSlider({
+    skin: 'round',
+    hide_min_max: true,
+    extra_classes: 'range_red'
+});
 
 /***/ }),
 /* 10 */
@@ -25003,7 +25049,7 @@ Vue.compile = compileToFunctions;
 
 module.exports = Vue;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(11).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5), __webpack_require__(11).setImmediate))
 
 /***/ }),
 /* 11 */
@@ -25073,7 +25119,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
                          (typeof global !== "undefined" && global.clearImmediate) ||
                          (this && this.clearImmediate);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ }),
 /* 12 */
@@ -25266,7 +25312,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(13)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5), __webpack_require__(13)))
 
 /***/ }),
 /* 13 */
@@ -25588,7 +25634,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 (function(factory) {
     if (true) {
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(5) ], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(6) ], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -26707,6 +26753,2471 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 /***/ }),
 /* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// Ion.RangeSlider
+// version 2.3.0 Build: 381
+// © Denis Ineshin, 2018
+// https://github.com/IonDen
+//
+// Project page:    http://ionden.com/a/plugins/ion.rangeSlider/en.html
+// GitHub page:     https://github.com/IonDen/ion.rangeSlider
+//
+// Released under MIT licence:
+// http://ionden.com/a/plugins/licence-en.html
+// =====================================================================================================================
+
+;(function(factory) {
+    if (!jQuery && "function" === "function" && __webpack_require__(20)) {
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(4)], __WEBPACK_AMD_DEFINE_RESULT__ = (function (jQuery) {
+            return factory(jQuery, document, window, navigator);
+        }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+    } else if (!jQuery && typeof exports === "object") {
+        factory(__webpack_require__(4), document, window, navigator);
+    } else {
+        factory(jQuery, document, window, navigator);
+    }
+} (function ($, document, window, navigator, undefined) {
+    "use strict";
+
+    // =================================================================================================================
+    // Service
+
+    var plugin_count = 0;
+
+    // IE8 fix
+    var is_old_ie = (function () {
+        var n = navigator.userAgent,
+            r = /msie\s\d+/i,
+            v;
+        if (n.search(r) > 0) {
+            v = r.exec(n).toString();
+            v = v.split(" ")[1];
+            if (v < 9) {
+                $("html").addClass("lt-ie9");
+                return true;
+            }
+        }
+        return false;
+    } ());
+    if (!Function.prototype.bind) {
+        Function.prototype.bind = function bind(that) {
+
+            var target = this;
+            var slice = [].slice;
+
+            if (typeof target != "function") {
+                throw new TypeError();
+            }
+
+            var args = slice.call(arguments, 1),
+                bound = function () {
+
+                    if (this instanceof bound) {
+
+                        var F = function(){};
+                        F.prototype = target.prototype;
+                        var self = new F();
+
+                        var result = target.apply(
+                            self,
+                            args.concat(slice.call(arguments))
+                        );
+                        if (Object(result) === result) {
+                            return result;
+                        }
+                        return self;
+
+                    } else {
+
+                        return target.apply(
+                            that,
+                            args.concat(slice.call(arguments))
+                        );
+
+                    }
+
+                };
+
+            return bound;
+        };
+    }
+    if (!Array.prototype.indexOf) {
+        Array.prototype.indexOf = function(searchElement, fromIndex) {
+            var k;
+            if (this == null) {
+                throw new TypeError('"this" is null or not defined');
+            }
+            var O = Object(this);
+            var len = O.length >>> 0;
+            if (len === 0) {
+                return -1;
+            }
+            var n = +fromIndex || 0;
+            if (Math.abs(n) === Infinity) {
+                n = 0;
+            }
+            if (n >= len) {
+                return -1;
+            }
+            k = Math.max(n >= 0 ? n : len - Math.abs(n), 0);
+            while (k < len) {
+                if (k in O && O[k] === searchElement) {
+                    return k;
+                }
+                k++;
+            }
+            return -1;
+        };
+    }
+
+
+
+    // =================================================================================================================
+    // Template
+
+    var base_html =
+        '<span class="irs">' +
+        '<span class="irs-line" tabindex="0"></span>' +
+        '<span class="irs-min">0</span><span class="irs-max">1</span>' +
+        '<span class="irs-from">0</span><span class="irs-to">0</span><span class="irs-single">0</span>' +
+        '</span>' +
+        '<span class="irs-grid"></span>';
+
+    var single_html =
+        '<span class="irs-bar irs-bar--single"></span>' +
+        '<span class="irs-shadow shadow-single"></span>' +
+        '<span class="irs-handle single"><i></i><i></i><i></i></span>';
+
+    var double_html =
+        '<span class="irs-bar"></span>' +
+        '<span class="irs-shadow shadow-from"></span>' +
+        '<span class="irs-shadow shadow-to"></span>' +
+        '<span class="irs-handle from"><i></i><i></i><i></i></span>' +
+        '<span class="irs-handle to"><i></i><i></i><i></i></span>';
+
+    var disable_html =
+        '<span class="irs-disable-mask"></span>';
+
+
+
+    // =================================================================================================================
+    // Core
+
+    /**
+     * Main plugin constructor
+     *
+     * @param input {Object} link to base input element
+     * @param options {Object} slider config
+     * @param plugin_count {Number}
+     * @constructor
+     */
+    var IonRangeSlider = function (input, options, plugin_count) {
+        this.VERSION = "2.3.0";
+        this.input = input;
+        this.plugin_count = plugin_count;
+        this.current_plugin = 0;
+        this.calc_count = 0;
+        this.update_tm = 0;
+        this.old_from = 0;
+        this.old_to = 0;
+        this.old_min_interval = null;
+        this.raf_id = null;
+        this.dragging = false;
+        this.force_redraw = false;
+        this.no_diapason = false;
+        this.has_tab_index = true;
+        this.is_key = false;
+        this.is_update = false;
+        this.is_start = true;
+        this.is_finish = false;
+        this.is_active = false;
+        this.is_resize = false;
+        this.is_click = false;
+
+        options = options || {};
+
+        // cache for links to all DOM elements
+        this.$cache = {
+            win: $(window),
+            body: $(document.body),
+            input: $(input),
+            cont: null,
+            rs: null,
+            min: null,
+            max: null,
+            from: null,
+            to: null,
+            single: null,
+            bar: null,
+            line: null,
+            s_single: null,
+            s_from: null,
+            s_to: null,
+            shad_single: null,
+            shad_from: null,
+            shad_to: null,
+            edge: null,
+            grid: null,
+            grid_labels: []
+        };
+
+        // storage for measure variables
+        this.coords = {
+            // left
+            x_gap: 0,
+            x_pointer: 0,
+
+            // width
+            w_rs: 0,
+            w_rs_old: 0,
+            w_handle: 0,
+
+            // percents
+            p_gap: 0,
+            p_gap_left: 0,
+            p_gap_right: 0,
+            p_step: 0,
+            p_pointer: 0,
+            p_handle: 0,
+            p_single_fake: 0,
+            p_single_real: 0,
+            p_from_fake: 0,
+            p_from_real: 0,
+            p_to_fake: 0,
+            p_to_real: 0,
+            p_bar_x: 0,
+            p_bar_w: 0,
+
+            // grid
+            grid_gap: 0,
+            big_num: 0,
+            big: [],
+            big_w: [],
+            big_p: [],
+            big_x: []
+        };
+
+        // storage for labels measure variables
+        this.labels = {
+            // width
+            w_min: 0,
+            w_max: 0,
+            w_from: 0,
+            w_to: 0,
+            w_single: 0,
+
+            // percents
+            p_min: 0,
+            p_max: 0,
+            p_from_fake: 0,
+            p_from_left: 0,
+            p_to_fake: 0,
+            p_to_left: 0,
+            p_single_fake: 0,
+            p_single_left: 0
+        };
+
+
+
+        /**
+         * get and validate config
+         */
+        var $inp = this.$cache.input,
+            val = $inp.prop("value"),
+            config, config_from_data, prop;
+
+        // default config
+        config = {
+            skin: "flat",
+            type: "single",
+
+            min: 10,
+            max: 100,
+            from: null,
+            to: null,
+            step: 1,
+
+            min_interval: 0,
+            max_interval: 0,
+            drag_interval: false,
+
+            values: [],
+            p_values: [],
+
+            from_fixed: false,
+            from_min: null,
+            from_max: null,
+            from_shadow: false,
+
+            to_fixed: false,
+            to_min: null,
+            to_max: null,
+            to_shadow: false,
+
+            prettify_enabled: true,
+            prettify_separator: " ",
+            prettify: null,
+
+            force_edges: false,
+
+            keyboard: true,
+
+            grid: false,
+            grid_margin: true,
+            grid_num: 4,
+            grid_snap: false,
+
+            hide_min_max: false,
+            hide_from_to: false,
+
+            prefix: "",
+            postfix: "",
+            max_postfix: "",
+            decorate_both: true,
+            values_separator: " — ",
+
+            input_values_separator: ";",
+
+            disable: false,
+            block: false,
+
+            extra_classes: "",
+
+            scope: null,
+            onStart: null,
+            onChange: null,
+            onFinish: null,
+            onUpdate: null
+        };
+
+
+        // check if base element is input
+        if ($inp[0].nodeName !== "INPUT") {
+            console && console.warn && console.warn("Base element should be <input>!", $inp[0]);
+        }
+
+
+        // config from data-attributes extends js config
+        config_from_data = {
+            skin: $inp.data("skin"),
+            type: $inp.data("type"),
+
+            min: $inp.data("min"),
+            max: $inp.data("max"),
+            from: $inp.data("from"),
+            to: $inp.data("to"),
+            step: $inp.data("step"),
+
+            min_interval: $inp.data("minInterval"),
+            max_interval: $inp.data("maxInterval"),
+            drag_interval: $inp.data("dragInterval"),
+
+            values: $inp.data("values"),
+
+            from_fixed: $inp.data("fromFixed"),
+            from_min: $inp.data("fromMin"),
+            from_max: $inp.data("fromMax"),
+            from_shadow: $inp.data("fromShadow"),
+
+            to_fixed: $inp.data("toFixed"),
+            to_min: $inp.data("toMin"),
+            to_max: $inp.data("toMax"),
+            to_shadow: $inp.data("toShadow"),
+
+            prettify_enabled: $inp.data("prettifyEnabled"),
+            prettify_separator: $inp.data("prettifySeparator"),
+
+            force_edges: $inp.data("forceEdges"),
+
+            keyboard: $inp.data("keyboard"),
+
+            grid: $inp.data("grid"),
+            grid_margin: $inp.data("gridMargin"),
+            grid_num: $inp.data("gridNum"),
+            grid_snap: $inp.data("gridSnap"),
+
+            hide_min_max: $inp.data("hideMinMax"),
+            hide_from_to: $inp.data("hideFromTo"),
+
+            prefix: $inp.data("prefix"),
+            postfix: $inp.data("postfix"),
+            max_postfix: $inp.data("maxPostfix"),
+            decorate_both: $inp.data("decorateBoth"),
+            values_separator: $inp.data("valuesSeparator"),
+
+            input_values_separator: $inp.data("inputValuesSeparator"),
+
+            disable: $inp.data("disable"),
+            block: $inp.data("block"),
+
+            extra_classes: $inp.data("extraClasses"),
+        };
+        config_from_data.values = config_from_data.values && config_from_data.values.split(",");
+
+        for (prop in config_from_data) {
+            if (config_from_data.hasOwnProperty(prop)) {
+                if (config_from_data[prop] === undefined || config_from_data[prop] === "") {
+                    delete config_from_data[prop];
+                }
+            }
+        }
+
+
+        // input value extends default config
+        if (val !== undefined && val !== "") {
+            val = val.split(config_from_data.input_values_separator || options.input_values_separator || ";");
+
+            if (val[0] && val[0] == +val[0]) {
+                val[0] = +val[0];
+            }
+            if (val[1] && val[1] == +val[1]) {
+                val[1] = +val[1];
+            }
+
+            if (options && options.values && options.values.length) {
+                config.from = val[0] && options.values.indexOf(val[0]);
+                config.to = val[1] && options.values.indexOf(val[1]);
+            } else {
+                config.from = val[0] && +val[0];
+                config.to = val[1] && +val[1];
+            }
+        }
+
+
+
+        // js config extends default config
+        $.extend(config, options);
+
+
+        // data config extends config
+        $.extend(config, config_from_data);
+        this.options = config;
+
+
+
+        // validate config, to be sure that all data types are correct
+        this.update_check = {};
+        this.validate();
+
+
+
+        // default result object, returned to callbacks
+        this.result = {
+            input: this.$cache.input,
+            slider: null,
+
+            min: this.options.min,
+            max: this.options.max,
+
+            from: this.options.from,
+            from_percent: 0,
+            from_value: null,
+
+            to: this.options.to,
+            to_percent: 0,
+            to_value: null
+        };
+
+
+
+        this.init();
+    };
+
+    IonRangeSlider.prototype = {
+
+        /**
+         * Starts or updates the plugin instance
+         *
+         * @param [is_update] {boolean}
+         */
+        init: function (is_update) {
+            this.no_diapason = false;
+            this.coords.p_step = this.convertToPercent(this.options.step, true);
+
+            this.target = "base";
+
+            this.toggleInput();
+            this.append();
+            this.setMinMax();
+
+            if (is_update) {
+                this.force_redraw = true;
+                this.calc(true);
+
+                // callbacks called
+                this.callOnUpdate();
+            } else {
+                this.force_redraw = true;
+                this.calc(true);
+
+                // callbacks called
+                this.callOnStart();
+            }
+
+            this.updateScene();
+        },
+
+        /**
+         * Appends slider template to a DOM
+         */
+        append: function () {
+            var container_html = '<span class="irs irs--' + this.options.skin + ' js-irs-' + this.plugin_count + ' ' + this.options.extra_classes + '"></span>';
+            this.$cache.input.before(container_html);
+            this.$cache.input.prop("readonly", true);
+            this.$cache.cont = this.$cache.input.prev();
+            this.result.slider = this.$cache.cont;
+
+            this.$cache.cont.html(base_html);
+            this.$cache.rs = this.$cache.cont.find(".irs");
+            this.$cache.min = this.$cache.cont.find(".irs-min");
+            this.$cache.max = this.$cache.cont.find(".irs-max");
+            this.$cache.from = this.$cache.cont.find(".irs-from");
+            this.$cache.to = this.$cache.cont.find(".irs-to");
+            this.$cache.single = this.$cache.cont.find(".irs-single");
+            this.$cache.line = this.$cache.cont.find(".irs-line");
+            this.$cache.grid = this.$cache.cont.find(".irs-grid");
+
+            if (this.options.type === "single") {
+                this.$cache.cont.append(single_html);
+                this.$cache.bar = this.$cache.cont.find(".irs-bar");
+                this.$cache.edge = this.$cache.cont.find(".irs-bar-edge");
+                this.$cache.s_single = this.$cache.cont.find(".single");
+                this.$cache.from[0].style.visibility = "hidden";
+                this.$cache.to[0].style.visibility = "hidden";
+                this.$cache.shad_single = this.$cache.cont.find(".shadow-single");
+            } else {
+                this.$cache.cont.append(double_html);
+                this.$cache.bar = this.$cache.cont.find(".irs-bar");
+                this.$cache.s_from = this.$cache.cont.find(".from");
+                this.$cache.s_to = this.$cache.cont.find(".to");
+                this.$cache.shad_from = this.$cache.cont.find(".shadow-from");
+                this.$cache.shad_to = this.$cache.cont.find(".shadow-to");
+
+                this.setTopHandler();
+            }
+
+            if (this.options.hide_from_to) {
+                this.$cache.from[0].style.display = "none";
+                this.$cache.to[0].style.display = "none";
+                this.$cache.single[0].style.display = "none";
+            }
+
+            this.appendGrid();
+
+            if (this.options.disable) {
+                this.appendDisableMask();
+                this.$cache.input[0].disabled = true;
+            } else {
+                this.$cache.input[0].disabled = false;
+                this.removeDisableMask();
+                this.bindEvents();
+            }
+
+            // block only if not disabled
+            if (!this.options.disable) {
+                if (this.options.block) {
+                    this.appendDisableMask();
+                } else {
+                    this.removeDisableMask();
+                }
+            }
+
+            if (this.options.drag_interval) {
+                this.$cache.bar[0].style.cursor = "ew-resize";
+            }
+        },
+
+        /**
+         * Determine which handler has a priority
+         * works only for double slider type
+         */
+        setTopHandler: function () {
+            var min = this.options.min,
+                max = this.options.max,
+                from = this.options.from,
+                to = this.options.to;
+
+            if (from > min && to === max) {
+                this.$cache.s_from.addClass("type_last");
+            } else if (to < max) {
+                this.$cache.s_to.addClass("type_last");
+            }
+        },
+
+        /**
+         * Determine which handles was clicked last
+         * and which handler should have hover effect
+         *
+         * @param target {String}
+         */
+        changeLevel: function (target) {
+            switch (target) {
+                case "single":
+                    this.coords.p_gap = this.toFixed(this.coords.p_pointer - this.coords.p_single_fake);
+                    this.$cache.s_single.addClass("state_hover");
+                    break;
+                case "from":
+                    this.coords.p_gap = this.toFixed(this.coords.p_pointer - this.coords.p_from_fake);
+                    this.$cache.s_from.addClass("state_hover");
+                    this.$cache.s_from.addClass("type_last");
+                    this.$cache.s_to.removeClass("type_last");
+                    break;
+                case "to":
+                    this.coords.p_gap = this.toFixed(this.coords.p_pointer - this.coords.p_to_fake);
+                    this.$cache.s_to.addClass("state_hover");
+                    this.$cache.s_to.addClass("type_last");
+                    this.$cache.s_from.removeClass("type_last");
+                    break;
+                case "both":
+                    this.coords.p_gap_left = this.toFixed(this.coords.p_pointer - this.coords.p_from_fake);
+                    this.coords.p_gap_right = this.toFixed(this.coords.p_to_fake - this.coords.p_pointer);
+                    this.$cache.s_to.removeClass("type_last");
+                    this.$cache.s_from.removeClass("type_last");
+                    break;
+            }
+        },
+
+        /**
+         * Then slider is disabled
+         * appends extra layer with opacity
+         */
+        appendDisableMask: function () {
+            this.$cache.cont.append(disable_html);
+            this.$cache.cont.addClass("irs-disabled");
+        },
+
+        /**
+         * Then slider is not disabled
+         * remove disable mask
+         */
+        removeDisableMask: function () {
+            this.$cache.cont.remove(".irs-disable-mask");
+            this.$cache.cont.removeClass("irs-disabled");
+        },
+
+        /**
+         * Remove slider instance
+         * and unbind all events
+         */
+        remove: function () {
+            this.$cache.cont.remove();
+            this.$cache.cont = null;
+
+            this.$cache.line.off("keydown.irs_" + this.plugin_count);
+
+            this.$cache.body.off("touchmove.irs_" + this.plugin_count);
+            this.$cache.body.off("mousemove.irs_" + this.plugin_count);
+
+            this.$cache.win.off("touchend.irs_" + this.plugin_count);
+            this.$cache.win.off("mouseup.irs_" + this.plugin_count);
+
+            if (is_old_ie) {
+                this.$cache.body.off("mouseup.irs_" + this.plugin_count);
+                this.$cache.body.off("mouseleave.irs_" + this.plugin_count);
+            }
+
+            this.$cache.grid_labels = [];
+            this.coords.big = [];
+            this.coords.big_w = [];
+            this.coords.big_p = [];
+            this.coords.big_x = [];
+
+            cancelAnimationFrame(this.raf_id);
+        },
+
+        /**
+         * bind all slider events
+         */
+        bindEvents: function () {
+            if (this.no_diapason) {
+                return;
+            }
+
+            this.$cache.body.on("touchmove.irs_" + this.plugin_count, this.pointerMove.bind(this));
+            this.$cache.body.on("mousemove.irs_" + this.plugin_count, this.pointerMove.bind(this));
+
+            this.$cache.win.on("touchend.irs_" + this.plugin_count, this.pointerUp.bind(this));
+            this.$cache.win.on("mouseup.irs_" + this.plugin_count, this.pointerUp.bind(this));
+
+            this.$cache.line.on("touchstart.irs_" + this.plugin_count, this.pointerClick.bind(this, "click"));
+            this.$cache.line.on("mousedown.irs_" + this.plugin_count, this.pointerClick.bind(this, "click"));
+
+            this.$cache.line.on("focus.irs_" + this.plugin_count, this.pointerFocus.bind(this));
+
+            if (this.options.drag_interval && this.options.type === "double") {
+                this.$cache.bar.on("touchstart.irs_" + this.plugin_count, this.pointerDown.bind(this, "both"));
+                this.$cache.bar.on("mousedown.irs_" + this.plugin_count, this.pointerDown.bind(this, "both"));
+            } else {
+                this.$cache.bar.on("touchstart.irs_" + this.plugin_count, this.pointerClick.bind(this, "click"));
+                this.$cache.bar.on("mousedown.irs_" + this.plugin_count, this.pointerClick.bind(this, "click"));
+            }
+
+            if (this.options.type === "single") {
+                this.$cache.single.on("touchstart.irs_" + this.plugin_count, this.pointerDown.bind(this, "single"));
+                this.$cache.s_single.on("touchstart.irs_" + this.plugin_count, this.pointerDown.bind(this, "single"));
+                this.$cache.shad_single.on("touchstart.irs_" + this.plugin_count, this.pointerClick.bind(this, "click"));
+
+                this.$cache.single.on("mousedown.irs_" + this.plugin_count, this.pointerDown.bind(this, "single"));
+                this.$cache.s_single.on("mousedown.irs_" + this.plugin_count, this.pointerDown.bind(this, "single"));
+                this.$cache.edge.on("mousedown.irs_" + this.plugin_count, this.pointerClick.bind(this, "click"));
+                this.$cache.shad_single.on("mousedown.irs_" + this.plugin_count, this.pointerClick.bind(this, "click"));
+            } else {
+                this.$cache.single.on("touchstart.irs_" + this.plugin_count, this.pointerDown.bind(this, null));
+                this.$cache.single.on("mousedown.irs_" + this.plugin_count, this.pointerDown.bind(this, null));
+
+                this.$cache.from.on("touchstart.irs_" + this.plugin_count, this.pointerDown.bind(this, "from"));
+                this.$cache.s_from.on("touchstart.irs_" + this.plugin_count, this.pointerDown.bind(this, "from"));
+                this.$cache.to.on("touchstart.irs_" + this.plugin_count, this.pointerDown.bind(this, "to"));
+                this.$cache.s_to.on("touchstart.irs_" + this.plugin_count, this.pointerDown.bind(this, "to"));
+                this.$cache.shad_from.on("touchstart.irs_" + this.plugin_count, this.pointerClick.bind(this, "click"));
+                this.$cache.shad_to.on("touchstart.irs_" + this.plugin_count, this.pointerClick.bind(this, "click"));
+
+                this.$cache.from.on("mousedown.irs_" + this.plugin_count, this.pointerDown.bind(this, "from"));
+                this.$cache.s_from.on("mousedown.irs_" + this.plugin_count, this.pointerDown.bind(this, "from"));
+                this.$cache.to.on("mousedown.irs_" + this.plugin_count, this.pointerDown.bind(this, "to"));
+                this.$cache.s_to.on("mousedown.irs_" + this.plugin_count, this.pointerDown.bind(this, "to"));
+                this.$cache.shad_from.on("mousedown.irs_" + this.plugin_count, this.pointerClick.bind(this, "click"));
+                this.$cache.shad_to.on("mousedown.irs_" + this.plugin_count, this.pointerClick.bind(this, "click"));
+            }
+
+            if (this.options.keyboard) {
+                this.$cache.line.on("keydown.irs_" + this.plugin_count, this.key.bind(this, "keyboard"));
+            }
+
+            if (is_old_ie) {
+                this.$cache.body.on("mouseup.irs_" + this.plugin_count, this.pointerUp.bind(this));
+                this.$cache.body.on("mouseleave.irs_" + this.plugin_count, this.pointerUp.bind(this));
+            }
+        },
+
+        /**
+         * Focus with tabIndex
+         *
+         * @param e {Object} event object
+         */
+        pointerFocus: function (e) {
+            if (!this.target) {
+                var x;
+                var $handle;
+
+                if (this.options.type === "single") {
+                    $handle = this.$cache.single;
+                } else {
+                    $handle = this.$cache.from;
+                }
+
+                x = $handle.offset().left;
+                x += ($handle.width() / 2) - 1;
+
+                this.pointerClick("single", {preventDefault: function () {}, pageX: x});
+            }
+        },
+
+        /**
+         * Mousemove or touchmove
+         * only for handlers
+         *
+         * @param e {Object} event object
+         */
+        pointerMove: function (e) {
+            if (!this.dragging) {
+                return;
+            }
+
+            var x = e.pageX || e.originalEvent.touches && e.originalEvent.touches[0].pageX;
+            this.coords.x_pointer = x - this.coords.x_gap;
+
+            this.calc();
+        },
+
+        /**
+         * Mouseup or touchend
+         * only for handlers
+         *
+         * @param e {Object} event object
+         */
+        pointerUp: function (e) {
+            if (this.current_plugin !== this.plugin_count) {
+                return;
+            }
+
+            if (this.is_active) {
+                this.is_active = false;
+            } else {
+                return;
+            }
+
+            this.$cache.cont.find(".state_hover").removeClass("state_hover");
+
+            this.force_redraw = true;
+
+            if (is_old_ie) {
+                $("*").prop("unselectable", false);
+            }
+
+            this.updateScene();
+            this.restoreOriginalMinInterval();
+
+            // callbacks call
+            if ($.contains(this.$cache.cont[0], e.target) || this.dragging) {
+                this.callOnFinish();
+            }
+            
+            this.dragging = false;
+        },
+
+        /**
+         * Mousedown or touchstart
+         * only for handlers
+         *
+         * @param target {String|null}
+         * @param e {Object} event object
+         */
+        pointerDown: function (target, e) {
+            e.preventDefault();
+            var x = e.pageX || e.originalEvent.touches && e.originalEvent.touches[0].pageX;
+            if (e.button === 2) {
+                return;
+            }
+
+            if (target === "both") {
+                this.setTempMinInterval();
+            }
+
+            if (!target) {
+                target = this.target || "from";
+            }
+
+            this.current_plugin = this.plugin_count;
+            this.target = target;
+
+            this.is_active = true;
+            this.dragging = true;
+
+            this.coords.x_gap = this.$cache.rs.offset().left;
+            this.coords.x_pointer = x - this.coords.x_gap;
+
+            this.calcPointerPercent();
+            this.changeLevel(target);
+
+            if (is_old_ie) {
+                $("*").prop("unselectable", true);
+            }
+
+            this.$cache.line.trigger("focus");
+
+            this.updateScene();
+        },
+
+        /**
+         * Mousedown or touchstart
+         * for other slider elements, like diapason line
+         *
+         * @param target {String}
+         * @param e {Object} event object
+         */
+        pointerClick: function (target, e) {
+            e.preventDefault();
+            var x = e.pageX || e.originalEvent.touches && e.originalEvent.touches[0].pageX;
+            if (e.button === 2) {
+                return;
+            }
+
+            this.current_plugin = this.plugin_count;
+            this.target = target;
+
+            this.is_click = true;
+            this.coords.x_gap = this.$cache.rs.offset().left;
+            this.coords.x_pointer = +(x - this.coords.x_gap).toFixed();
+
+            this.force_redraw = true;
+            this.calc();
+
+            this.$cache.line.trigger("focus");
+        },
+
+        /**
+         * Keyborard controls for focused slider
+         *
+         * @param target {String}
+         * @param e {Object} event object
+         * @returns {boolean|undefined}
+         */
+        key: function (target, e) {
+            if (this.current_plugin !== this.plugin_count || e.altKey || e.ctrlKey || e.shiftKey || e.metaKey) {
+                return;
+            }
+
+            switch (e.which) {
+                case 83: // W
+                case 65: // A
+                case 40: // DOWN
+                case 37: // LEFT
+                    e.preventDefault();
+                    this.moveByKey(false);
+                    break;
+
+                case 87: // S
+                case 68: // D
+                case 38: // UP
+                case 39: // RIGHT
+                    e.preventDefault();
+                    this.moveByKey(true);
+                    break;
+            }
+
+            return true;
+        },
+
+        /**
+         * Move by key
+         *
+         * @param right {boolean} direction to move
+         */
+        moveByKey: function (right) {
+            var p = this.coords.p_pointer;
+            var p_step = (this.options.max - this.options.min) / 100;
+            p_step = this.options.step / p_step;
+
+            if (right) {
+                p += p_step;
+            } else {
+                p -= p_step;
+            }
+
+            this.coords.x_pointer = this.toFixed(this.coords.w_rs / 100 * p);
+            this.is_key = true;
+            this.calc();
+        },
+
+        /**
+         * Set visibility and content
+         * of Min and Max labels
+         */
+        setMinMax: function () {
+            if (!this.options) {
+                return;
+            }
+
+            if (this.options.hide_min_max) {
+                this.$cache.min[0].style.display = "none";
+                this.$cache.max[0].style.display = "none";
+                return;
+            }
+
+            if (this.options.values.length) {
+                this.$cache.min.html(this.decorate(this.options.p_values[this.options.min]));
+                this.$cache.max.html(this.decorate(this.options.p_values[this.options.max]));
+            } else {
+                var min_pretty = this._prettify(this.options.min);
+                var max_pretty = this._prettify(this.options.max);
+
+                this.result.min_pretty = min_pretty;
+                this.result.max_pretty = max_pretty;
+
+                this.$cache.min.html(this.decorate(min_pretty, this.options.min));
+                this.$cache.max.html(this.decorate(max_pretty, this.options.max));
+            }
+
+            this.labels.w_min = this.$cache.min.outerWidth(false);
+            this.labels.w_max = this.$cache.max.outerWidth(false);
+        },
+
+        /**
+         * Then dragging interval, prevent interval collapsing
+         * using min_interval option
+         */
+        setTempMinInterval: function () {
+            var interval = this.result.to - this.result.from;
+
+            if (this.old_min_interval === null) {
+                this.old_min_interval = this.options.min_interval;
+            }
+
+            this.options.min_interval = interval;
+        },
+
+        /**
+         * Restore min_interval option to original
+         */
+        restoreOriginalMinInterval: function () {
+            if (this.old_min_interval !== null) {
+                this.options.min_interval = this.old_min_interval;
+                this.old_min_interval = null;
+            }
+        },
+
+
+
+        // =============================================================================================================
+        // Calculations
+
+        /**
+         * All calculations and measures start here
+         *
+         * @param update {boolean=}
+         */
+        calc: function (update) {
+            if (!this.options) {
+                return;
+            }
+
+            this.calc_count++;
+
+            if (this.calc_count === 10 || update) {
+                this.calc_count = 0;
+                this.coords.w_rs = this.$cache.rs.outerWidth(false);
+
+                this.calcHandlePercent();
+            }
+
+            if (!this.coords.w_rs) {
+                return;
+            }
+
+            this.calcPointerPercent();
+            var handle_x = this.getHandleX();
+
+
+            if (this.target === "both") {
+                this.coords.p_gap = 0;
+                handle_x = this.getHandleX();
+            }
+
+            if (this.target === "click") {
+                this.coords.p_gap = this.coords.p_handle / 2;
+                handle_x = this.getHandleX();
+
+                if (this.options.drag_interval) {
+                    this.target = "both_one";
+                } else {
+                    this.target = this.chooseHandle(handle_x);
+                }
+            }
+
+            switch (this.target) {
+                case "base":
+                    var w = (this.options.max - this.options.min) / 100,
+                        f = (this.result.from - this.options.min) / w,
+                        t = (this.result.to - this.options.min) / w;
+
+                    this.coords.p_single_real = this.toFixed(f);
+                    this.coords.p_from_real = this.toFixed(f);
+                    this.coords.p_to_real = this.toFixed(t);
+
+                    this.coords.p_single_real = this.checkDiapason(this.coords.p_single_real, this.options.from_min, this.options.from_max);
+                    this.coords.p_from_real = this.checkDiapason(this.coords.p_from_real, this.options.from_min, this.options.from_max);
+                    this.coords.p_to_real = this.checkDiapason(this.coords.p_to_real, this.options.to_min, this.options.to_max);
+
+                    this.coords.p_single_fake = this.convertToFakePercent(this.coords.p_single_real);
+                    this.coords.p_from_fake = this.convertToFakePercent(this.coords.p_from_real);
+                    this.coords.p_to_fake = this.convertToFakePercent(this.coords.p_to_real);
+
+                    this.target = null;
+
+                    break;
+
+                case "single":
+                    if (this.options.from_fixed) {
+                        break;
+                    }
+
+                    this.coords.p_single_real = this.convertToRealPercent(handle_x);
+                    this.coords.p_single_real = this.calcWithStep(this.coords.p_single_real);
+                    this.coords.p_single_real = this.checkDiapason(this.coords.p_single_real, this.options.from_min, this.options.from_max);
+
+                    this.coords.p_single_fake = this.convertToFakePercent(this.coords.p_single_real);
+
+                    break;
+
+                case "from":
+                    if (this.options.from_fixed) {
+                        break;
+                    }
+
+                    this.coords.p_from_real = this.convertToRealPercent(handle_x);
+                    this.coords.p_from_real = this.calcWithStep(this.coords.p_from_real);
+                    if (this.coords.p_from_real > this.coords.p_to_real) {
+                        this.coords.p_from_real = this.coords.p_to_real;
+                    }
+                    this.coords.p_from_real = this.checkDiapason(this.coords.p_from_real, this.options.from_min, this.options.from_max);
+                    this.coords.p_from_real = this.checkMinInterval(this.coords.p_from_real, this.coords.p_to_real, "from");
+                    this.coords.p_from_real = this.checkMaxInterval(this.coords.p_from_real, this.coords.p_to_real, "from");
+
+                    this.coords.p_from_fake = this.convertToFakePercent(this.coords.p_from_real);
+
+                    break;
+
+                case "to":
+                    if (this.options.to_fixed) {
+                        break;
+                    }
+
+                    this.coords.p_to_real = this.convertToRealPercent(handle_x);
+                    this.coords.p_to_real = this.calcWithStep(this.coords.p_to_real);
+                    if (this.coords.p_to_real < this.coords.p_from_real) {
+                        this.coords.p_to_real = this.coords.p_from_real;
+                    }
+                    this.coords.p_to_real = this.checkDiapason(this.coords.p_to_real, this.options.to_min, this.options.to_max);
+                    this.coords.p_to_real = this.checkMinInterval(this.coords.p_to_real, this.coords.p_from_real, "to");
+                    this.coords.p_to_real = this.checkMaxInterval(this.coords.p_to_real, this.coords.p_from_real, "to");
+
+                    this.coords.p_to_fake = this.convertToFakePercent(this.coords.p_to_real);
+
+                    break;
+
+                case "both":
+                    if (this.options.from_fixed || this.options.to_fixed) {
+                        break;
+                    }
+
+                    handle_x = this.toFixed(handle_x + (this.coords.p_handle * 0.001));
+
+                    this.coords.p_from_real = this.convertToRealPercent(handle_x) - this.coords.p_gap_left;
+                    this.coords.p_from_real = this.calcWithStep(this.coords.p_from_real);
+                    this.coords.p_from_real = this.checkDiapason(this.coords.p_from_real, this.options.from_min, this.options.from_max);
+                    this.coords.p_from_real = this.checkMinInterval(this.coords.p_from_real, this.coords.p_to_real, "from");
+                    this.coords.p_from_fake = this.convertToFakePercent(this.coords.p_from_real);
+
+                    this.coords.p_to_real = this.convertToRealPercent(handle_x) + this.coords.p_gap_right;
+                    this.coords.p_to_real = this.calcWithStep(this.coords.p_to_real);
+                    this.coords.p_to_real = this.checkDiapason(this.coords.p_to_real, this.options.to_min, this.options.to_max);
+                    this.coords.p_to_real = this.checkMinInterval(this.coords.p_to_real, this.coords.p_from_real, "to");
+                    this.coords.p_to_fake = this.convertToFakePercent(this.coords.p_to_real);
+
+                    break;
+
+                case "both_one":
+                    if (this.options.from_fixed || this.options.to_fixed) {
+                        break;
+                    }
+
+                    var real_x = this.convertToRealPercent(handle_x),
+                        from = this.result.from_percent,
+                        to = this.result.to_percent,
+                        full = to - from,
+                        half = full / 2,
+                        new_from = real_x - half,
+                        new_to = real_x + half;
+
+                    if (new_from < 0) {
+                        new_from = 0;
+                        new_to = new_from + full;
+                    }
+
+                    if (new_to > 100) {
+                        new_to = 100;
+                        new_from = new_to - full;
+                    }
+
+                    this.coords.p_from_real = this.calcWithStep(new_from);
+                    this.coords.p_from_real = this.checkDiapason(this.coords.p_from_real, this.options.from_min, this.options.from_max);
+                    this.coords.p_from_fake = this.convertToFakePercent(this.coords.p_from_real);
+
+                    this.coords.p_to_real = this.calcWithStep(new_to);
+                    this.coords.p_to_real = this.checkDiapason(this.coords.p_to_real, this.options.to_min, this.options.to_max);
+                    this.coords.p_to_fake = this.convertToFakePercent(this.coords.p_to_real);
+
+                    break;
+            }
+
+            if (this.options.type === "single") {
+                this.coords.p_bar_x = (this.coords.p_handle / 2);
+                this.coords.p_bar_w = this.coords.p_single_fake;
+
+                this.result.from_percent = this.coords.p_single_real;
+                this.result.from = this.convertToValue(this.coords.p_single_real);
+                this.result.from_pretty = this._prettify(this.result.from);
+
+                if (this.options.values.length) {
+                    this.result.from_value = this.options.values[this.result.from];
+                }
+            } else {
+                this.coords.p_bar_x = this.toFixed(this.coords.p_from_fake + (this.coords.p_handle / 2));
+                this.coords.p_bar_w = this.toFixed(this.coords.p_to_fake - this.coords.p_from_fake);
+
+                this.result.from_percent = this.coords.p_from_real;
+                this.result.from = this.convertToValue(this.coords.p_from_real);
+                this.result.from_pretty = this._prettify(this.result.from);
+                this.result.to_percent = this.coords.p_to_real;
+                this.result.to = this.convertToValue(this.coords.p_to_real);
+                this.result.to_pretty = this._prettify(this.result.to);
+
+                if (this.options.values.length) {
+                    this.result.from_value = this.options.values[this.result.from];
+                    this.result.to_value = this.options.values[this.result.to];
+                }
+            }
+
+            this.calcMinMax();
+            this.calcLabels();
+        },
+
+
+        /**
+         * calculates pointer X in percent
+         */
+        calcPointerPercent: function () {
+            if (!this.coords.w_rs) {
+                this.coords.p_pointer = 0;
+                return;
+            }
+
+            if (this.coords.x_pointer < 0 || isNaN(this.coords.x_pointer)  ) {
+                this.coords.x_pointer = 0;
+            } else if (this.coords.x_pointer > this.coords.w_rs) {
+                this.coords.x_pointer = this.coords.w_rs;
+            }
+
+            this.coords.p_pointer = this.toFixed(this.coords.x_pointer / this.coords.w_rs * 100);
+        },
+
+        convertToRealPercent: function (fake) {
+            var full = 100 - this.coords.p_handle;
+            return fake / full * 100;
+        },
+
+        convertToFakePercent: function (real) {
+            var full = 100 - this.coords.p_handle;
+            return real / 100 * full;
+        },
+
+        getHandleX: function () {
+            var max = 100 - this.coords.p_handle,
+                x = this.toFixed(this.coords.p_pointer - this.coords.p_gap);
+
+            if (x < 0) {
+                x = 0;
+            } else if (x > max) {
+                x = max;
+            }
+
+            return x;
+        },
+
+        calcHandlePercent: function () {
+            if (this.options.type === "single") {
+                this.coords.w_handle = this.$cache.s_single.outerWidth(false);
+            } else {
+                this.coords.w_handle = this.$cache.s_from.outerWidth(false);
+            }
+
+            this.coords.p_handle = this.toFixed(this.coords.w_handle / this.coords.w_rs * 100);
+        },
+
+        /**
+         * Find closest handle to pointer click
+         *
+         * @param real_x {Number}
+         * @returns {String}
+         */
+        chooseHandle: function (real_x) {
+            if (this.options.type === "single") {
+                return "single";
+            } else {
+                var m_point = this.coords.p_from_real + ((this.coords.p_to_real - this.coords.p_from_real) / 2);
+                if (real_x >= m_point) {
+                    return this.options.to_fixed ? "from" : "to";
+                } else {
+                    return this.options.from_fixed ? "to" : "from";
+                }
+            }
+        },
+
+        /**
+         * Measure Min and Max labels width in percent
+         */
+        calcMinMax: function () {
+            if (!this.coords.w_rs) {
+                return;
+            }
+
+            this.labels.p_min = this.labels.w_min / this.coords.w_rs * 100;
+            this.labels.p_max = this.labels.w_max / this.coords.w_rs * 100;
+        },
+
+        /**
+         * Measure labels width and X in percent
+         */
+        calcLabels: function () {
+            if (!this.coords.w_rs || this.options.hide_from_to) {
+                return;
+            }
+
+            if (this.options.type === "single") {
+
+                this.labels.w_single = this.$cache.single.outerWidth(false);
+                this.labels.p_single_fake = this.labels.w_single / this.coords.w_rs * 100;
+                this.labels.p_single_left = this.coords.p_single_fake + (this.coords.p_handle / 2) - (this.labels.p_single_fake / 2);
+                this.labels.p_single_left = this.checkEdges(this.labels.p_single_left, this.labels.p_single_fake);
+
+            } else {
+
+                this.labels.w_from = this.$cache.from.outerWidth(false);
+                this.labels.p_from_fake = this.labels.w_from / this.coords.w_rs * 100;
+                this.labels.p_from_left = this.coords.p_from_fake + (this.coords.p_handle / 2) - (this.labels.p_from_fake / 2);
+                this.labels.p_from_left = this.toFixed(this.labels.p_from_left);
+                this.labels.p_from_left = this.checkEdges(this.labels.p_from_left, this.labels.p_from_fake);
+
+                this.labels.w_to = this.$cache.to.outerWidth(false);
+                this.labels.p_to_fake = this.labels.w_to / this.coords.w_rs * 100;
+                this.labels.p_to_left = this.coords.p_to_fake + (this.coords.p_handle / 2) - (this.labels.p_to_fake / 2);
+                this.labels.p_to_left = this.toFixed(this.labels.p_to_left);
+                this.labels.p_to_left = this.checkEdges(this.labels.p_to_left, this.labels.p_to_fake);
+
+                this.labels.w_single = this.$cache.single.outerWidth(false);
+                this.labels.p_single_fake = this.labels.w_single / this.coords.w_rs * 100;
+                this.labels.p_single_left = ((this.labels.p_from_left + this.labels.p_to_left + this.labels.p_to_fake) / 2) - (this.labels.p_single_fake / 2);
+                this.labels.p_single_left = this.toFixed(this.labels.p_single_left);
+                this.labels.p_single_left = this.checkEdges(this.labels.p_single_left, this.labels.p_single_fake);
+
+            }
+        },
+
+
+
+        // =============================================================================================================
+        // Drawings
+
+        /**
+         * Main function called in request animation frame
+         * to update everything
+         */
+        updateScene: function () {
+            if (this.raf_id) {
+                cancelAnimationFrame(this.raf_id);
+                this.raf_id = null;
+            }
+
+            clearTimeout(this.update_tm);
+            this.update_tm = null;
+
+            if (!this.options) {
+                return;
+            }
+
+            this.drawHandles();
+
+            if (this.is_active) {
+                this.raf_id = requestAnimationFrame(this.updateScene.bind(this));
+            } else {
+                this.update_tm = setTimeout(this.updateScene.bind(this), 300);
+            }
+        },
+
+        /**
+         * Draw handles
+         */
+        drawHandles: function () {
+            this.coords.w_rs = this.$cache.rs.outerWidth(false);
+
+            if (!this.coords.w_rs) {
+                return;
+            }
+
+            if (this.coords.w_rs !== this.coords.w_rs_old) {
+                this.target = "base";
+                this.is_resize = true;
+            }
+
+            if (this.coords.w_rs !== this.coords.w_rs_old || this.force_redraw) {
+                this.setMinMax();
+                this.calc(true);
+                this.drawLabels();
+                if (this.options.grid) {
+                    this.calcGridMargin();
+                    this.calcGridLabels();
+                }
+                this.force_redraw = true;
+                this.coords.w_rs_old = this.coords.w_rs;
+                this.drawShadow();
+            }
+
+            if (!this.coords.w_rs) {
+                return;
+            }
+
+            if (!this.dragging && !this.force_redraw && !this.is_key) {
+                return;
+            }
+
+            if (this.old_from !== this.result.from || this.old_to !== this.result.to || this.force_redraw || this.is_key) {
+
+                this.drawLabels();
+
+                this.$cache.bar[0].style.left = this.coords.p_bar_x + "%";
+                this.$cache.bar[0].style.width = this.coords.p_bar_w + "%";
+
+                if (this.options.type === "single") {
+                    this.$cache.bar[0].style.left = 0;
+                    this.$cache.bar[0].style.width = this.coords.p_bar_w + this.coords.p_bar_x + "%";
+
+                    this.$cache.s_single[0].style.left = this.coords.p_single_fake + "%";
+
+                    this.$cache.single[0].style.left = this.labels.p_single_left + "%";
+                } else {
+                    this.$cache.s_from[0].style.left = this.coords.p_from_fake + "%";
+                    this.$cache.s_to[0].style.left = this.coords.p_to_fake + "%";
+
+                    if (this.old_from !== this.result.from || this.force_redraw) {
+                        this.$cache.from[0].style.left = this.labels.p_from_left + "%";
+                    }
+                    if (this.old_to !== this.result.to || this.force_redraw) {
+                        this.$cache.to[0].style.left = this.labels.p_to_left + "%";
+                    }
+
+                    this.$cache.single[0].style.left = this.labels.p_single_left + "%";
+                }
+
+                this.writeToInput();
+
+                if ((this.old_from !== this.result.from || this.old_to !== this.result.to) && !this.is_start) {
+                    this.$cache.input.trigger("change");
+                    this.$cache.input.trigger("input");
+                }
+
+                this.old_from = this.result.from;
+                this.old_to = this.result.to;
+
+                // callbacks call
+                if (!this.is_resize && !this.is_update && !this.is_start && !this.is_finish) {
+                    this.callOnChange();
+                }
+                if (this.is_key || this.is_click) {
+                    this.is_key = false;
+                    this.is_click = false;
+                    this.callOnFinish();
+                }
+
+                this.is_update = false;
+                this.is_resize = false;
+                this.is_finish = false;
+            }
+
+            this.is_start = false;
+            this.is_key = false;
+            this.is_click = false;
+            this.force_redraw = false;
+        },
+
+        /**
+         * Draw labels
+         * measure labels collisions
+         * collapse close labels
+         */
+        drawLabels: function () {
+            if (!this.options) {
+                return;
+            }
+
+            var values_num = this.options.values.length;
+            var p_values = this.options.p_values;
+            var text_single;
+            var text_from;
+            var text_to;
+            var from_pretty;
+            var to_pretty;
+
+            if (this.options.hide_from_to) {
+                return;
+            }
+
+            if (this.options.type === "single") {
+
+                if (values_num) {
+                    text_single = this.decorate(p_values[this.result.from]);
+                    this.$cache.single.html(text_single);
+                } else {
+                    from_pretty = this._prettify(this.result.from);
+
+                    text_single = this.decorate(from_pretty, this.result.from);
+                    this.$cache.single.html(text_single);
+                }
+
+                this.calcLabels();
+
+                if (this.labels.p_single_left < this.labels.p_min + 1) {
+                    this.$cache.min[0].style.visibility = "hidden";
+                } else {
+                    this.$cache.min[0].style.visibility = "visible";
+                }
+
+                if (this.labels.p_single_left + this.labels.p_single_fake > 100 - this.labels.p_max - 1) {
+                    this.$cache.max[0].style.visibility = "hidden";
+                } else {
+                    this.$cache.max[0].style.visibility = "visible";
+                }
+
+            } else {
+
+                if (values_num) {
+
+                    if (this.options.decorate_both) {
+                        text_single = this.decorate(p_values[this.result.from]);
+                        text_single += this.options.values_separator;
+                        text_single += this.decorate(p_values[this.result.to]);
+                    } else {
+                        text_single = this.decorate(p_values[this.result.from] + this.options.values_separator + p_values[this.result.to]);
+                    }
+                    text_from = this.decorate(p_values[this.result.from]);
+                    text_to = this.decorate(p_values[this.result.to]);
+
+                    this.$cache.single.html(text_single);
+                    this.$cache.from.html(text_from);
+                    this.$cache.to.html(text_to);
+
+                } else {
+                    from_pretty = this._prettify(this.result.from);
+                    to_pretty = this._prettify(this.result.to);
+
+                    if (this.options.decorate_both) {
+                        text_single = this.decorate(from_pretty, this.result.from);
+                        text_single += this.options.values_separator;
+                        text_single += this.decorate(to_pretty, this.result.to);
+                    } else {
+                        text_single = this.decorate(from_pretty + this.options.values_separator + to_pretty, this.result.to);
+                    }
+                    text_from = this.decorate(from_pretty, this.result.from);
+                    text_to = this.decorate(to_pretty, this.result.to);
+
+                    this.$cache.single.html(text_single);
+                    this.$cache.from.html(text_from);
+                    this.$cache.to.html(text_to);
+
+                }
+
+                this.calcLabels();
+
+                var min = Math.min(this.labels.p_single_left, this.labels.p_from_left),
+                    single_left = this.labels.p_single_left + this.labels.p_single_fake,
+                    to_left = this.labels.p_to_left + this.labels.p_to_fake,
+                    max = Math.max(single_left, to_left);
+
+                if (this.labels.p_from_left + this.labels.p_from_fake >= this.labels.p_to_left) {
+                    this.$cache.from[0].style.visibility = "hidden";
+                    this.$cache.to[0].style.visibility = "hidden";
+                    this.$cache.single[0].style.visibility = "visible";
+
+                    if (this.result.from === this.result.to) {
+                        if (this.target === "from") {
+                            this.$cache.from[0].style.visibility = "visible";
+                        } else if (this.target === "to") {
+                            this.$cache.to[0].style.visibility = "visible";
+                        } else if (!this.target) {
+                            this.$cache.from[0].style.visibility = "visible";
+                        }
+                        this.$cache.single[0].style.visibility = "hidden";
+                        max = to_left;
+                    } else {
+                        this.$cache.from[0].style.visibility = "hidden";
+                        this.$cache.to[0].style.visibility = "hidden";
+                        this.$cache.single[0].style.visibility = "visible";
+                        max = Math.max(single_left, to_left);
+                    }
+                } else {
+                    this.$cache.from[0].style.visibility = "visible";
+                    this.$cache.to[0].style.visibility = "visible";
+                    this.$cache.single[0].style.visibility = "hidden";
+                }
+
+                if (min < this.labels.p_min + 1) {
+                    this.$cache.min[0].style.visibility = "hidden";
+                } else {
+                    this.$cache.min[0].style.visibility = "visible";
+                }
+
+                if (max > 100 - this.labels.p_max - 1) {
+                    this.$cache.max[0].style.visibility = "hidden";
+                } else {
+                    this.$cache.max[0].style.visibility = "visible";
+                }
+
+            }
+        },
+
+        /**
+         * Draw shadow intervals
+         */
+        drawShadow: function () {
+            var o = this.options,
+                c = this.$cache,
+
+                is_from_min = typeof o.from_min === "number" && !isNaN(o.from_min),
+                is_from_max = typeof o.from_max === "number" && !isNaN(o.from_max),
+                is_to_min = typeof o.to_min === "number" && !isNaN(o.to_min),
+                is_to_max = typeof o.to_max === "number" && !isNaN(o.to_max),
+
+                from_min,
+                from_max,
+                to_min,
+                to_max;
+
+            if (o.type === "single") {
+                if (o.from_shadow && (is_from_min || is_from_max)) {
+                    from_min = this.convertToPercent(is_from_min ? o.from_min : o.min);
+                    from_max = this.convertToPercent(is_from_max ? o.from_max : o.max) - from_min;
+                    from_min = this.toFixed(from_min - (this.coords.p_handle / 100 * from_min));
+                    from_max = this.toFixed(from_max - (this.coords.p_handle / 100 * from_max));
+                    from_min = from_min + (this.coords.p_handle / 2);
+
+                    c.shad_single[0].style.display = "block";
+                    c.shad_single[0].style.left = from_min + "%";
+                    c.shad_single[0].style.width = from_max + "%";
+                } else {
+                    c.shad_single[0].style.display = "none";
+                }
+            } else {
+                if (o.from_shadow && (is_from_min || is_from_max)) {
+                    from_min = this.convertToPercent(is_from_min ? o.from_min : o.min);
+                    from_max = this.convertToPercent(is_from_max ? o.from_max : o.max) - from_min;
+                    from_min = this.toFixed(from_min - (this.coords.p_handle / 100 * from_min));
+                    from_max = this.toFixed(from_max - (this.coords.p_handle / 100 * from_max));
+                    from_min = from_min + (this.coords.p_handle / 2);
+
+                    c.shad_from[0].style.display = "block";
+                    c.shad_from[0].style.left = from_min + "%";
+                    c.shad_from[0].style.width = from_max + "%";
+                } else {
+                    c.shad_from[0].style.display = "none";
+                }
+
+                if (o.to_shadow && (is_to_min || is_to_max)) {
+                    to_min = this.convertToPercent(is_to_min ? o.to_min : o.min);
+                    to_max = this.convertToPercent(is_to_max ? o.to_max : o.max) - to_min;
+                    to_min = this.toFixed(to_min - (this.coords.p_handle / 100 * to_min));
+                    to_max = this.toFixed(to_max - (this.coords.p_handle / 100 * to_max));
+                    to_min = to_min + (this.coords.p_handle / 2);
+
+                    c.shad_to[0].style.display = "block";
+                    c.shad_to[0].style.left = to_min + "%";
+                    c.shad_to[0].style.width = to_max + "%";
+                } else {
+                    c.shad_to[0].style.display = "none";
+                }
+            }
+        },
+
+
+
+        /**
+         * Write values to input element
+         */
+        writeToInput: function () {
+            if (this.options.type === "single") {
+                if (this.options.values.length) {
+                    this.$cache.input.prop("value", this.result.from_value);
+                } else {
+                    this.$cache.input.prop("value", this.result.from);
+                }
+                this.$cache.input.data("from", this.result.from);
+            } else {
+                if (this.options.values.length) {
+                    this.$cache.input.prop("value", this.result.from_value + this.options.input_values_separator + this.result.to_value);
+                } else {
+                    this.$cache.input.prop("value", this.result.from + this.options.input_values_separator + this.result.to);
+                }
+                this.$cache.input.data("from", this.result.from);
+                this.$cache.input.data("to", this.result.to);
+            }
+        },
+
+
+
+        // =============================================================================================================
+        // Callbacks
+
+        callOnStart: function () {
+            this.writeToInput();
+
+            if (this.options.onStart && typeof this.options.onStart === "function") {
+                if (this.options.scope) {
+                    this.options.onStart.call(this.options.scope, this.result);
+                } else {
+                    this.options.onStart(this.result);
+                }
+            }
+        },
+        callOnChange: function () {
+            this.writeToInput();
+
+            if (this.options.onChange && typeof this.options.onChange === "function") {
+                if (this.options.scope) {
+                    this.options.onChange.call(this.options.scope, this.result);
+                } else {
+                    this.options.onChange(this.result);
+                }
+            }
+        },
+        callOnFinish: function () {
+            this.writeToInput();
+
+            if (this.options.onFinish && typeof this.options.onFinish === "function") {
+                if (this.options.scope) {
+                    this.options.onFinish.call(this.options.scope, this.result);
+                } else {
+                    this.options.onFinish(this.result);
+                }
+            }
+        },
+        callOnUpdate: function () {
+            this.writeToInput();
+
+            if (this.options.onUpdate && typeof this.options.onUpdate === "function") {
+                if (this.options.scope) {
+                    this.options.onUpdate.call(this.options.scope, this.result);
+                } else {
+                    this.options.onUpdate(this.result);
+                }
+            }
+        },
+
+
+
+
+        // =============================================================================================================
+        // Service methods
+
+        toggleInput: function () {
+            this.$cache.input.toggleClass("irs-hidden-input");
+
+            if (this.has_tab_index) {
+                this.$cache.input.prop("tabindex", -1);
+            } else {
+                this.$cache.input.removeProp("tabindex");
+            }
+
+            this.has_tab_index = !this.has_tab_index;
+        },
+
+        /**
+         * Convert real value to percent
+         *
+         * @param value {Number} X in real
+         * @param no_min {boolean=} don't use min value
+         * @returns {Number} X in percent
+         */
+        convertToPercent: function (value, no_min) {
+            var diapason = this.options.max - this.options.min,
+                one_percent = diapason / 100,
+                val, percent;
+
+            if (!diapason) {
+                this.no_diapason = true;
+                return 0;
+            }
+
+            if (no_min) {
+                val = value;
+            } else {
+                val = value - this.options.min;
+            }
+
+            percent = val / one_percent;
+
+            return this.toFixed(percent);
+        },
+
+        /**
+         * Convert percent to real values
+         *
+         * @param percent {Number} X in percent
+         * @returns {Number} X in real
+         */
+        convertToValue: function (percent) {
+            var min = this.options.min,
+                max = this.options.max,
+                min_decimals = min.toString().split(".")[1],
+                max_decimals = max.toString().split(".")[1],
+                min_length, max_length,
+                avg_decimals = 0,
+                abs = 0;
+
+            if (percent === 0) {
+                return this.options.min;
+            }
+            if (percent === 100) {
+                return this.options.max;
+            }
+
+
+            if (min_decimals) {
+                min_length = min_decimals.length;
+                avg_decimals = min_length;
+            }
+            if (max_decimals) {
+                max_length = max_decimals.length;
+                avg_decimals = max_length;
+            }
+            if (min_length && max_length) {
+                avg_decimals = (min_length >= max_length) ? min_length : max_length;
+            }
+
+            if (min < 0) {
+                abs = Math.abs(min);
+                min = +(min + abs).toFixed(avg_decimals);
+                max = +(max + abs).toFixed(avg_decimals);
+            }
+
+            var number = ((max - min) / 100 * percent) + min,
+                string = this.options.step.toString().split(".")[1],
+                result;
+
+            if (string) {
+                number = +number.toFixed(string.length);
+            } else {
+                number = number / this.options.step;
+                number = number * this.options.step;
+
+                number = +number.toFixed(0);
+            }
+
+            if (abs) {
+                number -= abs;
+            }
+
+            if (string) {
+                result = +number.toFixed(string.length);
+            } else {
+                result = this.toFixed(number);
+            }
+
+            if (result < this.options.min) {
+                result = this.options.min;
+            } else if (result > this.options.max) {
+                result = this.options.max;
+            }
+
+            return result;
+        },
+
+        /**
+         * Round percent value with step
+         *
+         * @param percent {Number}
+         * @returns percent {Number} rounded
+         */
+        calcWithStep: function (percent) {
+            var rounded = Math.round(percent / this.coords.p_step) * this.coords.p_step;
+
+            if (rounded > 100) {
+                rounded = 100;
+            }
+            if (percent === 100) {
+                rounded = 100;
+            }
+
+            return this.toFixed(rounded);
+        },
+
+        checkMinInterval: function (p_current, p_next, type) {
+            var o = this.options,
+                current,
+                next;
+
+            if (!o.min_interval) {
+                return p_current;
+            }
+
+            current = this.convertToValue(p_current);
+            next = this.convertToValue(p_next);
+
+            if (type === "from") {
+
+                if (next - current < o.min_interval) {
+                    current = next - o.min_interval;
+                }
+
+            } else {
+
+                if (current - next < o.min_interval) {
+                    current = next + o.min_interval;
+                }
+
+            }
+
+            return this.convertToPercent(current);
+        },
+
+        checkMaxInterval: function (p_current, p_next, type) {
+            var o = this.options,
+                current,
+                next;
+
+            if (!o.max_interval) {
+                return p_current;
+            }
+
+            current = this.convertToValue(p_current);
+            next = this.convertToValue(p_next);
+
+            if (type === "from") {
+
+                if (next - current > o.max_interval) {
+                    current = next - o.max_interval;
+                }
+
+            } else {
+
+                if (current - next > o.max_interval) {
+                    current = next + o.max_interval;
+                }
+
+            }
+
+            return this.convertToPercent(current);
+        },
+
+        checkDiapason: function (p_num, min, max) {
+            var num = this.convertToValue(p_num),
+                o = this.options;
+
+            if (typeof min !== "number") {
+                min = o.min;
+            }
+
+            if (typeof max !== "number") {
+                max = o.max;
+            }
+
+            if (num < min) {
+                num = min;
+            }
+
+            if (num > max) {
+                num = max;
+            }
+
+            return this.convertToPercent(num);
+        },
+
+        toFixed: function (num) {
+            num = num.toFixed(20);
+            return +num;
+        },
+
+        _prettify: function (num) {
+            if (!this.options.prettify_enabled) {
+                return num;
+            }
+
+            if (this.options.prettify && typeof this.options.prettify === "function") {
+                return this.options.prettify(num);
+            } else {
+                return this.prettify(num);
+            }
+        },
+
+        prettify: function (num) {
+            var n = num.toString();
+            return n.replace(/(\d{1,3}(?=(?:\d\d\d)+(?!\d)))/g, "$1" + this.options.prettify_separator);
+        },
+
+        checkEdges: function (left, width) {
+            if (!this.options.force_edges) {
+                return this.toFixed(left);
+            }
+
+            if (left < 0) {
+                left = 0;
+            } else if (left > 100 - width) {
+                left = 100 - width;
+            }
+
+            return this.toFixed(left);
+        },
+
+        validate: function () {
+            var o = this.options,
+                r = this.result,
+                v = o.values,
+                vl = v.length,
+                value,
+                i;
+
+            if (typeof o.min === "string") o.min = +o.min;
+            if (typeof o.max === "string") o.max = +o.max;
+            if (typeof o.from === "string") o.from = +o.from;
+            if (typeof o.to === "string") o.to = +o.to;
+            if (typeof o.step === "string") o.step = +o.step;
+
+            if (typeof o.from_min === "string") o.from_min = +o.from_min;
+            if (typeof o.from_max === "string") o.from_max = +o.from_max;
+            if (typeof o.to_min === "string") o.to_min = +o.to_min;
+            if (typeof o.to_max === "string") o.to_max = +o.to_max;
+
+            if (typeof o.grid_num === "string") o.grid_num = +o.grid_num;
+
+            if (o.max < o.min) {
+                o.max = o.min;
+            }
+
+            if (vl) {
+                o.p_values = [];
+                o.min = 0;
+                o.max = vl - 1;
+                o.step = 1;
+                o.grid_num = o.max;
+                o.grid_snap = true;
+
+                for (i = 0; i < vl; i++) {
+                    value = +v[i];
+
+                    if (!isNaN(value)) {
+                        v[i] = value;
+                        value = this._prettify(value);
+                    } else {
+                        value = v[i];
+                    }
+
+                    o.p_values.push(value);
+                }
+            }
+
+            if (typeof o.from !== "number" || isNaN(o.from)) {
+                o.from = o.min;
+            }
+
+            if (typeof o.to !== "number" || isNaN(o.to)) {
+                o.to = o.max;
+            }
+
+            if (o.type === "single") {
+
+                if (o.from < o.min) o.from = o.min;
+                if (o.from > o.max) o.from = o.max;
+
+            } else {
+
+                if (o.from < o.min) o.from = o.min;
+                if (o.from > o.max) o.from = o.max;
+
+                if (o.to < o.min) o.to = o.min;
+                if (o.to > o.max) o.to = o.max;
+
+                if (this.update_check.from) {
+
+                    if (this.update_check.from !== o.from) {
+                        if (o.from > o.to) o.from = o.to;
+                    }
+                    if (this.update_check.to !== o.to) {
+                        if (o.to < o.from) o.to = o.from;
+                    }
+
+                }
+
+                if (o.from > o.to) o.from = o.to;
+                if (o.to < o.from) o.to = o.from;
+
+            }
+
+            if (typeof o.step !== "number" || isNaN(o.step) || !o.step || o.step < 0) {
+                o.step = 1;
+            }
+
+            if (typeof o.from_min === "number" && o.from < o.from_min) {
+                o.from = o.from_min;
+            }
+
+            if (typeof o.from_max === "number" && o.from > o.from_max) {
+                o.from = o.from_max;
+            }
+
+            if (typeof o.to_min === "number" && o.to < o.to_min) {
+                o.to = o.to_min;
+            }
+
+            if (typeof o.to_max === "number" && o.from > o.to_max) {
+                o.to = o.to_max;
+            }
+
+            if (r) {
+                if (r.min !== o.min) {
+                    r.min = o.min;
+                }
+
+                if (r.max !== o.max) {
+                    r.max = o.max;
+                }
+
+                if (r.from < r.min || r.from > r.max) {
+                    r.from = o.from;
+                }
+
+                if (r.to < r.min || r.to > r.max) {
+                    r.to = o.to;
+                }
+            }
+
+            if (typeof o.min_interval !== "number" || isNaN(o.min_interval) || !o.min_interval || o.min_interval < 0) {
+                o.min_interval = 0;
+            }
+
+            if (typeof o.max_interval !== "number" || isNaN(o.max_interval) || !o.max_interval || o.max_interval < 0) {
+                o.max_interval = 0;
+            }
+
+            if (o.min_interval && o.min_interval > o.max - o.min) {
+                o.min_interval = o.max - o.min;
+            }
+
+            if (o.max_interval && o.max_interval > o.max - o.min) {
+                o.max_interval = o.max - o.min;
+            }
+        },
+
+        decorate: function (num, original) {
+            var decorated = "",
+                o = this.options;
+
+            if (o.prefix) {
+                decorated += o.prefix;
+            }
+
+            decorated += num;
+
+            if (o.max_postfix) {
+                if (o.values.length && num === o.p_values[o.max]) {
+                    decorated += o.max_postfix;
+                    if (o.postfix) {
+                        decorated += " ";
+                    }
+                } else if (original === o.max) {
+                    decorated += o.max_postfix;
+                    if (o.postfix) {
+                        decorated += " ";
+                    }
+                }
+            }
+
+            if (o.postfix) {
+                decorated += o.postfix;
+            }
+
+            return decorated;
+        },
+
+        updateFrom: function () {
+            this.result.from = this.options.from;
+            this.result.from_percent = this.convertToPercent(this.result.from);
+            this.result.from_pretty = this._prettify(this.result.from);
+            if (this.options.values) {
+                this.result.from_value = this.options.values[this.result.from];
+            }
+        },
+
+        updateTo: function () {
+            this.result.to = this.options.to;
+            this.result.to_percent = this.convertToPercent(this.result.to);
+            this.result.to_pretty = this._prettify(this.result.to);
+            if (this.options.values) {
+                this.result.to_value = this.options.values[this.result.to];
+            }
+        },
+
+        updateResult: function () {
+            this.result.min = this.options.min;
+            this.result.max = this.options.max;
+            this.updateFrom();
+            this.updateTo();
+        },
+
+
+        // =============================================================================================================
+        // Grid
+
+        appendGrid: function () {
+            if (!this.options.grid) {
+                return;
+            }
+
+            var o = this.options,
+                i, z,
+
+                total = o.max - o.min,
+                big_num = o.grid_num,
+                big_p = 0,
+                big_w = 0,
+
+                small_max = 4,
+                local_small_max,
+                small_p,
+                small_w = 0,
+
+                result,
+                html = '';
+
+
+
+            this.calcGridMargin();
+
+            if (o.grid_snap) {
+                big_num = total / o.step;
+            }
+
+            if (big_num > 50) big_num = 50;
+            big_p = this.toFixed(100 / big_num);
+
+            if (big_num > 4) {
+                small_max = 3;
+            }
+            if (big_num > 7) {
+                small_max = 2;
+            }
+            if (big_num > 14) {
+                small_max = 1;
+            }
+            if (big_num > 28) {
+                small_max = 0;
+            }
+
+            for (i = 0; i < big_num + 1; i++) {
+                local_small_max = small_max;
+
+                big_w = this.toFixed(big_p * i);
+
+                if (big_w > 100) {
+                    big_w = 100;
+                }
+                this.coords.big[i] = big_w;
+
+                small_p = (big_w - (big_p * (i - 1))) / (local_small_max + 1);
+
+                for (z = 1; z <= local_small_max; z++) {
+                    if (big_w === 0) {
+                        break;
+                    }
+
+                    small_w = this.toFixed(big_w - (small_p * z));
+
+                    html += '<span class="irs-grid-pol small" style="left: ' + small_w + '%"></span>';
+                }
+
+                html += '<span class="irs-grid-pol" style="left: ' + big_w + '%"></span>';
+
+                result = this.convertToValue(big_w);
+                if (o.values.length) {
+                    result = o.p_values[result];
+                } else {
+                    result = this._prettify(result);
+                }
+
+                html += '<span class="irs-grid-text js-grid-text-' + i + '" style="left: ' + big_w + '%">' + result + '</span>';
+            }
+            this.coords.big_num = Math.ceil(big_num + 1);
+
+
+
+            this.$cache.cont.addClass("irs-with-grid");
+            this.$cache.grid.html(html);
+            this.cacheGridLabels();
+        },
+
+        cacheGridLabels: function () {
+            var $label, i,
+                num = this.coords.big_num;
+
+            for (i = 0; i < num; i++) {
+                $label = this.$cache.grid.find(".js-grid-text-" + i);
+                this.$cache.grid_labels.push($label);
+            }
+
+            this.calcGridLabels();
+        },
+
+        calcGridLabels: function () {
+            var i, label, start = [], finish = [],
+                num = this.coords.big_num;
+
+            for (i = 0; i < num; i++) {
+                this.coords.big_w[i] = this.$cache.grid_labels[i].outerWidth(false);
+                this.coords.big_p[i] = this.toFixed(this.coords.big_w[i] / this.coords.w_rs * 100);
+                this.coords.big_x[i] = this.toFixed(this.coords.big_p[i] / 2);
+
+                start[i] = this.toFixed(this.coords.big[i] - this.coords.big_x[i]);
+                finish[i] = this.toFixed(start[i] + this.coords.big_p[i]);
+            }
+
+            if (this.options.force_edges) {
+                if (start[0] < -this.coords.grid_gap) {
+                    start[0] = -this.coords.grid_gap;
+                    finish[0] = this.toFixed(start[0] + this.coords.big_p[0]);
+
+                    this.coords.big_x[0] = this.coords.grid_gap;
+                }
+
+                if (finish[num - 1] > 100 + this.coords.grid_gap) {
+                    finish[num - 1] = 100 + this.coords.grid_gap;
+                    start[num - 1] = this.toFixed(finish[num - 1] - this.coords.big_p[num - 1]);
+
+                    this.coords.big_x[num - 1] = this.toFixed(this.coords.big_p[num - 1] - this.coords.grid_gap);
+                }
+            }
+
+            this.calcGridCollision(2, start, finish);
+            this.calcGridCollision(4, start, finish);
+
+            for (i = 0; i < num; i++) {
+                label = this.$cache.grid_labels[i][0];
+
+                if (this.coords.big_x[i] !== Number.POSITIVE_INFINITY) {
+                    label.style.marginLeft = -this.coords.big_x[i] + "%";
+                }
+            }
+        },
+
+        // Collisions Calc Beta
+        // TODO: Refactor then have plenty of time
+        calcGridCollision: function (step, start, finish) {
+            var i, next_i, label,
+                num = this.coords.big_num;
+
+            for (i = 0; i < num; i += step) {
+                next_i = i + (step / 2);
+                if (next_i >= num) {
+                    break;
+                }
+
+                label = this.$cache.grid_labels[next_i][0];
+
+                if (finish[i] <= start[next_i]) {
+                    label.style.visibility = "visible";
+                } else {
+                    label.style.visibility = "hidden";
+                }
+            }
+        },
+
+        calcGridMargin: function () {
+            if (!this.options.grid_margin) {
+                return;
+            }
+
+            this.coords.w_rs = this.$cache.rs.outerWidth(false);
+            if (!this.coords.w_rs) {
+                return;
+            }
+
+            if (this.options.type === "single") {
+                this.coords.w_handle = this.$cache.s_single.outerWidth(false);
+            } else {
+                this.coords.w_handle = this.$cache.s_from.outerWidth(false);
+            }
+            this.coords.p_handle = this.toFixed(this.coords.w_handle  / this.coords.w_rs * 100);
+            this.coords.grid_gap = this.toFixed((this.coords.p_handle / 2) - 0.1);
+
+            this.$cache.grid[0].style.width = this.toFixed(100 - this.coords.p_handle) + "%";
+            this.$cache.grid[0].style.left = this.coords.grid_gap + "%";
+        },
+
+
+
+        // =============================================================================================================
+        // Public methods
+
+        update: function (options) {
+            if (!this.input) {
+                return;
+            }
+
+            this.is_update = true;
+
+            this.options.from = this.result.from;
+            this.options.to = this.result.to;
+            this.update_check.from = this.result.from;
+            this.update_check.to = this.result.to;
+
+            this.options = $.extend(this.options, options);
+            this.validate();
+            this.updateResult(options);
+
+            this.toggleInput();
+            this.remove();
+            this.init(true);
+        },
+
+        reset: function () {
+            if (!this.input) {
+                return;
+            }
+
+            this.updateResult();
+            this.update();
+        },
+
+        destroy: function () {
+            if (!this.input) {
+                return;
+            }
+
+            this.toggleInput();
+            this.$cache.input.prop("readonly", false);
+            $.data(this.input, "ionRangeSlider", null);
+
+            this.remove();
+            this.input = null;
+            this.options = null;
+        }
+    };
+
+    $.fn.ionRangeSlider = function (options) {
+        return this.each(function() {
+            if (!$.data(this, "ionRangeSlider")) {
+                $.data(this, "ionRangeSlider", new IonRangeSlider(this, options, plugin_count++));
+            }
+        });
+    };
+
+
+
+    // =================================================================================================================
+    // http://paulirish.com/2011/requestanimationframe-for-smart-animating/
+    // http://my.opera.com/emoller/blog/2011/12/20/requestanimationframe-for-smart-er-animating
+
+    // requestAnimationFrame polyfill by Erik Möller. fixes from Paul Irish and Tino Zijdel
+
+    // MIT license
+
+    (function() {
+        var lastTime = 0;
+        var vendors = ['ms', 'moz', 'webkit', 'o'];
+        for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+            window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
+            window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame']
+                || window[vendors[x]+'CancelRequestAnimationFrame'];
+        }
+
+        if (!window.requestAnimationFrame)
+            window.requestAnimationFrame = function(callback, element) {
+                var currTime = new Date().getTime();
+                var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+                var id = window.setTimeout(function() { callback(currTime + timeToCall); },
+                    timeToCall);
+                lastTime = currTime + timeToCall;
+                return id;
+            };
+
+        if (!window.cancelAnimationFrame)
+            window.cancelAnimationFrame = function(id) {
+                clearTimeout(id);
+            };
+    }());
+
+}));
+
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports) {
+
+/* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {/* globals __webpack_amd_options__ */
+module.exports = __webpack_amd_options__;
+
+/* WEBPACK VAR INJECTION */}.call(exports, {}))
+
+/***/ }),
+/* 21 */
 /***/ (function(module, exports) {
 
 $(document).on('click', '.js-show', function (event) {
@@ -26783,19 +29294,19 @@ $('.js-close').on('click', function (event) {
 });
 
 /***/ }),
-/* 20 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(21)
+  __webpack_require__(23)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(24)
+var __vue_script__ = __webpack_require__(26)
 /* template */
-var __vue_template__ = __webpack_require__(25)
+var __vue_template__ = __webpack_require__(27)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -26834,13 +29345,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 21 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(22);
+var content = __webpack_require__(24);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -26860,7 +29371,7 @@ if(false) {
 }
 
 /***/ }),
-/* 22 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(false);
@@ -26874,7 +29385,7 @@ exports.push([module.i, "\n.slide-leave-active,\n.slide-enter-active {\n-webkit-
 
 
 /***/ }),
-/* 23 */
+/* 25 */
 /***/ (function(module, exports) {
 
 /**
@@ -26907,7 +29418,7 @@ module.exports = function listToStyles (parentId, list) {
 
 
 /***/ }),
-/* 24 */
+/* 26 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -27079,9 +29590,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return {
             currentType: 'odnostvorchatoe-okno',
             areaMode: '',
-            install: 0,
-            arrWidth: [],
-            arrHeight: [],
+            install: false,
+            installBasePrice: 500,
+            shipping: false,
+            width: 1000,
+            height: 1000,
             multiplier: 3000,
             pixelWidth: 0,
             publicPath: '/storage/'
@@ -27092,22 +29605,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         this.pixelWidth = $(this.$refs.calculator__img).width();
     },
     computed: {
-        width: function width() {
-            return this.arrWidth.length ? this.arrWidth.reduce(function (total, current) {
-                return total + current;
-            }) : 0;
-        },
-        height: function height() {
-            return this.arrHeight.length ? this.arrHeight.reduce(function (total, current) {
-                return total + current;
-            }) : 0;
-        },
-
         area: function area() {
             return this.width * this.height / 1000000;
         },
         installPrice: function installPrice() {
-            return this.install * this.area;
+            return this.install ? this.installBasePrice * this.area : 0;
         },
         summ: function summ() {
             return parseInt(this.area * this.multiplier + this.installPrice);
@@ -27129,256 +29631,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 25 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "calculator__inner" }, [
-      _c("div", { staticClass: "calculator__types" }, [
-        _c("label", { staticClass: "calculator__type active" }, [
-          _c("input", {
-            staticClass: "calculator__type-input",
-            attrs: { type: "radio", name: "type" }
-          }),
-          _vm._v(" "),
-          _c("img", {
-            staticClass: "calculator__type-image",
-            attrs: {
-              width: "31",
-              height: "24",
-              src: "/img/windows/calculator/windows/win-calc_01.svg",
-              alt: ""
-            }
-          }),
-          _vm._v(" "),
-          _c("p", { staticClass: "calculator__type-name" }, [
-            _vm._v("Трёхстворчатое "),
-            _c("br"),
-            _vm._v(" окно")
-          ])
-        ]),
-        _vm._v(" "),
-        _c("label", { staticClass: "calculator__type" }, [
-          _c("input", {
-            staticClass: "calculator__type-input",
-            attrs: { type: "radio", name: "type" }
-          }),
-          _vm._v(" "),
-          _c("img", {
-            staticClass: "calculator__type-image",
-            attrs: {
-              width: "21",
-              height: "24",
-              src: "/img/windows/calculator/windows/win-calc_02.svg",
-              alt: ""
-            }
-          }),
-          _vm._v(" "),
-          _c("p", { staticClass: "calculator__type-name" }, [
-            _vm._v("Двустворчатое "),
-            _c("br"),
-            _vm._v(" окно")
-          ])
-        ]),
-        _vm._v(" "),
-        _c("label", { staticClass: "calculator__type" }, [
-          _c("input", {
-            staticClass: "calculator__type-input",
-            attrs: { type: "radio", name: "type" }
-          }),
-          _vm._v(" "),
-          _c("img", {
-            staticClass: "calculator__type-image",
-            attrs: {
-              width: "11",
-              height: "24",
-              src: "/img/windows/calculator/windows/win-calc_03.svg",
-              alt: ""
-            }
-          }),
-          _vm._v(" "),
-          _c("p", { staticClass: "calculator__type-name" }, [
-            _vm._v("Одностворчатое "),
-            _c("br"),
-            _vm._v(" окно")
-          ])
-        ]),
-        _vm._v(" "),
-        _c("label", { staticClass: "calculator__type" }, [
-          _c("input", {
-            staticClass: "calculator__type-input",
-            attrs: { type: "radio", name: "type" }
-          }),
-          _vm._v(" "),
-          _c("img", {
-            staticClass: "calculator__type-image",
-            attrs: {
-              width: "32",
-              height: "32",
-              src: "/img/windows/calculator/windows/win-calc_04.svg",
-              alt: ""
-            }
-          }),
-          _vm._v(" "),
-          _c("p", { staticClass: "calculator__type-name" }, [
-            _vm._v("Балконный блок "),
-            _c("br"),
-            _vm._v(" двустворчатый")
-          ])
-        ]),
-        _vm._v(" "),
-        _c("label", { staticClass: "calculator__type" }, [
-          _c("input", {
-            staticClass: "calculator__type-input",
-            attrs: { type: "radio", name: "type" }
-          }),
-          _vm._v(" "),
-          _c("img", {
-            staticClass: "calculator__type-image",
-            attrs: {
-              width: "22",
-              height: "32",
-              src: "/img/windows/calculator/windows/win-calc_05.svg",
-              alt: ""
-            }
-          }),
-          _vm._v(" "),
-          _c("p", { staticClass: "calculator__type-name" }, [
-            _vm._v("Балконный блок "),
-            _c("br"),
-            _vm._v(" одностворчатый")
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "calculator__content" }, [
-        _c(
-          "div",
-          { staticClass: "calculator__main calculator__main_tricuspid active" },
-          [
-            _c("img", {
-              staticClass: "calculator__image",
-              attrs: {
-                src: "/img/windows/calculator/windows/win-calc-big_01.png",
-                alt: ""
-              }
-            }),
-            _vm._v(" "),
-            _c("img", {
-              staticClass: "calculator__window-left",
-              attrs: {
-                src: "/img/windows/calculator/windows/win-calc-big_011.png",
-                alt: ""
-              }
-            }),
-            _vm._v(" "),
-            _c("img", {
-              staticClass: "calculator__window-right",
-              attrs: {
-                src: "/img/windows/calculator/windows/win-calc-big_012.png",
-                alt: ""
-              }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "calculator__width" }, [
-              _c("input", {
-                staticClass: "calculator__input",
-                attrs: { type: "number", name: "height[]" }
-              }),
-              _vm._v(" "),
-              _c("span", { staticClass: "calculator__input-unit" }, [
-                _vm._v("мм")
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "calculator__input-val" }, [
-                _vm._v("2 400")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "calculator__height" }, [
-              _c("input", {
-                staticClass: "calculator__input",
-                attrs: { type: "number", name: "height[]" }
-              }),
-              _vm._v(" "),
-              _c("span", { staticClass: "calculator__input-unit" }, [
-                _vm._v("мм")
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "calculator__input-val" }, [
-                _vm._v("2 400")
-              ])
-            ])
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "calculator__main calculator__main_bivalve " },
-          [
-            _c("img", {
-              staticClass: "calculator__image",
-              attrs: {
-                src: "/img/windows/calculator/windows/win-calc-big_02.png",
-                alt: ""
-              }
-            }),
-            _vm._v(" "),
-            _c("img", {
-              staticClass: "calculator__window-left",
-              attrs: {
-                src: "/img/windows/calculator/windows/win-calc-big_021.png",
-                alt: ""
-              }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "calculator__width" }, [
-              _c("input", {
-                staticClass: "calculator__input",
-                attrs: { type: "number", name: "height[]" }
-              }),
-              _vm._v(" "),
-              _c("span", { staticClass: "calculator__input-unit" }, [
-                _vm._v("мм")
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "calculator__input-val" }, [
-                _vm._v("2 400")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "calculator__height" }, [
-              _c("input", {
-                staticClass: "calculator__input",
-                attrs: { type: "number", name: "height[]" }
-              }),
-              _vm._v(" "),
-              _c("span", { staticClass: "calculator__input-unit" }, [
-                _vm._v("мм")
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "calculator__input-val" }, [
-                _vm._v("2 400")
-              ])
-            ])
-          ]
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "calculator__main calculator__main_single" }, [
+  return _c("div", { staticClass: "calculator__inner" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "calculator__content" }, [
+      _c(
+        "div",
+        { staticClass: "calculator__main calculator__main_tricuspid active" },
+        [
           _c("img", {
             staticClass: "calculator__image",
             attrs: {
-              src: "/img/windows/calculator/windows/win-calc-big_03.png",
+              src: "/img/windows/calculator/windows/win-calc-big_01.png",
               alt: ""
             }
           }),
@@ -27386,15 +29657,40 @@ var staticRenderFns = [
           _c("img", {
             staticClass: "calculator__window-left",
             attrs: {
-              src: "/img/windows/calculator/windows/win-calc-big_031.png",
+              src: "/img/windows/calculator/windows/win-calc-big_011.png",
+              alt: ""
+            }
+          }),
+          _vm._v(" "),
+          _c("img", {
+            staticClass: "calculator__window-right",
+            attrs: {
+              src: "/img/windows/calculator/windows/win-calc-big_012.png",
               alt: ""
             }
           }),
           _vm._v(" "),
           _c("div", { staticClass: "calculator__width" }, [
             _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.width,
+                  expression: "width"
+                }
+              ],
               staticClass: "calculator__input",
-              attrs: { type: "number", name: "height[]" }
+              attrs: { type: "number", name: "height[]" },
+              domProps: { value: _vm.width },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.width = $event.target.value
+                }
+              }
             }),
             _vm._v(" "),
             _c("span", { staticClass: "calculator__input-unit" }, [
@@ -27408,8 +29704,25 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("div", { staticClass: "calculator__height" }, [
             _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.height,
+                  expression: "height"
+                }
+              ],
               staticClass: "calculator__input",
-              attrs: { type: "number", name: "height[]" }
+              attrs: { type: "number", name: "height[]" },
+              domProps: { value: _vm.height },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.height = $event.target.value
+                }
+              }
             }),
             _vm._v(" "),
             _c("span", { staticClass: "calculator__input-unit" }, [
@@ -27420,225 +29733,674 @@ var staticRenderFns = [
               _vm._v("2 400")
             ])
           ])
+        ]
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "calculator__main calculator__main_bivalve " }, [
+        _c("img", {
+          staticClass: "calculator__image",
+          attrs: {
+            src: "/img/windows/calculator/windows/win-calc-big_02.png",
+            alt: ""
+          }
+        }),
+        _vm._v(" "),
+        _c("img", {
+          staticClass: "calculator__window-left",
+          attrs: {
+            src: "/img/windows/calculator/windows/win-calc-big_021.png",
+            alt: ""
+          }
+        }),
+        _vm._v(" "),
+        _c("div", { staticClass: "calculator__width" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.width,
+                expression: "width"
+              }
+            ],
+            staticClass: "calculator__input",
+            attrs: { type: "number", name: "height[]" },
+            domProps: { value: _vm.width },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.width = $event.target.value
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("span", { staticClass: "calculator__input-unit" }, [_vm._v("мм")]),
+          _vm._v(" "),
+          _c("span", { staticClass: "calculator__input-val" }, [
+            _vm._v("2 400")
+          ])
         ]),
         _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "calculator__main calculator__main_block-bivalve" },
-          [
-            _c("img", {
-              staticClass: "calculator__image",
-              attrs: {
-                src: "/img/windows/calculator/windows/win-calc-big_04.png",
-                alt: ""
-              }
-            }),
-            _vm._v(" "),
-            _c("img", {
-              staticClass: "calculator__window-left",
-              attrs: {
-                src: "/img/windows/calculator/windows/win-calc-big_041.png",
-                alt: ""
-              }
-            }),
-            _vm._v(" "),
-            _c("div", {
-              staticClass: "calculator__shadow calculator__shadow_horizontal"
-            }),
-            _vm._v(" "),
-            _c("div", {
-              staticClass: "calculator__shadow calculator__shadow_vertical"
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "calculator__width" }, [
-              _c("input", {
-                staticClass: "calculator__input",
-                attrs: { type: "number", name: "height[]" }
-              }),
-              _vm._v(" "),
-              _c("span", { staticClass: "calculator__input-unit" }, [
-                _vm._v("мм")
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "calculator__input-val" }, [
-                _vm._v("2 400")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "calculator__height" }, [
-              _c("input", {
-                staticClass: "calculator__input",
-                attrs: { type: "number", name: "height[]" }
-              }),
-              _vm._v(" "),
-              _c("span", { staticClass: "calculator__input-unit" }, [
-                _vm._v("мм")
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "calculator__input-val" }, [
-                _vm._v("2 400")
-              ])
-            ])
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "calculator__main calculator__main_block-single" },
-          [
-            _c("img", {
-              staticClass: "calculator__image",
-              attrs: {
-                src: "/img/windows/calculator/windows/win-calc-big_05.png",
-                alt: ""
-              }
-            }),
-            _vm._v(" "),
-            _c("img", {
-              staticClass: "calculator__window-left",
-              attrs: {
-                src: "/img/windows/calculator/windows/win-calc-big_051.png",
-                alt: ""
-              }
-            }),
-            _vm._v(" "),
-            _c("div", {
-              staticClass: "calculator__shadow calculator__shadow_horizontal"
-            }),
-            _vm._v(" "),
-            _c("div", {
-              staticClass: "calculator__shadow calculator__shadow_vertical"
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "calculator__width" }, [
-              _c("input", {
-                staticClass: "calculator__input",
-                attrs: { type: "number", name: "height[]" }
-              }),
-              _vm._v(" "),
-              _c("span", { staticClass: "calculator__input-unit" }, [
-                _vm._v("мм")
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "calculator__input-val" }, [
-                _vm._v("2 400")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "calculator__height" }, [
-              _c("input", {
-                staticClass: "calculator__input",
-                attrs: { type: "number", name: "height[]" }
-              }),
-              _vm._v(" "),
-              _c("span", { staticClass: "calculator__input-unit" }, [
-                _vm._v("мм")
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "calculator__input-val" }, [
-                _vm._v("2 400")
-              ])
-            ])
-          ]
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "calculator__info" }, [
-          _c("div", { staticClass: "calculator__params" }, [
-            _c("h3", { staticClass: "calculator__title" }, [
-              _vm._v("Параметры окна")
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "calculator__text" }, [
-              _vm._v(
-                "Указаны стандартные размеры оконных рам. Введите свои параметры для расчёта стоимости."
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "calculator__size" }, [
-              _c("p", { staticClass: "calculator__size-name" }, [
-                _vm._v("Ширина")
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "calculator__width" }, [
-                _c("input", {
-                  staticClass: "calculator__input",
-                  attrs: { type: "number", pattern: "\\d*", name: "height[]" }
-                }),
-                _vm._v(" "),
-                _c("span", { staticClass: "calculator__input-unit" }, [
-                  _vm._v("мм")
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "calculator__size" }, [
-              _c("p", { staticClass: "calculator__size-name" }, [
-                _vm._v("Высота")
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "calculator__height" }, [
-                _c("input", {
-                  staticClass: "calculator__input",
-                  attrs: { type: "number", pattern: "\\d*", name: "height[]" }
-                }),
-                _vm._v(" "),
-                _c("span", { staticClass: "calculator__input-unit" }, [
-                  _vm._v("мм")
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "calculator__service" }, [
-            _c("h3", { staticClass: "calculator__title" }, [_vm._v("Сервис")]),
-            _vm._v(" "),
-            _c("label", { staticClass: "checkbox" }, [
-              _c("input", {
-                staticClass: "checkbox__input",
-                attrs: { name: "shipping", type: "checkbox" }
-              }),
-              _vm._v(" "),
-              _c("span", { staticClass: " checkbox__mark" }),
-              _vm._v("\n                     Доставка\n                ")
-            ]),
-            _vm._v(" "),
-            _c("label", { staticClass: "checkbox" }, [
-              _c("input", {
-                staticClass: "checkbox__input",
-                attrs: { name: "install", type: "checkbox" }
-              }),
-              _vm._v(" "),
-              _c("span", { staticClass: " checkbox__mark" }),
-              _vm._v("\n                    Установка\n                ")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "calculator__price" }, [
-            _c("h3", { staticClass: "calculator__title" }, [
-              _vm._v("Стоимость")
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "calculator__text" }, [
-              _vm._v(
-                "Является примерной. Точная оценка и расчёт нетиповых конфигураций требует бесплатного выезда замерщика."
-              )
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "calculator__summ" }, [_vm._v("5 800 ₽")]),
-            _vm._v(" "),
-            _c(
-              "button",
+        _c("div", { staticClass: "calculator__height" }, [
+          _c("input", {
+            directives: [
               {
-                staticClass: "calculator__button js-show",
-                attrs: {
-                  "data-src": "#popup_callback",
-                  "data-title": "Вызов замерщика",
-                  "data-button": "Вызвать замерщика"
+                name: "model",
+                rawName: "v-model",
+                value: _vm.height,
+                expression: "height"
+              }
+            ],
+            staticClass: "calculator__input",
+            attrs: { type: "number", name: "height[]" },
+            domProps: { value: _vm.height },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
                 }
-              },
-              [_vm._v("Вызвать замерщика")]
-            )
+                _vm.height = $event.target.value
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("span", { staticClass: "calculator__input-unit" }, [_vm._v("мм")]),
+          _vm._v(" "),
+          _c("span", { staticClass: "calculator__input-val" }, [
+            _vm._v("2 400")
           ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "calculator__main calculator__main_single" }, [
+        _c("img", {
+          staticClass: "calculator__image",
+          attrs: {
+            src: "/img/windows/calculator/windows/win-calc-big_03.png",
+            alt: ""
+          }
+        }),
+        _vm._v(" "),
+        _c("img", {
+          staticClass: "calculator__window-left",
+          attrs: {
+            src: "/img/windows/calculator/windows/win-calc-big_031.png",
+            alt: ""
+          }
+        }),
+        _vm._v(" "),
+        _c("div", { staticClass: "calculator__width" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.width,
+                expression: "width"
+              }
+            ],
+            staticClass: "calculator__input",
+            attrs: { type: "number", name: "height[]" },
+            domProps: { value: _vm.width },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.width = $event.target.value
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("span", { staticClass: "calculator__input-unit" }, [_vm._v("мм")]),
+          _vm._v(" "),
+          _c("span", { staticClass: "calculator__input-val" }, [
+            _vm._v("2 400")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "calculator__height" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.height,
+                expression: "height"
+              }
+            ],
+            staticClass: "calculator__input",
+            attrs: { type: "number", name: "height[]" },
+            domProps: { value: _vm.height },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.height = $event.target.value
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("span", { staticClass: "calculator__input-unit" }, [_vm._v("мм")]),
+          _vm._v(" "),
+          _c("span", { staticClass: "calculator__input-val" }, [
+            _vm._v("2 400")
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "calculator__main calculator__main_block-bivalve" },
+        [
+          _c("img", {
+            staticClass: "calculator__image",
+            attrs: {
+              src: "/img/windows/calculator/windows/win-calc-big_04.png",
+              alt: ""
+            }
+          }),
+          _vm._v(" "),
+          _c("img", {
+            staticClass: "calculator__window-left",
+            attrs: {
+              src: "/img/windows/calculator/windows/win-calc-big_041.png",
+              alt: ""
+            }
+          }),
+          _vm._v(" "),
+          _c("div", {
+            staticClass: "calculator__shadow calculator__shadow_horizontal"
+          }),
+          _vm._v(" "),
+          _c("div", {
+            staticClass: "calculator__shadow calculator__shadow_vertical"
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "calculator__width" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.width,
+                  expression: "width"
+                }
+              ],
+              staticClass: "calculator__input",
+              attrs: { type: "number", name: "height[]" },
+              domProps: { value: _vm.width },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.width = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("span", { staticClass: "calculator__input-unit" }, [
+              _vm._v("мм")
+            ]),
+            _vm._v(" "),
+            _c("span", { staticClass: "calculator__input-val" }, [
+              _vm._v("2 400")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "calculator__height" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.height,
+                  expression: "height"
+                }
+              ],
+              staticClass: "calculator__input",
+              attrs: { type: "number", name: "height[]" },
+              domProps: { value: _vm.height },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.height = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("span", { staticClass: "calculator__input-unit" }, [
+              _vm._v("мм")
+            ]),
+            _vm._v(" "),
+            _c("span", { staticClass: "calculator__input-val" }, [
+              _vm._v("2 400")
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "calculator__main calculator__main_block-single" },
+        [
+          _c("img", {
+            staticClass: "calculator__image",
+            attrs: {
+              src: "/img/windows/calculator/windows/win-calc-big_05.png",
+              alt: ""
+            }
+          }),
+          _vm._v(" "),
+          _c("img", {
+            staticClass: "calculator__window-left",
+            attrs: {
+              src: "/img/windows/calculator/windows/win-calc-big_051.png",
+              alt: ""
+            }
+          }),
+          _vm._v(" "),
+          _c("div", {
+            staticClass: "calculator__shadow calculator__shadow_horizontal"
+          }),
+          _vm._v(" "),
+          _c("div", {
+            staticClass: "calculator__shadow calculator__shadow_vertical"
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "calculator__width" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.width,
+                  expression: "width"
+                }
+              ],
+              staticClass: "calculator__input",
+              attrs: { type: "number", name: "height[]" },
+              domProps: { value: _vm.width },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.width = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("span", { staticClass: "calculator__input-unit" }, [
+              _vm._v("мм")
+            ]),
+            _vm._v(" "),
+            _c("span", { staticClass: "calculator__input-val" }, [
+              _vm._v("2 400")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "calculator__height" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.height,
+                  expression: "height"
+                }
+              ],
+              staticClass: "calculator__input",
+              attrs: { type: "number", name: "height[]" },
+              domProps: { value: _vm.height },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.height = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("span", { staticClass: "calculator__input-unit" }, [
+              _vm._v("мм")
+            ]),
+            _vm._v(" "),
+            _c("span", { staticClass: "calculator__input-val" }, [
+              _vm._v("2 400")
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "calculator__info" }, [
+        _c("div", { staticClass: "calculator__params" }, [
+          _c("h3", { staticClass: "calculator__title" }, [
+            _vm._v("Параметры окна")
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "calculator__text" }, [
+            _vm._v(
+              "Указаны стандартные размеры оконных рам. Введите свои параметры для расчёта стоимости."
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "calculator__size" }, [
+            _c("p", { staticClass: "calculator__size-name" }, [
+              _vm._v("Ширина")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "calculator__width" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.width,
+                    expression: "width"
+                  }
+                ],
+                staticClass: "calculator__input",
+                attrs: { type: "number", pattern: "\\d*", name: "height[]" },
+                domProps: { value: _vm.width },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.width = $event.target.value
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c("span", { staticClass: "calculator__input-unit" }, [
+                _vm._v("мм")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "calculator__size" }, [
+            _c("p", { staticClass: "calculator__size-name" }, [
+              _vm._v("Высота")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "calculator__height" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.height,
+                    expression: "height"
+                  }
+                ],
+                staticClass: "calculator__input",
+                attrs: { type: "number", pattern: "\\d*", name: "height[]" },
+                domProps: { value: _vm.height },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.height = $event.target.value
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c("span", { staticClass: "calculator__input-unit" }, [
+                _vm._v("мм")
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "calculator__service" }, [
+          _c("h3", { staticClass: "calculator__title" }, [_vm._v("Сервис")]),
+          _vm._v(" "),
+          _c("label", { staticClass: "checkbox" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.shipping,
+                  expression: "shipping"
+                }
+              ],
+              staticClass: "checkbox__input",
+              attrs: { name: "shipping", type: "checkbox" },
+              domProps: {
+                checked: Array.isArray(_vm.shipping)
+                  ? _vm._i(_vm.shipping, null) > -1
+                  : _vm.shipping
+              },
+              on: {
+                change: function($event) {
+                  var $$a = _vm.shipping,
+                    $$el = $event.target,
+                    $$c = $$el.checked ? true : false
+                  if (Array.isArray($$a)) {
+                    var $$v = null,
+                      $$i = _vm._i($$a, $$v)
+                    if ($$el.checked) {
+                      $$i < 0 && (_vm.shipping = $$a.concat([$$v]))
+                    } else {
+                      $$i > -1 &&
+                        (_vm.shipping = $$a
+                          .slice(0, $$i)
+                          .concat($$a.slice($$i + 1)))
+                    }
+                  } else {
+                    _vm.shipping = $$c
+                  }
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("span", { staticClass: " checkbox__mark" }),
+            _vm._v("\n                     Доставка\n                ")
+          ]),
+          _vm._v(" "),
+          _c("label", { staticClass: "checkbox" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.install,
+                  expression: "install"
+                }
+              ],
+              staticClass: "checkbox__input",
+              attrs: { name: "install", type: "checkbox" },
+              domProps: {
+                checked: Array.isArray(_vm.install)
+                  ? _vm._i(_vm.install, null) > -1
+                  : _vm.install
+              },
+              on: {
+                change: function($event) {
+                  var $$a = _vm.install,
+                    $$el = $event.target,
+                    $$c = $$el.checked ? true : false
+                  if (Array.isArray($$a)) {
+                    var $$v = null,
+                      $$i = _vm._i($$a, $$v)
+                    if ($$el.checked) {
+                      $$i < 0 && (_vm.install = $$a.concat([$$v]))
+                    } else {
+                      $$i > -1 &&
+                        (_vm.install = $$a
+                          .slice(0, $$i)
+                          .concat($$a.slice($$i + 1)))
+                    }
+                  } else {
+                    _vm.install = $$c
+                  }
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("span", { staticClass: " checkbox__mark" }),
+            _vm._v("\n                    Установка\n                ")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "calculator__price" }, [
+          _c("h3", { staticClass: "calculator__title" }, [_vm._v("Стоимость")]),
+          _vm._v(" "),
+          _c("p", { staticClass: "calculator__text" }, [
+            _vm._v(
+              "Является примерной. Точная оценка и расчёт нетиповых конфигураций требует бесплатного выезда замерщика."
+            )
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "calculator__summ" }, [
+            _vm._v(_vm._s(_vm.summ.toLocaleString()) + " ₽")
+          ]),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "calculator__button js-show",
+              attrs: {
+                "data-src": "#popup_callback",
+                "data-title": "Вызов замерщика",
+                "data-button": "Вызвать замерщика"
+              }
+            },
+            [_vm._v("Вызвать замерщика")]
+          )
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "calculator__types" }, [
+      _c("label", { staticClass: "calculator__type active" }, [
+        _c("input", {
+          staticClass: "calculator__type-input",
+          attrs: { type: "radio", name: "type" }
+        }),
+        _vm._v(" "),
+        _c("img", {
+          staticClass: "calculator__type-image",
+          attrs: {
+            width: "31",
+            height: "24",
+            src: "/img/windows/calculator/windows/win-calc_01.svg",
+            alt: ""
+          }
+        }),
+        _vm._v(" "),
+        _c("p", { staticClass: "calculator__type-name" }, [
+          _vm._v("Трёхстворчатое "),
+          _c("br"),
+          _vm._v(" окно")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("label", { staticClass: "calculator__type" }, [
+        _c("input", {
+          staticClass: "calculator__type-input",
+          attrs: { type: "radio", name: "type" }
+        }),
+        _vm._v(" "),
+        _c("img", {
+          staticClass: "calculator__type-image",
+          attrs: {
+            width: "21",
+            height: "24",
+            src: "/img/windows/calculator/windows/win-calc_02.svg",
+            alt: ""
+          }
+        }),
+        _vm._v(" "),
+        _c("p", { staticClass: "calculator__type-name" }, [
+          _vm._v("Двустворчатое "),
+          _c("br"),
+          _vm._v(" окно")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("label", { staticClass: "calculator__type" }, [
+        _c("input", {
+          staticClass: "calculator__type-input",
+          attrs: { type: "radio", name: "type" }
+        }),
+        _vm._v(" "),
+        _c("img", {
+          staticClass: "calculator__type-image",
+          attrs: {
+            width: "11",
+            height: "24",
+            src: "/img/windows/calculator/windows/win-calc_03.svg",
+            alt: ""
+          }
+        }),
+        _vm._v(" "),
+        _c("p", { staticClass: "calculator__type-name" }, [
+          _vm._v("Одностворчатое "),
+          _c("br"),
+          _vm._v(" окно")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("label", { staticClass: "calculator__type" }, [
+        _c("input", {
+          staticClass: "calculator__type-input",
+          attrs: { type: "radio", name: "type" }
+        }),
+        _vm._v(" "),
+        _c("img", {
+          staticClass: "calculator__type-image",
+          attrs: {
+            width: "32",
+            height: "32",
+            src: "/img/windows/calculator/windows/win-calc_04.svg",
+            alt: ""
+          }
+        }),
+        _vm._v(" "),
+        _c("p", { staticClass: "calculator__type-name" }, [
+          _vm._v("Балконный блок "),
+          _c("br"),
+          _vm._v(" двустворчатый")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("label", { staticClass: "calculator__type" }, [
+        _c("input", {
+          staticClass: "calculator__type-input",
+          attrs: { type: "radio", name: "type" }
+        }),
+        _vm._v(" "),
+        _c("img", {
+          staticClass: "calculator__type-image",
+          attrs: {
+            width: "22",
+            height: "32",
+            src: "/img/windows/calculator/windows/win-calc_05.svg",
+            alt: ""
+          }
+        }),
+        _vm._v(" "),
+        _c("p", { staticClass: "calculator__type-name" }, [
+          _vm._v("Балконный блок "),
+          _c("br"),
+          _vm._v(" одностворчатый")
         ])
       ])
     ])
@@ -27654,19 +30416,19 @@ if (false) {
 }
 
 /***/ }),
-/* 26 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(27)
+  __webpack_require__(29)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(29)
+var __vue_script__ = __webpack_require__(31)
 /* template */
-var __vue_template__ = __webpack_require__(30)
+var __vue_template__ = __webpack_require__(32)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -27705,13 +30467,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 27 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(28);
+var content = __webpack_require__(30);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -27731,7 +30493,7 @@ if(false) {
 }
 
 /***/ }),
-/* 28 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(false);
@@ -27745,7 +30507,7 @@ exports.push([module.i, "\n.slide-leave-active,\n.slide-enter-active {\n-webkit-
 
 
 /***/ }),
-/* 29 */
+/* 31 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -27898,9 +30660,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return {
             currentType: 'odnostvorchatoe-okno',
             areaMode: '',
-            install: 0,
-            arrWidth: [],
-            arrHeight: [],
+            install: false,
+            installBasePrice: 500,
+            shipping: false,
+            width: 1000,
+            height: 1000,
             multiplier: 3000,
             pixelWidth: 0,
             publicPath: '/storage/'
@@ -27911,22 +30675,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         this.pixelWidth = $(this.$refs.calculator__img).width();
     },
     computed: {
-        width: function width() {
-            return this.arrWidth.length ? this.arrWidth.reduce(function (total, current) {
-                return total + current;
-            }) : 0;
-        },
-        height: function height() {
-            return this.arrHeight.length ? this.arrHeight.reduce(function (total, current) {
-                return total + current;
-            }) : 0;
-        },
-
         area: function area() {
             return this.width * this.height / 1000000;
         },
         installPrice: function installPrice() {
-            return this.install * this.area;
+            return this.install ? this.installBasePrice * this.area : 0;
         },
         summ: function summ() {
             return parseInt(this.area * this.multiplier + this.installPrice);
@@ -27948,465 +30701,669 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 30 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "calculator__inner" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("div", { staticClass: "calculator__content" }, [
+      _c(
+        "div",
+        {
+          staticClass:
+            "calculator__main calculator__main_loggia-tricuspid active"
+        },
+        [
+          _c("img", {
+            staticClass: "calculator__image",
+            attrs: {
+              src: "/img/windows/calculator/balcony/balcony-calc-big_01.png",
+              srcset:
+                "/img/windows/calculator/balcony/balcony-calc-big_01@2x.png" +
+                " 2x",
+              alt: ""
+            }
+          }),
+          _vm._v(" "),
+          _c("img", {
+            staticClass: "calculator__window-left",
+            attrs: {
+              src: "/img/windows/calculator/balcony/balcony-calc-big_11.png",
+              srcset:
+                "/img/windows/calculator/balcony/balcony-calc-big_11@2x.png" +
+                " 2x",
+              alt: ""
+            }
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "calculator__width" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.width,
+                  expression: "width"
+                }
+              ],
+              staticClass: "calculator__input",
+              attrs: { type: "number", name: "height[]" },
+              domProps: { value: _vm.width },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.width = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("span", { staticClass: "calculator__input-unit" }, [
+              _vm._v("мм")
+            ]),
+            _vm._v(" "),
+            _c("span", { staticClass: "calculator__input-val" }, [
+              _vm._v("2 400")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "calculator__height" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.height,
+                  expression: "height"
+                }
+              ],
+              staticClass: "calculator__input",
+              attrs: { type: "number", name: "height[]" },
+              domProps: { value: _vm.height },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.height = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("span", { staticClass: "calculator__input-unit" }, [
+              _vm._v("мм")
+            ]),
+            _vm._v(" "),
+            _c("span", { staticClass: "calculator__input-val" }, [
+              _vm._v("2 400")
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "calculator__main calculator__main_loggia-four-leaved" },
+        [
+          _c("img", {
+            staticClass: "calculator__image",
+            attrs: {
+              src: "/img/windows/calculator/balcony/balcony-calc-big_02.png",
+              srcset:
+                "/img/windows/calculator/balcony/balcony-calc-big_02@2x.png" +
+                " 2x",
+              alt: ""
+            }
+          }),
+          _vm._v(" "),
+          _c("img", {
+            staticClass: "calculator__window-left",
+            attrs: {
+              src: "/img/windows/calculator/balcony/balcony-calc-big_11.png",
+              srcset:
+                "/img/windows/calculator/balcony/balcony-calc-big_11@2x.png" +
+                " 2x",
+              alt: ""
+            }
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "calculator__width" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.width,
+                  expression: "width"
+                }
+              ],
+              staticClass: "calculator__input",
+              attrs: { type: "number", name: "height[]" },
+              domProps: { value: _vm.width },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.width = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("span", { staticClass: "calculator__input-unit" }, [
+              _vm._v("мм")
+            ]),
+            _vm._v(" "),
+            _c("span", { staticClass: "calculator__input-val" }, [
+              _vm._v("2 400")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "calculator__height" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.height,
+                  expression: "height"
+                }
+              ],
+              staticClass: "calculator__input",
+              attrs: { type: "number", name: "height[]" },
+              domProps: { value: _vm.height },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.height = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("span", { staticClass: "calculator__input-unit" }, [
+              _vm._v("мм")
+            ]),
+            _vm._v(" "),
+            _c("span", { staticClass: "calculator__input-val" }, [
+              _vm._v("2 400")
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "calculator__main calculator__main_balcon-tricuspid" },
+        [
+          _c("img", {
+            staticClass: "calculator__image",
+            attrs: {
+              src: "/img/windows/calculator/balcony/balcony-calc-big_03.png",
+              srcset:
+                "/img/windows/calculator/balcony/balcony-calc-big_03@2x.png" +
+                " 2x",
+              alt: ""
+            }
+          }),
+          _vm._v(" "),
+          _c("img", {
+            staticClass: "calculator__window-left",
+            attrs: {
+              src: "/img/windows/calculator/balcony/balcony-calc-big_11.png",
+              srcset:
+                "/img/windows/calculator/balcony/balcony-calc-big_11@2x.png" +
+                " 2x",
+              alt: ""
+            }
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "calculator__width" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.width,
+                  expression: "width"
+                }
+              ],
+              staticClass: "calculator__input",
+              attrs: { type: "number", name: "height[]" },
+              domProps: { value: _vm.width },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.width = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("span", { staticClass: "calculator__input-unit" }, [
+              _vm._v("мм")
+            ]),
+            _vm._v(" "),
+            _c("span", { staticClass: "calculator__input-val" }, [
+              _vm._v("2 400")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "calculator__height" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.height,
+                  expression: "height"
+                }
+              ],
+              staticClass: "calculator__input",
+              attrs: { type: "number", name: "height[]" },
+              domProps: { value: _vm.height },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.height = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("span", { staticClass: "calculator__input-unit" }, [
+              _vm._v("мм")
+            ]),
+            _vm._v(" "),
+            _c("span", { staticClass: "calculator__input-val" }, [
+              _vm._v("2 400")
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "calculator__main calculator__main_balcon-four-leaved" },
+        [
+          _c("img", {
+            staticClass: "calculator__image",
+            attrs: {
+              src: "/img/windows/calculator/balcony/balcony-calc-big_04.png",
+              srcset:
+                "/img/windows/calculator/balcony/balcony-calc-big_04@2x.png" +
+                " 2x",
+              alt: ""
+            }
+          }),
+          _vm._v(" "),
+          _c("img", {
+            staticClass: "calculator__window-left",
+            attrs: {
+              src: "/img/windows/calculator/balcony/balcony-calc-big_11.png",
+              srcset:
+                "/img/windows/calculator/balcony/balcony-calc-big_11@2x.png" +
+                " 2x",
+              alt: ""
+            }
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "calculator__width" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.width,
+                  expression: "width"
+                }
+              ],
+              staticClass: "calculator__input",
+              attrs: { type: "number", name: "height[]" },
+              domProps: { value: _vm.width },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.width = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("span", { staticClass: "calculator__input-unit" }, [
+              _vm._v("мм")
+            ]),
+            _vm._v(" "),
+            _c("span", { staticClass: "calculator__input-val" }, [
+              _vm._v("2 400")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "calculator__height" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.height,
+                  expression: "height"
+                }
+              ],
+              staticClass: "calculator__input",
+              attrs: { type: "number", name: "height[]" },
+              domProps: { value: _vm.height },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.height = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("span", { staticClass: "calculator__input-unit" }, [
+              _vm._v("мм")
+            ]),
+            _vm._v(" "),
+            _c("span", { staticClass: "calculator__input-val" }, [
+              _vm._v("2 400")
+            ])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "calculator__info" }, [
+        _vm._m(1),
+        _vm._v(" "),
+        _c("div", { staticClass: "calculator__service" }, [
+          _c("h3", { staticClass: "calculator__title" }, [_vm._v("Сервис")]),
+          _vm._v(" "),
+          _c("label", { staticClass: "checkbox" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.shipping,
+                  expression: "shipping"
+                }
+              ],
+              staticClass: "checkbox__input",
+              attrs: { name: "shipping", type: "checkbox" },
+              domProps: {
+                checked: Array.isArray(_vm.shipping)
+                  ? _vm._i(_vm.shipping, null) > -1
+                  : _vm.shipping
+              },
+              on: {
+                change: function($event) {
+                  var $$a = _vm.shipping,
+                    $$el = $event.target,
+                    $$c = $$el.checked ? true : false
+                  if (Array.isArray($$a)) {
+                    var $$v = null,
+                      $$i = _vm._i($$a, $$v)
+                    if ($$el.checked) {
+                      $$i < 0 && (_vm.shipping = $$a.concat([$$v]))
+                    } else {
+                      $$i > -1 &&
+                        (_vm.shipping = $$a
+                          .slice(0, $$i)
+                          .concat($$a.slice($$i + 1)))
+                    }
+                  } else {
+                    _vm.shipping = $$c
+                  }
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("span", { staticClass: " checkbox__mark" }),
+            _vm._v("\n                     Доставка\n                ")
+          ]),
+          _vm._v(" "),
+          _c("label", { staticClass: "checkbox" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.install,
+                  expression: "install"
+                }
+              ],
+              staticClass: "checkbox__input",
+              attrs: { name: "install", type: "checkbox" },
+              domProps: {
+                checked: Array.isArray(_vm.install)
+                  ? _vm._i(_vm.install, null) > -1
+                  : _vm.install
+              },
+              on: {
+                change: function($event) {
+                  var $$a = _vm.install,
+                    $$el = $event.target,
+                    $$c = $$el.checked ? true : false
+                  if (Array.isArray($$a)) {
+                    var $$v = null,
+                      $$i = _vm._i($$a, $$v)
+                    if ($$el.checked) {
+                      $$i < 0 && (_vm.install = $$a.concat([$$v]))
+                    } else {
+                      $$i > -1 &&
+                        (_vm.install = $$a
+                          .slice(0, $$i)
+                          .concat($$a.slice($$i + 1)))
+                    }
+                  } else {
+                    _vm.install = $$c
+                  }
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("span", { staticClass: " checkbox__mark" }),
+            _vm._v("\n                    Установка\n                ")
+          ])
+        ]),
+        _vm._v(" "),
+        _vm._m(2),
+        _vm._v(" "),
+        _c("div", { staticClass: "calculator__price" }, [
+          _c("h3", { staticClass: "calculator__title" }, [_vm._v("Стоимость")]),
+          _vm._v(" "),
+          _c("p", { staticClass: "calculator__text" }, [
+            _vm._v(
+              "Является примерной. Точная оценка и расчёт нетиповых конфигураций требует бесплатного выезда замерщика."
+            )
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "calculator__summ" }, [
+            _vm._v(_vm._s(_vm.summ.toLocaleString()) + " ₽")
+          ]),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "calculator__button js-show",
+              attrs: {
+                "data-src": "#popup_callback",
+                "data-title": "Вызов замерщика",
+                "data-button": "Вызвать замерщика"
+              }
+            },
+            [_vm._v("Вызвать замерщика")]
+          )
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "calculator__inner" }, [
-      _c("div", { staticClass: "calculator__types" }, [
-        _c("label", { staticClass: "calculator__type active" }, [
-          _c("input", {
-            staticClass: "calculator__type-input",
-            attrs: { type: "radio", name: "type" }
-          }),
-          _vm._v(" "),
-          _c("img", {
-            staticClass: "calculator__type-image",
-            attrs: {
-              src: "/img/windows/calculator/balcony/balcony-calc_01.svg",
-              alt: ""
-            }
-          }),
-          _vm._v(" "),
-          _c("p", { staticClass: "calculator__type-name" }, [
-            _vm._v("Лоджия "),
-            _c("br"),
-            _vm._v(" трёхстворчатая")
-          ])
-        ]),
+    return _c("div", { staticClass: "calculator__types" }, [
+      _c("label", { staticClass: "calculator__type active" }, [
+        _c("input", {
+          staticClass: "calculator__type-input",
+          attrs: { type: "radio", name: "type" }
+        }),
         _vm._v(" "),
-        _c("label", { staticClass: "calculator__type" }, [
-          _c("input", {
-            staticClass: "calculator__type-input",
-            attrs: { type: "radio", name: "type" }
-          }),
-          _vm._v(" "),
-          _c("img", {
-            staticClass: "calculator__type-image",
-            attrs: {
-              src: "/img/windows/calculator/balcony/balcony-calc_02.svg",
-              alt: ""
-            }
-          }),
-          _vm._v(" "),
-          _c("p", { staticClass: "calculator__type-name" }, [
-            _vm._v("Лоджия "),
-            _c("br"),
-            _vm._v(" четырёхстворчатая")
-          ])
-        ]),
+        _c("img", {
+          staticClass: "calculator__type-image",
+          attrs: {
+            src: "/img/windows/calculator/balcony/balcony-calc_01.svg",
+            alt: ""
+          }
+        }),
         _vm._v(" "),
-        _c("label", { staticClass: "calculator__type" }, [
-          _c("input", {
-            staticClass: "calculator__type-input",
-            attrs: { type: "radio", name: "type" }
-          }),
-          _vm._v(" "),
-          _c("img", {
-            staticClass: "calculator__type-image",
-            attrs: {
-              src: "/img/windows/calculator/balcony/balcony-calc_03.svg",
-              alt: ""
-            }
-          }),
-          _vm._v(" "),
-          _c("p", { staticClass: "calculator__type-name" }, [
-            _vm._v("Балкон "),
-            _c("br"),
-            _vm._v(" трёхстворчатый")
-          ])
-        ]),
-        _vm._v(" "),
-        _c("label", { staticClass: "calculator__type" }, [
-          _c("input", {
-            staticClass: "calculator__type-input",
-            attrs: { type: "radio", name: "type" }
-          }),
-          _vm._v(" "),
-          _c("img", {
-            staticClass: "calculator__type-image",
-            attrs: {
-              src: "/img/windows/calculator/balcony/balcony-calc_04.svg",
-              alt: ""
-            }
-          }),
-          _vm._v(" "),
-          _c("p", { staticClass: "calculator__type-name" }, [
-            _vm._v("Балкон "),
-            _c("br"),
-            _vm._v(" четырёхстворчатый")
-          ])
+        _c("p", { staticClass: "calculator__type-name" }, [
+          _vm._v("Лоджия "),
+          _c("br"),
+          _vm._v(" трёхстворчатая")
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "calculator__content" }, [
-        _c(
-          "div",
-          {
-            staticClass:
-              "calculator__main calculator__main_loggia-tricuspid active"
-          },
-          [
-            _c("img", {
-              staticClass: "calculator__image",
-              attrs: {
-                src: "/img/windows/calculator/balcony/balcony-calc-big_01.png",
-                srcset:
-                  "/img/windows/calculator/balcony/balcony-calc-big_01@2x.png" +
-                  " 2x",
-                alt: ""
-              }
-            }),
-            _vm._v(" "),
-            _c("img", {
-              staticClass: "calculator__window-left",
-              attrs: {
-                src: "/img/windows/calculator/balcony/balcony-calc-big_11.png",
-                srcset:
-                  "/img/windows/calculator/balcony/balcony-calc-big_11@2x.png" +
-                  " 2x",
-                alt: ""
-              }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "calculator__width" }, [
-              _c("input", {
-                staticClass: "calculator__input",
-                attrs: { type: "number", name: "height[]" }
-              }),
-              _vm._v(" "),
-              _c("span", { staticClass: "calculator__input-unit" }, [
-                _vm._v("мм")
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "calculator__input-val" }, [
-                _vm._v("2 400")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "calculator__height" }, [
-              _c("input", {
-                staticClass: "calculator__input",
-                attrs: { type: "number", name: "height[]" }
-              }),
-              _vm._v(" "),
-              _c("span", { staticClass: "calculator__input-unit" }, [
-                _vm._v("мм")
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "calculator__input-val" }, [
-                _vm._v("2 400")
-              ])
-            ])
-          ]
-        ),
+      _c("label", { staticClass: "calculator__type" }, [
+        _c("input", {
+          staticClass: "calculator__type-input",
+          attrs: { type: "radio", name: "type" }
+        }),
         _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "calculator__main calculator__main_loggia-four-leaved"
-          },
-          [
-            _c("img", {
-              staticClass: "calculator__image",
-              attrs: {
-                src: "/img/windows/calculator/balcony/balcony-calc-big_02.png",
-                srcset:
-                  "/img/windows/calculator/balcony/balcony-calc-big_02@2x.png" +
-                  " 2x",
-                alt: ""
-              }
-            }),
-            _vm._v(" "),
-            _c("img", {
-              staticClass: "calculator__window-left",
-              attrs: {
-                src: "/img/windows/calculator/balcony/balcony-calc-big_11.png",
-                srcset:
-                  "/img/windows/calculator/balcony/balcony-calc-big_11@2x.png" +
-                  " 2x",
-                alt: ""
-              }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "calculator__width" }, [
-              _c("input", {
-                staticClass: "calculator__input",
-                attrs: { type: "number", name: "height[]" }
-              }),
-              _vm._v(" "),
-              _c("span", { staticClass: "calculator__input-unit" }, [
-                _vm._v("мм")
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "calculator__input-val" }, [
-                _vm._v("2 400")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "calculator__height" }, [
-              _c("input", {
-                staticClass: "calculator__input",
-                attrs: { type: "number", name: "height[]" }
-              }),
-              _vm._v(" "),
-              _c("span", { staticClass: "calculator__input-unit" }, [
-                _vm._v("мм")
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "calculator__input-val" }, [
-                _vm._v("2 400")
-              ])
-            ])
-          ]
-        ),
+        _c("img", {
+          staticClass: "calculator__type-image",
+          attrs: {
+            src: "/img/windows/calculator/balcony/balcony-calc_02.svg",
+            alt: ""
+          }
+        }),
         _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "calculator__main calculator__main_balcon-tricuspid" },
-          [
-            _c("img", {
-              staticClass: "calculator__image",
-              attrs: {
-                src: "/img/windows/calculator/balcony/balcony-calc-big_03.png",
-                srcset:
-                  "/img/windows/calculator/balcony/balcony-calc-big_03@2x.png" +
-                  " 2x",
-                alt: ""
-              }
-            }),
-            _vm._v(" "),
-            _c("img", {
-              staticClass: "calculator__window-left",
-              attrs: {
-                src: "/img/windows/calculator/balcony/balcony-calc-big_11.png",
-                srcset:
-                  "/img/windows/calculator/balcony/balcony-calc-big_11@2x.png" +
-                  " 2x",
-                alt: ""
-              }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "calculator__width" }, [
-              _c("input", {
-                staticClass: "calculator__input",
-                attrs: { type: "number", name: "height[]" }
-              }),
-              _vm._v(" "),
-              _c("span", { staticClass: "calculator__input-unit" }, [
-                _vm._v("мм")
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "calculator__input-val" }, [
-                _vm._v("2 400")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "calculator__height" }, [
-              _c("input", {
-                staticClass: "calculator__input",
-                attrs: { type: "number", name: "height[]" }
-              }),
-              _vm._v(" "),
-              _c("span", { staticClass: "calculator__input-unit" }, [
-                _vm._v("мм")
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "calculator__input-val" }, [
-                _vm._v("2 400")
-              ])
-            ])
-          ]
-        ),
+        _c("p", { staticClass: "calculator__type-name" }, [
+          _vm._v("Лоджия "),
+          _c("br"),
+          _vm._v(" четырёхстворчатая")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("label", { staticClass: "calculator__type" }, [
+        _c("input", {
+          staticClass: "calculator__type-input",
+          attrs: { type: "radio", name: "type" }
+        }),
         _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "calculator__main calculator__main_balcon-four-leaved"
-          },
-          [
-            _c("img", {
-              staticClass: "calculator__image",
-              attrs: {
-                src: "/img/windows/calculator/balcony/balcony-calc-big_04.png",
-                srcset:
-                  "/img/windows/calculator/balcony/balcony-calc-big_04@2x.png" +
-                  " 2x",
-                alt: ""
-              }
-            }),
-            _vm._v(" "),
-            _c("img", {
-              staticClass: "calculator__window-left",
-              attrs: {
-                src: "/img/windows/calculator/balcony/balcony-calc-big_11.png",
-                srcset:
-                  "/img/windows/calculator/balcony/balcony-calc-big_11@2x.png" +
-                  " 2x",
-                alt: ""
-              }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "calculator__width" }, [
-              _c("input", {
-                staticClass: "calculator__input",
-                attrs: { type: "number", name: "height[]" }
-              }),
-              _vm._v(" "),
-              _c("span", { staticClass: "calculator__input-unit" }, [
-                _vm._v("мм")
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "calculator__input-val" }, [
-                _vm._v("2 400")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "calculator__height" }, [
-              _c("input", {
-                staticClass: "calculator__input",
-                attrs: { type: "number", name: "height[]" }
-              }),
-              _vm._v(" "),
-              _c("span", { staticClass: "calculator__input-unit" }, [
-                _vm._v("мм")
-              ]),
-              _vm._v(" "),
-              _c("span", { staticClass: "calculator__input-val" }, [
-                _vm._v("2 400")
-              ])
-            ])
-          ]
-        ),
+        _c("img", {
+          staticClass: "calculator__type-image",
+          attrs: {
+            src: "/img/windows/calculator/balcony/balcony-calc_03.svg",
+            alt: ""
+          }
+        }),
         _vm._v(" "),
-        _c("div", { staticClass: "calculator__info" }, [
-          _c("div", { staticClass: "calculator__params" }, [
-            _c("h3", { staticClass: "calculator__title" }, [
-              _vm._v("Параметры окна")
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "calculator__text" }, [
-              _vm._v(
-                "Указаны стандартные размеры оконных рам. Введите свои параметры для расчёта стоимости."
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "calculator__size" }, [
-              _c("p", { staticClass: "calculator__size-name" }, [
-                _vm._v("Ширина")
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "calculator__width" }, [
-                _c("input", {
-                  staticClass: "calculator__input",
-                  attrs: { type: "number", pattern: "\\d*", name: "height[]" }
-                }),
-                _vm._v(" "),
-                _c("span", { staticClass: "calculator__input-unit" }, [
-                  _vm._v("мм")
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "calculator__size" }, [
-              _c("p", { staticClass: "calculator__size-name" }, [
-                _vm._v("Высота")
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "calculator__height" }, [
-                _c("input", {
-                  staticClass: "calculator__input",
-                  attrs: { type: "number", pattern: "\\d*", name: "height[]" }
-                }),
-                _vm._v(" "),
-                _c("span", { staticClass: "calculator__input-unit" }, [
-                  _vm._v("мм")
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "calculator__service" }, [
-            _c("h3", { staticClass: "calculator__title" }, [_vm._v("Сервис")]),
-            _vm._v(" "),
-            _c("label", { staticClass: "checkbox" }, [
-              _c("input", {
-                staticClass: "checkbox__input",
-                attrs: { name: "shipping", type: "checkbox" }
-              }),
-              _vm._v(" "),
-              _c("span", { staticClass: " checkbox__mark" }),
-              _vm._v("\n                     Доставка\n                ")
-            ]),
-            _vm._v(" "),
-            _c("label", { staticClass: "checkbox" }, [
-              _c("input", {
-                staticClass: "checkbox__input",
-                attrs: { name: "install", type: "checkbox" }
-              }),
-              _vm._v(" "),
-              _c("span", { staticClass: " checkbox__mark" }),
-              _vm._v("\n                    Установка\n                ")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "calculator__finishing" }, [
-            _c("h3", { staticClass: "calculator__title" }, [
-              _vm._v("Отделка балкона")
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "calculator__text" }, [
-              _vm._v("Для рассчёта отделки позвоните по номеру")
-            ]),
-            _vm._v(" "),
-            _c(
-              "a",
-              {
-                staticClass: "calculator__call",
-                attrs: { href: "tel:8 800 333-97-14" }
-              },
-              [_vm._v("8 800 333–97–14")]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "calculator__price" }, [
-            _c("h3", { staticClass: "calculator__title" }, [
-              _vm._v("Стоимость")
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "calculator__text" }, [
-              _vm._v(
-                "Является примерной. Точная оценка и расчёт нетиповых конфигураций требует бесплатного выезда замерщика."
-              )
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "calculator__summ" }, [_vm._v("5 800 ₽")]),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "calculator__button js-show",
-                attrs: {
-                  "data-src": "#popup_callback",
-                  "data-title": "Вызов замерщика",
-                  "data-button": "Вызвать замерщика"
-                }
-              },
-              [_vm._v("Вызвать замерщика")]
-            )
-          ])
+        _c("p", { staticClass: "calculator__type-name" }, [
+          _vm._v("Балкон "),
+          _c("br"),
+          _vm._v(" трёхстворчатый")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("label", { staticClass: "calculator__type" }, [
+        _c("input", {
+          staticClass: "calculator__type-input",
+          attrs: { type: "radio", name: "type" }
+        }),
+        _vm._v(" "),
+        _c("img", {
+          staticClass: "calculator__type-image",
+          attrs: {
+            src: "/img/windows/calculator/balcony/balcony-calc_04.svg",
+            alt: ""
+          }
+        }),
+        _vm._v(" "),
+        _c("p", { staticClass: "calculator__type-name" }, [
+          _vm._v("Балкон "),
+          _c("br"),
+          _vm._v(" четырёхстворчатый")
         ])
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "calculator__params" }, [
+      _c("h3", { staticClass: "calculator__title" }, [
+        _vm._v("Параметры окна")
+      ]),
+      _vm._v(" "),
+      _c("p", { staticClass: "calculator__text" }, [
+        _vm._v(
+          "Указаны стандартные размеры оконных рам. Введите свои параметры для расчёта стоимости."
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "calculator__size" }, [
+        _c("p", { staticClass: "calculator__size-name" }, [_vm._v("Ширина")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "calculator__width" }, [
+          _c("input", {
+            staticClass: "calculator__input",
+            attrs: { type: "number", pattern: "\\d*", name: "height[]" }
+          }),
+          _vm._v(" "),
+          _c("span", { staticClass: "calculator__input-unit" }, [_vm._v("мм")])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "calculator__size" }, [
+        _c("p", { staticClass: "calculator__size-name" }, [_vm._v("Высота")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "calculator__height" }, [
+          _c("input", {
+            staticClass: "calculator__input",
+            attrs: { type: "number", pattern: "\\d*", name: "height[]" }
+          }),
+          _vm._v(" "),
+          _c("span", { staticClass: "calculator__input-unit" }, [_vm._v("мм")])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "calculator__finishing" }, [
+      _c("h3", { staticClass: "calculator__title" }, [
+        _vm._v("Отделка балкона")
+      ]),
+      _vm._v(" "),
+      _c("p", { staticClass: "calculator__text" }, [
+        _vm._v("Для рассчёта отделки позвоните по номеру")
+      ]),
+      _vm._v(" "),
+      _c(
+        "a",
+        {
+          staticClass: "calculator__call",
+          attrs: { href: "tel:8 800 333-97-14" }
+        },
+        [_vm._v("8 800 333–97–14")]
+      )
     ])
   }
 ]
@@ -28420,19 +31377,190 @@ if (false) {
 }
 
 /***/ }),
-/* 31 */
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = null
+/* template */
+var __vue_template__ = __webpack_require__(34)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/ceilingsCalc.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-29e3a6e2", Component.options)
+  } else {
+    hotAPI.reload("data-v-29e3a6e2", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "ceilingCalculator" }, [
+      _c("h2", { staticClass: "ceilingCalculator__title" }, [
+        _vm._v("Калькулятор")
+      ]),
+      _vm._v(" "),
+      _c("p", { staticClass: "ceilingCalculator__desc" }, [
+        _vm._v(
+          "Рассчитайте стоимость натяжного потолока онлайн. Матовые, сатиновые, глянцевые — все по одной цене! Выберите параметры вашего помещения, перемещая ползунки:"
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "ceilingCalculator__item" }, [
+        _c("p", { staticClass: "ceilingCalculator__item-name" }, [
+          _vm._v("\n            Площадь помещения, м2\n        ")
+        ]),
+        _vm._v(" "),
+        _c("input", {
+          staticClass: "range",
+          attrs: {
+            "data-min": "0",
+            "data-max": "150",
+            type: "text",
+            name: "",
+            value: ""
+          }
+        })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "ceilingCalculator__item" }, [
+        _c("p", { staticClass: "ceilingCalculator__item-name" }, [
+          _vm._v("\n            Количество труб\n        ")
+        ]),
+        _vm._v(" "),
+        _c("input", {
+          staticClass: "range",
+          attrs: {
+            "data-min": "0",
+            "data-max": "10",
+            type: "text",
+            name: "",
+            value: ""
+          }
+        })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "ceilingCalculator__item" }, [
+        _c("p", { staticClass: "ceilingCalculator__item-name" }, [
+          _vm._v("\n            Количество углов\n        ")
+        ]),
+        _vm._v(" "),
+        _c("input", {
+          staticClass: "range",
+          attrs: {
+            "data-min": "0",
+            "data-max": "30",
+            type: "text",
+            name: "",
+            value: ""
+          }
+        })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "ceilingCalculator__item" }, [
+        _c("p", { staticClass: "ceilingCalculator__item-name" }, [
+          _vm._v("\n            Количество светильников\n        ")
+        ]),
+        _vm._v(" "),
+        _c("input", {
+          staticClass: "range",
+          attrs: {
+            "data-min": "0",
+            "data-max": "30",
+            type: "text",
+            name: "",
+            value: ""
+          }
+        })
+      ]),
+      _vm._v(" "),
+      _c("p", { staticClass: "ceilingCalculator__subtitle" }, [
+        _vm._v("Для точного расчёта необходимо произвести замер!")
+      ]),
+      _vm._v(" "),
+      _c("p", { staticClass: "ceilingCalculator__total" }, [_vm._v("8 750 ₽")]),
+      _vm._v(" "),
+      _c("p", { staticClass: "ceilingCalculator__measure" }, [
+        _vm._v("с установкой")
+      ]),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "ceilingCalculator__callback js-show",
+          attrs: { "data-src": "#popup_callback" }
+        },
+        [_vm._v("Вызвать замерщика")]
+      )
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-29e3a6e2", module.exports)
+  }
+}
+
+/***/ }),
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(32)
+  __webpack_require__(36)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(34)
+var __vue_script__ = __webpack_require__(38)
 /* template */
-var __vue_template__ = __webpack_require__(35)
+var __vue_template__ = __webpack_require__(39)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -28471,13 +31599,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 32 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(33);
+var content = __webpack_require__(37);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -28497,7 +31625,7 @@ if(false) {
 }
 
 /***/ }),
-/* 33 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(false);
@@ -28511,7 +31639,7 @@ exports.push([module.i, "\n.fade-enter-active, .fade-leave-active {\n  -webkit-t
 
 
 /***/ }),
-/* 34 */
+/* 38 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -28565,7 +31693,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 35 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -28636,15 +31764,15 @@ if (false) {
 }
 
 /***/ }),
-/* 36 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(37)
+var __vue_script__ = __webpack_require__(41)
 /* template */
-var __vue_template__ = __webpack_require__(38)
+var __vue_template__ = __webpack_require__(42)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -28683,7 +31811,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 37 */
+/* 41 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -28793,7 +31921,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 38 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -28940,15 +32068,15 @@ if (false) {
 }
 
 /***/ }),
-/* 39 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(40)
+var __vue_script__ = __webpack_require__(44)
 /* template */
-var __vue_template__ = __webpack_require__(44)
+var __vue_template__ = __webpack_require__(48)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -28987,7 +32115,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 40 */
+/* 44 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -29047,7 +32175,7 @@ $.ajaxSetup({
         'X-CSRF-TOKEN': $('[name=token]').attr('content')
     }
 });
-var socialAuth = __webpack_require__(41);
+var socialAuth = __webpack_require__(45);
 /* harmony default export */ __webpack_exports__["default"] = ({
     components: {
         'social-auth': socialAuth
@@ -29144,15 +32272,15 @@ var socialAuth = __webpack_require__(41);
 });
 
 /***/ }),
-/* 41 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(42)
+var __vue_script__ = __webpack_require__(46)
 /* template */
-var __vue_template__ = __webpack_require__(43)
+var __vue_template__ = __webpack_require__(47)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -29191,7 +32319,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 42 */
+/* 46 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -29261,7 +32389,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 43 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -29326,7 +32454,7 @@ if (false) {
 }
 
 /***/ }),
-/* 44 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -29532,15 +32660,15 @@ if (false) {
 }
 
 /***/ }),
-/* 45 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(46)
+var __vue_script__ = __webpack_require__(50)
 /* template */
-var __vue_template__ = __webpack_require__(47)
+var __vue_template__ = __webpack_require__(51)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -29579,13 +32707,17 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 46 */
+/* 50 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_typewriter_effect_dist_core__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_typewriter_effect_dist_core__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_typewriter_effect_dist_core___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_typewriter_effect_dist_core__);
+//
+//
+//
+//
 //
 //
 //
@@ -29629,11 +32761,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             return this.offers[this.currentOfferIndex];
         },
         backgroundImage: function backgroundImage() {
-            var img = $(document).width() > 640 ? this.currentOffer.background_img : this.currentOffer.background_mobile ? this.currentOffer.background_mobile : this.currentOffer.background_img;
+            var width = $(document).width(),
+                img = this.currentOffer.background_img;
+
+            if (width <= 1279 && this.currentOffer.background_tablet) {
+                img = this.currentOffer.background_tablet;
+            }
+            if (width <= 719 && this.currentOffer.background_mobile) {
+                img = this.currentOffer.background_mobile;
+            }
+
             return 'url(/storage/' + img + ')';
         }
     },
     methods: {
+        swipe: function swipe(eve) {
+            //alert(123);
+        },
         nextSlide: function nextSlide() {
             var nextOfferIndex = this.currentOfferIndex + 1;
 
@@ -29677,7 +32821,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 47 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -29688,11 +32832,46 @@ var render = function() {
     "div",
     { staticClass: "main-offers" },
     [
-      _c("img", {
-        staticClass: "main-offers__arrow main-offers__arrow_prev",
-        attrs: { src: "/img/gui/arrow_dark.png" },
-        on: { click: _vm.nextSlide }
-      }),
+      _vm.offers.length > 1
+        ? _c(
+            "button",
+            {
+              staticClass: "main-offers__arrow main-offers__arrow_prev",
+              attrs: { name: "button" },
+              on: { click: _vm.nextSlide }
+            },
+            [
+              _c(
+                "svg",
+                {
+                  attrs: {
+                    xmlns: "http://www.w3.org/2000/svg",
+                    "xmlns:xlink": "http://www.w3.org/1999/xlink",
+                    width: "10",
+                    height: "16",
+                    viewBox: "0 0 10 16"
+                  }
+                },
+                [
+                  _c("defs", [
+                    _c("path", {
+                      attrs: {
+                        id: "83zha",
+                        d:
+                          "M1412.064 530l-6.715-6.14a1.013 1.013 0 0 1 0-1.53c.48-.44 1.27-.44 1.75 0l7.552 6.905a1.013 1.013 0 0 1 0 1.53l-7.551 6.905c-.48.44-1.27.44-1.751 0a1.013 1.013 0 0 1 0-1.53z"
+                      }
+                    })
+                  ]),
+                  _c("g", [
+                    _c("g", { attrs: { transform: "translate(-1405 -522)" } }, [
+                      _c("use", { attrs: { fill: "", "xlink:href": "#83zha" } })
+                    ])
+                  ])
+                ]
+              )
+            ]
+          )
+        : _vm._e(),
       _vm._v(" "),
       _vm._l(_vm.offers, function(offer, index) {
         return index == _vm.currentOfferIndex
@@ -29700,7 +32879,8 @@ var render = function() {
               "section",
               {
                 staticClass: "main-offer js-offer-slider",
-                style: { "background-image": _vm.backgroundImage }
+                style: { "background-image": _vm.backgroundImage },
+                on: { touch: _vm.swipe }
               },
               [
                 offer.type == "form"
@@ -29776,18 +32956,7 @@ var render = function() {
                             _vm._v("Вызвать замерщика")
                           ]),
                           _vm._v(" "),
-                          _c(
-                            "p",
-                            {
-                              staticClass:
-                                "form__agreement subtext subtext_white"
-                            },
-                            [
-                              _vm._v(
-                                "Оставляя контактную информацию, Вы соглашаетесь на обработку персональных данных"
-                              )
-                            ]
-                          )
+                          _vm._m(0, true)
                         ]
                       ),
                       _vm._v(" "),
@@ -29824,16 +32993,62 @@ var render = function() {
           : _vm._e()
       }),
       _vm._v(" "),
-      _c("img", {
-        staticClass: "main-offers__arrow",
-        attrs: { src: "/img/gui/arrow_dark.png" },
-        on: { click: _vm.nextSlide }
-      })
+      _vm.offers.length > 1
+        ? _c(
+            "button",
+            {
+              staticClass: "main-offers__arrow",
+              attrs: { name: "button" },
+              on: { click: _vm.nextSlide }
+            },
+            [
+              _c(
+                "svg",
+                {
+                  attrs: {
+                    xmlns: "http://www.w3.org/2000/svg",
+                    "xmlns:xlink": "http://www.w3.org/1999/xlink",
+                    width: "10",
+                    height: "16",
+                    viewBox: "0 0 10 16"
+                  }
+                },
+                [
+                  _c("defs", [
+                    _c("path", {
+                      attrs: {
+                        id: "83zha",
+                        d:
+                          "M1412.064 530l-6.715-6.14a1.013 1.013 0 0 1 0-1.53c.48-.44 1.27-.44 1.75 0l7.552 6.905a1.013 1.013 0 0 1 0 1.53l-7.551 6.905c-.48.44-1.27.44-1.751 0a1.013 1.013 0 0 1 0-1.53z"
+                      }
+                    })
+                  ]),
+                  _c("g", [
+                    _c("g", { attrs: { transform: "translate(-1405 -522)" } }, [
+                      _c("use", { attrs: { fill: "", "xlink:href": "#83zha" } })
+                    ])
+                  ])
+                ]
+              )
+            ]
+          )
+        : _vm._e()
     ],
     2
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "form__agreement subtext subtext_white" }, [
+      _vm._v("Оставляя контактную информацию, вы соглашаетесь "),
+      _c("br"),
+      _vm._v(" на обработку персональных данных")
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -29844,15 +33059,15 @@ if (false) {
 }
 
 /***/ }),
-/* 48 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(49)
+var __vue_script__ = __webpack_require__(53)
 /* template */
-var __vue_template__ = __webpack_require__(50)
+var __vue_template__ = __webpack_require__(54)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -29891,11 +33106,19 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 49 */
+/* 53 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -29964,12 +33187,33 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }
         },
         offsetShowPoint: function offsetShowPoint() {
+            var stop = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+
+            if (stop) {
+                this.stopSliding();
+            }
+
             var itemsCount = this.photos.length;
 
             this.showPoint++;
 
             if (this.showPoint == itemsCount) {
                 this.showPoint = 0;
+            }
+        },
+        offsetBackShowPoint: function offsetBackShowPoint() {
+            var stop = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+
+            if (stop) {
+                this.stopSliding();
+            }
+
+            var itemsCount = this.photos.length;
+
+            this.showPoint--;
+
+            if (this.showPoint <= 0) {
+                this.showPoint = itemsCount;
             }
         },
         startSliding: function startSliding() {
@@ -29995,107 +33239,197 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 50 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "portfolio__carousel" },
-    [
-      _vm._l(_vm.showedItems, function(photo, index) {
-        return _c(
-          "a",
+  return _c("div", { staticClass: "portfolio__wrapper" }, [
+    _c(
+      "button",
+      {
+        staticClass: "portfolio__prev",
+        attrs: { type: "button", name: "button" },
+        on: {
+          click: function($event) {
+            _vm.offsetBackShowPoint(true)
+          }
+        }
+      },
+      [
+        _c(
+          "svg",
           {
-            key: photo.id,
-            staticClass: "case b-card portfolio__item portfolio__item_slide",
-            on: {
-              click: function($event) {
-                _vm.toggleMode(index)
-              }
+            attrs: {
+              xmlns: "http://www.w3.org/2000/svg",
+              "xmlns:xlink": "http://www.w3.org/1999/xlink",
+              width: "10",
+              height: "16",
+              viewBox: "0 0 10 16"
             }
           },
           [
-            _c("img", {
-              staticClass: "case__img",
-              attrs: { src: "/storage/" + photo.src, alt: "3" }
-            }),
-            _vm._v(" "),
-            _c("p", { staticClass: "card-title case__title" }, [
-              _vm._v(_vm._s(photo.name))
+            _c("defs", [
+              _c("path", {
+                attrs: {
+                  id: "83zha",
+                  d:
+                    "M1412.064 530l-6.715-6.14a1.013 1.013 0 0 1 0-1.53c.48-.44 1.27-.44 1.75 0l7.552 6.905a1.013 1.013 0 0 1 0 1.53l-7.551 6.905c-.48.44-1.27.44-1.751 0a1.013 1.013 0 0 1 0-1.53z"
+                }
+              })
             ]),
-            _vm._v(" "),
-            _c("hr", { staticClass: "line line_small case__line" }),
-            _vm._v(" "),
-            _c("div", { staticClass: "case__totals" }, [
-              _c("p", { staticClass: "case__info text" }, [
-                _vm._v(
-                  "Стоиомость: " + _vm._s(photo.price.toLocaleString()) + "  р"
-                )
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "case__info text" }, [
-                _vm._v("Площадь: " + _vm._s(photo.area) + " м"),
-                _c("sup", [_vm._v("2")])
+            _c("g", [
+              _c("g", { attrs: { transform: "translate(-1405 -522)" } }, [
+                _c("use", { attrs: { fill: "", "xlink:href": "#83zha" } })
               ])
             ])
           ]
         )
-      }),
-      _vm._v(" "),
-      _c("div", {
-        class: [
-          "overlay",
-          "overlay_dark",
-          _vm.mode == "detail" ? "overlay_active" : ""
-        ],
-        on: { click: _vm.toggleMode }
-      }),
-      _vm._v(" "),
-      _vm.mode == "detail"
-        ? _c("div", { staticClass: "gallery" }, [
-            _c("p", { staticClass: "gallery__totals" }, [
-              _vm._v(
-                _vm._s(_vm.showedItems[_vm.currentPhotoIndex].price) +
-                  "  ₽ / " +
-                  _vm._s(_vm.showedItems[_vm.currentPhotoIndex].area) +
-                  " м"
-              ),
-              _c("sup", [_vm._v("2")])
-            ]),
-            _vm._v(" "),
-            _c("img", {
-              staticClass: "gallery__close",
-              attrs: { src: "/img/gui/close.svg" },
-              on: { click: _vm.toggleMode }
-            }),
-            _vm._v(" "),
-            _c("img", {
-              staticClass: "gallery__prev",
-              attrs: { src: "/img/gui/arrow_top.png" },
-              on: { click: _vm.prevItem }
-            }),
-            _vm._v(" "),
-            _c("img", {
-              staticClass: "gallery__next",
-              attrs: { src: "/img/gui/arrow_top.png" },
-              on: { click: _vm.nextItem }
-            }),
-            _vm._v(" "),
-            _c("img", {
-              staticClass: "gallery__img b-card",
-              attrs: {
-                src: "/storage/" + _vm.showedItems[_vm.currentPhotoIndex].src
+      ]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "portfolio__carousel" },
+      [
+        _vm._l(_vm.showedItems, function(photo, index) {
+          return _c(
+            "a",
+            {
+              key: photo.id,
+              staticClass: "case b-card portfolio__item portfolio__item_slide",
+              on: {
+                click: function($event) {
+                  _vm.toggleMode(index)
+                }
               }
-            })
-          ])
-        : _vm._e()
-    ],
-    2
-  )
+            },
+            [
+              _c("img", {
+                staticClass: "case__img",
+                attrs: { src: "/storage/" + photo.src, alt: "3" }
+              }),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-title case__title" }, [
+                _vm._v(_vm._s(photo.name))
+              ]),
+              _vm._v(" "),
+              _c("hr", { staticClass: "line line_small case__line" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "case__totals" }, [
+                _c("p", { staticClass: "case__info text" }, [
+                  _vm._v(
+                    "Стоиомость: " +
+                      _vm._s(photo.price.toLocaleString()) +
+                      "  ₽"
+                  )
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "case__info text" }, [
+                  _vm._v("Площадь: " + _vm._s(photo.area) + " м"),
+                  _c("sup", [_vm._v("2")])
+                ])
+              ])
+            ]
+          )
+        }),
+        _vm._v(" "),
+        _c("div", {
+          class: [
+            "overlay",
+            "overlay_dark",
+            _vm.mode == "detail" ? "overlay_active" : ""
+          ],
+          on: { click: _vm.toggleMode }
+        }),
+        _vm._v(" "),
+        _vm.mode == "detail"
+          ? _c("div", { staticClass: "gallery" }, [
+              _c("p", { staticClass: "gallery__totals" }, [
+                _vm._v(
+                  _vm._s(_vm.showedItems[_vm.currentPhotoIndex].price) +
+                    "  ₽ / " +
+                    _vm._s(_vm.showedItems[_vm.currentPhotoIndex].area) +
+                    " м"
+                ),
+                _c("sup", [_vm._v("2")])
+              ]),
+              _vm._v(" "),
+              _c("img", {
+                staticClass: "gallery__close",
+                attrs: { src: "/img/gui/close.svg" },
+                on: { click: _vm.toggleMode }
+              }),
+              _vm._v(" "),
+              _c("img", {
+                staticClass: "gallery__prev",
+                attrs: { src: "/img/gui/arrow_top.png" },
+                on: { click: _vm.prevItem }
+              }),
+              _vm._v(" "),
+              _c("img", {
+                staticClass: "gallery__next",
+                attrs: { src: "/img/gui/arrow_top.png" },
+                on: { click: _vm.nextItem }
+              }),
+              _vm._v(" "),
+              _c("img", {
+                staticClass: "gallery__img b-card",
+                attrs: {
+                  src: "/storage/" + _vm.showedItems[_vm.currentPhotoIndex].src
+                }
+              })
+            ])
+          : _vm._e()
+      ],
+      2
+    ),
+    _vm._v(" "),
+    _c(
+      "button",
+      {
+        staticClass: "portfolio__next",
+        attrs: { type: "button", name: "button" },
+        on: {
+          click: function($event) {
+            _vm.offsetShowPoint(true)
+          }
+        }
+      },
+      [
+        _c(
+          "svg",
+          {
+            attrs: {
+              xmlns: "http://www.w3.org/2000/svg",
+              "xmlns:xlink": "http://www.w3.org/1999/xlink",
+              width: "10",
+              height: "16",
+              viewBox: "0 0 10 16"
+            }
+          },
+          [
+            _c("defs", [
+              _c("path", {
+                attrs: {
+                  id: "83zha",
+                  d:
+                    "M1412.064 530l-6.715-6.14a1.013 1.013 0 0 1 0-1.53c.48-.44 1.27-.44 1.75 0l7.552 6.905a1.013 1.013 0 0 1 0 1.53l-7.551 6.905c-.48.44-1.27.44-1.751 0a1.013 1.013 0 0 1 0-1.53z"
+                }
+              })
+            ]),
+            _c("g", [
+              _c("g", { attrs: { transform: "translate(-1405 -522)" } }, [
+                _c("use", { attrs: { fill: "", "xlink:href": "#83zha" } })
+              ])
+            ])
+          ]
+        )
+      ]
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -30108,15 +33442,15 @@ if (false) {
 }
 
 /***/ }),
-/* 51 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(52)
+var __vue_script__ = __webpack_require__(56)
 /* template */
-var __vue_template__ = __webpack_require__(53)
+var __vue_template__ = __webpack_require__(57)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -30155,7 +33489,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 52 */
+/* 56 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -30241,7 +33575,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 53 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -30350,15 +33684,15 @@ if (false) {
 }
 
 /***/ }),
-/* 54 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(55)
+var __vue_script__ = __webpack_require__(59)
 /* template */
-var __vue_template__ = __webpack_require__(56)
+var __vue_template__ = __webpack_require__(60)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -30397,7 +33731,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 55 */
+/* 59 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -30452,7 +33786,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 56 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -30587,19 +33921,19 @@ if (false) {
 }
 
 /***/ }),
-/* 57 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(58)
+  __webpack_require__(62)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(60)
+var __vue_script__ = __webpack_require__(64)
 /* template */
-var __vue_template__ = __webpack_require__(61)
+var __vue_template__ = __webpack_require__(65)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -30638,13 +33972,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 58 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(59);
+var content = __webpack_require__(63);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -30664,7 +33998,7 @@ if(false) {
 }
 
 /***/ }),
-/* 59 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(false);
@@ -30678,7 +34012,7 @@ exports.push([module.i, "\n.slide-leave-active,\n.slide-enter-active {\n-webkit-
 
 
 /***/ }),
-/* 60 */
+/* 64 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -30905,7 +34239,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 61 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -31579,19 +34913,19 @@ if (false) {
 }
 
 /***/ }),
-/* 62 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(63)
+  __webpack_require__(67)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(65)
+var __vue_script__ = __webpack_require__(69)
 /* template */
-var __vue_template__ = __webpack_require__(66)
+var __vue_template__ = __webpack_require__(70)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -31630,13 +34964,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 63 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(64);
+var content = __webpack_require__(68);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -31656,7 +34990,7 @@ if(false) {
 }
 
 /***/ }),
-/* 64 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(false);
@@ -31670,7 +35004,7 @@ exports.push([module.i, "\n.slide-leave-active,\n.slide-enter-active {\n-webkit-
 
 
 /***/ }),
-/* 65 */
+/* 69 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -31864,7 +35198,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 66 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -32360,19 +35694,19 @@ if (false) {
 }
 
 /***/ }),
-/* 67 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(68)
+  __webpack_require__(72)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(70)
+var __vue_script__ = __webpack_require__(74)
 /* template */
-var __vue_template__ = __webpack_require__(71)
+var __vue_template__ = __webpack_require__(75)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -32411,13 +35745,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 68 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(69);
+var content = __webpack_require__(73);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -32437,7 +35771,7 @@ if(false) {
 }
 
 /***/ }),
-/* 69 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(false);
@@ -32451,7 +35785,7 @@ exports.push([module.i, "\n.slide-leave-active,\n.slide-enter-active {\n-webkit-
 
 
 /***/ }),
-/* 70 */
+/* 74 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -32636,7 +35970,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 71 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -33091,15 +36425,15 @@ if (false) {
 }
 
 /***/ }),
-/* 72 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(73)
+var __vue_script__ = __webpack_require__(77)
 /* template */
-var __vue_template__ = __webpack_require__(77)
+var __vue_template__ = __webpack_require__(81)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -33138,7 +36472,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 73 */
+/* 77 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -33150,7 +36484,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-Vue.component('post', __webpack_require__(74));
+Vue.component('post', __webpack_require__(78));
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['posts'],
     data: function data() {
@@ -33162,15 +36496,15 @@ Vue.component('post', __webpack_require__(74));
 });
 
 /***/ }),
-/* 74 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(75)
+var __vue_script__ = __webpack_require__(79)
 /* template */
-var __vue_template__ = __webpack_require__(76)
+var __vue_template__ = __webpack_require__(80)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -33209,7 +36543,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 75 */
+/* 79 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -33317,7 +36651,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 76 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -33364,7 +36698,7 @@ var render = function() {
           : _vm._e()
       ]),
       _vm._v(" "),
-      _vm.post.title || _vm.device == "mobile"
+      _vm.post.title || (_vm.device == "mobile" && _vm.post.title)
         ? _c(
             "a",
             {
@@ -33455,7 +36789,7 @@ if (false) {
 }
 
 /***/ }),
-/* 77 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -33481,7 +36815,205 @@ if (false) {
 }
 
 /***/ }),
-/* 78 */
+/* 82 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(83)
+/* template */
+var __vue_template__ = __webpack_require__(84)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/ManufacturersCarousel.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-571b2f9b", Component.options)
+  } else {
+    hotAPI.reload("data-v-571b2f9b", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 83 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            showCount: 5,
+            showPoint: 0,
+            interval: 0,
+            currentPhotoIndex: 0,
+            manufacturers: ['/img/manufacturers/Monblanc.svg', '/img/manufacturers/Veka.svg', '/img/manufacturers/Kbe.svg', '/img/manufacturers/Rehau.svg', '/img/manufacturers/Deceuninck.svg']
+        };
+    },
+    computed: {
+        showedItems: function showedItems() {
+            var itemsCount = this.manufacturers.length,
+                index = this.showPoint,
+                items = [];
+
+            while (items.length < this.showCount) {
+                if (!this.manufacturers[index]) {
+                    index = 0;
+                }
+                items.push(this.manufacturers[index]);
+
+                index++;
+            }
+
+            return items;
+        }
+    },
+    methods: {
+        nextItem: function nextItem() {
+            this.currentPhotoIndex++;
+
+            if (!this.showedItems[this.currentPhotoIndex]) {
+                this.currentPhotoIndex = 0;
+            }
+        },
+        prevItem: function prevItem() {
+            this.currentPhotoIndex--;
+
+            if (!this.showedItems[this.currentPhotoIndex]) {
+                this.currentPhotoIndex = this.showedItems.length - 1;
+            }
+        },
+        offsetShowPoint: function offsetShowPoint() {
+            var stop = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+
+            if (stop) {
+                this.stopSliding();
+            }
+
+            var itemsCount = this.manufacturers.length;
+
+            this.showPoint++;
+
+            if (this.showPoint == itemsCount) {
+                this.showPoint = 0;
+            }
+        },
+        offsetBackShowPoint: function offsetBackShowPoint() {
+            var stop = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+
+            if (stop) {
+                this.stopSliding();
+            }
+
+            var itemsCount = this.manufacturers.length;
+
+            this.showPoint--;
+
+            if (this.showPoint <= 0) {
+                this.showPoint = itemsCount;
+            }
+        },
+        startSliding: function startSliding() {
+            this.interval = setInterval(this.offsetShowPoint, 3000);
+        },
+        stopSliding: function stopSliding() {
+            clearInterval(this.interval);
+        }
+    },
+    mounted: function mounted() {
+        console.log(34234);
+        this.startSliding();
+        var width = $(document).width();
+
+        if (width <= 1280) {
+            this.showCount = 3;
+        }
+        if (width <= 719) {
+            this.showCount = 1;
+        }
+    }
+});
+
+/***/ }),
+/* 84 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "manufacturers__list" },
+    _vm._l(_vm.showedItems, function(manufacturer) {
+      return _c("div", { staticClass: "manufacturers__item" }, [
+        _c("img", {
+          staticClass: "manufacturers__item-image",
+          attrs: { src: manufacturer, alt: "" }
+        })
+      ])
+    })
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-571b2f9b", module.exports)
+  }
+}
+
+/***/ }),
+/* 85 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!function(e,t){if(true)!(__WEBPACK_AMD_DEFINE_ARRAY__ = [exports], __WEBPACK_AMD_DEFINE_FACTORY__ = (t),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));else if("undefined"!=typeof exports)t(exports);else{var o={};t(o),e.bodyScrollLock=o}}(this,function(exports){"use strict";function r(e){if(Array.isArray(e)){for(var t=0,o=Array(e.length);t<e.length;t++)o[t]=e[t];return o}return Array.from(e)}Object.defineProperty(exports,"__esModule",{value:!0});var l=!1;if("undefined"!=typeof window){var e={get passive(){l=!0}};window.addEventListener("testPassive",null,e),window.removeEventListener("testPassive",null,e)}var d="undefined"!=typeof window&&window.navigator&&window.navigator.platform&&/iP(ad|hone|od)/.test(window.navigator.platform),c=[],u=!1,a=-1,s=void 0,v=void 0,f=function(t){return c.some(function(e){return!(!e.options.allowTouchMove||!e.options.allowTouchMove(t))})},m=function(e){var t=e||window.event;return!!f(t.target)||(1<t.touches.length||(t.preventDefault&&t.preventDefault(),!1))},o=function(){setTimeout(function(){void 0!==v&&(document.body.style.paddingRight=v,v=void 0),void 0!==s&&(document.body.style.overflow=s,s=void 0)})};exports.disableBodyScroll=function(i,e){if(d){if(!i)return void console.error("disableBodyScroll unsuccessful - targetElement must be provided when calling disableBodyScroll on IOS devices.");if(i&&!c.some(function(e){return e.targetElement===i})){var t={targetElement:i,options:e||{}};c=[].concat(r(c),[t]),i.ontouchstart=function(e){1===e.targetTouches.length&&(a=e.targetTouches[0].clientY)},i.ontouchmove=function(e){var t,o,n,r;1===e.targetTouches.length&&(o=i,r=(t=e).targetTouches[0].clientY-a,!f(t.target)&&(o&&0===o.scrollTop&&0<r?m(t):(n=o)&&n.scrollHeight-n.scrollTop<=n.clientHeight&&r<0?m(t):t.stopPropagation()))},u||(document.addEventListener("touchmove",m,l?{passive:!1}:void 0),u=!0)}}else{n=e,setTimeout(function(){if(void 0===v){var e=!!n&&!0===n.reserveScrollBarGap,t=window.innerWidth-document.documentElement.clientWidth;e&&0<t&&(v=document.body.style.paddingRight,document.body.style.paddingRight=t+"px")}void 0===s&&(s=document.body.style.overflow,document.body.style.overflow="hidden")});var o={targetElement:i,options:e||{}};c=[].concat(r(c),[o])}var n},exports.clearAllBodyScrollLocks=function(){d?(c.forEach(function(e){e.targetElement.ontouchstart=null,e.targetElement.ontouchmove=null}),u&&(document.removeEventListener("touchmove",m,l?{passive:!1}:void 0),u=!1),c=[],a=-1):(o(),c=[])},exports.enableBodyScroll=function(t){if(d){if(!t)return void console.error("enableBodyScroll unsuccessful - targetElement must be provided when calling enableBodyScroll on IOS devices.");t.ontouchstart=null,t.ontouchmove=null,c=c.filter(function(e){return e.targetElement!==t}),u&&0===c.length&&(document.removeEventListener("touchmove",m,l?{passive:!1}:void 0),u=!1)}else 1===c.length&&c[0].targetElement===t?(o(),c=[]):c=c.filter(function(e){return e.targetElement!==t})}});
+
+
+/***/ }),
+/* 86 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

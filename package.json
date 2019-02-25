@@ -11,13 +11,15 @@
   },
   "devDependencies": {
     "axios": "^0.18",
+    "body-scroll-lock": "^2.6.1",
     "bootstrap": "^4.0.0",
-    "popper.js": "^1.12",
     "cross-env": "^5.1",
+    "inputmask": "^4.0.4",
+    "ion-rangeslider": "^2.3.0",
     "jquery": "^3.2",
     "laravel-mix": "^2.0",
     "lodash": "^4.17.4",
-    "vue": "^2.5.7",
-    "inputmask": "^4.0.4"
+    "popper.js": "^1.12",
+    "vue": "^2.5.7"
   }
 }

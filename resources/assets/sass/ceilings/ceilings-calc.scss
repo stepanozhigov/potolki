@@ -1,0 +1,94 @@
+.ceilingCalculator {
+    width: rem(780);
+    margin: 0 auto;
+    margin-bottom: rem(80);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: rem(56) rem(100);
+    padding-bottom: rem(64);
+    border: rem(1) solid #babec2;
+    border-radius: rem(5);
+
+    &__title {
+        margin: 0;
+        margin-top: rem(-80);
+        margin-bottom: rem(48);
+        margin-bottom: rem(36);
+        padding: 0 rem(55);
+        color: $grey_abbey;
+        font-family: $playfair;
+        font-size: rem(32);
+        font-weight: 400;
+        line-height: rem(38);
+        background-color: #ffffff;
+    }
+
+    &__desc {
+        margin: 0;
+        color: #485058;
+        font-family: $helvetica;
+        font-size: rem(16);
+        font-weight: 300;
+        line-height: rem(24);
+        text-align: center;
+    }
+
+    &__subtitle {
+        width: 100%;
+        margin: 0;
+        margin-bottom: rem(35);
+        color: #485058;
+        font-family: $helvetica;
+        font-size: rem(22);
+        font-weight: 300;
+        line-height: rem(32);
+        text-align: center;
+    }
+
+    &__total {
+        width: 100%;
+        margin: 0;
+        text-shadow: 0 1px 1px $white;
+        color: $red_crismon;
+        font-family: $helvetica;
+        font-size: rem(48);
+        font-weight: 500;
+        line-height: rem(48);
+        text-align: center;
+    }
+
+    &__measure {
+        width: 100%;
+        margin: 0;
+        margin-bottom: rem(48);
+        color: #808890;
+        font-family: $helvetica;
+        font-size: rem(24);
+        font-weight: 700;
+        text-align: center;
+    }
+
+    &__item {
+        width: calc(50% - 10px);
+        margin-bottom: rem(48);
+
+        &:nth-of-type(odd) {
+            margin-right: auto;
+        }
+
+        &-name {
+            margin: 0;
+            margin-bottom: rem(2);
+            color: #485058;
+            font-family: $playfair;
+            font-size: rem(20);
+            font-weight: 400;
+            line-height: rem(24);
+        }
+    }
+
+    &__callback {
+        @extend .button;
+    }
+}

@@ -2,11 +2,14 @@
 @import 'variables';
 
 .survey {
-    @extend .container;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: rem(128);
+
+
+    &.container {
+        margin-bottom: rem(80);
+    }
 
     &__buttons {
         display: flex;
@@ -53,11 +56,25 @@
 
     &__yes,
     &__no {
-        width: rem(140);
+        width: rem(36);
+        height: rem(41);
+        text-indent: -9999px;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        border: none;
+        outline: none;
+        cursor: pointer;
     }
 
     &__yes {
         margin-right: rem(20);
+        background-image: url('/img/youtube-up.svg');
+        background-position: top;
+    }
+
+    &__no {
+        background-image: url('/img/youtube-down.svg');
+        background-position: bottom;
     }
 
     &__form {

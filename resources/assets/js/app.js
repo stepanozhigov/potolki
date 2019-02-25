@@ -10,6 +10,7 @@ window.$ = window.jQuery = require('jquery');
 
 window.Vue = require('vue');
 var Inputmask = require('inputmask');
+var ionRangeSlider = require('ion-rangeslider/js/ion.rangeSlider.js');
 
 require('./components/popup');
 //require('./components/social');
@@ -22,6 +23,7 @@ require('./components/popup');
 
 Vue.component('window-calc', require('./components/WindowCalc.vue'));
 Vue.component('balcony-calc', require('./components/BalkonyCalc.vue'));
+Vue.component('ceilings-calc', require('./components/ceilingsCalc.vue'));
 Vue.component('city-search', require('./components/CitySearch.vue'));
 Vue.component('add-comment', require('./components/AddComment.vue'));
 Vue.component('add-review', require('./components/AddReview.vue'));
@@ -33,6 +35,7 @@ Vue.component('dveri-calc', require('./components/DveriCalc.vue'));
 Vue.component('peregorodki-calc', require('./components/Peregorodki.vue'));
 Vue.component('zhalyuzi-calc', require('./components/Zhalyuzi.vue'));
 Vue.component('posts', require('./components/Articles.vue'));
+Vue.component('manufacturers', require('./components/ManufacturersCarousel.vue'));
 
 
 $(document).on('scroll', function () {
@@ -54,6 +57,16 @@ if (articles.length > 0) {
         el: '#articles'
     })
 }
+
+const manufacturers = $('#manufacturers__list');
+
+if (manufacturers.length > 0) {
+    new Vue({
+        el: '#manufacturers__list',
+        template: '<manufacturers></manufacturers>'
+    })
+} 
+
 
 const creditCalcContainer = $('#credit-calc');
 
@@ -135,6 +148,12 @@ if ($('#balcony-calc').length > 0) {
     });
 }
 
+if ($('#ceilings-calc').length > 0) {
+    var CeilingsCalc = new Vue({
+        el: '#ceilings-calc'
+    });
+}
+
 if ($('#dveri-calc').length > 0) {
     var DveriCalc = new Vue({
         el: '#dveri-calc'
@@ -189,17 +208,32 @@ $('.survey__yes').on('click', function () {
     $('.survey__thankyou').slideDown();
 });
 
+const bodyScrollLock = require('body-scroll-lock');
+const disableBodyScroll = bodyScrollLock.disableBodyScroll;
+const enableBodyScroll = bodyScrollLock.enableBodyScroll;
+
+// 2. Get a target element that you want to persist scrolling for (such as a modal/lightbox/flyout/nav).
+const targetElement = document.querySelector("#mobileMenu");
+const targetElementTwo = document.querySelector("#fixedMobileMenu");
+
+$('.hamburger').on('click', function (e) {
+    $('.header__menu').addClass('menu_active');
+    $('body').addClass('no-scroll');
+    $('.header__hamburger').removeClass('active');
+    $('.header__close').addClass('active');
 
 
-$('.js-toggle-menu').on('click', function (e) {
-    $('.header__menu').toggleClass('menu_active');
-    $('body').toggleClass('no-scroll');
-    $('.header__hamburger').toggleClass('active');
-    $('.header__close').toggleClass('active');
+    disableBodyScroll(targetElement);
+    disableBodyScroll(targetElementTwo);
 });
 
-$('.js-toggle-submenu').on('click', function (e) {
-    $(this).toggleClass('menu__item_opened');
+$('.header__close').on('click', function (e) {
+    $('.header__menu').removeClass('menu_active');
+    $('body').removeClass('no-scroll');
+    $('.header__hamburger').addClass('active');
+    $('.header__close').removeClass('active');
+    enableBodyScroll(targetElement);
+    enableBodyScroll(targetElementTwo);
 });
 
 $('.whyus__button').on('click', function () {
@@ -218,7 +252,13 @@ if ($(document).width() <= 1024) {
     $('.js-toggle-submenu').on('click', function (event) {
         event.preventDefault();
         //$(this).siblings('.menu__item_dropdown').find('.menu__dropdown_toggled').removeClass('menu__dropdown_toggled');
-        $(this).next('.menu__dropdown').toggleClass('menu__dropdown_toggled');
+        $(this).closest('.menu').addClass('opened');
+        $(this).next('.menu__dropdown').addClass('opened');
+    })
+
+    $('.menu__item-nav').on('click', function () {
+        $(this).closest('.menu').removeClass('opened');
+        $(this).closest('.menu__dropdown').removeClass('opened');
     })
 }
 
@@ -329,10 +369,6 @@ $('.titles__arrow').on('click', function () {
     $(this).prev('.intro ').toggleClass('opened');
 });
 
-
-
-
-
 $('.js-link').on('click', function (e) {
     let href = $(this).attr('href');
     if (href) {
@@ -400,3 +436,9 @@ var phoneMask = new Inputmask('+7 999 999-99-99'),
     $phones = $('[type=tel]');
 
 phoneMask.mask($phones);
+
+$('.range').ionRangeSlider({
+    skin: 'round',
+    hide_min_max: true,
+    extra_classes: 'range_red'
+});

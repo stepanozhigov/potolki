@@ -27,12 +27,12 @@
             <img class="calculator__image" src="/img/windows/calculator/balcony/balcony-calc-big_01.png" srcset="/img/windows/calculator/balcony/balcony-calc-big_01@2x.png 2x" alt="">
             <img class="calculator__window-left" src="/img/windows/calculator/balcony/balcony-calc-big_11.png" srcset="/img/windows/calculator/balcony/balcony-calc-big_11@2x.png 2x" alt="">
             <div class="calculator__width">
-                <input type="number" class="calculator__input" name="height[]">
+                <input v-model="width" type="number" class="calculator__input" name="height[]">
                 <span class="calculator__input-unit">мм</span>
                 <span class="calculator__input-val">2 400</span>
             </div>
             <div class="calculator__height">
-                <input type="number" class="calculator__input" name="height[]">
+                <input v-model="height" type="number" class="calculator__input" name="height[]">
                 <span class="calculator__input-unit">мм</span>
                 <span class="calculator__input-val">2 400</span>
             </div>
@@ -41,12 +41,12 @@
             <img class="calculator__image" src="/img/windows/calculator/balcony/balcony-calc-big_02.png" srcset="/img/windows/calculator/balcony/balcony-calc-big_02@2x.png 2x" alt="">
             <img class="calculator__window-left" src="/img/windows/calculator/balcony/balcony-calc-big_11.png" srcset="/img/windows/calculator/balcony/balcony-calc-big_11@2x.png 2x" alt="">
             <div class="calculator__width">
-                <input type="number" class="calculator__input" name="height[]">
+                <input v-model="width" type="number" class="calculator__input" name="height[]">
                 <span class="calculator__input-unit">мм</span>
                 <span class="calculator__input-val">2 400</span>
             </div>
             <div class="calculator__height">
-                <input type="number" class="calculator__input" name="height[]">
+                <input v-model="height" type="number" class="calculator__input" name="height[]">
                 <span class="calculator__input-unit">мм</span>
                 <span class="calculator__input-val">2 400</span>
             </div>
@@ -55,12 +55,12 @@
             <img class="calculator__image" src="/img/windows/calculator/balcony/balcony-calc-big_03.png" srcset="/img/windows/calculator/balcony/balcony-calc-big_03@2x.png 2x" alt="">
             <img class="calculator__window-left" src="/img/windows/calculator/balcony/balcony-calc-big_11.png" srcset="/img/windows/calculator/balcony/balcony-calc-big_11@2x.png 2x" alt="">
             <div class="calculator__width">
-                <input type="number" class="calculator__input" name="height[]">
+                <input v-model="width" type="number" class="calculator__input" name="height[]">
                 <span class="calculator__input-unit">мм</span>
                 <span class="calculator__input-val">2 400</span>
             </div>
             <div class="calculator__height">
-                <input type="number" class="calculator__input" name="height[]">
+                <input v-model="height" type="number" class="calculator__input" name="height[]">
                 <span class="calculator__input-unit">мм</span>
                 <span class="calculator__input-val">2 400</span>
             </div>
@@ -69,12 +69,12 @@
             <img class="calculator__image" src="/img/windows/calculator/balcony/balcony-calc-big_04.png" srcset="/img/windows/calculator/balcony/balcony-calc-big_04@2x.png 2x" alt="">
             <img class="calculator__window-left" src="/img/windows/calculator/balcony/balcony-calc-big_11.png" srcset="/img/windows/calculator/balcony/balcony-calc-big_11@2x.png 2x" alt="">
             <div class="calculator__width">
-                <input type="number" class="calculator__input" name="height[]">
+                <input v-model="width" type="number" class="calculator__input" name="height[]">
                 <span class="calculator__input-unit">мм</span>
                 <span class="calculator__input-val">2 400</span>
             </div>
             <div class="calculator__height">
-                <input type="number" class="calculator__input" name="height[]">
+                <input v-model="height" type="number" class="calculator__input" name="height[]">
                 <span class="calculator__input-unit">мм</span>
                 <span class="calculator__input-val">2 400</span>
             </div>
@@ -85,7 +85,7 @@
                 <p class="calculator__text">Указаны стандартные размеры оконных рам. Введите свои параметры для расчёта стоимости.</p>
                 <div class="calculator__size">
                     <p class="calculator__size-name">Ширина</p>
-                    <div class="calculator__width">
+                    <div class="calculator__width"> 
                         <input type="number" pattern="\d*" class="calculator__input" name="height[]">
                         <span class="calculator__input-unit">мм</span>
                     </div>
@@ -101,12 +101,12 @@
             <div class="calculator__service">
                 <h3 class="calculator__title">Сервис</h3>
                 <label class="checkbox">
-                    <input name="shipping" type="checkbox" class="checkbox__input">
+                    <input v-model="shipping" name="shipping" type="checkbox" class="checkbox__input">
                     <span class=" checkbox__mark"></span>
                      Доставка
                 </label>
                 <label class="checkbox">
-                    <input name="install" type="checkbox" class="checkbox__input">
+                    <input v-model="install" name="install" type="checkbox" class="checkbox__input">
                     <span class=" checkbox__mark"></span>
                     Установка
                 </label>
@@ -119,7 +119,7 @@
             <div class="calculator__price">
                 <h3 class="calculator__title">Стоимость</h3>
                 <p class="calculator__text">Является примерной. Точная оценка и расчёт нетиповых конфигураций требует бесплатного выезда замерщика.</p>
-                <p class="calculator__summ">5 800 ₽</p>
+                <p class="calculator__summ">{{ summ.toLocaleString() }} ₽</p>
                 <button class="calculator__button js-show" data-src="#popup_callback" data-title="Вызов замерщика" data-button="Вызвать замерщика">Вызвать замерщика</button>
             </div>
         </div>
@@ -146,9 +146,11 @@
             return {
                 currentType: 'odnostvorchatoe-okno',
                 areaMode: '',
-                install: 0,
-                arrWidth: [],
-                arrHeight: [],
+                install: false,
+                installBasePrice: 500,
+                shipping: false,
+                width: 1000,
+                height: 1000,
                 multiplier: 3000,
                 pixelWidth: 0,
                 publicPath: '/storage/'
@@ -159,17 +161,11 @@
             this.pixelWidth = $(this.$refs.calculator__img).width();
         },
         computed: {
-            width () {
-                return this.arrWidth.length ? this.arrWidth.reduce( (total, current) => { return total + current } ): 0;
-            },
-            height () {
-                return this.arrHeight.length ? this.arrHeight.reduce( (total, current) => { return total + current } ): 0;
-            },
             area: function () {
                 return this.width * this.height / 1000000;
             },
             installPrice: function () {
-                return this.install * this.area;
+                return this.install ? this.installBasePrice * this.area : 0;
             },
             summ: function () {
                 return parseInt(this.area * this.multiplier + this.installPrice);

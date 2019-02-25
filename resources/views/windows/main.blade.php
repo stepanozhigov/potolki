@@ -3,7 +3,7 @@
 @section('content')
     @include('common.gui.header')
 
-    <section class="main-offer js-offer-slider" @if ($offers->count() > 1) data-offers="{{ $offers }}" id="js-offer-slider" @endif>
+    <section class="main-offer js-offer-slider" @if ($offers->count() >= 1) data-offers="{{ $offers }}" id="js-offer-slider" @endif>
         <div class="main-offer__inner container">
             <p class="text main-offer__overtitle">Уникальное предложение</p>
             @php
@@ -13,7 +13,7 @@
                 ]);
             @endphp
             <h1 class="title main-offer__title js-writen" data-texts="{{$texts}}">Пластиковые окна со&nbspскидкой&nbsp30%</h1>
-            <p class="main-offer__subtitle">Для получения скидки оставьте заявку</p>
+            <p class="main-offer__subtitle">Вызовите специалиста для замера и&nbsp;расчёта</p>
 
             <form class="form main-offer__form mobile-hide" action="" id="offer-form">
                 <input class="input form__input" type="text"  placeholder="Ваше имя">
@@ -21,7 +21,7 @@
 
                 <button class="button form__button">Вызвать замерщика</button>
 
-                <p class="form__agreement subtext subtext_white">Оставляя контактную информацию, вы соглашаетесь на обработку персональных данных</p>
+                <p class="form__agreement subtext subtext_white">Оставляя контактную информацию, вы соглашаетесь <br>  на обработку персональных данных</p>
             </form>
             <button data-src="#popup_callback" class="button main-offer__button mobile-only js-show">Вызвать замерщика</button>
         </div>
@@ -30,12 +30,12 @@
         @include('common.gui.titles', [
             'overtitle' =>  'Наши преимущества',
             'title' =>  "Звонят многим, заказывают у нас. Почему? ",
-            'intro' =>  "Фабрика пластиковых окон &laquo;Твой стиль&raquo; основана в&nbsp;2003 году является лидером <br> по&nbsp;производству и&nbsp;установке натяжных потолков на&nbsp;Дальнем Востоке"
+            'intro' =>  "Фабрика пластиковых окон &laquo;Твой стиль&raquo; основана в&nbsp;2003 году. Является лидером по&nbsp;производству и&nbsp;установке натяжных потолков&nbsp;на&nbsp;Дальнем Востоке."
         ])
         <div class="whyus__content">
             <div class="whyus__item">
                 <div class="whyus__item-info">
-                    <h3 class="whyus__item-title">Наши преимущества</h3>
+                    <h3 class="whyus__item-title">Наши преимущества </h3>
                     <ul>
                         <li class="whyus__item-text">— Контроль качества после установки</li>
                         <li class="whyus__item-text">— Собственное производство</li>
@@ -44,7 +44,6 @@
                         <li class="whyus__item-text">— 16 лет успешной работы</li>
                         <li class="whyus__item-text">— Гарантия низкой цены</li>
                         <li class="whyus__item-text">— Установка за 1 день</li>
-                        <li class="whyus__item-text">— Контроль качества</li>
                     </ul>
                 </div>
                 <img class="whyus__item-image" src="/img/img_factory.jpg" alt="Производство">
@@ -57,20 +56,23 @@
                     </p>
                     <div class="signature">
                         <p>А. А. Репин</p>
-                        <img src="/img/signature.png" alt="signature">
+                        <img src="/img/signature.png" srcset="/img/signature2x.png 2x" alt="signature">
                     </div>
                     <div class="socials">
-                        <a target="_blank" href="https://vk.com/business.repin" class="socials__item">
-                            <div class="socials__icon socials__icon_vk"></div>
-                        </a>
-                        <a target="_blank" href="https://ok.ru/profile/589436377360" class="socials__item">
-                            <div class="socials__icon socials__icon_ok"></div>
-                        </a>
                         <a target="_blank" href="https://www.instagram.com/business_repin/" class="socials__item">
                             <div class="socials__icon socials__icon_inst"></div>
                         </a>
+                        <a target="_blank" href="https://www.instagram.com/business_repin/" class="socials__item">
+                            <div class="socials__icon socials__icon_fb"></div>
+                        </a>
+                        <a target="_blank" href="https://vk.com/business.repin" class="socials__item">
+                            <div class="socials__icon socials__icon_vk"></div>
+                        </a>
                         <a target="_blank" href="https://api.whatsapp.com/send?phone=79996516666" class="socials__item">
                             <div class="socials__icon socials__icon_whatsapp"></div>
+                        </a>
+                        <a target="_blank" href="https://ok.ru/profile/589436377360" class="socials__item">
+                            <div class="socials__icon socials__icon_ok"></div>
                         </a>
                     </div>
                 </div>
@@ -96,8 +98,8 @@
     <section class="catalog-cards container">
         @include('common.gui.titles', [
             'overtitle' =>  'Каталог',
-            'secondTitle' =>  "Пластиковые окна {$city->name_formatted} от&nbspпроизводителя",
-            'intro' =>  "Фабрика окон №1 {$city->name_formatted}. Посмотрите каталог и ниже рассчитайте ваш заказ <span class='intro_red'>за&nbsp5&nbspсекунд</span>"
+            'secondTitle' =>  "Пластиковые окна {$city->name_formatted}",
+            'intro' =>  "Фабрика окон №1 {$city->name_formatted}. Посмотрите каталог и ниже рассчитайте ваш заказ <span class='intro_red'>за&nbsp5&nbspсекунд</span>."
         ])
 
         @foreach ($catalogTypes as $type)
@@ -117,27 +119,10 @@
         </div>
     </section>
 
-    <section class="manufacturers manufacturers_main container">
-
-        @include('common.gui.titles', ['secondTitle' => 'Производители профилей'])
-
-        <div class="manufacturers__list">
-
-            @foreach ($currentDirection->manufacturers as $manufacturer)
-                <div class="manufacturers__item">
-                    <img src="{{ Storage::url($manufacturer->logo) }}" alt="" class="manufacturers__item-image">
-                    <!--<p class="manufacturers__country"> Китай </p>-->
-                </div>
-            @endforeach
-        </div>
-
-    </section>
-
     <section class="calc-promo container">
         <div class="calc-promo__titles">
             <h2 class="titles__second-title">Калькулятор стоимости</h2>
             <p class="intro calc-promo__intro">
-                Калькулятор стоимости
 Стоимость&nbsp;&mdash; один из&nbsp;важных факторов принятие решения в&nbsp;выборе компании. Нажмите кнопку &laquo;Рассчитать&raquo; и&nbsp;за&nbsp;5&nbsp;секунд вы&nbsp;будете знать стоимость вашего изделия. Акция &laquo;Найдете дешевле&nbsp;&mdash; Снизим цену&raquo; дает вам гарантию самой низкой цены {{$city->name_formatted}}.
             </p>
             <a href="{{ route('calculator', $city) }}" class="button calc-promo__button">Рассчитать</a>
@@ -147,7 +132,6 @@
 
     <section class="portfolio portfolio_main b-texture b-texture_square">
         @include('common.gui.titles', ['secondTitle' => 'Примеры наших работ'])
-        <button type="button" class="portfolio__prev" name="button"><img src="/img/gui/arrow_dark.png"></button>
         <div class="portfolio__carousel" id="portfolio__carousel" data-photos="{{ $photos }}">
             @foreach ($photos as $photo)
                 <a class="case b-card portfolio__item portfolio__item_slide">
@@ -157,7 +141,6 @@
                 </a>
             @endforeach
         </div>
-        <button type="button" class="portfolio__next" name="button"><img src="/img/gui/arrow_dark.png"></button>
         <div class="buttons portfolio__buttons">
             <a href="{{ route('photos', $city) }}" class="button buttons__item button_gray">Посмотреть все работы</a>
             <button class="button js-show" data-src="#popup_callback" data-title="Вызов замерщика" data-button="Вызвать замерщика">Вызвать замерщика</button>
@@ -179,10 +162,11 @@
         </div>
     </section>
     <section class="articles articles_main" id="articles">
-        @include('common.gui.titles', ['secondTitle' => 'Наши посты с социальных сетей '])
-        <p class="intro titles__intro">
-            Вы&nbsp;можете посмотреть все посты в&nbsp;удобной для вас социальной сети , либо нажмите кнопку &laquo;Все посты&raquo; и&nbsp;на&nbsp;новой странице вы&nbsp;можете отфильтровать и&nbsp;посмотреть интересную информацию.
-        </p>
+        @include('common.gui.titles', [
+            'class' =>  "container",
+            'secondTitle' =>  "Наши посты из&nbsp;социальных сетей",
+            'intro' =>  "Посмотрите посты в&nbsp;удобной для вас социальной сети, либо нажмите кнопку &laquo;Все посты&raquo; и&nbsp;на&nbsp;новой странице вы&nbsp;можете отфильтровать и&nbsp;посмотреть интересную&nbsp;информацию."
+        ])
         <div class="socials titles__socials container">
             <a href="" class="socials__item red-hoverable">
                 <div class="socials__icon socials__icon_inst"></div>
@@ -207,65 +191,74 @@
        <a href="http://89.108.103.224/sochi/articles" class="articles__button">Все посты</a>
 
     </section>
+    <section class="manufacturers manufacturers_main container">
 
+        @include('common.gui.titles', ['secondTitle' => 'Производители профилей'])
+
+        <div id="manufacturers__list">
+        </div>
+
+    </section>
+    <section class="seo-block" @if($seoData->background_image) style="background-image: url({{ Storage::url($seoData->background_image) }})" @endif>
+        <div class="seo-block__content container">
+            <div class="seo-block__list">
+                <div class="seo-block__item">
+                    <h3 class="seo-block__item-title">{!! str_replace('#city_title#', $city->name_formatted, $seoData->first_title) !!}</h3>
+                    {!! $seoData->first_text !!}
+                    @if ($seoData->firm_img)
+                        <img src="{{ Storage::url($seoData->firm_img) }}" alt="" class="seo-block__img">
+                    @endif
+                </div>
+                <div class="seo-block__item seo-block__item_reverse">
+                    <h3 class="seo-block__item-title">{{ $seoData->second_title }}</h3>
+                    {!! $seoData->second_text !!}
+                    @if ($seoData->second_img)
+                        <img src="{{ Storage::url($seoData->second_img) }}" alt="" class="seo-block__img">
+                    @endif
+                </div>
+                <div class="seo-block__item">
+                    <h3 class="seo-block__item-title">{{ $seoData->third_title }}</h3>
+                    {!! $seoData->third_text !!}
+                    @if ($seoData->third_img)
+                        <img src="{{ Storage::url($seoData->third_img) }}" alt="" class="seo-block__img">
+                    @endif
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="additional container">
         @include('common.gui.titles', ['secondTitle' => 'Также вас может заинтересовать'])
         <div class="additional__list">
             <div class="additional__item">
-                <img src="/img/windows/additional__zhaluzi.png" alt="" width="201" height="166" class="additional__img">
-                <h3 class="additional__title">Жалюзи</h3>
+                <img src="/img/windows/free_measure.png" alt="" width="201" height="166" class="additional__img">
+                <h3 class="additional__title">Бесплатный замер</h3>
                 <p class="text additional__text">
-                    Если вы хотите защититься от палящих лучей летнего солнца – лучшего решения, чем купить жалюзи на окна, и не придумать.
+                    Технолог нашей компании произведет <br> точный замер и&nbsp;расчет стоимости заказа <br> в&nbsp;удобное&nbsp;для&nbsp;вас&nbsp;время.
                 </p>
             </div>
             <div class="additional__item">
                 <img src="/img/windows/home_deal.png" alt="" width="201" height="166" class="additional__img">
                 <h3 class="additional__title">Договор на дому</h3>
                 <p class="text additional__text">
-                    Наш специалист приедет в удобное для вас время, произведет демонстрацию и даст все необходимые консультации
-                </p>
-            </div>
-            <div class="additional__item">
-                <img src="/img/windows/free_measure.png" alt="" width="201" height="166" class="additional__img">
-                <h3 class="additional__title">Бесплатный замер</h3>
-                <p class="text additional__text">
-                    Технолог нашей компании произведет точный замер и расчет стоимости заказа в удобное для вас время
+                    Для вашего удобства замерный мастер <br> может рассчитать и&nbsp;заключить <br> договор&nbsp;у&nbsp;вас&nbsp;дома.
                 </p>
             </div>
             <div class="additional__item">
                 <img src="/img/windows/additional__percent.png" alt="" width="205" height="134" class="additional__img">
                 <h3 class="additional__title">Рассрочка до 3х лет</h3>
                 <p class="text additional__text">
-                    Основной плюс рассрочки в отсутствии переплат. Итоговая сумма, не меняется с течением времени.
+                    Беспроцентная рассрочка даёт <br> возможность установить потолок, если <br> сразу нет необходимой&nbsp;суммы&nbsp;денег.
+                </p>
+            </div>
+            <div class="additional__item">
+                <img src="/img/windows/additional__zhaluzi.png" alt="" width="201" height="166" class="additional__img">
+                <h3 class="additional__title">Жалюзи</h3>
+                <p class="text additional__text">
+                    Лучшее решение для оформления оконного <br> пространства&nbsp;&mdash; жалюзи. <br> Смотрится красиво&nbsp;и&nbsp;современно.
                 </p>
             </div>
         </div>
     </section>
     @include('common.gui.survey')
-    <section class="seo-block" @if($seoData->background_image) style="background: url({{ Storage::url($seoData->background_image) }})" @endif>
-        <div class="seo-block__content container">
-            <div class="seo-block__item">
-                <h3>{!! str_replace('#city_title#', $city->name_formatted, $seoData->first_title) !!}</h3>
-                {!! $seoData->first_text !!}
-                @if ($seoData->firm_img)
-                    <img src="{{ Storage::url($seoData->firm_img) }}" alt="" class="seo-block__img">
-                @endif
-            </div>
-            <div class="seo-block__item">
-                @if ($seoData->second_img)
-                    <img src="{{ Storage::url($seoData->second_img) }}" alt="" class="seo-block__img">
-                @endif
-                <h3>{{ $seoData->second_title }}</h3>
-                {!! $seoData->second_text !!}
-            </div>
-            <div class="seo-block__item">
-                <h3>{{ $seoData->third_title }}</h3>
-                {!! $seoData->third_text !!}
-                @if ($seoData->third_img)
-                    <img src="{{ Storage::url($seoData->third_img) }}" alt="" class="seo-block__img">
-                @endif
-            </div>
-        </div>
-    </section>
     @include('common.gui.footer')
 @endsection

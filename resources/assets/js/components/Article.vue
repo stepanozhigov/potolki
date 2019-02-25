@@ -15,7 +15,7 @@
                 <h3>{{ post.title }}</h3>
                 <p v-if="mode == 'expanded'" v-html="post.text"></p>
             </div>
-            <a v-if="post.title || device == 'mobile'" data-src="#popup_articles" class="article__more" href="javascript:void(0);">Подробнее</a>
+            <a v-if="post.title || (device == 'mobile' && post.title)" data-src="#popup_articles" class="article__more" href="javascript:void(0);">Подробнее</a>
         </article>
         <div v-if="mode == 'detail'" class="overlay overlay_active" @click="toggleMode"></div>
         <div v-if="mode == 'detail'" class="popup popup_active" id="popup_articles" style="">
@@ -90,7 +90,7 @@
                 let slides = [];
 
                 slides.push(this.post.img);
-                
+
 
                 if (this.post.images) {
                     let images = JSON.parse(this.post.images);

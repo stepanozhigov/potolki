@@ -43,6 +43,10 @@
         overflow: hidden;
         flex-shrink: 0;
 
+        @include below($tablet) {
+			max-height: rem(72);
+		}
+
         &::after {
             position: absolute;
             content: '';

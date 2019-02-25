@@ -8,6 +8,7 @@
 @import './gui/directions';
 @import './gui/survey';
 @import './gui/checkbox';
+@import './gui/breadcrumbs';
 
 
 @import './gui/form';
@@ -18,6 +19,7 @@
 @import 'common';
 @import './gui/menu';
 @import './windows/catalogue';
+@import './ceilings/ceilings-calc';
 @import 'portfolio';
 
 @import 'services';
@@ -71,3 +73,5 @@
 @import './articles';
 
 @import './whyus';
+
+@import '~ion-rangeslider/css/ion.rangeSlider.css';  

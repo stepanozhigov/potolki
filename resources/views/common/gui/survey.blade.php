@@ -1,9 +1,9 @@
-<section class="survey">
-    <h2 class="survey__title">Наш сайт помог вам сделать выбор?</h2>
+<section class="survey container">
+    <h2 class="survey__title">Оцените наш сайт</h2>
     <p class="survey__subtitle">Что нам нужно сделать, чтобы сайт стал лучше?</p>
     <div class="survey__buttons">
-        <button class="survey__yes button button_gray" type="button" name="button">Да</button>
-        <button class="survey__no button button_gray" type="button" name="button">Нет</button>
+        <button class="survey__yes" type="button" name="button">Да</button>
+        <button class="survey__no" type="button" name="button">Нет</button>
     </div>
     <p class="survey__thankyou">Спасибо за ваш отзыв</p>
     <form class="survey__form" action="" method="post">

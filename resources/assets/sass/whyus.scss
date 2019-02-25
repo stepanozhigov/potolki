@@ -34,6 +34,10 @@
 
 		&:not(:last-of-type) {
 			margin-bottom: rem(112);
+
+			@include below($mobile) {
+				margin-bottom: rem(64);
+			}
 		}
 
 		@include below($tablet) {
@@ -109,12 +113,10 @@
 		}
 
 		@include below($mobile) {
-			position: absolute;
-			left: 50%;
-			top: rem(45);
-			width: rem(288);
-			height: rem(192);
-			transform: translateX(-50%);
+			width: 100%;
+			height: auto;
+			order: -1;
+			margin-bottom: rem(24);
 		}
 	}
 
@@ -128,9 +130,9 @@
 		line-height: rem(38);
 
 		@include below($mobile) {
-			margin-bottom: rem(222);
+			margin-bottom: rem(8);
 			font-size: rem(26);
-			text-align: center;
+			text-align: left;
 		}
 	}
 
@@ -168,7 +170,7 @@
 		justify-content: flex-start;
 
 		@include below($mobile) {
-			justify-content: space-between;
+			justify-content: center;
 		}
 
 		.socials__item {
@@ -181,7 +183,7 @@
 				margin-right: rem(16);
 
 				@include below($mobile) {
-					margin: 0;
+					margin-right: rem(12);
 				}
 			}
 		}
@@ -388,7 +390,6 @@
 	}
 
 	&_main {
-		margin-bottom: rem(32);
 
 		.whyus__stat {
 			display: none;
@@ -396,7 +397,12 @@
 		}
 
 		.titles {
+			@extend .container;
 			margin-bottom: rem(48);
+
+			@include below($mobile) {
+				margin-bottom: rem(24);
+			}
 		}
 	}
 
@@ -410,6 +416,10 @@
 
 		.titles {
 			margin-bottom: rem(48);
+
+			@include below($mobile) {
+				margin-bottom: rem(24);
+			}
 		}
 
 		.whyus__content {

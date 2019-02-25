@@ -25,33 +25,26 @@
             justify-content: space-around;
         }
 
+        @include below($mobile) {
+            width: 100%;
+            margin: 0;
+            margin-bottom: -90px;
+        }
+
         .article {
             margin: 0 10px;
             margin-bottom: 90px;
+
+            @include below($mobile) {
+                margin: 0;
+                margin-bottom: 90px;
+            }
         }
 
         .popup {
             .article {
                 margin: 0;
             }
-        }
-    }
-
-
-
-    .titles {
-        padding: 0;
-        margin: 0;
-    }
-
-    .intro {
-        margin: 0;
-        margin-bottom: rem(32);
-
-        @include below($mobile) {
-            width: calc(100% - 16px);
-            margin: 0 auto;
-            margin-bottom: rem(16);
         }
     }
 
@@ -104,7 +97,7 @@
         @extend .button;
 
         @include below($mobile) {
-            width: calc(100% - 16px);
+            width: rem(280);
             margin: 0 auto;
         }
     }
@@ -150,6 +143,34 @@
         border-radius: 50% 0 0 50%;
     }
 
+    &:not(.articles_main) {
+
+        .articles__content {
+            @include below($mobile) {
+                overflow: visible;
+            }
+        }
+
+        .article {
+            @include below($mobile) {
+                position: relative;
+                padding-bottom: rem(19);
+
+                margin-bottom: rem(32);
+
+                &::after {
+                    position: absolute;
+                    content: '';
+                    bottom: 0;
+                    left: rem(-8);
+                    width: calc(100% + 16px);
+                    height: rem(1);
+                    background-color: #babec2;
+                }
+            }
+        }
+    }
+
     &_main {
         position: relative;
 
@@ -159,7 +180,22 @@
         padding-top: rem(80);
         padding-bottom: rem(64);
 
+
         background-color: #f4f6f8;
+
+        @include below($mobile) {
+            margin-bottom: rem(80);
+        }
+
+        .titles {
+            padding: 0;
+            margin: 0;
+            margin-bottom: rem(32);
+
+            @include below($mobile) {
+                margin-bottom: rem(48);
+            }
+        }
 
         .articles__list {
             @extend .container;
@@ -184,7 +220,7 @@
         width: rem(336);
     }
     @include below($mobile) {
-        width: rem(304);
+        width: 100%;
     }
 
     &__gallery {
@@ -199,13 +235,13 @@
         }
 
         @include below($mobile) {
-            height: rem(304);
+            height: auto;
         }
 
         &-prev {
             position: absolute;
             top: 50%;
-            left: rem(8);
+            left: rem(16);
 
             width: rem(24);
             height: rem(24);
@@ -236,7 +272,7 @@
         &-next {
             position: absolute;
             top: 50%;
-            right: rem(8);
+            right: rem(16);
 
             width: rem(24);
             height: rem(24);
@@ -285,6 +321,7 @@
         display: flex;
         flex-direction: column;
         overflow: hidden;
+        padding: 0 8px;
 
         p {
             margin: 0;
@@ -293,6 +330,10 @@
             font-weight: 300;
             line-height: 24px;
             color: #485058;
+
+            @include below($mobile) {
+                font-size: rem(14);
+            }
 
             &:not(:last-of-type) {
                 margin-bottom: rem(16);
@@ -310,10 +351,15 @@
             line-height: 24px;
             color: #485058;
             max-height: rem(72);
+
+            @include below($mobile) {
+                font-size: rem(14);
+            }
         }
     }
 
     &__more {
+        margin-left: rem(8);
         margin-top: rem(10);
         font-family: $helvetica;
         font-size: rem(16);
@@ -323,6 +369,10 @@
         border-bottom: rem(1) dashed #babec2;
 
         outline: none;
+
+        @include below($mobile) {
+            font-size: rem(14);
+        }
     }
 
     &__dots {
@@ -436,6 +486,8 @@
 
             p {
                 display: block;
+                max-height: rem(325);
+                overflow: scroll;
             }
         }
     }

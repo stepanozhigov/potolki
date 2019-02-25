@@ -90,57 +90,34 @@
             </div>
         </div>
     </section>
-    <section class="catalog-cards container b-texture">
+    <section class="catalog-cards container ">
         @include('common.gui.titles', [
-            'overtitle' =>  'Каталог',
             'secondTitle' =>  "Натяжные потолки {$city->name_formatted} от&nbspпроизводителя",
             'intro' =>  "Фабрика окон №1 {$city->name_formatted}. Посмотрите каталог и ниже рассчитайте ваш заказ <span class='intro_red'>за&nbsp5&nbspсекунд</span>"
         ])
-
-        @foreach ($catalogTypes as $type)
-            <? if ($type->id == 5) continue ?>
-            <a href="{{ route('catalogue', ['city' => $city]) }}" class=" catalog-cards__item b-card is-hoverable">
-                <img src="{{ Storage::url($type->img) }}" alt="{{ $type->name }}" class="catalog-cards__img">
-                <p class="card-title catalog-cards__title">{{ $type->name }}</p>
-                <hr class="line line_bold line_small catalog-cards__line">
-                @if($type->price)
-                    <p class="catalog-cards__price">от <span class="catalog-cards__number">{{ number_format($type->price, 0, ',', ' ') }} ₽</span></p>
-                @endif
-            </a>
-        @endforeach
-        <div class="buttons">
-            <a href="{{ route('catalogue', $city) }}" class="button buttons__item button_gray">Перейти в каталог</a>
-            <button class="button js-show" data-src="#popup_callback" data-title="Вызов замерщика" data-button="Вызвать замерщика">Вызвать замерщика</button>
-        </div>
-    </section>
-
-    <section class="manufacturers manufacturers_main container">
-
-        @include('common.gui.titles', ['secondTitle' => 'Производители профилей'])
-
-        <div class="manufacturers__list">
-
-            @foreach ($currentDirection->manufacturers as $manufacturer)
-                <div class="manufacturers__item">
-                    <img src="{{ Storage::url($manufacturer->logo) }}" alt="" class="manufacturers__item-image">
-                    <p class="manufacturers__country"> Китай </p>
-                </div>
+        <div class="catalog-cards__content b-texture">
+            @foreach ($catalogTypes as $type)
+                <? if ($type->id == 5) continue ?>
+                <a href="{{ route('catalogue', ['city' => $city]) }}" class=" catalog-cards__item b-card is-hoverable">
+                    <img src="{{ Storage::url($type->img) }}" alt="{{ $type->name }}" class="catalog-cards__img">
+                    <p class="card-title catalog-cards__title">{{ $type->name }}</p>
+                    <hr class="line line_bold line_small catalog-cards__line">
+                    @if($type->price)
+                        <p class="catalog-cards__price">от <span class="catalog-cards__number">{{ number_format($type->price, 0, ',', ' ') }} ₽</span></p>
+                    @endif
+                </a>
             @endforeach
+            <div class="buttons">
+                <a href="{{ route('catalogue', $city) }}" class="button buttons__item button_gray">Перейти в каталог</a>
+                <button class="button js-show" data-src="#popup_callback" data-title="Вызов замерщика" data-button="Вызвать замерщика">Вызвать замерщика</button>
+            </div>
         </div>
 
     </section>
 
-    <section class="calc-promo container">
-        <div class="calc-promo__titles">
-            <h2 class="titles__second-title">Калькулятор стоимости</h2>
-            <p class="intro calc-promo__intro">
-                Калькулятор стоимости
-Стоимость&nbsp;&mdash; один из&nbsp;важных факторов принятие решения в&nbsp;выборе компании. Нажмите кнопку &laquo;Рассчитать&raquo; и&nbsp;за&nbsp;5&nbsp;секунд вы&nbsp;будете знать стоимость вашего изделия. Акция &laquo;Найдете дешевле&nbsp;&mdash; Снизим цену&raquo; дает вам гарантию самой низкой цены {{$city->name_formatted}}.
-            </p>
-            <a href="{{ route('calculator', $city) }}" class="button calc-promo__button">Рассчитать</a>
-        </div>
-        <img src="/img/windows/img_calculator.jpg" alt="">
-    </section>
+    <div id="ceilings-calc">
+        <ceilings-calc ></ceilings-calc>
+    </div>
 
     <section class="portfolio portfolio_main b-texture b-texture_square">
         @include('common.gui.titles', ['secondTitle' => 'Примеры наших работ'])
@@ -204,6 +181,26 @@
        <a href="http://89.108.103.224/sochi/articles" class="articles__button">Все посты</a>
 
     </section>
+
+    <section class="manufacturers manufacturers_main container">
+
+        @include('common.gui.titles', ['secondTitle' => 'Производители профилей'])
+
+        <div class="manufacturers__list">
+
+            @foreach ($currentDirection->manufacturers as $manufacturer)
+                <div class="manufacturers__item">
+                    <img src="{{ Storage::url($manufacturer->logo) }}" alt="" class="manufacturers__item-image">
+                    <p class="manufacturers__country"> Китай </p>
+                </div>
+            @endforeach
+        </div>
+
+    </section>
+
+
+
+
 
     <section class="additional container">
         @include('common.gui.titles', ['secondTitle' => 'Также вас может заинтересовать'])
