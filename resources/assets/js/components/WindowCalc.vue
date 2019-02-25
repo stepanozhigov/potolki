@@ -13,11 +13,6 @@
         </label>
         <label class="calculator__type">
             <input class="calculator__type-input"  type="radio" name="type">
-            <img class="calculator__type-image" width="11" height="24" src="/img/windows/calculator/windows/win-calc_03.svg" alt="">
-            <p class="calculator__type-name">Одностворчатое <br> окно</p>
-        </label>
-        <label class="calculator__type">
-            <input class="calculator__type-input"  type="radio" name="type">
             <img class="calculator__type-image" width="32" height="32" src="/img/windows/calculator/windows/win-calc_04.svg" alt="">
             <p class="calculator__type-name">Балконный блок <br> двустворчатый</p>
         </label>
@@ -35,12 +30,12 @@
             <div class="calculator__width">
                 <input v-model="width" type="number" class="calculator__input" name="height[]">
                 <span class="calculator__input-unit">мм</span>
-                <span class="calculator__input-val">2 400</span>
+                <span class="calculator__input-val">{{width}}</span>
             </div>
             <div class="calculator__height">
                 <input v-model="height" type="number" class="calculator__input" name="height[]">
                 <span class="calculator__input-unit">мм</span>
-                <span class="calculator__input-val">2 400</span>
+                <span class="calculator__input-val">{{height}}</span>
             </div>
         </div>
         <div class="calculator__main calculator__main_bivalve ">
@@ -49,26 +44,12 @@
             <div class="calculator__width">
                 <input v-model="width" type="number" class="calculator__input" name="height[]">
                 <span class="calculator__input-unit">мм</span>
-                <span class="calculator__input-val">2 400</span>
+                <span class="calculator__input-val">{{width}}</span>
             </div>
             <div class="calculator__height">
                 <input v-model="height" type="number" class="calculator__input" name="height[]">
                 <span class="calculator__input-unit">мм</span>
-                <span class="calculator__input-val">2 400</span>
-            </div>
-        </div>
-        <div class="calculator__main calculator__main_single">
-            <img class="calculator__image" src="/img/windows/calculator/windows/win-calc-big_03.png" alt="">
-            <img class="calculator__window-left" src="/img/windows/calculator/windows/win-calc-big_031.png" alt="">
-            <div class="calculator__width">
-                <input v-model="width" type="number" class="calculator__input" name="height[]">
-                <span class="calculator__input-unit">мм</span>
-                <span class="calculator__input-val">2 400</span>
-            </div>
-            <div class="calculator__height">
-                <input v-model="height" type="number" class="calculator__input" name="height[]">
-                <span class="calculator__input-unit">мм</span>
-                <span class="calculator__input-val">2 400</span>
+                <span class="calculator__input-val">{{height}}</span>
             </div>
         </div>
         <div class="calculator__main calculator__main_block-bivalve">
@@ -79,12 +60,12 @@
             <div class="calculator__width">
                 <input v-model="width" type="number" class="calculator__input" name="height[]">
                 <span class="calculator__input-unit">мм</span>
-                <span class="calculator__input-val">2 400</span>
+                <span class="calculator__input-val">{{width}}</span>
             </div>
             <div class="calculator__height">
                 <input v-model="height" type="number" class="calculator__input" name="height[]">
                 <span class="calculator__input-unit">мм</span>
-                <span class="calculator__input-val">2 400</span>
+                <span class="calculator__input-val">{{height}}</span>
             </div>
         </div>
         <div class="calculator__main calculator__main_block-single">
@@ -95,12 +76,12 @@
             <div class="calculator__width">
                 <input v-model="width" type="number" class="calculator__input" name="height[]">
                 <span class="calculator__input-unit">мм</span>
-                <span class="calculator__input-val">2 400</span>
+                <span class="calculator__input-val">{{width}}</span>
             </div>
             <div class="calculator__height">
                 <input v-model="height" type="number" class="calculator__input" name="height[]">
                 <span class="calculator__input-unit">мм</span>
-                <span class="calculator__input-val">2 400</span>
+                <span class="calculator__input-val">{{height}}</span>
             </div>
         </div>
         <div class="calculator__info">

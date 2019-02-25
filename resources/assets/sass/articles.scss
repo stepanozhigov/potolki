@@ -183,10 +183,6 @@
 
         background-color: #f4f6f8;
 
-        @include below($mobile) {
-            margin-bottom: rem(80);
-        }
-
         .titles {
             padding: 0;
             margin: 0;

@@ -29565,25 +29565,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -29698,7 +29679,7 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("span", { staticClass: "calculator__input-val" }, [
-              _vm._v("2 400")
+              _vm._v(_vm._s(_vm.width))
             ])
           ]),
           _vm._v(" "),
@@ -29730,7 +29711,7 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("span", { staticClass: "calculator__input-val" }, [
-              _vm._v("2 400")
+              _vm._v(_vm._s(_vm.height))
             ])
           ])
         ]
@@ -29779,7 +29760,7 @@ var render = function() {
           _c("span", { staticClass: "calculator__input-unit" }, [_vm._v("мм")]),
           _vm._v(" "),
           _c("span", { staticClass: "calculator__input-val" }, [
-            _vm._v("2 400")
+            _vm._v(_vm._s(_vm.width))
           ])
         ]),
         _vm._v(" "),
@@ -29809,85 +29790,7 @@ var render = function() {
           _c("span", { staticClass: "calculator__input-unit" }, [_vm._v("мм")]),
           _vm._v(" "),
           _c("span", { staticClass: "calculator__input-val" }, [
-            _vm._v("2 400")
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "calculator__main calculator__main_single" }, [
-        _c("img", {
-          staticClass: "calculator__image",
-          attrs: {
-            src: "/img/windows/calculator/windows/win-calc-big_03.png",
-            alt: ""
-          }
-        }),
-        _vm._v(" "),
-        _c("img", {
-          staticClass: "calculator__window-left",
-          attrs: {
-            src: "/img/windows/calculator/windows/win-calc-big_031.png",
-            alt: ""
-          }
-        }),
-        _vm._v(" "),
-        _c("div", { staticClass: "calculator__width" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.width,
-                expression: "width"
-              }
-            ],
-            staticClass: "calculator__input",
-            attrs: { type: "number", name: "height[]" },
-            domProps: { value: _vm.width },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.width = $event.target.value
-              }
-            }
-          }),
-          _vm._v(" "),
-          _c("span", { staticClass: "calculator__input-unit" }, [_vm._v("мм")]),
-          _vm._v(" "),
-          _c("span", { staticClass: "calculator__input-val" }, [
-            _vm._v("2 400")
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "calculator__height" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.height,
-                expression: "height"
-              }
-            ],
-            staticClass: "calculator__input",
-            attrs: { type: "number", name: "height[]" },
-            domProps: { value: _vm.height },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.height = $event.target.value
-              }
-            }
-          }),
-          _vm._v(" "),
-          _c("span", { staticClass: "calculator__input-unit" }, [_vm._v("мм")]),
-          _vm._v(" "),
-          _c("span", { staticClass: "calculator__input-val" }, [
-            _vm._v("2 400")
+            _vm._v(_vm._s(_vm.height))
           ])
         ])
       ]),
@@ -29948,7 +29851,7 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("span", { staticClass: "calculator__input-val" }, [
-              _vm._v("2 400")
+              _vm._v(_vm._s(_vm.width))
             ])
           ]),
           _vm._v(" "),
@@ -29980,7 +29883,7 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("span", { staticClass: "calculator__input-val" }, [
-              _vm._v("2 400")
+              _vm._v(_vm._s(_vm.height))
             ])
           ])
         ]
@@ -30042,7 +29945,7 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("span", { staticClass: "calculator__input-val" }, [
-              _vm._v("2 400")
+              _vm._v(_vm._s(_vm.width))
             ])
           ]),
           _vm._v(" "),
@@ -30074,7 +29977,7 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("span", { staticClass: "calculator__input-val" }, [
-              _vm._v("2 400")
+              _vm._v(_vm._s(_vm.height))
             ])
           ])
         ]
@@ -30330,29 +30233,6 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("p", { staticClass: "calculator__type-name" }, [
           _vm._v("Двустворчатое "),
-          _c("br"),
-          _vm._v(" окно")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("label", { staticClass: "calculator__type" }, [
-        _c("input", {
-          staticClass: "calculator__type-input",
-          attrs: { type: "radio", name: "type" }
-        }),
-        _vm._v(" "),
-        _c("img", {
-          staticClass: "calculator__type-image",
-          attrs: {
-            width: "11",
-            height: "24",
-            src: "/img/windows/calculator/windows/win-calc_03.svg",
-            alt: ""
-          }
-        }),
-        _vm._v(" "),
-        _c("p", { staticClass: "calculator__type-name" }, [
-          _vm._v("Одностворчатое "),
           _c("br"),
           _vm._v(" окно")
         ])
