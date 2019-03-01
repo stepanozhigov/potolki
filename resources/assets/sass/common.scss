@@ -1079,6 +1079,7 @@ body {
         padding-bottom: rem(80);
         background-size: 100% auto;
         background-repeat: no-repeat;
+		overflow: hidden;
     }
 
     &__content {

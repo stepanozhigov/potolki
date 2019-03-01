@@ -171,18 +171,23 @@
     }
 
     &__img {
+        display: none;
         position: absolute;
         right: rem(-170);
         top: rem(76);
         width: rem(563);
         height: rem(560);
 
-        @include below($tablet) {
-            right: rem(-295);
+        &.active {
+            display: block;
+
+            @include below($mobile) {
+                display: none;
+            }
         }
 
-        @include below($mobile) {
-            display: none;
+        @include below($tablet) {
+            right: rem(-295);
         }
     }
 

@@ -1,5 +1,6 @@
 .services {
 
+
     margin-bottom: 80px;
 
     &__list {
@@ -39,6 +40,7 @@
 
 .service {
     position: relative;
+
     &__texture {
         &:before {
             z-index: -1;
@@ -106,14 +108,6 @@
         align-items: flex-end;
         flex-wrap: wrap;
         position: relative;
-
-        &_small {
-            width: 780px;
-
-			@include below($tablet) {
-				width: 100%;
-			}
-        }
     }
     @media screen and (max-width: 1240px){
         &__input, &__button {
@@ -160,4 +154,109 @@
             display: none;
         }
     }
+
+	&_measure {
+        overflow: hidden;
+
+        @include below($mobile) {
+            padding-bottom: rem(80);
+        }
+
+        .service__heading {
+            @extend .b-texture;
+    		@extend .b-texture_square;
+        }
+
+
+        .titles {
+            margin-bottom: rem(45);
+
+            @include below($mobile) {
+                margin-bottom: rem(32);
+            }
+        }
+
+        .service__title {
+            padding-bottom: 0;
+
+            &::after {
+                display: none;
+            }
+        }
+
+        .service__form {
+            width: rem(580);
+            padding: 0;
+            padding-bottom: rem(64);
+
+            @include below($tablet) {
+                padding-bottom: rem(80);
+                width: rem(540);
+            }
+
+            @include below($mobile) {
+                width: 100%;
+            }
+        }
+
+        .service__input {
+            width: rem(280);
+            height: rem(48);
+
+            @include below($tablet) {
+                width: rem(260);
+            }
+
+            @include below($mobile) {
+                width: 100%;
+                height: rem(64);
+                margin-bottom: rem(16);
+
+                &:last-of-type {
+                    margin-bottom: rem(32);
+                }
+            }
+        }
+
+        .service__img {
+            width: rem(630);
+            height: rem(433);
+            right: rem(-50);
+
+            @include below($tablet) {
+                display: block;
+                width: rem(550);
+                height: rem(378);
+                right: rem(-102);
+            }
+
+            @include below($mobile) {
+                display: none;
+            }
+        }
+
+        .service__button {
+            @include below($tablet) {
+                width: rem(260);
+            }
+
+            @include below($mobile) {
+                width: 100%;
+                margin-bottom: rem(8);
+                height: rem(60);
+            }
+        }
+
+        .service__agreement {
+            @include below($tablet) {
+                width: rem(260);
+                line-height: rem(16);
+                margin-top: 0;
+            }
+
+            @include below($mobile) {
+                width: 100%;
+            }
+        }
+	}
 }

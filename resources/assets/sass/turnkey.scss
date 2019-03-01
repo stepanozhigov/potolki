@@ -60,6 +60,10 @@
         @include below($tablet) {
             font-size: rem(18);
         }
+
+        @include below($mobile) {
+            margin-bottom: rem(48);
+        }
     }
 
     &__list {

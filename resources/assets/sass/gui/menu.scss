@@ -25,7 +25,7 @@
             box-shadow: 0 0 0.25rem rgba(0,0,0,.08), 0 0.25rem 0.25rem rgba(0,0,0,.12), inset 0 -0.0625rem 0 rgba(0,0,0,.12);
 			overflow-y: scroll;
         	-webkit-overflow-scrolling:touch;
-		    max-height: calc(100vh - 220px);
+		    height: calc(100vh - 134px);
         }
 
 
@@ -74,6 +74,11 @@
         .menu__item {
             border: none;
 
+			@media screen and (max-width: 1024px) {
+				font-size: rem(18);
+	            line-height: rem(26);
+			}
+
             &:last-child {
                 margin-bottom: 0;
             }
@@ -92,7 +97,7 @@
         text-decoration: none;
 
         &_bordered {
-            padding: 0 15px 13px 23px;
+            padding: 0 15px 13px 0;
             &:not(:last-of-type) {
                 margin-bottom: 25px;
                 border-bottom: 1px solid #d0d2d4;

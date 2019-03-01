@@ -13,6 +13,10 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+
+		@include below($mobile) {
+			padding-top: rem(84);
+		}
     }
 
     &__list {

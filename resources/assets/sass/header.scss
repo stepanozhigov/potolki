@@ -286,7 +286,7 @@
         .menu_active {
             display: flex;
 			overflow-y: scroll;
-		    max-height: calc(100vh - 220px);
+		    height: calc(100vh - 134px);
         }
 
         .logo {

@@ -10,10 +10,19 @@
     border: rem(1) solid #babec2;
     border-radius: rem(5);
 
+    @include below($tablet-small) {
+        width: 100%;
+        padding: rem(44) rem(94);
+        padding-bottom: rem(64);
+    }
+
+    @include below($mobile) {
+        padding: rem(42) rem(24);
+    }
+
     &__title {
         margin: 0;
         margin-top: rem(-80);
-        margin-bottom: rem(48);
         margin-bottom: rem(36);
         padding: 0 rem(55);
         color: $grey_abbey;
@@ -22,16 +31,45 @@
         font-weight: 400;
         line-height: rem(38);
         background-color: #ffffff;
+
+        @include below($tablet-small) {
+            font-size: rem(26);
+            line-height: rem(31);
+            margin-bottom: rem(28);
+            margin-top: rem(-62);
+        }
+
+        @include below($mobile) {
+            font-size: rem(22);
+            line-height: rem(26);
+            margin-bottom: rem(28);
+            margin-top: rem(-58);
+        }
     }
 
     &__desc {
         margin: 0;
+        margin-bottom: rem(48);
         color: #485058;
         font-family: $helvetica;
         font-size: rem(16);
         font-weight: 300;
         line-height: rem(24);
         text-align: center;
+
+        @include below($tablet-small) {
+            margin-bottom: rem(64);
+            font-size: rem(18);
+            line-height: rem(24);
+            color: #808890;
+        }
+
+        @include below($mobile) {
+            font-size: rem(14);
+            line-height: rem(24);
+            margin-bottom: rem(64);
+            color: #485058;
+        }
     }
 
     &__subtitle {
@@ -44,6 +82,12 @@
         font-weight: 300;
         line-height: rem(32);
         text-align: center;
+
+        @include below($mobile) {
+            font-size: rem(20);
+            line-height: rem(30);
+            margin-bottom: rem(48);
+        }
     }
 
     &__total {
@@ -73,8 +117,20 @@
         width: calc(50% - 10px);
         margin-bottom: rem(48);
 
+        @include below($tablet-small) {
+            margin-bottom: rem(64);
+        }
+
+        @include below($mobile) {
+            width: 100%;
+        }
+
         &:nth-of-type(odd) {
             margin-right: auto;
+
+            @include below($mobile) {
+                margin-right: 0;
+            }
         }
 
         &-name {
@@ -85,10 +141,19 @@
             font-size: rem(20);
             font-weight: 400;
             line-height: rem(24);
+
+            @include below($mobile) {
+                font-size: rem(18);
+                line-height: rem(21);
+            }
         }
     }
 
     &__callback {
         @extend .button;
     }
+}
+
+#ceilings-calc {
+    @extend .container;
 }

@@ -35,6 +35,7 @@ Vue.component('dveri-calc', require('./components/DveriCalc.vue'));
 Vue.component('peregorodki-calc', require('./components/Peregorodki.vue'));
 Vue.component('zhalyuzi-calc', require('./components/Zhalyuzi.vue'));
 Vue.component('posts', require('./components/Articles.vue'));
+Vue.component('posts-list', require('./components/ArticlesList.vue'));
 Vue.component('manufacturers', require('./components/ManufacturersCarousel.vue'));
 
 
@@ -65,7 +66,7 @@ if (manufacturers.length > 0) {
         el: '#manufacturers__list',
         template: '<manufacturers></manufacturers>'
     })
-} 
+}
 
 
 const creditCalcContainer = $('#credit-calc');
@@ -361,8 +362,9 @@ $('.calculator__type').on('click', function () {
 });
 
 $('.facture').on('click', '.facture__item', function () {
-    $(this).siblings().removeClass('active');
-    $(this).addClass('active');
+    $(this)
+    .addClass('active').siblings().removeClass('active')
+    .closest('.facture').find('.facture__img').removeClass('active').eq($(this).index()).addClass('active');
 });
 
 $('.titles__arrow').on('click', function () {
@@ -379,7 +381,7 @@ $('.js-link').on('click', function (e) {
 
 let onResize = function () {
     if ($(window).width() <= 768) {
-        $('.promos__item').off();
+        $('.promos').off('click', '.promos__item');
         $('.promos').on('click', '.promos__item', function () {
             $(this).siblings().removeClass('opened');
             $(this).toggleClass('opened');

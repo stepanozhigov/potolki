@@ -6,7 +6,7 @@
             @include('common.gui.titles', [
                 'overtitle' =>  'Статьи и новости',
                 'title' =>  "Полезная информация о&nbsp;пластиковых окнах",
-                'intro' =>  "Больше полезной информации, конкурсы и&nbsp;розыгрыши вы&nbsp;можете найти в&nbsp;наших социальных сетях:"
+                'intro' =>  "Больше актуальной информации, акции и конкурсы вы найдёте в наших социальных сетях, подписывайтесь:"
             ])
             <div class="socials titles__socials container">
                 <a href="" class="socials__item red-hoverable">
@@ -25,7 +25,7 @@
                     <div class="socials__icon socials__icon_youtube"></div>
                 </a>
             </div>
-            <posts :posts="{{ $articles }}"></posts>
+            <posts-list :posts="{{ $articles }}"></posts-list>
     </div>
 
     @include('common.gui.footer')

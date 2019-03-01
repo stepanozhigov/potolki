@@ -78,7 +78,6 @@
                 </div>
                 <img class="whyus__item-image" src="/img/img_director.jpg" alt="Директор">
             </div>
-            <button class="whyus__button" type="button" name="button">Преимущества в цифрах</button>
         </div>
         <div class="whyus__stat">
             <div class="whyus__stat-item">
@@ -106,11 +105,16 @@
             <? if ($type->id == 5) continue ?>
             <a href="{{ route('catalogue', ['city' => $city]) }}" class=" catalog-cards__item b-card is-hoverable">
                 <img src="{{ Storage::url($type->img) }}" alt="{{ $type->name }}" class="catalog-cards__img">
-                <p class="card-title catalog-cards__title">{{ $type->name }}</p>
-                <hr class="line line_bold line_small catalog-cards__line">
-                @if($type->price)
-                    <p class="catalog-cards__price">от <span class="catalog-cards__number">{{ number_format($type->price, 0, ',', ' ') }} ₽</span></p>
-                @endif
+                <div class="catalog-cards__item-info">
+                    <p class="card-title catalog-cards__title">{{ $type->name }}</p>
+                    @if($type->price)
+                        <p class="catalog-cards__price">от <span class="catalog-cards__number">{{ number_format($type->price, 0, ',', ' ') }} ₽</span></p>
+                    @endif
+    				<button class="catalog-cards__open" type="button" name="button">
+    					<img width="18" height="10" src="/img/arrow-down.svg" alt="arrow">
+    				</button>
+                </div>
+
             </a>
         @endforeach
         <div class="buttons">
@@ -184,9 +188,9 @@
                 <div class="socials__icon socials__icon_youtube"></div>
             </a>
         </div>
-        <div class="articles__list">
-            <posts :posts="{{ $articles }}"></posts>
-        </div>
+        <posts :posts="{{ $articles }}"></posts>
+
+
 
        <a href="http://89.108.103.224/sochi/articles" class="articles__button">Все посты</a>
 

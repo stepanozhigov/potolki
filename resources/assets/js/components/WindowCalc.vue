@@ -2,22 +2,22 @@
 <div class="calculator__inner">
     <div class="calculator__types">
         <label class="calculator__type active">
-            <input class="calculator__type-input"  type="radio" name="type">
+            <input value="3x" v-model="currentType" class="calculator__type-input"  type="radio" name="type">
             <img class="calculator__type-image" width="31" height="24" src="/img/windows/calculator/windows/win-calc_01.svg" alt="">
             <p class="calculator__type-name">Трёхстворчатое <br> окно</p>
         </label>
         <label class="calculator__type">
-            <input class="calculator__type-input"  type="radio" name="type">
+            <input value="2x" v-model="currentType" class="calculator__type-input"  type="radio" name="type">
             <img class="calculator__type-image" width="21" height="24" src="/img/windows/calculator/windows/win-calc_02.svg" alt="">
             <p class="calculator__type-name">Двустворчатое <br> окно</p>
         </label>
         <label class="calculator__type">
-            <input class="calculator__type-input"  type="radio" name="type">
+            <input value="bb-2x" v-model="currentType" class="calculator__type-input"  type="radio" name="type">
             <img class="calculator__type-image" width="32" height="32" src="/img/windows/calculator/windows/win-calc_04.svg" alt="">
             <p class="calculator__type-name">Балконный блок <br> двустворчатый</p>
         </label>
         <label class="calculator__type">
-            <input class="calculator__type-input"  type="radio" name="type">
+            <input value="bb-1x" v-model="currentType" class="calculator__type-input"  type="radio" name="type">
             <img class="calculator__type-image" width="22" height="32" src="/img/windows/calculator/windows/win-calc_05.svg" alt="">
             <p class="calculator__type-name">Балконный блок <br> одностворчатый</p>
         </label>
@@ -144,19 +144,19 @@
     export default {
         data: function () {
             return {
-                currentType: 'odnostvorchatoe-okno',
+                currentType: '3x',
                 areaMode: '',
                 install: false,
                 installBasePrice: 500,
                 shipping: false,
-                width: 1000,
-                height: 1000,
-                multiplier: 3000,
+                width: 1600,
+                height: 2200,
+                multiplier: 2925.170068027211,
                 pixelWidth: 0,
                 publicPath: '/storage/'
             }
         },
-        props: ['types'],
+        props: ['types', 'city'],
         updated: function () {
             this.pixelWidth = $(this.$refs.calculator__img).width();
         },
@@ -173,18 +173,59 @@
         },
         watch: {
             currentType: function (value, old) {
-               this.arrWidth = [0, 0];
-               this.arrHeight = [0, 0];
-
-
+               this.checkTypeParams();
             }
         },
         mounted() {
-            console.log($(this.$refs.calculator__img).width());
-
-           this.pixelWidth = $(this.$refs.calculator__img).width();
+        	this.checkTypeParams();
         },
         methods: {
+        	checkTypeParams() {
+        		
+
+        		switch(this.currentType) {
+        			case '3x':
+        				this.width = 2100;
+        				this.height = 1400;
+
+        				if(this.city.code == 'sochi' || this.city.code == 'krasnodar') {
+		        			this.multiplier = 2925.170068027211;
+		        		}
+		        		else if(this.city.code == 'nahodka') {
+		        			this.multiplier = 3571.428571428571;
+		        		}
+		        		else {
+		        			this.multiplier = 3741.496598639456;
+		        		}
+        			break;
+
+        			case '2x':
+        				this.width = 1300;
+        				this.height = 1400;
+
+        				if(this.city.code == 'sochi' || this.city.code == 'krasnodar') {
+		        			this.multiplier = 3571.428571428571;
+		        		}
+		        		else if(this.city.code == 'nahodka') {
+		        			this.multiplier = 5054.945054945055;
+		        		}
+		        		else {
+		        			this.multiplier = 4285.714285714286;
+		        		}
+
+    				break;
+
+    				case 'bb-2x':
+        				this.width = 2100;
+        				this.height = 2100;
+    				break;
+
+    				case 'bb-1x':
+        				this.width = 1400;
+        				this.height = 2100;
+    				break;
+        		}
+        	}
         }
     }
 </script>

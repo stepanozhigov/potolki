@@ -80,8 +80,6 @@
         display: flex;
         width: 100%;
 
-        overflow: hidden;
-
         .article {
             &:not(:last-of-type) {
                 margin-right: rem(20);
@@ -89,6 +87,29 @@
         }
 
 
+
+
+    }
+
+    &__slider {
+        position: relative;
+        width: 100%;
+        &:hover {
+			.articles__next,
+			.articles__prev {
+				background-color: rgba(255, 255, 255, 0.7);
+
+				svg {
+					fill: #808890;
+				}
+
+                &:hover {
+                    svg {
+                        fill: #dc1414;
+                    }
+                }
+			}
+		}
     }
 
     &__button {
@@ -102,45 +123,50 @@
         }
     }
 
-    &__slide {
+	&__next,
+    &__prev {
         position: absolute;
-        top: 50%;
-
+        top: 38%;
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: rem(48);
-        height: rem(48);
-
-
+        flex-direction: column;
+        width: rem(60);
+        height: rem(60);
+        padding: rem(22) rem(25);
         border: none;
-        outline: none;
-        background-color: rgba(255, 255, 255, .4);
+        background-color: rgba(255, 255, 255, 0.4);
         transform: translateY(-50%);
+        outline: none;
         cursor: pointer;
+        z-index: 9;
+        transition: background-color .3s;
 
-        @include below($tablet) {
-            top: auto;
-            bottom: 50%;
-            transform: translateY(0);
+        svg {
+            transition: fill .3s;
+            fill: #babec2;
         }
-    }
 
-    &__prev {
-        left: 0;
 
-        border-radius: 0 50% 50% 0;
 
-        img {
-            transform: rotate(180deg);
+        @include below($tablet-small) {
+            display: none;
         }
+
     }
 
     &__next {
         right: 0;
+        border-radius: rem(30) 0 0 rem(30);
+    }
 
-        border-radius: 50% 0 0 50%;
+    &__prev {
+        left: 0;
+        border-radius: 0 rem(30) rem(30) 0;
+
+        img {
+            transform: rotate(180deg);
+        }
     }
 
     &:not(.articles_main) {
@@ -484,6 +510,10 @@
                 display: block;
                 max-height: rem(325);
                 overflow: scroll;
+
+                @include below($tablet) {
+                    max-height: rem(115);
+                }
             }
         }
     }

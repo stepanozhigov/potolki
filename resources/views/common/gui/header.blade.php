@@ -66,16 +66,22 @@
 		</div>
     </div>
     <div class="header__bottom container">
-        <div class="header__offices dropdown">
-            <a class="text dropdown__item dropdown__item_active"><img class="dropdown__arrow" src="/img/gui/arrow.svg" alt="">{{ $city->mainOffice() }}</a>
-            <div class="dropdown__content">
+        @if (\Request::route()->getName() != 'windows.main')
+            {{ Breadcrumbs::render(\Request::route()->getName(), $city) }}
+        @else
+            <div class="header__offices dropdown">
                 <a class="text dropdown__item dropdown__item_active"><img class="dropdown__arrow" src="/img/gui/arrow.svg" alt="">{{ $city->mainOffice() }}</a>
-                <p class="dropdown__title">Другие города</p>
-                @foreach ($cities as $arCity)
-                    <a href="{{ route('windows.main', $arCity)}}" class="text dropdown__item dropdown__item_bordered  red-hoverable">{{ $arCity->name }}</a>
-                @endforeach
+                <div class="dropdown__content">
+                    <a class="text dropdown__item dropdown__item_active"><img class="dropdown__arrow" src="/img/gui/arrow.svg" alt="">{{ $city->mainOffice() }}</a>
+                    <p class="dropdown__title">Другие города</p>
+                    @foreach ($cities as $arCity)
+                        <a href="{{ route('windows.main', $arCity)}}" class="text dropdown__item dropdown__item_bordered  red-hoverable">{{ $arCity->name }}</a>
+                    @endforeach
+                </div>
             </div>
-        </div>
+        @endif
+        
+        
         <div class="header__feedbacks">
             <a href="https://api.whatsapp.com/send?phone={{ $city->whatsapp }}" class="text whatsapp header__whatsapp red-hoverable"><img src="/img/gui/whatsapp.svg" alt="" class="whatsapp__icon"> <span class="whatsapp__write-text">Написать в&nbsp</span>WhatsApp <span class="whatsapp__mobile-text">написать</span></a>
             <a href="tel:{{ $city->phone }}" class="text phone header__phone  red-hoverable"><img class="phone__icon" src="/img/gui/phone.svg" alt="">{{ $city->phone }} <span>заказать звонок</span></a>

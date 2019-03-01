@@ -187,14 +187,7 @@
 
             @include('common.gui.titles', ['secondTitle' => 'Производители профилей'], ['intro' => 'Компания &laquo;Твой стиль&raquo; использует профили ведущих мировых брендов. Мы&nbsp;предлагаем нашим клиентам только сертифицированные материалы. В&nbsp;нашем ассортименте представлены профили из&nbsp;ПВХ и&nbsp;алюминия следующих брендов.'])
 
-            <div class="manufacturers__list">
-
-                @foreach ($currentDirection->manufacturers as $manufacturer)
-                    <div class="manufacturers__item">
-                        <img src="{{ Storage::url($manufacturer->logo) }}" alt="" class="manufacturers__item-image">
-                        <p class="manufacturers__country"> Китай </p>
-                    </div>
-                @endforeach
+            <div id="manufacturers__list">
             </div>
 
         </section>
@@ -221,11 +214,16 @@
                 </div>
                 <p class="facture__price">От 1 500 рублей за окно</p>
             </div>
-            <img class="facture__img" src="/img/windows/lamination-window_1440.png" alt="">
+            <img class="facture__img active" src="/img/windows/lamination-anteak.png" alt="">
+            <img class="facture__img" src="/img/windows/lamination-bergkiefer.png" alt="">
+            <img class="facture__img" src="/img/windows/lamination-black_cherry.png" alt="">
+            <img class="facture__img" src="/img/windows/lamination-golden_oak.png" alt="">
+            <img class="facture__img" src="/img/windows/lamination-dark_oak.png" alt="">
         </section>
         <section class="whyus">
             @include('common.gui.titles', [
                 'title' =>  "Звонят многим, заказывают у нас. Почему? ",
+                'class' =>  "container",
                 'intro' =>  "Фабрика натяжных потолков &laquo;Твой стиль&raquo; основана в&nbsp;2003 году является лидером по&nbsp;производству и&nbsp;установке натяжных потолков на&nbsp;Дальнем Востоке"
             ])
             <div class="whyus__content">

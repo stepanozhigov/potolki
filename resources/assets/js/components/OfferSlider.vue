@@ -7,7 +7,7 @@
             <div v-if="offer.type == 'form'" class="main-offer__inner container">
                 <p class="text main-offer__overtitle">{{ offer.overtitle }}</p>
                 <h1 class="title main-offer__title js-title"></h1>
-                <p class="main-offer__subtitle">{{ offer.text }}</p>
+                <p v-html="offer.text" class="main-offer__subtitle"></p>
 
                 <form class="form main-offer__form mobile-hide" action="" id="offer-form">
                     <input v-model="name" v-on:focus="pauseSliding" v-on:focusout="initSliding" class="input form__input" type="text"  placeholder="Ваше имя">
@@ -54,7 +54,7 @@
                 if (width <= 719 && this.currentOffer.background_mobile) {
                     img = this.currentOffer.background_mobile;
                 }
-                
+
                 return `url(/storage/${img})`;
             }
         },
