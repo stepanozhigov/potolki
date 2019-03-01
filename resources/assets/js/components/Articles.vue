@@ -2,7 +2,7 @@
     <div class="articles__slider">
         <div class="articles__list">
             <div class="articles__content">
-                <post v-for="post in showedItems" :post="post"></post>
+                <post v-touch:swipe="offsetShowPoint" v-for="post in showedItems" :post="post"></post>
             </div>
         </div>
 		<button @click="offsetShowPoint(true)" class="articles__slide articles__prev">

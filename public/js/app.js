@@ -274,7 +274,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(26)
+var listToStyles = __webpack_require__(27)
 
 /*
 type StyleObject = {
@@ -13663,9 +13663,9 @@ if (true) !(__WEBPACK_AMD_DEFINE_RESULT__ = (function() {
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(79)
+var __vue_script__ = __webpack_require__(80)
 /* template */
-var __vue_template__ = __webpack_require__(80)
+var __vue_template__ = __webpack_require__(81)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -13708,7 +13708,7 @@ module.exports = Component.exports
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(10);
-module.exports = __webpack_require__(89);
+module.exports = __webpack_require__(90);
 
 
 /***/ }),
@@ -13733,7 +13733,10 @@ window.Vue = __webpack_require__(11);
 var Inputmask = __webpack_require__(15);
 var ionRangeSlider = __webpack_require__(20);
 
-__webpack_require__(22);
+window.Vue2TouchEvents = __webpack_require__(22);
+Vue.use(Vue2TouchEvents);
+
+__webpack_require__(23);
 //require('./components/social');
 
 /**
@@ -13742,22 +13745,22 @@ __webpack_require__(22);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('window-calc', __webpack_require__(23));
-Vue.component('balcony-calc', __webpack_require__(29));
-Vue.component('ceilings-calc', __webpack_require__(34));
-Vue.component('city-search', __webpack_require__(36));
-Vue.component('add-comment', __webpack_require__(41));
-Vue.component('add-review', __webpack_require__(44));
-Vue.component('offer-slider', __webpack_require__(50));
-Vue.component('gallery-carousel', __webpack_require__(53));
-Vue.component('gallery-list', __webpack_require__(56));
-Vue.component('credit-calc', __webpack_require__(59));
-Vue.component('dveri-calc', __webpack_require__(62));
-Vue.component('peregorodki-calc', __webpack_require__(67));
-Vue.component('zhalyuzi-calc', __webpack_require__(72));
-Vue.component('posts', __webpack_require__(77));
-Vue.component('posts-list', __webpack_require__(82));
-Vue.component('manufacturers', __webpack_require__(85));
+Vue.component('window-calc', __webpack_require__(24));
+Vue.component('balcony-calc', __webpack_require__(30));
+Vue.component('ceilings-calc', __webpack_require__(35));
+Vue.component('city-search', __webpack_require__(37));
+Vue.component('add-comment', __webpack_require__(42));
+Vue.component('add-review', __webpack_require__(45));
+Vue.component('offer-slider', __webpack_require__(51));
+Vue.component('gallery-carousel', __webpack_require__(54));
+Vue.component('gallery-list', __webpack_require__(57));
+Vue.component('credit-calc', __webpack_require__(60));
+Vue.component('dveri-calc', __webpack_require__(63));
+Vue.component('peregorodki-calc', __webpack_require__(68));
+Vue.component('zhalyuzi-calc', __webpack_require__(73));
+Vue.component('posts', __webpack_require__(78));
+Vue.component('posts-list', __webpack_require__(83));
+Vue.component('manufacturers', __webpack_require__(86));
 
 $(document).on('scroll', function () {
     var scrollPosition = $(window).scrollTop(),
@@ -13924,7 +13927,7 @@ $('.survey__yes').on('click', function () {
     $('.survey__thankyou').slideDown();
 });
 
-var bodyScrollLock = __webpack_require__(88);
+var bodyScrollLock = __webpack_require__(89);
 var disableBodyScroll = bodyScrollLock.disableBodyScroll;
 var enableBodyScroll = bodyScrollLock.enableBodyScroll;
 
@@ -14131,6 +14134,17 @@ $('.range').ionRangeSlider({
     hide_min_max: true,
     extra_classes: 'range_red'
 });
+window.onerror = function (msg, url, line, col, exception) {
+    $.get('/err-handler', {
+        data: {
+            msg: msg,
+            exception: exception,
+            url: url,
+            line: line,
+            col: col
+        }
+    });
+};
 
 /***/ }),
 /* 11 */
@@ -29265,6 +29279,340 @@ module.exports = __webpack_amd_options__;
 
 /***/ }),
 /* 22 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ *
+ * @author    Jerry Bendy
+ * @since     4/12/2017
+ */
+
+function touchX(event) {
+    return event.touches[0].clientX;
+}
+
+function touchY(event) {
+    return event.touches[0].clientY;
+}
+
+var isPassiveSupported = (function() {
+    var supportsPassive = false;
+    try {
+        var opts = Object.defineProperty({}, 'passive', {
+            get: function() {
+                supportsPassive = true;
+            }
+        });
+        window.addEventListener('test', null, opts);
+    } catch (e) {}
+    return supportsPassive;
+})()
+
+
+var vueTouchEvents = {
+    install: function (Vue, options) {
+
+        // Set default options
+        options = Object.assign({}, {
+            disableClick: false,
+            tapTolerance: 10,
+            swipeTolerance: 30,
+            longTapTimeInterval: 400,
+            touchClass: ''
+        }, options || {})
+
+
+        function touchStartEvent(event) {
+            var $this = this.$$touchObj
+
+            $this.supportTouch = true
+
+            if ($this.touchStarted) {
+                return
+            }
+
+            addTouchClass(this)
+
+            $this.touchStarted = true
+
+            $this.touchMoved = false
+            $this.swipeOutBounded = false
+
+            $this.startX = touchX(event)
+            $this.startY = touchY(event)
+
+            $this.currentX = 0
+            $this.currentY = 0
+
+            $this.touchStartTime = event.timeStamp
+
+            triggerEvent(event, this, 'start')
+        }
+
+        function touchMoveEvent(event) {
+            var $this = this.$$touchObj
+
+            $this.currentX = touchX(event)
+            $this.currentY = touchY(event)
+
+            if (!$this.touchMoved) {
+                var tapTolerance = options.tapTolerance
+
+                $this.touchMoved = Math.abs($this.startX - $this.currentX) > tapTolerance ||
+                    Math.abs($this.startY - $this.currentY) > tapTolerance
+
+                if($this.touchMoved){
+					triggerEvent(event, this, 'moved')
+                }
+
+            } else if (!$this.swipeOutBounded) {
+                var swipeOutBounded = options.swipeTolerance
+
+                $this.swipeOutBounded = Math.abs($this.startX - $this.currentX) > swipeOutBounded &&
+                    Math.abs($this.startY - $this.currentY) > swipeOutBounded
+            }
+
+			if($this.touchMoved){
+				triggerEvent(event, this, 'moving')
+			}
+        }
+
+        function touchCancelEvent() {
+            var $this = this.$$touchObj
+
+            removeTouchClass(this)
+
+            $this.touchStarted = $this.touchMoved = false
+            $this.startX = $this.startY = 0
+        }
+
+        function touchEndEvent(event) {
+            var $this = this.$$touchObj
+
+            $this.touchStarted = false
+
+            removeTouchClass(this)
+
+            if (!$this.touchMoved) {
+                // detect if this is a longTap event or not
+                if ($this.callbacks.longtap && event.timeStamp - $this.touchStartTime > options.longTapTimeInterval) {
+                    event.preventDefault()
+                    triggerEvent(event, this, 'longtap')
+
+                } else {
+                    // emit tap event
+                    triggerEvent(event, this, 'tap')
+                }
+                triggerEvent(event, this, 'end')
+
+            } else if (!$this.swipeOutBounded) {
+                var swipeOutBounded = options.swipeTolerance, direction
+
+                if (Math.abs($this.startX - $this.currentX) < swipeOutBounded) {
+                    direction = $this.startY > $this.currentY ? "top" : "bottom"
+
+                } else {
+                    direction = $this.startX > $this.currentX ? "left" : "right"
+                }
+
+                // Only emit the specified event when it has modifiers
+                if ($this.callbacks['swipe.' + direction]) {
+                    triggerEvent(event, this, 'swipe.' + direction, direction)
+
+                } else {
+                    // Emit a common event when it has no any modifier
+                    triggerEvent(event, this, 'swipe', direction)
+                }
+            }
+        }
+
+        function clickEvent(event) {
+            var $this = this.$$touchObj
+
+            if (!$this.supportTouch && !options.disableClick) {
+                triggerEvent(event, this, 'tap')
+            }
+        }
+
+        function mouseDownEvent(event) {
+        	var $this = this.$$touchObj
+
+			if (!$this.supportTouch && !options.disableClick) {
+                triggerEvent(event, this, 'start')
+			}
+        }
+
+        function mouseUpEvent(event) {
+            var $this = this.$$touchObj
+
+			if (!$this.supportTouch && !options.disableClick) {
+                triggerEvent(event, this, 'end')
+			}
+        }
+
+        function mouseEnterEvent() {
+            addTouchClass(this)
+        }
+
+        function mouseLeaveEvent() {
+            removeTouchClass(this)
+        }
+
+        function triggerEvent(e, $el, eventType, param) {
+            var $this = $el.$$touchObj
+
+            // get the callback list
+            var callbacks = $this.callbacks[eventType] || []
+            if (callbacks.length === 0) {
+                return null
+            }
+
+            for (var i = 0; i < callbacks.length; i++) {
+                var binding = callbacks[i]
+
+                if (binding.modifiers.stop) {
+                    e.stopPropagation();
+                }
+
+                if (binding.modifiers.prevent) {
+                    e.preventDefault();
+                }
+
+                // handle `self` modifier`
+                if (binding.modifiers.self && e.target !== e.currentTarget) {
+                    continue
+                }
+
+                if (typeof binding.value === 'function') {
+                    if (param) {
+                        binding.value(param, e)
+                    } else {
+                        binding.value(e)
+                    }
+                }
+            }
+        }
+
+        function addTouchClass($el) {
+            var className = $el.$$touchClass || options.touchClass
+            className && $el.classList.add(className)
+        }
+
+        function removeTouchClass($el) {
+            var className = $el.$$touchClass || options.touchClass
+            className && $el.classList.remove(className)
+        }
+
+        Vue.directive('touch', {
+            bind: function ($el, binding) {
+
+                $el.$$touchObj = $el.$$touchObj || {
+                        // will change to true when `touchstart` event first trigger
+                        supportTouch: false,
+                        // an object contains all callbacks registered,
+                        // key is event name, value is an array
+                        callbacks: {},
+                        // prevent bind twice, set to true when event bound
+                        hasBindTouchEvents: false
+                    }
+
+
+                // register callback
+                var eventType = binding.arg || 'tap'
+                switch (eventType) {
+                    case 'swipe':
+                        var _m = binding.modifiers
+                        if (_m.left || _m.right || _m.top || _m.bottom) {
+                            for (var i in binding.modifiers) {
+                                if (['left', 'right', 'top', 'bottom'].indexOf(i) >= 0) {
+                                    var _e = 'swipe.' + i
+                                    $el.$$touchObj.callbacks[_e] = $el.$$touchObj.callbacks[_e] || []
+                                    $el.$$touchObj.callbacks[_e].push(binding)
+                                }
+                            }
+                        } else {
+                            $el.$$touchObj.callbacks.swipe = $el.$$touchObj.callbacks.swipe || []
+                            $el.$$touchObj.callbacks.swipe.push(binding)
+                        }
+                        break
+
+                    default:
+                        $el.$$touchObj.callbacks[eventType] = $el.$$touchObj.callbacks[eventType] || []
+                        $el.$$touchObj.callbacks[eventType].push(binding)
+                }
+
+                // prevent bind twice
+                if ($el.$$touchObj.hasBindTouchEvents) {
+                    return
+                }
+
+                var passiveOpt = isPassiveSupported ? { passive: true } : false;
+                $el.addEventListener('touchstart', touchStartEvent, passiveOpt)
+                $el.addEventListener('touchmove', touchMoveEvent, passiveOpt)
+                $el.addEventListener('touchcancel', touchCancelEvent)
+                $el.addEventListener('touchend', touchEndEvent)
+
+                if (!options.disableClick) {
+                    $el.addEventListener('click', clickEvent)
+                    $el.addEventListener('mousedown', mouseDownEvent)
+                    $el.addEventListener('mouseup', mouseUpEvent)
+                    $el.addEventListener('mouseenter', mouseEnterEvent)
+                    $el.addEventListener('mouseleave', mouseLeaveEvent)
+                }
+
+                // set bind mark to true
+                $el.$$touchObj.hasBindTouchEvents = true
+            },
+
+            unbind: function ($el) {
+                $el.removeEventListener('touchstart', touchStartEvent)
+                $el.removeEventListener('touchmove', touchMoveEvent)
+                $el.removeEventListener('touchcancel', touchCancelEvent)
+                $el.removeEventListener('touchend', touchEndEvent)
+
+                if (!options.disableClick) {
+                    $el.removeEventListener('click', clickEvent)
+                    $el.removeEventListener('mousedown', mouseDownEvent)
+                    $el.removeEventListener('mouseup', mouseUpEvent)
+                    $el.removeEventListener('mouseenter', mouseEnterEvent)
+                    $el.removeEventListener('mouseleave', mouseLeaveEvent)
+                }
+
+                // remove vars
+                delete $el.$$touchObj
+            }
+        })
+
+        Vue.directive('touch-class', {
+            bind: function ($el, binding) {
+                $el.$$touchClass = binding.value
+            },
+            unbind: function ($el) {
+                delete $el.$$touchClass
+            }
+        })
+    }
+}
+
+
+/*
+ * Exports
+ */
+if (true) {
+    module.exports = vueTouchEvents
+
+} else if (typeof define === 'function' && define.amd) {
+    define([], function () {
+        return vueTouchEvents
+    })
+} else if (window.Vue) {
+    window.vueTouchEvents = vueTouchEvents
+    Vue.use(vueTouchEvents)
+}
+
+
+/***/ }),
+/* 23 */
 /***/ (function(module, exports) {
 
 $(document).on('click', '.js-show', function (event) {
@@ -29341,19 +29689,19 @@ $('.js-close').on('click', function (event) {
 });
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(24)
+  __webpack_require__(25)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(27)
+var __vue_script__ = __webpack_require__(28)
 /* template */
-var __vue_template__ = __webpack_require__(28)
+var __vue_template__ = __webpack_require__(29)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -29392,13 +29740,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(25);
+var content = __webpack_require__(26);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -29418,7 +29766,7 @@ if(false) {
 }
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(false);
@@ -29432,7 +29780,7 @@ exports.push([module.i, "\n.slide-leave-active,\n.slide-enter-active {\n-webkit-
 
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports) {
 
 /**
@@ -29465,7 +29813,7 @@ module.exports = function listToStyles (parentId, list) {
 
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -29698,7 +30046,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -30456,19 +30804,19 @@ if (false) {
 }
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(30)
+  __webpack_require__(31)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(32)
+var __vue_script__ = __webpack_require__(33)
 /* template */
-var __vue_template__ = __webpack_require__(33)
+var __vue_template__ = __webpack_require__(34)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -30507,13 +30855,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(31);
+var content = __webpack_require__(32);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -30533,7 +30881,7 @@ if(false) {
 }
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(false);
@@ -30547,7 +30895,7 @@ exports.push([module.i, "\n.slide-leave-active,\n.slide-enter-active {\n-webkit-
 
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -30741,7 +31089,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -31417,7 +31765,7 @@ if (false) {
 }
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -31425,7 +31773,7 @@ var normalizeComponent = __webpack_require__(0)
 /* script */
 var __vue_script__ = null
 /* template */
-var __vue_template__ = __webpack_require__(35)
+var __vue_template__ = __webpack_require__(36)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -31464,7 +31812,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -31588,19 +31936,19 @@ if (false) {
 }
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(37)
+  __webpack_require__(38)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(39)
+var __vue_script__ = __webpack_require__(40)
 /* template */
-var __vue_template__ = __webpack_require__(40)
+var __vue_template__ = __webpack_require__(41)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -31639,13 +31987,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(38);
+var content = __webpack_require__(39);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -31665,7 +32013,7 @@ if(false) {
 }
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(false);
@@ -31679,7 +32027,7 @@ exports.push([module.i, "\n.fade-enter-active, .fade-leave-active {\n  -webkit-t
 
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -31733,7 +32081,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -31804,15 +32152,15 @@ if (false) {
 }
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(42)
+var __vue_script__ = __webpack_require__(43)
 /* template */
-var __vue_template__ = __webpack_require__(43)
+var __vue_template__ = __webpack_require__(44)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -31851,7 +32199,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -31961,7 +32309,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -32108,15 +32456,15 @@ if (false) {
 }
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(45)
+var __vue_script__ = __webpack_require__(46)
 /* template */
-var __vue_template__ = __webpack_require__(49)
+var __vue_template__ = __webpack_require__(50)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -32155,7 +32503,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -32215,7 +32563,7 @@ $.ajaxSetup({
         'X-CSRF-TOKEN': $('[name=token]').attr('content')
     }
 });
-var socialAuth = __webpack_require__(46);
+var socialAuth = __webpack_require__(47);
 /* harmony default export */ __webpack_exports__["default"] = ({
     components: {
         'social-auth': socialAuth
@@ -32312,15 +32660,15 @@ var socialAuth = __webpack_require__(46);
 });
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(47)
+var __vue_script__ = __webpack_require__(48)
 /* template */
-var __vue_template__ = __webpack_require__(48)
+var __vue_template__ = __webpack_require__(49)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -32359,7 +32707,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -32429,7 +32777,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -32494,7 +32842,7 @@ if (false) {
 }
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -32700,15 +33048,15 @@ if (false) {
 }
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(51)
+var __vue_script__ = __webpack_require__(52)
 /* template */
-var __vue_template__ = __webpack_require__(52)
+var __vue_template__ = __webpack_require__(53)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -32747,7 +33095,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -32861,7 +33209,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -32918,9 +33266,17 @@ var render = function() {
           ? _c(
               "section",
               {
+                directives: [
+                  {
+                    name: "touch",
+                    rawName: "v-touch:swipe",
+                    value: _vm.nextSlide,
+                    expression: "nextSlide",
+                    arg: "swipe"
+                  }
+                ],
                 staticClass: "main-offer js-offer-slider",
-                style: { "background-image": _vm.backgroundImage },
-                on: { touch: _vm.swipe }
+                style: { "background-image": _vm.backgroundImage }
               },
               [
                 offer.type == "form"
@@ -33100,15 +33456,15 @@ if (false) {
 }
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(54)
+var __vue_script__ = __webpack_require__(55)
 /* template */
-var __vue_template__ = __webpack_require__(55)
+var __vue_template__ = __webpack_require__(56)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -33147,7 +33503,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 54 */
+/* 55 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -33280,7 +33636,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -33339,6 +33695,23 @@ var render = function() {
           return _c(
             "a",
             {
+              directives: [
+                {
+                  name: "touch",
+                  rawName: "v-touch:swipe",
+                  value: _vm.offsetShowPoint,
+                  expression: "offsetShowPoint",
+                  arg: "swipe"
+                },
+                {
+                  name: "touch",
+                  rawName: "v-touch:swipe.left",
+                  value: _vm.offsetBackShowPoint,
+                  expression: "offsetBackShowPoint",
+                  arg: "swipe",
+                  modifiers: { left: true }
+                }
+              ],
               key: photo.id,
               staticClass: "case b-card portfolio__item portfolio__item_slide",
               on: {
@@ -33483,15 +33856,15 @@ if (false) {
 }
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(57)
+var __vue_script__ = __webpack_require__(58)
 /* template */
-var __vue_template__ = __webpack_require__(58)
+var __vue_template__ = __webpack_require__(59)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -33530,7 +33903,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -33616,7 +33989,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -33725,15 +34098,15 @@ if (false) {
 }
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(60)
+var __vue_script__ = __webpack_require__(61)
 /* template */
-var __vue_template__ = __webpack_require__(61)
+var __vue_template__ = __webpack_require__(62)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -33772,7 +34145,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -33827,7 +34200,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 61 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -33962,19 +34335,19 @@ if (false) {
 }
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(63)
+  __webpack_require__(64)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(65)
+var __vue_script__ = __webpack_require__(66)
 /* template */
-var __vue_template__ = __webpack_require__(66)
+var __vue_template__ = __webpack_require__(67)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -34013,13 +34386,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 63 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(64);
+var content = __webpack_require__(65);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -34039,7 +34412,7 @@ if(false) {
 }
 
 /***/ }),
-/* 64 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(false);
@@ -34053,7 +34426,7 @@ exports.push([module.i, "\n.slide-leave-active,\n.slide-enter-active {\n-webkit-
 
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -34280,7 +34653,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 66 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -34954,19 +35327,19 @@ if (false) {
 }
 
 /***/ }),
-/* 67 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(68)
+  __webpack_require__(69)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(70)
+var __vue_script__ = __webpack_require__(71)
 /* template */
-var __vue_template__ = __webpack_require__(71)
+var __vue_template__ = __webpack_require__(72)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -35005,13 +35378,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 68 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(69);
+var content = __webpack_require__(70);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -35031,7 +35404,7 @@ if(false) {
 }
 
 /***/ }),
-/* 69 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(false);
@@ -35045,7 +35418,7 @@ exports.push([module.i, "\n.slide-leave-active,\n.slide-enter-active {\n-webkit-
 
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -35239,7 +35612,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -35735,19 +36108,19 @@ if (false) {
 }
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(73)
+  __webpack_require__(74)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(75)
+var __vue_script__ = __webpack_require__(76)
 /* template */
-var __vue_template__ = __webpack_require__(76)
+var __vue_template__ = __webpack_require__(77)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -35786,13 +36159,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 73 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(74);
+var content = __webpack_require__(75);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -35812,7 +36185,7 @@ if(false) {
 }
 
 /***/ }),
-/* 74 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(false);
@@ -35826,7 +36199,7 @@ exports.push([module.i, "\n.slide-leave-active,\n.slide-enter-active {\n-webkit-
 
 
 /***/ }),
-/* 75 */
+/* 76 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -36011,7 +36384,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 76 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -36466,15 +36839,15 @@ if (false) {
 }
 
 /***/ }),
-/* 77 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(78)
+var __vue_script__ = __webpack_require__(79)
 /* template */
-var __vue_template__ = __webpack_require__(81)
+var __vue_template__ = __webpack_require__(82)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -36513,7 +36886,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 78 */
+/* 79 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -36599,7 +36972,7 @@ Vue.component('post', __webpack_require__(8));
 });
 
 /***/ }),
-/* 79 */
+/* 80 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -36707,7 +37080,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 80 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -36845,7 +37218,7 @@ if (false) {
 }
 
 /***/ }),
-/* 81 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -36858,7 +37231,18 @@ var render = function() {
         "div",
         { staticClass: "articles__content" },
         _vm._l(_vm.showedItems, function(post) {
-          return _c("post", { attrs: { post: post } })
+          return _c("post", {
+            directives: [
+              {
+                name: "touch",
+                rawName: "v-touch:swipe",
+                value: _vm.offsetShowPoint,
+                expression: "offsetShowPoint",
+                arg: "swipe"
+              }
+            ],
+            attrs: { post: post }
+          })
         })
       )
     ]),
@@ -36959,15 +37343,15 @@ if (false) {
 }
 
 /***/ }),
-/* 82 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(83)
+var __vue_script__ = __webpack_require__(84)
 /* template */
-var __vue_template__ = __webpack_require__(84)
+var __vue_template__ = __webpack_require__(85)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -37006,7 +37390,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 83 */
+/* 84 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -37092,7 +37476,7 @@ Vue.component('post', __webpack_require__(8));
 });
 
 /***/ }),
-/* 84 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -37206,15 +37590,15 @@ if (false) {
 }
 
 /***/ }),
-/* 85 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(86)
+var __vue_script__ = __webpack_require__(87)
 /* template */
-var __vue_template__ = __webpack_require__(87)
+var __vue_template__ = __webpack_require__(88)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -37253,7 +37637,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 86 */
+/* 87 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -37363,7 +37747,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 87 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -37374,12 +37758,27 @@ var render = function() {
     "div",
     { staticClass: "manufacturers__list" },
     _vm._l(_vm.showedItems, function(manufacturer) {
-      return _c("div", { staticClass: "manufacturers__item" }, [
-        _c("img", {
-          staticClass: "manufacturers__item-image",
-          attrs: { src: manufacturer, alt: "" }
-        })
-      ])
+      return _c(
+        "div",
+        {
+          directives: [
+            {
+              name: "touch",
+              rawName: "v-touch:swipe",
+              value: _vm.offsetShowPoint,
+              expression: "offsetShowPoint",
+              arg: "swipe"
+            }
+          ],
+          staticClass: "manufacturers__item"
+        },
+        [
+          _c("img", {
+            staticClass: "manufacturers__item-image",
+            attrs: { src: manufacturer, alt: "" }
+          })
+        ]
+      )
     })
   )
 }
@@ -37394,7 +37793,7 @@ if (false) {
 }
 
 /***/ }),
-/* 88 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!function(e,t){if(true)!(__WEBPACK_AMD_DEFINE_ARRAY__ = [exports], __WEBPACK_AMD_DEFINE_FACTORY__ = (t),
@@ -37404,7 +37803,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 
 /***/ }),
-/* 89 */
+/* 90 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

@@ -1,7 +1,7 @@
 <template>
     <div class="manufacturers__list">
-        <div v-for="manufacturer in showedItems" class="manufacturers__item">
-            <img v-bind:src="manufacturer" alt="" class="manufacturers__item-image">
+        <div v-for="manufacturer in showedItems" class="manufacturers__item" v-touch:swipe="offsetShowPoint">
+            <img   v-bind:src="manufacturer" alt="" class="manufacturers__item-image">
         </div>
 
     </div>

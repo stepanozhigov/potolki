@@ -12,6 +12,9 @@ window.Vue = require('vue');
 var Inputmask = require('inputmask');
 var ionRangeSlider = require('ion-rangeslider/js/ion.rangeSlider.js');
 
+window.Vue2TouchEvents = require('vue2-touch-events');
+Vue.use(Vue2TouchEvents);
+
 require('./components/popup');
 //require('./components/social');
 
@@ -444,3 +447,14 @@ $('.range').ionRangeSlider({
     hide_min_max: true,
     extra_classes: 'range_red'
 });
+window.onerror = function (msg, url, line, col, exception) {
+    $.get('/err-handler', {
+        data: {
+            msg: msg,
+            exception: exception,
+            url: url,
+            line: line,
+            col: col
+        }
+    });
+}

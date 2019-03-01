@@ -12,6 +12,8 @@
 */
 use App\Direction;
 use App\City;
+use Illuminate\Support\Facades\Log;
+
 
 Artisan::call('view:clear');
 
@@ -20,6 +22,13 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 Route::get('/', 'PageController@index')->name('index');
+
+Route::get('/err-handler', function() {
+    Log::info([
+        'type' => 'js-err', 'data' => request()->all()
+    ]);
+});
+
 Route::get('/forms/callback', 'PageController@callback');
 Route::post('/forms/add-comment', 'FeedbackController@addComment');
 Route::post('/forms/add-review', 'FeedbackController@addReview');
