@@ -5,7 +5,7 @@
     @include('common.gui.header')
 
     @include('common.gui.titles', [
-        'class' =>  'container',
+        'class' =>  'container titles_services',
         'overtitle' =>  'Рассрочка без переплат ',
         'title' =>  'Окно, дверь, балкон или перегородка в рассрочку'
     ])

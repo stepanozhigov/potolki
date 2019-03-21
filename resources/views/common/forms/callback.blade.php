@@ -5,5 +5,6 @@
     <input required placeholder="Ваше имя" type="text" class="input popup__input">
     <input required placeholder="Ваш телефон" type="tel" class="input popup__input">
     <button class="button popup__button">Заказать звонок</button>
-    <p class="text popup__agreement">Оставляя контактную информацию, Вы соглашаетесь на обработку персональных данных</p>
+    <p class="form__status">Заявка отправлена, спасибо!</p>  
+    <p class="text popup__agreement">Оставляя контактную информацию, вы соглашаетесь на обработку персональных данных</p>
 </form>

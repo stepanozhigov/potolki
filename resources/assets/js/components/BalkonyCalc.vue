@@ -24,8 +24,9 @@
     </div>
     <div class="calculator__content">
         <div class="calculator__main calculator__main_loggia-tricuspid active">
-            <img class="calculator__image" src="/img/windows/calculator/balcony/balcony-calc-big_01.png" srcset="/img/windows/calculator/balcony/balcony-calc-big_01@2x.png 2x" alt="">
+            <img class="calculator__image" src="/img/windows/calculator/balcony/balcony-calc-big_02.png" srcset="/img/windows/calculator/balcony/balcony-calc-big_02@2x.png 2x" alt="">
             <img class="calculator__window-left" src="/img/windows/calculator/balcony/balcony-calc-big_11.png" srcset="/img/windows/calculator/balcony/balcony-calc-big_11@2x.png 2x" alt="">
+
             <div class="calculator__width">
                 <input v-model="width" type="number" class="calculator__input" name="height[]">
                 <span class="calculator__input-unit">мм</span>
@@ -38,8 +39,9 @@
             </div>
         </div>
         <div class="calculator__main calculator__main_loggia-four-leaved">
-            <img class="calculator__image" src="/img/windows/calculator/balcony/balcony-calc-big_02.png" srcset="/img/windows/calculator/balcony/balcony-calc-big_02@2x.png 2x" alt="">
+            <img class="calculator__image" src="/img/windows/calculator/balcony/balcony-calc-big_01.png" srcset="/img/windows/calculator/balcony/balcony-calc-big_01@2x.png 2x" alt="">
             <img class="calculator__window-left" src="/img/windows/calculator/balcony/balcony-calc-big_11.png" srcset="/img/windows/calculator/balcony/balcony-calc-big_11@2x.png 2x" alt="">
+
             <div class="calculator__width">
                 <input v-model="width" type="number" class="calculator__input" name="height[]">
                 <span class="calculator__input-unit">мм</span>
@@ -85,7 +87,7 @@
                 <p class="calculator__text">Указаны стандартные размеры оконных рам. Введите свои параметры для расчёта стоимости.</p>
                 <div class="calculator__size">
                     <p class="calculator__size-name">Ширина</p>
-                    <div class="calculator__width"> 
+                    <div class="calculator__width">
                         <input type="number" pattern="\d*" class="calculator__input" name="height[]">
                         <span class="calculator__input-unit">мм</span>
                     </div>
@@ -113,12 +115,12 @@
             </div>
             <div class="calculator__finishing">
                 <h3 class="calculator__title">Отделка балкона</h3>
-                <p class="calculator__text">Для рассчёта отделки позвоните по номеру</p>
+                <p class="calculator__text">Для расчёта отделки позвоните по номеру</p>
                 <a href="tel:8 800 333-97-14" class="calculator__call">8 800 333–97–14</a>
             </div>
             <div class="calculator__price">
                 <h3 class="calculator__title">Стоимость</h3>
-                <p class="calculator__text">Является примерной. Точная оценка и расчёт нетиповых конфигураций требует бесплатного выезда замерщика.</p>
+                <p class="calculator__text">Является примерной. Точную оценку может дать только мастер. Это бесплатно.</p>
                 <p class="calculator__summ">{{ summ.toLocaleString() }} ₽</p>
                 <button class="calculator__button js-show" data-src="#popup_callback" data-title="Вызов замерщика" data-button="Вызвать замерщика">Вызвать замерщика</button>
             </div>

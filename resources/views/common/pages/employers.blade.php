@@ -9,9 +9,9 @@
                 'title' =>  "Сотрудники компании «Твой стиль» {$city->name_formatted}",
                 'intro' =>  "В нашей компании работают только опытные сотрудники,
                             которые постоянно проходят курсы повышения квалификации.
-                            Весь штат работников имеет не один год практики в производстве и монтаже натяжных потолков любой сложности"
+                            Весь штат работников имеет ни один год практики в производстве и монтаже ПВХ изделий любой сложности"
             ])
-            
+
             <div class="employees__content container b-texture">
                 <!--<div class="switcher employees__switcher">
                     <a class="switcher__button switcher__button_active">Все</a>
@@ -31,10 +31,10 @@
                 @endforeach
 
 
-                <a href="javascript:void(0);" class="additionally employees__additionally">
+                <a href="{{ route('vacancies', request()->route()->city) }}" class="additionally employees__additionally">
                     <p class="card-title additionally__title">Вакансии</h2>
                     <hr class="line additionally__line">
-                    <p class="subtext subtext_white">Мечтаете о&nbsp;работе в&nbsp;крупной и&nbsp;стабильной компании? Считаете себя профессионалом своего дела? Тогда именно для вас мы&nbsp;открываем дополнительные вакансии в&nbsp;нашем представительстве в&nbsp;городе Сочи</p>
+                    <p class="subtext subtext_white">Мечтаете о&nbsp;работе в&nbsp;крупной и&nbsp;стабильной компании? Считаете себя профессионалом своего дела? Тогда именно для вас мы&nbsp;открываем дополнительные вакансии в&nbsp;нашем представительстве в&nbsp;вашем городе.</p>
                 </a>
             </div>
         </section>

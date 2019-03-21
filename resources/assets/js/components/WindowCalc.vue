@@ -118,7 +118,7 @@
             </div>
             <div class="calculator__price">
                 <h3 class="calculator__title">Стоимость</h3>
-                <p class="calculator__text">Является примерной. Точная оценка и расчёт нетиповых конфигураций требует бесплатного выезда замерщика.</p>
+                <p class="calculator__text">Является примерной. Точную оценку может дать только мастер. Это бесплатно.</p>
                 <p class="calculator__summ">{{ summ.toLocaleString() }} ₽</p>
                 <button class="calculator__button js-show" data-src="#popup_callback" data-title="Вызов замерщика" data-button="Вызвать замерщика">Вызвать замерщика</button>
             </div>
@@ -181,7 +181,7 @@
         },
         methods: {
         	checkTypeParams() {
-        		
+
 
         		switch(this.currentType) {
         			case '3x':

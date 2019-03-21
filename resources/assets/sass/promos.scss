@@ -8,23 +8,33 @@
 
     &__content {
         @extend .b-texture;
-        @extend .container;
+        @extend .b-texture_square;
+        width: calc(100% + 20px);
+        margin-left: rem(-10);
+        margin-right: rem(-10);
         padding: 48px 0 44px 0;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: center;
+
+        @include below($mobile) {
+            width: 100%;
+            margin-right: 0;
+            margin-left: 0
+        }
     }
 
 
     &__item {
-        width: 32.5%;
+        width: calc(33.3% - 20px);
+        margin: 0 rem(10);
         margin-bottom: 20px;
 
-        @media screen and (max-width: 1024px) {
-            width: 48%;
+        @include below($tablet) {
+            width: calc(50% - 20px);
         }
-        @media screen and (max-width: 650px) {
-            width: 95%;
+        @include below($mobile) {
+            width: 100%;
         }
     }
 }

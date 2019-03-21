@@ -48,11 +48,11 @@
                 <a target="_blank" href="https://vk.com/business.repin" class="socials__item">
                     <div class="socials__icon socials__icon_vk"></div>
                 </a>
-                <a target="_blank" href="https://ok.ru/profile/589436377360" class="socials__item">
-                    <div class="socials__icon socials__icon_youtube"></div>
-                </a>
                 <a target="_blank" href="https://api.whatsapp.com/send?phone=79996516666" class="socials__item">
                     <div class="socials__icon socials__icon_ok"></div>
+                </a>
+                <a target="_blank" href="https://ok.ru/profile/589436377360" class="socials__item">
+                    <div class="socials__icon socials__icon_youtube"></div>
                 </a>
             </div>
         </div>
@@ -102,7 +102,7 @@
                     <img class="logo__icon" src="/img/gui/logo-icon.svg" alt="логотип Твой Стиль">
                     <img class="logo__text" src="/img/gui/logo-text.svg" alt="графема Твой Стиль">
                 </a>
-                <p class=" subtext footer__text"><span>&copy;  2003 – {{ date('Y') }}  ООО «Твой Стиль» </span> <span>Все права защищены</span> </p>
+                <p class=" subtext footer__text"><span>&copy;  2003 – {{ date('Y') }}  ООО «Твой Стиль» </span></p>
             </div>
 			<a data-title="Оценить сайт" data-button="Отправить отзыв" data-src="#popup_survey" class="footer__survey js-showup" href="javascript:void(0);">Оценить сайт</a>
             <p class="footer__dev subtext footer__text">

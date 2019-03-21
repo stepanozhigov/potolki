@@ -97,6 +97,7 @@
     text-transform: uppercase;
     text-align: center;
     margin: 0;
+	hyphens: none;
 
     @include below($tablet) {
         font-size: rem(18);
@@ -293,6 +294,16 @@
     width: 100%;
     z-index: 1;
 
+    &_services {
+        @include below($mobile) {
+
+            .titles__title {
+                margin-bottom: 0;
+            }
+
+        }
+    }
+
     &__overtitle {
         @extend .overtitle;
 
@@ -353,7 +364,7 @@
     &__arrow {
         display: none;
 
-        padding: rem(10);
+        padding: rem(8);
 
         border: none;
         outline: none;
@@ -361,8 +372,8 @@
         background-color: transparent;
 
         img {
-            width: rem(18);
-            height: rem(9);
+            width: rem(32);
+            height: rem(16);
         }
 
         &_longtext {
@@ -377,8 +388,6 @@
     @include below($mobile) {
         &.container {
             margin-bottom: rem(50);
-
-
         }
 
         & {

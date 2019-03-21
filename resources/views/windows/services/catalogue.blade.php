@@ -179,8 +179,7 @@
                 </div>
             </div>
             <div class="turnkey__buttons">
-                <a class="button js-show" data-src="#popup_callback" data-title="Вызов замерщика" data-button="Сделать заказ" href="javascript:void(0);">Сделать заказ</a>
-                <a class="button buttons__item button_gray" href="javascript:void(0);">Связяться с менеджером</a>
+                <a class="button js-show" data-src="#popup_callback" data-title="Вызов замерщика" data-button="Сделать заказ" href="javascript:void(0);">Вызвать замерщика</a>
             </div>
         </section>
         <section class="manufacturers container">
@@ -223,8 +222,8 @@
         <section class="whyus">
             @include('common.gui.titles', [
                 'title' =>  "Звонят многим, заказывают у нас. Почему? ",
-                'class' =>  "container",
-                'intro' =>  "Фабрика натяжных потолков &laquo;Твой стиль&raquo; основана в&nbsp;2003 году является лидером по&nbsp;производству и&nbsp;установке натяжных потолков на&nbsp;Дальнем Востоке"
+                'class' =>  "container", 
+                'intro' =>  "Фабрика пластиковых окон &laquo;Твой стиль&raquo; основана в&nbsp;2003 году является лидером по&nbsp;производству и&nbsp;установке пластиковых окон на&nbsp;Дальнем Востоке"
             ])
             <div class="whyus__content">
                 <div class="whyus__item">
@@ -238,7 +237,6 @@
                             <li class="whyus__item-text">— 16 лет успешной работы</li>
                             <li class="whyus__item-text">— Гарантия низкой цены</li>
                             <li class="whyus__item-text">— Установка за 1 день</li>
-                            <li class="whyus__item-text">— Контроль качества</li>
                         </ul>
                     </div>
                     <img class="whyus__item-image" src="/img/img_factory.jpg" alt="Производство">
@@ -251,22 +249,16 @@
                         </p>
                         <div class="signature">
                             <p>А. А. Репин</p>
-                            <img src="/img/signature.png" alt="signature">
+                            <img src="/img/signature.png" srcset="/img/signature2x.png 2x" alt="signature">
                         </div>
                         <div class="socials">
-                            <a href="" class="socials__item">
-                                <div class="socials__icon socials__icon_vk"></div>
-                            </a>
-                            <a href="" class="socials__item">
-                                <div class="socials__icon socials__icon_youtube"></div>
-                            </a>
-                            <a href="" class="socials__item red-hoverable">
-                                <div class="socials__icon socials__icon_fb"></div>
-                            </a>
-                            <a href="" class="socials__item">
+                            <a target="_blank" href="https://www.instagram.com/business_repin/" class="socials__item">
                                 <div class="socials__icon socials__icon_inst"></div>
                             </a>
-                            <a href="" class="socials__item">
+                            <a target="_blank" href="https://vk.com/business.repin" class="socials__item">
+                                <div class="socials__icon socials__icon_vk"></div>
+                            </a>
+                            <a target="_blank" href="https://api.whatsapp.com/send?phone=79996516666" class="socials__item">
                                 <div class="socials__icon socials__icon_whatsapp"></div>
                             </a>
                         </div>
@@ -276,16 +268,16 @@
             </div>
             <div class="whyus__stat">
                 <div class="whyus__stat-item">
-                    <p class="whyus__stat-num">15</p>
-                    <p class="whyus__stat-text">лет гарантия на наши потолки, с сервисным обсуживанием</p>
+                    <p class="whyus__stat-num">30</p>
+                    <p class="whyus__stat-text">лет гарантии <br>на окна</p>
                 </div>
                 <div class="whyus__stat-item">
                     <p class="whyus__stat-num">3</p>
-                    <p class="whyus__stat-text">часа устанавливается потолок площадью 16 квадратных метров</p>
+                    <p class="whyus__stat-text">часа занимает <br> установка</p>
                 </div>
                 <div class="whyus__stat-item">
                     <p class="whyus__stat-num">397</p>
-                    <p class="whyus__stat-text">квадратных метров устанавливаем за день, это 26 910 в месяц</p>
+                    <p class="whyus__stat-text">квадратных метров <br> устанавливаем за день</p>
                 </div>
             </div>
         </section>

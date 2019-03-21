@@ -1,7 +1,6 @@
 <template>
     <div class="comment comment_client">
         <p class="third-title comment__title">Добавить комментарий</p>
-        <hr class="line comment__line">
         <textarea class="textarea comment__textarea" v-bind:disabled="!isUserLogged" name="" id="" v-bind:placeholder="placeholder" v-model="message"></textarea>
         <div v-if="isUserLogged" class="comment__user comment__user_client user">
             <div class="user__left">
@@ -9,19 +8,27 @@
             </div>
             <div class="user__right">
                 <p class="text user__name">{{ user.fullName }}</p>
-            </div> 
+            </div>
         </div>
         <div v-if="!isUserLogged" class="comment__auth">
-            <span class="third-title">Авторизуйтесь через</span>
+            <span class="comment__autorise">Авторизуйтесь через</span>
             <div class="comment__socials socials">
-                <img @click="vkAuth()" class="socials__item" src="/img/gui/social_gray_vk.svg" alt="">
-                <img data-callback="unlockComment" class="socials__item js-social-auth" data-social="vk" src="/img/gui/social_gray_ok.svg" alt="">
-                <img data-callback="unlockComment" class="socials__item js-social-auth" data-social="vk" src="/img/gui/social_gray_fb.svg" alt="">
-                <img data-callback="unlockComment" class="socials__item js-social-auth" data-social="vk" src="/img/gui/social_gray_inst.svg" alt="">
-            </div>                                
+                <a @click="vkAuth()" href="javascript:void(0)" class="socials__item">
+                    <div class="socials__icon socials__icon_vk"></div>
+                </a>
+                <a href="javascript:void(0)" class="socials__item js-social-auth" data-social="vk">
+                    <div class="socials__icon socials__icon_ok"></div>
+                </a>
+                <a href="javascript:void(0)" class="socials__item js-social-auth" data-social="vk">
+                    <div class="socials__icon socials__icon_fb"></div>
+                </a>
+                <a href="javascript:void(0)" class="socials__item js-social-auth" data-social="vk">
+                    <div class="socials__icon socials__icon_inst"></div>
+                </a>
+            </div>
         </div>
         <div class="comment__controls">
-            <span v-if="isValidated && !isSended" class="button button_red comment__sent" @click="send()">Отправить</span>
+            <button v-if="!isSended" class="comment__sent" @click="send()">Отправить</button>
             <span class="intro" v-if="isSended">Комментарий отправлен!</span>
             <span class="link comment__close js-close">Закрыть</span>
         </div>
@@ -39,7 +46,7 @@
         },
         computed: {
             placeholder () {
-                return this.user ? 'Введите ваше сообщение':'Авторизуйтесь, чтобы оставить комментарий.'
+                return this.isUserLogged ? 'Введите ваше сообщение':'Авторизуйтесь, чтобы оставить комментарий.'
             },
             isUserLogged () {
                 return Object.keys(this.user).length > 0;
@@ -97,7 +104,6 @@
             if (localStorage.getItem('socialUser')) {
                 this.user = JSON.parse(localStorage.getItem('socialUser'))
             }
-            
         }
     }
 </script>

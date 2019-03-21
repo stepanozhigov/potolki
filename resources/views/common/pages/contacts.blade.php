@@ -59,17 +59,22 @@
                     <p class="second-title">Социальные сети</p>
                     <div class="socials contacts__socials">
                         <a href="" class="socials__item">
-                            <div class="socials__icon socials__icon_vk"></div>
-                        </a>
-                        <a href="" class="socials__item">
-                            <div class="socials__icon socials__icon_youtube"></div>
+                            <div class="socials__icon socials__icon_inst"></div>
                         </a>
                         <a href="" class="socials__item">
                             <div class="socials__icon socials__icon_fb"></div>
                         </a>
                         <a href="" class="socials__item">
-                            <div class="socials__icon socials__icon_inst"></div>
+                            <div class="socials__icon socials__icon_vk"></div>
                         </a>
+                        <a href="" class="socials__item">
+                            <div class="socials__icon socials__icon_ok"></div>
+                        </a>
+                        <a href="" class="socials__item">
+                            <div class="socials__icon socials__icon_youtube"></div>
+                        </a>
+
+
                     </div>
                 </div>
             </div>

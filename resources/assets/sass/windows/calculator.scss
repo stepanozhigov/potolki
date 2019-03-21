@@ -7,19 +7,8 @@
     overflow: hidden;
     margin-bottom: rem(96);
 
-    &:before {
-        content: '';
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 50%;
-        position: absolute;
-        width: rem(780);
-        height: 100%;
-        border-radius: .3125rem;
-        transform: translateX(-50%);
-        background-image: url(/img/gui/square-bg--2x.jpg);
-    }
+    @extend .b-texture;
+    @extend .b-texture_square;
 
     &__inner {
         position: relative;
@@ -503,11 +492,11 @@
                     height: rem(182);
                 }
 
-                @include below($mobile) {
-                    top: rem(14);
-                    left: rem(61);
-                    width: rem(38);
-                    height: rem(79);
+				@include below($mobile) {
+                    top: rem(16);
+                    left: rem(76);
+                    width: rem(48);
+                    height: rem(100);
                 }
             }
         }
@@ -531,11 +520,12 @@
                     height: rem(146);
                 }
 
-                @include below($mobile) {
-                    top: rem(16);
-                    left: rem(76);
-                    width: rem(48);
-                    height: rem(100);
+
+				@include below($mobile) {
+                    top: rem(14);
+                    left: rem(61);
+                    width: rem(38);
+                    height: rem(79);
                 }
             }
         }
@@ -719,7 +709,7 @@
 
     &__title {
         margin: 0;
-        margin-bottom: rem(10);
+        margin-bottom: rem(8);
         color: #485058;
         font-family: $playfair;
         font-size: rem(20);
@@ -727,12 +717,13 @@
 
         @include below($mobile) {
             font-size: rem(18);
+			margin-bottom: rem(16);
         }
     }
 
     &__text {
         margin: 0;
-        margin-bottom: rem(31);
+        margin-bottom: rem(32);
         color: #485058;
         font-family: $helvetica;
         font-size: rem(12);
@@ -741,6 +732,7 @@
 
         @include below($tablet) {
             font-size: rem(14);
+			margin-bottom: rem(16);
         }
 
         &_large {
@@ -755,17 +747,21 @@
 
         .checkbox {
             &:not(:last-of-type) {
-                margin-bottom: rem(20);
+                margin-bottom: rem(8);
             }
         }
     }
 
     &__summ {
         margin: 0;
-        margin-bottom: rem(45);
+        margin-bottom: rem(46);
         color: $red_crismon;
         font-family: $helvetica;
         font-size: rem(48);
+
+        @include below($mobile) {
+            margin-bottom: rem(32);
+        }
     }
 
     &__button {
@@ -789,6 +785,13 @@
 
             .calculator__title {
                 width: 100%;
+                text-align: center;
+
+                @include below($mobile) {
+                    text-align: left;
+                }
+            }
+            .calculator__text {
                 text-align: center;
 
                 @include below($mobile) {
@@ -830,9 +833,13 @@
             margin-bottom: rem(31);
             color: #485058;
             font-family: $helvetica;
-            ont-size: rem(16);
+            font-size: rem(16);
             font-weight: 300;
             line-height: 20px;
+
+			@include below($mobile) {
+	            margin-bottom: 0;
+	        }
         }
 
         .calculator__width,

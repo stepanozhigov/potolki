@@ -10,6 +10,7 @@
 
     &_hidden {
         display: none;
+		animation: headerHidden .3s;
     }
 
     &_light {
@@ -126,9 +127,20 @@
 
     &__offices {
         min-width: 350px;
-        @media screen and (max-width: 1024px){
+
+        @include below($mobile) {
             display: none;
         }
+
+        .dropdown__title {
+            margin-top: rem(7);
+
+            &:first-of-type {
+                margin-top: rem(28)
+            }
+        }
+
+
     }
 
     &__phone {
@@ -139,33 +151,48 @@
         }
 
         &.phone {
-            @media screen and (max-width: 650px){
+            @include below($tablet) {
                 position: relative;
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
                 padding-left: 15px;
+                margin-right: rem(32);
             }
 
+            @include below($mobile) {
+                margin-right: 0;
+            }
+
+
             .phone__icon {
-                @media screen and (max-width: 650px){
+                @include below($tablet) {
                     position: absolute;
                     left: 0;
-                    top: 2px;
+                    top: 3px;
                     margin: 0;
                 }
             }
         }
         span {
+            position: relative;
             display: none;
             color: #dc1414;
             font-family: $helvetica;
             font-size: 12px;
             font-weight: 300;
             line-height: 12px;
-            text-decoration: underline;
 
-            @media screen and (max-width: 650px){
+            &::after {
+                position: absolute;
+                width: 100%;
+                bottom: rem(-1);
+                display:block;
+                content: '';
+                border-bottom: rem(1) dashed $red_crismon;
+            }
+
+            @include below($tablet) {
                 display: inline;
             }
         }
@@ -178,19 +205,13 @@
         align-items: center;
 
         @include below($tablet) {
+            flex-direction: row-reverse;
+            justify-content: space-between;
+        }
+
+        @include below($mobile) {
             width: 100%;
-            margin: 0;
-            justify-content: space-between;
-        }
-
-		@media screen and (max-width: 650px){
-            flex-direction: row-reverse;
             justify-content: space-evenly;
-        }
-
-        @media screen and (max-width: 359px){
-            flex-direction: row-reverse;
-            justify-content: space-between;
         }
     }
 
@@ -215,18 +236,16 @@
             display:block;
             content: '';
             border-bottom: rem(1) dashed $red_crismon;
+            transition: bottom .3s;
         }
 
         &:hover {
             &::after {
-                animation: dush .3s ease;
+                bottom: rem(-4);
             }
         }
 
         @include below($tablet) {
-            line-height: 20px;
-        }
-        @media screen and (max-width: 650px){
             display: none;
         }
     }
@@ -264,6 +283,11 @@
         padding: 20px 0;
         flex-direction: row;
         align-items: center;
+		animation: headerSticky .3s;
+
+        &.hidden {
+            display: none;
+        }
 
         .header__content {
             @extend .container;
@@ -326,6 +350,7 @@
             }
 
             .header__feedbacks {
+                width: 100%;
                 flex-direction: row;
                 justify-content: space-between;
                 align-items: center;
@@ -349,16 +374,12 @@
 
 }
 
-@keyframes dush {
- from {
-     bottom: rem(-1);
- }
+@keyframes headerSticky {
+ from { top: -200px; }
+ to { top: 0; }
+}
 
- 50% {
-     bottom: rem(-4);
- }
-
- to {
-    bottom: rem(-1);
- }
+@keyframes headerHidden {
+ from { top: 0; }
+ to { top: -200px; }
 }

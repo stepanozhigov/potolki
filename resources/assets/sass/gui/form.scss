@@ -46,4 +46,30 @@
             color: #50555a;
         }
     }
+
+	&__status {
+		display: none;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+		margin: 0;
+		padding: rem(18) 0;
+		color: $grey_abbey;
+		font-family: $helvetica;
+		font-size: rem(22);
+		font-weight: 300;
+		line-height: rem(32);
+	}
+
+    &_status-send {
+        .form__status {
+            display: flex;
+        }
+
+        .form__button,
+        .popup__button,
+        .main-offer__button {
+            display: none;
+        }
+    }
 }

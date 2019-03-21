@@ -1,0 +1,114 @@
+.categoryLink {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: calc(25% - 120px);
+    margin: 0 rem(60);
+    margin-bottom: rem(75);
+
+    text-decoration: none;
+
+    @include below($tablet) {
+        width: calc(25% - 70px);
+        margin: 0 rem(35);
+        margin-bottom: rem(75);
+    }
+
+    &:hover {
+        .categoryLink__image-wrap {
+            border: rem(3) solid $red_crismon;
+            box-shadow: none;
+        }
+
+        .categoryLink__name {
+            color: $red_crismon;
+        }
+    }
+
+    &__image-wrap {
+        display: flex;
+        justify-content: center;
+        flex-shrink: 0;
+        width: rem(184);
+        height: rem(184);
+        margin-bottom: rem(25);
+        overflow: hidden;
+
+        border: rem(3);
+        border: rem(3) solid $white;
+        border-radius: 100%;
+        box-shadow: 0 rem(-1) rem(3) 0 rgba($black, .17);
+
+        transition: border .3s;
+
+        @include above($desktop) {
+            will-change: transform;
+        }
+        @include below($tablet) {
+            width: rem(125);
+            height: rem(125);
+        }
+    }
+
+    &__image {
+        width: auto;
+        height: 100%;
+    }
+
+    &__name {
+        margin: 0;
+
+        font-size: rem(22);
+        text-align: center;
+
+        transition: color .3s;
+
+        @include above($desktop) {
+            will-change: transform;
+        }
+        @extend .text;
+        @include below($tablet) {
+            font-size: rem(18);
+        }
+    }
+
+    &_photobank {
+        width: calc(20% - 70px);
+        margin: 0 rem(35);
+        margin-bottom: rem(60);
+
+        @include below($tablet) {
+            width: calc(25% - 70px);
+        }
+        @include below($tablet-small) {
+            width: calc(33.3% - 70px);
+        }
+        @include below($mobile) {
+            flex-direction: row;
+            width: rem(235);
+            margin: 0;
+            margin-bottom: rem(50);
+        }
+
+        .categoryLink__name {
+            @include below($mobile) {
+                font-size: rem(24);
+                text-align: left;
+            }
+        }
+
+        .categoryLink__image-wrap {
+            @include above($mobile) {
+                width: rem(184);
+                height: rem(184);
+            }
+            @include below($mobile) {
+                width: rem(65);
+                height: rem(65);
+                margin: 0;
+                margin-right: rem(30);
+            }
+        }
+    }
+}

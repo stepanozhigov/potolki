@@ -41,14 +41,15 @@
         margin: 0;
         font-weight: 500;
         color: #dc1414;
-        line-height: 28px;
-        font-family: "Helvetica Neue", sans-serif;
-        font-size: 26px;
+        line-height: rem(28);
+        font-family: $helvetica;
+        font-size: rem(24);
         text-align: center;
 
         @include below($mobile) {
             font-size: rem(20);
             line-height: rem(22);
+            font-weight: 400;
         }
     }
     &__number {
@@ -73,13 +74,13 @@
     }
     &__title {
         position: relative;
-        padding-bottom: rem(14);
+        padding-bottom: rem(8);
         margin: 0;
         margin-bottom: rem(23);
         text-align: center;
 
         @include below($mobile) {
-            margin-bottom: rem(12);
+            margin-bottom: rem(8);
             padding: 0;
         }
 
@@ -104,6 +105,20 @@
 
     .buttons {
         margin-top: rem(16);
+
+        @include below($tablet) {
+            flex-direction: column;
+            align-items: center;
+
+            .button {
+                margin-bottom: rem(16);
+                &_gray {
+                    margin: 0;
+
+                }
+
+            }
+        }
     }
 
     .titles {
@@ -147,8 +162,105 @@
             flex-direction: column;
             width: 100%;
             padding: rem(16);
-            padding-bottom: rem(20);
+            padding-top: rem(24);
+            padding-bottom: rem(32);
         }
 
+        &_full {
+            .catalog-cards__img {
+                height: rem(180);
+            }
+
+            .catalog-cards__price {
+                font-size: rem(20);
+
+                span {
+                    font-size: rem(24);
+                    line-height: rem(28);
+                }
+            }
+        }
+
+    }
+
+	&_ceilings {
+		@extend .b-texture;
+
+        .titles__intro {
+            width: rem(780);
+            padding: 0 rem(48);
+
+            @include below($tablet) {
+                width: 100%;
+                padding: 0;
+            }
+        }
+
+        .second-title {
+            margin-bottom: rem(40);
+        }
+
+        .catalog-cards__content {
+            padding-top: 0;
+        }
+
+        .titles  {
+            padding-top: rem(64);
+        }
+	}
+
+	&__desc {
+		margin: 0;
+		margin-bottom: rem(16);
+		color: #485058;
+		font-family: $helvetica;
+		font-size: rem(12);
+		font-weight: 300;
+		line-height: rem(20);
+		text-align: center;
+	}
+
+    &_materials {
+        margin-bottom: rem(64);
+
+        .titles {
+            padding: 0;
+            margin-bottom: rem(48);
+
+            .second-title {
+                margin-bottom: 0;
+            }
+        }
+
+        .catalog-cards__content {
+            width: calc(100% + 16px);
+            margin-right: rem(-8);
+            margin-left: rem(-8);
+            padding: 0;
+            margin-bottom: rem(-32);
+        }
+    }
+
+    &_tech {
+        margin-bottom: rem(144);
+
+        .titles {
+            padding: 0;
+            margin-bottom: rem(48);
+
+            .second-title {
+                margin-bottom: 0;
+            }
+        }
+
+        .catalog-cards__content {
+            width: rem(901);
+            padding: 0;
+            margin-bottom: rem(-32);
+
+            .catalog-cards__item {
+                    width: calc(33.3% - 16px);
+            }
+        }
     }
 }

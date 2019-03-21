@@ -11,14 +11,13 @@
             "intro" =>  'В&nbsp;этом разделе мы&nbsp;собрали ответы на&nbsp;самые популярные вопросы. А&nbsp;если вы&nbsp;не&nbsp;нашли интересующую вас информацию, наши менеджеры с&nbsp;удовольствием дадут вам полную консультацию.'
         ])
 
-        <div class="questions__content container b-texture">
+        <div class="questions__content container b-texture b-texture_square">
             <div class="questions__filter">
-                <a href="{{ route('questions', request()->route()->city) }}" class="tag questions__tag {{ $currentCategory ? '':'tag_active' }}">Все</a>
                 @foreach ($categories as $category)
                     <a href="{{ route('questions', ['city' => request()->route()->city, 'code' => $category->code]) }}" class="tag questions__tag {{ $category->name == ($currentCategory->name ?? null) ? 'tag_active':'' }}">{{ $category->name }}</a>
                 @endforeach
             </div>
-            <div class="questions__list" id="questions-ajax-content">
+            <div class="questions__list questions__list_{{ $currentCategory->code ?? 'all' }}" id="questions-ajax-content">
                 @foreach ($questions as $question)
                     <div class="questions__card question b-card">
                         <h3 class="third-title question__title">{{ $question->text }}</h3>

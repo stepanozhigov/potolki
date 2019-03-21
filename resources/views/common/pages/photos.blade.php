@@ -8,15 +8,14 @@
                 'overtitle' =>  'Наши работы',
                 'intro' =>  'Вы&nbsp;можете посмотреть все фото сразу или по&nbsp;разделам.
     Ниже расположена ссылка для вызова замерного мастера. Для вашего удобства у&nbsp;него всегда с&nbsp;собой есть каталог.',
-                'title' =>  "Фото натяжных потолков в {$city->name_formatted}"
+                'title' =>  "Фото пластиковых окон {$city->name_formatted}"
             ])
 
             <div class="portfolio__content container b-texture">
-                <div class="switcher portfolio__switcher">
-                    <a href="{{ route('photos', $city) }}" class="switcher__button {{ $currentType == null ? 'switcher__button_active':'' }}">Все работы</a>
-
+                <div class="portfolio__filter">
+                    <a href="{{ route('photos', $city) }}" class="tag portfolio__tag {{ $currentType == null ? 'tag_active':'' }}">Все работы</a>
                     @foreach ($types as $type)
-                        <a href="{{ route('photos', ['city' => $city, 'type' => $type]) }} " class="switcher__button {{ $type->id == ($currentType->id ?? null) ? 'switcher__button_active':'' }}">{{ $type->name }}</a>
+                        <a href="{{ route('photos', ['city' => $city, 'type' => $type]) }} " class="tag portfolio__tag {{ $type->id == ($currentType->id ?? null) ? 'tag_active':'' }}">{{ $type->name }}</a>
                     @endforeach
                 </div>
                 <div class="portfolio__list" id="portfolio__list" data-photos="{{ $photos }}">

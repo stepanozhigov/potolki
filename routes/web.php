@@ -74,4 +74,32 @@ Route::prefix('/{city}')->group(function () {
     Route::get('/catalogue', 'PageController@catalogue')->name('catalogue');
 
     Route::get('/ceilings', 'PageController@ceilings')->name('ceilings');
+
+    Route::get('/zamenaPolotna', 'PageController@zamenaPolotna')->name('zamenaPolotna');
+
+    Route::get('/ceilingsCalc', 'PageController@ceilingsCalc')->name('ceilingsCalc');
+
+    Route::get('/ustanovka', 'PageController@ustanovka')->name('ustanovka');
+
+    Route::get('/remont', 'PageController@remont')->name('remont');
+
+    Route::get('/sliv', 'PageController@sliv')->name('sliv');
+
+    Route::get('/notFound', 'PageController@notFound')->name('notFound');
+
+    Route::get('/catalogueDetail', 'PageController@catalogueDetail')->name('catalogueDetail');
+
+    Route::get('/photoprint', 'PageController@photoprint')->name('photoprint');
+
+    Route::get('/photobank', 'PageController@photobank')->name('photobank');
+
+    Route::get('/lamps', 'PageController@lamps')->name('lamps');
+
+    Route::get('/surfaces', 'PageController@surfaces')->name('surfaces');
+
+    Route::get('/printprice', 'PageController@printprice')->name('printprice');
+
+    Route::get('/dillers', 'PageController@dillers')->name('dillers');
+
+    Route::get('/catalogueCeilings', 'PageController@catalogueCeilings')->name('catalogueCeilings');
 });

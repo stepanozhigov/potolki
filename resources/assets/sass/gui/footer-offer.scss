@@ -5,7 +5,6 @@
     padding-bottom: rem(65);
     background-image: url('/img/footer-form.jpg');
     background-size: cover;
-    box-shadow: 0 rem(8) rem(8) rgba($black, .24), 0 0 rem(8) rgba($black, .12), inset 0 rem(-1) rem(1) #d1dadf;
 
 	@include below($tablet) {
 		background-position: center;
@@ -37,7 +36,7 @@
 
 		@include below($tablet) {
 			font-size: rem(20);
-			width: calc(100% - 266px);
+			width: calc(100% - 245px);
 			text-align: center;
 		}
 
@@ -135,5 +134,13 @@
 				width: rem(260);
 			}
 		}
+
+		.form__status {
+			width: rem(280);
+			padding: 0;
+			width: 280px;
+		}
     }
+
+
 }

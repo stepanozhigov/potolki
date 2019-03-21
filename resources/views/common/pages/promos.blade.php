@@ -3,9 +3,8 @@
         @include('common.gui.header')
 
 
-        <section class="promos">
+        <section class="promos container">
             @include('common.gui.titles', [
-                'class' =>  'container',
                 'overtitle' =>  'Специальные предложения',
                 'title' =>  "Акции и скидки на пластиковые окна {$city->name_formatted}",
                 'intro' =>  "Ознакомьтесь с&nbsp;нашими специальными предложениями и&nbsp;ниже вызовите замерного мастера для точного замера и&nbsp;расчёта. Для вашего удобства действует бесплатная услуга &laquo;Договор на&nbsp;дому&raquo;"

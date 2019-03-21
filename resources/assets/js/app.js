@@ -11,6 +11,7 @@ window.$ = window.jQuery = require('jquery');
 window.Vue = require('vue');
 var Inputmask = require('inputmask');
 var ionRangeSlider = require('ion-rangeslider/js/ion.rangeSlider.js');
+var tooltipster = require('tooltipster/dist/js/tooltipster.bundle.js');
 
 window.Vue2TouchEvents = require('vue2-touch-events');
 Vue.use(Vue2TouchEvents);
@@ -26,7 +27,9 @@ require('./components/popup');
 
 Vue.component('window-calc', require('./components/WindowCalc.vue'));
 Vue.component('balcony-calc', require('./components/BalkonyCalc.vue'));
+Vue.component('simple-slider', require('./components/simpleSlider.vue'));
 Vue.component('ceilings-calc', require('./components/ceilingsCalc.vue'));
+Vue.component('catalogue-slider', require('./components/catalogue-slider.vue'));
 Vue.component('city-search', require('./components/CitySearch.vue'));
 Vue.component('add-comment', require('./components/AddComment.vue'));
 Vue.component('add-review', require('./components/AddReview.vue'));
@@ -40,6 +43,7 @@ Vue.component('zhalyuzi-calc', require('./components/Zhalyuzi.vue'));
 Vue.component('posts', require('./components/Articles.vue'));
 Vue.component('posts-list', require('./components/ArticlesList.vue'));
 Vue.component('manufacturers', require('./components/ManufacturersCarousel.vue'));
+Vue.component('menu-city-search', require('./components/MenuCitySearch.vue'));
 
 
 $(document).on('scroll', function () {
@@ -47,12 +51,20 @@ $(document).on('scroll', function () {
         $header = $('.header_hidden').length > 0 ? $('.header_hidden'): $('.header_sticky');
 
     if (scrollPosition > 200) {
-        $header.addClass('header_sticky').removeClass('header_hidden');
+        $header.addClass('header_sticky').removeClass('header_hidden')  ;
     }
     else {
         $header.removeClass('header_sticky').addClass('header_hidden');
     }
 });
+
+const menuCities = $('.header__offices');
+
+if (menuCities.length > 0) {
+    new Vue({
+        el: '.header__offices'
+    })
+}
 
 const articles = $('#articles');
 
@@ -152,9 +164,21 @@ if ($('#balcony-calc').length > 0) {
     });
 }
 
+if ($('#simple-slider').length > 0) {
+    var BalkonyCalc = new Vue({
+        el: '#simple-slider'
+    });
+}
+
 if ($('#ceilings-calc').length > 0) {
     var CeilingsCalc = new Vue({
         el: '#ceilings-calc'
+    });
+}
+
+if ($('#catalogue-slider').length > 0) {
+    var CeilingsCalc = new Vue({
+        el: '#catalogue-slider'
     });
 }
 
@@ -277,7 +301,7 @@ if ($mapContainer.length > 0 && $offices.length > 0) {
         switch (true) {
             case (screenWidth < 600):
                 return [
-                    coords[0],
+                    coords[0] + 0.002,
                     coords[1]
                 ];
             case (screenWidth < 1000):
@@ -383,6 +407,20 @@ $('.js-link').on('click', function (e) {
 });
 
 let onResize = function () {
+    if ($(window).width() <= 1024) {
+        $('.header__offices.dropdown').off();
+        $('.header__directions.dropdown').off();
+
+        $('.header__offices.dropdown').on('click', function () {
+            $('.header__offices.dropdown').toggleClass('opened');
+            $('.header__directions.dropdown').removeClass('opened');
+        });
+
+        $('.header__directions.dropdown').on('click', function () {
+            $('.header__directions.dropdown').toggleClass('opened');
+            $('.header__offices.dropdown').removeClass('opened');
+        });
+    }
     if ($(window).width() <= 768) {
         $('.promos').off('click', '.promos__item');
         $('.promos').on('click', '.promos__item', function () {
@@ -391,6 +429,10 @@ let onResize = function () {
             $('html, body').animate({
                 scrollTop: $(this).offset().top - 80
             }, 500);
+        });
+        $('.article__more').off();
+        $('.article__more').on('click', function () {
+            $(this).prev('.article__desc').find('h3').toggleClass('opened')
         });
 
         $('.ourArticle__more').off();
@@ -458,3 +500,87 @@ window.onerror = function (msg, url, line, col, exception) {
         }
     });
 }
+
+$('.about__all-rewards').on('click', function () {
+    $('.about__rewards').toggleClass('opened');
+
+    if ($(this).text() === 'Смотреть все награды') {
+        $(this).text('Свернуть все награды');
+    } else {
+        $(this).text('Смотреть все награды');
+    }
+});
+
+$('.about__all-images').on('click', function () {
+    $('.about__images').toggleClass('opened');
+    if ($(this).text() === 'Смотреть все фото') {
+        $(this).text('Свернуть все фото');
+    } else {
+        $(this).text('Смотреть все фото');
+    }
+});
+
+
+$('.tooltip').tooltipster({
+    animation: 'fade',
+    delay: 200,
+    theme: ['ts-tooltip_mini'],
+    distance: 16,
+    side: 'bottom'
+});
+
+$('.shutterstock__arrow').on('click', function () {
+	$(this).toggleClass('arrow_rotate-vertical');
+	$(this).prev('.shutterstock__text ').toggleClass('opened');
+});
+
+$('.lamp__tab-caption').on('click', 'label:not(.active)', function () {
+	$(this)
+		.addClass('active').siblings().removeClass('active')
+		.closest('.lamp').find('img.lamp__image')
+		.removeClass('visible').eq($(this).index()).addClass('visible')
+		.closest('.lamp').find('span.lamp__tab-text')
+		.removeClass('visible').eq($(this).index()).addClass('visible');
+});
+
+$('.dillers__item-heading').on('click', function () {
+    let heading = $(this);
+    heading.closest('.dillers__item').siblings().removeClass('dillers__item_opened');
+    heading.closest('.dillers__item').toggleClass('dillers__item_opened');
+    $('html, body').animate({
+        scrollTop: heading.offset().top
+    }, 500);
+});
+
+$('.dillers__materials-open').on('click', function () {
+    let $this = $(this),
+        text = $this.text(),
+        prev = $this.prev();
+    $this.prev('.dillers__materials-table').toggleClass('opened');
+    $this.toggleClass('arrow_rotate-vertical');
+
+    if (text === 'Показать все изделия') {
+        $this.text('Свернуть');
+    } else {
+        $this.text('Показать все изделия');
+    }
+});
+
+$('.dillers__toPrice').on('click', function () {
+    $('#price').trigger('click');
+    $('html, body').animate({
+        scrollTop: $('#price').offset().top
+    }, 500);
+});
+
+$('.dillers__toShipping').on('click', function () {
+    $('#shipping').trigger('click');
+    $('html, body').animate({
+        scrollTop: $('#shipping').offset().top
+    }, 500);
+});
+
+$('.dillers__heading-button').on('click', function () {
+    $(this).toggleClass('rotate-vertical');
+    $(this).prev('p').toggleClass('opened');
+});

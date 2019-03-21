@@ -1,6 +1,7 @@
 @import 'mixins';
 @import 'variables';
 .articles {
+	overflow: hidden;
 
     .titles {
         margin-bottom: rem(16);
@@ -18,7 +19,6 @@
         width: calc(100% + 20px);
         margin-left: -10px;
         margin-right: -10px;
-        margin-bottom: -90px;
         align-items: flex-start;
 
         @include below($tablet) {
@@ -28,18 +28,9 @@
         @include below($mobile) {
             width: 100%;
             margin: 0;
-            margin-bottom: -90px;
         }
 
-        .article {
-            margin: 0 10px;
-            margin-bottom: 90px;
 
-            @include below($mobile) {
-                margin: 0;
-                margin-bottom: 90px;
-            }
-        }
 
         .popup {
             .article {
@@ -53,13 +44,25 @@
         margin-bottom: rem(32);
 
         .socials__item {
+            margin-bottom: 0;
             &:not(:last-of-type) {
                 margin-right: rem(16);
+
+				@include below($mobile) {
+	                 margin-right: rem(12);
+	            }
             }
 
             @include below($mobile) {
                 width: auto;
-                margin-bottom: 0;
+
+            }
+        }
+
+        .socials__icon  {
+            @include below($tablet) {
+                width: rem(48);
+                height: rem(48);
             }
         }
     }
@@ -164,7 +167,7 @@
         left: 0;
         border-radius: 0 rem(30) rem(30) 0;
 
-        img {
+        svg {
             transform: rotate(180deg);
         }
     }
@@ -177,19 +180,21 @@
             }
         }
 
+		.articles__slide  {
+			display: none;
+		}
+
         .article {
             @include below($mobile) {
                 position: relative;
                 padding-bottom: rem(19);
 
-                margin-bottom: rem(32);
-
                 &::after {
                     position: absolute;
                     content: '';
                     bottom: 0;
-                    left: rem(-8);
-                    width: calc(100% + 16px);
+                    left: rem(-16);
+                    width: calc(100% + 32px);
                     height: rem(1);
                     background-color: #babec2;
                 }
@@ -197,7 +202,31 @@
         }
     }
 
-    &_main {
+    .page__article {
+        margin: 0 10px;
+
+        &:not(:last-of-type) {
+            margin-bottom: rem(90);
+
+            @include below($mobile) {
+                margin-bottom: rem(32);
+            }
+        }
+
+        @include below($mobile) {
+            margin: 0;
+
+            &:last-of-type {
+                .article {
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    &.articles_main     {
         position: relative;
 
         display: flex;
@@ -219,6 +248,22 @@
             }
         }
 
+        .page__article {
+            margin-bottom: 0;
+        }
+
+        .article {
+            @include above($mobile) {
+                margin-bottom: 0;
+            }
+        }
+
+        .articles__content {
+            @include above($mobile) {
+                margin-bottom: 0;
+            }
+        }
+
         .articles__list {
             @extend .container;
 
@@ -230,6 +275,8 @@
     }
 }
 
+
+
 .article {
     display: flex;
     flex-direction: column;
@@ -237,6 +284,11 @@
     width: rem(380);
     flex-shrink: 0;
     cursor: pointer;
+
+
+    &:not(.article_popup) {
+        padding-bottom: rem(5);
+    }
 
     @include below($tablet) {
         width: rem(336);
@@ -263,10 +315,10 @@
         &-prev {
             position: absolute;
             top: 50%;
-            left: rem(16);
+            left: rem(8);
 
-            width: rem(24);
-            height: rem(24);
+            width: rem(40);
+            height: rem(40);
             padding: 0;
 
             border: none;
@@ -279,6 +331,7 @@
             transform: rotate(180deg) translateY(50%);
             cursor: pointer;
             text-indent: -9999px;
+            border-radius: 50%;
 
             transition: opacity .3s;
 
@@ -294,10 +347,10 @@
         &-next {
             position: absolute;
             top: 50%;
-            right: rem(16);
+            right: rem(8);
 
-            width: rem(24);
-            height: rem(24);
+            width: rem(40);
+            height: rem(40);
             padding: 0;
 
             border: none;
@@ -310,6 +363,7 @@
             transform: translateY(-50%);
             cursor: pointer;
             text-indent: -9999px;
+            border-radius: 50%;
 
             transition: opacity .3s;
 
@@ -352,6 +406,7 @@
             font-weight: 300;
             line-height: 24px;
             color: #485058;
+			white-space: pre-wrap;
 
             @include below($mobile) {
                 font-size: rem(14);
@@ -377,20 +432,41 @@
             @include below($mobile) {
                 font-size: rem(14);
             }
+
+			&.opened {
+				max-height: none;
+			}
         }
     }
 
     &__more {
+        position: relative;
         margin-left: rem(8);
-        margin-top: rem(10);
+        margin-top: rem(8);
         font-family: $helvetica;
         font-size: rem(16);
         color: #babec2;
         text-decoration: none;
-        font-weight: 500;
-        border-bottom: rem(1) dashed #babec2;
+        font-weight: 300;
+
 
         outline: none;
+
+        &::after {
+            position: absolute;
+            width: 100%;
+            bottom: rem(-1);
+            display:block;
+            content: '';
+            border-bottom: rem(1) dashed #babec2;
+        }
+
+        &:hover {
+            &::after {
+                bottom: rem(-4);
+                transition: bottom .3s;
+            }
+        }
 
         @include below($mobile) {
             font-size: rem(14);
@@ -399,7 +475,7 @@
 
     &__dots {
         position: absolute;
-        bottom: rem(30);
+        bottom: rem(16);
         left: 50%;
 
         display: flex;
@@ -431,6 +507,7 @@
         outline: none;
         background-color: $white;
         text-indent: -9999px;
+        box-shadow: 0 0 rem(4) rgba(0, 0, 0, .32);
 
         &:not(:last-of-type) {
             margin-right: rem(2);
@@ -440,7 +517,7 @@
             }
         }
 
-        &.active {
+        &_active {
             background-color: $red_crismon;
         }
 
@@ -509,7 +586,9 @@
             p {
                 display: block;
                 max-height: rem(325);
-                overflow: scroll;
+                overflow-y: scroll;
+				overflow-x: hidden;
+				white-space: pre-wrap;
 
                 @include below($tablet) {
                     max-height: rem(115);

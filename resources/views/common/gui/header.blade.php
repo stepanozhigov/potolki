@@ -73,15 +73,29 @@
                 <a class="text dropdown__item dropdown__item_active"><img class="dropdown__arrow" src="/img/gui/arrow.svg" alt="">{{ $city->mainOffice() }}</a>
                 <div class="dropdown__content">
                     <a class="text dropdown__item dropdown__item_active"><img class="dropdown__arrow" src="/img/gui/arrow.svg" alt="">{{ $city->mainOffice() }}</a>
-                    <p class="dropdown__title">Другие города</p>
-                    @foreach ($cities as $arCity)
-                        <a href="{{ route('windows.main', $arCity)}}" class="text dropdown__item dropdown__item_bordered  red-hoverable">{{ $arCity->name }}</a>
+                    @if ($city->offices->count()> 1)
+                        <p class="dropdown__title">Другие офисы в городе</p>
+
+                        @foreach($city->offices as $office)
+                            @if (strpos($city->mainOffice(), $office->adres) === false)
+                                <a class="text dropdown__item dropdown__item_bordered red-hoverable">{{ $city->name}}, {{ $office->adres }}</a>
+                            @endif
+                        @endforeach
+                    @endif
+
+                    <p class="dropdown__title">Офисы в других городах</p>
+                    @foreach($cities as $otherCity)
+                        @if ($otherCity->offices->count() > 0 && $otherCity->id !== $city->id)
+                            <a href="{{ route('windows.main', $otherCity) }}" class="text dropdown__item dropdown__item_bordered red-hoverable">{{ $otherCity->name}}</a>
+                        @endif
                     @endforeach
+                    <p class="dropdown__title">Не нашли ваш город?</p>
+                    <menu-city-search :cities="{{ $cities }}"></menu-city-search>
                 </div>
             </div>
         @endif
-        
-        
+
+
         <div class="header__feedbacks">
             <a href="https://api.whatsapp.com/send?phone={{ $city->whatsapp }}" class="text whatsapp header__whatsapp red-hoverable"><img src="/img/gui/whatsapp.svg" alt="" class="whatsapp__icon"> <span class="whatsapp__write-text">Написать в&nbsp</span>WhatsApp <span class="whatsapp__mobile-text">написать</span></a>
             <a href="tel:{{ $city->phone }}" class="text phone header__phone  red-hoverable"><img class="phone__icon" src="/img/gui/phone.svg" alt="">{{ $city->phone }} <span>заказать звонок</span></a>
@@ -149,4 +163,4 @@
         </div>
     </div>
 </div>
-<main>
+<main class="page">

@@ -5,7 +5,7 @@
         </button>
         <section  v-touch:swipe="nextSlide" v-for="(offer, index) in offers" v-if="index == currentOfferIndex" class="main-offer js-offer-slider" :style="{ 'background-image': backgroundImage}">
             <div v-if="offer.type == 'form'" class="main-offer__inner container">
-                <p class="text main-offer__overtitle">{{ offer.overtitle }}</p>
+                <p v-html="offer.overtitle" class="text main-offer__overtitle"></p>
                 <h1 class="title main-offer__title js-title"></h1>
                 <p v-html="offer.text" class="main-offer__subtitle"></p>
 
@@ -13,9 +13,11 @@
                     <input v-model="name" v-on:focus="pauseSliding" v-on:focusout="initSliding" class="input form__input" type="text"  placeholder="Ваше имя">
                     <input v-model="phone" v-on:focus="pauseSliding" v-on:focusout="initSliding" class="input form__input" type="tel"  placeholder="Ваш телефон">
                     <button class="button form__button">Вызвать замерщика</button>
+					<p class="form__status">Заявка отправлена, спасибо!</p>  
                     <p class="form__agreement subtext subtext_white">Оставляя контактную информацию, вы соглашаетесь <br> на обработку персональных данных</p>
                 </form>
                 <button data-src="#popup_callback" class="button main-offer__button mobile-only js-show" data-title="Вызов замерщика" data-button="Вызвать замерщика">Вызвать замерщика</button>
+
             </div>
             <div v-if="offer.type == 'link'" class="container main-offer__social">
                 <a target="_blank" class="button button_insta" :href="offer.link">Подписаться</a>

@@ -17,16 +17,21 @@
 	background-color: $red_crismon;
     border: none;
 	cursor: pointer;
-	box-shadow: 0 8px 8px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0), inset 0 -1px 0 rgba(0, 0, 0, 0);
-	transition: all .3s;
+	box-shadow: 0 8px 8px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0), inset 0 -1px 0 #a01414;
+	transition: all .33s ease-out;
 
 	&:not(button) {
 		display: flex;
 	}
 
     &:hover {
-        box-shadow: 0 8px 8px rgba(0, 0, 0, 0.16), 0 0 8px rgba(0, 0, 0, 0.08), inset 0 -1px 0 #a01414;
+        box-shadow: 0 8px 12px rgba(136, 0, 0, 0.20), 0 0 8px rgba(136, 0, 0, 0.12), inset 0 -1px 0 #a01414;
     }
+
+	&:active {
+		background-color: #a01414;
+		box-shadow: 0 8px 8px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0), inset 0 1px 0 #880000;
+	}
 
 	&_gray {
 	    background-color: $grey_chateau;
@@ -34,8 +39,13 @@
 	    color: $white;
 
         &:hover {
-            box-shadow: 0 8px 8px rgba(0, 0, 0, 0.16), 0 0 8px rgba(0, 0, 0, 0.08), inset 0 -1px 0 #646973;
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.16), 0 0 8px rgba(0, 0, 0, 0.08), inset 0 -1px 0 #646973;
         }
+
+		&:active {
+			background-color: #808890;
+			box-shadow: 0 8px 8px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0), inset 0 1px 0 #485058;
+		}
 	}
 
     &_inline {
@@ -103,7 +113,8 @@
         margin-right: 16px;
 
         @media screen and (max-width: 650px) {
-            margin: 0 0 15px 0;
+			margin-right: 0;
+            margin-bottom: rem(16);
         }
     }
 

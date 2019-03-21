@@ -14,6 +14,10 @@
         padding-left: 0;
     }
 
+    @include below($tablet) {
+        margin-bottom: 0;
+    }
+
     &__girl {
         position: absolute;
         right: rem(220);
@@ -43,6 +47,17 @@
 
 		&:nth-of-type(4) {
 			margin-right: rem(60);
+
+            @include below($tablet) {
+                width: 100%;
+            }
+		}
+
+		&:nth-of-type(5) {
+
+            @include below($tablet) {
+                width: 100%;
+            }
 		}
 
 		&:nth-of-type(4),
@@ -221,6 +236,10 @@
     &__submit {
         margin-right: 40px;
         margin-bottom: 16px;
+
+        @include below($mobile) {
+            margin-right: 0;
+        }
     }
 
     &__agreement {

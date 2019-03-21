@@ -5,7 +5,7 @@
     @include('common.gui.header')
 
     @include('common.gui.titles', [
-        'class' =>  'container',
+        'class' =>  'container titles_services',
         'overtitle' =>  'Доставка',
         'title' =>  "Доставка окон, дверей и перегородок {$city->name_formatted}"
     ])
@@ -24,9 +24,9 @@
                     </p>
                 </div>
                 <img class="service__img service__img_small" src="/img/windows/services/delivery.png" alt="Доставка конструкций">
-            </div>            
+            </div>
         </div>
-        
+
     </section>
 
     @include('common.gui.footer')

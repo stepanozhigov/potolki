@@ -30,7 +30,9 @@
     @endif
 </div>
 <div class="popup popup_review" id="popup_review_{{ $review->id }}">
-    <img src="/img/gui/close.svg" alt="" class="popup__close js-close">
+    <a href="javascript:void(0);" class="popup__close js-close">
+    	<img src="/img/gui/close.svg" alt="" class="">
+    </a>
     <div class="review review_popup">
         <div class="review__body b-card">
             <a class="person review__person">
@@ -59,11 +61,9 @@
             @foreach ($review->comments as $comment)
                 <div class="comment comment_{{ $comment->type }}">
                     <p class="third-title comment__title">{{ $comment->type == 'manager' ? 'Ответ менеджера':'Комментарий клиента' }}</p>
-                    <hr class="line comment__line">
                     <p class="text comment__text">
                         {{ $comment->text }}
                     </p>
-
                     <div class="comment__user comment__user_{{ $comment->type }} user">
                         @if ($comment->type == 'manager')
                             <div class="user__left">
@@ -85,7 +85,7 @@
                 </div>
             @endforeach
             <div class="js-add-comment" id="add-comment-{{ $review->id }}">
-                <add-comment :review="1"></add-comment>
+                <add-comment :review="{{ $review->id }}"></add-comment>
             </div>
         </div>
     @endisset

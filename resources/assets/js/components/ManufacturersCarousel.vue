@@ -1,11 +1,31 @@
 <template>
-    <div class="manufacturers__list">
-        <div v-for="manufacturer in showedItems" class="manufacturers__item" v-touch:swipe="offsetShowPoint">
-            <img   v-bind:src="manufacturer" alt="" class="manufacturers__item-image">
+    <transition-group v-if="showCount < 5" name="list"  tag="div" class="manufacturers__list">
+        <div v-for="manufacturer in showedItems" :key="manufacturer.id" class="manufacturers__item" v-touch:swipe="offsetShowPoint">
+            <img v-bind:src="manufacturer.img" alt="" class="manufacturers__item-image">
         </div>
-
+    </transition-group>
+    <div v-else class="manufacturers__list">
+        <div v-for="manufacturer in manufacturers" :key="manufacturer.id" class="manufacturers__item" v-touch:swipe="offsetShowPoint">
+            <img v-bind:src="manufacturer.img" alt="" class="manufacturers__item-image">
+        </div>
     </div>
 </template>
+<style>
+.manufacturers__item {
+    transition: all 1s;
+}
+.list-enter {
+     opacity: 0;
+     transform: translateX(250px);
+}
+.list-leave-active {
+    opacity: 0;
+    position: absolute;
+    transform: translateX(-250px);
+}
+
+
+</style>
 
 <script>
     export default {
@@ -16,11 +36,11 @@
                 interval: 0,
                 currentPhotoIndex: 0,
                 manufacturers: [
-                    '/img/manufacturers/Monblanc.svg',
-                    '/img/manufacturers/Veka.svg',
-                    '/img/manufacturers/Kbe.svg',
-                    '/img/manufacturers/Rehau.svg',
-                    '/img/manufacturers/Deceuninck.svg'
+                    {'id':0, 'img': '/img/manufacturers/Monblanc.svg'},
+                    {'id': 1, 'img': '/img/manufacturers/Veka.svg'},
+                    {'id': 2, 'img': '/img/manufacturers/Kbe.svg'},
+                    {'id': 3, 'img': '/img/manufacturers/Rehau.svg'},
+                    {'id': 4, 'img': '/img/manufacturers/Deceuninck.svg'}
                 ]
             }
         },

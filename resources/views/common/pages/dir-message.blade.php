@@ -4,7 +4,7 @@
     @include('common.gui.header')
         <section class="dir-message container">
                 <div class="person dir-message__person">
-                    <img src="/img/gui/director.png" class="person__img">
+                    <img src="/img/gui/director.jpg" srcset="/img/gui/director@2x.jpg 2x" class="person__img">
                 </div>
                 @include('common.gui.titles', [
                     'title' =>  'Написать обращение директору',
@@ -17,17 +17,11 @@
                     <a href="" class="socials__item">
                         <div class="socials__icon socials__icon_inst"></div>
                     </a>
-                    <a href="" class="socials__item red-hoverable">
-                        <div class="socials__icon socials__icon_fb"></div>
-                    </a>
                     <a href="" class="socials__item">
                         <div class="socials__icon socials__icon_vk"></div>
                     </a>
                     <a href="" class="socials__item">
                         <div class="socials__icon socials__icon_whatsapp"></div>
-                    </a>
-                    <a href="" class="socials__item">
-                        <div class="socials__icon socials__icon_ok"></div>
                     </a>
                 </div>
 
@@ -51,7 +45,7 @@
                     <div class="dir-message__bottom">
                         <input type="submit" value="Отправить" name="" class="button dir-message__submit">
                         <p class="dir-message__status-send">Письмо отправлено</p>
-                        <p class="dir-message__rules text">Оставляя контактную информацию, Вы соглашаетесь на <a href="javascript:void(0);" class="link tooltip" data-tooltip-content="#tooltip_content">обработку персональных данных</a></p>
+                        <p class="dir-message__rules text">Оставляя контактную информацию, вы соглашаетесь на <a href="javascript:void(0);" class="link" >обработку персональных данных</a></p>
                     </div>
                 </form>
         </section>

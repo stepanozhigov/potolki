@@ -5,7 +5,7 @@
             <p class="card-title case__title">{{ photo.name }}</p>
             <hr class="line line_small case__line">
             <div class="case__totals">
-                <p class="case__info text">Стоиомость: {{ photo.price.toLocaleString() }}  р</p>
+                <p class="case__info text">Стоиомость: {{ photo.price.toLocaleString() }}  ₽</p>
                 <p class="case__info text">Площадь: {{ photo.area }} м<sup>2</sup></p>
             </div>
         </a>

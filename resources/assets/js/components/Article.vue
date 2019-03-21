@@ -1,15 +1,13 @@
 <template>
-    <div>
+    <div class="page__article">
         <article @click="toggleMode" class="article">
             <div class="article__gallery">
                 <img v-for="(slide, index) in slides" v-if="index == activeSlide" v-bind:src="imgPath + slide" class="article__img active" alt="">
                 <button @click="nextSlide" v-if="slides.length > 1" class="article__gallery-prev"></button>
                 <button @click="nextSlide" v-if="slides.length > 1" class="article__gallery-next"></button>
-                <!--<div class="article__dots">
-                    <button class="article__dot active"></button>
-                    <button class="article__dot"></button>
-                    <button class="article__dot"></button>
-                </div>-->
+                <div v-if="slides.length > 1" class="article__dots">
+                    <button v-for="(slide, index) in slides" v-bind:class="{ article__dot_active: index == activeSlide }" class="article__dot "></button>
+                </div>
             </div>
             <div class="article__desc">
                 <h3>{{ post.title }}</h3>
@@ -48,25 +46,31 @@
             return {
                 imgPath: '/storage/',
                 activeSlide: 0,
+                isOpened: 'false',
                 mode: 'list'
             }
         },
         methods: {
-            nextSlide: function () {
+            nextSlide: function (event) {
+                event.preventDefault();
+                event.stopPropagation();
                 if (this.activeSlide >= this.slides.length - 1) {
                     this.activeSlide = 0;
                 } else {
                     this.activeSlide++;
                 }
             },
+
             toggleMode: function () {
                 console.log(this.mode, this.device);
                 if (this.device == 'desktop') {
                     console.log(0);
                     if (this.mode == 'list') {
                         this.mode = 'detail';
+                        $('.header_sticky').addClass('hidden');
                     } else {
                         this.mode = 'list';
+                        $('.header_sticky').removeClass('hidden');
                     }
                 }
 
@@ -74,6 +78,7 @@
                     console.log(1);
                     if (this.mode == 'list') {
                         this.mode = 'expanded';
+
                     } else {
                         this.mode = 'list';
                     }

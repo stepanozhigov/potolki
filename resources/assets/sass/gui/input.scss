@@ -1,14 +1,97 @@
 .input {
     border-radius: 5px;
-    border: 1px solid #d0d2d4;
+    border: 1px solid #babec2;
     background-color: $white;
     padding: 15px 20px;
     outline: none;
     color: #808890;
-    font-family: "Helvetica Neue";
-    font-size: 18px;
+    font-family: $helvetica;
+    font-size: rem(18);
     font-weight: 300;
     line-height: rem(20);
+    will-change: transform;
+    transition: all .3s;
+
+    &::placeholder {
+      color: #808890;
+      font-family: $helvetica;
+      font-size: rem(18);
+      font-weight: 300;
+      line-height: rem(20);
+      opacity: 1;
+    }
+
+    &:-ms-input-placeholder {
+        color: #808890;
+        font-family: $helvetica;
+        font-size: rem(18);
+        font-weight: 300;
+        line-height: rem(20);
+    }
+
+    &::-ms-input-placeholder {
+        color: #808890;
+        font-family: $helvetica;
+        font-size: rem(18);
+        font-weight: 300;
+        line-height: rem(20);
+    }
+
+	&:disabled {
+		border: rem(1) solid #babec2;
+		background-color: #f4f6f8;
+        color: #babec2;
+
+        &::placeholder {
+          color: #babec2;
+        }
+
+        &:-ms-input-placeholder {
+            color: #babec2;
+        }
+
+        &::-ms-input-placeholder {
+            color: #babec2;
+        }
+	}
+
+	&:focus {
+		border: 1px solid #485058;
+		background-color: $white;
+
+		color: #485058;
+
+        &::placeholder {
+          color: #485058;
+        }
+
+        &:-ms-input-placeholder {
+            color: #485058;
+        }
+
+        &::-ms-input-placeholder {
+            color: #485058;
+        }
+	}
+
+    &.error {
+        border: rem(1) solid $red_crismon;
+        color: $red_crismon;
+
+        &::placeholder {
+          color: $red_crismon;
+        }
+
+        &:-ms-input-placeholder {
+            color: $red_crismon;
+        }
+
+        &::-ms-input-placeholder {
+            color: $red_crismon;
+        }
+    }
+
+
 }
 .search {
     display: flex;

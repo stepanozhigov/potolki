@@ -9,6 +9,7 @@
     padding-bottom: rem(64);
     border: rem(1) solid #babec2;
     border-radius: rem(5);
+	background-color: $white;
 
     @include below($tablet-small) {
         width: 100%;
@@ -156,4 +157,20 @@
 
 #ceilings-calc {
     @extend .container;
+}
+
+.ceilingsCalc {
+	@extend .container;
+	@extend .b-texture;
+    padding-bottom: rem(64);
+    margin-bottom: rem(96);
+
+    .ceilingCalculator__title {
+        display: none;
+    }
+
+    .ceilingCalculator {
+        width: 100%;
+        margin-bottom: 0;
+    }
 }

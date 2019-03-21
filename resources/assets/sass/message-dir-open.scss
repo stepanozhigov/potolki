@@ -7,13 +7,23 @@
 
     .titles {
         margin-bottom: rem(32);
+
+		@include below($mobile) {
+			padding-top: rem(48);
+		}
     }
-    
+
     &__person {
         margin-bottom: -35px;
+		img {
+			box-shadow: 0 8px 8px rgba(0, 0, 0, 0.12), 0 0 8px rgba(0, 0, 0, 0.08);
+			border-radius: 50%;
+		}
 
         @include below($mobile) {
             margin: 0;
+
+
         }
     }
     &__form {
@@ -35,6 +45,11 @@
             width: 100%;
         }
 
+		@include below($mobile) {
+			padding-top: rem(48);
+			padding-bottom: rem(64);
+		}
+
     }
 
     &__input {
@@ -53,7 +68,7 @@
         resize: none;
 
         @include below($mobile) {
-            margin-bottom: rem(50);
+            margin-bottom: rem(48);
         }
     }
 
@@ -68,7 +83,6 @@
         @include below($tablet) {
             flex-wrap: wrap;
             justify-content: center;
-            flex-direction: column-reverse;
         }
     }
 
@@ -82,12 +96,11 @@
 
         @include below($tablet) {
             width: rem(280);
-            margin: 0 rem(25);
+            margin: 0;
+            margin-bottom: rem(20);
         }
         @include below($mobile) {
             width: 100%;
-            margin: 0;
-            margin-bottom: rem(20);
         }
     }
 
@@ -117,8 +130,6 @@
 
         @include below($tablet) {
             width: 100%;
-            margin-bottom: rem(20);
-
             text-align: center;
         }
 
@@ -145,6 +156,10 @@
         &:last-of-type {
             width: 100%;
         }
+
+		@include below($mobile) {
+			margin-bottom: rem(16);
+		}
     }
 
     &__status-send {

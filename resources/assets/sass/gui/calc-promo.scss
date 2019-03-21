@@ -1,7 +1,6 @@
 .calc-promo {
-	width: rem(780);
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     padding-top: rem(36);
 	margin-bottom: rem(90);
 
@@ -10,7 +9,8 @@
     }
 
     &__titles {
-        width: rem(780);
+        width: rem(380);
+		margin-right: rem(40);
 		padding: 0;
         align-items: flex-start;
         z-index: 1;
@@ -26,6 +26,7 @@
     }
 
     &__intro {
+		margin: 0;
         margin-top: 30px;
 		margin-bottom: rem(48);
 		color: #808890;

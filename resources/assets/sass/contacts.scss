@@ -29,9 +29,6 @@
 
         @include below($tablet) {
             width: 100%;
-            height: rem(990);
-        }
-        @include below($mobile) {
             height: rem(880);
         }
     }
@@ -183,16 +180,18 @@
                     flex-direction: column;
                     align-items: center;
                     max-width: 215px;
+                    margin-bottom: rem(65);
 
                     &:last-of-type {
                         max-width: none;
                         width: 100%;
+                        margin-bottom: 0;
                     }
                 }
 
                 .socials__icon {
-                    width: 50px;
-                    height: 50px;
+                    width: rem(48);
+                    height: rem(48);
                 }
 
                 .socials__item {
@@ -200,14 +199,18 @@
                     width: auto;
 
                     &:not(:last-of-type) {
-                        margin-right: 25px;
+                        margin-right: rem(16);
+
+                        @include below($mobile) {
+                            margin-right: rem(12);
+                        }
                     }
                 }
             }
 
             @include below($mobile) {
                 padding: 0;
-                padding-top: 90px;
+                padding-top: rem(64);
 
                 .contacts__item {
                     width: 100%;
@@ -234,7 +237,6 @@
     }
 
     &__socials {
-        margin-top: 15px;
 
         @include below($tablet) {
             justify-content: center;
@@ -271,8 +273,8 @@
     &__info {
         display: flex;
         flex-direction: column;
-        padding: rem(24) rem(16);
-        padding-bottom: rem(28);
+        padding: rem(32) rem(16);
+        padding-bottom: rem(40);
     }
 
     &__img {
@@ -288,20 +290,34 @@
         display: flex;
         align-items: center;
         margin: 0;
-        margin-bottom: rem(8);
+		font-size: rem(26);
+		font-weight: 400;
+		line-height: rem(32);
+		letter-spacing: 1.5;
     }
 
     &__desc {
         margin: 0;
-        margin-bottom: rem(12);
+        margin-bottom: rem(16);
+		font-family: $helvetica;
+		font-size: rem(14);
+		font-weight: 300;
+		line-height: rem(24);
     }
     &__time {
         margin: 0;
-        margin-bottom: rem(8);
+		font-size: rem(26);
+		font-weight: 400;
+		line-height: rem(32);
+		letter-spacing: 1.5;
     }
 
     &__weekend {
         margin: 0;
+		font-family: $helvetica;
+		font-size: rem(14);
+		font-weight: 300;
+		line-height: rem(24);
     }
     &__icon {
         margin-right: 10px;

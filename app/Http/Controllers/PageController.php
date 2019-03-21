@@ -26,7 +26,7 @@ class PageController extends Controller
     public function index () {
         return view('common.pages.index', [
             'directions' => Direction::where('id', '!=', 1)->get(),
-            'cities'    =>  City::where('id', '!=', 1)->get(),
+            'cities'    =>  City::where('id', '!=', 1)->with('offices')->get(),
             'currentCity'   =>  City::find(1),
             'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
@@ -123,11 +123,15 @@ class PageController extends Controller
 
     public function questions (City $city, QuestionCategory $category = null)
     {
+        if (!$category)
+        {
+            $category = QuestionCategory::find(1);
+        }
         return view ('common.pages.questions', [
             'city'  =>  $city,
             'categories'    => QuestionCategory::all(),
             'currentCategory'  =>  $category,
-            'questions' =>  $category->questions ?? Question::all(),
+            'questions' =>  $category->questions,
             'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
     }
@@ -211,6 +215,106 @@ class PageController extends Controller
             'catalogTypes'  => CatalogType::where(['direction_id' => 1])->get(),
             'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first(),
             'articles' => Article::where(['is_active' => 1, 'in_main' => 1])->orderBy('sort', 'asc')->get()
+        ]);
+    }
+
+    public function zamenaPolotna (City $city)
+    {
+        return view('ceilings.zamenaPolotna', [
+            'city'  =>  $city
+        ]);
+    }
+
+    public function ceilingsCalc (City $city)
+    {
+        return view('ceilings.ceilingsCalc', [
+            'city'  =>  $city
+        ]);
+    }
+
+    public function ustanovka (City $city)
+    {
+        return view('ceilings.ustanovka', [
+            'city'  =>  $city
+        ]);
+    }
+
+    public function remont (City $city)
+    {
+        return view('ceilings.remont', [
+            'city'  =>  $city
+        ]);
+    }
+
+    public function sliv (City $city)
+    {
+        return view('ceilings.sliv', [
+            'city'  =>  $city
+        ]);
+    }
+
+    public function notFound (City $city)
+    {
+        return view('ceilings.notFound', [
+            'city'  =>  $city
+        ]);
+    }
+
+    public function catalogueDetail (City $city)
+    {
+        return view('ceilings.catalogueDetail', [
+            'city'  =>  $city
+        ]);
+    }
+
+    public function photoprint (City $city)
+    {
+        return view('ceilings.photoprint', [
+            'city'  =>  $city
+        ]);
+    }
+
+    public function photobank (City $city)
+    {
+        return view('ceilings.photobank', [
+            'city'  =>  $city
+        ]);
+    }
+
+    public function lamps (City $city)
+    {
+        return view('ceilings.lamps', [
+            'city'  =>  $city
+        ]);
+    }
+
+    public function surfaces (City $city)
+    {
+        return view('ceilings.surfaces', [
+            'city'  =>  $city
+        ]);
+    }
+
+    public function printprice (City $city)
+    {
+        return view('ceilings.printprice', [
+            'city'  =>  $city
+        ]);
+    }
+
+    public function dillers (City $city)
+    {
+        return view('ceilings.dillers', [
+            'city'  =>  $city
+        ]);
+    }
+
+    public function catalogueCeilings (City $city)
+    {
+        return view('ceilings.catalogueCeilings', [
+            'city'  =>  $city,
+			'catalogTypes'  => CatalogType::where(['direction_id' => 1])->get(),
+            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
     }
 

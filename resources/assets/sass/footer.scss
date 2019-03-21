@@ -99,7 +99,7 @@
     &__logo {
         position: relative;
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         padding-right: rem(8);
         margin-right: rem(8);
 
@@ -139,7 +139,6 @@
         .logo__text {
             width: rem(85);
             height: rem(15);
-            margin-top: rem(8);
 
             @include below($mobile) {
                 width: rem(71);
@@ -348,6 +347,9 @@
         }
     }
 
+
+
+
     &__survey {
         position: relative;
         margin: 0;
@@ -355,7 +357,25 @@
         color: $white;
         font-family: $helvetica;
         font-size: rem(14);
-        text-decoration: underline;
+        text-decoration: none;
+        cursor: pointer;
+
+        &::after {
+            position: absolute;
+            width: calc(100% - 20px);
+            bottom: rem(-1);
+            display:block;
+            content: '';
+            border-bottom: rem(1) dashed $white;
+            transition: bottom .3s;
+        }
+
+        &:hover {
+            &::after {
+                bottom: rem(-4);
+
+            }
+        }
 
         @include below($tablet) {
             margin-top: rem(9);

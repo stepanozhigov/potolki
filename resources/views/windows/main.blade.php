@@ -5,7 +5,7 @@
 
     <section class="main-offer js-offer-slider" @if ($offers->count() >= 1) data-offers="{{ $offers }}" id="js-offer-slider" @endif>
         <div class="main-offer__inner container">
-            <p class="text main-offer__overtitle">Уникальное предложение</p>
+            <p class="text main-offer__overtitle">Монтаж за 1 день | Гарантия 30&nbsp;лет</p>
             @php
                 $texts = json_encode([
                     'Бесплатный выезд замерного мастера!',
@@ -20,7 +20,7 @@
                 <input class="input form__input" type="tel"  placeholder="Ваш телефон">
 
                 <button class="button form__button">Вызвать замерщика</button>
-
+				<p class="form__status">Заявка отправлена, спасибо!</p>
                 <p class="form__agreement subtext subtext_white">Оставляя контактную информацию, вы соглашаетесь <br>  на обработку персональных данных</p>
             </form>
             <button data-src="#popup_callback" class="button main-offer__button mobile-only js-show">Вызвать замерщика</button>
@@ -30,7 +30,7 @@
         @include('common.gui.titles', [
             'overtitle' =>  'Наши преимущества',
             'title' =>  "Звонят многим, заказывают у нас. Почему? ",
-            'intro' =>  "Фабрика пластиковых окон &laquo;Твой стиль&raquo; основана в&nbsp;2003 году. Является лидером по&nbsp;производству и&nbsp;установке натяжных потолков&nbsp;на&nbsp;Дальнем Востоке."
+            'intro' =>  "Фабрика пластиковых окон &laquo;Твой стиль&raquo; основана в&nbsp;2003 году. Является лидером по&nbsp;производству пластиковых окон&nbsp;на&nbsp;Дальнем Востоке."
         ])
         <div class="whyus__content">
             <div class="whyus__item">
@@ -43,10 +43,10 @@
                         <li class="whyus__item-text">— Услуга «Договор на дому»</li>
                         <li class="whyus__item-text">— 16 лет успешной работы</li>
                         <li class="whyus__item-text">— Гарантия низкой цены</li>
-                        <li class="whyus__item-text">— Установка за 1 день</li>
+                        <li class="whyus__item-text">— Монтаж за 1 день</li>
                     </ul>
                 </div>
-                <img class="whyus__item-image" src="/img/img_factory.jpg" alt="Производство">
+                <img class="whyus__item-image" src="/img/gui/factory_whyus_windows.jpg" srcset="/img/gui/factory_whyus_windows@2x.jpg 2x" alt="Производство">
             </div>
             <div class="whyus__item whyus__item_reverse">
                 <div class="whyus__item-info">
@@ -62,17 +62,11 @@
                         <a target="_blank" href="https://www.instagram.com/business_repin/" class="socials__item">
                             <div class="socials__icon socials__icon_inst"></div>
                         </a>
-                        <a target="_blank" href="https://www.instagram.com/business_repin/" class="socials__item">
-                            <div class="socials__icon socials__icon_fb"></div>
-                        </a>
                         <a target="_blank" href="https://vk.com/business.repin" class="socials__item">
                             <div class="socials__icon socials__icon_vk"></div>
                         </a>
                         <a target="_blank" href="https://api.whatsapp.com/send?phone=79996516666" class="socials__item">
                             <div class="socials__icon socials__icon_whatsapp"></div>
-                        </a>
-                        <a target="_blank" href="https://ok.ru/profile/589436377360" class="socials__item">
-                            <div class="socials__icon socials__icon_ok"></div>
                         </a>
                     </div>
                 </div>
@@ -81,16 +75,16 @@
         </div>
         <div class="whyus__stat">
             <div class="whyus__stat-item">
-                <p class="whyus__stat-num">15</p>
-                <p class="whyus__stat-text">лет гарантия на наши потолки, с сервисным обсуживанием</p>
+                <p class="whyus__stat-num">30</p>
+                <p class="whyus__stat-text">лет гарантии <br>на окна</p>
             </div>
             <div class="whyus__stat-item">
                 <p class="whyus__stat-num">3</p>
-                <p class="whyus__stat-text">часа устанавливается потолок площадью 16 квадратных метров</p>
+                <p class="whyus__stat-text">часа занимает <br> установка</p>
             </div>
             <div class="whyus__stat-item">
-                <p class="whyus__stat-num">397</p>
-                <p class="whyus__stat-text">квадратных метров устанавливаем за день, это 26 910 в месяц</p>
+                <p class="whyus__stat-num">790</p>
+                <p class="whyus__stat-text">окон устанавливаем <br> в месяц</p>
             </div>
         </div>
     </section>
@@ -106,7 +100,7 @@
             <a href="{{ route('catalogue', ['city' => $city]) }}" class=" catalog-cards__item b-card is-hoverable">
                 <img src="{{ Storage::url($type->img) }}" alt="{{ $type->name }}" class="catalog-cards__img">
                 <div class="catalog-cards__item-info">
-                    <p class="card-title catalog-cards__title">{{ $type->name }}</p>
+                    <h3 class="card-title catalog-cards__title">{{ $type->name }}</h3>
                     @if($type->price)
                         <p class="catalog-cards__price">от <span class="catalog-cards__number">{{ number_format($type->price, 0, ',', ' ') }} ₽</span></p>
                     @endif
@@ -118,8 +112,8 @@
             </a>
         @endforeach
         <div class="buttons">
-            <a href="{{ route('catalogue', $city) }}" class="button buttons__item button_gray">Перейти в каталог</a>
-            <button class="button js-show" data-src="#popup_callback" data-title="Вызов замерщика" data-button="Вызвать замерщика">Вызвать замерщика</button>
+			<button class="button buttons__item js-show" data-src="#popup_callback" data-title="Вызов замерщика" data-button="Вызвать замерщика">Вызвать замерщика</button>
+            <a href="{{ route('catalogue', $city) }}" class="button  button_gray">Перейти в каталог</a>
         </div>
     </section>
 
@@ -127,11 +121,11 @@
         <div class="calc-promo__titles">
             <h2 class="titles__second-title">Калькулятор стоимости</h2>
             <p class="intro calc-promo__intro">
-Стоимость&nbsp;&mdash; один из&nbsp;важных факторов принятие решения в&nbsp;выборе компании. Нажмите кнопку &laquo;Рассчитать&raquo; и&nbsp;за&nbsp;5&nbsp;секунд вы&nbsp;будете знать стоимость вашего изделия. Акция &laquo;Найдете дешевле&nbsp;&mdash; Снизим цену&raquo; дает вам гарантию самой низкой цены {{$city->name_formatted}}.
+Стоимость&nbsp;&mdash; один из&nbsp;важных факторов при принятии решения в&nbsp;выборе компании. Нажмите кнопку &laquo;Рассчитать&raquo; и&nbsp;через&nbsp;5&nbsp;секунд вы&nbsp;будете знать примерную стоимость вашего изделия. Акция &laquo;Найдете дешевле&nbsp;&mdash; снизим цену&raquo; дает гарантию самой низкой цены {{$city->name_formatted}}.
             </p>
             <a href="{{ route('calculator', $city) }}" class="button calc-promo__button">Рассчитать</a>
         </div>
-        <img src="/img/windows/img_calculator.jpg" alt="">
+        <img src="/img/windows/img_calculator.jpg" srcset="/img/img_calculator2x.jpg 2x" alt="">
     </section>
 
     <section class="portfolio portfolio_main b-texture b-texture_square">
@@ -146,8 +140,8 @@
             @endforeach
         </div>
         <div class="buttons portfolio__buttons">
-            <a href="{{ route('photos', $city) }}" class="button buttons__item button_gray">Посмотреть все работы</a>
-            <button class="button js-show" data-src="#popup_callback" data-title="Вызов замерщика" data-button="Вызвать замерщика">Вызвать замерщика</button>
+			<button class="button buttons__item js-show" data-src="#popup_callback" data-title="Вызов замерщика" data-button="Вызвать замерщика">Вызвать замерщика</button>
+            <a href="{{ route('photos', $city) }}" class="button button_gray">Посмотреть все работы</a>
         </div>
     </section>
 
@@ -161,15 +155,15 @@
         </div>
 
         <div class="buttons reviews__buttons">
-            <a href="{{ route('reviews', $city) }}" class="button buttons__item button_gray">Все отзывы</a>
-            <a href="{{ route('add-review', $city) }}" class="button">Оставить отзыв</a>
+			<a href="{{ route('add-review', $city) }}" class="button buttons__item">Оставить отзыв</a>
+            <a href="{{ route('reviews', $city) }}" class="button  button_gray">Все отзывы</a>
         </div>
     </section>
     <section class="articles articles_main" id="articles">
         @include('common.gui.titles', [
             'class' =>  "container",
             'secondTitle' =>  "Наши посты из&nbsp;социальных сетей",
-            'intro' =>  "Посмотрите посты в&nbsp;удобной для вас социальной сети, либо нажмите кнопку &laquo;Все посты&raquo; и&nbsp;на&nbsp;новой странице вы&nbsp;можете отфильтровать и&nbsp;посмотреть интересную&nbsp;информацию."
+            'intro' =>  "Посмотрите посты в&nbsp;удобной для вас социальной сети, либо нажмите кнопку &laquo;Все посты&raquo; и&nbsp;на&nbsp;новой странице вы&nbsp;сможете отфильтровать и&nbsp;посмотреть интересную&nbsp;информацию."
         ])
         <div class="socials titles__socials container">
             <a href="" class="socials__item red-hoverable">
@@ -199,8 +193,7 @@
 
         @include('common.gui.titles', ['secondTitle' => 'Производители профилей'])
 
-        <div id="manufacturers__list">
-        </div>
+        <div id="manufacturers__list"></div>
 
     </section>
     <section class="seo-block" @if($seoData->background_image) style="background-image: url({{ Storage::url($seoData->background_image) }})" @endif>
@@ -237,28 +230,28 @@
                 <img src="/img/windows/free_measure.png" alt="" width="201" height="166" class="additional__img">
                 <h3 class="additional__title">Бесплатный замер</h3>
                 <p class="text additional__text">
-                    Технолог нашей компании произведет <br> точный замер и&nbsp;расчет стоимости заказа <br> в&nbsp;удобное&nbsp;для&nbsp;вас&nbsp;время.
+                    Наш технолог произведет <br> замер и&nbsp;расчет стоимости заказа <br> в&nbsp;удобное&nbsp;для&nbsp;вас&nbsp;время.
                 </p>
             </div>
             <div class="additional__item">
                 <img src="/img/windows/home_deal.png" alt="" width="201" height="166" class="additional__img">
                 <h3 class="additional__title">Договор на дому</h3>
                 <p class="text additional__text">
-                    Для вашего удобства замерный мастер <br> может рассчитать и&nbsp;заключить <br> договор&nbsp;у&nbsp;вас&nbsp;дома.
+                    Для вашего удобства замерный <br> мастер  может заключить договор&nbsp;у&nbsp;вас&nbsp;дома.
                 </p>
             </div>
             <div class="additional__item">
                 <img src="/img/windows/additional__percent.png" alt="" width="205" height="134" class="additional__img">
                 <h3 class="additional__title">Рассрочка до 3х лет</h3>
                 <p class="text additional__text">
-                    Беспроцентная рассрочка даёт <br> возможность установить потолок, если <br> сразу нет необходимой&nbsp;суммы&nbsp;денег.
+                    Беспроцентная рассрочка даёт <br> возможность установить окна, даже если <br> нет необходимой&nbsp;суммы.
                 </p>
             </div>
             <div class="additional__item">
                 <img src="/img/windows/additional__zhaluzi.png" alt="" width="201" height="166" class="additional__img">
                 <h3 class="additional__title">Жалюзи</h3>
                 <p class="text additional__text">
-                    Лучшее решение для оформления оконного <br> пространства&nbsp;&mdash; жалюзи. <br> Смотрится красиво&nbsp;и&nbsp;современно.
+                    Лучшее решение для оформления оконного <br> пространства. Смотрится красиво&nbsp;и&nbsp;современно.
                 </p>
             </div>
         </div>

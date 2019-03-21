@@ -1,0 +1,28 @@
+.catalogueCeilings {
+    &__titles {
+        margin-bottom: rem(112);
+    }
+
+    &__rooms {
+        border-bottom: rem(1) solid #babec2;
+        margin-bottom: rem(80);
+
+        .categoryLink  {
+            width: calc(25% - 70px);
+        }
+    }
+
+    &__rooms-title {
+        @extend .second-title;
+        @extend .container;
+        margin-bottom: rem(40);
+    }
+
+    &__rooms-desc {
+        @extend .text;
+        width: rem(780);
+        margin: 0 auto;
+        margin-bottom: rem(64);
+        text-align: center;
+    }
+}

@@ -40,6 +40,7 @@ $(document).on('click', '.js-show', function(event) {
 
     $overlay.addClass('overlay_active');
     $(source).addClass('popup_active');
+    $('.header_sticky').addClass('hidden');
 });
 
 $(document).on('click', '.js-showup', function(event) {
@@ -64,9 +65,11 @@ $(document).on('click', '.js-showup', function(event) {
         $source.find('button').html('Заказать звонок');
     }
     $(source).addClass('popup_active popup_showup');
+    $('.header_sticky').addClass('hidden');
+
 });
 
-$('.js-close').on('click', function(event) {
+$(document).on('click','.js-close', function(event) {
     event.preventDefault();
 
     $('body').removeClass('overflowed');
@@ -76,4 +79,5 @@ $('.js-close').on('click', function(event) {
 
     $overlay.removeClass('overlay_active');
     $popups.removeClass('popup_active');
+    $('.header_sticky').removeClass('hidden');
 });

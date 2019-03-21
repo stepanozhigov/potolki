@@ -1,4 +1,5 @@
 .additional {
+    padding-top: rem(130);
     margin-bottom: rem(96);
 
     @include below($mobile) {
@@ -88,4 +89,55 @@
             padding: 0;
         }
     }
+
+	&_ceilings {
+
+		@include below($mobile) {
+			display: none;
+		}
+
+		@include above($tablet) {
+			.additional__list {
+				justify-content: center;
+			}
+
+			.additional__item {
+				position: relative;
+				width: rem(440);
+				padding: rem(40) rem(32);
+				padding-right: rem(220);
+				align-items: flex-start;
+
+				&:not(:last-of-type) {
+					margin-right: rem(64);
+				}
+
+				&:nth-of-type(2) {
+					.additional__img {
+						transform: scale(-1, 1);
+					}
+				}
+			}
+
+			.additional__text {
+				text-align: left;
+
+				@include below($tablet) {
+					text-align: center;
+				}
+			}
+
+			.additional__img {
+				position: absolute;
+				top: rem(-18);
+				right: rem(-26);
+				margin: 0;
+				width: rem(224);
+				height: rem(170);
+
+
+			}
+		}
+
+	}
 }

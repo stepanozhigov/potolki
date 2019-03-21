@@ -14,6 +14,21 @@
         -webkit-column-width: calc(393px - 16px);
         -moz-column-gap: 16px;
         -webkit-column-gap: 16px;
+
+        @include below($tablet) {
+            -moz-column-width: 300px;
+            -webkit-column-width: 300px;
+        }
+    }
+
+    .third-title {
+        margin: 0;
+        margin-bottom: rem(16);
+    }
+
+    .line {
+        margin: 0;
+        margin-bottom: rem(24);
     }
 
     &__switcher {

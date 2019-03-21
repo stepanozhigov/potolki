@@ -6,8 +6,13 @@
     flex-direction: column;
     cursor: pointer;
 
+
+    &:not(.review_popup) {
+        @extend .is-hoverable;
+    }
+
     &__body {
-        z-index: 2;
+        z-index: 19;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -45,6 +50,10 @@
 
         @include below($tablet) {
 			max-height: rem(72);
+		}
+
+        @include below($mobile) {
+			text-align: left;
 		}
 
         &::after {
@@ -123,16 +132,57 @@
 }
 
 .comment {
-    padding: 40px 50px 35px 50px;
+    position: relative;
+    padding: rem(48);
+    padding-bottom: rem(46);
     background: $white;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.08), 0 0 16px rgba(0, 0, 0, 0.08), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.16), 0 0 0.5rem rgba(0, 0, 0, 0), inset 0 -1px 0 rgba(0, 0, 0, 0.12);
     border-radius: 5px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    margin-top: rem(-7);
+
+    &:nth-of-type(1) {
+        z-index: 10;
+    }
+
+    &:nth-of-type(2) {
+        z-index: 9;
+    }
+
+    &:nth-of-type(3) {
+        z-index: 8;
+    }
+
+    &:nth-of-type(4) {
+        z-index: 7;
+    }
+
+    &:nth-of-type(5) {
+        z-index: 6;
+    }
+
+    &:nth-of-type(6) {
+        z-index: 5;
+    }
+
+    &:nth-of-type(7) {
+        z-index: 4;
+    }
+
+    &:nth-of-type(8) {
+        z-index: 3;
+    }
+
+    &:nth-of-type(9) {
+        z-index: 2;
+    }
+
+
 
 	@include below($mobile) {
-		padding: 20px;
+		padding: rem(48) rem(16);
 		align-items: flex-start;
 	}
 
@@ -142,6 +192,11 @@
     }
     &__title {
         font-size: 24px;
+        margin-bottom: rem(8);
+
+        @include below($mobile) {
+            margin-bottom: rem(12);
+        }
     }
 
     &__line {
@@ -158,17 +213,75 @@
         }
     }
 
+    &__sent {
+        color: #808890;
+        font-family: $helvetica;
+        font-size: rem(18);
+        text-decoration: underline;
+        width: auto;
+        background: none;
+        box-shadow: none;
+        padding: 0;
+        border: none;
+        outline: none;
+        cursor: pointer;
+
+        @include below($mobile) {
+            width: 100%;
+            height: rem(60);
+            color: $white;
+            font-family: $helvetica;
+            font-size: rem(24);
+            text-decoration: none;
+            box-shadow: inset 0 -1px 0 #a01414;
+            border-radius: rem(5);
+            background-color: $red_crismon;
+            margin-bottom: rem(24);
+        }
+    }
+
     &__textarea {
         width: 100%;
-        margin-top: 25px;
-        margin-bottom: 20px;
+        margin: 0;
+        margin-bottom: rem(32);
+
+        &:disabled {
+            background-color: #f4f6f8;
+        }
+    }
+
+    &__autorise {
+        color: #485058;
+        font-family: $helvetica;
+        font-size: rem(18);
+        margin-right: rem(32);
+
+        @include below($mobile) {
+            margin-bottom: rem(16);
+        }
+    }
+
+    &__close {
+        margin-left: auto;
+        color: #808890;
+        font-family: $helvetica;
+        font-size: rem(18);
+        text-decoration: underline;
+
+        @include below($mobile) {
+            text-decoration: none;
+            font-size: rem(24);
+            width: 100%;
+            text-align: center;
+            color: $red_crismon;
+        }
     }
 
     &__auth {
         width: 100%;
         display: flex;
-        margin: 30px auto 0 0;
         align-items: center;
+        margin-bottom: rem(32);
 
 		@include below($mobile) {
 			flex-wrap: wrap;
@@ -176,19 +289,23 @@
     }
 
     &__socials {
-        margin-left: 20px;
-        width: 45%;
+        display: flex;
 
-        img {
-            width: 30px;
-            height: 30px;
+        .socials__item {
+            &:not(:last-of-type) {
+                margin-right: rem(26);
+            }
+
+            @include below($mobile) {
+    			width: auto;
+                margin-bottom: 0;
+    		}
         }
 
-		@include below($mobile) {
-			width: 100%;
-			margin: 0;
-			margin-top: 20px;
-		}
+        .socials__icon {
+            width: rem(48);
+            height: rem(48);
+        }
     }
 
     &__controls {
@@ -196,7 +313,17 @@
         align-items: center;
         justify-content: space-between;
         width: 100%;
-        margin-top: 30px;
+
+        @include below($mobile) {
+            flex-direction: column;
+            align-items: center;
+
+            .intro {
+                margin-bottom: rem(24);
+            }
+        }
+
+
     }
 }
 
@@ -229,4 +356,9 @@
         margin: 0;
         text-align: end;
     }
+}
+
+.js-add-comment {
+    position: relative;
+    z-index: 1;
 }
