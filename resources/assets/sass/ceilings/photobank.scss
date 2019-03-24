@@ -42,6 +42,12 @@
 			}
 		}
 
+		&_rooms {
+			@include below($tablet) {
+				justify-content: center;
+			}
+		}
+
 	}
 
 	&__title {
@@ -49,43 +55,5 @@
 		width: 100%;
 		text-align: center;
 		margin-bottom: rem(60);
-	}
-
-	.categoryLink {
-		width: calc(20% - 70px);
-		margin: 0 rem(35);
-		margin-bottom: rem(60);
-
-		@include below($tablet) {
-			width: calc(33.3% - 70px);
-			margin: 0 rem(35);
-			margin-bottom: rem(60);
-		}
-		@include below($mobile) {
-            flex-direction: row;
-            width: rem(235);
-            margin: 0;
-            margin-bottom: rem(50);
-        }
-
-        .categoryLink__name {
-            @include below($mobile) {
-                font-size: rem(24);
-                text-align: left;
-            }
-        }
-
-        .categoryLink__image-wrap {
-            @include above($mobile) {
-                width: rem(184);
-                height: rem(184);
-            }
-            @include below($mobile) {
-                width: rem(65);
-                height: rem(65);
-                margin: 0;
-                margin-right: rem(30);
-            }
-        }
 	}
 }

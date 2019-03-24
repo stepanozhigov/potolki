@@ -31,15 +31,11 @@
         img {
             width: rem(350);
             height: rem(55);
-        }
-    }
 
-    &__icon {
-
-
-        @include below($mobile) {
-            width: rem(235);
-            height: rem(35);
+			@include below($mobile) {
+	            width: rem(235);
+	            height: rem(35);
+	        }
         }
     }
 

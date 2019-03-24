@@ -102,4 +102,6 @@ Route::prefix('/{city}')->group(function () {
     Route::get('/dillers', 'PageController@dillers')->name('dillers');
 
     Route::get('/catalogueCeilings', 'PageController@catalogueCeilings')->name('catalogueCeilings');
+
+    Route::get('/credit', 'PageController@credit')->name('credit');
 });

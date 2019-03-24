@@ -54,6 +54,7 @@
         cursor: pointer;
         background-image: url('/img/additionally.jpg');
         background-size: cover;
+
         background-color: hsla(0, 0, 0, 0.5);
         background-blend-mode: overlay;
         box-shadow: 0 rem(8) rem(8) rgba(0, 0, 0, 0),
@@ -174,6 +175,7 @@
         height: rem(360);
         object-fit: cover;
 		object-position: center;
+		object-position: top;
 
         border-radius: rem(5);
         box-shadow: 0 rem(8) rem(8) rgba(0, 0, 0, 0),

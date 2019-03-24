@@ -163,6 +163,25 @@
 
     &__buttons {
         margin-top: 24px;
+
+		.buttons__item {
+			margin-right: 0;
+		}
+
+		.button_gray {
+			margin-right: rem(16);
+		}
+
+		@include below($mobile) {
+			.buttons__item {
+				margin-bottom: 0;
+			}
+
+			.button_gray {
+                margin-right: 0;
+				margin-bottom: rem(16);
+			}
+		}
     }
 
     &_main {

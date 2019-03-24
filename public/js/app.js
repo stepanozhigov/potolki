@@ -14266,6 +14266,11 @@ $('.dillers__heading-button').on('click', function () {
     $(this).prev('p').toggleClass('opened');
 });
 
+$('.catalog-cards__item').on('click', '.catalog-cards__open', function () {
+    event.preventDefault();
+    $(this).closest('.catalog-cards__item').toggleClass('opened');
+});
+
 /***/ }),
 /* 11 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -42044,6 +42049,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 Vue.component('post', __webpack_require__(8));
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -42433,7 +42444,9 @@ var render = function() {
               attrs: { post: post }
             })
           })
-        )
+        ),
+        _vm._v(" "),
+        _vm._m(0)
       ],
       1
     ),
@@ -42523,7 +42536,22 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "articles__slider-dots" }, [
+      _c("button", { staticClass: "articles__slider-dot" }),
+      _vm._v(" "),
+      _c("button", { staticClass: "articles__slider-dot active" }),
+      _vm._v(" "),
+      _c("button", { staticClass: "articles__slider-dot" }),
+      _vm._v(" "),
+      _c("button", { staticClass: "articles__slider-dot" })
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

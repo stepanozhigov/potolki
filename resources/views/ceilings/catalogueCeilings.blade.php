@@ -23,6 +23,7 @@
                             <div class="catalog-cards__item-info">
                                 <h3 class="card-title catalog-cards__title">{{ $type->name }}</h3>
                                 <p class="catalog-cards__desc">Имеют слегка шероховатую поверхность и&nbsp;внешне напоминают классический беленый потолок.</p>
+                                <p href="javasvript:void(0);" class="catalog-cards__more">Подробнее</p>
                                 @if($type->price)
                                     <p class="catalog-cards__price">от <span class="catalog-cards__number">{{ number_format($type->price, 0, ',', ' ') }} ₽/м2</span></p>
                                 @endif
@@ -48,6 +49,7 @@
                             <div class="catalog-cards__item-info">
                                 <h3 class="card-title catalog-cards__title">{{ $type->name }}</h3>
                                 <p class="catalog-cards__desc">Имеют слегка шероховатую поверхность и&nbsp;внешне напоминают классический беленый потолок.</p>
+                                <p href="javasvript:void(0);" class="catalog-cards__more">Подробнее</p>
                                 @if($type->price)
                                     <p class="catalog-cards__price">от <span class="catalog-cards__number">{{ number_format($type->price, 0, ',', ' ') }} ₽/м2</span></p>
                                 @endif
@@ -62,91 +64,57 @@
 
             </section>
             <section class="catalogueCeilings__rooms photobank">
-                <h2 class="catalogueCeilings__rooms-title">Натяжные потолки в&nbsp;различных помещениях</h2>
-                <p class="catalogueCeilings__rooms-desc">Натяжные потолки&nbsp;&mdash; это универсальный способ отделки, который подойдет для любого помещения, тем более, что установка такого потолка не&nbsp;требует предварительного выравнивания поверхности. Полотно прекрасно выдерживает перепады температур, не&nbsp;теряет своих внешних качеств со&nbsp;временем и&nbsp;не&nbsp;требует специального ухода. Натяжные потолки прекрасно смотрятся&nbsp;в:</p>
+                @include('common.gui.titles', [
+                    'secondTitle' =>  "Натяжные потолки в&nbsp;различных помещениях",
+                    'class' =>  'container',
+                    'intro' =>  "Натяжные потолки&nbsp;&mdash; это универсальный способ отделки, который подойдет для любого помещения, тем более, что установка такого потолка не&nbsp;требует предварительного выравнивания поверхности. Полотно прекрасно выдерживает перепады температур, не&nbsp;теряет своих внешних качеств со&nbsp;временем и&nbsp;не&nbsp;требует специального ухода. Натяжные потолки прекрасно смотрятся&nbsp;в:"
+                ])
                 <div class="photobank__wrap">
                     <div class="photobank__list photobank__list_rooms">
                         <a href="javascript:void(0)" class="categoryLink categoryLink_photobank">
-                            <div class="categoryLink__image-wrap">
-                                <img src="/img/ceilings/kitchenSeaworld.png" alt="" class="categoryLink__image">
-                            </div>
+                            <img src="/img/ceilings/kitchenSeaworld.png" alt="" class="categoryLink__image">
                             <p class="categoryLink__name">Прихожая</p>
                         </a>
                         <a href="javascript:void(0)" class="categoryLink categoryLink_photobank">
-                            <div class="categoryLink__image-wrap">
-                                <img src="/img/ceilings/kitchenAbstraction.png" alt="" class="categoryLink__image">
-                            </div>
+                            <img src="/img/ceilings/kitchenAbstraction.png" alt="" class="categoryLink__image">
                             <p class="categoryLink__name">Зал</p>
                         </a>
                         <a href="javascript:void(0)" class="categoryLink categoryLink_photobank">
-                            <div class="categoryLink__image-wrap">
-                                <img src="/img/ceilings/kitchenCity.png" alt="" class="categoryLink__image">
-                            </div>
+                            <img src="/img/ceilings/kitchenCity.png" alt="" class="categoryLink__image">
                             <p class="categoryLink__name">Спальня</p>
                         </a>
                         <a href="javascript:void(0)" class="categoryLink categoryLink_photobank">
-                            <div class="categoryLink__image-wrap">
-                                <img src="/img/ceilings/kitchenFlowers.png" alt="" class="categoryLink__image">
-                            </div>
+                            <img src="/img/ceilings/kitchenFlowers.png" alt="" class="categoryLink__image">
                             <p class="categoryLink__name">Кухня</p>
                         </a>
                         <a href="javascript:void(0)" class="categoryLink categoryLink_photobank">
-                            <div class="categoryLink__image-wrap">
-                                <img src="/img/ceilings/kitchenFood.png" alt="" class="categoryLink__image">
-                            </div>
+                            <img src="/img/ceilings/kitchenFood.png" alt="" class="categoryLink__image">
                             <p class="categoryLink__name">Гостиная</p>
                         </a>
                         <a href="javascript:void(0)" class="categoryLink categoryLink_photobank">
-                            <div class="categoryLink__image-wrap">
-                                <img src="/img/ceilings/kitchenSky.png" alt="" class="categoryLink__image">
-                            </div>
+                            <img src="/img/ceilings/kitchenSky.png" alt="" class="categoryLink__image">
                             <p class="categoryLink__name">Ванная</p>
                         </a>
                         <a href="javascript:void(0)" class="categoryLink categoryLink_photobank">
-                            <div class="categoryLink__image-wrap">
-                                <img src="/img/ceilings/kitchenTexture.png" alt="" class="categoryLink__image">
-                            </div>
+                            <img src="/img/ceilings/kitchenTexture.png" alt="" class="categoryLink__image">
                             <p class="categoryLink__name">Детская</p>
                         </a>
                         <a href="javascript:void(0)" class="categoryLink categoryLink_photobank">
-                            <div class="categoryLink__image-wrap">
-                                <img src="/img/ceilings/kitchenNatural.png" alt="" class="categoryLink__image">
-                            </div>
+                            <img src="/img/ceilings/kitchenNatural.png" alt="" class="categoryLink__image">
                             <p class="categoryLink__name">Мансарда</p>
                         </a>
                     </div>
                 </div>
             </section>
 
-            <section class="">
+            <section class="lamps-slider">
+                @include('common.gui.titles', [
+                    'class' =>  "container",
+                    'secondTitle' =>  "Светильники для натяжных потолков",
+                    'intro' =>  "Посмотрите посты в&nbsp;удобной для вас социальной сети, либо нажмите кнопку &laquo;Все посты&raquo; и&nbsp;на&nbsp;новой странице вы&nbsp;сможете отфильтровать и&nbsp;посмотреть интересную&nbsp;информацию."
+                ])
 
-            </section>
-            <section class="seo-block" @if($seoData->background_image) style="background-image: url({{ Storage::url($seoData->background_image) }})" @endif>
-                <div class="seo-block__content container">
-                    <div class="seo-block__list">
-                        <div class="seo-block__item">
-                            <h3 class="seo-block__item-title">{!! str_replace('#city_title#', $city->name_formatted, $seoData->first_title) !!}</h3>
-                            {!! $seoData->first_text !!}
-                            @if ($seoData->firm_img)
-                                <img src="{{ Storage::url($seoData->firm_img) }}" alt="" class="seo-block__img">
-                            @endif
-                        </div>
-                        <div class="seo-block__item seo-block__item_reverse">
-                            <h3 class="seo-block__item-title">{{ $seoData->second_title }}</h3>
-                            {!! $seoData->second_text !!}
-                            @if ($seoData->second_img)
-                                <img src="{{ Storage::url($seoData->second_img) }}" alt="" class="seo-block__img">
-                            @endif
-                        </div>
-                        <div class="seo-block__item">
-                            <h3 class="seo-block__item-title">{{ $seoData->third_title }}</h3>
-                            {!! $seoData->third_text !!}
-                            @if ($seoData->third_img)
-                                <img src="{{ Storage::url($seoData->third_img) }}" alt="" class="seo-block__img">
-                            @endif
-                        </div>
-                    </div>
-                </div>
+               <a href="javascript:void(0);" class="lamps-slider__button">Все светильники</a>
             </section>
     	</section>
     @include('common.gui.footer')

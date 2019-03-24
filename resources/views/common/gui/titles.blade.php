@@ -18,8 +18,12 @@
                 <img src="/img/arrow-down.svg" alt="">
             </button>
         @endif
+        @if (mb_strlen($intro) > 135)
+            <button class="titles__arrow" type="button">
+                <img src="/img/arrow-down.svg" alt="">
+            </button>
+        @endif
     @endisset
-    <button class="titles__arrow" type="button">
-        <img src="/img/arrow-down.svg" alt="">
-    </button>
+
+
 </div>

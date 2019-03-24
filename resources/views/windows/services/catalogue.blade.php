@@ -163,7 +163,7 @@
         </div>
         <section class="turnkey">
             <h2 class="turnkey__title">Типовые решения</h2>
-            <p class="turnkey__subtitle">Данные решения удовлетворяют потребности 97 % заказчиков. Если вам нужна нетиповая конструкция, <br> свяжитесь с менеджером для расчёта стоимости.</p>
+            <p class="turnkey__subtitle">Данные решения удовлетворяют потребности 97 % заказчиков. Если вам нужна нестандартная конструкция, <br> свяжитесь с менеджером для расчёта стоимости.</p>
             <div class="turnkey__list">
                 <div class="turnkey__item">
                     <img src="/img/windows/turnkey_01.jpg" alt="">
@@ -222,7 +222,7 @@
         <section class="whyus">
             @include('common.gui.titles', [
                 'title' =>  "Звонят многим, заказывают у нас. Почему? ",
-                'class' =>  "container", 
+                'class' =>  "container",
                 'intro' =>  "Фабрика пластиковых окон &laquo;Твой стиль&raquo; основана в&nbsp;2003 году является лидером по&nbsp;производству и&nbsp;установке пластиковых окон на&nbsp;Дальнем Востоке"
             ])
             <div class="whyus__content">

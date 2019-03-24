@@ -267,12 +267,46 @@
         .articles__list {
             @extend .container;
 
+			@include below($tablet) {
+				padding-bottom: rem(32);
+			}
+
 
             &.container {
                 margin-bottom: rem(48);
             }
         }
     }
+
+	&__slider-dots {
+		display: none;
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+
+		@include below($tablet) {
+			display: flex;
+		}
+	}
+
+	&__slider-dot {
+		width: rem(8);
+		height: rem(8);
+		padding: 0;
+		border: none;
+		outline: none;
+		border-radius: 50%;
+		background-color: #e6e8ea;
+
+		&.active {
+			background-color: $red_crismon;
+		}
+
+		&:not(:last-of-type) {
+			margin-right: rem(8);
+		}
+	}
 }
 
 

@@ -1328,6 +1328,35 @@ body {
         }
     }
 
+    &__pre {
+        display: flex;
+        flex-direction: column;
+        width: calc(33.3% - 80px);
+        margin: 0 rem(40);
+        z-index: 2;
+
+        p {
+            margin: 0;
+            color: #485058;
+            font-family: $helvetica;
+            font-size: rem(14);
+            font-weight: 300;
+            line-height: rem(19);
+
+            &:not(:last-of-type) {
+                margin-bottom: rem(8);
+            }
+
+            &:last-of-type {
+                margin-bottom: rem(24);
+
+                @include below($mobile) {
+                    margin-bottom: rem(16);
+                }
+            }
+        }
+    }
+
     &__item {
         position: relative;
         display: flex;
@@ -1849,7 +1878,7 @@ body {
 }
 
 #popup_callback {
-    z-index: 100;
+    z-index: 102;
 
 }
 

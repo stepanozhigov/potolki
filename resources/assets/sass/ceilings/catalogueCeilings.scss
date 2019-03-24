@@ -9,20 +9,25 @@
 
         .categoryLink  {
             width: calc(25% - 70px);
+            margin: 0 rem(35);
+            margin-bottom: rem(75);
+
+            @include below($tablet) {
+                width: calc(33.3% - 70px);
+            }
+
+            @include below($mobile) {
+                width: 100%;
+                margin-bottom: rem(40);
+            }
         }
     }
 
-    &__rooms-title {
-        @extend .second-title;
-        @extend .container;
-        margin-bottom: rem(40);
-    }
-
-    &__rooms-desc {
-        @extend .text;
-        width: rem(780);
-        margin: 0 auto;
+    .titles {
         margin-bottom: rem(64);
-        text-align: center;
+        .second-title {
+            padding-top: 0;
+            margin-bottom: rem(40);
+        }
     }
 }

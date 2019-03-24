@@ -43,7 +43,7 @@
                     </label>
                     <textarea name="textarea" rows="8" cols="80" class="input dir-message__textarea" placeholder="Текст сообщения"></textarea>
                     <div class="dir-message__bottom">
-                        <input type="submit" value="Отправить" name="" class="button dir-message__submit">
+                        <button type="submit" name="" class="button dir-message__submit">Отправить</button>
                         <p class="dir-message__status-send">Письмо отправлено</p>
                         <p class="dir-message__rules text">Оставляя контактную информацию, вы соглашаетесь на <a href="javascript:void(0);" class="link" >обработку персональных данных</a></p>
                     </div>

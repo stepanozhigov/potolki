@@ -221,91 +221,104 @@ class PageController extends Controller
     public function zamenaPolotna (City $city)
     {
         return view('ceilings.zamenaPolotna', [
-            'city'  =>  $city
+            'city'  =>  $city,
+            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
     }
 
     public function ceilingsCalc (City $city)
     {
         return view('ceilings.ceilingsCalc', [
-            'city'  =>  $city
+            'city'  =>  $city,
+            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
     }
 
     public function ustanovka (City $city)
     {
         return view('ceilings.ustanovka', [
-            'city'  =>  $city
+            'city'  =>  $city,
+            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
     }
 
     public function remont (City $city)
     {
         return view('ceilings.remont', [
-            'city'  =>  $city
+            'city'  =>  $city,
+            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
     }
 
     public function sliv (City $city)
     {
         return view('ceilings.sliv', [
-            'city'  =>  $city
+            'city'  =>  $city,
+            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
     }
 
     public function notFound (City $city)
     {
         return view('ceilings.notFound', [
-            'city'  =>  $city
+            'city'  =>  $city,
+            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
     }
 
     public function catalogueDetail (City $city)
     {
         return view('ceilings.catalogueDetail', [
-            'city'  =>  $city
+            'city'  =>  $city,
+            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
     }
 
     public function photoprint (City $city)
     {
         return view('ceilings.photoprint', [
-            'city'  =>  $city
+            'city'  =>  $city,
+            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
     }
 
     public function photobank (City $city)
     {
         return view('ceilings.photobank', [
-            'city'  =>  $city
+            'city'  =>  $city,
+            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
     }
 
     public function lamps (City $city)
     {
         return view('ceilings.lamps', [
-            'city'  =>  $city
+            'city'  =>  $city,
+            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
     }
 
     public function surfaces (City $city)
     {
         return view('ceilings.surfaces', [
-            'city'  =>  $city
+            'city'  =>  $city,
+            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
     }
 
     public function printprice (City $city)
     {
         return view('ceilings.printprice', [
-            'city'  =>  $city
+            'city'  =>  $city,
+            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
     }
 
     public function dillers (City $city)
     {
         return view('ceilings.dillers', [
-            'city'  =>  $city
+            'city'  =>  $city,
+            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
     }
 
@@ -314,7 +327,16 @@ class PageController extends Controller
         return view('ceilings.catalogueCeilings', [
             'city'  =>  $city,
 			'catalogTypes'  => CatalogType::where(['direction_id' => 1])->get(),
-            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
+            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first(),
+            'articles' => Article::where(['is_active' => 1, 'in_main' => 1])->orderBy('sort', 'asc')->get()
+        ]);
+    }
+
+    public function credit (City $city)
+    {
+        return view('ceilings.credit', [
+            'city'  =>  $city,
+			'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
     }
 

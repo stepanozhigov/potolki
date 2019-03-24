@@ -30,7 +30,7 @@
         @include('common.gui.titles', [
             'overtitle' =>  'Наши преимущества',
             'title' =>  "Звонят многим, заказывают у нас. Почему? ",
-            'intro' =>  "Фабрика пластиковых окон &laquo;Твой стиль&raquo; основана в&nbsp;2003 году. Является лидером по&nbsp;производству пластиковых окон&nbsp;на&nbsp;Дальнем Востоке."
+            'intro' =>  "Компания &laquo;Твой стиль&raquo; основана в&nbsp;2003&nbsp;году. Является лидером по&nbsp;производству пластиковых окон {$city->name_formatted}"
         ])
         <div class="whyus__content">
             <div class="whyus__item">
@@ -140,8 +140,8 @@
             @endforeach
         </div>
         <div class="buttons portfolio__buttons">
-			<button class="button buttons__item js-show" data-src="#popup_callback" data-title="Вызов замерщика" data-button="Вызвать замерщика">Вызвать замерщика</button>
             <a href="{{ route('photos', $city) }}" class="button button_gray">Посмотреть все работы</a>
+			<button class="button buttons__item js-show" data-src="#popup_callback" data-title="Вызов замерщика" data-button="Вызвать замерщика">Вызвать замерщика</button>
         </div>
     </section>
 
@@ -155,15 +155,15 @@
         </div>
 
         <div class="buttons reviews__buttons">
-			<a href="{{ route('add-review', $city) }}" class="button buttons__item">Оставить отзыв</a>
             <a href="{{ route('reviews', $city) }}" class="button  button_gray">Все отзывы</a>
+			<a href="{{ route('add-review', $city) }}" class="button buttons__item">Оставить отзыв</a>
         </div>
     </section>
     <section class="articles articles_main" id="articles">
         @include('common.gui.titles', [
             'class' =>  "container",
-            'secondTitle' =>  "Наши посты из&nbsp;социальных сетей",
-            'intro' =>  "Посмотрите посты в&nbsp;удобной для вас социальной сети, либо нажмите кнопку &laquo;Все посты&raquo; и&nbsp;на&nbsp;новой странице вы&nbsp;сможете отфильтровать и&nbsp;посмотреть интересную&nbsp;информацию."
+            'secondTitle' =>  "Социальные сети",
+            'intro' =>  "Нажмите на&nbsp;логотип социальной сети и&nbsp;посмотрите там полезную информацию."
         ])
         <div class="socials titles__socials container">
             <a href="" class="socials__item red-hoverable">

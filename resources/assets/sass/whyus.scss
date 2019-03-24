@@ -229,6 +229,7 @@
 		margin-top: rem(86);
 
 		@include below($mobile) {
+			display: none;
 			padding: 0;
 			flex-direction: column;
 			align-items: center;

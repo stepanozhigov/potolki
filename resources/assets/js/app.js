@@ -584,3 +584,8 @@ $('.dillers__heading-button').on('click', function () {
     $(this).toggleClass('rotate-vertical');
     $(this).prev('p').toggleClass('opened');
 });
+
+$('.catalog-cards__item').on('click', '.catalog-cards__open', function () {
+    event.preventDefault();
+    $(this).closest('.catalog-cards__item').toggleClass('opened');
+});
