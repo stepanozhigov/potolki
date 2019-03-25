@@ -132,33 +132,33 @@
                     <a href="javascript:void(0);" class="shutterstock__link">Подобрать изображение</a>
                 </div>
             </section>
-        <section class="photoprint page__photoprint">
-                <div class="photoprint__content">
-                    <div class="photoprint__text">
-                        <h2 class="photoprint__title">
+        <section class="photoprintBlock page__photoprintBlock">
+                <div class="photoprintBlock__content">
+                    <div class="photoprintBlock__text">
+                        <h2 class="photoprintBlock__title">
                             Поверхности для печати
                         </h2>
-                        <div class="photoprint__list-wrap">
-                            <ul class="photoprint__list">
-                                <li class="photoprint__item">Натяжных потолках</li>
-                                <li class="photoprint__item">Стекле и зеркалах</li>
-                                <li class="photoprint__item">Деревянных поверхностях и плитах ЛДСП</li>
-                                <li class="photoprint__item">Матовом, глянцевом и зеркальном акриле</li>
-                                <li class="photoprint__item">Металлопластиковых и ПВХ конструкциях</li>
+                        <div class="photoprintBlock__list-wrap">
+                            <ul class="photoprintBlock__list">
+                                <li class="photoprintBlock__item">Натяжных потолках</li>
+                                <li class="photoprintBlock__item">Стекле и зеркалах</li>
+                                <li class="photoprintBlock__item">Деревянных поверхностях и плитах ЛДСП</li>
+                                <li class="photoprintBlock__item">Матовом, глянцевом и зеркальном акриле</li>
+                                <li class="photoprintBlock__item">Металлопластиковых и ПВХ конструкциях</li>
                             </ul>
-                            <ul class="photoprint__list">
-                                <li class="photoprint__item">Кафельной плитке</li>
-                                <li class="photoprint__item">Радиаторах</li>
-                                <li class="photoprint__item">Баннерной ткани</li>
-                                <li class="photoprint__item">Фотобумаге и холстах</li>
-                                <li class="photoprint__item">Обоях</li>
-                                <li class="photoprint__item">Рулонных шторах</li>
-                                <li class="photoprint__item">Самоклеящейся пленке</li>
-                                <li class="photoprint__item">Сувенирах</li>
+                            <ul class="photoprintBlock__list">
+                                <li class="photoprintBlock__item">Кафельной плитке</li>
+                                <li class="photoprintBlock__item">Радиаторах</li>
+                                <li class="photoprintBlock__item">Баннерной ткани</li>
+                                <li class="photoprintBlock__item">Фотобумаге и холстах</li>
+                                <li class="photoprintBlock__item">Обоях</li>
+                                <li class="photoprintBlock__item">Рулонных шторах</li>
+                                <li class="photoprintBlock__item">Самоклеящейся пленке</li>
+                                <li class="photoprintBlock__item">Сувенирах</li>
                             </ul>
                         </div>
                     </div>
-                    <div class="photoprint__image">
+                    <div class="photoprintBlock__image">
 
                     </div>
                 </div>

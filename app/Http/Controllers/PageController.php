@@ -340,4 +340,36 @@ class PageController extends Controller
         ]);
     }
 
+    public function sitemap (Request $request) {
+        $cities = City::all();
+        $pages = [
+            'https://okna-ts.ru/#city#/services/facing' => 'Отделка',
+            'https://okna-ts.ru/#city#/' =>  'Главная',
+            'https://okna-ts.ru/#city#/services/credit' =>  'Рассрочка',
+            'https://okna-ts.ru/#city#/catalogue' => 'Каталог',
+            'https://okna-ts.ru/#city#/contacts' => 'Контакты',
+            'https://okna-ts.ru/#city#/about' => 'О компании',
+            'https://okna-ts.ru/#city#/employees' => 'Сотрудники',
+            'https://okna-ts.ru/#city#/vacancies' =>  'Вакансии',
+            'https://okna-ts.ru/#city#/questions' =>  'Вопрос-ответ',
+            'https://okna-ts.ru/#city#/reviews' =>  'Отзывы',
+            'https://okna-ts.ru/#city#/articles' => 'Статьи',
+            'https://okna-ts.ru/#city#/dir-message' => 'Написать директору',
+            'https://okna-ts.ru/#city#/calculator/okna' =>  'Калькулятор окон',
+            'https://okna-ts.ru/#city#/calculator/balkony' =>  'Калькулятор балконов',
+            'https://okna-ts.ru/#city#/promos' => 'Скидки',
+            'https://okna-ts.ru/#city#/photos/' => 'Фотогалерея',
+            'https://okna-ts.ru/#city#/services/' => 'Услуги',
+            'https://okna-ts.ru/#city#/services/install' =>  'Установка',
+            'https//okna-ts.ru/#city#/services/delivery' =>  'Доставка',
+            'https://okna-ts.ru/#city#/services/measurements' =>  'Бесплатный замер',
+            'https://okna-ts.ru/#city#/services/repair' => 'Ремонт'
+        ];
+
+        return view('common.sitemap', [
+            'cities'    =>  $cities,
+            'pages' =>  $pages 
+        ]);
+    }
+
 }

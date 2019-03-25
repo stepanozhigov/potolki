@@ -29,6 +29,8 @@ Route::get('/err-handler', function() {
     ]);
 });
 
+Route::get('/sitemap', 'PageController@sitemap')->name('sitemap'); 
+
 Route::get('/forms/callback', 'PageController@callback');
 Route::post('/forms/add-comment', 'FeedbackController@addComment');
 Route::post('/forms/add-review', 'FeedbackController@addReview');

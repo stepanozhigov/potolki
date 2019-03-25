@@ -165,7 +165,7 @@ body {
 			margin-bottom: rem(80);
 		}
 
-        .photoprint {
+        .photoprintBlock {
             margin-bottom: rem(86);
         }
 	}
@@ -1197,7 +1197,7 @@ body {
         border-radius: .3125rem;
         background-image: url(/img/gui/texture2.png);
 
-        @media screen and (max-width: 1024px) {
+        @include below($tablet) {
             width: 480px;
         }
 

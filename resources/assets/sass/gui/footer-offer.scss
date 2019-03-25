@@ -41,9 +41,9 @@
 		}
 
 		@include below($mobile) {
-			font-size: rem(16);
+			font-size: rem(19);
 			width: 100%;
-			line-height: rem(24);
+			line-height: rem(28);
 		}
 
 		span {
@@ -59,6 +59,7 @@
 		font-size: rem(16);
 		font-weight: 300;
 		line-height: rem(24);
+		hyphens: none;
 
 		span {
 			color: $red_crismon;
@@ -120,6 +121,10 @@
 				height: rem(64);
 				width: 100%;
 			}
+
+			@include below($mobile) {
+				height: rem(52);
+			}
 		}
 
 		.form__button {
@@ -131,6 +136,7 @@
 			}
 
 			@include below($mobile) {
+				height: rem(50);
 				width: rem(260);
 			}
 		}

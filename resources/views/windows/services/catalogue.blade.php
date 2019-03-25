@@ -9,7 +9,7 @@
         @include('common.gui.titles', [
             'class' =>  'container',
             'overtitle' =>  'каталог',
-            'title' =>  "Каталог пластиковых окон",
+            'title' =>  "Каталог пластиковых окон {$city->name_formatted}",
             'intro' =>  "Для вашего удобства мы&nbsp;разделили профили на&nbsp;3&nbsp;категории: эконом, стандарт, премиум. Пластиковые окна и&nbsp;двери, остекление балконов и&nbsp;лоджий, перегородки&nbsp;&mdash; все эти профили подойдут вам."
         ])
         <div class="catalogue__content">

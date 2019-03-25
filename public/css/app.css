@@ -1244,7 +1244,7 @@ corresponds to the arrow we want to display */
   }
 }
 
-@media screen and (max-width: 44.9375rem) {
+@media screen and (max-width: 20.125rem) {
   .title,
   .titles__title,
   .dillers__heading h1 {
@@ -1258,7 +1258,8 @@ corresponds to the arrow we want to display */
 .titles__second-title,
 .catalogueDetail__title,
 .photoprint__title,
-.photobank__title {
+.photobank__title,
+.photoprintBlock__title {
   position: relative;
   margin: 0;
   padding-bottom: 1.5rem;
@@ -1274,7 +1275,8 @@ corresponds to the arrow we want to display */
 .titles__second-title::after,
 .catalogueDetail__title::after,
 .photoprint__title::after,
-.photobank__title::after {
+.photobank__title::after,
+.photoprintBlock__title::after {
   position: absolute;
   content: '';
   bottom: 0;
@@ -1291,7 +1293,8 @@ corresponds to the arrow we want to display */
   .titles__second-title::after,
   .catalogueDetail__title::after,
   .photoprint__title::after,
-  .photobank__title::after {
+  .photobank__title::after,
+  .photoprintBlock__title::after {
     width: 6.875rem;
   }
 }
@@ -1301,18 +1304,20 @@ corresponds to the arrow we want to display */
   .titles__second-title,
   .catalogueDetail__title,
   .photoprint__title,
-  .photobank__title {
-    font-size: 2rem;
-    line-height: 2.375rem;
+  .photobank__title,
+  .photoprintBlock__title {
+    font-size: 1.625rem;
+    line-height: 2rem;
   }
 }
 
-@media screen and (max-width: 44.9375rem) {
+@media screen and (max-width: 20.125rem) {
   .second-title,
   .titles__second-title,
   .catalogueDetail__title,
   .photoprint__title,
-  .photobank__title {
+  .photobank__title,
+  .photoprintBlock__title {
     font-size: 1.375rem;
     line-height: 1.625rem;
   }
@@ -1325,6 +1330,7 @@ corresponds to the arrow we want to display */
 .notFound__content h2,
 .notFound__content p,
 .catalogueDetail__filter p,
+.photoprint__why h3,
 .serviceReasons__title,
 .dillers__heading p,
 .dillers__steps-content h3,
@@ -1347,6 +1353,7 @@ corresponds to the arrow we want to display */
   .notFound__content h2,
   .notFound__content p,
   .catalogueDetail__filter p,
+  .photoprint__why h3,
   .serviceReasons__title,
   .dillers__heading p,
   .dillers__steps-content h3,
@@ -1402,10 +1409,10 @@ corresponds to the arrow we want to display */
 .catalogueDetail__price,
 .catalogueDetail__install,
 .catalogueDetail__desc p,
-.photoprint__desc,
-.photoprint__item,
 .shutterstock__text,
 .shutterstock__text-bold,
+.photoprintBlock__desc,
+.photoprintBlock__item,
 .categoryLink__name,
 .serviceReasons__reason-text,
 .serviceReasons__desc,
@@ -1466,10 +1473,10 @@ corresponds to the arrow we want to display */
   .catalogueDetail__price,
   .catalogueDetail__install,
   .catalogueDetail__desc p,
-  .photoprint__desc,
-  .photoprint__item,
   .shutterstock__text,
   .shutterstock__text-bold,
+  .photoprintBlock__desc,
+  .photoprintBlock__item,
   .categoryLink__name,
   .serviceReasons__reason-text,
   .serviceReasons__desc,
@@ -1671,6 +1678,7 @@ corresponds to the arrow we want to display */
   .titles.photoprint,
   .titles.photobank__wrap,
   .titles.shutterstock,
+  .titles.photoprintBlock,
   .titles.serviceReasons,
   .titles.lamps,
   .titles.printprice,
@@ -2257,7 +2265,8 @@ corresponds to the arrow we want to display */
   .cities .titles__second-title,
   .cities .catalogueDetail__title,
   .cities .photoprint__title,
-  .cities .photobank__title {
+  .cities .photobank__title,
+  .cities .photoprintBlock__title {
     font-size: 1.625rem;
     line-height: 2rem;
   }
@@ -2446,6 +2455,7 @@ corresponds to the arrow we want to display */
 .survey.photoprint,
 .survey.photobank__wrap,
 .survey.shutterstock,
+.survey.photoprintBlock,
 .survey.serviceReasons,
 .survey.lamps,
 .survey.printprice,
@@ -3497,6 +3507,7 @@ corresponds to the arrow we want to display */
 .catalog-cards.photoprint,
 .catalog-cards.photobank__wrap,
 .catalog-cards.shutterstock,
+.catalog-cards.photoprintBlock,
 .catalog-cards.serviceReasons,
 .catalog-cards.lamps,
 .catalog-cards.printprice,
@@ -3532,6 +3543,7 @@ corresponds to the arrow we want to display */
   .catalog-cards.photoprint,
   .catalog-cards.photobank__wrap,
   .catalog-cards.shutterstock,
+  .catalog-cards.photoprintBlock,
   .catalog-cards.serviceReasons,
   .catalog-cards.lamps,
   .catalog-cards.printprice,
@@ -3879,7 +3891,8 @@ corresponds to the arrow we want to display */
 .catalog-cards_ceilings .titles__second-title,
 .catalog-cards_ceilings .catalogueDetail__title,
 .catalog-cards_ceilings .photoprint__title,
-.catalog-cards_ceilings .photobank__title {
+.catalog-cards_ceilings .photobank__title,
+.catalog-cards_ceilings .photoprintBlock__title {
   margin-bottom: 2.5rem;
 }
 
@@ -3915,7 +3928,8 @@ corresponds to the arrow we want to display */
 .catalog-cards_materials .titles .titles__second-title,
 .catalog-cards_materials .titles .catalogueDetail__title,
 .catalog-cards_materials .titles .photoprint__title,
-.catalog-cards_materials .titles .photobank__title {
+.catalog-cards_materials .titles .photobank__title,
+.catalog-cards_materials .titles .photoprintBlock__title {
   margin-bottom: 0;
 }
 
@@ -3940,7 +3954,8 @@ corresponds to the arrow we want to display */
 .catalog-cards_tech .titles .titles__second-title,
 .catalog-cards_tech .titles .catalogueDetail__title,
 .catalog-cards_tech .titles .photoprint__title,
-.catalog-cards_tech .titles .photobank__title {
+.catalog-cards_tech .titles .photobank__title,
+.catalog-cards_tech .titles .photoprintBlock__title {
   margin-bottom: 0;
 }
 
@@ -4576,6 +4591,7 @@ p {
 .photoprint,
 .photobank__wrap,
 .shutterstock,
+.photoprintBlock,
 .serviceReasons,
 .lamps,
 .printprice,
@@ -4612,6 +4628,7 @@ p {
   .photoprint,
   .photobank__wrap,
   .shutterstock,
+  .photoprintBlock,
   .serviceReasons,
   .lamps,
   .printprice,
@@ -4649,6 +4666,7 @@ p {
   .photoprint,
   .photobank__wrap,
   .shutterstock,
+  .photoprintBlock,
   .serviceReasons,
   .lamps,
   .printprice,
@@ -4686,6 +4704,7 @@ p {
   .photoprint,
   .photobank__wrap,
   .shutterstock,
+  .photoprintBlock,
   .serviceReasons,
   .lamps,
   .printprice,
@@ -4800,7 +4819,7 @@ p {
   margin-bottom: 5rem;
 }
 
-.page__photobank .photoprint {
+.page__photobank .photoprintBlock {
   margin-bottom: 5.375rem;
 }
 
@@ -5943,6 +5962,7 @@ p {
 .calculator,
 .whyus__content,
 .catalogueDetail__main,
+.photoprint__gallery,
 .printprice .page__wrapper {
   position: relative;
 }
@@ -5957,6 +5977,7 @@ p {
 .calculator:before,
 .whyus__content:before,
 .catalogueDetail__main:before,
+.photoprint__gallery:before,
 .printprice .page__wrapper:before {
   z-index: -1;
   content: '';
@@ -5973,7 +5994,7 @@ p {
   background-image: url(/img/gui/texture2.png);
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 79.9375rem) {
   .b-texture:before,
   .catalog-cards_ceilings:before,
   .catalogue__content:before,
@@ -5984,6 +6005,7 @@ p {
   .calculator:before,
   .whyus__content:before,
   .catalogueDetail__main:before,
+  .photoprint__gallery:before,
   .printprice .page__wrapper:before {
     width: 480px;
   }
@@ -6000,6 +6022,7 @@ p {
   .calculator:before,
   .whyus__content:before,
   .catalogueDetail__main:before,
+  .photoprint__gallery:before,
   .printprice .page__wrapper:before {
     width: 64vw;
   }
@@ -8071,7 +8094,8 @@ p {
   .portfolio_main .titles .titles__second-title,
   .portfolio_main .titles .catalogueDetail__title,
   .portfolio_main .titles .photoprint__title,
-  .portfolio_main .titles .photobank__title {
+  .portfolio_main .titles .photobank__title,
+  .portfolio_main .titles .photoprintBlock__title {
     margin-bottom: 0;
   }
 }
@@ -9458,6 +9482,7 @@ p {
     width: 100%;
     margin-left: 0;
     margin-right: 0;
+    margin-bottom: 4rem;
   }
 }
 
@@ -9559,7 +9584,8 @@ p {
   .reviews_main .titles .titles__second-title,
   .reviews_main .titles .catalogueDetail__title,
   .reviews_main .titles .photoprint__title,
-  .reviews_main .titles .photobank__title {
+  .reviews_main .titles .photobank__title,
+  .reviews_main .titles .photoprintBlock__title {
     margin-bottom: 0;
   }
 }
@@ -10660,6 +10686,7 @@ p {
 .about .calculator,
 .about .whyus__content,
 .about .catalogueDetail__main,
+.about .photoprint__gallery,
 .about .printprice .page__wrapper,
 .printprice .about .page__wrapper {
   padding: 2rem 0;
@@ -13412,6 +13439,8 @@ p {
 .notFound__content .jobs p,
 .jobs .catalogueDetail__filter p,
 .catalogueDetail__filter .jobs p,
+.jobs .photoprint__why h3,
+.photoprint__why .jobs h3,
 .jobs .serviceReasons__title,
 .jobs .dillers__heading p,
 .dillers__heading .jobs p,
@@ -14102,7 +14131,8 @@ p {
 .contacts__item .titles__second-title,
 .contacts__item .catalogueDetail__title,
 .contacts__item .photoprint__title,
-.contacts__item .photobank__title {
+.contacts__item .photobank__title,
+.contacts__item .photoprintBlock__title {
   text-align: center;
   padding: 0;
   font-size: 24px;
@@ -14113,7 +14143,8 @@ p {
 .contacts__item .titles__second-title::after,
 .contacts__item .catalogueDetail__title::after,
 .contacts__item .photoprint__title::after,
-.contacts__item .photobank__title::after {
+.contacts__item .photobank__title::after,
+.contacts__item .photoprintBlock__title::after {
   display: none;
 }
 
@@ -14239,7 +14270,8 @@ p {
   .contacts .titles__second-title,
   .contacts .catalogueDetail__title,
   .contacts .photoprint__title,
-  .contacts .photobank__title {
+  .contacts .photobank__title,
+  .contacts .photoprintBlock__title {
     font-size: 24px;
   }
 }
@@ -14694,9 +14726,9 @@ p {
 
 @media screen and (max-width: 44.9375rem) {
   .footer-offer__title {
-    font-size: 1rem;
+    font-size: 1.1875rem;
     width: 100%;
-    line-height: 1.5rem;
+    line-height: 1.75rem;
   }
 }
 
@@ -14712,6 +14744,9 @@ p {
   font-size: 1rem;
   font-weight: 300;
   line-height: 1.5rem;
+  -webkit-hyphens: none;
+      -ms-hyphens: none;
+          hyphens: none;
 }
 
 .footer-offer__intro span {
@@ -14801,6 +14836,13 @@ p {
   }
 }
 
+@media screen and (max-width: 44.9375rem) {
+  .footer-offer__form .input,
+  .footer-offer__form .calculator__input {
+    height: 3.25rem;
+  }
+}
+
 .footer-offer__form .form__button {
   margin-bottom: 0;
 }
@@ -14814,6 +14856,7 @@ p {
 
 @media screen and (max-width: 44.9375rem) {
   .footer-offer__form .form__button {
+    height: 3.125rem;
     width: 16.25rem;
   }
 }
@@ -14933,7 +14976,8 @@ p {
 .additional .titles .titles__second-title,
 .additional .titles .catalogueDetail__title,
 .additional .titles .photoprint__title,
-.additional .titles .photobank__title {
+.additional .titles .photobank__title,
+.additional .titles .photoprintBlock__title {
   margin: 0;
 }
 
@@ -15327,6 +15371,7 @@ p {
 .articles.articles_main .articles__list.photoprint,
 .articles.articles_main .articles__list.photobank__wrap,
 .articles.articles_main .articles__list.shutterstock,
+.articles.articles_main .articles__list.photoprintBlock,
 .articles.articles_main .articles__list.serviceReasons,
 .articles.articles_main .articles__list.lamps,
 .articles.articles_main .articles__list.printprice,
@@ -17290,171 +17335,276 @@ p {
   }
 }
 
-.photoprint__content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding-top: 3.4375rem;
-  padding-bottom: 3.125rem;
-  border-radius: 5px;
-  background-image: radial-gradient(42.3125rem 42.3125rem at 74.58% 509.67%, #f0f0f0 0%, #c8c8c8 100%);
+.photoprint {
+  padding-bottom: 5rem;
+  overflow: hidden;
 }
 
-@media screen and (max-width: 60rem) {
-  .photoprint__content {
-    padding: 0 2.5rem;
-    padding-top: 4.6875rem;
-    padding-bottom: 4.375rem;
-    background-image: radial-gradient(43.5rem 43.5rem at 65.98% 656.4%, #f0f0f0 0%, #c8c8c8 100%);
+.photoprint .titles {
+  margin-bottom: 4rem;
+}
+
+.photoprint__title {
+  margin-bottom: 2.5rem;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .photoprint__title {
+    margin-bottom: 4rem;
   }
 }
 
 @media screen and (max-width: 44.9375rem) {
-  .photoprint__content {
-    padding: 0 0.625rem;
-    padding-top: 4.6875rem;
-    padding-bottom: 4.375rem;
-    background-image: radial-gradient(67.3125rem 67.3125rem at 67% 436.02%, #f0f0f0 0%, #c8c8c8 100%);
+  .photoprint__title {
+    margin-bottom: 4.5rem;
   }
 }
 
 .photoprint__text {
-  width: 52%;
-  padding-left: 6.25rem;
+  margin: 0;
+  color: #485058;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.5rem;
+}
+
+.photoprint__text:not(:last-of-type) {
+  margin-bottom: 0.5rem;
 }
 
 @media screen and (max-width: 79.9375rem) {
   .photoprint__text {
-    padding-left: 1.875rem;
+    font-size: 1.125rem;
+    font-weight: 300;
+    line-height: 1.625rem;
   }
 }
 
-@media screen and (max-width: 60rem) {
-  .photoprint__text {
-    width: 100%;
-    padding-left: 0;
-  }
+.photoprint__quote {
+  display: inline-block;
+  padding: 0 12.5rem;
+  padding-top: 4rem;
+  margin-bottom: 5rem;
+  color: #485058;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+  text-align: center;
 }
 
-.photoprint__image {
-  width: 48%;
-  background-image: url("/img/ceilings/printer.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  background-position: right;
-}
-
-@media screen and (max-width: 60rem) {
-  .photoprint__image {
-    display: none;
-  }
-}
-
-.photoprint__title {
-  position: relative;
-  margin: 0;
-  margin-bottom: 2.8125rem;
-}
-
-@media screen and (max-width: 60rem) {
-  .photoprint__title {
-    font-size: 1.625rem;
-    text-align: center;
-  }
-}
-
-.photoprint__title::after {
-  left: 50%;
-  margin: 0;
-}
-
-@media screen and (max-width: 60rem) {
-  .photoprint__title::after {
-    left: none;
+@media screen and (max-width: 79.9375rem) {
+  .photoprint__quote {
+    width: 29.6875rem;
+    padding: 0;
+    padding-top: 5rem;
     margin: 0 auto;
-  }
-}
-
-.photoprint__desc {
-  margin: 0;
-  margin-bottom: 2.1875rem;
-  font-size: 1.0625rem;
-}
-
-@media screen and (max-width: 60rem) {
-  .photoprint__desc {
-    margin-bottom: 2.8125rem;
-    text-align: center;
+    margin-bottom: 7.25rem;
   }
 }
 
 @media screen and (max-width: 44.9375rem) {
-  .photoprint__desc {
-    font-size: 1.125rem;
-    text-align: left;
+  .photoprint__quote {
+    width: 100%;
+    margin-bottom: 5rem;
   }
 }
 
-.photoprint__list-wrap {
+.photoprint__directions {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-bottom: 5rem;
+}
+
+@media screen and (max-width: 60rem) {
+  .photoprint__directions {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 @media screen and (max-width: 44.9375rem) {
-  .photoprint__list-wrap {
+  .photoprint__directions {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    margin-bottom: 4rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
-.photoprint__list {
-  width: 16.25rem;
-  padding-left: 1.875rem;
-  margin: 0;
+.photoprint__dirention {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media screen and (max-width: 60rem) {
-  .photoprint__list {
-    width: 19.0625rem;
-    padding-right: 2.8125rem;
-    padding-left: 3.125rem;
+  .photoprint__dirention {
+    width: 10rem;
   }
 }
 
 @media screen and (max-width: 44.9375rem) {
-  .photoprint__list {
-    width: 100%;
-    padding: 0 1.875rem;
-    padding-right: 0;
+  .photoprint__dirention:not(:last-of-type) {
+    margin-bottom: 4rem;
   }
 }
 
-.photoprint__list:last-of-type {
-  width: 13.75rem;
+.photoprint__dirention img {
+  width: 15.5rem;
+  height: 15.5rem;
+  margin-bottom: 2.125rem;
 }
 
 @media screen and (max-width: 60rem) {
-  .photoprint__list:last-of-type {
-    width: 18.125rem;
+  .photoprint__dirention img {
+    width: 10rem;
+    height: 10rem;
+    margin-bottom: 1.5rem;
   }
 }
 
-.photoprint__item {
-  margin-bottom: 0.9375rem;
-  font-size: 1.0625rem;
+.photoprint__dirention a {
+  position: relative;
+  color: #485058;
+  font-family: "Futura PT", sans-serif;
+  font-size: 1.625rem;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  line-height: 2rem;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
-@media screen and (max-width: 44.9375rem) {
-  .photoprint__item {
-    margin-bottom: 1.5625rem;
+@media screen and (max-width: 60rem) {
+  .photoprint__dirention a {
     font-size: 1.25rem;
+    line-height: 1.75rem;
+    text-decoration: underline;
+    text-align: center;
+  }
+}
+
+.photoprint__dirention a::after {
+  position: absolute;
+  width: 100%;
+  bottom: -0.0625rem;
+  display: block;
+  content: '';
+  border-bottom: 0.0625rem solid #485058;
+  -webkit-transition: bottom .3s;
+  transition: bottom .3s;
+}
+
+@media screen and (max-width: 60rem) {
+  .photoprint__dirention a::after {
+    display: none;
+  }
+}
+
+.photoprint__dirention a:hover::after {
+  bottom: -0.25rem;
+}
+
+.photoprint__gallery {
+  padding: 4rem 3rem;
+  margin-bottom: 5rem;
+}
+
+@media screen and (max-width: 60rem) {
+  .photoprint__gallery {
+    padding: 4rem 2rem;
+    width: 480px;
+    margin: 0 auto;
+    margin-bottom: 5rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .photoprint__gallery {
+    width: 100%;
+    padding: 4rem 0;
+  }
+}
+
+.photoprint__gallery .photoprint__text:not(:last-of-type) {
+  margin-bottom: 1.5rem;
+}
+
+.photoprint__gallery iframe,
+.photoprint__gallery #simple-slider {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 60rem) {
+  .photoprint__gallery iframe,
+  .photoprint__gallery #simple-slider {
+    width: calc(100vw - 40px);
+    margin-left: calc(-50vw + 240px);
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .photoprint__gallery iframe,
+  .photoprint__gallery #simple-slider {
+    height: 15.625rem;
+    width: calc(100% + 32px);
+    margin-left: -1rem;
+  }
+}
+
+@media screen and (max-width: 20.125rem) {
+  .photoprint__gallery iframe,
+  .photoprint__gallery #simple-slider {
+    width: calc(100% + 16px);
+    margin-left: -0.5rem;
+  }
+}
+
+.photoprint__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 48.75rem;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .photoprint__info {
+    width: 100%;
+  }
+}
+
+.photoprint__why h3 {
+  margin-bottom: 0.875rem;
+  text-align: center;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .photoprint__why h3 {
+    text-align: left;
   }
 }
 
@@ -17736,7 +17886,7 @@ p {
   }
 }
 
-.photoprint__content {
+.photoprintBlock__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -17747,7 +17897,7 @@ p {
 }
 
 @media screen and (max-width: 60rem) {
-  .photoprint__content {
+  .photoprintBlock__content {
     padding: 0 2.5rem;
     padding-top: 4.6875rem;
     padding-bottom: 4.375rem;
@@ -17756,7 +17906,7 @@ p {
 }
 
 @media screen and (max-width: 44.9375rem) {
-  .photoprint__content {
+  .photoprintBlock__content {
     padding: 0 0.625rem;
     padding-top: 4.6875rem;
     padding-bottom: 4.375rem;
@@ -17764,25 +17914,25 @@ p {
   }
 }
 
-.photoprint__text {
+.photoprintBlock__text {
   width: 52%;
   padding-left: 6.25rem;
 }
 
 @media screen and (max-width: 79.9375rem) {
-  .photoprint__text {
+  .photoprintBlock__text {
     padding-left: 1.875rem;
   }
 }
 
 @media screen and (max-width: 60rem) {
-  .photoprint__text {
+  .photoprintBlock__text {
     width: 100%;
     padding-left: 0;
   }
 }
 
-.photoprint__image {
+.photoprintBlock__image {
   width: 48%;
   background-image: url("/img/ceilings/printer.png");
   background-repeat: no-repeat;
@@ -17792,57 +17942,57 @@ p {
 }
 
 @media screen and (max-width: 60rem) {
-  .photoprint__image {
+  .photoprintBlock__image {
     display: none;
   }
 }
 
-.photoprint__title {
+.photoprintBlock__title {
   position: relative;
   margin: 0;
   margin-bottom: 2.8125rem;
 }
 
 @media screen and (max-width: 60rem) {
-  .photoprint__title {
+  .photoprintBlock__title {
     font-size: 1.625rem;
     text-align: center;
   }
 }
 
-.photoprint__title::after {
+.photoprintBlock__title::after {
   left: 50%;
   margin: 0;
 }
 
 @media screen and (max-width: 60rem) {
-  .photoprint__title::after {
+  .photoprintBlock__title::after {
     left: none;
     margin: 0 auto;
   }
 }
 
-.photoprint__desc {
+.photoprintBlock__desc {
   margin: 0;
   margin-bottom: 2.1875rem;
   font-size: 1.0625rem;
 }
 
 @media screen and (max-width: 60rem) {
-  .photoprint__desc {
+  .photoprintBlock__desc {
     margin-bottom: 2.8125rem;
     text-align: center;
   }
 }
 
 @media screen and (max-width: 44.9375rem) {
-  .photoprint__desc {
+  .photoprintBlock__desc {
     font-size: 1.125rem;
     text-align: left;
   }
 }
 
-.photoprint__list-wrap {
+.photoprintBlock__list-wrap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -17852,7 +18002,7 @@ p {
 }
 
 @media screen and (max-width: 44.9375rem) {
-  .photoprint__list-wrap {
+  .photoprintBlock__list-wrap {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -17860,14 +18010,14 @@ p {
   }
 }
 
-.photoprint__list {
+.photoprintBlock__list {
   width: 16.25rem;
   padding-left: 1.875rem;
   margin: 0;
 }
 
 @media screen and (max-width: 60rem) {
-  .photoprint__list {
+  .photoprintBlock__list {
     width: 19.0625rem;
     padding-right: 2.8125rem;
     padding-left: 3.125rem;
@@ -17875,32 +18025,305 @@ p {
 }
 
 @media screen and (max-width: 44.9375rem) {
-  .photoprint__list {
+  .photoprintBlock__list {
     width: 100%;
     padding: 0 1.875rem;
     padding-right: 0;
   }
 }
 
-.photoprint__list:last-of-type {
+.photoprintBlock__list:last-of-type {
   width: 13.75rem;
 }
 
 @media screen and (max-width: 60rem) {
-  .photoprint__list:last-of-type {
+  .photoprintBlock__list:last-of-type {
     width: 18.125rem;
   }
 }
 
-.photoprint__item {
+.photoprintBlock__item {
   margin-bottom: 0.9375rem;
   font-size: 1.0625rem;
 }
 
 @media screen and (max-width: 44.9375rem) {
-  .photoprint__item {
+  .photoprintBlock__item {
     margin-bottom: 1.5625rem;
     font-size: 1.25rem;
+  }
+}
+
+.photoprint {
+  padding-bottom: 5rem;
+  overflow: hidden;
+}
+
+.photoprint .titles {
+  margin-bottom: 4rem;
+}
+
+.photoprint__title {
+  margin-bottom: 2.5rem;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .photoprint__title {
+    margin-bottom: 4rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .photoprint__title {
+    margin-bottom: 4.5rem;
+  }
+}
+
+.photoprint__text {
+  margin: 0;
+  color: #485058;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.5rem;
+}
+
+.photoprint__text:not(:last-of-type) {
+  margin-bottom: 0.5rem;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .photoprint__text {
+    font-size: 1.125rem;
+    font-weight: 300;
+    line-height: 1.625rem;
+  }
+}
+
+.photoprint__quote {
+  display: inline-block;
+  padding: 0 12.5rem;
+  padding-top: 4rem;
+  margin-bottom: 5rem;
+  color: #485058;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+  text-align: center;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .photoprint__quote {
+    width: 29.6875rem;
+    padding: 0;
+    padding-top: 5rem;
+    margin: 0 auto;
+    margin-bottom: 7.25rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .photoprint__quote {
+    width: 100%;
+    margin-bottom: 5rem;
+  }
+}
+
+.photoprint__directions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 5rem;
+}
+
+@media screen and (max-width: 60rem) {
+  .photoprint__directions {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .photoprint__directions {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 4rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.photoprint__dirention {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 60rem) {
+  .photoprint__dirention {
+    width: 10rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .photoprint__dirention:not(:last-of-type) {
+    margin-bottom: 4rem;
+  }
+}
+
+.photoprint__dirention img {
+  width: 15.5rem;
+  height: 15.5rem;
+  margin-bottom: 2.125rem;
+}
+
+@media screen and (max-width: 60rem) {
+  .photoprint__dirention img {
+    width: 10rem;
+    height: 10rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.photoprint__dirention a {
+  position: relative;
+  color: #485058;
+  font-family: "Futura PT", sans-serif;
+  font-size: 1.625rem;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  line-height: 2rem;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 60rem) {
+  .photoprint__dirention a {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    text-decoration: underline;
+    text-align: center;
+  }
+}
+
+.photoprint__dirention a::after {
+  position: absolute;
+  width: 100%;
+  bottom: -0.0625rem;
+  display: block;
+  content: '';
+  border-bottom: 0.0625rem solid #485058;
+  -webkit-transition: bottom .3s;
+  transition: bottom .3s;
+}
+
+@media screen and (max-width: 60rem) {
+  .photoprint__dirention a::after {
+    display: none;
+  }
+}
+
+.photoprint__dirention a:hover::after {
+  bottom: -0.25rem;
+}
+
+.photoprint__gallery {
+  padding: 4rem 3rem;
+  margin-bottom: 5rem;
+}
+
+@media screen and (max-width: 60rem) {
+  .photoprint__gallery {
+    padding: 4rem 2rem;
+    width: 480px;
+    margin: 0 auto;
+    margin-bottom: 5rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .photoprint__gallery {
+    width: 100%;
+    padding: 4rem 0;
+  }
+}
+
+.photoprint__gallery .photoprint__text:not(:last-of-type) {
+  margin-bottom: 1.5rem;
+}
+
+.photoprint__gallery iframe,
+.photoprint__gallery #simple-slider {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 60rem) {
+  .photoprint__gallery iframe,
+  .photoprint__gallery #simple-slider {
+    width: calc(100vw - 40px);
+    margin-left: calc(-50vw + 240px);
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .photoprint__gallery iframe,
+  .photoprint__gallery #simple-slider {
+    height: 15.625rem;
+    width: calc(100% + 32px);
+    margin-left: -1rem;
+  }
+}
+
+@media screen and (max-width: 20.125rem) {
+  .photoprint__gallery iframe,
+  .photoprint__gallery #simple-slider {
+    width: calc(100% + 16px);
+    margin-left: -0.5rem;
+  }
+}
+
+.photoprint__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 48.75rem;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .photoprint__info {
+    width: 100%;
+  }
+}
+
+.photoprint__why h3 {
+  margin-bottom: 0.875rem;
+  text-align: center;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .photoprint__why h3 {
+    text-align: left;
   }
 }
 
@@ -20907,7 +21330,8 @@ p {
 .catalogueCeilings .titles .titles__second-title,
 .catalogueCeilings .titles .catalogueDetail__title,
 .catalogueCeilings .titles .photoprint__title,
-.catalogueCeilings .titles .photobank__title {
+.catalogueCeilings .titles .photobank__title,
+.catalogueCeilings .titles .photoprintBlock__title {
   padding-top: 0;
   margin-bottom: 2.5rem;
 }
@@ -21068,7 +21492,8 @@ p {
 .credit__banks .titles .titles__second-title,
 .credit__banks .titles .catalogueDetail__title,
 .credit__banks .titles .photoprint__title,
-.credit__banks .titles .photobank__title {
+.credit__banks .titles .photobank__title,
+.credit__banks .titles .photoprintBlock__title {
   margin-bottom: 0;
 }
 

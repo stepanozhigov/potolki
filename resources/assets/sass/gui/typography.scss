@@ -143,7 +143,7 @@
         line-height: rem(38);
     }
 
-    @include below($mobile) {
+    @include below($mobile-small) {
         padding-bottom: rem(24);
         font-size: rem(26);
         line-height: rem(34);
@@ -177,11 +177,11 @@
     }
 
     @include below($tablet) {
-        font-size: rem(32);
-        line-height: rem(38);
+        font-size: rem(26);
+        line-height: rem(32);
     }
 
-    @include below($mobile) {
+    @include below($mobile-small) {
         font-size: rem(22);
         line-height: rem(26);
     }

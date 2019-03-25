@@ -13,7 +13,7 @@
                 ]);
             @endphp
             <h1 class="title main-offer__title js-writen" data-texts="{{$texts}}">Пластиковые окна со&nbspскидкой&nbsp30%</h1>
-            <p class="main-offer__subtitle">Вызовите специалиста для замера и&nbsp;расчёта</p>
+            <p class="main-offer__subtitle">Вызовите специалиста для&nbsp;замера и&nbsp;расчёта</p>
 
             <form class="form main-offer__form mobile-hide" action="" id="offer-form">
                 <input class="input form__input" type="text"  placeholder="Ваше имя">
@@ -91,7 +91,7 @@
     <section class="catalog-cards container">
         @include('common.gui.titles', [
             'overtitle' =>  'Каталог',
-            'secondTitle' =>  "Пластиковые окна {$city->name_formatted}",
+            'secondTitle' =>  "Каталог пластиковых окон {$city->name_formatted}",
             'intro' =>  "Фабрика окон №1 {$city->name_formatted}. Посмотрите каталог и ниже рассчитайте ваш заказ <span class='intro_red'>за&nbsp5&nbspсекунд</span>."
         ])
 
@@ -112,7 +112,6 @@
             </a>
         @endforeach
         <div class="buttons">
-			<button class="button buttons__item js-show" data-src="#popup_callback" data-title="Вызов замерщика" data-button="Вызвать замерщика">Вызвать замерщика</button>
             <a href="{{ route('catalogue', $city) }}" class="button  button_gray">Перейти в каталог</a>
         </div>
     </section>
