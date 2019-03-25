@@ -1324,6 +1324,7 @@ corresponds to the arrow we want to display */
 }
 
 .third-title,
+.promo__subtitle,
 .additional__title,
 .serviceDetail__info h2,
 .reason__title,
@@ -1347,6 +1348,7 @@ corresponds to the arrow we want to display */
 
 @media screen and (max-width: 44.9375rem) {
   .third-title,
+  .promo__subtitle,
   .additional__title,
   .serviceDetail__info h2,
   .reason__title,
@@ -8674,7 +8676,7 @@ p {
 .promos__item {
   width: calc(33.3% - 20px);
   margin: 0 0.625rem;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
 
 @media screen and (max-width: 79.9375rem) {
@@ -8703,8 +8705,21 @@ p {
   margin: 0;
 }
 
+.promo__subtitle {
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+.promo__text-wrap:first-of-type {
+  margin-top: 0.75rem;
+}
+
+.promo__text-wrap:not(:last-of-type) {
+  margin-bottom: 0.75rem;
+}
+
 .promo__text {
-  margin: 0 0 10px 0;
+  margin: 0;
 }
 
 .promo__line {
@@ -13429,6 +13444,7 @@ p {
 }
 
 .jobs .third-title,
+.jobs .promo__subtitle,
 .jobs .additional__title,
 .jobs .serviceDetail__info h2,
 .serviceDetail__info .jobs h2,

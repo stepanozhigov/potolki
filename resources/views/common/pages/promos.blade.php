@@ -17,8 +17,16 @@
                             <p class="card-title promo__title">{!! $promo->title !!}</p>
                             <hr class="line promo__line">
                             <p class="text promo__text">{!! $promo->intro !!}</p>
-                            <p class="text promo__text"><span class="text_bold">Условия акции:</span> {!! $promo->conditions !!}</p>
-                            <p class="text promo__text"><span class="text_bold">Дополнительно:</span> {!! $promo->additional !!}</p>
+                            <div class="promo__text-wrap">
+                                <h3 class="promo__subtitle">Условия акции</h3>
+                                <p class="text promo__text"> {!! $promo->conditions !!}</p>
+                            </div>
+                            <div class="promo__text-wrap">
+                                <h3 class="promo__subtitle">Дополнительно</h3>
+                                <p class="text promo__text"> {!! $promo->additional !!}</p>
+                            </div>
+
+
                         </div>
                     </a>
                 @endforeach

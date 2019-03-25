@@ -15,11 +15,11 @@
                     @include('common.gui.review', ['review' => $review])
                 @endforeach
 
-                <!--<div class="paginator reviews__paginator">
+                <div class="paginator reviews__paginator">
                     <a href="" class="paginator__item paginator__item_active">1</a>
                     <a href="" class="paginator__item">2</a>
                     <a href="" class="paginator__item">3</a>
-                </div>-->
+                </div>
                 <div class="buttons">
                     <a href="{{ route('add-review', $city) }}" class="button reviews__add">Оставить отзыв</a>
                 </div>

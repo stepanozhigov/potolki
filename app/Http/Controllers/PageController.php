@@ -148,7 +148,7 @@ class PageController extends Controller
     {
         return view('common.pages.reviews', [
             'city'  =>  $city,
-            'reviews'   =>  Review::where('is_active', 1)->orderBy('sort', 'asc')->paginate(30),
+            'reviews'   =>  Review::where('is_active', 1)->orderBy('sort', 'asc')->paginate(6),
             'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
     }

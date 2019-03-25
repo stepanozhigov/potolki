@@ -9,10 +9,10 @@
 	            <a class="text dropdown__item_active"><img class="dropdown__arrow" src="/img/gui/arrow.svg" alt="">{{ $currentDirection->name }}</a>
 
 	            <div class="dropdown__content">
-	                <a class="text dropdown__item dropdown__item_active"><img class="dropdown__arrow" src="/img/gui/arrow.svg" alt="">{{ $currentDirection->name }}</a>
+	                <a class="text dropdown__item dropdown__item_active"><img class="dropdown__arrow" src="/img/gui/arrow.svg" alt="">{!! $currentDirection->name !!}</a>
 	                <p class="dropdown__title">Другие направления</p>
 	                @foreach ($directions as $direction)
-	                    <a href="{{ $direction->site }}" class="text dropdown__item dropdown__item_bordered  red-hoverable">{{ $direction->name }}</a>
+	                    <a href="{{ $direction->site  ?? '' }}" class="text dropdown__item dropdown__item_bordered  red-hoverable">{!! $direction->name !!}</a>
 	                @endforeach
 	            </div>
 	        </div>
