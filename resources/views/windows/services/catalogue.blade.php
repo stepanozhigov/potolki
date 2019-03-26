@@ -20,44 +20,46 @@
                     </div>
                     <div class="catalogue__item-content">
                         <h3 class="catalogue__item-title">Эконом</h3>
-                        <div class="catalogue__item-characteristic">
-                            <p>Теплоизоляция</p>
-                            <div class="scale scale_two">
-                                <div class="scale__block"></div>
-                                <div class="scale__block"></div>
-                                <div class="scale__block"></div>
-                                <div class="scale__block"></div>
-                                <div class="scale__block"></div>
-                                <span class="scale__value">до -32 ℃</span>
+                        <div class="catalogue__item-wrap">
+                            <div class="catalogue__item-characteristic">
+                                <p>Теплоизоляция</p>
+                                <div class="scale scale_two">
+                                    <div class="scale__block"></div>
+                                    <div class="scale__block"></div>
+                                    <div class="scale__block"></div>
+                                    <div class="scale__block"></div>
+                                    <div class="scale__block"></div>
+                                    <span class="scale__value">до -32 ℃</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="catalogue__item-characteristic">
-                            <p>Шумоизоляция</p>
-                            <div class="scale scale_two">
-                                <div class="scale__block"></div>
-                                <div class="scale__block"></div>
-                                <div class="scale__block"></div>
-                                <div class="scale__block"></div>
-                                <div class="scale__block"></div>
-                                <span class="scale__value">+20 %</span>
+                            <div class="catalogue__item-characteristic">
+                                <p>Шумоизоляция</p>
+                                <div class="scale scale_two">
+                                    <div class="scale__block"></div>
+                                    <div class="scale__block"></div>
+                                    <div class="scale__block"></div>
+                                    <div class="scale__block"></div>
+                                    <div class="scale__block"></div>
+                                    <span class="scale__value">+20 %</span>
+                                </div>
                             </div>
+                            <dl class="catalogue__item-params">
+                                <dt>Ширина стеклопакета</dt>
+                                <dd>24–32 мм</dd>
+                            </dl>
+                            <dl class="catalogue__item-params">
+                                <dt>Ширина профиля</dt>
+                                <dd>58–60 мм</dd>
+                            </dl>
+                            <dl class="catalogue__item-params">
+                                <dt>Количество камер</dt>
+                                <dd>4–5 шт.</dd>
+                            </dl>
+                            <dl class="catalogue__item-params">
+                                <dt>Гарантия</dt>
+                                <dd>10 лет</dd>
+                            </dl>
                         </div>
-                        <dl class="catalogue__item-params">
-                            <dt>Ширина стеклопакета</dt>
-                            <dd>24–32 мм</dd>
-                        </dl>
-                        <dl class="catalogue__item-params">
-                            <dt>Ширина профиля</dt>
-                            <dd>58–60 мм</dd>
-                        </dl>
-                        <dl class="catalogue__item-params">
-                            <dt>Количество камер</dt>
-                            <dd>4–5 шт.</dd>
-                        </dl>
-                        <dl class="catalogue__item-params">
-                            <dt>Гарантия</dt>
-                            <dd>10 лет</dd>
-                        </dl>
                         <p class="catalogue__item-price">3 900 ₽/м2</p>
                     </div>
                 </article>
@@ -67,44 +69,46 @@
                     </div>
                     <div class="catalogue__item-content">
                         <h3 class="catalogue__item-title">Стандарт</h3>
-                        <div class="catalogue__item-characteristic">
-                            <p>Теплоизоляция</p>
-                            <div class="scale scale_fourth">
-                                <div class="scale__block"></div>
-                                <div class="scale__block"></div>
-                                <div class="scale__block"></div>
-                                <div class="scale__block"></div>
-                                <div class="scale__block"></div>
-                                <span class="scale__value">до -40 ℃</span>
+                        <div class="catalogue__item-wrap">
+                            <div class="catalogue__item-characteristic">
+                                <p>Теплоизоляция</p>
+                                <div class="scale scale_fourth">
+                                    <div class="scale__block"></div>
+                                    <div class="scale__block"></div>
+                                    <div class="scale__block"></div>
+                                    <div class="scale__block"></div>
+                                    <div class="scale__block"></div>
+                                    <span class="scale__value">до -40 ℃</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="catalogue__item-characteristic">
-                            <p>Шумоизоляция</p>
-                            <div class="scale scale_fourth">
-                                <div class="scale__block"></div>
-                                <div class="scale__block"></div>
-                                <div class="scale__block"></div>
-                                <div class="scale__block"></div>
-                                <div class="scale__block"></div>
-                                <span class="scale__value">+40 %</span>
+                            <div class="catalogue__item-characteristic">
+                                <p>Шумоизоляция</p>
+                                <div class="scale scale_fourth">
+                                    <div class="scale__block"></div>
+                                    <div class="scale__block"></div>
+                                    <div class="scale__block"></div>
+                                    <div class="scale__block"></div>
+                                    <div class="scale__block"></div>
+                                    <span class="scale__value">+40 %</span>
+                                </div>
                             </div>
+                            <dl class="catalogue__item-params">
+                                <dt>Ширина стеклопакета</dt>
+                                <dd>32 мм</dd>
+                            </dl>
+                            <dl class="catalogue__item-params">
+                                <dt>Ширина профиля</dt>
+                                <dd>70–72 мм</dd>
+                            </dl>
+                            <dl class="catalogue__item-params">
+                                <dt>Количество камер</dt>
+                                <dd>4–5 шт.</dd>
+                            </dl>
+                            <dl class="catalogue__item-params">
+                                <dt>Гарантия</dt>
+                                <dd>25 лет</dd>
+                            </dl>
                         </div>
-                        <dl class="catalogue__item-params">
-                            <dt>Ширина стеклопакета</dt>
-                            <dd>32 мм</dd>
-                        </dl>
-                        <dl class="catalogue__item-params">
-                            <dt>Ширина профиля</dt>
-                            <dd>70–72 мм</dd>
-                        </dl>
-                        <dl class="catalogue__item-params">
-                            <dt>Количество камер</dt>
-                            <dd>4–5 шт.</dd>
-                        </dl>
-                        <dl class="catalogue__item-params">
-                            <dt>Гарантия</dt>
-                            <dd>25 лет</dd>
-                        </dl>
                         <p class="catalogue__item-price">4 700 ₽/м2</p>
                     </div>
                 </article>
@@ -114,44 +118,46 @@
                     </div>
                     <div class="catalogue__item-content">
                         <h3 class="catalogue__item-title">Премиум</h3>
-                        <div class="catalogue__item-characteristic">
-                            <p>Теплоизоляция</p>
-                            <div class="scale scale_fifth">
-                                <div class="scale__block"></div>
-                                <div class="scale__block"></div>
-                                <div class="scale__block"></div>
-                                <div class="scale__block"></div>
-                                <div class="scale__block"></div>
-                                <span class="scale__value">до -45 ℃</span>
+                        <div class="catalogue__item-wrap">
+                            <div class="catalogue__item-characteristic">
+                                <p>Теплоизоляция</p>
+                                <div class="scale scale_fifth">
+                                    <div class="scale__block"></div>
+                                    <div class="scale__block"></div>
+                                    <div class="scale__block"></div>
+                                    <div class="scale__block"></div>
+                                    <div class="scale__block"></div>
+                                    <span class="scale__value">до -45 ℃</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="catalogue__item-characteristic">
-                            <p>Шумоизоляция</p>
-                            <div class="scale scale_fifth">
-                                <div class="scale__block"></div>
-                                <div class="scale__block"></div>
-                                <div class="scale__block"></div>
-                                <div class="scale__block"></div>
-                                <div class="scale__block"></div>
-                                <span class="scale__value">+70 %</span>
+                            <div class="catalogue__item-characteristic">
+                                <p>Шумоизоляция</p>
+                                <div class="scale scale_fifth">
+                                    <div class="scale__block"></div>
+                                    <div class="scale__block"></div>
+                                    <div class="scale__block"></div>
+                                    <div class="scale__block"></div>
+                                    <div class="scale__block"></div>
+                                    <span class="scale__value">+70 %</span>
+                                </div>
                             </div>
+                            <dl class="catalogue__item-params">
+                                <dt>Ширина стеклопакета</dt>
+                                <dd>42 мм</dd>
+                            </dl>
+                            <dl class="catalogue__item-params">
+                                <dt>Ширина профиля</dt>
+                                <dd>76–82 мм</dd>
+                            </dl>
+                            <dl class="catalogue__item-params">
+                                <dt>Количество камер</dt>
+                                <dd>5–7 шт.</dd>
+                            </dl>
+                            <dl class="catalogue__item-params">
+                                <dt>Гарантия</dt>
+                                <dd>30 лет</dd>
+                            </dl>
                         </div>
-                        <dl class="catalogue__item-params">
-                            <dt>Ширина стеклопакета</dt>
-                            <dd>42 мм</dd>
-                        </dl>
-                        <dl class="catalogue__item-params">
-                            <dt>Ширина профиля</dt>
-                            <dd>76–82 мм</dd>
-                        </dl>
-                        <dl class="catalogue__item-params">
-                            <dt>Количество камер</dt>
-                            <dd>5–7 шт.</dd>
-                        </dl>
-                        <dl class="catalogue__item-params">
-                            <dt>Гарантия</dt>
-                            <dd>30 лет</dd>
-                        </dl>
                         <p class="catalogue__item-price">5 500 ₽/м2</p>
                     </div>
                 </article>

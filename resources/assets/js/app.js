@@ -435,6 +435,12 @@ let onResize = function () {
             $(this).prev('.article__desc').find('h3').toggleClass('opened')
         });
 
+		$('.catalogue__list').off('click', '.catalogue__item');
+		$('.catalogue__list').on('click', '.catalogue__item', function () {
+			$(this).siblings().removeClass('opened');
+			$(this).toggleClass('opened');
+		});
+
         $('.ourArticle__more').off();
         $('.ourArticle__more').on('click', function () {
             $(this).closest('.ourArticle').siblings().removeClass('opened');
@@ -589,3 +595,17 @@ $('.catalog-cards__item').on('click', '.catalog-cards__open', function () {
     event.preventDefault();
     $(this).closest('.catalog-cards__item').toggleClass('opened');
 });
+
+
+$('.form').on('submit', function (event) {
+    event.preventDefault();
+    var $this = $(this);
+    $.ajax({
+        url: $this.attr('action'),
+        data: $this.serialize(),
+        success: function () {
+            $this.addClass('form_status-send');
+            $this.find('input').prop('disabled', true);
+        }
+    })
+})
