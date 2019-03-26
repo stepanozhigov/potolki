@@ -96,8 +96,8 @@
         ])
 
         @foreach ($catalogTypes as $type)
-            <? if ($type->id == 5) continue ?>
-            <a href="{{ route('catalogue', ['city' => $city]) }}" class=" catalog-cards__item b-card is-hoverable">
+            <? if ($type->id == 5) continue ?> 
+            <a href="{{ route('catalogue', ['city' => $city, 'type' => $type]) }}" class=" catalog-cards__item b-card is-hoverable">
                 <img src="{{ Storage::url($type->img) }}" alt="{{ $type->name }}" class="catalog-cards__img">
                 <div class="catalog-cards__item-info">
                     <h3 class="card-title catalog-cards__title">{{ $type->name }}</h3>
@@ -112,15 +112,15 @@
             </a>
         @endforeach
         <div class="buttons">
-            <a href="{{ route('catalogue', $city) }}" class="button  button_gray">Перейти в каталог</a>
+            <a href="{{ route('catalogue', ['city' => $city, 'type' => 'okna']) }}" class="button  button_gray">Перейти в каталог</a>
         </div>
     </section>
 
-    <section class="calc-promo container">
+    <section class="calc-promo container"> 
         <div class="calc-promo__titles">
             <h2 class="titles__second-title">Калькулятор стоимости</h2>
             <p class="intro calc-promo__intro">
-				Стоимость&nbsp;&mdash; один из&nbsp;важных факторов при принятии решения в&nbsp;выборе компании. Нажмите кнопку &laquo;Рассчитать&raquo; и&nbsp;через&nbsp;5&nbsp;секунд вы&nbsp;будете знать примерную стоимость вашего изделия.<br> Акция &laquo;Найдете дешевле&nbsp;&mdash; снизим цену&raquo; дает гарантию самой низкой цены {{$city->name_formatted}}.
+				Стоимость&nbsp;&mdash; один из&nbsp;важных факторов при принятии решения в&nbsp;выборе компании. Нажмите кнопку &laquo;Рассчитать&raquo; и&nbsp;через&nbsp;5&nbsp;секунд вы&nbsp;будете знать примерную стоимость вашего изделия.
             </p>
             <a href="{{ route('calculator', $city) }}" class="button calc-promo__button">Рассчитать</a>
         </div>

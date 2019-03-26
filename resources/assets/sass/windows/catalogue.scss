@@ -68,12 +68,14 @@
         &-wrap {
             display: flex;
             flex-direction: column;
+            flex-shrink: 0;
             width: 100%;
             overflow: hidden;
-            transition: max-width .3s;
+            transition: max-height .66s ease-in-out;
+            will-change: transform;
 
             @include below($mobile) {
-                max-width: 0;
+                max-height: 0;
             }
         }
 
@@ -122,20 +124,24 @@
 
         &-title {
             position: relative;
-            padding-bottom: rem(16);
+            padding-bottom: rem(8);
             margin: 0;
             margin-bottom: rem(28);
             color: #485058;
             font-family: $futura;
             font-size: rem(26);
-            font-weight: 300;
+            font-weight: 400;
             letter-spacing: 1.5px;
             line-height: rem(32);
             text-transform: uppercase;
             text-align: center;
 
             @include below($tablet) {
-                font-size: rem(20);
+                font-size: rem(22);
+            }
+
+            @include below($mobile) {
+                font-size: rem(26);
             }
 
             &::after {
@@ -160,6 +166,7 @@
             align-items: center;
             justify-content: space-between;
             margin-bottom: rem(32);
+            flex-shrink: 0;
 
             @include below($tablet) {
                 margin-bottom: rem(20);
@@ -174,7 +181,11 @@
                 line-height: rem(24);
 
                 @include below($tablet) {
-                    font-size: rem(12);
+                    font-size: rem(13);
+                }
+
+                @include below($mobile) {
+                    font-size: rem(14);
                 }
             }
 
@@ -192,6 +203,7 @@
             width: 100%;
             display: flex;
             justify-content: space-between;
+            flex-shrink: 0;
             margin: 0;
             padding: 0;
 
@@ -209,7 +221,11 @@
                 z-index: 2;
 
                 @include below($tablet) {
-                    font-size: rem(12);
+                    font-size: rem(13);
+                }
+
+                @include below($mobile) {
+                    font-size: rem(14);
                 }
             }
 
@@ -257,7 +273,7 @@
 		&.opened {
 			@include below($mobile) {
 				.catalogue__item-wrap {
-                    max-height: 100%;
+                    max-height: rem(500);
                 }
 			}
 		}

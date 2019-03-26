@@ -198,10 +198,12 @@ class PageController extends Controller
         ]);
     }
 
-    public function catalogue (City $city)
+    public function catalogue (City $city, CatalogType $type)
     {
         return view('windows.services.catalogue', [
-            'city'  =>  $city
+            'city'  =>  $city,
+            'type' => $type,
+            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first(),
         ]);
     }
 
@@ -343,10 +345,11 @@ class PageController extends Controller
     public function sitemap (Request $request) {
         $cities = City::all();
         $pages = [
-            'https://okna-ts.ru/#city#/services/facing' => 'Отделка',
             'https://okna-ts.ru/#city#/' =>  'Главная',
-            'https://okna-ts.ru/#city#/services/credit' =>  'Рассрочка',
-            'https://okna-ts.ru/#city#/catalogue' => 'Каталог',
+            'https://okna-ts.ru/#city#/catalogue/okna' => 'Каталог окон',
+            'https://okna-ts.ru/#city#/catalogue/dveri' => 'Каталог дверей',
+            'https://okna-ts.ru/#city#/catalogue/balkoni' => 'Каталог балконов',
+            'https://okna-ts.ru/#city#/catalogue/peregorodki' => 'Каталог перегородок',
             'https://okna-ts.ru/#city#/contacts' => 'Контакты',
             'https://okna-ts.ru/#city#/about' => 'О компании',
             'https://okna-ts.ru/#city#/employees' => 'Сотрудники',
@@ -362,6 +365,8 @@ class PageController extends Controller
             'https://okna-ts.ru/#city#/services/' => 'Услуги',
             'https://okna-ts.ru/#city#/services/install' =>  'Установка',
             'https//okna-ts.ru/#city#/services/delivery' =>  'Доставка',
+             'https://okna-ts.ru/#city#/services/credit' =>  'Рассрочка',
+            'https://okna-ts.ru/#city#/services/facing' => 'Отделка',
             'https://okna-ts.ru/#city#/services/measurements' =>  'Бесплатный замер',
             'https://okna-ts.ru/#city#/services/repair' => 'Ремонт'
         ];

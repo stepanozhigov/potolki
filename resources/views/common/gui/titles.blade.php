@@ -18,7 +18,7 @@
                 <img src="/img/arrow-down.svg" alt="">
             </button>
         @endif
-        @if (mb_strlen($intro) > 135)
+        @if (mb_strlen($intro) > 66)
             <button class="titles__arrow" type="button">
                 <img src="/img/arrow-down.svg" alt="">
             </button>

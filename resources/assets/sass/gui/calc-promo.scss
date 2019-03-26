@@ -4,8 +4,9 @@
     padding-top: rem(36);
 	margin-bottom: rem(90);
 
-    @media screen and (max-width: 800px) {
-        display: none;
+    @include below($mobile) {
+        flex-direction: column;
+        align-items: center;
     }
 
     &__titles {
@@ -15,8 +16,15 @@
         align-items: flex-start;
         z-index: 1;
 
+        @include below($mobile) {
+            width: 100%;
+            margin-right: 0;
+            justify-content: center;
+        }
+
 		.titles__second-title {
 			text-align: left;
+			margin-bottom: rem(40);
 
 			&::after {
 				left: 0;
@@ -25,16 +33,29 @@
 		}
     }
 
+    &__button {
+        @include below($mobile) {
+            margin: 0 auto;
+        }
+    }
+
     &__intro {
 		margin: 0;
-        margin-top: 30px;
-		margin-bottom: rem(48);
+
 		color: #808890;
 		font-family: $helvetica;
 		font-size: rem(16);
 		font-weight: 300;
 		line-height: 22px;
 		text-align: left;
+
+        &:not(:last-of-type) {
+            margin-bottom: rem(8);
+        }
+
+        &:last-of-type {
+            margin-bottom: rem(48);
+        }
     }
 
     &__footer {
@@ -45,5 +66,12 @@
 	img {
 		width: rem(380);
 		height: rem(360);
+
+        @include below($mobile) {
+            order: -1;
+            height: rem(208);
+            width: auto;
+            margin-bottom: rem(16);
+        }
 	}
 }

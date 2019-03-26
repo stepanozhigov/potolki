@@ -6,10 +6,11 @@
 
 
     <section class="catalogue">
+        <? $nameFormatted = mb_strtolower($type->name_formatted); ?>
         @include('common.gui.titles', [
             'class' =>  'container',
             'overtitle' =>  'каталог',
-            'title' =>  "Каталог пластиковых окон {$city->name_formatted}",
+            'title' =>  "Каталог пластиковых {$nameFormatted} {$city->name_formatted}",
             'intro' =>  "Для вашего удобства мы&nbsp;разделили профили на&nbsp;3&nbsp;категории: эконом, стандарт, премиум. Пластиковые окна и&nbsp;двери, остекление балконов и&nbsp;лоджий, перегородки&nbsp;&mdash; все эти профили подойдут вам."
         ])
         <div class="catalogue__content">
@@ -60,7 +61,7 @@
                                 <dd>10 лет</dd>
                             </dl>
                         </div>
-                        <p class="catalogue__item-price">3 900 ₽/м2</p>
+                        <p class="catalogue__item-price">3 900 ₽/м<sup>2</sup></p>
                     </div>
                 </article>
                 <article class="catalogue__item">
@@ -109,7 +110,7 @@
                                 <dd>25 лет</dd>
                             </dl>
                         </div>
-                        <p class="catalogue__item-price">4 700 ₽/м2</p>
+                        <p class="catalogue__item-price">4 700 ₽/м<sup>2</sup></p>
                     </div>
                 </article>
                 <article class="catalogue__item">
@@ -158,7 +159,7 @@
                                 <dd>30 лет</dd>
                             </dl>
                         </div>
-                        <p class="catalogue__item-price">5 500 ₽/м2</p>
+                        <p class="catalogue__item-price">5 500 ₽/м<sup>2</sup></p>
                     </div>
                 </article>
             </div>
@@ -198,8 +199,8 @@
         </section>
         <section class="facture">
             <div class="facture__content">
-                <h2 class="facture__title">Фактурная ламинация</h2>
-                <p class="facture__desc">Ламинирование фактурой — от 1500 ₽ за окно. Ещё больше фактурных <br> решений спрашивайте у наших <a class="js-show" data-src="#popup_callback" data-title="Вызов замерщика" href="javascript:void(0)">замерщиков</a></p>
+                <h2 class="facture__title">Фактурная ламинация</h2> 
+                <p class="facture__desc">Ламинирование фактурой — от 1500 ₽ за {{ mb_strtolower($type->name_solo) }}. Ещё больше фактурных <br> решений спрашивайте у наших <a class="js-show" data-src="#popup_callback" data-title="Вызов замерщика" href="javascript:void(0)">замерщиков</a></p>
                 <div class="facture__list">
                     <button class="facture__item active" type="button" name="facture">
                         <img src="/img/windows/facture_01.jpg" alt="">
@@ -217,7 +218,7 @@
                         <img src="/img/windows/facture_05.jpg" alt="">
                     </button>
                 </div>
-                <p class="facture__price">От 1 500 рублей за окно</p>
+                <p class="facture__price">От 1 500 рублей за {{ mb_strtolower($type->name_solo) }}</p>
             </div>
             <img class="facture__img active" src="/img/windows/lamination-anteak.png" alt="">
             <img class="facture__img" src="/img/windows/lamination-bergkiefer.png" alt="">
@@ -275,7 +276,7 @@
             <div class="whyus__stat">
                 <div class="whyus__stat-item">
                     <p class="whyus__stat-num">30</p>
-                    <p class="whyus__stat-text">лет гарантии <br>на окна</p>
+                    <p class="whyus__stat-text">лет гарантии <br>на {{ mb_strtolower($type->name) }}</p>
                 </div>
                 <div class="whyus__stat-item">
                     <p class="whyus__stat-num">3</p>

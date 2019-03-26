@@ -56,11 +56,11 @@
                 </a>
             </div>
         </div>
-        <nav class="footer__nav">
+        <nav class="footer__nav"> 
             <div class="nav-group footer__item">
                 <a href="javascript:void(0);" class="card-title footer__title js-open">Каталог</a>
-                <a href="{{ route('catalogue', ['city' => $city]) }}" class="red-hoverable subtext subtext_white nav-group__item">Балконы</a>
-                <a href="{{ route('catalogue', ['city' => $city]) }}" class="red-hoverable subtext subtext_white nav-group__item">Окна</a>
+                <a href="{{ route('catalogue', ['city' => $city, 'type' => 'balkoni']) }}" class="red-hoverable subtext subtext_white nav-group__item">Балконы</a>
+                <a href="{{ route('catalogue', ['city' => $city, 'type' => 'okna']) }}" class="red-hoverable subtext subtext_white nav-group__item">Окна</a>
                 <!--<a href="{{ route('calculator', ['city' => $city, 'type' => 'dveri']) }}" class="red-hoverable subtext subtext_white nav-group__item">Двери</a>
                 <a href="{{ route('calculator', ['city' => $city, 'type' => 'peregorodki']) }}" class="red-hoverable subtext subtext_white nav-group__item">Перегородки</a>
                 <a href="{{ route('calculator', ['city' => $city, 'type' => 'zhalyuzi']) }}" class="red-hoverable subtext subtext_white nav-group__item">Жалюзи</a>-->
