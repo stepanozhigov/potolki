@@ -6,6 +6,9 @@
             <div v-if="filtered.length > 0" class="search__result">
                 <a v-bind:href="'/'+city.code" v-for="city in filtered" class="button search__button">{{ city.name }}</a>
             </div>
+            <div v-if="filtered.length == 0" class="search__result">
+                <p class="text">К сожалению, ничего не найдено</p>
+            </div>
         </transition>
     </label>
 </template>
@@ -29,16 +32,11 @@
         props: ['cities'],
         computed: {
             filtered () {
-                if (this.search.length < 2) {
+                if (this.search.length < 1) {
                     return false
                 }
                 return this.cities.filter(city => city.name.toLowerCase().includes(this.search.toLowerCase()));
             }
-        },
-        mounted() {
-            console.log('Window calc Component mounted.')
-        },
-        methods: {
-        }        
+        }
     }
 </script>

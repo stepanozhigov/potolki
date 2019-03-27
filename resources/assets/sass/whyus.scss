@@ -417,6 +417,14 @@
 
 			@include below($mobile) {
 				margin-bottom: rem(24);
+
+				.intro {
+					max-height: none;
+				}
+
+				.titles__arrow {
+					display: none;
+				}
 			}
 		}
 	}

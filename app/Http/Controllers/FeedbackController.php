@@ -69,6 +69,19 @@ class FeedbackController extends Controller
         
     }
 
+    public function addLead(Request $request)
+    {
+        $bitrixConnector = new BitrixConnector();
+
+        $bitrixConnector->addLead([
+            'title' =>  $request->name,
+            'name'  =>  $request->name,
+            'phone' =>  $request->phone,
+            'city'  =>  '',
+            'source'    =>  'WEB'
+        ]);
+    }
+
     public function proxyLead(Request $request)
     {
         $bitrixConnector = new BitrixConnector;

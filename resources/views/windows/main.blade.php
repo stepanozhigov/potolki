@@ -96,7 +96,7 @@
         ])
 
         @foreach ($catalogTypes as $type)
-            <? if ($type->id == 5) continue ?> 
+            <? if ($type->id == 5) continue ?>
             <a href="{{ route('catalogue', ['city' => $city, 'type' => $type]) }}" class=" catalog-cards__item b-card is-hoverable">
                 <img src="{{ Storage::url($type->img) }}" alt="{{ $type->name }}" class="catalog-cards__img">
                 <div class="catalog-cards__item-info">
@@ -116,7 +116,7 @@
         </div>
     </section>
 
-    <section class="calc-promo container"> 
+	<section class="calc-promo container">
         <div class="calc-promo__titles">
             <h2 class="titles__second-title">Калькулятор стоимости</h2>
             <p class="intro calc-promo__intro">
@@ -162,7 +162,7 @@
         @include('common.gui.titles', [
             'class' =>  "container",
             'secondTitle' =>  "Социальные сети",
-            'intro' =>  "Нажмите на&nbsp;логотип социальной сети и&nbsp;посмотрите там полезную информацию."
+            'intro' =>  "Нажмите на&nbsp;логотип социальной сети и&nbsp;посмотрите полезную информацию."
         ])
         <div class="socials titles__socials container">
             <a href="" class="socials__item red-hoverable">
@@ -185,7 +185,7 @@
 
 
 
-       <a href="http://89.108.103.224/sochi/articles" class="articles__button">Все посты</a>
+       <a href="{{ route('articles', $city) }}" class="articles__button">Все посты</a>
 
     </section>
     <section class="manufacturers manufacturers_main container">

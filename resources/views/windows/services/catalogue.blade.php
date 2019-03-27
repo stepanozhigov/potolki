@@ -199,7 +199,7 @@
         </section>
         <section class="facture">
             <div class="facture__content">
-                <h2 class="facture__title">Фактурная ламинация</h2> 
+                <h2 class="facture__title">Фактурная ламинация</h2>
                 <p class="facture__desc">Ламинирование фактурой — от 1500 ₽ за {{ mb_strtolower($type->name_solo) }}. Ещё больше фактурных <br> решений спрашивайте у наших <a class="js-show" data-src="#popup_callback" data-title="Вызов замерщика" href="javascript:void(0)">замерщиков</a></p>
                 <div class="facture__list">
                     <button class="facture__item active" type="button" name="facture">
@@ -283,8 +283,8 @@
                     <p class="whyus__stat-text">часа занимает <br> установка</p>
                 </div>
                 <div class="whyus__stat-item">
-                    <p class="whyus__stat-num">397</p>
-                    <p class="whyus__stat-text">квадратных метров <br> устанавливаем за день</p>
+                    <p class="whyus__stat-num">790</p>
+                    <p class="whyus__stat-text">{{$nameFormatted}} устанавливаем <br> в месяц</p>
                 </div>
             </div>
         </section>

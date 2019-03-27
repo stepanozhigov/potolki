@@ -241,27 +241,29 @@ const disableBodyScroll = bodyScrollLock.disableBodyScroll;
 const enableBodyScroll = bodyScrollLock.enableBodyScroll;
 
 // 2. Get a target element that you want to persist scrolling for (such as a modal/lightbox/flyout/nav).
-const targetElement = document.querySelector("#mobileMenu");
-const targetElementTwo = document.querySelector("#fixedMobileMenu");
+
+
 
 $('.hamburger').on('click', function (e) {
-    $('.header__menu').addClass('menu_active');
+    $('.mobileMenu').addClass('active');
     $('body').addClass('no-scroll');
     $('.header__hamburger').removeClass('active');
     $('.header__close').addClass('active');
 
-
-    disableBodyScroll(targetElement);
-    disableBodyScroll(targetElementTwo);
+    $('.scrollable').each((index, domElement) => {
+        disableBodyScroll(domElement);
+    });
 });
 
 $('.header__close').on('click', function (e) {
-    $('.header__menu').removeClass('menu_active');
+    $('.mobileMenu').removeClass('active');
     $('body').removeClass('no-scroll');
     $('.header__hamburger').addClass('active');
     $('.header__close').removeClass('active');
-    enableBodyScroll(targetElement);
-    enableBodyScroll(targetElementTwo);
+
+    $('.scrollable').each((index, domElement) => {
+        enableBodyScroll(domElement);
+    });
 });
 
 $('.whyus__button').on('click', function () {
@@ -609,3 +611,14 @@ $('.form').on('submit', function (event) {
         }
     })
 })
+
+$('.mobileMenu__item_category').on('click', function () {
+    $('.mobileMenu__list').addClass('mobileMenu__list_category');
+    $(this).addClass('active');
+});
+
+$('.mobileMenu__link-prev').on('click', function (event) {
+    event.stopPropagation();
+    $('.mobileMenu__list').removeClass('mobileMenu__list_category');
+    $(this).closest('.mobileMenu__item_category').removeClass('active');
+});

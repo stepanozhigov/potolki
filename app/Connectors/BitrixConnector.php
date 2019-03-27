@@ -39,11 +39,11 @@ class BitrixConnector {
             'TITLE' =>  $data['title'],
             'NAME'  =>  $data['name'],
             'SOURCE_ID' =>  $data['source'] ?? '',
-            'PHONE_MOBILE' =>  $data['phone'],
-            'COMMENTS'   =>  $data['comment'],
-            'UF_CRM_1478533058' => $data['city'],
+            'PHONE_MOBILE' =>  $data['phone'] ?? '',
+            'COMMENTS'   =>  $data['comment'] ?? "",
+            'UF_CRM_1478533058' => $data['city'] ?? '',
             'ASSIGNED_BY_ID'    =>  551,
-            'UF_CRM_1467050632' =>  $data['direction']
+            'UF_CRM_1467050632' =>  $data['direction'] ?? ''
         ]);
 
         $result = \curl_exec($connection);

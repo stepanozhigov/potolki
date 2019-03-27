@@ -5,6 +5,7 @@
             <input v-model="search" type="text" placeholder="Поиск города" class="input search__input">
         </label>
         <a v-bind:href="'/'+city.code" :key="city.id" v-for="city in filtered" class="text dropdown__item dropdown__item_bordered red-hoverable">{{ city.name }}</a>
+        <a v-if="search.length > 0 && filtered.length == 0" class="text dropdown__item dropdown__item_bordered red-hoverable">К сожалению, ничего не найдено</a>
     </div>
 </template>
 
@@ -30,7 +31,7 @@
         props: ['cities'],
         computed: {
             filtered () {
-                if (this.search.length < 2) {
+                if (this.search.length < 1) {
                     return [];
                 }
 

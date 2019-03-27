@@ -57,8 +57,10 @@
 
         @media screen and (max-width: 650px){
             margin-left: auto;
-            height: rem(24);
-            padding: 0;
+            height: rem(30);
+            width: rem(22);
+            padding: rem(8);
+            padding-right: 0;
         }
     }
 
@@ -261,7 +263,10 @@
         @media screen and (max-width: 1024px){
             &.active {
                 display: flex;
-
+                padding: rem(8);
+                padding-right: 0;
+                width: rem(28);
+                height: rem(31);
             }
         }
         @media screen and (max-width: 650px){
@@ -284,6 +289,7 @@
         flex-direction: row;
         align-items: center;
 		animation: headerSticky .3s;
+        transition: left .3s ease-in-out;
 
         &.hidden {
             display: none;
@@ -330,6 +336,10 @@
             .header__hamburger {
                 &.active {
                     display: block;
+                    padding: rem(8);
+                    padding-right: 0;
+                    width: rem(28);
+                    height: rem(31);
                 }
             }
 
@@ -342,10 +352,7 @@
             }
 
             .header__hamburger {
-                width: rem(23);
-                height: rem(20);
-                margin: 0;
-                padding: 0;
+
                 align-self: center;
             }
 
@@ -363,8 +370,8 @@
 
             .header__close {
                 &.active {
-                    width: rem(23);
-                    height: rem(23);
+                    width: rem(14);
+                    height: rem(14);
                     margin: 0;
                     padding: 0;
                 }

@@ -41,7 +41,7 @@
 
     .socials {
         justify-content: center;
-        margin-bottom: rem(32);
+        margin-bottom: rem(48);
 
         .socials__item {
             margin-bottom: 0;
@@ -241,10 +241,14 @@
         .titles {
             padding: 0;
             margin: 0;
-            margin-bottom: rem(32);
+            margin-bottom: rem(16);
 
             @include below($mobile) {
-                margin-bottom: rem(48);
+                margin-bottom: rem(16);
+
+				.titles__arrow {
+					display: none;
+				}
             }
         }
 

@@ -24,7 +24,7 @@
         </div>
     </div>
     @if ($review->preview_img)
-        <div class="review__media b-card">
+        <div class="review__media {{ $review->video ? 'review__media_video':'' }} b-card">
             <img class="review__preview" src="{{ Storage::url($review->preview_img) }}" alt="">
         </div>
     @endif
@@ -46,7 +46,7 @@
             <p class="subtext review__text review__text_full">
                     {{ $review->text }}
             </p>
-            <div class="review__media review__media_popup">
+            <div class="review__media review__media_popup {{ $review->video ? 'review__media_video':'' }}">
                 @foreach ($review->photos() as $photo)
                     <img class="review__img" src="{{ Storage::url($photo) }}" alt="">
                 @endforeach

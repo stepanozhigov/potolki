@@ -21,9 +21,22 @@ p {
 }
 
 body {
+    position: relative;
+    right: 0;
+    transition: right .3s ease-in-out;
     &.no-scroll {
+		right: calc(100vw - 48px);
 
+        .header_sticky {
+            background-color: rgba(0, 0, 0, 0.6);
+            left: calc(-100vw + 48px);
 
+            .header__phone,
+            .header__whatsapp {
+                opacity: 0;
+            }
+
+        }
 
 
         @media screen and (max-width: 1024px) {
@@ -309,7 +322,7 @@ body {
         color: #a5aaaf;
         font-family: $futura;
         font-size: 16px;
-        font-weight: 300;
+        font-weight: 400;
         text-transform: uppercase;
         letter-spacing: 2px;
         margin: 28px 0 15px 23px;
@@ -1819,6 +1832,7 @@ body {
     width: 780px;
     margin: 0 auto;
     padding-top: 20px;
+    padding-bottom: rem(80);
 
     &__title {
         color: $grey_abbey;

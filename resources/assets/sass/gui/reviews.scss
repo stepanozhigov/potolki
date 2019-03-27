@@ -59,14 +59,12 @@
 			}
 		}
     }
-    &__add {
-        margin: 20px auto 0 auto;
-    }
+
     &__item {
         width: calc(33.3% - 20px);
         margin: 0 rem(10);
         margin-top: rem(60);
-        margin-bottom: 24px;
+        margin-bottom: rem(64);
 
         @media screen and (max-width: 1024px) {
             width: calc(50% - 20px);
@@ -109,7 +107,8 @@
     }
     &__paginator {
         flex-basis: 100%;
-        margin-top: 50px;
+        margin-top: rem(-16);
+        margin-bottom: rem(48);
     }
 
     @media screen and (max-width: 1024px) {

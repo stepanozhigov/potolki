@@ -26,9 +26,20 @@
 			text-align: left;
 			margin-bottom: rem(40);
 
+            @include below($mobile) {
+                text-align: center;
+            }
+
 			&::after {
+                width: rem(140);
 				left: 0;
 				transform: none;
+
+                @include below($mobile) {
+                    width: rem(80);
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
 			}
 		}
     }
@@ -55,6 +66,10 @@
 
         &:last-of-type {
             margin-bottom: rem(48);
+        }
+
+        @include below($mobile) {
+            text-align: center;
         }
     }
 

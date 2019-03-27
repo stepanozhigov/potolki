@@ -13956,26 +13956,28 @@ var disableBodyScroll = bodyScrollLock.disableBodyScroll;
 var enableBodyScroll = bodyScrollLock.enableBodyScroll;
 
 // 2. Get a target element that you want to persist scrolling for (such as a modal/lightbox/flyout/nav).
-var targetElement = document.querySelector("#mobileMenu");
-var targetElementTwo = document.querySelector("#fixedMobileMenu");
+
 
 $('.hamburger').on('click', function (e) {
-    $('.header__menu').addClass('menu_active');
+    $('.mobileMenu').addClass('active');
     $('body').addClass('no-scroll');
     $('.header__hamburger').removeClass('active');
     $('.header__close').addClass('active');
 
-    disableBodyScroll(targetElement);
-    disableBodyScroll(targetElementTwo);
+    $('.scrollable').each(function (index, domElement) {
+        disableBodyScroll(domElement);
+    });
 });
 
 $('.header__close').on('click', function (e) {
-    $('.header__menu').removeClass('menu_active');
+    $('.mobileMenu').removeClass('active');
     $('body').removeClass('no-scroll');
     $('.header__hamburger').addClass('active');
     $('.header__close').removeClass('active');
-    enableBodyScroll(targetElement);
-    enableBodyScroll(targetElementTwo);
+
+    $('.scrollable').each(function (index, domElement) {
+        enableBodyScroll(domElement);
+    });
 });
 
 $('.whyus__button').on('click', function () {
@@ -14288,6 +14290,17 @@ $('.form').on('submit', function (event) {
             $this.find('input').prop('disabled', true);
         }
     });
+});
+
+$('.mobileMenu__item_category').on('click', function () {
+    $('.mobileMenu__list').addClass('mobileMenu__list_category');
+    $(this).addClass('active');
+});
+
+$('.mobileMenu__link-prev').on('click', function (event) {
+    event.stopPropagation();
+    $('.mobileMenu__list').removeClass('mobileMenu__list_category');
+    $(this).closest('.mobileMenu__item_category').removeClass('active');
 });
 
 /***/ }),
@@ -37048,6 +37061,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -37060,19 +37076,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         filtered: function filtered() {
             var _this = this;
 
-            if (this.search.length < 2) {
+            if (this.search.length < 1) {
                 return false;
             }
             return this.cities.filter(function (city) {
                 return city.name.toLowerCase().includes(_this.search.toLowerCase());
             });
         }
-    },
-    mounted: function mounted() {
-        console.log('Window calc Component mounted.');
-    },
-
-    methods: {}
+    }
 });
 
 /***/ }),
@@ -37130,6 +37141,14 @@ var render = function() {
                 )
               })
             )
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.filtered.length == 0
+          ? _c("div", { staticClass: "search__result" }, [
+              _c("p", { staticClass: "text" }, [
+                _vm._v("К сожалению, ничего не найдено")
+              ])
+            ])
           : _vm._e()
       ])
     ],
@@ -42071,9 +42090,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
 
 Vue.component('post', __webpack_require__(8));
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -42465,7 +42481,24 @@ var render = function() {
           })
         ),
         _vm._v(" "),
-        _vm._m(0)
+        _c(
+          "div",
+          { staticClass: "articles__slider-dots" },
+          _vm._l(_vm.posts, function(post, position) {
+            return _c("button", {
+              key: post.id,
+              class: [
+                "articles__slider-dot",
+                position == _vm.showPoint ? "active" : ""
+              ],
+              on: {
+                click: function($event) {
+                  _vm.showPoint = position
+                }
+              }
+            })
+          })
+        )
       ],
       1
     ),
@@ -42555,22 +42588,7 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "articles__slider-dots" }, [
-      _c("button", { staticClass: "articles__slider-dot" }),
-      _vm._v(" "),
-      _c("button", { staticClass: "articles__slider-dot active" }),
-      _vm._v(" "),
-      _c("button", { staticClass: "articles__slider-dot" }),
-      _vm._v(" "),
-      _c("button", { staticClass: "articles__slider-dot" })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -43243,6 +43261,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -43256,7 +43275,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         filtered: function filtered() {
             var _this = this;
 
-            if (this.search.length < 2) {
+            if (this.search.length < 1) {
                 return [];
             }
 
@@ -43328,7 +43347,18 @@ var render = function() {
           },
           [_vm._v(_vm._s(city.name))]
         )
-      })
+      }),
+      _vm._v(" "),
+      _vm.search.length > 0 && _vm.filtered.length == 0
+        ? _c(
+            "a",
+            {
+              staticClass:
+                "text dropdown__item dropdown__item_bordered red-hoverable"
+            },
+            [_vm._v("К сожалению, ничего не найдено")]
+          )
+        : _vm._e()
     ],
     2
   )

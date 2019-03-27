@@ -80,6 +80,7 @@
         margin-bottom: 40px;
         text-align: left;
         color: $white;
+		hyphens: none;
 
         @include below($tablet) {
             font-family: $futura;
@@ -90,6 +91,7 @@
         @include below($mobile) {
             padding: 0 40px;
             text-align: center;
+			font-weight: 300;
         }
     }
 

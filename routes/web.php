@@ -34,6 +34,7 @@ Route::get('/sitemap', 'PageController@sitemap')->name('sitemap');
 Route::get('/forms/callback', 'PageController@callback');
 Route::post('/forms/add-comment', 'FeedbackController@addComment');
 Route::post('/forms/add-review', 'FeedbackController@addReview');
+Route::post('/forms/add-lead', 'FeedbackController@addLead')->name('add-lead');
 Route::post('/forms/proxy-lead', 'FeedbackController@proxyLead');
 Route::post('/forms/search-phone', 'FeedbackController@searchPhoneInMessage');
 

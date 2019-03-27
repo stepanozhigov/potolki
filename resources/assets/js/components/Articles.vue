@@ -5,10 +5,7 @@
                 <post v-touch:swipe.left="offsetShowPoint" v-touch:swipe.right="offsetBackShowPoint" v-for="post in showedItems" :key="post.id" :post="post"></post>
             </transition-group>
             <div class="articles__slider-dots">
-            	<button class="articles__slider-dot"></button>
-            	<button class="articles__slider-dot active"></button>
-            	<button class="articles__slider-dot"></button>
-            	<button class="articles__slider-dot"></button>
+                <button @click="showPoint = position" v-for="(post, position) in posts" :key="post.id" v-bind:class="['articles__slider-dot', position == showPoint ? 'active' : '']"></button>
             </div>
         </div>
 		<button @click="offsetShowPoint(true)" class="articles__slide articles__prev">
