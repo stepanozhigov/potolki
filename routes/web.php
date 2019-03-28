@@ -29,7 +29,7 @@ Route::get('/err-handler', function() {
     ]);
 });
 
-Route::get('/sitemap', 'PageController@sitemap')->name('sitemap'); 
+Route::get('/sitemap', 'PageController@sitemap')->name('sitemap');
 
 Route::get('/forms/callback', 'PageController@callback');
 Route::post('/forms/add-comment', 'FeedbackController@addComment');
@@ -74,7 +74,7 @@ Route::prefix('/{city}')->group(function () {
 
     Route::get('/agreement', 'PageController@agreement')->name('agreement');
 
-    Route::get('/catalogue/{type}', 'PageController@catalogue')->name('catalogue'); 
+    Route::get('/catalogue/{type}', 'PageController@catalogue')->name('catalogue');
 
     Route::get('/ceilings', 'PageController@ceilings')->name('ceilings');
 

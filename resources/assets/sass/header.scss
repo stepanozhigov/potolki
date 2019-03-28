@@ -31,7 +31,7 @@
         display: flex;
         align-items: center;
 
-        @media screen and (max-width: 1024px){
+        @include below($tablet){
             padding-top: 35px;
         }
         @media screen and (max-width: 650px){
@@ -48,19 +48,15 @@
         margin-left: auto;
         padding-bottom: rem(25);
         z-index: 3;
+        height: rem(30);
+        width: rem(22);
+        padding: rem(8);
+        padding-right: 0;
 
-        @media screen and (max-width: 1024px) {
+        @include below($tablet) {
             &.active {
                 display: block;
             }
-        }
-
-        @media screen and (max-width: 650px){
-            margin-left: auto;
-            height: rem(30);
-            width: rem(22);
-            padding: rem(8);
-            padding-right: 0;
         }
     }
 
@@ -116,13 +112,13 @@
             }
         }
 
-        @media screen and (max-width: 1024px){
+        @include below($tablet){
             width: initial;
         }
     }
 
     &__menu {
-        flex-basis: 52.7%;
+        flex-basis: 65%;
         margin-left: auto;
 
     }
@@ -260,7 +256,7 @@
         padding-bottom: rem(25);
         z-index: 3;
 
-        @media screen and (max-width: 1024px){
+        @include below($tablet) {
             &.active {
                 display: flex;
                 padding: rem(8);

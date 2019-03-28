@@ -1,6 +1,7 @@
 .mobileMenu {
     position: fixed;
     top: 0;
+	opacity: 0;
     right: calc(-100vw + 48px);
     display: аflex;
     flex-direction: column;
@@ -11,6 +12,7 @@
     z-index: 9999999;
 
     &.active {
+		opacity: 1;
         right: 0;
     }
 

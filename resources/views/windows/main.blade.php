@@ -197,31 +197,35 @@
         <div id="manufacturers__list"></div>
 
     </section>
-    <section class="seo-block" @if($seoData->background_image) style="background-image: url({{ Storage::url($seoData->background_image) }})" @endif>
-        <div class="seo-block__content container">
-            <div class="seo-block__list">
-                <div class="seo-block__item">
+    <section class="seo-block seo-block_main" @if($seoData->background_image) style="background-image: url({{ Storage::url($seoData->background_image) }})" @endif>
+        <div class="seo-block__content">
+			<div class="seo-block__item seo-block__item_numbered">
+                <div class="seo-block__item-text">
                     <h3 class="seo-block__item-title">{!! str_replace('#city_title#', $city->name_formatted, $seoData->first_title) !!}</h3>
-                    {!! $seoData->first_text !!}
-                    @if ($seoData->firm_img)
-                        <img src="{{ Storage::url($seoData->firm_img) }}" alt="" class="seo-block__img">
-                    @endif
+    				{!! $seoData->first_text !!}
                 </div>
-                <div class="seo-block__item seo-block__item_reverse">
+				@if ($seoData->firm_img)
+					<img src="{{ Storage::url($seoData->firm_img) }}" alt="" class="seo-block__item-img">
+				@endif
+			</div>
+			<div class="seo-block__item seo-block__item_numbered seo-block__item_reverse">
+                <div class="seo-block__item-text">
                     <h3 class="seo-block__item-title">{{ $seoData->second_title }}</h3>
-                    {!! $seoData->second_text !!}
-                    @if ($seoData->second_img)
-                        <img src="{{ Storage::url($seoData->second_img) }}" alt="" class="seo-block__img">
-                    @endif
+    				{!! $seoData->second_text !!}
                 </div>
-                <div class="seo-block__item">
+				@if ($seoData->second_img)
+					<img src="{{ Storage::url($seoData->second_img) }}" alt="" class="seo-block__item-img">
+				@endif
+			</div>
+			<div class="seo-block__item seo-block__item_numbered">
+                <div class="seo-block__item-text">
                     <h3 class="seo-block__item-title">{{ $seoData->third_title }}</h3>
-                    {!! $seoData->third_text !!}
-                    @if ($seoData->third_img)
-                        <img src="{{ Storage::url($seoData->third_img) }}" alt="" class="seo-block__img">
-                    @endif
+    				{!! $seoData->third_text !!}
                 </div>
-            </div>
+				@if ($seoData->third_img)
+					<img src="{{ Storage::url($seoData->third_img) }}" alt="" class="seo-block__item-img">
+				@endif
+			</div>
         </div>
     </section>
     <section class="additional container">
@@ -234,14 +238,14 @@
                     Наш технолог произведет <br> замер и&nbsp;расчет стоимости заказа <br> в&nbsp;удобное&nbsp;для&nbsp;вас&nbsp;время.
                 </p>
             </a>
-            <a href="javascript:void(0);" class="additional__item">
+            <a href="{{ route('services', [request()->route()->city, 'deal']) }}" class="additional__item">
                 <img src="/img/windows/home_deal.png" alt="" width="201" height="166" class="additional__img">
                 <h3 class="additional__title">Договор на дому</h3>
                 <p class="text additional__text">
                     Для вашего удобства замерный <br> мастер  может заключить договор&nbsp;у&nbsp;вас&nbsp;дома.
                 </p>
             </a>
-            <a href="javascript:void(0);" class="additional__item">
+            <a href="{{ route('credit', request()->route()->city) }}" class="additional__item">
                 <img src="/img/windows/additional__percent.png" alt="" width="205" height="134" class="additional__img">
                 <h3 class="additional__title">Рассрочка до 3х лет</h3>
                 <p class="text additional__text">

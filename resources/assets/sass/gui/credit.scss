@@ -30,14 +30,17 @@
 		justify-content: space-between;
 		padding-bottom: 64px;
 		flex-wrap: wrap;
+		overflow: hidden;
 
 		&__item {
-		   width: 117%;
+			display: flex;
+			align-items: center;
+			width: 17%;
 
-		   img {
+			&-image {
 			   width: 100%;
 			   object-fit: scale-down;
-		   }
+			}
 		}
 	}
 }

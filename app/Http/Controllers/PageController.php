@@ -336,7 +336,7 @@ class PageController extends Controller
 
     public function credit (City $city)
     {
-        return view('ceilings.credit', [
+        return view('common.pages.credit', [
             'city'  =>  $city,
 			'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
@@ -373,7 +373,7 @@ class PageController extends Controller
 
         return view('common.sitemap', [
             'cities'    =>  $cities,
-            'pages' =>  $pages 
+            'pages' =>  $pages
         ]);
     }
 

@@ -47,13 +47,13 @@
 	    height: rem(450);
 		margin: 0;
 	    margin-bottom: rem(63);
-	    background: url('/img/factory.jpg');
+	    background-image: url('/img/factory.jpg');
 	    background-position: bottom;
 	    background-size: cover;
 
 		@media (min-resolution: 144dpi),
 		(min-resolution: 1.5dppx) {
-			background: url('/img/factory@2x.jpg');
+			background-image: url('/img/factory@2x.png');
 		}
 
 		@include below($tablet) {

@@ -13708,7 +13708,7 @@ module.exports = Component.exports
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(10);
-module.exports = __webpack_require__(112);
+module.exports = __webpack_require__(117);
 
 
 /***/ }),
@@ -13765,7 +13765,8 @@ Vue.component('zhalyuzi-calc', __webpack_require__(86));
 Vue.component('posts', __webpack_require__(91));
 Vue.component('posts-list', __webpack_require__(98));
 Vue.component('manufacturers', __webpack_require__(101));
-Vue.component('menu-city-search', __webpack_require__(106));
+Vue.component('banks', __webpack_require__(106));
+Vue.component('menu-city-search', __webpack_require__(111));
 
 $(document).on('scroll', function () {
     var scrollPosition = $(window).scrollTop(),
@@ -13800,6 +13801,15 @@ if (manufacturers.length > 0) {
     new Vue({
         el: '#manufacturers__list',
         template: '<manufacturers></manufacturers>'
+    });
+}
+
+var banks = $('#credit__banks-list');
+
+if (banks.length > 0) {
+    new Vue({
+        el: '#credit__banks-list',
+        template: '<banks></banks>'
     });
 }
 
@@ -13952,7 +13962,7 @@ $('.survey__yes').on('click', function () {
     $('.survey__thankyou').slideDown();
 });
 
-var bodyScrollLock = __webpack_require__(111);
+var bodyScrollLock = __webpack_require__(116);
 var disableBodyScroll = bodyScrollLock.disableBodyScroll;
 var enableBodyScroll = bodyScrollLock.enableBodyScroll;
 
@@ -43270,6 +43280,303 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
+Component.options.__file = "resources/assets/js/components/banksCarousel.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-7bf437a0", Component.options)
+  } else {
+    hotAPI.reload("data-v-7bf437a0", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 107 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(108);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("73670823", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7bf437a0\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./banksCarousel.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7bf437a0\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./banksCarousel.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 108 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.banks__item {\r\n    -webkit-transition: all 1s;\r\n    transition: all 1s;\n}\n.list-enter {\r\n     opacity: 0;\r\n     -webkit-transform: translateX(250px);\r\n             transform: translateX(250px);\n}\n.list-leave-active {\r\n    opacity: 0;\r\n    position: absolute;\r\n    -webkit-transform: translateX(-250px);\r\n            transform: translateX(-250px);\n}\r\n\r\n\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 109 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            showCount: 5,
+            showPoint: 0,
+            interval: 0,
+            currentPhotoIndex: 0,
+            banks: [{ 'id': 0, 'img': '/img/banks/credit_alfa.png' }, { 'id': 1, 'img': '/img/banks/credit_globex.png' }, { 'id': 2, 'img': '/img/banks/credit_otkrytie.png' }, { 'id': 3, 'img': '/img/banks/credit_otp.png' }, { 'id': 4, 'img': '/img/banks/credit_otpcredit_tinkoff.png' }]
+        };
+    },
+    computed: {
+        showedItems: function showedItems() {
+            var itemsCount = this.banks.length,
+                index = this.showPoint,
+                items = [];
+
+            while (items.length < this.showCount) {
+                if (!this.banks[index]) {
+                    index = 0;
+                }
+                items.push(this.banks[index]);
+
+                index++;
+            }
+
+            return items;
+        }
+    },
+    methods: {
+        nextItem: function nextItem() {
+            this.currentPhotoIndex++;
+
+            if (!this.showedItems[this.currentPhotoIndex]) {
+                this.currentPhotoIndex = 0;
+            }
+        },
+        prevItem: function prevItem() {
+            this.currentPhotoIndex--;
+
+            if (!this.showedItems[this.currentPhotoIndex]) {
+                this.currentPhotoIndex = this.showedItems.length - 1;
+            }
+        },
+        offsetShowPoint: function offsetShowPoint() {
+            var stop = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+
+            if (stop) {
+                this.stopSliding();
+            }
+
+            var itemsCount = this.banks.length;
+
+            this.showPoint++;
+
+            if (this.showPoint == itemsCount) {
+                this.showPoint = 0;
+            }
+        },
+        offsetBackShowPoint: function offsetBackShowPoint() {
+            var stop = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+
+            if (stop) {
+                this.stopSliding();
+            }
+
+            var itemsCount = this.banks.length;
+
+            this.showPoint--;
+
+            if (this.showPoint <= 0) {
+                this.showPoint = itemsCount;
+            }
+        },
+        startSliding: function startSliding() {
+            this.interval = setInterval(this.offsetShowPoint, 3000);
+        },
+        stopSliding: function stopSliding() {
+            clearInterval(this.interval);
+        }
+    },
+    mounted: function mounted() {
+        console.log(34234);
+        this.startSliding();
+        var width = $(document).width();
+
+        if (width <= 1280) {
+            this.showCount = 3;
+        }
+        if (width <= 719) {
+            this.showCount = 1;
+        }
+    }
+});
+
+/***/ }),
+/* 110 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm.showCount < 5
+    ? _c(
+        "transition-group",
+        { staticClass: " banks", attrs: { name: "list", tag: "div" } },
+        _vm._l(_vm.showedItems, function(bank) {
+          return _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "touch",
+                  rawName: "v-touch:swipe",
+                  value: _vm.offsetShowPoint,
+                  expression: "offsetShowPoint",
+                  arg: "swipe"
+                }
+              ],
+              key: bank.id,
+              staticClass: "banks__item"
+            },
+            [
+              _c("img", {
+                staticClass: "banks__item-image",
+                attrs: { src: bank.img, alt: "" }
+              })
+            ]
+          )
+        })
+      )
+    : _c(
+        "div",
+        { staticClass: "banks" },
+        _vm._l(_vm.banks, function(bank) {
+          return _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "touch",
+                  rawName: "v-touch:swipe",
+                  value: _vm.offsetShowPoint,
+                  expression: "offsetShowPoint",
+                  arg: "swipe"
+                }
+              ],
+              key: bank.id,
+              staticClass: "banks__item"
+            },
+            [
+              _c("img", {
+                staticClass: "banks__item-image",
+                attrs: { src: bank.img, alt: "" }
+              })
+            ]
+          )
+        })
+      )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-7bf437a0", module.exports)
+  }
+}
+
+/***/ }),
+/* 111 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(112)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(114)
+/* template */
+var __vue_template__ = __webpack_require__(115)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
 Component.options.__file = "resources/assets/js/components/MenuCitySearch.vue"
 
 /* hot reload */
@@ -43292,13 +43599,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 107 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(108);
+var content = __webpack_require__(113);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -43318,7 +43625,7 @@ if(false) {
 }
 
 /***/ }),
-/* 108 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(false);
@@ -43332,7 +43639,7 @@ exports.push([module.i, "\n.fade-enter-active, .fade-leave-active {\n  -webkit-t
 
 
 /***/ }),
-/* 109 */
+/* 114 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -43391,7 +43698,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 110 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -43469,7 +43776,7 @@ if (false) {
 }
 
 /***/ }),
-/* 111 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!function(e,t){if(true)!(__WEBPACK_AMD_DEFINE_ARRAY__ = [exports], __WEBPACK_AMD_DEFINE_FACTORY__ = (t),
@@ -43479,7 +43786,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 
 /***/ }),
-/* 112 */
+/* 117 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

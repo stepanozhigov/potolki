@@ -94,6 +94,10 @@
         font-family: "Helvetica Neue";
         font-size: 12px;
         font-weight: 300;
+
+        a {
+            color: #a7aaad;
+        }
     }
     &__button {
         width: 49%;;
@@ -144,6 +148,14 @@
             right: -450px;
             z-index: -1;
         }
+
+        &_deal {
+            width: rem(533);
+            height: rem(560);
+            right: rem(47);
+            z-index: -1;
+        }
+
         &_small {
             width: 37%;
             top: 50%;
@@ -156,7 +168,8 @@
         }
     }
 
-	&_measure {
+	&_measure,
+	&_deal {
         overflow: hidden;
         padding-bottom: rem(80);
 
@@ -285,4 +298,35 @@
             }
         }
 	}
+
+    &_deal {
+        .service__img_deal {
+            width: rem(533);
+            height: rem(560);
+            right: rem(47);
+            z-index: -1;
+
+            @include below($tablet) {
+                right: rem(-130);
+            }
+        }
+
+        .service__titles,
+        .service__form {
+            width: rem(380);
+
+            @include below($mobile) {
+                width: 100%;
+            }
+
+        }
+
+        .service__heading  {
+            padding-left: rem(180);
+
+            @include below($tablet) {
+                padding-left: 0;
+            }
+        }
+    }
 }

@@ -44,6 +44,7 @@ Vue.component('zhalyuzi-calc', require('./components/Zhalyuzi.vue'));
 Vue.component('posts', require('./components/Articles.vue'));
 Vue.component('posts-list', require('./components/ArticlesList.vue'));
 Vue.component('manufacturers', require('./components/ManufacturersCarousel.vue'));
+Vue.component('banks', require('./components/banksCarousel.vue'));
 Vue.component('menu-city-search', require('./components/MenuCitySearch.vue'));
 
 
@@ -67,7 +68,7 @@ if (menuCities.length > 0) {
     })
 }
 
-    
+
 
 
 
@@ -85,6 +86,15 @@ if (manufacturers.length > 0) {
     new Vue({
         el: '#manufacturers__list',
         template: '<manufacturers></manufacturers>'
+    })
+}
+
+const banks = $('#credit__banks-list');
+
+if (banks.length > 0) {
+    new Vue({
+        el: '#credit__banks-list',
+        template: '<banks></banks>'
     })
 }
 
