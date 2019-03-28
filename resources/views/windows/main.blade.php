@@ -129,7 +129,9 @@
 
     <section class="portfolio portfolio_main b-texture b-texture_square">
         @include('common.gui.titles', ['secondTitle' => 'Примеры наших работ'])
+
         <div class="portfolio__carousel" id="portfolio__carousel" data-photos="{{ $photos }}">
+
             @foreach ($photos as $photo)
                 <a class="case b-card portfolio__item portfolio__item_slide">
                     <p class="case__totals">{{ $photo->price }}  ₽ / {{ $photo->area }} м<sup>2</sup></p>
@@ -146,8 +148,8 @@
 
     <section class="reviews reviews_main container">
         @include('common.gui.titles', ['secondTitle' => 'Отзывы наших клиентов'])
-
-        <div class="reviews__content">
+        <Reviews></Reviews>
+        <div class="reviews__content" id="reviews">
             @foreach($reviews as $review)
                 @include('common.gui.review', $review)
             @endforeach
@@ -225,34 +227,34 @@
     <section class="additional container">
         @include('common.gui.titles', ['secondTitle' => 'Также вас может заинтересовать'])
         <div class="additional__list">
-            <div class="additional__item">
+            <a href="{{ route('services', [request()->route()->city, 'measurements']) }}" class="additional__item">
                 <img src="/img/windows/free_measure.png" alt="" width="201" height="166" class="additional__img">
                 <h3 class="additional__title">Бесплатный замер</h3>
                 <p class="text additional__text">
                     Наш технолог произведет <br> замер и&nbsp;расчет стоимости заказа <br> в&nbsp;удобное&nbsp;для&nbsp;вас&nbsp;время.
                 </p>
-            </div>
-            <div class="additional__item">
+            </a>
+            <a href="javascript:void(0);" class="additional__item">
                 <img src="/img/windows/home_deal.png" alt="" width="201" height="166" class="additional__img">
                 <h3 class="additional__title">Договор на дому</h3>
                 <p class="text additional__text">
                     Для вашего удобства замерный <br> мастер  может заключить договор&nbsp;у&nbsp;вас&nbsp;дома.
                 </p>
-            </div>
-            <div class="additional__item">
+            </a>
+            <a href="javascript:void(0);" class="additional__item">
                 <img src="/img/windows/additional__percent.png" alt="" width="205" height="134" class="additional__img">
                 <h3 class="additional__title">Рассрочка до 3х лет</h3>
                 <p class="text additional__text">
                     Беспроцентная рассрочка даёт <br> возможность установить окна, даже если <br> нет необходимой&nbsp;суммы.
                 </p>
-            </div>
-            <div class="additional__item">
+            </a>
+            <a href="javascript:void(0);" class="additional__item">
                 <img src="/img/windows/additional__zhaluzi.png" alt="" width="201" height="166" class="additional__img">
                 <h3 class="additional__title">Жалюзи</h3>
                 <p class="text additional__text">
                     Лучшее решение для оформления оконного <br> пространства. Смотрится красиво&nbsp;и&nbsp;современно.
                 </p>
-            </div>
+            </a>
         </div>
     </section>
     @include('common.gui.survey')

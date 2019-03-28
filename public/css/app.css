@@ -15105,6 +15105,7 @@ body.no-scroll .header_sticky .header__whatsapp {
   margin: 0 0.625rem;
   border-radius: 8px;
   background-color: #f4f6f8;
+  text-decoration: none;
 }
 
 @media screen and (max-width: 79.9375rem) {

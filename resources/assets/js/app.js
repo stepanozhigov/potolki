@@ -25,6 +25,7 @@ require('./components/popup');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+Vue.component('reviews', require('./components/Reviews.vue'));
 Vue.component('window-calc', require('./components/WindowCalc.vue'));
 Vue.component('balcony-calc', require('./components/BalkonyCalc.vue'));
 Vue.component('simple-slider', require('./components/simpleSlider.vue'));
@@ -65,6 +66,10 @@ if (menuCities.length > 0) {
         el: '.header__offices'
     })
 }
+
+    
+
+
 
 const articles = $('#articles');
 
