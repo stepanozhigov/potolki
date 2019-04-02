@@ -155,6 +155,7 @@
 
 		@include below($mobile) {
 			font-size: rem(18);
+			line-height: rem(26);
 		}
 
 		a {

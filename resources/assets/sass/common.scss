@@ -1083,6 +1083,107 @@ body {
 
 
 
+    &__status-send {
+        max-width: rem(400);
+        display: none;
+        flex-direction: column;
+        padding: rem(40);
+        padding-bottom: rem(70);
+
+        .popup__send-title {
+            position: relative;
+            @extend .card-title;
+            margin: 0;
+            margin-bottom: rem(32);
+            padding-bottom: rem(24);
+            text-align: center;
+
+            &::after {
+                position: absolute;
+                content: '';
+                bottom: 0;
+                left: 50%;
+                width: rem(140);
+                height: rem(1);
+                transform: translateX(-50%);
+                background-color: #babec2;
+            }
+        }
+
+        .socials {
+            position: relative;
+            padding-bottom: rem(48);
+            margin-bottom: rem(24);
+            justify-content: center;
+
+            &__item {
+                &:not(:last-of-type) {
+                    margin-right: rem(16);
+                }
+                margin-bottom: 0;
+            }
+
+            &::after {
+                position: absolute;
+                content: '';
+                bottom: 0;
+                left: 50%;
+                width: rem(140);
+                height: rem(1);
+                transform: translateX(-50%);
+                background-color: #babec2;
+            }
+        }
+
+        .survey  {
+            width: 100%;
+            margin-bottom: 0;
+
+            &__textarea {
+                width: 100%;
+            }
+
+            &__title {
+                @extend .text;
+                font-size: rem(16);
+                line-height: 24px;
+                margin-bottom: rem(24);
+            }
+
+            &__form {
+                width: 100%;
+
+                .button {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    &_status-send {
+        height: auto!important;
+
+        .popup__agreement,
+        .popup__button,
+        .popup__input,
+        .popup__intro,
+        .popup__line,
+        .popup__title,
+        .popup__form {
+            display: none;
+        }
+
+        .popup__send {
+            display: flex;
+
+            .popup__intro {
+                display: inline;
+                font-size: rem(16);
+                line-height: 24px;
+            }
+        }
+    }
+
 	&__textarea {
 		width: 100%;
 		height: 180px;
@@ -1115,9 +1216,9 @@ body {
     }
 
     &__form {
-        width: 90%;
-        max-width: 360px;
-        margin: 64px 48px 72px 48px;
+        max-width: rem(400);
+        padding: rem(40);
+        padding-bottom: rem(48);
         display: block;
 
         @media screen and (max-width: 650px) {
@@ -1130,10 +1231,24 @@ body {
     }
 
     &__title {
+        position: relative;
         font-weight: normal;
         color: #50555f;
         font-size: 29px;
         letter-spacing: 3px;
+        padding-bottom: rem(24);
+        margin-bottom: rem(32);
+
+        &::after {
+            position: absolute;
+            content: '';
+            bottom: 0;
+            left: 50%;
+            width: rem(140);
+            height: rem(1);
+            transform: translateX(-50%);
+            background-color: #babec2;
+        }
     }
 
     &__line {
@@ -1141,32 +1256,40 @@ body {
     }
 
     &__intro {
-        line-height: initial;
-        color: $grey_dove;
-        font-size: 18px;
+        line-height: rem(24);
+        color: #485058;
+        font-size: rem(16);
         font-weight: 300;
-        margin-bottom: 30px;
+        margin-bottom: rem(24);
 
     }
 
     &__input {
-        margin-bottom: 20px;
         width: 100%;
+        height: rem(48);
+
+        &:not(:last-of-type) {
+            margin-bottom: rem(16);
+        }
+
+        &:last-of-type {
+            margin-bottom: rem(32);
+        }
     }
 
     &__button {
-        margin: 20px auto 0 auto;
+        margin: 0;
         width: 100%;
+        margin-bottom: rem(16);
     }
 
     &__agreement {
-        color: #787d82;
-        font-size: 12px;
+        color: #485058;
+        font-size: rem(12);
         font-weight: 300;
-        margin-top: 20px;
         text-align: center;
-        margin: 20px auto 0 auto;
-        line-height: 16px;
+        margin: 0;
+        line-height: rem(20);
     }
 
 

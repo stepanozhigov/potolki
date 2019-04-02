@@ -1,11 +1,31 @@
 <form action="{{ route('add-lead') }}" method="POST" class="form popup__form">
 	@csrf
     <p class="overtitle popup__title">Заказать звонок</p>
-    <hr class="line popup__line">
     <p class="intro popup__intro">Оставьте ваши данные и специалист свяжется с вами <span class="intro_red">в&nbspтечение&nbsp5&nbspминут</span></p>
     <input required placeholder="Ваше имя" name="name" type="text" class="input popup__input">
     <input required placeholder="Ваш телефон" name="phone" type="tel" class="input popup__input">
     <button class="button popup__button">Заказать звонок</button>
-    <p class="form__status">Заявка отправлена, спасибо!</p>  
     <p class="text popup__agreement">Оставляя контактную информацию, вы соглашаетесь на обработку персональных данных</p>
 </form>
+<div class="popup__status-send">
+	<p class="popup__send-title">спасибо, <br> заявка отправлена</p>
+	<p class="intro popup__intro">Подпишитесь на&nbsp;удобную для вас социальную сеть и&nbsp;получите 10&nbsp;% скидки</p>
+	<div class="socials">
+		<a target="_blank" href="https://www.instagram.com/business_repin/" class="socials__item">
+			<div class="socials__icon socials__icon_inst"></div>
+		</a>
+		<a target="_blank" href="" class="socials__item">
+			<div class="socials__icon socials__icon_fb"></div>
+		</a>
+		<a target="_blank" href="https://vk.com/business.repin" class="socials__item">
+			<div class="socials__icon socials__icon_vk"></div>
+		</a>
+		<a target="_blank" href="" class="socials__item">
+			<div class="socials__icon socials__icon_ok"></div>
+		</a>
+		<a target="_blank" href="" class="socials__item">
+			<div class="socials__icon socials__icon_youtube"></div>
+		</a>
+	</div>
+	@include('common.gui.survey')
+</div>

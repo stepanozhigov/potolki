@@ -29,6 +29,17 @@
 		<noscript><div><img src="https://mc.yandex.ru/watch/43807824" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 	<!-- /Yandex.Metrika counter -->
 
+    <meta name="google-site-verification" content="3k4jsA6Udh8M63iZf2je_vnH-XIkPEeNSPeBe9BxxJ4" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-85472546-5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-85472546-5');
+    </script>
+
 </head>
 <body class="body">
     <div id="app">

@@ -263,6 +263,12 @@
                 padding-right: 0;
                 width: rem(28);
                 height: rem(31);
+				margin-bottom: rem(30);
+            }
+        }
+		@include below($mobile) {
+            &.active {
+				margin-bottom: 0;
             }
         }
         @media screen and (max-width: 650px){

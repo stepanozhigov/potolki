@@ -13,6 +13,11 @@ var Inputmask = require('inputmask');
 var ionRangeSlider = require('ion-rangeslider/js/ion.rangeSlider.js');
 var tooltipster = require('tooltipster/dist/js/tooltipster.bundle.js');
 
+$(document).ready(function () {
+    var yaCounter = typeof window.yaCounter43807824 !== 'undefined' ? window.yaCounter43807824: undefined,
+    gaCounter = typeof ga !== 'undefined' ? ga.getAll()[0] : undefined;
+});
+
 window.Vue2TouchEvents = require('vue2-touch-events');
 Vue.use(Vue2TouchEvents);
 
@@ -617,15 +622,49 @@ $('.catalog-cards__item').on('click', '.catalog-cards__open', function () {
 $('.form').on('submit', function (event) {
     event.preventDefault();
     var $this = $(this);
+
+    if (typeof yaCounter !== 'undefined') {
+        yaCounter.reachGoal('form-sub');
+    }
+    if (typeof gaCounter !== 'undefined') {
+        gaCounter.send('event', 'forms', 'sub');
+    }
+
     $.ajax({
         url: $this.attr('action'),
         data: $this.serialize(),
+        method: 'POST',
         success: function () {
             $this.addClass('form_status-send');
             $this.find('input').prop('disabled', true);
         }
     })
+});
+
+$('.phone').on('click', function () {
+
+    if (typeof yaCounter !== 'undefined') {
+        yaCounter.reachGoal('phone-click');
+    }
+    if (typeof gaCounter !== 'undefined') {
+        gaCounter.send('event', 'click', 'phone');
+    }
+    
+    
+});
+
+$('.whatsapp').on('click', function () {
+    if (typeof yaCounter !== 'undefined') {
+        yaCounter.reachGoal('whatsapp');
+    }
+    if (typeof gaCounter !== 'undefined') {
+        gaCounter.send('event', 'whatsapp', 'click');
+    }
+    
+    
 })
+
+
 
 $('.mobileMenu__item_category').on('click', function () {
     $('.mobileMenu__list').addClass('mobileMenu__list_category');
