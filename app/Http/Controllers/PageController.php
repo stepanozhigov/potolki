@@ -21,8 +21,14 @@ use App\Offer;
 use App\Article;
 use App\SeoBlock;
 
+use App\Visit;
+
 class PageController extends Controller
 {
+    public function __construct() {
+        //var_dump(session()->put('a', 'bbb'));
+       //$visit = new Visit;
+    }
     public function index () {
         return view('common.pages.index', [
             'directions' => Direction::where('id', '!=', 1)->get(),
@@ -337,6 +343,14 @@ class PageController extends Controller
     public function credit (City $city)
     {
         return view('common.pages.credit', [
+            'city'  =>  $city,
+			'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
+        ]);
+    }
+
+    public function climat (City $city)
+    {
+        return view('climat.climat', [
             'city'  =>  $city,
 			'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);

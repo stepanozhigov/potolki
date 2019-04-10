@@ -9,9 +9,9 @@
                 <h1 class="title main-offer__title js-title"></h1>
                 <p v-html="offer.text" class="main-offer__subtitle"></p>
 
-                <form class="form main-offer__form mobile-hide" action="" id="offer-form">
-                    <input v-model="name" v-on:focus="pauseSliding" v-on:focusout="initSliding" class="input form__input" type="text"  placeholder="Ваше имя">
-                    <input v-model="phone" v-on:focus="pauseSliding" v-on:focusout="initSliding" class="input form__input" type="tel"  placeholder="Ваш телефон">
+                <form class="form main-offer__form mobile-hide" action="/forms/add-lead" id="offer-form"> 
+                    <input v-model="name" name="name" v-on:focus="pauseSliding" v-on:focusout="initSliding" class="input form__input" type="text"  placeholder="Ваше имя">
+                    <input v-model="phone" name="phone" v-on:focus="pauseSliding" v-on:focusout="initSliding" class="input form__input" type="tel"  placeholder="Ваш телефон">
                     <button class="button form__button">Вызвать замерщика</button>
 					<p class="form__status">Заявка отправлена, спасибо!</p>  
                     <p class="form__agreement subtext subtext_white">Оставляя контактную информацию, вы соглашаетесь <br> на обработку персональных данных</p>

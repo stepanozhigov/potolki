@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="token" content="{{ csrf_token() }}">
+    <meta name="yandex-verification" content="8c911b1b9e11ff6f" />
     <link onload="if(media!='all') media='all'" rel="stylesheet" href="{{ Asset('/css/app.css') }}">
+    <link rel="canonical" href="{{ url(Request::url()) }}" />
+    <? $visit = new App\Visit; ?>
     @if (!empty($seoData))
         <title>{!! str_replace('#city_title#', $city->name_formatted, $seoData->meta_title) !!}</title>
         <meta name="description" content="{!! str_replace('#city_title#', $city->name_formatted, $seoData->meta_description) !!}" />

@@ -19,6 +19,10 @@ class City extends Model
     {
         return $this->hasMany('App\Office');
     }
+    public function externalCode()
+    {
+        return $this->name;
+    }
     public function mainOffice ()
     {
         $title = $this->name;

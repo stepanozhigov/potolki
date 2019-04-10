@@ -73,11 +73,27 @@ class FeedbackController extends Controller
     {
         $bitrixConnector = new BitrixConnector();
 
+        $visits = "";
+        $arVisits = session('visits');
+
+        foreach ($arVisits as $id => $visit) {
+            $visits.= "Дата: {$visit['time']} \r\n";
+            $visits.= "Страница: {$visit['page']} \r\n";
+            $visits.= "Реферер: {$visit['referer']} \r\n";
+            $visits.= "utm source: {$visit['utm_source']} \r\n";
+            $visits.= "utm medium: {$visit['utm_medium']} \r\n";
+            $visits.= "utm campaign: {$visit['utm_campaign']} \r\n";
+            $visits.= "utm term: {$visit['utm_term']} \r\n";
+            $visits.= "\r\n \r\n \r\n";
+        }
+
         $bitrixConnector->addLead([
             'title' =>  $request->name,
             'name'  =>  $request->name,
             'phone' =>  $request->phone,
-            'city'  =>  '',
+            'direction' =>  59,
+            'description'   =>  $visits,
+            'city'  =>  $request->city,
             'source'    =>  'WEB'
         ]);
     }

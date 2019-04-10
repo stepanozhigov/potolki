@@ -24,7 +24,6 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot()
     {
-       
 
         View::share('cities', City::all());
         //View::share('currentCity', request()->route()->city);

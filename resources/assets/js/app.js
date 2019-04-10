@@ -262,18 +262,25 @@ const enableBodyScroll = bodyScrollLock.enableBodyScroll;
 
 // 2. Get a target element that you want to persist scrolling for (such as a modal/lightbox/flyout/nav).
 
-
-
-$('.hamburger').on('click', function (e) {
-    $('.mobileMenu').addClass('active');
-    $('body').addClass('no-scroll');
-    $('.header__hamburger').removeClass('active');
-    $('.header__close').addClass('active');
-
-    $('.scrollable').each((index, domElement) => {
-        disableBodyScroll(domElement);
+if ($('.header').closest('.page__not-found').length > 0) {
+    $('.header__top-content').on('click', function (e) {
+        let mainPage = location.href.replace('notFound', '');
+        location.href = mainPage;
     });
-});
+} else {
+    $('.hamburger').on('click', function (e) {
+        $('.mobileMenu').addClass('active');
+        $('body').addClass('no-scroll');
+        $('.header__hamburger').removeClass('active');
+        $('.header__close').addClass('active');
+
+        $('.scrollable').each((index, domElement) => {
+            disableBodyScroll(domElement);
+        });
+    });
+}
+
+
 
 $('.header__close').on('click', function (e) {
     $('.mobileMenu').removeClass('active');
@@ -349,7 +356,7 @@ if ($mapContainer.length > 0 && $offices.length > 0) {
         var map = new ymaps.Map('map', {
             center: offsetCoordinates($('.office_active').data('coords')),
             zoom: 16,
-            controls: []
+            controls: ['zoomControl']
         });
 
         map.behaviors.disable('scrollZoom');
@@ -649,8 +656,8 @@ $('.phone').on('click', function () {
     if (typeof gaCounter !== 'undefined') {
         gaCounter.send('event', 'click', 'phone');
     }
-    
-    
+
+
 });
 
 $('.whatsapp').on('click', function () {
@@ -660,8 +667,8 @@ $('.whatsapp').on('click', function () {
     if (typeof gaCounter !== 'undefined') {
         gaCounter.send('event', 'whatsapp', 'click');
     }
-    
-    
+
+
 })
 
 

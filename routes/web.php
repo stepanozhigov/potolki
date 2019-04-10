@@ -14,6 +14,8 @@ use App\Direction;
 use App\City;
 use Illuminate\Support\Facades\Log;
 
+// Временно здесь. Обязательно убрать отсюда;
+//$visit = new App\Visit;
 
 Artisan::call('view:clear');
 
@@ -107,4 +109,6 @@ Route::prefix('/{city}')->group(function () {
     Route::get('/catalogueCeilings', 'PageController@catalogueCeilings')->name('catalogueCeilings');
 
     Route::get('/credit', 'PageController@credit')->name('credit');
+
+    Route::get('/climat', 'PageController@climat')->name('climat');
 });
