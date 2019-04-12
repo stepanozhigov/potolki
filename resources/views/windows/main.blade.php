@@ -167,21 +167,14 @@
             'intro' =>  "Нажмите на&nbsp;логотип социальной сети и&nbsp;посмотрите полезную информацию."
         ])
         <div class="socials titles__socials container">
-            <a href="" class="socials__item red-hoverable">
-                <div class="socials__icon socials__icon_inst"></div>
-            </a>
-            <a href="" class="socials__item red-hoverable">
-                <div class="socials__icon socials__icon_fb"></div>
-            </a>
-            <a href="" class="socials__item red-hoverable">
-                <div class="socials__icon socials__icon_vk"></div>
-            </a>
-            <a href="" class="socials__item red-hoverable">
-                <div class="socials__icon socials__icon_ok"></div>
-            </a>
-            <a href="" class="socials__item red-hoverable">
-                <div class="socials__icon socials__icon_youtube"></div>
-            </a>
+             @foreach($city->socials as $social)
+                @if ($social->direction_id == 1)
+                    <a target="_blank" href="{{ $social->link }}" class="socials__item">
+                        <div class="socials__icon socials__icon_{{ $social->icon }}"></div>
+                    </a>
+                @endif
+            @endforeach
+            
         </div>
         <posts :posts="{{ $articles }}"></posts>
 

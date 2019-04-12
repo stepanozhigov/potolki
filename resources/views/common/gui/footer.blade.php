@@ -39,21 +39,14 @@
 
             <a href="{{ route('contacts', $city) }}" class="text text_white footer__offices red-hoverable"><img class="footer__icon" src="/img/gui/pin_new.png" alt=""> Наши офисы</a>
             <div class="socials">
-                <a target="_blank" href="https://www.instagram.com/business_repin/" class="socials__item">
-                    <div class="socials__icon socials__icon_inst"></div>
-                </a>
-                <a target="_blank" href="https://www.instagram.com/business_repin/" class="socials__item">
-                    <div class="socials__icon socials__icon_fb"></div>
-                </a>
-                <a target="_blank" href="https://vk.com/business.repin" class="socials__item">
-                    <div class="socials__icon socials__icon_vk"></div>
-                </a>
-                <a target="_blank" href="https://api.whatsapp.com/send?phone=79996516666" class="socials__item">
-                    <div class="socials__icon socials__icon_ok"></div>
-                </a>
-                <a target="_blank" href="https://ok.ru/profile/589436377360" class="socials__item">
-                    <div class="socials__icon socials__icon_youtube"></div>
-                </a>
+                @foreach($city->socials as $social)
+                    @if ($social->direction_id == 1)
+                        <a target="_blank" href="{{ $social->link }}" class="socials__item">
+                            <div class="socials__icon socials__icon_{{ $social->icon }}"></div>
+                        </a>
+                    @endif
+                @endforeach
+                
             </div>
         </div>
         <nav class="footer__nav"> 

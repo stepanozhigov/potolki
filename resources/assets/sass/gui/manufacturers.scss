@@ -44,4 +44,14 @@
 			margin-bottom: rem(48);
 		}
 	}
+
+	&_climat {
+		padding-bottom: rem(48);
+		background-color: #f4f6f8;
+		margin-bottom: 0;
+		
+		.titles  {
+			padding-top: rem(64)
+		}
+	}
 }

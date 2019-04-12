@@ -1,0 +1,51 @@
+.climatSlider {
+    @extend .container;
+
+    &__slide {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 100%;
+        height: rem(480);
+        padding: rem(69) rem(100);
+        padding-right: 45%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: bottom;
+
+        &-overtitle {
+            margin: 0;
+            margin-bottom: rem(5);
+            color: #ffffff;
+            font-family: $futura;
+            font-size: rem(16);
+            font-weight: 400;
+            letter-spacing: rem(4);
+            text-transform: uppercase;
+        }
+
+        &-title {
+            margin: 0;
+            margin-bottom: rem(13);
+            color: #ffffff;
+            font-family: $playfair;
+            font-size: rem(48);
+            font-weight: 400;
+            line-height: rem(56);
+
+            span {
+                font-size: rem(64);
+            }
+        }
+
+        &-subtitle {
+            margin: 0;
+            margin-bottom: rem(48);
+            color: #ffffff;
+            font-family: $futura;
+            font-size: rem(26);
+            font-weight: 400;
+            line-height: rem(32);
+        }
+    }
+}

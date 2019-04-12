@@ -1,0 +1,32 @@
+.climatAdditional {
+	@extend .container;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		width: calc(100% + 20px);
+		margin-left: rem(-10);
+		margin-right: rem(-10);
+	}
+
+	&__item {
+		width: calc(50% - 20px);
+		margin: 0 rem(10);
+		height: rem(256);
+		justify-content: center;
+
+		p {
+			font-size: rem(26);
+			letter-spacing: 1.5px;
+
+			&::after {
+				left: 50%;
+				transform: translateX(-50%);
+			}
+		}
+	}
+}

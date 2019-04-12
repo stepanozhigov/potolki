@@ -1084,6 +1084,43 @@ corresponds to the arrow we want to display */
 .tooltipster-sidetip.tooltipster-right .tooltipster-arrow-uncropped {
 	left: -10px;
 }
+.jq-ry-container {
+  position: relative;
+  padding: 0 5px;
+  line-height: 0;
+  display: block;
+  cursor: pointer;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  direction: ltr;
+}
+.jq-ry-container[readonly="readonly"] {
+  cursor: default;
+}
+.jq-ry-container > .jq-ry-group-wrapper {
+  position: relative;
+  width: 100%;
+}
+.jq-ry-container > .jq-ry-group-wrapper > .jq-ry-group {
+  position: relative;
+  line-height: 0;
+  z-index: 10;
+  white-space: nowrap;
+}
+.jq-ry-container > .jq-ry-group-wrapper > .jq-ry-group > svg {
+  display: inline-block;
+}
+.jq-ry-container > .jq-ry-group-wrapper > .jq-ry-group.jq-ry-normal-group {
+  width: 100%;
+}
+.jq-ry-container > .jq-ry-group-wrapper > .jq-ry-group.jq-ry-rated-group {
+  width: 0;
+  z-index: 11;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
 @charset "UTF-8";
 
 @font-face {
@@ -1663,7 +1700,8 @@ corresponds to the arrow we want to display */
   .titles.container,
   .titles.seo-block__content,
   .header_sticky .titles.header__content,
-  .titles.headerClimat__heading,
+  .titles.headerClimat__main,
+  .titles.headerClimat__footer,
   .titles.catalogue__content,
   .titles#ceilings-calc,
   .titles.ceilingsCalc,
@@ -1693,7 +1731,10 @@ corresponds to the arrow we want to display */
   .titles.serviceReasons,
   .titles.lamps,
   .titles.printprice,
-  .titles.credit {
+  .titles.credit,
+  .titles.climatSlider,
+  .titles.climatCatalogue,
+  .titles.climatAdditional {
     margin-bottom: 3.125rem;
   }
 
@@ -2002,7 +2043,9 @@ corresponds to the arrow we want to display */
 .dillers__info button,
 .dillers__documentation button,
 .dillers__offer-links a,
-.lamps-slider__button {
+.lamps-slider__button,
+.climatCatalogue__link,
+.climatCard__button {
   width: 17.5rem;
   max-width: 100%;
   height: 50px;
@@ -2042,7 +2085,9 @@ corresponds to the arrow we want to display */
 .dillers__info button:not(button),
 .dillers__documentation button:not(button),
 .dillers__offer-links a:not(button),
-.lamps-slider__button:not(button) {
+.lamps-slider__button:not(button),
+.climatCatalogue__link:not(button),
+.climatCard__button:not(button) {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2058,7 +2103,9 @@ corresponds to the arrow we want to display */
 .dillers__info button:hover,
 .dillers__documentation button:hover,
 .dillers__offer-links a:hover,
-.lamps-slider__button:hover {
+.lamps-slider__button:hover,
+.climatCatalogue__link:hover,
+.climatCard__button:hover {
   -webkit-box-shadow: 0 8px 12px rgba(136, 0, 0, 0.2), 0 0 8px rgba(136, 0, 0, 0.12), inset 0 -1px 0 #a01414;
           box-shadow: 0 8px 12px rgba(136, 0, 0, 0.2), 0 0 8px rgba(136, 0, 0, 0.12), inset 0 -1px 0 #a01414;
 }
@@ -2073,7 +2120,9 @@ corresponds to the arrow we want to display */
 .dillers__info button:active,
 .dillers__documentation button:active,
 .dillers__offer-links a:active,
-.lamps-slider__button:active {
+.lamps-slider__button:active,
+.climatCatalogue__link:active,
+.climatCard__button:active {
   background-color: #a01414;
   -webkit-box-shadow: 0 8px 8px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0), inset 0 1px 0 #880000;
           box-shadow: 0 8px 8px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0), inset 0 1px 0 #880000;
@@ -2082,7 +2131,8 @@ corresponds to the arrow we want to display */
 .button_gray,
 .whyus__button,
 .shutterstock__link,
-.lamps-slider__button {
+.lamps-slider__button,
+.climatCard__button {
   background-color: #a7aaad;
   -webkit-box-shadow: 0 8px 8px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0), inset 0 -1px 0 #646973;
           box-shadow: 0 8px 8px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0), inset 0 -1px 0 #646973;
@@ -2092,7 +2142,8 @@ corresponds to the arrow we want to display */
 .button_gray:hover,
 .whyus__button:hover,
 .shutterstock__link:hover,
-.lamps-slider__button:hover {
+.lamps-slider__button:hover,
+.climatCard__button:hover {
   -webkit-box-shadow: 0 8px 12px rgba(0, 0, 0, 0.16), 0 0 8px rgba(0, 0, 0, 0.08), inset 0 -1px 0 #646973;
           box-shadow: 0 8px 12px rgba(0, 0, 0, 0.16), 0 0 8px rgba(0, 0, 0, 0.08), inset 0 -1px 0 #646973;
 }
@@ -2100,7 +2151,8 @@ corresponds to the arrow we want to display */
 .button_gray:active,
 .whyus__button:active,
 .shutterstock__link:active,
-.lamps-slider__button:active {
+.lamps-slider__button:active,
+.climatCard__button:active {
   background-color: #808890;
   -webkit-box-shadow: 0 8px 8px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0), inset 0 1px 0 #485058;
           box-shadow: 0 8px 8px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0), inset 0 1px 0 #485058;
@@ -2446,7 +2498,8 @@ corresponds to the arrow we want to display */
 .survey.container,
 .survey.seo-block__content,
 .header_sticky .survey.header__content,
-.survey.headerClimat__heading,
+.survey.headerClimat__main,
+.survey.headerClimat__footer,
 .survey.catalogue__content,
 .survey#ceilings-calc,
 .survey.ceilingsCalc,
@@ -2476,7 +2529,10 @@ corresponds to the arrow we want to display */
 .survey.serviceReasons,
 .survey.lamps,
 .survey.printprice,
-.survey.credit {
+.survey.credit,
+.survey.climatSlider,
+.survey.climatCatalogue,
+.survey.climatAdditional {
   margin-bottom: 5rem;
 }
 
@@ -2648,6 +2704,16 @@ corresponds to the arrow we want to display */
   font-size: 1rem;
   line-height: 1.5rem;
   font-weight: 300;
+}
+
+.checkbox__desc {
+  margin: 0;
+  margin-left: auto;
+  color: #babec2;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1rem;
 }
 
 .checkbox__mark {
@@ -3721,6 +3787,8 @@ corresponds to the arrow we want to display */
   }
 }
 
+.range_red .irs-from,
+.range_red .irs-to,
 .range_red .irs-single {
   top: 0.3125rem;
   padding: 0;
@@ -3732,11 +3800,15 @@ corresponds to the arrow we want to display */
   line-height: 1.25rem;
 }
 
+.range_red .irs-from::before,
+.range_red .irs-to::before,
 .range_red .irs-single::before {
   display: none;
 }
 
 @media screen and (max-width: 60rem) {
+  .range_red .irs-from,
+  .range_red .irs-to,
   .range_red .irs-single {
     font-size: 2rem;
     line-height: 2rem;
@@ -3857,7 +3929,8 @@ corresponds to the arrow we want to display */
 .catalog-cards.container,
 .catalog-cards.seo-block__content,
 .header_sticky .catalog-cards.header__content,
-.catalog-cards.headerClimat__heading,
+.catalog-cards.headerClimat__main,
+.catalog-cards.headerClimat__footer,
 .catalog-cards.catalogue__content,
 .catalog-cards#ceilings-calc,
 .catalog-cards.ceilingsCalc,
@@ -3887,7 +3960,10 @@ corresponds to the arrow we want to display */
 .catalog-cards.serviceReasons,
 .catalog-cards.lamps,
 .catalog-cards.printprice,
-.catalog-cards.credit {
+.catalog-cards.credit,
+.catalog-cards.climatSlider,
+.catalog-cards.climatCatalogue,
+.catalog-cards.climatAdditional {
   margin-bottom: 7rem;
 }
 
@@ -3895,7 +3971,8 @@ corresponds to the arrow we want to display */
   .catalog-cards.container,
   .catalog-cards.seo-block__content,
   .header_sticky .catalog-cards.header__content,
-  .catalog-cards.headerClimat__heading,
+  .catalog-cards.headerClimat__main,
+  .catalog-cards.headerClimat__footer,
   .catalog-cards.catalogue__content,
   .catalog-cards#ceilings-calc,
   .catalog-cards.ceilingsCalc,
@@ -3925,7 +4002,10 @@ corresponds to the arrow we want to display */
   .catalog-cards.serviceReasons,
   .catalog-cards.lamps,
   .catalog-cards.printprice,
-  .catalog-cards.credit {
+  .catalog-cards.credit,
+  .catalog-cards.climatSlider,
+  .catalog-cards.climatCatalogue,
+  .catalog-cards.climatAdditional {
     margin-bottom: 64px;
   }
 }
@@ -4077,7 +4157,9 @@ corresponds to the arrow we want to display */
   .dillers__documentation .catalog-cards .buttons button,
   .catalog-cards .buttons .dillers__offer-links a,
   .dillers__offer-links .catalog-cards .buttons a,
-  .catalog-cards .buttons .lamps-slider__button {
+  .catalog-cards .buttons .lamps-slider__button,
+  .catalog-cards .buttons .climatCatalogue__link,
+  .catalog-cards .buttons .climatCard__button {
     margin-bottom: 1rem;
     margin-right: 0;
   }
@@ -4085,7 +4167,8 @@ corresponds to the arrow we want to display */
   .catalog-cards .buttons .button_gray,
   .catalog-cards .buttons .whyus__button,
   .catalog-cards .buttons .shutterstock__link,
-  .catalog-cards .buttons .lamps-slider__button {
+  .catalog-cards .buttons .lamps-slider__button,
+  .catalog-cards .buttons .climatCard__button {
     margin: 0;
   }
 }
@@ -4915,6 +4998,58 @@ corresponds to the arrow we want to display */
   background-color: #f4f6f8;
 }
 
+.headerClimat__heading .container,
+.headerClimat__heading .seo-block__content,
+.headerClimat__heading .header_sticky .header__content,
+.header_sticky .headerClimat__heading .header__content,
+.headerClimat__heading .headerClimat__main,
+.headerClimat__heading .headerClimat__footer,
+.headerClimat__heading .catalogue__content,
+.headerClimat__heading #ceilings-calc,
+.headerClimat__heading .ceilingsCalc,
+.headerClimat__heading .reviews,
+.headerClimat__heading .about__images,
+.headerClimat__heading .about__rewards,
+.headerClimat__heading .turnkey,
+.headerClimat__heading .facture__content,
+.headerClimat__heading .videogallery__slider,
+.headerClimat__heading .calculator__inner,
+.headerClimat__heading .contacts__footer-content,
+.headerClimat__heading .articles__content,
+.headerClimat__heading .articles.articles_main .articles__list,
+.articles.articles_main .headerClimat__heading .articles__list,
+.headerClimat__heading .whyus__content,
+.headerClimat__heading .whyus__stat,
+.headerClimat__heading .whyus__advantages,
+.headerClimat__heading .whyus__machine,
+.headerClimat__heading .whyus_main .titles,
+.whyus_main .headerClimat__heading .titles,
+.headerClimat__heading .serviceDetail,
+.headerClimat__heading .catalogueDetail__title,
+.headerClimat__heading .catalogueDetail__price,
+.headerClimat__heading .catalogueDetail__install,
+.headerClimat__heading .photoprint,
+.headerClimat__heading .photobank__wrap,
+.headerClimat__heading .shutterstock,
+.headerClimat__heading .photoprintBlock,
+.headerClimat__heading .serviceReasons,
+.headerClimat__heading .lamps,
+.headerClimat__heading .printprice,
+.headerClimat__heading .credit,
+.headerClimat__heading .climatSlider,
+.headerClimat__heading .climatCatalogue,
+.headerClimat__heading .climatAdditional {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
 .headerClimat__heading .dropdown:hover .dropdown__content {
   width: calc(100% + 43px);
   left: -1.4375rem;
@@ -4930,13 +5065,25 @@ corresponds to the arrow we want to display */
       align-self: center;
 }
 
-.headerClimat__heading .menu__item {
+.headerClimat__heading .menu__item.js-toggle-submenu {
   font-size: 0.75rem;
   line-height: 1;
   padding-bottom: 0;
 }
 
-.headerClimat__heading .dropdown__item {
+.headerClimat__heading .menu__item.menu__item_dropdown {
+  padding-bottom: 0;
+}
+
+.headerClimat__heading .menu__item_dropdown:hover .menu__dropdown {
+  top: 1.625rem;
+}
+
+.headerClimat__heading .menu__item_dropdown:hover .menu__dropdown:after {
+  border-color: #f4f6f8 transparent transparent;
+}
+
+.headerClimat__heading .dropdown__item.dropdown__item_active {
   font-size: 0.75rem;
   line-height: 1;
 }
@@ -5042,6 +5189,146 @@ corresponds to the arrow we want to display */
   line-height: 1;
 }
 
+.headerClimat__main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2rem 0;
+  border-bottom: 0.0625rem solid #e6e8ea;
+}
+
+.headerClimat__main .header__logo,
+.headerClimat__main .header__directions {
+  padding-bottom: 0;
+}
+
+.headerClimat__main .header__directions {
+  margin-right: auto;
+}
+
+.headerClimat__search {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 19.1875rem;
+  margin-right: 5.1875rem;
+}
+
+.headerClimat__search .search__input {
+  width: 100%;
+}
+
+.headerClimat__search .search__submit {
+  position: absolute;
+  right: 0.4375rem;
+  top: 50%;
+  width: 2.125rem;
+  height: 2.125rem;
+  padding: 0.625rem;
+  border: none;
+  background-color: transparent;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  cursor: pointer;
+  outline: none;
+}
+
+.headerClimat__search .search__submit img {
+  width: 100%;
+  height: 100%;
+}
+
+.headerClimat__login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-right: 2.0625rem;
+}
+
+.headerClimat__login a {
+  color: #485058;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1rem;
+  text-decoration: none;
+}
+
+.headerClimat__login a:not(:last-of-type) {
+  position: relative;
+  margin-right: 1.5rem;
+}
+
+.headerClimat__login a:not(:last-of-type)::after {
+  position: absolute;
+  content: '|';
+  right: -0.875rem;
+}
+
+.headerClimat__basket {
+  position: relative;
+  padding-left: 1.75rem;
+  color: #485058;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1rem;
+  text-decoration: none;
+}
+
+.headerClimat__basket::after {
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 50%;
+  width: 1.125rem;
+  height: 1rem;
+  background-image: url("/img/gui/basket.svg");
+  background-size: contain;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.headerClimat__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 0.625rem;
+  padding-bottom: 0.6875rem;
+}
+
+.headerClimat__link {
+  color: #485058;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1;
+  text-decoration: none;
+}
+
 .body {
   margin: 0;
 }
@@ -5126,7 +5413,8 @@ body.no-scroll .header_sticky .header__whatsapp {
 .container,
 .seo-block__content,
 .header_sticky .header__content,
-.headerClimat__heading,
+.headerClimat__main,
+.headerClimat__footer,
 .catalogue__content,
 #ceilings-calc,
 .ceilingsCalc,
@@ -5156,7 +5444,10 @@ body.no-scroll .header_sticky .header__whatsapp {
 .serviceReasons,
 .lamps,
 .printprice,
-.credit {
+.credit,
+.climatSlider,
+.climatCatalogue,
+.climatAdditional {
   width: 73.75rem;
   margin: 0 auto;
 }
@@ -5165,7 +5456,8 @@ body.no-scroll .header_sticky .header__whatsapp {
   .container,
   .seo-block__content,
   .header_sticky .header__content,
-  .headerClimat__heading,
+  .headerClimat__main,
+  .headerClimat__footer,
   .catalogue__content,
   #ceilings-calc,
   .ceilingsCalc,
@@ -5195,7 +5487,10 @@ body.no-scroll .header_sticky .header__whatsapp {
   .serviceReasons,
   .lamps,
   .printprice,
-  .credit {
+  .credit,
+  .climatSlider,
+  .climatCatalogue,
+  .climatAdditional {
     width: calc(100% - 40px);
     margin: 0 1.25rem;
   }
@@ -5205,7 +5500,8 @@ body.no-scroll .header_sticky .header__whatsapp {
   .container,
   .seo-block__content,
   .header_sticky .header__content,
-  .headerClimat__heading,
+  .headerClimat__main,
+  .headerClimat__footer,
   .catalogue__content,
   #ceilings-calc,
   .ceilingsCalc,
@@ -5235,7 +5531,10 @@ body.no-scroll .header_sticky .header__whatsapp {
   .serviceReasons,
   .lamps,
   .printprice,
-  .credit {
+  .credit,
+  .climatSlider,
+  .climatCatalogue,
+  .climatAdditional {
     width: calc(100% - 32px);
     margin: 0 1rem;
   }
@@ -5245,7 +5544,8 @@ body.no-scroll .header_sticky .header__whatsapp {
   .container,
   .seo-block__content,
   .header_sticky .header__content,
-  .headerClimat__heading,
+  .headerClimat__main,
+  .headerClimat__footer,
   .catalogue__content,
   #ceilings-calc,
   .ceilingsCalc,
@@ -5275,7 +5575,10 @@ body.no-scroll .header_sticky .header__whatsapp {
   .serviceReasons,
   .lamps,
   .printprice,
-  .credit {
+  .credit,
+  .climatSlider,
+  .climatCatalogue,
+  .climatAdditional {
     width: calc(100% - 16px);
     margin: 0 0.5rem;
   }
@@ -5732,13 +6035,13 @@ body.no-scroll .header_sticky .header__whatsapp {
   transition: opacity .3s;
 }
 
-.socials__icon_inst::after {
+.socials__icon_insta::after {
   position: absolute;
   content: '';
   background-image: url("/img/gui/social_gray_inst.svg");
 }
 
-.socials__icon_inst::before {
+.socials__icon_insta::before {
   position: absolute;
   content: '';
   background-image: url("/img/gui/social_color_inst.svg");
@@ -6490,7 +6793,9 @@ body.no-scroll .header_sticky .header__whatsapp {
 .dillers__documentation .popup__status-send .survey__form button,
 .popup__status-send .survey__form .dillers__offer-links a,
 .dillers__offer-links .popup__status-send .survey__form a,
-.popup__status-send .survey__form .lamps-slider__button {
+.popup__status-send .survey__form .lamps-slider__button,
+.popup__status-send .survey__form .climatCatalogue__link,
+.popup__status-send .survey__form .climatCard__button {
   width: 100%;
 }
 
@@ -6691,7 +6996,8 @@ body.no-scroll .header_sticky .header__whatsapp {
 .whyus__content,
 .catalogueDetail__main,
 .photoprint__gallery,
-.printprice .page__wrapper {
+.printprice .page__wrapper,
+.climatCatalogue__content {
   position: relative;
 }
 
@@ -6707,7 +7013,8 @@ body.no-scroll .header_sticky .header__whatsapp {
 .whyus__content:before,
 .catalogueDetail__main:before,
 .photoprint__gallery:before,
-.printprice .page__wrapper:before {
+.printprice .page__wrapper:before,
+.climatCatalogue__content:before {
   z-index: -1;
   content: '';
   top: 0;
@@ -6736,7 +7043,8 @@ body.no-scroll .header_sticky .header__whatsapp {
   .whyus__content:before,
   .catalogueDetail__main:before,
   .photoprint__gallery:before,
-  .printprice .page__wrapper:before {
+  .printprice .page__wrapper:before,
+  .climatCatalogue__content:before {
     width: 480px;
   }
 }
@@ -6754,7 +7062,8 @@ body.no-scroll .header_sticky .header__whatsapp {
   .whyus__content:before,
   .catalogueDetail__main:before,
   .photoprint__gallery:before,
-  .printprice .page__wrapper:before {
+  .printprice .page__wrapper:before,
+  .climatCatalogue__content:before {
     width: 64vw;
   }
 }
@@ -6767,6 +7076,11 @@ body.no-scroll .header_sticky .header__whatsapp {
 .calculator::before,
 .whyus__content::before {
   background-image: url(/img/gui/square-bg--2x.jpg);
+}
+
+.b-texture_sand::before,
+.climatCatalogue__content::before {
+  background-image: url(/img/gui/sand-bg--2x.png);
 }
 
 .is-hoverable,
@@ -7386,6 +7700,25 @@ body.no-scroll .header_sticky .header__whatsapp {
 .arrow_rotate-vertical::before {
   -webkit-transform: translateY(-1px) rotate(180deg) !important;
           transform: translateY(-1px) rotate(180deg) !important;
+}
+
+input[type=text]::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+input[type=text]::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
 }
 
 .menu {
@@ -8516,7 +8849,8 @@ body.no-scroll .header_sticky .header__whatsapp {
 .portfolio__buttons .button_gray,
 .portfolio__buttons .whyus__button,
 .portfolio__buttons .shutterstock__link,
-.portfolio__buttons .lamps-slider__button {
+.portfolio__buttons .lamps-slider__button,
+.portfolio__buttons .climatCard__button {
   margin-right: 1rem;
 }
 
@@ -8528,7 +8862,8 @@ body.no-scroll .header_sticky .header__whatsapp {
   .portfolio__buttons .button_gray,
   .portfolio__buttons .whyus__button,
   .portfolio__buttons .shutterstock__link,
-  .portfolio__buttons .lamps-slider__button {
+  .portfolio__buttons .lamps-slider__button,
+  .portfolio__buttons .climatCard__button {
     margin-right: 0;
     margin-bottom: 1rem;
   }
@@ -9365,6 +9700,16 @@ body.no-scroll .header_sticky .header__whatsapp {
   margin-bottom: 3rem;
 }
 
+.manufacturers_climat {
+  padding-bottom: 3rem;
+  background-color: #f4f6f8;
+  margin-bottom: 0;
+}
+
+.manufacturers_climat .titles {
+  padding-top: 4rem;
+}
+
 .calc-promo {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -10066,7 +10411,8 @@ body.no-scroll .header_sticky .header__whatsapp {
 .reviews__buttons .button_gray,
 .reviews__buttons .whyus__button,
 .reviews__buttons .shutterstock__link,
-.reviews__buttons .lamps-slider__button {
+.reviews__buttons .lamps-slider__button,
+.reviews__buttons .climatCard__button {
   margin-right: 1rem;
 }
 
@@ -10078,7 +10424,8 @@ body.no-scroll .header_sticky .header__whatsapp {
   .reviews__buttons .button_gray,
   .reviews__buttons .whyus__button,
   .reviews__buttons .shutterstock__link,
-  .reviews__buttons .lamps-slider__button {
+  .reviews__buttons .lamps-slider__button,
+  .reviews__buttons .climatCard__button {
     margin-right: 0;
     margin-bottom: 1rem;
   }
@@ -10144,7 +10491,9 @@ body.no-scroll .header_sticky .header__whatsapp {
   .dillers__documentation .reviews__buttons button,
   .reviews__buttons .dillers__offer-links a,
   .dillers__offer-links .reviews__buttons a,
-  .reviews__buttons .lamps-slider__button {
+  .reviews__buttons .lamps-slider__button,
+  .reviews__buttons .climatCatalogue__link,
+  .reviews__buttons .climatCard__button {
     margin: 0;
   }
 
@@ -10162,7 +10511,9 @@ body.no-scroll .header_sticky .header__whatsapp {
   .dillers__documentation .reviews__buttons button:not(:last-of-type),
   .reviews__buttons .dillers__offer-links a:not(:last-of-type),
   .dillers__offer-links .reviews__buttons a:not(:last-of-type),
-  .reviews__buttons .lamps-slider__button:not(:last-of-type) {
+  .reviews__buttons .lamps-slider__button:not(:last-of-type),
+  .reviews__buttons .climatCatalogue__link:not(:last-of-type),
+  .reviews__buttons .climatCard__button:not(:last-of-type) {
     margin-bottom: 20px;
   }
 }
@@ -11311,7 +11662,8 @@ body.no-scroll .header_sticky .header__whatsapp {
 .about .catalogueDetail__main,
 .about .photoprint__gallery,
 .about .printprice .page__wrapper,
-.printprice .about .page__wrapper {
+.printprice .about .page__wrapper,
+.about .climatCatalogue__content {
   padding: 2rem 0;
   margin-bottom: 4.0625rem;
 }
@@ -11539,7 +11891,9 @@ body.no-scroll .header_sticky .header__whatsapp {
 .dillers__documentation .turnkey__buttons button:first-child,
 .turnkey__buttons .dillers__offer-links a:first-child,
 .dillers__offer-links .turnkey__buttons a:first-child,
-.turnkey__buttons .lamps-slider__button:first-child {
+.turnkey__buttons .lamps-slider__button:first-child,
+.turnkey__buttons .climatCatalogue__link:first-child,
+.turnkey__buttons .climatCard__button:first-child {
   margin-right: 1.25rem;
 }
 
@@ -11558,7 +11912,9 @@ body.no-scroll .header_sticky .header__whatsapp {
   .dillers__documentation .turnkey__buttons button:first-child,
   .turnkey__buttons .dillers__offer-links a:first-child,
   .dillers__offer-links .turnkey__buttons a:first-child,
-  .turnkey__buttons .lamps-slider__button:first-child {
+  .turnkey__buttons .lamps-slider__button:first-child,
+  .turnkey__buttons .climatCatalogue__link:first-child,
+  .turnkey__buttons .climatCard__button:first-child {
     margin-right: 0;
     margin-bottom: 1rem;
   }
@@ -15977,7 +16333,8 @@ body.no-scroll .header_sticky .header__whatsapp {
 .articles.articles_main .articles__list.seo-block__content,
 .articles.articles_main .header_sticky .articles__list.header__content,
 .header_sticky .articles.articles_main .articles__list.header__content,
-.articles.articles_main .articles__list.headerClimat__heading,
+.articles.articles_main .articles__list.headerClimat__main,
+.articles.articles_main .articles__list.headerClimat__footer,
 .articles.articles_main .articles__list.catalogue__content,
 .articles.articles_main .articles__list#ceilings-calc,
 .articles.articles_main .articles__list.ceilingsCalc,
@@ -16008,7 +16365,10 @@ body.no-scroll .header_sticky .header__whatsapp {
 .articles.articles_main .articles__list.serviceReasons,
 .articles.articles_main .articles__list.lamps,
 .articles.articles_main .articles__list.printprice,
-.articles.articles_main .articles__list.credit {
+.articles.articles_main .articles__list.credit,
+.articles.articles_main .articles__list.climatSlider,
+.articles.articles_main .articles__list.climatCatalogue,
+.articles.articles_main .articles__list.climatAdditional {
   margin-bottom: 3rem;
 }
 
@@ -16045,6 +16405,42 @@ body.no-scroll .header_sticky .header__whatsapp {
 
 .articles__slider-dot:not(:last-of-type) {
   margin-right: 0.5rem;
+}
+
+.articles.articles_climat.articles_main {
+  background-color: #ffffff;
+  position: relative;
+  margin-bottom: 5rem;
+}
+
+.articles.articles_climat.articles_main::after {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 50%;
+  width: 73.75rem;
+  height: 0.0625rem;
+  background-color: #babec2;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .articles.articles_climat.articles_main::after {
+    width: calc(100% - 40px);
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .articles.articles_climat.articles_main::after {
+    width: calc(100% - 32px);
+  }
+}
+
+@media screen and (max-width: 20.125rem) {
+  .articles.articles_climat.articles_main::after {
+    width: calc(100% - 16px);
+  }
 }
 
 .article {
@@ -16488,7 +16884,9 @@ body.no-scroll .header_sticky .header__whatsapp {
 .dillers__documentation .whyus__content button,
 .whyus__content .dillers__offer-links a,
 .dillers__offer-links .whyus__content a,
-.whyus__content .lamps-slider__button {
+.whyus__content .lamps-slider__button,
+.whyus__content .climatCatalogue__link,
+.whyus__content .climatCard__button {
   margin-top: 3rem;
 }
 
@@ -22475,5 +22873,657 @@ body.no-scroll .header_sticky .header__whatsapp {
   font-weight: 300;
   letter-spacing: 2px;
   text-transform: uppercase;
+}
+
+.climatSlider__slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+  height: 30rem;
+  padding: 4.3125rem 6.25rem;
+  padding-right: 45%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+.climatSlider__slide-overtitle {
+  margin: 0;
+  margin-bottom: 0.3125rem;
+  color: #ffffff;
+  font-family: "Futura PT", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+}
+
+.climatSlider__slide-title {
+  margin: 0;
+  margin-bottom: 0.8125rem;
+  color: #ffffff;
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 3.5rem;
+}
+
+.climatSlider__slide-title span {
+  font-size: 4rem;
+}
+
+.climatSlider__slide-subtitle {
+  margin: 0;
+  margin-bottom: 3rem;
+  color: #ffffff;
+  font-family: "Futura PT", sans-serif;
+  font-size: 1.625rem;
+  font-weight: 400;
+  line-height: 2rem;
+}
+
+.climatCatalogue {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.climatCatalogue__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 3rem;
+}
+
+.climatCatalogue__content::before {
+  top: 2.875rem;
+  height: calc(100% - 92px);
+}
+
+.climatCatalogue__content aside {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.climatCatalogue__content aside .linkBlock {
+  width: 17.5rem;
+  height: 13.5625rem;
+}
+
+.climatCatalogue__content aside .linkBlock:not(:last-of-type) {
+  margin-bottom: 2rem;
+}
+
+.climatCatalogue__content aside .linkBlock:first-of-type {
+  margin-top: 2.5625rem;
+}
+
+.climatCatalogue__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: calc(100% - 280px);
+  margin-right: -0.625rem;
+  margin-left: -0.625rem;
+  margin-bottom: -2rem;
+}
+
+.climatCatalogue__list .climatCard {
+  width: calc(33.3% - 20px);
+  margin: 0 0.625rem;
+  margin-bottom: 2rem;
+}
+
+.climatCatalogue__filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 17.5rem;
+  padding: 2rem 1.125rem;
+  border-radius: 4px;
+  background-color: #ffffff;
+  padding-bottom: 2.8125rem;
+}
+
+.climatCatalogue__filter-title {
+  position: relative;
+  margin: 0;
+  margin-bottom: 1rem;
+  color: #485058;
+  font-family: "Playfair Display", serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  cursor: pointer;
+}
+
+.climatCatalogue__filter-title::after {
+  position: absolute;
+  content: '';
+  width: 1rem;
+  height: 0.5rem;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background-image: url("/img/arrow-down.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.climatCatalogue__filter-more {
+  margin-top: 1.9375rem;
+  color: #babec2;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.5rem;
+  text-decoration: underline;
+}
+
+.climatCatalogue__filter-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.climatCatalogue__filter-item:not(.opened) > *:not(.climatCatalogue__filter-title) {
+  display: none;
+}
+
+.climatCatalogue__filter-item:not(.opened) .climatCatalogue__filter-title {
+  margin-bottom: 0;
+}
+
+.climatCatalogue__filter-item.opened .climatCatalogue__filter-title::after {
+  -webkit-transform: translateY(-50%) rotate(180deg);
+          transform: translateY(-50%) rotate(180deg);
+}
+
+.climatCatalogue__filter-item:not(:last-of-type) {
+  margin-bottom: 2rem;
+}
+
+.climatCatalogue__filter-item .checkbox:not(:last-of-type) {
+  margin-bottom: 0.625rem;
+}
+
+.climatCard {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1.375rem 1rem;
+  padding-bottom: 2rem;
+  -webkit-box-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.16), 0 0 0.5rem rgba(0, 0, 0, 0), inset 0 -0.0625rem 0 rgba(0, 0, 0, 0.12);
+          box-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.16), 0 0 0.5rem rgba(0, 0, 0, 0), inset 0 -0.0625rem 0 rgba(0, 0, 0, 0.12);
+  border-radius: 0.25rem;
+  background-color: #ffffff;
+  -webkit-transition: -webkit-box-shadow .3s;
+  transition: -webkit-box-shadow .3s;
+  transition: box-shadow .3s;
+  transition: box-shadow .3s, -webkit-box-shadow .3s;
+  cursor: pointer;
+}
+
+.climatCard:hover {
+  -webkit-box-shadow: 0 0.75rem 0.75rem rgba(0, 0, 0, 0.16), 0 0 0.75rem rgba(0, 0, 0, 0.08), inset 0 -0.0625rem 0 rgba(0, 0, 0, 0.16);
+          box-shadow: 0 0.75rem 0.75rem rgba(0, 0, 0, 0.16), 0 0 0.75rem rgba(0, 0, 0, 0.08), inset 0 -0.0625rem 0 rgba(0, 0, 0, 0.16);
+}
+
+.climatCard:hover .climatCard__button {
+  -webkit-box-shadow: 0 8px 8px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0), inset 0 -1px 0 #a01414;
+          box-shadow: 0 8px 8px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0), inset 0 -1px 0 #a01414;
+  background-color: #dc1414;
+}
+
+.climatCard:hover .climatCard__button:hover {
+  -webkit-box-shadow: 0 8px 12px rgba(136, 0, 0, 0.2), 0 0 8px rgba(136, 0, 0, 0.12), inset 0 -1px 0 #a01414;
+          box-shadow: 0 8px 12px rgba(136, 0, 0, 0.2), 0 0 8px rgba(136, 0, 0, 0.12), inset 0 -1px 0 #a01414;
+}
+
+.climatCard:hover .climatCard__button:active {
+  background-color: #a01414;
+  -webkit-box-shadow: 0 8px 8px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0), inset 0 1px 0 #880000;
+          box-shadow: 0 8px 8px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0), inset 0 1px 0 #880000;
+}
+
+.climatCard:hover .climatCard__preview-tip {
+  opacity: 1;
+}
+
+.climatCard__hit,
+.climatCard__best {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+  padding-bottom: 0.5625rem;
+  border-radius: 0 0 0.3125rem 0.3125rem;
+  background-color: #dc1414;
+}
+
+.climatCard__hit p,
+.climatCard__best p {
+  margin: 0;
+  color: #ffffff;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1rem;
+}
+
+.climatCard__hit svg,
+.climatCard__best svg {
+  margin-right: 0.5rem;
+}
+
+.climatCard__preview {
+  position: relative;
+  margin-bottom: 0.3125rem;
+}
+
+.climatCard__preview img {
+  width: 100%;
+  height: auto;
+}
+
+.climatCard__preview-tip {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 11.5rem;
+  padding: 0.625rem 1rem;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.64);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  opacity: 0;
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+}
+
+.climatCard__preview-tip p {
+  margin: 0;
+  color: #dc1414;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 0.875rem;
+}
+
+.climatCard__preview-tip svg {
+  width: 1rem;
+  height: 0.6875rem;
+  margin-right: 0.3125rem;
+}
+
+.climatCard__heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.climatCard__controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.climatCard__comparison,
+.climatCard__favourites {
+  margin: 0;
+  color: #485058;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  text-decoration: none;
+  -webkit-transition: color .3s;
+  transition: color .3s;
+}
+
+.climatCard__comparison svg,
+.climatCard__favourites svg {
+  stroke: #808890;
+  -webkit-transition: stroke .3s;
+  transition: stroke .3s;
+}
+
+.climatCard__comparison.active,
+.climatCard__favourites.active {
+  color: #dc1414;
+}
+
+.climatCard__comparison.active svg,
+.climatCard__favourites.active svg {
+  stroke: #dc1414;
+}
+
+.climatCard__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.climatCard__name {
+  width: 100%;
+  margin: 0;
+  color: #485058;
+  font-family: "Futura PT", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 0.0625rem;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.climatCard__model {
+  width: 100%;
+  margin: 0;
+  margin-bottom: 0.3125rem;
+  color: #a7aaad;
+  font-family: "Futura PT", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.climatCard__stars.jq-ry-container {
+  padding: 0.5rem 0;
+}
+
+.climatCard__ratimg {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding-left: 5rem;
+  margin-bottom: 1rem;
+}
+
+.climatCard__ratimg p {
+  margin: 0;
+  color: #50555a;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 0.875rem;
+}
+
+.climatCard__ratimg::before {
+  position: absolute;
+  content: '';
+  width: 5rem;
+  height: 0.0625rem;
+  background-color: #a7aaad;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.climatCard__params {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.climatCard__params p {
+  margin: 0;
+  color: #485058;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 300;
+  line-height: 1.25rem;
+}
+
+.climatCard__params dl {
+  display: none;
+  margin: 0;
+}
+
+.climatCard__params dl dd {
+  margin: 0;
+}
+
+.climatCard__pay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.climatCard__old-price {
+  width: 100%;
+  margin: 0;
+  margin-bottom: 1.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.climatCard__old-price span:first-of-type {
+  color: #babec2;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1rem;
+  text-decoration: line-through;
+}
+
+.climatCard__old-price span:last-of-type {
+  margin-left: 0.75rem;
+  color: #dc1414;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  line-height: 1rem;
+  text-decoration: none;
+}
+
+.climatCard__price {
+  margin: 0;
+  color: #dc1414;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.climatCard__button {
+  width: auto;
+  padding: 0.625rem;
+  padding-bottom: 0.5625rem;
+  font-size: 0.875rem;
+}
+
+.climatCard__button svg {
+  width: 1.125rem;
+  height: 1.0625rem;
+  margin-right: 0.5625rem;
+}
+
+.climatCard_hit .climatCard__hit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.climatCard_best .climatCard__best {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.linkBlock {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  background-size: cover;
+}
+
+.linkBlock p {
+  position: relative;
+  margin: 0;
+  padding-bottom: 1rem;
+  color: #f4f6f8;
+  font-family: "Futura PT", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  letter-spacing: 0.0625rem;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.linkBlock p::after {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 0;
+  width: 5rem;
+  height: 0.0625rem;
+  background-color: #f4f6f8;
+}
+
+.linkBlock::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.climatAdditional {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.climatAdditional__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: calc(100% + 20px);
+  margin-left: -0.625rem;
+  margin-right: -0.625rem;
+}
+
+.climatAdditional__item {
+  width: calc(50% - 20px);
+  margin: 0 0.625rem;
+  height: 16rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.climatAdditional__item p {
+  font-size: 1.625rem;
+  letter-spacing: 1.5px;
+}
+
+.climatAdditional__item p::after {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 

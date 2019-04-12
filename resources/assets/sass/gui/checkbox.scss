@@ -14,6 +14,16 @@
     line-height: rem(24);
     font-weight: 300;
 
+	&__desc {
+		margin: 0;
+		margin-left: auto;
+		color: #babec2;
+		font-family: $helvetica;
+		font-size: rem(14);
+		font-weight: 300;
+		line-height: rem(16);
+	}
+
     &__mark {
         position: relative;
         width: rem(16);

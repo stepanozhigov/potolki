@@ -12,6 +12,7 @@ window.Vue = require('vue');
 var Inputmask = require('inputmask');
 var ionRangeSlider = require('ion-rangeslider/js/ion.rangeSlider.js');
 var tooltipster = require('tooltipster/dist/js/tooltipster.bundle.js');
+var rateYo = require('rateyo/src/jquery.rateyo.js');
 
 $(document).ready(function () {
     var yaCounter = typeof window.yaCounter43807824 !== 'undefined' ? window.yaCounter43807824: undefined,
@@ -35,6 +36,7 @@ Vue.component('window-calc', require('./components/WindowCalc.vue'));
 Vue.component('balcony-calc', require('./components/BalkonyCalc.vue'));
 Vue.component('simple-slider', require('./components/simpleSlider.vue'));
 Vue.component('ceilings-calc', require('./components/ceilingsCalc.vue'));
+Vue.component('climat-slider', require('./components/climatSlider.vue'));
 Vue.component('catalogue-slider', require('./components/catalogue-slider.vue'));
 Vue.component('city-search', require('./components/CitySearch.vue'));
 Vue.component('add-comment', require('./components/AddComment.vue'));
@@ -193,6 +195,12 @@ if ($('#simple-slider').length > 0) {
 if ($('#ceilings-calc').length > 0) {
     var CeilingsCalc = new Vue({
         el: '#ceilings-calc'
+    });
+}
+
+if ($('#climat-slider').length > 0) {
+    var CeilingsCalc = new Vue({
+        el: '#climat-slider'
     });
 }
 
@@ -643,6 +651,7 @@ $('.form').on('submit', function (event) {
         method: 'POST',
         success: function () {
             $this.addClass('form_status-send');
+            $this.find('button[type="submit"]').text('Заявка отправлена!').prop('disabled', true);
             $this.find('input').prop('disabled', true);
         }
     })
@@ -682,4 +691,25 @@ $('.mobileMenu__link-prev').on('click', function (event) {
     event.stopPropagation();
     $('.mobileMenu__list').removeClass('mobileMenu__list_category');
     $(this).closest('.mobileMenu__item_category').removeClass('active');
+});
+
+$('.climatCard__comparison').on('click', function () {
+    $(this).toggleClass('active');
+});
+
+$('.climatCard__favourites').on('click', function () {
+    $(this).toggleClass('active');
+});
+
+$('.climatCatalogue__filter-title').on('click', function () {
+    $(this).parent('.climatCatalogue__filter-item').toggleClass('opened');
+});
+
+$('.climatCard__stars').rateYo({
+    rating: 3,
+    starWidth: '16px',
+    normalFill: '#babec2',
+    ratedFill: '#dc1414',
+    fullStar: true,
+    readOnly: true
 });
