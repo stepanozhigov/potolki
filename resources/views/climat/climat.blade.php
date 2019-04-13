@@ -10,6 +10,7 @@
             'secondTitle' =>  "Каталог кондиционеров"
         ])
         <div class="climatCatalogue__content">
+			<a class="climatCatalogue__filterLink" href="javascript:void(0);">Настройка фильтров</a>
             <div class="climatCatalogue__list">
                 @include('climat.climatCard')
                 @include('climat.climatCard')

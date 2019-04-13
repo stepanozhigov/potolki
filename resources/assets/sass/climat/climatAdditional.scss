@@ -11,6 +11,18 @@
 		width: calc(100% + 20px);
 		margin-left: rem(-10);
 		margin-right: rem(-10);
+
+		@include below($tablet) {
+	        width: calc(100% - 16px);
+			margin-left: rem(-8);
+			margin-right: rem(-8);
+	    }
+
+		@include below($mobile) {
+			width: 100%;
+			margin-left: 0;
+			margin-right: 0;
+        }
 	}
 
 	&__item {
@@ -18,6 +30,24 @@
 		margin: 0 rem(10);
 		height: rem(256);
 		justify-content: center;
+
+		@include below($tablet) {
+	        width: calc(50% - 16px);
+			height: rem(360);
+			margin: 0 rem(8);
+	    }
+
+		@include below($mobile) {
+			width: 100%;
+			height: rem(240);
+			margin: 0;
+        }
+
+		&:not(:last-of-type) {
+			@include below($mobile) {
+				margin-bottom: rem(24);
+	        }
+		}
 
 		p {
 			font-size: rem(26);
