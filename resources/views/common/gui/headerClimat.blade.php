@@ -53,6 +53,8 @@
                     </div>
                 </div>
             </nav>
+			<img src="/img/gui/nav_hamburger.svg" alt="" class="hamburger header__hamburger active js-toggle-menu">
+	        <img src="/img/gui/mobile-menu-close.svg" alt="" class="header__close js-toggle-menu">
         </div>
     </div>
     <div class="headerClimat__main">
@@ -82,8 +84,6 @@
             <a href="javascript:void(0);">Регистрация</a>
         </div>
         <a class="headerClimat__basket" href="javascript:void(0);">Корзина</a>
-        <img src="/img/gui/nav_hamburger.svg" alt="" class="hamburger header__hamburger active js-toggle-menu">
-        <img src="/img/gui/mobile-menu-close.svg" alt="" class="header__close js-toggle-menu">
     </div>
     <div class="headerClimat__footer">
         <a class="headerClimat__link" href="javascript:void(0);">Бытовые кондиционеры</a>
