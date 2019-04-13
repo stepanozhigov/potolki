@@ -40,6 +40,10 @@ Route::post('/forms/add-lead', 'FeedbackController@addLead')->name('add-lead');
 Route::post('/forms/proxy-lead', 'FeedbackController@proxyLead');
 Route::post('/forms/search-phone', 'FeedbackController@searchPhoneInMessage');
 
+Route::prefix('/ajax')->group(function () {
+    Route::get('/portfolio/{type_id}/photos', 'AjaxController@getPortfolioPhotos')->name('ajaxPortfolioPhotos');
+});
+
 Route::prefix('/{city}')->group(function () {
 
     Route::get('/', 'PageController@main')->name('windows.main');
