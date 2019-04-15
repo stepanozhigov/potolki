@@ -53,7 +53,7 @@ Vue.component('posts-list', require('./components/ArticlesList.vue'));
 Vue.component('manufacturers', require('./components/ManufacturersCarousel.vue'));
 Vue.component('banks', require('./components/banksCarousel.vue'));
 Vue.component('menu-city-search', require('./components/MenuCitySearch.vue'));
-Vue.component('portfolio-photos', require('./components/PortfolioPhotos.vue'));
+//Vue.component('portfolio-photos', require('./components/PortfolioPhotos.vue'));
 
 
 
@@ -170,11 +170,11 @@ $('.js-add-comment').each(function(index, element) {
     })
 })
 
-if ($('#portfolio-photos').length > 0) {
-    const portfolioPhotos = new Vue({
-        el: '#portfolio-photos'
-    });
-}
+// if ($('#portfolio-photos').length > 0) {
+//     const portfolioPhotos = new Vue({
+//         el: '#portfolio-photos'
+//     });
+// }
 
 if ($('#city-search').length > 0) {
     const citySearch = new Vue({

@@ -369,6 +369,20 @@
         justify-content: space-between;
         padding-top: rem(10);
         padding-bottom: rem(11);
+
+        &-link {
+            display: none;
+        }
+
+        @include below($mobile) {
+            .headerClimat__footer-link {
+                display: flex;
+
+                .headerClimat__link {
+                    display: none;
+                }
+            }
+        }
     }
 
     &__link {
@@ -378,5 +392,11 @@
         font-weight: 300;
         line-height: 1;
         text-decoration: none;
+
+        @include below($mobile) {
+            &:nth-of-type(n + 3) {
+                display: none;
+            }
+        }
     }
 }
