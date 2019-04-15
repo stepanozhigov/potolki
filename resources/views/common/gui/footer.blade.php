@@ -40,7 +40,7 @@
             <a href="{{ route('contacts', $city) }}" class="text text_white footer__offices red-hoverable"><img class="footer__icon" src="/img/gui/pin_new.png" alt=""> Наши офисы</a>
             <div class="socials">
                 <a target="_blank" href="https://www.instagram.com/business_repin/" class="socials__item">
-                    <div class="socials__icon socials__icon_inst"></div>
+                    <div class="socials__icon socials__icon_insta"></div>
                 </a>
                 <a target="_blank" href="https://www.instagram.com/business_repin/" class="socials__item">
                     <div class="socials__icon socials__icon_fb"></div>
@@ -56,7 +56,7 @@
                 </a>
             </div>
         </div>
-        <nav class="footer__nav"> 
+        <nav class="footer__nav">
             <div class="nav-group footer__item">
                 <a href="javascript:void(0);" class="card-title footer__title js-open">Каталог</a>
                 <a href="{{ route('catalogue', ['city' => $city, 'type' => 'balkoni']) }}" class="red-hoverable subtext subtext_white nav-group__item">Балконы</a>

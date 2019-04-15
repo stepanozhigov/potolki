@@ -343,16 +343,23 @@ class PageController extends Controller
     public function credit (City $city)
     {
         return view('common.pages.credit', [
-            'city'  =>  $city,
-			'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
+			'city'  =>  $city,
+            'reviews'   =>  Review::limit(3)->orderBy('sort', 'asc')->get(),
+            'photos'    =>  Photo::all(),
+            'offers'    =>  Offer::where('is_active', 1)->get(),
+            'catalogTypes'  => CatalogType::where(['direction_id' => 1])->get(),
+            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first(),
+            'articles' => Article::where(['is_active' => 1, 'in_main' => 1])->orderBy('sort', 'asc')->get()
         ]);
     }
 
     public function climat (City $city)
     {
         return view('climat.climat', [
-            'city'  =>  $city,
-			'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
+			'city'  =>  $city,
+            'reviews'   =>  Review::limit(3)->orderBy('sort', 'asc')->get(),
+            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first(),
+            'articles' => Article::where(['is_active' => 1, 'in_main' => 1])->orderBy('sort', 'asc')->get()
         ]);
     }
 
