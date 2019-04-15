@@ -1,3 +1,4 @@
+
 <nav class="mobileMenu" id="mobileMenu">
     <a class="mobileMenu__heading" href="{{ route('windows.main', $city) }}">
         <img class="mobileMenu__logo-icon" src="/img/gui/logo-icon.svg" alt="логотип Твой Стиль">
@@ -25,22 +26,22 @@
             </div>
         </li>
         <li class="mobileMenu__item">
-            <a  href="{{ route('services', [request()->route()->city, 'measurements']) }}">
+            <a  href="{{ route('services', [$city, 'measurements']) }}">
                 Бесплатный замер
             </a>
         </li>
         <li class="mobileMenu__item">
-            <a  href="{{ route('promos', request()->route()->city) }}">
+            <a  href="{{ route('promos', $city) }}">
                 Скидки
             </a>
         </li>
         <li class="mobileMenu__item">
-            <a  href="{{ route('photos', request()->route()->city) }}">
+            <a  href="{{ route('photos', $city) }}">
                 Фото
             </a>
         </li>
         <li class="mobileMenu__item">
-            <a  href="{{ route('contacts', request()->route()->city) }}">
+            <a  href="{{ route('contacts', $city) }}">
                 Контакты
             </a>
         </li>
@@ -55,25 +56,25 @@
                     </div>
                     <ul class="scrollable">
                         <li class="mobileMenu__item">
-                            <a  href="{{ route('services', request()->route()->city) }}">Услуги</a>
+                            <a  href="{{ route('services', $city) }}">Услуги</a>
                         </li>
                         <li class="mobileMenu__item">
-                            <a href="{{ route('about', request()->route()->city) }}">О компании</a>
+                            <a href="{{ route('about', $city) }}">О компании</a>
                         </li>
                         <li class="mobileMenu__item">
-                            <a href="{{ route('employees', request()->route()->city) }}">Сотрудники</a>
+                            <a href="{{ route('employees', $city) }}">Сотрудники</a>
                         </li>
                         <li class="mobileMenu__item">
-                            <a href="{{ route('vacancies', request()->route()->city) }}">Вакансии</a>
+                            <a href="{{ route('vacancies', $city) }}">Вакансии</a>
                         </li>
                         <li class="mobileMenu__item">
-                            <a href="{{ route('questions', request()->route()->city) }}">Вопрос-ответ</a>
+                            <a href="{{ route('questions', $city) }}">Вопрос-ответ</a>
                         </li>
                         <li class="mobileMenu__item">
-                            <a href="{{ route('articles', request()->route()->city) }}">Статьи</a>
+                            <a href="{{ route('articles', $city) }}">Статьи</a>
                         </li>
                         <li class="mobileMenu__item">
-                            <a href="{{ route('dirMessage', request()->route()->city) }}">Написать директору</a>
+                            <a href="{{ route('dirMessage', $city) }}">Написать директору</a>
                         </li>
                     </ul>
                 </div>

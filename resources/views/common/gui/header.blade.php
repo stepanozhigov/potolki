@@ -1,3 +1,6 @@
+<? 
+$city = $city ?? App\City::find(1);
+?>
 <header class="header">
     <div class="header__top ">
 		<div class="header__top-content container">
@@ -21,14 +24,14 @@
 	        <nav class="menu header__menu" id="">
 	            <div class="menu__item menu__item_dropdown">
 
-	                <a href="{{ route('calculator', request()->route()->city) }}" class="text menu__item js-toggle-submenu">Калькулятор</a>
+	                <a href="{{ route('calculator', $city) }}" class="text menu__item js-toggle-submenu">Калькулятор</a>
 
 	                <div class="menu__dropdown">
                         <div class="menu__dropdown-heading">
                             <a href="javascript:void(0);" class="menu__item-nav">
                                 <img width="8" height="16" src="/img/gui/arrow_menu.svg" alt="">
                             </a>
-                            <a href="{{ route('calculator', request()->route()->city) }}" class="text menu__dropdown-link">Калькулятор</a>
+                            <a href="{{ route('calculator', $city) }}" class="text menu__dropdown-link">Калькулятор</a>
                         </div>
 	                    <a href="{{ route('calculator', ['city' => $city, 'type' => 'okna']) }}" class="text menu__item menu__item_bordered">Окна</a>
 	                    <a href="{{ route('calculator', ['city' => $city, 'type' => 'balkony']) }}" class="text menu__item menu__item_bordered">Балконы</a>
@@ -38,10 +41,10 @@
 	                </div>
 	            </div>
 
-	            <a href="{{ route('services', [request()->route()->city, 'measurements']) }}" class="text menu__item">Бесплатный замер</a>
-	            <a href="{{ route('promos', request()->route()->city) }}" class="text menu__item">Скидки</a>
-	            <a href="{{ route('photos', request()->route()->city) }}" class="text menu__item">Фото</a>
-				<a href="{{ route('contacts', request()->route()->city) }}" class="text menu__item">Контакты</a>
+	            <a href="{{ route('services', [$city, 'measurements']) }}" class="text menu__item">Бесплатный замер</a>
+	            <a href="{{ route('promos', $city) }}" class="text menu__item">Скидки</a>
+	            <a href="{{ route('photos', $city) }}" class="text menu__item">Фото</a>
+				<a href="{{ route('contacts', $city) }}" class="text menu__item">Контакты</a>
 	            <div class="menu__item menu__item_dropdown">
 	                <a class="text menu__item js-toggle-submenu">Информация</a>
 	                <div class="menu__dropdown">
@@ -52,21 +55,21 @@
                             <a href="javascript:void(0);" class="text menu__dropdown-link">Информация</a>
                         </div>
 
-	                    <a href="{{ route('services', request()->route()->city) }}" class="text menu__item menu__item_bordered">Услуги</a>
-	                    <a href="{{ route('about', request()->route()->city) }}" class="text menu__item menu__item_bordered">О компании</a>
-	                    <a href="{{ route('employees', request()->route()->city) }}" class="text menu__item menu__item_bordered">Сотрудники</a>
-	                    <a href="{{ route('vacancies', request()->route()->city) }}" class="text menu__item menu__item_bordered">Вакансии</a>
-	                    <a href="{{ route('questions', request()->route()->city) }}" class="text menu__item menu__item_bordered">Вопрос-ответ</a>
-	                    <a href="{{ route('reviews', request()->route()->city) }}" class="text menu__item menu__item_bordered">Отзывы</a>
-	                    <a href="{{ route('articles', request()->route()->city) }}" class="text menu__item menu__item_bordered">Статьи</a>
-	                    <a href="{{ route('dirMessage', request()->route()->city) }}" class="text menu__item menu__item_bordered">Написать директору</a>
+	                    <a href="{{ route('services', $city) }}" class="text menu__item menu__item_bordered">Услуги</a>
+	                    <a href="{{ route('about', $city) }}" class="text menu__item menu__item_bordered">О компании</a>
+	                    <a href="{{ route('employees', $city) }}" class="text menu__item menu__item_bordered">Сотрудники</a>
+	                    <a href="{{ route('vacancies', $city) }}" class="text menu__item menu__item_bordered">Вакансии</a>
+	                    <a href="{{ route('questions', $city) }}" class="text menu__item menu__item_bordered">Вопрос-ответ</a>
+	                    <a href="{{ route('reviews', $city) }}" class="text menu__item menu__item_bordered">Отзывы</a>
+	                    <a href="{{ route('articles', $city) }}" class="text menu__item menu__item_bordered">Статьи</a>
+	                    <a href="{{ route('dirMessage', $city) }}" class="text menu__item menu__item_bordered">Написать директору</a>
 	                </div>
 	            </div>
 	        </nav>
 		</div>
     </div>
     <div class="header__bottom container">
-        @if (\Request::route()->getName() != 'windows.main')
+        @if (!empty(\Request::route()) && \Request::route()->getName() != 'windows.main')
             {{ Breadcrumbs::render(\Request::route()->getName(), $city) }}
         @else
             <div class="header__offices dropdown">
@@ -102,7 +105,7 @@
             <a data-src="#popup_callback" class="text header__callback js-show">Заказать звонок</a>
         </div>
     </div>
-    @include('common.gui.mobileMenu')
+    @include('common.gui.mobileMenu', ['city' => $city])
 </header>
 <div class="header header_hidden">
     <div class="header__content">
