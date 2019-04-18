@@ -8,7 +8,7 @@
         font-weight: 300;
         line-height: rem(12);
         text-decoration: none;
-        padding-bottom: rem(8);
+		padding-bottom: rem(8);
 
 		@include below($tablet) {
 			display: none;
@@ -48,12 +48,11 @@
 		}
 
 		.header__feedbacks {
-
-            padding-bottom: rem(8);
+			padding-bottom: rem(8);
 
 			@include below($tablet) {
 				flex-direction: row;
-                padding-bottom: 0;
+				padding-bottom: 0;
 			}
 
             @include below($mobile) {
@@ -155,11 +154,11 @@
         }
 
         .menu__item.menu__item_dropdown {
-            padding-bottom: rem(8);
+			padding-bottom: rem(8);
 
-            @include below($tablet) {
-    			padding-bottom: 0;
-    		}
+			@include below($tablet) {
+				padding-bottom: 0;
+			}
         }
 
 		.menu__item_dropdown:hover .menu__dropdown {
@@ -201,7 +200,7 @@
     }
 
     &__main {
-        position: relative;
+		position: relative;
         @extend .container;
         display: flex;
         align-items: center;
@@ -290,7 +289,6 @@
 			font-size: rem(14);
 			line-height: rem(14);
 			font-weight: 300;
-
 		}
 
         @include below($mobile) {
@@ -300,7 +298,7 @@
 
         .search__input {
             width: 100%;
-            @extend .input;
+			@extend .input;
 			height: rem(40);
 			border-radius: 0;
 			border: rem(1) solid #e6e8ea;
@@ -331,14 +329,14 @@
 			}
 
 
-            @include below($tablet) {
+			@include below($tablet) {
 				padding-right: rem(41);
 			}
 
-            @include below($mobile) {
+			@include below($mobile) {
 				display: none;
-                margin: 0;
-                padding-right: rem(36);
+				margin: 0;
+				padding-right: rem(36);
 			}
         }
 
@@ -357,11 +355,11 @@
             outline: none;
 
             @include below($mobile) {
-                width: rem(20);
-                height: rem(20);
-                padding: 0;
-                display: none;
-                right: rem(16);
+				width: rem(20);
+				height: rem(20);
+				padding: 0;
+				display: none;
+				right: rem(16);
             }
 
             img {
@@ -370,62 +368,62 @@
             }
         }
 
-        &.active {
-            position: absolute;
-            flex-direction: row;
-            width: 100%;
-            height: 100%;
-            padding: rem(24) 0;
-            margin: 0;
-            background-color: #ffffff;
-            z-index: 1;
+		&.active {
+			position: absolute;
+			flex-direction: row;
+			width: 100%;
+			height: 100%;
+			padding: rem(24) 0;
+			margin: 0;
+			background-color: #ffffff;
+			z-index: 1;
 
-            .headerClimat__search-button {
-                display: none;
-            }
+			.headerClimat__search-button {
+				display: none;
+			}
 
-            .search__submit,
-            .search__input {
-                display: block;
-            }
+			.search__submit,
+			.search__input {
+				display: block;
+			}
 
-            .search__input {
-                width: auto;
-                margin-left: rem(8);
-            }
+			.search__input {
+				width: auto;
+				margin-left: rem(8);
+			}
 
-            .headerClimat__back-button {
-                display: flex;
-            }
-        }
-    }
+			.headerClimat__back-button {
+				display: flex;
+			}
+		}
+	}
 
-    &__back-button {
-        width: rem(36);
-        height: rem(36);
-        justify-content: center;
-        align-items: center;
-        padding: 0;
-        border: none;
-        background-color: transparent;
-        cursor: pointer;
-        outline: none;
-        display: none;
-        transform: rotate(90deg);
-    }
+	&__back-button {
+		width: rem(36);
+		height: rem(36);
+		justify-content: center;
+		align-items: center;
+		padding: 0;
+		border: none;
+		background-color: transparent;
+		cursor: pointer;
+		outline: none;
+		display: none;
+		transform: rotate(90deg);
+	}
 
-    &__search-button {
-        width: rem(18);
-        height: rem(18);
-        padding: 0;
-        border: none;
-        background-color: transparent;
-        cursor: pointer;
-        outline: none;
+	&__search-button {
+		width: rem(18);
+		height: rem(18);
+		padding: 0;
+		border: none;
+		background-color: transparent;
+		cursor: pointer;
+		outline: none;
 
-        @include above($mobile) {
-            display: none;
-        }
+		@include above($mobile) {
+			display: none;
+		}
     }
 
     &__login {
@@ -442,7 +440,7 @@
         }
 
         a {
-            position: relative;
+			position: relative;
             color: #485058;
             font-family: $helvetica;
             font-size: rem(16);
@@ -450,7 +448,7 @@
             line-height: rem(16);
             text-decoration: none;
 
-            &::before {
+			&::before {
                 position: absolute;
                 content: '';
                 width: 0;
@@ -493,7 +491,7 @@
 
     &__basket {
         position: relative;
-        padding-left: rem(26);
+		padding-left: rem(26);
         color: #485058;
         font-family: $helvetica;
         font-size: rem(16);
@@ -501,28 +499,28 @@
         line-height: rem(16);
         text-decoration: none;
 
-        &::before {
-            position: absolute;
-            content: '';
-            width: 0;
-            height: rem(1);
-            background-color: #babec2;
-            bottom: rem(-2);
-            left: rem(28);
-            transition: width .3s;
-        }
+		&::before {
+			position: absolute;
+			content: '';
+			width: 0;
+			height: rem(1);
+			background-color: #babec2;
+			bottom: rem(-2);
+			left: rem(28);
+			transition: width .3s;
+		}
 
-        @include above($tablet) {
-            &:hover {
-                &::before {
-                    width: calc(100% - 27px);
-                }
-            }
-        }
+		@include above($tablet) {
+			&:hover {
+				&::before {
+					width: calc(100% - 27px);
+				}
+			}
+		}
 
 		@include below($tablet) {
 			text-indent: -99999px;
-            font-size: 0;
+			font-size: 0;
 		}
 
 		@include below($mobile) {
@@ -533,7 +531,7 @@
             position: absolute;
             content: '';
             left: 0;
-            top: calc(50% - 2px);
+			top: calc(50% - 2px);
             width: rem(18);
             height: rem(16);
             background-image: url('/img/gui/basket.svg');
@@ -545,22 +543,21 @@
 				width: rem(28);
 	            height: rem(24);
 			}
-
 			@include below($mobile) {
 				width: rem(21);
-	            height: rem(18);
+				height: rem(18);
 				top: 50%;
 			}
         }
     }
 
     &__footer {
-        position: relative;
+		position: relative;
         @extend .container;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding-top: rem(12);
+		padding-top: rem(12);
         padding-bottom: rem(12);
     }
 
@@ -632,8 +629,7 @@
         font-size: rem(14);
         font-weight: 300;
         line-height: 1;
-        text-decoration: none;
-        cursor: pointer;
+		cursor: pointer;
 		transition: color .3s;
 
 		&:hover {
@@ -649,7 +645,7 @@
                 display: none;
             }
         }
-    }
+			    }
 
     .goTop {
         position: fixed;

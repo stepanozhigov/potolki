@@ -23,6 +23,10 @@ class City extends Model
     {
         return $this->name;
     }
+    public function socials ()
+    {
+        return $this->hasMany('App\Social');
+    }
     public function mainOffice ()
     {
         $title = $this->name;

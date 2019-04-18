@@ -25,65 +25,64 @@
             </div>
             <aside>
                 <div class="climatCatalogue__filter">
-
-                    <p class="climatCatalogue__filter-overtitle">
+					<p class="climatCatalogue__filter-overtitle">
 						Настройка фильтров
 
 					</p>
-                    <a class="climatCatalogue__filter-close" href="javascript:void(0);">
-                        <img src="/img/arrow-down.svg" alt="">
-                    </a>
-                    <div class="climatCatalogue__filter-content">
-	                    <section class="climatCatalogue__filter-item opened">
-	                        <p class="climatCatalogue__filter-title">Цена, рублей</p>
-	                        <input data-type="double" data-min="1000" data-from="8000" data-to="40000" data-max="120000" class="range" type="text" name="" value="">
-	                    </section>
-	                    <section class="climatCatalogue__filter-item opened">
-	                        <p class="climatCatalogue__filter-title">Производитель</p>
-	                        <label class="checkbox">
-	                            <input name="Electrolux" type="checkbox" class="checkbox__input">
-	                            <span class=" checkbox__mark"></span>
-	                            Electrolux
-	                            <p class="checkbox__desc">Швеция</p>
-	                        </label>
-	                        <label class="checkbox">
-	                            <input name="Fujitsu" type="checkbox" class="checkbox__input">
-	                            <span class=" checkbox__mark"></span>
-	                            Fujitsu
-	                            <p class="checkbox__desc">Япония</p>
-	                        </label>
-	                        <label class="checkbox">
-	                            <input name="Haier" type="checkbox" class="checkbox__input">
-	                            <span class=" checkbox__mark"></span>
-	                            Haier
-	                            <p class="checkbox__desc">Германия</p>
-	                        </label>
-	                        <label class="checkbox">
-	                            <input name="LG" type="checkbox" class="checkbox__input">
-	                            <span class=" checkbox__mark"></span>
-	                            LG
-	                            <p class="checkbox__desc">Корея</p>
-	                        </label>
-	                        <label class="checkbox">
-	                            <input name="Midea" type="checkbox" class="checkbox__input">
-	                            <span class=" checkbox__mark"></span>
-	                            Midea
-	                            <p class="checkbox__desc">Германия</p>
-	                        </label>
-	                        <label class="checkbox">
-	                            <input name="Mitsubishi" type="checkbox" class="checkbox__input">
-	                            <span class=" checkbox__mark"></span>
-	                            Mitsubishi
-	                            <p class="checkbox__desc">Япония</p>
-	                        </label>
-	                        <label class="checkbox">
-	                            <input name="Toshiba" type="checkbox" class="checkbox__input">
-	                            <span class=" checkbox__mark"></span>
-	                            Toshiba
-	                            <p class="checkbox__desc">Япония</p>
-	                        </label>
-	                    </section>
-	                    <a class="climatCatalogue__filter-more" href="javascript:void(0);"><span>Больше фильтров</span> →</a>
+					<a class="climatCatalogue__filter-close" href="javascript:void(0);">
+						<img src="/img/arrow-down.svg" alt="">
+					</a>
+					<div class="climatCatalogue__filter-content">
+						<section class="climatCatalogue__filter-item opened">
+							<p class="climatCatalogue__filter-title">Цена, рублей</p>
+							<input data-type="double" data-min="1000" data-from="8000" data-to="40000" data-max="120000" class="range" type="text" name="" value="">
+						</section>
+						<section class="climatCatalogue__filter-item opened">
+							<p class="climatCatalogue__filter-title">Производитель</p>
+							<label class="checkbox">
+								<input name="Electrolux" type="checkbox" class="checkbox__input">
+								<span class=" checkbox__mark"></span>
+								Electrolux
+								<p class="checkbox__desc">Швеция</p>
+							</label>
+							<label class="checkbox">
+								<input name="Fujitsu" type="checkbox" class="checkbox__input">
+								<span class=" checkbox__mark"></span>
+								Fujitsu
+								<p class="checkbox__desc">Япония</p>
+							</label>
+							<label class="checkbox">
+								<input name="Haier" type="checkbox" class="checkbox__input">
+								<span class=" checkbox__mark"></span>
+								Haier
+								<p class="checkbox__desc">Германия</p>
+							</label>
+							<label class="checkbox">
+								<input name="LG" type="checkbox" class="checkbox__input">
+								<span class=" checkbox__mark"></span>
+								LG
+								<p class="checkbox__desc">Корея</p>
+							</label>
+							<label class="checkbox">
+								<input name="Midea" type="checkbox" class="checkbox__input">
+								<span class=" checkbox__mark"></span>
+								Midea
+								<p class="checkbox__desc">Германия</p>
+							</label>
+							<label class="checkbox">
+								<input name="Mitsubishi" type="checkbox" class="checkbox__input">
+								<span class=" checkbox__mark"></span>
+								Mitsubishi
+								<p class="checkbox__desc">Япония</p>
+							</label>
+							<label class="checkbox">
+								<input name="Toshiba" type="checkbox" class="checkbox__input">
+								<span class=" checkbox__mark"></span>
+								Toshiba
+								<p class="checkbox__desc">Япония</p>
+							</label>
+						</section>
+						<a class="climatCatalogue__filter-more" href="javascript:void(0);"><span>Больше фильтров</span> →</a>
 					</div>
 					<div class="climatCatalogue__filter-buttons">
 						<button class="climatCatalogue__filter-apply" type="button" name="button">Применить</button>
@@ -134,7 +133,7 @@
         ])
         <div class="socials titles__socials container">
             <a href="" class="socials__item red-hoverable">
-                <div class="socials__icon socials__icon_insta"></div>
+				<div class="socials__icon socials__icon_insta"></div>
             </a>
             <a href="" class="socials__item red-hoverable">
                 <div class="socials__icon socials__icon_fb"></div>
@@ -150,10 +149,7 @@
             </a>
         </div>
         <posts :posts="{{ $articles }}"></posts>
-
-
-
-       <a href="http://89.108.103.224/sochi/articles" class="articles__button">Все посты</a>
+        <a href="http://89.108.103.224/sochi/articles" class="articles__button">Все посты</a>
 
     </section>
 

@@ -6047,7 +6047,6 @@ corresponds to the arrow we want to display */
   font-size: 0.875rem;
   font-weight: 300;
   line-height: 1;
-  text-decoration: none;
   cursor: pointer;
   -webkit-transition: color .3s;
   transition: color .3s;
@@ -25410,12 +25409,6 @@ input[type="search"]::-webkit-search-results-decoration {
     padding: 1.5rem 1rem;
     padding-top: 0;
     padding-top: 0;
-  }
-}
-
-@media screen and (max-width: 44.9375rem) {
-  .climatCard__info {
-    padding-bottom: 2rem;
   }
 }
 

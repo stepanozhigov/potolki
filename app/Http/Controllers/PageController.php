@@ -360,7 +360,7 @@ class PageController extends Controller
             'reviews'   =>  Review::limit(3)->orderBy('sort', 'asc')->get(),
             'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first(),
             'articles' => Article::where(['is_active' => 1, 'in_main' => 1])->orderBy('sort', 'asc')->get()
-        ]);
+		]);
     }
 
     public function climatCatalogue (City $city)
