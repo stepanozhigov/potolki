@@ -10,7 +10,7 @@
         <div class="climatCatalogue__content">
 			<div class="climatCatalogue__sort">
                 <p>Сортировать по:</p>
-                <label class="climatCatalogue__sort-item">
+                <label class="climatCatalogue__sort-item active">
                     <input name="sort" type="radio">
                     <p>рейтингу</p>
                 </label>
@@ -73,7 +73,7 @@
                 </div>
             </div>
 			<p class="climatCatalogue__result">
-                Найдено 27 товаров  из 74:
+                Найдено 27 товаров  из 74
             </p>
             <div class="climatCatalogue__list">
                 <div class="climatCatalogue__heading">
@@ -100,6 +100,7 @@
                 @include('climat.climatCard')
                 @include('climat.climatCard')
                 @include('climat.climatCard')
+                @include('climat.climatCard')
                 <a class="climatCatalogue__all" href="javascript:void(0);">Показать ещё 154 товара</a>
             </div>
             <aside>
@@ -115,6 +116,39 @@
                             <p class="climatCatalogue__filter-title">Цена, рублей</p>
                             <input data-type="double" data-min="1000" data-from="8000" data-to="27000" data-max="60000" class="range" type="text" name="" value="">
                         </section>
+						<section class="climatCatalogue__filter-item opened">
+	                        <p class="climatCatalogue__filter-title">Площадь, м<sup>2</sup></p>
+	                        <label class="checkbox">
+	                            <input name="20" type="checkbox" class="checkbox__input">
+	                            <span class=" checkbox__mark"></span>
+	                            До 20 м<sup>2</sup>
+	                            <p class="checkbox__desc">7 модель</p>
+	                        </label>
+	                        <label class="checkbox">
+	                            <input name="30" type="checkbox" class="checkbox__input">
+	                            <span class=" checkbox__mark"></span>
+	                            До 30 м<sup>2</sup>
+	                            <p class="checkbox__desc">9 модель</p>
+	                        </label>
+	                        <label class="checkbox">
+	                            <input name="54" type="checkbox" class="checkbox__input">
+	                            <span class=" checkbox__mark"></span>
+	                            До 54 м<sup>2</sup>
+	                            <p class="checkbox__desc">12 модель</p>
+	                        </label>
+	                        <label class="checkbox">
+	                            <input name="79" type="checkbox" class="checkbox__input">
+	                            <span class=" checkbox__mark"></span>
+	                            До 79 м<sup>2</sup>
+	                            <p class="checkbox__desc">18 модель</p>
+	                        </label>
+	                        <label class="checkbox">
+	                            <input name="120" type="checkbox" class="checkbox__input">
+	                            <span class=" checkbox__mark"></span>
+	                            До 120 м<sup>2</sup>
+	                            <p class="checkbox__desc">24 модель</p>
+	                        </label>
+	                    </section>
                         <section class="climatCatalogue__filter-item opened">
                             <p class="climatCatalogue__filter-title">Тип <a class="climatCatalogue__filter-clear" href="javascript:void(0);">Сбросить</a></p>
                             <label class="checkbox">
@@ -239,7 +273,7 @@
                                         <p></p>
                                     </div>
                                 </div>
-                                <p class="radio__desc">(18)</p>
+                                <p class="radio__desc">18</p>
                             </label>
                             <label class="radio">
                                 <input name="rating" type="radio" class="radio__input">
@@ -249,7 +283,7 @@
                                         <p></p>
                                     </div>
                                 </div>
-                                <p class="radio__desc">(18)</p>
+                                <p class="radio__desc">18</p>
                             </label>
                             <label class="radio">
                                 <input name="rating" type="radio" class="radio__input">
@@ -259,17 +293,13 @@
                                         <p></p>
                                     </div>
                                 </div>
-                                <p class="radio__desc">(18)</p>
+                                <p class="radio__desc">18</p>
                             </label>
                             <label class="radio">
                                 <input name="rating" type="radio" class="radio__input">
                                 <span class=" radio__mark"></span>
                                 Любой/без рейтинга
                             </label>
-                        </section>
-                        <section class="climatCatalogue__filter-item opened">
-                            <p class="climatCatalogue__filter-title">Площадь, м2 <a class="climatCatalogue__filter-clear" href="javascript:void(0);">Сбросить</a></p>
-                            <input data-type="double" data-min="0" data-from="20" data-to="70" data-max="150" class="range" type="text" name="" value="">
                         </section>
                         <section class="climatCatalogue__filter-item opened">
                             <p class="climatCatalogue__filter-title">Возможности <a class="climatCatalogue__filter-clear" href="javascript:void(0);">Сбросить</a></p>
@@ -301,39 +331,6 @@
                                 <input name="Console" type="checkbox" class="checkbox__input">
                                 <span class=" checkbox__mark"></span>
                                 Пульт
-                                <p class="checkbox__desc">9</p>
-                            </label>
-                        </section>
-                        <section class="climatCatalogue__filter-item">
-                            <p class="climatCatalogue__filter-title">Мощность <a class="climatCatalogue__filter-clear" href="javascript:void(0);">Сбросить</a></p>
-                            <label class="checkbox">
-                                <input name="1" type="checkbox" class="checkbox__input">
-                                <span class=" checkbox__mark"></span>
-                                1
-                                <p class="checkbox__desc">18</p>
-                            </label>
-                            <label class="checkbox">
-                                <input name="2" type="checkbox" class="checkbox__input">
-                                <span class=" checkbox__mark"></span>
-                                2
-                                <p class="checkbox__desc">7</p>
-                            </label>
-                            <label class="checkbox">
-                                <input name="3" type="checkbox" class="checkbox__input">
-                                <span class=" checkbox__mark"></span>
-                                3
-                                <p class="checkbox__desc">11</p>
-                            </label>
-                            <label class="checkbox">
-                                <input name="4" type="checkbox" class="checkbox__input">
-                                <span class=" checkbox__mark"></span>
-                                4
-                                <p class="checkbox__desc">5</p>
-                            </label>
-                            <label class="checkbox">
-                                <input name="5" type="checkbox" class="checkbox__input">
-                                <span class=" checkbox__mark"></span>
-                                5
                                 <p class="checkbox__desc">9</p>
                             </label>
                         </section>
@@ -380,7 +377,7 @@
                             </label>
                         </section>
                         <section class="climatCatalogue__filter-item">
-                            <p class="climatCatalogue__filter-title">Габариты и Вес <a class="climatCatalogue__filter-clear" href="javascript:void(0);">Сбросить</a></p>
+                            <p class="climatCatalogue__filter-title">Габариты и вес <a class="climatCatalogue__filter-clear" href="javascript:void(0);">Сбросить</a></p>
                             <label class="checkbox">
                                 <input name="1" type="checkbox" class="checkbox__input">
                                 <span class=" checkbox__mark"></span>
@@ -422,7 +419,7 @@
                             </label>
                         </section>
 
-                        <a class="climatCatalogue__filter-reset" href="javascript:void(0);">Сбросить все фильтры</a>
+                        <a class="climatCatalogue__filter-reset" href="javascript:void(0);"><span>Сбросить все фильтры</span></a>
                     </div>
                     <div class="climatCatalogue__filter-buttons">
                         <button class="climatCatalogue__filter-apply" type="button" name="button">Применить</button>

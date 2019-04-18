@@ -227,6 +227,13 @@
         .header__directions {
             margin-right: auto;
 
+			&::before {
+				height: rem(40);
+				top: 50%;
+				transform: translateY(-50%);
+				background-color: #babec2;
+			}
+
 			@include below($tablet) {
 				margin-left: rem(30);
 
@@ -241,7 +248,6 @@
 
 				&::before {
 					left: rem(-8);
-					top: rem(-9);
 				}
 			}
         }
@@ -273,6 +279,7 @@
         align-items: center;
         justify-content: center;
         width: rem(307);
+
         margin-right: rem(83);
 		flex-shrink: 0;
 
@@ -294,36 +301,38 @@
         .search__input {
             width: 100%;
             @extend .input;
+			height: rem(40);
 			border-radius: 0;
 			border: rem(1) solid #e6e8ea;
 			padding-left: rem(12);
-			padding-top: rem(12);
-			padding-bottom: rem(14);
+			padding-top: rem(13);
+			padding-bottom: rem(13);
 
+			font-size: rem(14);
+			line-height: rem(14);
+			font-weight: 300;
 
+			&::placeholder {
+				font-size: rem(14);
+				line-height: rem(14);
+				font-weight: 300;
+			}
+
+			&:-ms-input-placeholder {
+				font-size: rem(14);
+				line-height: rem(14);
+				font-weight: 300;
+			}
+
+			&::-ms-input-placeholder {
+				font-size: rem(14);
+				line-height: rem(14);
+				font-weight: 300;
+			}
 
 
             @include below($tablet) {
 				padding-right: rem(41);
-				height: rem(40);
-
-				&::placeholder {
-					font-size: rem(14);
-		  	  		line-height: rem(14);
-		  	  		font-weight: 300;
-			    }
-
-			    &:-ms-input-placeholder {
-					font-size: rem(14);
-					line-height: rem(14);
-					font-weight: 300;
-			    }
-
-			    &::-ms-input-placeholder {
-					font-size: rem(14);
-					line-height: rem(14);
-					font-weight: 300;
-			    }
 			}
 
             @include below($mobile) {
@@ -406,8 +415,8 @@
     }
 
     &__search-button {
-        width: rem(20);
-        height: rem(20);
+        width: rem(18);
+        height: rem(18);
         padding: 0;
         border: none;
         background-color: transparent;
@@ -535,6 +544,12 @@
 			@include below($tablet) {
 				width: rem(28);
 	            height: rem(24);
+			}
+
+			@include below($mobile) {
+				width: rem(21);
+	            height: rem(18);
+				top: 50%;
 			}
         }
     }

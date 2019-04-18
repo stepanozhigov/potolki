@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="18px" height="16px" viewBox="0 0 18 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 54 (76480) - https://sketchapp.com -->
-    <title>Group</title>
+<svg width="22px" height="20px" viewBox="0 0 22 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Group 5</title>
     <desc>Created with Sketch.</desc>
     <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Components-/-Mixin-/-Icons-basic-/-Cart" transform="translate(-1.000000, 0.000000)" stroke="#808890" stroke-width="1.01">
-            <g id="Group" transform="translate(1.504700, 0.505000)">
-                <polyline id="Stroke-1" stroke-linecap="round" stroke-linejoin="round" points="6.4745 9.3628 16.0015 9.3628 17.0005 3.1008 4.9735 2.2868"></polyline>
-                <path d="M16.8099,13.2299 L16.1519,13.2299" id="Stroke-3" stroke-linecap="round"></path>
-                <path d="M5.5326,13.227 C4.6896,13.215 4.0096,12.551 4.0096,11.73 C4.0096,11.159 4.3456,10.636 4.8746,10.384 L5.5636,10.056 C5.9906,9.853 6.2226,9.396 6.1306,8.944 L4.4576,0.819 C4.3596,0.342 3.9286,-5.24025268e-13 3.4286,-5.24025268e-13" id="Stroke-5" stroke-linecap="round"></path>
-                <path d="M13.5956,13.2299 L8.0886,13.2299" id="Stroke-7" stroke-linecap="round"></path>
-                <path d="M1.889,0.0004 L6.18394225e-14,0.0004" id="Stroke-9" stroke-linecap="round"></path>
-                <path d="M8.1742,13.6772 C8.1742,14.4072 7.5632,15.0002 6.8102,15.0002 C6.0572,15.0002 5.4462,14.4072 5.4462,13.6772 C5.4462,12.9472 6.0572,12.3542 6.8102,12.3542 C7.5632,12.3542 8.1742,12.9472 8.1742,13.6772 Z" id="Stroke-11"></path>
-                <path d="M16.2381,13.6772 C16.2381,14.4072 15.6271,15.0002 14.8741,15.0002 C14.1201,15.0002 13.5101,14.4072 13.5101,13.6772 C13.5101,12.9472 14.1201,12.3542 14.8741,12.3542 C15.6271,12.3542 16.2381,12.9472 16.2381,13.6772 Z" id="Stroke-13"></path>
-            </g>
+        <g id="Group-5" transform="translate(1.000000, 1.000000)" stroke="#808890" stroke-width="1.01">
+            <polyline id="Stroke-1" stroke-linecap="round" stroke-linejoin="round" points="7.7694 11.23536 19.2018 11.23536 20.4006 3.72096 5.9682 2.74416"></polyline>
+            <path d="M20.17188,15.87588 L19.38228,15.87588" id="Stroke-3" stroke-linecap="round"></path>
+            <path d="M6.63912,15.8724 C5.62752,15.858 4.81152,15.0612 4.81152,14.076 C4.81152,13.3908 5.21472,12.7632 5.84952,12.4608 L6.67632,12.0672 C7.18872,11.8236 7.46712,11.2752 7.35672,10.7328 L5.34912,0.9828 C5.23152,0.4104 4.71432,-6.92779167e-14 4.11432,-6.92779167e-14" id="Stroke-5" stroke-linecap="round"></path>
+            <path d="M16.31472,15.87588 L9.70632,15.87588" id="Stroke-7" stroke-linecap="round"></path>
+            <path d="M2.2668,0.00048 L4.99600361e-15,0.00048" id="Stroke-9" stroke-linecap="round"></path>
+            <path d="M9.80904,16.41264 C9.80904,17.28864 9.07584,18.00024 8.17224,18.00024 C7.26864,18.00024 6.53544,17.28864 6.53544,16.41264 C6.53544,15.53664 7.26864,14.82504 8.17224,14.82504 C9.07584,14.82504 9.80904,15.53664 9.80904,16.41264 Z" id="Stroke-11"></path>
+            <path d="M19.48572,16.41264 C19.48572,17.28864 18.75252,18.00024 17.84892,18.00024 C16.94412,18.00024 16.21212,17.28864 16.21212,16.41264 C16.21212,15.53664 16.94412,14.82504 17.84892,14.82504 C18.75252,14.82504 19.48572,15.53664 19.48572,16.41264 Z" id="Stroke-13"></path>
         </g>
     </g>
 </svg>

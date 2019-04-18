@@ -101,11 +101,12 @@
         &:before {
             content: '';
             position: absolute;
-            top: -11px;
+			top: 50%;
             left: -24px;
             width: .0625rem;
             height: 2.8125rem;
-            background-color: #a7aaad;
+            background-color: #babec2;
+			transform: translateY(-50%);
 
             @media screen and (max-width: 650px){
                 content: none;

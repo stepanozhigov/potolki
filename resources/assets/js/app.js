@@ -785,3 +785,11 @@ $('.climatCatalogue__filter-close').on('click', function () {
     $('.climatCatalogue__filter').removeClass('opened');
     enableBodyScroll(filter);
 });
+
+$('.climatCatalogue__sort-item').on('click', function () {
+    $(this).addClass('active');
+    $(this).siblings().removeClass('active');
+});
+$('.climatCatalogue__filter-clear').on('click', function (event) {
+    event.stopPropagation();
+});

@@ -76,6 +76,16 @@
         position: relative;
         margin-bottom: rem(5);
 
+		@include below($tablet) {
+            margin-bottom: 0;
+
+        }
+
+		@include below($mobile) {
+            margin-bottom: rem(5);
+
+        }
+
 
 
         img {
@@ -123,7 +133,8 @@
         @include below($tablet) {
             width: 100%;
             flex-shrink: 0;
-            margin-bottom: rem(42);
+            margin-bottom: rem(24);
+
         }
 
         @include below($mobile) {
@@ -137,6 +148,11 @@
         justify-content: space-between;
         width: 100%;
         margin-bottom: rem(32);
+
+		@include below($tablet) {
+			padding: 0 rem(16);
+			margin-bottom: 0;
+		}
 
         @include below($mobile) {
             display: flex;
@@ -158,6 +174,7 @@
         @include below($tablet) {
             font-size: rem(12);
             line-height: rem(12);
+			margin-bottom: 0;
         }
 
         svg {
@@ -177,7 +194,7 @@
 
     &__comparison {
         @include below($tablet) {
-            margin-bottom: rem(26);
+            margin-bottom: rem(0);
         }
 
         @include below($mobile) {
@@ -190,7 +207,8 @@
         flex-wrap: wrap;
 
         @include below($tablet) {
-            padding: rem(16) rem(24);
+            padding: rem(24) rem(16);
+			padding-top: 0;
             padding-top: 0;
         }
 
@@ -516,7 +534,7 @@
             }
 
 			.climatCard__preview {
-				margin-bottom: rem(30);
+				margin-bottom: rem(40);
 
                 @include below($tablet) {
                     margin-bottom: 0;

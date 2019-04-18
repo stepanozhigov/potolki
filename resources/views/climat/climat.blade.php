@@ -39,39 +39,6 @@
 	                        <input data-type="double" data-min="1000" data-from="8000" data-to="40000" data-max="120000" class="range" type="text" name="" value="">
 	                    </section>
 	                    <section class="climatCatalogue__filter-item opened">
-	                        <p class="climatCatalogue__filter-title">Площадь, м2</p>
-	                        <label class="checkbox">
-	                            <input name="20" type="checkbox" class="checkbox__input">
-	                            <span class=" checkbox__mark"></span>
-	                            До 20 м2
-	                            <p class="checkbox__desc">7 модель</p>
-	                        </label>
-	                        <label class="checkbox">
-	                            <input name="30" type="checkbox" class="checkbox__input">
-	                            <span class=" checkbox__mark"></span>
-	                            До 30 м2
-	                            <p class="checkbox__desc">9 модель</p>
-	                        </label>
-	                        <label class="checkbox">
-	                            <input name="54" type="checkbox" class="checkbox__input">
-	                            <span class=" checkbox__mark"></span>
-	                            До 54 м2
-	                            <p class="checkbox__desc">12 модель</p>
-	                        </label>
-	                        <label class="checkbox">
-	                            <input name="79" type="checkbox" class="checkbox__input">
-	                            <span class=" checkbox__mark"></span>
-	                            До 79 м2
-	                            <p class="checkbox__desc">18 модель</p>
-	                        </label>
-	                        <label class="checkbox">
-	                            <input name="120" type="checkbox" class="checkbox__input">
-	                            <span class=" checkbox__mark"></span>
-	                            До 120 м2
-	                            <p class="checkbox__desc">24 модель</p>
-	                        </label>
-	                    </section>
-	                    <section class="climatCatalogue__filter-item opened">
 	                        <p class="climatCatalogue__filter-title">Производитель</p>
 	                        <label class="checkbox">
 	                            <input name="Electrolux" type="checkbox" class="checkbox__input">

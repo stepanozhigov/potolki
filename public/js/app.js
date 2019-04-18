@@ -14455,6 +14455,14 @@ $('.climatCatalogue__filter-close').on('click', function () {
     enableBodyScroll(filter);
 });
 
+$('.climatCatalogue__sort-item').on('click', function () {
+    $(this).addClass('active');
+    $(this).siblings().removeClass('active');
+});
+$('.climatCatalogue__filter-clear').on('click', function (event) {
+    event.stopPropagation();
+});
+
 /***/ }),
 /* 11 */
 /***/ (function(module, exports, __webpack_require__) {
