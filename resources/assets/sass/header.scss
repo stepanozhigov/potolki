@@ -287,7 +287,7 @@
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         left: 0;
         box-sizing: border-box;
-        padding: 20px 0;
+        padding: rem(10) 0;
         flex-direction: row;
         align-items: center;
 		animation: headerSticky .3s;
@@ -302,6 +302,23 @@
             display: flex;
         }
 
+		.header__phone {
+			margin-right: rem(24);
+		}
+
+		.logo {
+			margin-right: 0;
+
+			.logo__icon {
+				display: none;
+			}
+
+			.logo__text {
+				height: rem(16);
+				width: auto;
+			}
+		}
+
         .menu,
         .header__hamburger {
             display: none;
@@ -311,6 +328,7 @@
             &.active {
                 margin-left: 0;
                 padding: 0;
+
             }
 
         }
@@ -342,6 +360,7 @@
                     padding-right: 0;
                     width: rem(28);
                     height: rem(31);
+					margin-bottom: 0;
                 }
             }
 

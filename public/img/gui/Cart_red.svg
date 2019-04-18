@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="16px" viewBox="0 0 22 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Components / Mixin / Icons basic / Cart</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Components-/-Mixin-/-Icons-basic-/-Cart" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polyline id="Stroke-1" stroke="#DC1414" stroke-width="1.01" stroke-linecap="round" stroke-linejoin="round" points="7.9792 9.8678 17.5062 9.8678 18.5052 3.6058 6.4782 2.7918"></polyline>
+        <path d="M18.3146,13.7349 L17.6566,13.7349" id="Stroke-3" stroke="#DC1414" stroke-width="1.01" stroke-linecap="round"></path>
+        <path d="M7.0373,13.732 C6.1943,13.72 5.5143,13.056 5.5143,12.235 C5.5143,11.664 5.8503,11.141 6.3793,10.889 L7.0683,10.561 C7.4953,10.358 7.7273,9.901 7.6353,9.449 L5.9623,1.324 C5.8643,0.847 5.4333,0.505 4.9333,0.505" id="Stroke-5" stroke="#DC1414" stroke-width="1.01" stroke-linecap="round"></path>
+        <path d="M15.1003,13.7349 L9.5933,13.7349" id="Stroke-7" stroke="#DC1414" stroke-width="1.01" stroke-linecap="round"></path>
+        <path d="M3.3937,0.5054 L1.5047,0.5054" id="Stroke-9" stroke="#DC1414" stroke-width="1.01" stroke-linecap="round"></path>
+        <path d="M9.6789,14.1822 C9.6789,14.9122 9.0679,15.5052 8.3149,15.5052 C7.5619,15.5052 6.9509,14.9122 6.9509,14.1822 C6.9509,13.4522 7.5619,12.8592 8.3149,12.8592 C9.0679,12.8592 9.6789,13.4522 9.6789,14.1822 Z" id="Stroke-11" stroke="#DC1414" stroke-width="1.01"></path>
+        <path d="M17.7428,14.1822 C17.7428,14.9122 17.1318,15.5052 16.3788,15.5052 C15.6248,15.5052 15.0148,14.9122 15.0148,14.1822 C15.0148,13.4522 15.6248,12.8592 16.3788,12.8592 C17.1318,12.8592 17.7428,13.4522 17.7428,14.1822 Z" id="Stroke-13" stroke="#DC1414" stroke-width="1.01"></path>
+    </g>
+</svg>

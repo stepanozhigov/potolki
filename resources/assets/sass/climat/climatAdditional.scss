@@ -4,6 +4,12 @@
 	flex-direction: column;
 	align-items: center;
 
+	.second-title {
+		@include below($mobile-small) {
+			margin-bottom: rem(40);
+        }
+	}
+
 	&__list {
 		display: flex;
 		flex-wrap: wrap;

@@ -82,7 +82,7 @@
     </ul>
     <div class="mobileMenu__social socials">
         <a target="_blank" href="https://www.instagram.com/business_repin/" class="socials__item">
-            <div class="socials__icon socials__icon_inst"></div>
+            <div class="socials__icon socials__icon_insta"></div>
         </a>
         <a target="_blank" href="https://vk.com/business.repin" class="socials__item">
             <div class="socials__icon socials__icon_fb"></div>

@@ -62,10 +62,12 @@ $(document).on('scroll', function () {
         $header = $('.header_hidden').length > 0 ? $('.header_hidden'): $('.header_sticky');
 
     if (scrollPosition > 200) {
-        $header.addClass('header_sticky').removeClass('header_hidden')  ;
+        $header.addClass('header_sticky').removeClass('header_hidden');
+        $('.goTop').addClass('visible');
     }
     else {
         $header.removeClass('header_sticky').addClass('header_hidden');
+        $('.goTop').removeClass('visible');
     }
 });
 
@@ -703,10 +705,20 @@ $('.mobileMenu__link-prev').on('click', function (event) {
 
 $('.climatCard__comparison').on('click', function () {
     $(this).toggleClass('active');
+    if ($(this).is(".active")) {
+        $(this).find('span').text('В сравнении');
+    } else {
+        $(this).find('span').text('К сравнению');
+    }
 });
 
 $('.climatCard__favourites').on('click', function () {
     $(this).toggleClass('active');
+    if ($(this).is(".active")) {
+        $(this).find('span').text('В избранном');
+    } else {
+        $(this).find('span').text('В избранное');
+    }
 });
 
 $('.climatCatalogue__filter-title').on('click', function () {
@@ -715,6 +727,14 @@ $('.climatCatalogue__filter-title').on('click', function () {
 
 $('.climatCard__stars').rateYo({
     rating: 3,
+    starWidth: '16px',
+    normalFill: '#babec2',
+    ratedFill: '#dc1414',
+    fullStar: true,
+    readOnly: true
+});
+$('.climatCatalogue__stars').rateYo({
+    rating: $(this).attr("data-rateyo-rating"),
     starWidth: '16px',
     normalFill: '#babec2',
     ratedFill: '#dc1414',
@@ -732,4 +752,36 @@ $('.headerClimat__search-button').on('click', function () {
 
 $('.headerClimat__back-button').on('click', function () {
     $(this).closest('.headerClimat__search').removeClass('active');
+});
+
+$('#priceSort').on('change', function () {
+    if ($(this).is(":checked")) {
+        $(this).next().text('возрастанию цены');
+    } else {
+        $(this).next().text('понижению цены');
+    }
+});
+
+$('.goTop').on('click', function () {
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+});
+
+$('.climatCatalogue__orientation input[name=orientation]').on('change', function () {
+    if($(this).val() == 'cards') {
+        $('.climatCard').removeClass('climatCard_horisontal');
+    } else if ($(this).val() == 'list') {
+        $('.climatCard').addClass('climatCard_horisontal');
+    }
+});
+
+const filter = document.querySelector(".climatCatalogue__filter-content");
+
+$('.climatCatalogue__filter-open').on('click', function () {
+    $('.climatCatalogue__filter').addClass('opened');
+    disableBodyScroll(filter);
+});
+
+$('.climatCatalogue__filter-close').on('click', function () {
+    $('.climatCatalogue__filter').removeClass('opened');
+    enableBodyScroll(filter);
 });

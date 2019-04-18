@@ -1,0 +1,117 @@
+.recent {
+	display: flex;
+	flex-direction: column;
+	@extend .container;
+	margin-bottom: rem(96);
+	overflow: hidden;
+
+	&__list {
+		display: flex;
+		justify-content: flex-start;
+		width: calc(100% + 20px);
+		margin-left: rem(-10);
+		margin-right: rem(-10);
+	}
+
+	&__item {
+		width: calc(25% - 20px);
+		margin: 0 rem(10);
+		display: flex;
+		align-items: center;
+		padding: rem(12) rem(16);
+		box-shadow: 0 0 1px rgba(0, 0, 0, 0.16), inset 0 -1px 0 rgba(0, 0, 0, 0.12);
+		border-radius: rem(4);
+		background-color: #ffffff;
+		flex-shrink: 0;
+
+		@include below($tablet) {
+			width: calc(33.3% - 20px);
+		}
+
+		@include below($mobile) {
+			width: rem(235);
+			margin: 0 rem(8);
+		}
+
+		&-image {
+			width: rem(116);
+			height: rem(116);
+
+			@include below($tablet) {
+				width: rem(97);
+				height: auto;
+			}
+		}
+
+		&-info {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+
+		&-name {
+			width: 100%;
+			margin: 0;
+			color: #485058;
+			font-family: $futura;
+			font-size: rem(14);
+			font-weight: 500;
+			letter-spacing: rem(0.8);
+			text-transform: uppercase;
+			text-align: left;
+		}
+
+		&-model {
+			width: 100%;
+			margin: 0;
+			margin-bottom: rem(14);
+			color: #a7aaad;
+			font-family: $futura;
+			font-size: rem(10);
+			font-weight: 400;
+			letter-spacing: 0.5px;
+			text-transform: uppercase;
+			text-align: left;
+		}
+
+
+
+	    &-oldPrice {
+	        width: 100%;
+	        margin: 0;
+	        margin-bottom: rem(6);
+	        display: flex;
+	        align-items: center;
+
+	        span {
+
+	            &:first-of-type {
+	                color: #babec2;
+	                font-family: $helvetica;
+	                font-size: rem(12);
+	                font-weight: 300;
+	                line-height: rem(12);
+	                text-decoration: line-through;
+	            }
+
+	            &:last-of-type {
+	                margin-left: rem(8);
+	                color: #dc1414;
+	                font-family: $helvetica;
+	                font-size: rem(12);
+	                line-height: rem(12);
+	                text-decoration: none;
+	            }
+	        }
+	    }
+
+	    &-price {
+			margin: 0;
+	        color: #dc1414;
+	        font-family: $helvetica;
+	        font-size: rem(18);
+	        line-height: 1;
+	    }
+	}
+
+}

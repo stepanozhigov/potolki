@@ -26,8 +26,8 @@
                 </div>
             </div>
             <div class="header__feedbacks">
-                <a href="https://api.whatsapp.com/send?phone={{ $city->whatsapp }}" class="text whatsapp header__whatsapp red-hoverable"><img src="/img/gui/whatsapp.svg" alt="" class="whatsapp__icon"> <span class="whatsapp__write-text">Написать в&nbsp</span>WhatsApp <span class="whatsapp__mobile-text">написать</span></a>
-                <a href="tel:{{ $city->phone }}" class="text phone header__phone  red-hoverable"><img class="phone__icon" src="/img/gui/phone.svg" alt="">{{ $city->phone }} <span data-src="#popup_callback" class="js-show">заказать звонок</span></a>
+                <a href="https://api.whatsapp.com/send?phone={{ $city->whatsapp }}" class="text whatsapp header__whatsapp red-hoverable"><img src="/img/gui/whatsapp_climat.svg" alt="" class="whatsapp__icon"> <span class="whatsapp__write-text">Написать в&nbsp</span>WhatsApp <span class="whatsapp__mobile-text">написать</span></a>
+                <a href="tel:{{ $city->phone }}" class="text phone header__phone  red-hoverable"><img class="phone__icon" src="/img/gui/phone_climat.svg" alt="">{{ $city->phone }} <span data-src="#popup_callback" class="js-show">заказать звонок</span></a>
                 <a data-src="#popup_callback" class="text header__callback js-show">Заказать звонок</a>
             </div>
             <a class="headerClimat__shipping" href="javascript:void(0);">Доставка и оплата</a>
@@ -100,7 +100,7 @@
         <a class="headerClimat__link" href="javascript:void(0);">Промышленные <span>кондиционеры</span> </a>
         <a class="headerClimat__link" href="javascript:void(0);">Установка</a>
         <a class="headerClimat__link" href="javascript:void(0);">Опт</a>
-        <a class="headerClimat__more" href="javascript:void(0);">еще</a>
+        <a class="headerClimat__more" href="javascript:void(0);">Ещё</a>
         <div class="headerClimat__dropdown">
             <a class="headerClimat__link" href="javascript:void(0);">Промышленные <span>кондиционеры</span> </a>
             <a class="headerClimat__link" href="javascript:void(0);">Установка</a>
@@ -108,6 +108,24 @@
         </div>
 	</div>
     @include('common.gui.mobileMenu')
+    <button class="goTop" type="button" name="button">
+        <img class="" src="/img/gui/arrow.svg" alt="">
+    </button>
+    <div class="stickyLinks">
+        <a href="javascript:void(0);" class="favourites stickyLinks__item">
+            <p class="favourites__name"><img src="/img/gui/Heart_red.svg" alt="">Избранное</p>
+            <p class="favourites__val">2 <span>товара</span></p>
+        </a>
+        <a href="javascript:void(0);" class="comparison stickyLinks__item">
+            <p class="comparison__name"><img src="/img/gui/Compare_red.svg" alt="">Сравнение</p>
+            <p class="comparison__val">2 <span>товара</span></p>
+        </a>
+        <a href="javascript:void(0);" class="basket stickyLinks__item">
+            <p class="basket__name"><img src="/img/gui/Cart_red.svg" alt="">Корзина</p>
+            <p class="basket__val">2 <span>товара</span></p>
+            <p class="basket__price">325 990 ₽</p>
+        </a>
+    </div>
 </header>
 <div class="header header_hidden">
     <div class="header__content">

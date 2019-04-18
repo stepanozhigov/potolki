@@ -8,6 +8,7 @@
         font-weight: 300;
         line-height: rem(12);
         text-decoration: none;
+        padding-bottom: rem(8);
 
 		@include below($tablet) {
 			display: none;
@@ -19,6 +20,7 @@
         align-items: center;
         justify-content: flex-start;
         padding: rem(8) 0;
+        padding-bottom: 0;
         background-color: #f4f6f8;
 
 		@include below($tablet) {
@@ -46,8 +48,12 @@
 		}
 
 		.header__feedbacks {
+
+            padding-bottom: rem(8);
+
 			@include below($tablet) {
 				flex-direction: row;
+                padding-bottom: 0;
 			}
 
             @include below($mobile) {
@@ -60,6 +66,8 @@
 		}
 
 		.whatsapp.header__whatsapp {
+			margin-right: rem(48);
+
 			@include below($tablet) {
 				flex-direction: row;
 				align-items: center;
@@ -87,6 +95,7 @@
 
 
 		.header__phone {
+			margin-right: rem(16);
 
 			@include below($tablet) {
 				flex-direction: row;
@@ -146,7 +155,11 @@
         }
 
         .menu__item.menu__item_dropdown {
-            padding-bottom: 0;
+            padding-bottom: rem(8);
+
+            @include below($tablet) {
+    			padding-bottom: 0;
+    		}
         }
 
 		.menu__item_dropdown:hover .menu__dropdown {
@@ -164,6 +177,11 @@
 
         .header__offices {
             min-width: rem(256);
+            padding-bottom: rem(8);
+
+            @include below($tablet) {
+    			padding-bottom: 0;
+    		}
         }
 
         .header__menu {
@@ -194,6 +212,13 @@
             padding: rem(24) 0;
         }
 
+		.dropdown__item_active {
+			@include below($tablet) {
+				font-size: rem(16);
+				line-height: 1;
+			}
+		}
+
         .header__logo,
         .header__directions {
             padding-bottom: 0;
@@ -203,11 +228,21 @@
             margin-right: auto;
 
 			@include below($tablet) {
-				margin-left: rem(35);
+				margin-left: rem(30);
+
+				&::before {
+					left: rem(-14);
+					height: rem(40);
+				}
 			}
 
             @include below($mobile) {
 				margin-left: rem(16);
+
+				&::before {
+					left: rem(-8);
+					top: rem(-9);
+				}
 			}
         }
 
@@ -241,9 +276,14 @@
         margin-right: rem(83);
 		flex-shrink: 0;
 
+
 		@include below($tablet) {
 			width: rem(180);
 			margin-right: rem(20);
+			font-size: rem(14);
+			line-height: rem(14);
+			font-weight: 300;
+
 		}
 
         @include below($mobile) {
@@ -254,6 +294,37 @@
         .search__input {
             width: 100%;
             @extend .input;
+			border-radius: 0;
+			border: rem(1) solid #e6e8ea;
+			padding-left: rem(12);
+			padding-top: rem(12);
+			padding-bottom: rem(14);
+
+
+
+
+            @include below($tablet) {
+				padding-right: rem(41);
+				height: rem(40);
+
+				&::placeholder {
+					font-size: rem(14);
+		  	  		line-height: rem(14);
+		  	  		font-weight: 300;
+			    }
+
+			    &:-ms-input-placeholder {
+					font-size: rem(14);
+					line-height: rem(14);
+					font-weight: 300;
+			    }
+
+			    &::-ms-input-placeholder {
+					font-size: rem(14);
+					line-height: rem(14);
+					font-weight: 300;
+			    }
+			}
 
             @include below($mobile) {
 				display: none;
@@ -362,12 +433,33 @@
         }
 
         a {
+            position: relative;
             color: #485058;
             font-family: $helvetica;
             font-size: rem(16);
             font-weight: 300;
             line-height: rem(16);
             text-decoration: none;
+
+            &::before {
+                position: absolute;
+                content: '';
+                width: 0;
+                height: rem(1);
+                background-color: #babec2;
+                bottom: rem(-2);
+                transition: width .3s;
+            }
+
+            @include above($tablet) {
+                &:hover {
+                    &::before {
+                        width: 100%;
+                    }
+                }
+            }
+
+
 
             &:not(:last-of-type) {
                 position: relative;
@@ -392,7 +484,7 @@
 
     &__basket {
         position: relative;
-        padding-left: rem(28);
+        padding-left: rem(26);
         color: #485058;
         font-family: $helvetica;
         font-size: rem(16);
@@ -400,16 +492,39 @@
         line-height: rem(16);
         text-decoration: none;
 
+        &::before {
+            position: absolute;
+            content: '';
+            width: 0;
+            height: rem(1);
+            background-color: #babec2;
+            bottom: rem(-2);
+            left: rem(28);
+            transition: width .3s;
+        }
+
+        @include above($tablet) {
+            &:hover {
+                &::before {
+                    width: calc(100% - 27px);
+                }
+            }
+        }
+
 		@include below($tablet) {
 			text-indent: -99999px;
             font-size: 0;
+		}
+
+		@include below($mobile) {
+			padding-left: rem(28);
 		}
 
         &::after {
             position: absolute;
             content: '';
             left: 0;
-            top: 50%;
+            top: calc(50% - 2px);
             width: rem(18);
             height: rem(16);
             background-image: url('/img/gui/basket.svg');
@@ -430,9 +545,8 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding-top: rem(10);
-        padding-bottom: rem(11);
-
+        padding-top: rem(12);
+        padding-bottom: rem(12);
     }
 
     &__more {
@@ -505,6 +619,11 @@
         line-height: 1;
         text-decoration: none;
         cursor: pointer;
+		transition: color .3s;
+
+		&:hover {
+			color: #dc1414;
+		}
 
         @include below($mobile) {
             &:nth-of-type(n + 3) {
@@ -515,5 +634,111 @@
                 display: none;
             }
         }
+    }
+
+    .goTop {
+        position: fixed;
+        right: 0;
+        bottom: rem(56);
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: rem(56);
+        height: rem(56);
+        box-shadow: 0 rem(8) rem(8) rgba(0, 0, 0, 0.12), 0 0 rem(8) rgba(0, 0, 0, 0.08), inset 0 rem(-1) 0 rgba(0, 0, 0, 0.12);
+        border-radius: rem(5) 0 0 rem(5);
+        background-color: #f4f6f8;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        z-index: 4;
+
+        img {
+            width: 24px;
+            height: 12px;
+            transform: rotate(180deg);
+        }
+
+        &.visible {
+			@include above($mobile) {
+	            display: flex;
+	        }
+        }
+    }
+}
+
+.stickyLinks {
+    display: flex;
+    position: fixed;
+    bottom: 43%;
+    z-index: 4;
+    transform: translateX(-50%) rotate(-90deg) translateY(50%);
+
+    &__item {
+        &:not(:last-of-type) {
+            margin-right: rem(16);
+        }
+    }
+
+	@include below($tablet-small) {
+		display: none;
+	}
+}
+
+.basket,
+.comparison,
+.favourites {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: rem(8) rem(16);
+    padding-bottom: rem(8);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.16), inset 0 -1px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 0 0 5px 5px;
+    background-color: #f4f6f8;
+    text-decoration: none;
+
+    p {
+        display: inline;
+        margin: 0;
+
+        &:not(:last-of-type) {
+            margin-right: rem(16);
+        }
+    }
+
+    &__name {
+        color: #485058;
+        font-family: $helvetica;
+        font-size: rem(14);
+        font-weight: 300;
+
+        img {
+            margin-right: rem(4);
+        }
+    }
+
+    &__val {
+        padding: rem(8);
+        color: #485058;
+        font-family: $helvetica;
+        font-size: rem(14);
+        font-weight: 300;
+        border-radius: rem(5);
+        background-color: #ffffff;
+
+        @include below($tablet) {
+            span {
+                display: none;
+            }
+        }
+    }
+
+    &__price {
+        color: #dc1414;
+        font-family: $helvetica;
+        font-size: rem(14);
+        font-weight: 300;
     }
 }

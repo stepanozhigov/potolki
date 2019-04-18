@@ -15,12 +15,13 @@
 		background-position: right bottom;
 
 		@include below($tablet) {
-			width: calc(100% + 40px);
+			width: calc(100% + 32px);
 			height: rem(400);
-			margin-left: rem(-20);
-			margin-right: rem(-20);
+			margin-left: rem(-16);
+			margin-right: rem(-16);
 			padding: rem(48) rem(16);
-	        padding-right: 50%;
+			padding-bottom: rem(64);
+	        padding-right: 43%;
 		}
 
 		@include below($mobile) {
@@ -63,6 +64,7 @@
 			@include below($tablet) {
 				font-size: rem(14);
 				letter-spacing: rem(3.5);
+				margin-bottom: rem(8);
 			}
 
             @include below($mobile) {
@@ -87,7 +89,7 @@
 			@include below($tablet) {
 				font-size: rem(36);
 				line-height: rem(48);
-				margin-bottom: rem(21);
+				margin-bottom: rem(20);
 			}
 
             @include below($mobile) {
@@ -95,7 +97,7 @@
                 z-index: 2;
                 font-size: rem(26);
                 line-height: rem(36);
-				margin-bottom: rem(32);
+				margin-bottom: rem(24);
                 text-align: center;
     		}
 
@@ -120,6 +122,7 @@
             font-size: rem(26);
             font-weight: 400;
             line-height: rem(32);
+			hyphens: none;
 
 			@include below($tablet) {
 				font-size: rem(20);

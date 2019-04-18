@@ -36,7 +36,7 @@
                        </g>
                    </g>
                 </svg>
-                К сравнению
+                <span>К сравнению</span>
             </a>
             <a class="climatCard__favourites" href="javascript:void(0);">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" height="12" viewBox="0 0 15 12">
@@ -55,7 +55,7 @@
                        </g>
                    </g>
                 </svg>
-                В избранное
+                <span>В избранное</span>
             </a>
         </div>
     </div>
@@ -64,7 +64,7 @@
         <p class="climatCard__model">TRK100ZR-S</p>
         <div class="climatCard__ratimg">
             <div class="climatCard__stars"></div>
-            <p>(13)</p>
+            <p>13</p>
         </div>
         <div class="climatCard__params">
             <p>

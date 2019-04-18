@@ -11,8 +11,11 @@
     cursor: pointer;
 
     @include below($tablet) {
-        flex-direction: row;
         padding: 0;
+    }
+
+    @include below($mobile) {
+        flex-direction: row;
     }
 
     @include above($tablet) {
@@ -118,14 +121,14 @@
         flex-direction: column;
 
         @include below($tablet) {
-            width: rem(151);
+            width: 100%;
             flex-shrink: 0;
-            margin-right: rem(16);
+            margin-bottom: rem(42);
         }
 
         @include below($mobile) {
             width: rem(148);
-            margin-right: rem(8);
+            margin-right: rem(6);
         }
     }
 
@@ -135,10 +138,10 @@
         width: 100%;
         margin-bottom: rem(32);
 
-        @include below($tablet) {
+        @include below($mobile) {
+            display: flex;
             flex-direction: column;
-            margin: 0;
-            padding-left: rem(20);
+            padding-left: rem(18);
         }
     }
 
@@ -162,7 +165,8 @@
             transition: stroke .3s;
         }
 
-        &.active {
+        &:hover,
+		&.active {
             color: #dc1414;
 
             svg {
@@ -186,13 +190,17 @@
         flex-wrap: wrap;
 
         @include below($tablet) {
-            padding: rem(32) rem(16);
-            padding-left: 0;
-            padding-bottom: rem(20);
+            padding: rem(16) rem(24);
+            padding-top: 0;
         }
 
         @include below($mobile) {
             padding-bottom: rem(32);
+        }
+
+        @include below($mobile) {
+            padding: rem(32) rem(8);
+            padding-left: 0;
         }
     }
 
@@ -208,9 +216,14 @@
         text-align: left;
 
         @include below($tablet) {
-            font-size: rem(16);
+            font-size: rem(18);
             line-height: 1;
+            margin-bottom: 0;
             margin-bottom: rem(5);
+        }
+
+        @include below($mobile) {
+            font-size: rem(16);
         }
     }
 
@@ -227,15 +240,21 @@
         text-align: left;
 
         @include below($tablet) {
-            font-size: rem(10);
+            font-size: rem(14);
             line-height: 1;
-            margin-bottom: rem(9);
+            margin-bottom: rem(5);
+        }
+
+        @include below($mobile) {
+            font-size: rem(10);
+            letter-spacing: 0.37px;
+            margin-bottom: rem(15);
         }
     }
 
     &__stars {
         &.jq-ry-container {
-            padding: rem(8) 0;
+            padding: 0;
         }
     }
 
@@ -249,7 +268,8 @@
         margin-bottom: rem(16);
 
         @include below($tablet) {
-            padding-left: rem(200);
+            padding-left: 35%;
+
         }
 
         @include below($mobile) {
@@ -259,15 +279,16 @@
 
         p {
             margin: 0;
-            color: #50555a;
+			margin-left: rem(8);
+            color: #808890;
             font-family: $helvetica;
-            font-size: rem(14);
-            font-weight: 300;
-            line-height: rem(14);
+            font-size: rem(16);
+            font-weight: 400;
+            line-height: rem(16);
 
             @include below($tablet) {
-                font-size: rem(12);
-                line-height: rem(12);
+                font-size: rem(14);
+                line-height: rem(14);
             }
         }
 
@@ -282,7 +303,7 @@
             transform: translateY(-50%);
 
             @include below($tablet) {
-                width: rem(200);
+                width: 35%;
             }
 
             @include below($mobile) {
@@ -297,8 +318,7 @@
         margin-bottom: rem(24);
 
         @include below($tablet) {
-            flex-direction: column;
-            margin-bottom: rem(16);
+            margin-bottom: rem(24);
         }
 
         @include below($mobile) {
@@ -312,10 +332,6 @@
             font-size: rem(12);
             font-weight: 300;
             line-height: rem(20);
-
-            @include below($tablet) {
-                display: none;
-            }
         }
 
         dl {
@@ -326,10 +342,6 @@
                 margin-bottom: rem(8);
             }
 
-            @include below($tablet) {
-                display: flex;
-            }
-
             dt {
                 color: #485058;
                 font-family: $helvetica;
@@ -337,11 +349,8 @@
                 font-weight: 500;
                 line-height: rem(20);
                 flex-shrink: 0;
-
-                @include below($tablet) {
-                    width: rem(68);
-                    margin-right: rem(16);
-                }
+				width: rem(68);
+				margin-right: rem(16);
             }
 
             dd {
@@ -361,8 +370,13 @@
         justify-content: space-between;
         align-items: center;
 
+        @include below($tablet) {
+            justify-content: flex-start;
+        }
+
         @include below($mobile) {
             flex-direction: column;
+            align-items: flex-start;
         }
     }
 
@@ -374,9 +388,7 @@
         align-items: center;
 
         @include below($tablet) {
-            width: auto;
-            margin-right: rem(8);
-            margin-bottom: 0;
+            margin-bottom: rem(14);
         }
 
         @include below($mobile) {
@@ -395,7 +407,7 @@
                 text-decoration: line-through;
 
                 @include below($tablet) {
-                    font-size: rem(10);
+                    font-size: rem(16);
                     line-height: rem(16);
                 }
 
@@ -413,7 +425,7 @@
                 text-decoration: none;
 
                 @include below($tablet) {
-                    font-size: rem(10);
+                    font-size: rem(16);
                     line-height: rem(16);
                 }
 
@@ -432,16 +444,16 @@
         line-height: 1;
 
         @include below($tablet) {
-            order: -1;
-            font-size: rem(20);
-            line-height: rem(16);
-            margin-right: rem(9);
+            font-size: rem(24);
+            line-height: rem(24);
+            margin-right: rem(16);
         }
 
         @include below($mobile) {
             font-size: rem(28);
             line-height: rem(32);
             margin-right: 0;
+            order: -1;
         }
     }
 
@@ -449,12 +461,19 @@
         @extend .button;
         @extend .button_gray;
         width: auto;
-        padding: rem(10);
-        padding-bottom: rem(9);
+        height: auto;
+        padding: rem(16);
+        padding-top: rem(13);
+        padding-bottom: rem(12);
         font-size: rem(14);
+        transition: none;
 
         @include below($tablet) {
-            height: rem(40);
+            height: rem(42);
+            font-size: 0;
+        }
+
+        @include below($mobile) {
             font-size: rem(14);
         }
 
@@ -462,6 +481,9 @@
             width: rem(18);
             height: rem(17);
             margin-right: rem(9);
+            margin-bottom: rem(4);
+
+
         }
     }
 
@@ -476,4 +498,143 @@
             display: flex;
         }
     }
+
+	&.climatCard_horisontal {
+		flex-direction: row;
+		padding: 0;
+
+		.climatCard__heading {
+			width: rem(280);
+			flex-shrink: 0;
+			padding-bottom: rem(40);
+			margin-right: rem(20);
+
+            @include below($tablet) {
+                width: rem(151);
+                margin-bottom: 0;
+                margin-right: rem(16);
+            }
+
+			.climatCard__preview {
+				margin-bottom: rem(30);
+
+                @include below($tablet) {
+                    margin-bottom: 0;
+                }
+			}
+
+			.climatCard__controls {
+				padding: 0 rem(28);
+				margin-bottom: 0;
+
+                @include below($tablet) {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 0 rem(20);
+                }
+			}
+		}
+
+		.climatCard__info {
+			width: 100%;
+			flex-direction: column;
+			padding-top: rem(24);
+			padding-right: rem(24);
+			padding-bottom: rem(32);
+
+            @include below($tablet) {
+                padding-top: rem(23);
+    			padding-right: rem(9);
+    			padding-bottom: rem(20);
+            }
+
+			.climatCard__name {
+				font-size: rem(24);
+				margin-bottom: rem(4);
+
+                @include below($tablet) {
+                    font-size: rem(16);
+    				margin-bottom: rem(5);
+                }
+			}
+
+			.climatCard__model {
+				font-size: rem(18);
+				margin-bottom: rem(13);
+
+                @include below($tablet) {
+                    font-size: rem(10);
+    				margin-bottom: rem(9);
+                }
+			}
+
+			.climatCard__ratimg {
+				width: 100%;
+				padding-left: rem(400);
+
+                @include below($tablet) {
+                    padding-left: 60%;
+                    margin-bottom: rem(24)
+                }
+
+				&::before {
+					width: rem(400);
+
+                    @include below($tablet) {
+                        width: 60%;
+                    }
+				}
+			}
+
+			.climatCard__params {
+				margin-bottom: rem(30);
+                flex-direction: column;
+
+				p {
+					display: none;
+				}
+
+				dl {
+					display: flex;
+				}
+			}
+
+			.climatCard__pay {
+				flex-wrap: nowrap;
+				justify-content: flex-start;
+
+				.climatCard__old-price {
+					width: auto;
+					margin-bottom: 0;
+					margin-right: auto;
+
+                    span {
+                        @include below($tablet) {
+                            font-size: rem(10);
+
+                            &:last-of-type {
+                                margin-left: rem(4);
+                            }
+                        }
+                    }
+				}
+
+				.climatCard__price {
+					order: -1;
+					margin-right: rem(24);
+
+                    @include below($tablet) {
+                        font-size: rem(18);
+                        margin-right: rem(9);
+                    }
+				}
+
+                .climatCard__button {
+                    @include below($tablet) {
+                        font-size: rem(12);
+                    }
+                }
+			}
+		}
+	}
 }

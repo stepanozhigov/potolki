@@ -38,6 +38,15 @@ body {
 
         }
 
+		.header__whatsapp,
+		.header__phone  {
+			display: none;
+		}
+
+		.header__close  {
+			margin-left: auto;
+		}
+
 
         @include below($tablet) {
             &::after {
@@ -81,8 +90,8 @@ body {
     margin: 0 auto;
 
     @include below($tablet) {
-        width: calc(100% - 40px);
-        margin: 0 rem(20);
+        width: calc(100% - 32px);
+        margin: 0 rem(16);
     }
 
     @include below($mobile) {
@@ -292,10 +301,11 @@ body {
             padding: 30px 20px 22px 23px;
             top: -30px;
             left: -25px;
-            z-index: 4;
+			z-index: 99;
+
 
             @include below($tablet) {
-                width: calc(100% + 45px);
+                width: auto;
             }
         }
     }
@@ -1367,6 +1377,7 @@ body {
     &_sand {
         &::before {
             background-image: url(/img/gui/sand-bg--2x.png);
+			opacity: 0.3;
         }
     }
 }
