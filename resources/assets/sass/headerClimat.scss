@@ -305,6 +305,8 @@
 			padding-left: rem(12);
 			padding-top: rem(13);
 			padding-bottom: rem(13);
+			box-shadow: none;
+
 
 			font-size: rem(14);
 			line-height: rem(14);
@@ -312,19 +314,19 @@
 
 			&::placeholder {
 				font-size: rem(14);
-				line-height: rem(14);
+				line-height: normal;
 				font-weight: 300;
 			}
 
 			&:-ms-input-placeholder {
 				font-size: rem(14);
-				line-height: rem(14);
+				line-height: normal;
 				font-weight: 300;
 			}
 
 			&::-ms-input-placeholder {
 				font-size: rem(14);
-				line-height: rem(14);
+				line-height: normal;
 				font-weight: 300;
 			}
 
@@ -599,26 +601,27 @@
     &__dropdown {
         position: absolute;
         display: none;
+		width: rem(152);
         flex-direction: column;
         z-index: 9999999;
-        top: calc(100% - 3px);
-        right: rem(-16);
+        top: calc(100% - 4px);
+        right: 0;
         background-color: #ffffff;
-        padding: rem(24) rem(16);
-        box-shadow: 0 0 4px rgba(0, 0, 0, 0.08), 0 4px 4px rgba(0, 0, 0, 0.12), inset 0 -1px 0 rgba(0, 0, 0, 0.12);
+        padding: rem(20) rem(16);
+		padding-bottom: rem(18);
+        box-shadow: 0 rem(8) rem(8) rgba(0, 0, 0, 0.12), 0 0 rem(8) rgba(0, 0, 0, 0.08), inset 0 rem(-1) 0 rgba(0, 0, 0, 0.12);
         border-radius: rem(4);
 
-        @include below($mobile-small) {
-            right: rem(-8);
-        }
-
         .headerClimat__link {
+
             &:nth-of-type(n + 3) {
                 display: flex;
             }
 
             &:not(:last-of-type) {
                 margin-bottom: rem(16);
+				padding-bottom: rem(6);
+				border-bottom: rem(1) solid rgba(186, 190, 194, 0.5);
             }
         }
     }
@@ -631,6 +634,7 @@
         line-height: 1;
 		cursor: pointer;
 		transition: color .3s;
+		text-decoration: none;
 
 		&:hover {
 			color: #dc1414;

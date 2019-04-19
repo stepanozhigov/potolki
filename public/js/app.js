@@ -14224,6 +14224,24 @@ $('.range').ionRangeSlider({
     hide_min_max: true,
     extra_classes: 'range_red'
 });
+
+$('.rangeFixed').ionRangeSlider({
+    skin: 'round',
+    hide_min_max: true,
+    hide_from_to: true,
+    extra_classes: 'range_red range_fixed'
+});
+
+$('.rangeFixed').on("change", function () {
+    var $inp = $(this);
+    var from = $inp.data("from"); // input data-from attribute
+    var to = $inp.data("to"); // input data-to attribute
+    var fromSpan = $(this).closest('.climatCatalogue__filter-item').find('.climatCatalogue__range-from');
+    var toSpan = $(this).closest('.climatCatalogue__filter-item').find('.climatCatalogue__range-to');
+    $(fromSpan).text(from);
+    $(toSpan).text(to);
+});
+
 window.onerror = function (msg, url, line, col, exception) {
     $.get('/err-handler', {
         data: {

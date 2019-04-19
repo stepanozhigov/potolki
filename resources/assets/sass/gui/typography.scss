@@ -28,6 +28,15 @@
 }
 
 @font-face {
+    font-family: 'Futura PT';
+    src: url('../fonts/FuturaPT-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    font-display: swap;
+}
+
+@font-face {
 	font-family: 'Playfair Display';
 	src: url('../fonts/subset-PlayfairDisplay-Italic.woff2') format('woff2'),
 		url('../fonts/subset-PlayfairDisplay-Italic.woff') format('woff');

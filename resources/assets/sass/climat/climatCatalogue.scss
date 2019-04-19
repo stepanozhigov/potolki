@@ -9,6 +9,19 @@
 		@extend .b-texture_sand;
 	}
 
+	&__range-val {
+		width: 100%;
+		margin: 0;
+		margin-bottom: rem(9);
+		color: #dc1414;
+		font-family: $helvetica;
+		font-size: rem(20);
+		font-weight: 300;
+		line-height: rem(20);
+	}
+
+
+
 	&__all {
 		@extend .button;
 		@extend .button_gray;
@@ -26,6 +39,7 @@
 	&__filter-clear {
 		position: relative;
 		display: none;
+		margin-left: rem(4);
 		color: #808890;
 		font-family: $helvetica;
 		font-size: rem(14);
@@ -55,10 +69,8 @@
 		width: rem(244);
 		height: rem(40);
 		border-radius: rem(30);
-		border: rem(1) solid #808890;
-		background-color: #ffffff;
 
-		overflow: hidden;
+		background-color: #ffffff;
 
 		&::after {
 			position: absolute;
@@ -75,13 +87,14 @@
 
 		select {
 			@extend .input;
-			width: rem(244);
-			height: rem(40);
+			width: 100%;
+			height: 100%;
 			padding: rem(8) rem(16);
-			border-radius: rem(30);
 			outline: none;
 			border: none;
+			border-radius: rem(46);
 			overflow: hidden;
+			border: rem(1) solid #808890;
 			background-color: $white;
 			-webkit-appearance: none;
 			 -moz-appearance: none;
@@ -218,6 +231,10 @@
                 width: 100%;
                 margin: 0;
                 margin-bottom: rem(12);
+
+				&:last-of-type {
+					margin-bottom: rem(32);
+				}
             }
 
             &_horisontal {
@@ -744,12 +761,6 @@
 			}
 		}
 
-		.climatCatalogue__filter {
-			@include above($mobile) {
-				padding-top: 0;
-			}
-		}
-
         .climatCatalogue__content {
             @extend .b-texture;
             @extend .b-texture_sand;
@@ -960,6 +971,18 @@
     &_detail {
         .titles {
             padding-top: rem(48);
+
+			@include below($mobile) {
+				width: 100%;
+			}
+
+			.titles__title {
+				padding: 0;
+
+				&::after {
+					display: none;
+				}
+			}
         }
     }
 }

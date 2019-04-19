@@ -437,4 +437,24 @@
             }
         }
     }
+
+	&_fixed {
+		height: rem(24);
+
+		.irs-handle {
+			top: 0!important;
+		}
+
+		.irs-bar,
+		.irs-line {
+			top: rem(8);
+		}
+	}
+}
+
+input {
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background-clip: padding-box;
 }

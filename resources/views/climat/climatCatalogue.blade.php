@@ -114,7 +114,8 @@
 
                         <section class="climatCatalogue__filter-item opened">
                             <p class="climatCatalogue__filter-title">Цена, рублей</p>
-                            <input data-type="double" data-min="1000" data-from="8000" data-to="27000" data-max="60000" class="range" type="text" name="" value="">
+							<p class="climatCatalogue__range-val"> <span class="climatCatalogue__range-from">8000</span> — <span class="climatCatalogue__range-to">27000</span> </p>
+                            <input data-type="double" data-min="1000" data-from="8000" data-to="27000" data-max="60000" class="rangeFixed" type="text" name="" value="">
                         </section>
 						<section class="climatCatalogue__filter-item opened">
 	                        <p class="climatCatalogue__filter-title">Площадь, м<sup>2</sup></p>

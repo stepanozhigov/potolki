@@ -30,7 +30,7 @@
 			margin-left: rem(-16);
 			margin-right: rem(-16);
 			padding: rem(60) rem(8);
-            padding-bottom: rem(52);
+            padding-bottom: rem(48);
 
             &::after {
                 position: absolute;
@@ -133,6 +133,7 @@
                 position: relative;
                 z-index: 2;
                 text-align: center;
+				margin-bottom: rem(24);
             }
         }
 

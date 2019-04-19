@@ -35,8 +35,42 @@
 					<div class="climatCatalogue__filter-content">
 						<section class="climatCatalogue__filter-item opened">
 							<p class="climatCatalogue__filter-title">Цена, рублей</p>
-							<input data-type="double" data-min="1000" data-from="8000" data-to="40000" data-max="120000" class="range" type="text" name="" value="">
+							<p class="climatCatalogue__range-val"> <span class="climatCatalogue__range-from">40000</span> — <span class="climatCatalogue__range-to">120000</span> </p>
+							<input data-type="double" data-min="1000" data-from="8000" data-to="40000" data-max="120000" class="rangeFixed" type="text" name="" value="">
 						</section>
+						<section class="climatCatalogue__filter-item opened">
+	                        <p class="climatCatalogue__filter-title">Площадь, м<sup>2</sup></p>
+	                        <label class="checkbox">
+	                            <input name="20" type="checkbox" class="checkbox__input">
+	                            <span class=" checkbox__mark"></span>
+	                            До 20 м<sup>2</sup>
+	                            <p class="checkbox__desc">7 модель</p>
+	                        </label>
+	                        <label class="checkbox">
+	                            <input name="30" type="checkbox" class="checkbox__input">
+	                            <span class=" checkbox__mark"></span>
+	                            До 30 м<sup>2</sup>
+	                            <p class="checkbox__desc">9 модель</p>
+	                        </label>
+	                        <label class="checkbox">
+	                            <input name="54" type="checkbox" class="checkbox__input">
+	                            <span class=" checkbox__mark"></span>
+	                            До 54 м<sup>2</sup>
+	                            <p class="checkbox__desc">12 модель</p>
+	                        </label>
+	                        <label class="checkbox">
+	                            <input name="79" type="checkbox" class="checkbox__input">
+	                            <span class=" checkbox__mark"></span>
+	                            До 79 м<sup>2</sup>
+	                            <p class="checkbox__desc">18 модель</p>
+	                        </label>
+	                        <label class="checkbox">
+	                            <input name="120" type="checkbox" class="checkbox__input">
+	                            <span class=" checkbox__mark"></span>
+	                            До 120 м<sup>2</sup>
+	                            <p class="checkbox__desc">24 модель</p>
+	                        </label>
+	                    </section>
 						<section class="climatCatalogue__filter-item opened">
 							<p class="climatCatalogue__filter-title">Производитель</p>
 							<label class="checkbox">
