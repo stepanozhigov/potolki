@@ -472,6 +472,12 @@
                 </div>
             </article>
         </div>
+		<div class="slider-dots">
+			<button class="slider-dots__dot active"></button>
+			<button class="slider-dots__dot"></button>
+			<button class="slider-dots__dot"></button>
+			<button class="slider-dots__dot"></button>
+		</div>
     </section>
 
     @include('common.gui.footer')

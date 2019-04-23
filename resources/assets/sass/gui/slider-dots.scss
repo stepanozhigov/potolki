@@ -1,0 +1,27 @@
+.slider-dots {
+	display: none;
+	margin: 0 auto;
+	margin-top: rem(24);
+
+	@include below($tablet) {
+		display: flex;
+	}
+
+	&__dot {
+		width: rem(8);
+		height: rem(8);
+		padding: 0;
+		border: none;
+		outline: none;
+		border-radius: 50%;
+		background-color: #e6e8ea;
+
+		&.active {
+			background-color: $red_crismon;
+		}
+
+		&:not(:last-of-type) {
+			margin-right: rem(8);
+		}
+	}
+}

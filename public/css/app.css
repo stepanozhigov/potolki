@@ -1307,7 +1307,8 @@ corresponds to the arrow we want to display */
 .catalogueDetail__title,
 .photoprint__title,
 .photobank__title,
-.photoprintBlock__title {
+.photoprintBlock__title,
+.climatDetail__additional-value h2 {
   position: relative;
   margin: 0;
   padding-bottom: 1.5rem;
@@ -1324,7 +1325,8 @@ corresponds to the arrow we want to display */
 .catalogueDetail__title::after,
 .photoprint__title::after,
 .photobank__title::after,
-.photoprintBlock__title::after {
+.photoprintBlock__title::after,
+.climatDetail__additional-value h2::after {
   position: absolute;
   content: '';
   bottom: 0;
@@ -1342,7 +1344,8 @@ corresponds to the arrow we want to display */
   .catalogueDetail__title::after,
   .photoprint__title::after,
   .photobank__title::after,
-  .photoprintBlock__title::after {
+  .photoprintBlock__title::after,
+  .climatDetail__additional-value h2::after {
     width: 6.875rem;
   }
 }
@@ -1353,7 +1356,8 @@ corresponds to the arrow we want to display */
   .catalogueDetail__title,
   .photoprint__title,
   .photobank__title,
-  .photoprintBlock__title {
+  .photoprintBlock__title,
+  .climatDetail__additional-value h2 {
     font-size: 1.625rem;
     line-height: 2rem;
   }
@@ -1365,7 +1369,8 @@ corresponds to the arrow we want to display */
   .catalogueDetail__title,
   .photoprint__title,
   .photobank__title,
-  .photoprintBlock__title {
+  .photoprintBlock__title,
+  .climatDetail__additional-value h2 {
     font-size: 1.375rem;
     line-height: 1.625rem;
   }
@@ -1386,7 +1391,8 @@ corresponds to the arrow we want to display */
 .dillers__steps-content h3,
 .dillers__materials button,
 .dillers__materials table th,
-.dillers__materials-table h3 {
+.dillers__materials-table h3,
+.climatDetail__additional-value h3 {
   margin: 0;
   font-family: "Playfair Display", serif;
   font-size: 1.25rem;
@@ -1411,7 +1417,8 @@ corresponds to the arrow we want to display */
   .dillers__steps-content h3,
   .dillers__materials button,
   .dillers__materials table th,
-  .dillers__materials-table h3 {
+  .dillers__materials-table h3,
+  .climatDetail__additional-value h3 {
     font-size: 1.125rem;
     line-height: 1.375rem;
   }
@@ -1744,7 +1751,9 @@ corresponds to the arrow we want to display */
   .titles.climatSlider,
   .titles.climatCatalogue,
   .titles.climatAdditional,
-  .titles.recent {
+  .titles.recent,
+  .titles.climatDetail__main,
+  .titles.climatDetail__additional-content {
     margin-bottom: 3.125rem;
   }
 
@@ -2058,7 +2067,13 @@ corresponds to the arrow we want to display */
 .climatCatalogue__link,
 .climatCatalogue__filter-apply,
 .climatCatalogue__filter-resetall,
-.climatCard__button {
+.climatCard__button,
+.climatDetail__basket,
+.climatDetail__fastBuy,
+.conditionerPopup__basket,
+.conditionerPopup__desc,
+.conditionerPopup__pay,
+.conditionerPopup__continue {
   width: 17.5rem;
   max-width: 100%;
   height: 50px;
@@ -2101,7 +2116,13 @@ corresponds to the arrow we want to display */
 .climatCatalogue__link:not(button),
 .climatCatalogue__filter-apply:not(button),
 .climatCatalogue__filter-resetall:not(button),
-.climatCard__button:not(button) {
+.climatCard__button:not(button),
+.climatDetail__basket:not(button),
+.climatDetail__fastBuy:not(button),
+.conditionerPopup__basket:not(button),
+.conditionerPopup__desc:not(button),
+.conditionerPopup__pay:not(button),
+.conditionerPopup__continue:not(button) {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2122,7 +2143,13 @@ corresponds to the arrow we want to display */
 .climatCatalogue__link:hover,
 .climatCatalogue__filter-apply:hover,
 .climatCatalogue__filter-resetall:hover,
-.climatCard__button:hover {
+.climatCard__button:hover,
+.climatDetail__basket:hover,
+.climatDetail__fastBuy:hover,
+.conditionerPopup__basket:hover,
+.conditionerPopup__desc:hover,
+.conditionerPopup__pay:hover,
+.conditionerPopup__continue:hover {
   -webkit-box-shadow: 0 8px 12px rgba(136, 0, 0, 0.2), 0 0 8px rgba(136, 0, 0, 0.12), inset 0 -1px 0 #a01414;
           box-shadow: 0 8px 12px rgba(136, 0, 0, 0.2), 0 0 8px rgba(136, 0, 0, 0.12), inset 0 -1px 0 #a01414;
 }
@@ -2142,7 +2169,13 @@ corresponds to the arrow we want to display */
 .climatCatalogue__link:active,
 .climatCatalogue__filter-apply:active,
 .climatCatalogue__filter-resetall:active,
-.climatCard__button:active {
+.climatCard__button:active,
+.climatDetail__basket:active,
+.climatDetail__fastBuy:active,
+.conditionerPopup__basket:active,
+.conditionerPopup__desc:active,
+.conditionerPopup__pay:active,
+.conditionerPopup__continue:active {
   background-color: #a01414;
   -webkit-box-shadow: 0 8px 8px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0), inset 0 1px 0 #880000;
           box-shadow: 0 8px 8px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0), inset 0 1px 0 #880000;
@@ -2153,7 +2186,9 @@ corresponds to the arrow we want to display */
 .shutterstock__link,
 .lamps-slider__button,
 .climatCatalogue__all,
-.climatCard__button {
+.climatCard__button,
+.conditionerPopup__desc,
+.conditionerPopup__continue {
   background-color: #a7aaad;
   -webkit-box-shadow: 0 8px 8px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0), inset 0 -1px 0 #646973;
           box-shadow: 0 8px 8px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0), inset 0 -1px 0 #646973;
@@ -2165,7 +2200,9 @@ corresponds to the arrow we want to display */
 .shutterstock__link:hover,
 .lamps-slider__button:hover,
 .climatCatalogue__all:hover,
-.climatCard__button:hover {
+.climatCard__button:hover,
+.conditionerPopup__desc:hover,
+.conditionerPopup__continue:hover {
   -webkit-box-shadow: 0 8px 12px rgba(0, 0, 0, 0.16), 0 0 8px rgba(0, 0, 0, 0.08), inset 0 -1px 0 #646973;
           box-shadow: 0 8px 12px rgba(0, 0, 0, 0.16), 0 0 8px rgba(0, 0, 0, 0.08), inset 0 -1px 0 #646973;
 }
@@ -2175,7 +2212,9 @@ corresponds to the arrow we want to display */
 .shutterstock__link:active,
 .lamps-slider__button:active,
 .climatCatalogue__all:active,
-.climatCard__button:active {
+.climatCard__button:active,
+.conditionerPopup__desc:active,
+.conditionerPopup__continue:active {
   background-color: #808890;
   -webkit-box-shadow: 0 8px 8px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0), inset 0 1px 0 #485058;
           box-shadow: 0 8px 8px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0), inset 0 1px 0 #485058;
@@ -2356,7 +2395,9 @@ corresponds to the arrow we want to display */
   .cities .catalogueDetail__title,
   .cities .photoprint__title,
   .cities .photobank__title,
-  .cities .photoprintBlock__title {
+  .cities .photoprintBlock__title,
+  .cities .climatDetail__additional-value h2,
+  .climatDetail__additional-value .cities h2 {
     font-size: 1.625rem;
     line-height: 2rem;
   }
@@ -2556,7 +2597,9 @@ corresponds to the arrow we want to display */
 .survey.climatSlider,
 .survey.climatCatalogue,
 .survey.climatAdditional,
-.survey.recent {
+.survey.recent,
+.survey.climatDetail__main,
+.survey.climatDetail__additional-content {
   margin-bottom: 5rem;
 }
 
@@ -4069,7 +4112,9 @@ input {
 .catalog-cards.climatSlider,
 .catalog-cards.climatCatalogue,
 .catalog-cards.climatAdditional,
-.catalog-cards.recent {
+.catalog-cards.recent,
+.catalog-cards.climatDetail__main,
+.catalog-cards.climatDetail__additional-content {
   margin-bottom: 7rem;
 }
 
@@ -4112,7 +4157,9 @@ input {
   .catalog-cards.climatSlider,
   .catalog-cards.climatCatalogue,
   .catalog-cards.climatAdditional,
-  .catalog-cards.recent {
+  .catalog-cards.recent,
+  .catalog-cards.climatDetail__main,
+  .catalog-cards.climatDetail__additional-content {
     margin-bottom: 64px;
   }
 }
@@ -4269,7 +4316,13 @@ input {
   .catalog-cards .buttons .climatCatalogue__link,
   .catalog-cards .buttons .climatCatalogue__filter-apply,
   .catalog-cards .buttons .climatCatalogue__filter-resetall,
-  .catalog-cards .buttons .climatCard__button {
+  .catalog-cards .buttons .climatCard__button,
+  .catalog-cards .buttons .climatDetail__basket,
+  .catalog-cards .buttons .climatDetail__fastBuy,
+  .catalog-cards .buttons .conditionerPopup__basket,
+  .catalog-cards .buttons .conditionerPopup__desc,
+  .catalog-cards .buttons .conditionerPopup__pay,
+  .catalog-cards .buttons .conditionerPopup__continue {
     margin-bottom: 1rem;
     margin-right: 0;
   }
@@ -4279,7 +4332,9 @@ input {
   .catalog-cards .buttons .shutterstock__link,
   .catalog-cards .buttons .lamps-slider__button,
   .catalog-cards .buttons .climatCatalogue__all,
-  .catalog-cards .buttons .climatCard__button {
+  .catalog-cards .buttons .climatCard__button,
+  .catalog-cards .buttons .conditionerPopup__desc,
+  .catalog-cards .buttons .conditionerPopup__continue {
     margin: 0;
   }
 }
@@ -4464,7 +4519,9 @@ input {
 .catalog-cards_ceilings .catalogueDetail__title,
 .catalog-cards_ceilings .photoprint__title,
 .catalog-cards_ceilings .photobank__title,
-.catalog-cards_ceilings .photoprintBlock__title {
+.catalog-cards_ceilings .photoprintBlock__title,
+.catalog-cards_ceilings .climatDetail__additional-value h2,
+.climatDetail__additional-value .catalog-cards_ceilings h2 {
   margin-bottom: 2.5rem;
 }
 
@@ -4501,7 +4558,9 @@ input {
 .catalog-cards_materials .titles .catalogueDetail__title,
 .catalog-cards_materials .titles .photoprint__title,
 .catalog-cards_materials .titles .photobank__title,
-.catalog-cards_materials .titles .photoprintBlock__title {
+.catalog-cards_materials .titles .photoprintBlock__title,
+.catalog-cards_materials .titles .climatDetail__additional-value h2,
+.climatDetail__additional-value .catalog-cards_materials .titles h2 {
   margin-bottom: 0;
 }
 
@@ -4527,7 +4586,9 @@ input {
 .catalog-cards_tech .titles .catalogueDetail__title,
 .catalog-cards_tech .titles .photoprint__title,
 .catalog-cards_tech .titles .photobank__title,
-.catalog-cards_tech .titles .photoprintBlock__title {
+.catalog-cards_tech .titles .photoprintBlock__title,
+.catalog-cards_tech .titles .climatDetail__additional-value h2,
+.climatDetail__additional-value .catalog-cards_tech .titles h2 {
   margin-bottom: 0;
 }
 
@@ -5391,7 +5452,9 @@ input {
 .headerClimat__heading .climatSlider,
 .headerClimat__heading .climatCatalogue,
 .headerClimat__heading .climatAdditional,
-.headerClimat__heading .recent {
+.headerClimat__heading .recent,
+.headerClimat__heading .climatDetail__main,
+.headerClimat__heading .climatDetail__additional-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6365,7 +6428,9 @@ body.no-scroll .header__close {
 .climatSlider,
 .climatCatalogue,
 .climatAdditional,
-.recent {
+.recent,
+.climatDetail__main,
+.climatDetail__additional-content {
   width: 73.75rem;
   margin: 0 auto;
 }
@@ -6409,7 +6474,9 @@ body.no-scroll .header__close {
   .climatSlider,
   .climatCatalogue,
   .climatAdditional,
-  .recent {
+  .recent,
+  .climatDetail__main,
+  .climatDetail__additional-content {
     width: calc(100% - 32px);
     margin: 0 1rem;
   }
@@ -6454,7 +6521,9 @@ body.no-scroll .header__close {
   .climatSlider,
   .climatCatalogue,
   .climatAdditional,
-  .recent {
+  .recent,
+  .climatDetail__main,
+  .climatDetail__additional-content {
     width: calc(100% - 32px);
     margin: 0 1rem;
   }
@@ -6499,7 +6568,9 @@ body.no-scroll .header__close {
   .climatSlider,
   .climatCatalogue,
   .climatAdditional,
-  .recent {
+  .recent,
+  .climatDetail__main,
+  .climatDetail__additional-content {
     width: calc(100% - 16px);
     margin: 0 0.5rem;
   }
@@ -7719,7 +7790,13 @@ body.no-scroll .header__close {
 .popup__status-send .survey__form .climatCatalogue__link,
 .popup__status-send .survey__form .climatCatalogue__filter-apply,
 .popup__status-send .survey__form .climatCatalogue__filter-resetall,
-.popup__status-send .survey__form .climatCard__button {
+.popup__status-send .survey__form .climatCard__button,
+.popup__status-send .survey__form .climatDetail__basket,
+.popup__status-send .survey__form .climatDetail__fastBuy,
+.popup__status-send .survey__form .conditionerPopup__basket,
+.popup__status-send .survey__form .conditionerPopup__desc,
+.popup__status-send .survey__form .conditionerPopup__pay,
+.popup__status-send .survey__form .conditionerPopup__continue {
   width: 100%;
 }
 
@@ -8649,6 +8726,27 @@ input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
   display: none;
+}
+
+.share {
+  display: none;
+  width: 1.0625rem;
+  height: 1rem;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-image: url("/img/share_transparent.svg");
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  background-size: contain;
+}
+
+@media screen and (max-width: 60rem) {
+  .share {
+    display: block;
+  }
 }
 
 .menu {
@@ -9781,7 +9879,9 @@ input[type="search"]::-webkit-search-results-decoration {
 .portfolio__buttons .shutterstock__link,
 .portfolio__buttons .lamps-slider__button,
 .portfolio__buttons .climatCatalogue__all,
-.portfolio__buttons .climatCard__button {
+.portfolio__buttons .climatCard__button,
+.portfolio__buttons .conditionerPopup__desc,
+.portfolio__buttons .conditionerPopup__continue {
   margin-right: 1rem;
 }
 
@@ -9795,7 +9895,9 @@ input[type="search"]::-webkit-search-results-decoration {
   .portfolio__buttons .shutterstock__link,
   .portfolio__buttons .lamps-slider__button,
   .portfolio__buttons .climatCatalogue__all,
-  .portfolio__buttons .climatCard__button {
+  .portfolio__buttons .climatCard__button,
+  .portfolio__buttons .conditionerPopup__desc,
+  .portfolio__buttons .conditionerPopup__continue {
     margin-right: 0;
     margin-bottom: 1rem;
   }
@@ -9818,7 +9920,9 @@ input[type="search"]::-webkit-search-results-decoration {
   .portfolio_main .titles .catalogueDetail__title,
   .portfolio_main .titles .photoprint__title,
   .portfolio_main .titles .photobank__title,
-  .portfolio_main .titles .photoprintBlock__title {
+  .portfolio_main .titles .photoprintBlock__title,
+  .portfolio_main .titles .climatDetail__additional-value h2,
+  .climatDetail__additional-value .portfolio_main .titles h2 {
     margin-bottom: 0;
   }
 }
@@ -11345,7 +11449,9 @@ input[type="search"]::-webkit-search-results-decoration {
 .reviews__buttons .shutterstock__link,
 .reviews__buttons .lamps-slider__button,
 .reviews__buttons .climatCatalogue__all,
-.reviews__buttons .climatCard__button {
+.reviews__buttons .climatCard__button,
+.reviews__buttons .conditionerPopup__desc,
+.reviews__buttons .conditionerPopup__continue {
   margin-right: 1rem;
 }
 
@@ -11359,7 +11465,9 @@ input[type="search"]::-webkit-search-results-decoration {
   .reviews__buttons .shutterstock__link,
   .reviews__buttons .lamps-slider__button,
   .reviews__buttons .climatCatalogue__all,
-  .reviews__buttons .climatCard__button {
+  .reviews__buttons .climatCard__button,
+  .reviews__buttons .conditionerPopup__desc,
+  .reviews__buttons .conditionerPopup__continue {
     margin-right: 0;
     margin-bottom: 1rem;
   }
@@ -11430,7 +11538,13 @@ input[type="search"]::-webkit-search-results-decoration {
   .reviews__buttons .climatCatalogue__link,
   .reviews__buttons .climatCatalogue__filter-apply,
   .reviews__buttons .climatCatalogue__filter-resetall,
-  .reviews__buttons .climatCard__button {
+  .reviews__buttons .climatCard__button,
+  .reviews__buttons .climatDetail__basket,
+  .reviews__buttons .climatDetail__fastBuy,
+  .reviews__buttons .conditionerPopup__basket,
+  .reviews__buttons .conditionerPopup__desc,
+  .reviews__buttons .conditionerPopup__pay,
+  .reviews__buttons .conditionerPopup__continue {
     margin: 0;
   }
 
@@ -11453,7 +11567,13 @@ input[type="search"]::-webkit-search-results-decoration {
   .reviews__buttons .climatCatalogue__link:not(:last-of-type),
   .reviews__buttons .climatCatalogue__filter-apply:not(:last-of-type),
   .reviews__buttons .climatCatalogue__filter-resetall:not(:last-of-type),
-  .reviews__buttons .climatCard__button:not(:last-of-type) {
+  .reviews__buttons .climatCard__button:not(:last-of-type),
+  .reviews__buttons .climatDetail__basket:not(:last-of-type),
+  .reviews__buttons .climatDetail__fastBuy:not(:last-of-type),
+  .reviews__buttons .conditionerPopup__basket:not(:last-of-type),
+  .reviews__buttons .conditionerPopup__desc:not(:last-of-type),
+  .reviews__buttons .conditionerPopup__pay:not(:last-of-type),
+  .reviews__buttons .conditionerPopup__continue:not(:last-of-type) {
     margin-bottom: 20px;
   }
 }
@@ -11497,7 +11617,9 @@ input[type="search"]::-webkit-search-results-decoration {
   .reviews_main .titles .catalogueDetail__title,
   .reviews_main .titles .photoprint__title,
   .reviews_main .titles .photobank__title,
-  .reviews_main .titles .photoprintBlock__title {
+  .reviews_main .titles .photoprintBlock__title,
+  .reviews_main .titles .climatDetail__additional-value h2,
+  .climatDetail__additional-value .reviews_main .titles h2 {
     margin-bottom: 0;
   }
 }
@@ -12838,7 +12960,13 @@ input[type="search"]::-webkit-search-results-decoration {
 .turnkey__buttons .climatCatalogue__link:first-child,
 .turnkey__buttons .climatCatalogue__filter-apply:first-child,
 .turnkey__buttons .climatCatalogue__filter-resetall:first-child,
-.turnkey__buttons .climatCard__button:first-child {
+.turnkey__buttons .climatCard__button:first-child,
+.turnkey__buttons .climatDetail__basket:first-child,
+.turnkey__buttons .climatDetail__fastBuy:first-child,
+.turnkey__buttons .conditionerPopup__basket:first-child,
+.turnkey__buttons .conditionerPopup__desc:first-child,
+.turnkey__buttons .conditionerPopup__pay:first-child,
+.turnkey__buttons .conditionerPopup__continue:first-child {
   margin-right: 1.25rem;
 }
 
@@ -12862,7 +12990,13 @@ input[type="search"]::-webkit-search-results-decoration {
   .turnkey__buttons .climatCatalogue__link:first-child,
   .turnkey__buttons .climatCatalogue__filter-apply:first-child,
   .turnkey__buttons .climatCatalogue__filter-resetall:first-child,
-  .turnkey__buttons .climatCard__button:first-child {
+  .turnkey__buttons .climatCard__button:first-child,
+  .turnkey__buttons .climatDetail__basket:first-child,
+  .turnkey__buttons .climatDetail__fastBuy:first-child,
+  .turnkey__buttons .conditionerPopup__basket:first-child,
+  .turnkey__buttons .conditionerPopup__desc:first-child,
+  .turnkey__buttons .conditionerPopup__pay:first-child,
+  .turnkey__buttons .conditionerPopup__continue:first-child {
     margin-right: 0;
     margin-bottom: 1rem;
   }
@@ -15396,7 +15530,9 @@ input[type="search"]::-webkit-search-results-decoration {
 .jobs .dillers__materials table th,
 .dillers__materials table .jobs th,
 .jobs .dillers__materials-table h3,
-.dillers__materials-table .jobs h3 {
+.dillers__materials-table .jobs h3,
+.jobs .climatDetail__additional-value h3,
+.climatDetail__additional-value .jobs h3 {
   margin: 0;
   margin-bottom: 1rem;
 }
@@ -16077,7 +16213,9 @@ input[type="search"]::-webkit-search-results-decoration {
 .contacts__item .catalogueDetail__title,
 .contacts__item .photoprint__title,
 .contacts__item .photobank__title,
-.contacts__item .photoprintBlock__title {
+.contacts__item .photoprintBlock__title,
+.contacts__item .climatDetail__additional-value h2,
+.climatDetail__additional-value .contacts__item h2 {
   text-align: center;
   padding: 0;
   font-size: 24px;
@@ -16089,7 +16227,9 @@ input[type="search"]::-webkit-search-results-decoration {
 .contacts__item .catalogueDetail__title::after,
 .contacts__item .photoprint__title::after,
 .contacts__item .photobank__title::after,
-.contacts__item .photoprintBlock__title::after {
+.contacts__item .photoprintBlock__title::after,
+.contacts__item .climatDetail__additional-value h2::after,
+.climatDetail__additional-value .contacts__item h2::after {
   display: none;
 }
 
@@ -16216,7 +16356,9 @@ input[type="search"]::-webkit-search-results-decoration {
   .contacts .catalogueDetail__title,
   .contacts .photoprint__title,
   .contacts .photobank__title,
-  .contacts .photoprintBlock__title {
+  .contacts .photoprintBlock__title,
+  .contacts .climatDetail__additional-value h2,
+  .climatDetail__additional-value .contacts h2 {
     font-size: 24px;
   }
 }
@@ -16936,7 +17078,9 @@ input[type="search"]::-webkit-search-results-decoration {
 .additional .titles .catalogueDetail__title,
 .additional .titles .photoprint__title,
 .additional .titles .photobank__title,
-.additional .titles .photoprintBlock__title {
+.additional .titles .photoprintBlock__title,
+.additional .titles .climatDetail__additional-value h2,
+.climatDetail__additional-value .additional .titles h2 {
   margin: 0;
 }
 
@@ -17345,7 +17489,9 @@ input[type="search"]::-webkit-search-results-decoration {
 .articles.articles_main .articles__list.climatSlider,
 .articles.articles_main .articles__list.climatCatalogue,
 .articles.articles_main .articles__list.climatAdditional,
-.articles.articles_main .articles__list.recent {
+.articles.articles_main .articles__list.recent,
+.articles.articles_main .articles__list.climatDetail__main,
+.articles.articles_main .articles__list.climatDetail__additional-content {
   margin-bottom: 3rem;
 }
 
@@ -17866,7 +18012,13 @@ input[type="search"]::-webkit-search-results-decoration {
 .whyus__content .climatCatalogue__link,
 .whyus__content .climatCatalogue__filter-apply,
 .whyus__content .climatCatalogue__filter-resetall,
-.whyus__content .climatCard__button {
+.whyus__content .climatCard__button,
+.whyus__content .climatDetail__basket,
+.whyus__content .climatDetail__fastBuy,
+.whyus__content .conditionerPopup__basket,
+.whyus__content .conditionerPopup__desc,
+.whyus__content .conditionerPopup__pay,
+.whyus__content .conditionerPopup__continue {
   margin-top: 3rem;
 }
 
@@ -23352,7 +23504,9 @@ input[type="search"]::-webkit-search-results-decoration {
 .catalogueCeilings .titles .catalogueDetail__title,
 .catalogueCeilings .titles .photoprint__title,
 .catalogueCeilings .titles .photobank__title,
-.catalogueCeilings .titles .photoprintBlock__title {
+.catalogueCeilings .titles .photoprintBlock__title,
+.catalogueCeilings .titles .climatDetail__additional-value h2,
+.climatDetail__additional-value .catalogueCeilings .titles h2 {
   padding-top: 0;
   margin-bottom: 2.5rem;
 }
@@ -23514,7 +23668,9 @@ input[type="search"]::-webkit-search-results-decoration {
 .credit__banks .titles .catalogueDetail__title,
 .credit__banks .titles .photoprint__title,
 .credit__banks .titles .photobank__title,
-.credit__banks .titles .photoprintBlock__title {
+.credit__banks .titles .photoprintBlock__title,
+.credit__banks .titles .climatDetail__additional-value h2,
+.climatDetail__additional-value .credit__banks .titles h2 {
   margin-bottom: 0;
 }
 
@@ -24041,7 +24197,13 @@ input[type="search"]::-webkit-search-results-decoration {
   .climatSlider__slide .climatCatalogue__link,
   .climatSlider__slide .climatCatalogue__filter-apply,
   .climatSlider__slide .climatCatalogue__filter-resetall,
-  .climatSlider__slide .climatCard__button {
+  .climatSlider__slide .climatCard__button,
+  .climatSlider__slide .climatDetail__basket,
+  .climatSlider__slide .climatDetail__fastBuy,
+  .climatSlider__slide .conditionerPopup__basket,
+  .climatSlider__slide .conditionerPopup__desc,
+  .climatSlider__slide .conditionerPopup__pay,
+  .climatSlider__slide .conditionerPopup__continue {
     position: relative;
     z-index: 2;
     text-align: center;
@@ -24542,7 +24704,7 @@ input[type="search"]::-webkit-search-results-decoration {
     padding: 1.25rem 0.5rem;
     top: 0;
     right: -100vw;
-    z-index: 99999;
+    z-index: 999999999;
     -webkit-transition: right .3s;
     transition: right .3s;
     background-color: #b9bec3;
@@ -24917,7 +25079,9 @@ input[type="search"]::-webkit-search-results-decoration {
   .climatCatalogue_main .catalogueDetail__title,
   .climatCatalogue_main .photoprint__title,
   .climatCatalogue_main .photobank__title,
-  .climatCatalogue_main .photoprintBlock__title {
+  .climatCatalogue_main .photoprintBlock__title,
+  .climatCatalogue_main .climatDetail__additional-value h2,
+  .climatDetail__additional-value .climatCatalogue_main h2 {
     margin-bottom: 2rem;
   }
 }
@@ -26119,7 +26283,9 @@ input[type="search"]::-webkit-search-results-decoration {
   .climatAdditional .catalogueDetail__title,
   .climatAdditional .photoprint__title,
   .climatAdditional .photobank__title,
-  .climatAdditional .photoprintBlock__title {
+  .climatAdditional .photoprintBlock__title,
+  .climatAdditional .climatDetail__additional-value h2,
+  .climatDetail__additional-value .climatAdditional h2 {
     margin-bottom: 2.5rem;
   }
 }
@@ -26347,5 +26513,1508 @@ input[type="search"]::-webkit-search-results-decoration {
   font-family: "Helvetica Neue", sans-serif;
   font-size: 1.125rem;
   line-height: 1;
+}
+
+.recent_detail {
+  padding-bottom: 4rem;
+  border-bottom: 0.0625rem solid #babec2;
+}
+
+.recent_detail .titles {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.recent_detail .titles .second-title,
+.recent_detail .titles .titles__second-title,
+.recent_detail .titles .catalogueDetail__title,
+.recent_detail .titles .photoprint__title,
+.recent_detail .titles .photobank__title,
+.recent_detail .titles .photoprintBlock__title,
+.recent_detail .titles .climatDetail__additional-value h2,
+.climatDetail__additional-value .recent_detail .titles h2 {
+  margin-bottom: 2.5rem;
+}
+
+.recent_detail .titles .second-title::after,
+.recent_detail .titles .titles__second-title::after,
+.recent_detail .titles .catalogueDetail__title::after,
+.recent_detail .titles .photoprint__title::after,
+.recent_detail .titles .photobank__title::after,
+.recent_detail .titles .photoprintBlock__title::after,
+.recent_detail .titles .climatDetail__additional-value h2::after,
+.climatDetail__additional-value .recent_detail .titles h2::after {
+  left: 0;
+  -webkit-transform: none;
+          transform: none;
+}
+
+.climatDetail__main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 2.625rem;
+  padding-bottom: 4rem;
+}
+
+@media screen and (max-width: 60rem) {
+  .climatDetail__main {
+    position: relative;
+    padding-top: 3rem;
+    padding-bottom: 10.125rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatDetail__main {
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+  }
+}
+
+.climatDetail__gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media screen and (max-width: 60rem) {
+  .climatDetail__gallery {
+    height: 28.4375rem;
+    margin-right: 0;
+    margin-bottom: 2.0625rem;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatDetail__gallery {
+    position: absolute;
+    top: 9.375rem;
+    height: auto;
+    margin-bottom: 0;
+  }
+}
+
+.climatDetail__gallery-list .climatDetail__gallery-preview {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.climatDetail__gallery-wrap {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.climatDetail__gallery-preview {
+  width: 36.25rem;
+  height: auto;
+  margin-bottom: 0.625rem;
+  padding-top: 2.0625rem;
+}
+
+@media screen and (max-width: 60rem) {
+  .climatDetail__gallery-preview {
+    width: 22.5rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatDetail__gallery-preview {
+    padding-top: 0;
+    width: 100%;
+    height: 18.4375rem;
+    margin-bottom: 0;
+    height: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+
+  .climatDetail__gallery-preview .slider-dots {
+    margin: 0 auto;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.climatDetail__gallery-preview img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 0.375rem;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatDetail__gallery-preview img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+}
+
+.climatDetail__gallery-list {
+  position: relative;
+  padding-top: 1.875rem;
+  padding-bottom: 2.25rem;
+  height: 36.0625rem;
+  overflow: hidden;
+  margin-right: 1.25rem;
+}
+
+@media screen and (max-width: 60rem) {
+  .climatDetail__gallery-list {
+    height: 22.75rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.625rem;
+    margin-right: 1rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatDetail__gallery-list {
+    display: none;
+  }
+}
+
+.climatDetail__gallery-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 11.1875rem;
+  height: 11.1875rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  border: 0.0625rem solid transparent;
+}
+
+@media screen and (max-width: 60rem) {
+  .climatDetail__gallery-item {
+    width: 4.875rem;
+    height: 4.375rem;
+    padding: 0.625rem;
+  }
+
+  .climatDetail__gallery-item img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+.climatDetail__gallery-item.active {
+  border: 0.0625rem solid #babec2;
+}
+
+.climatDetail__gallery-prev,
+.climatDetail__gallery-next {
+  position: absolute;
+  left: 50%;
+  width: 1.5rem;
+  height: 0.75rem;
+  padding: 0;
+  text-indent: -9999px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  background-image: url("/img/gui/arrow_big_down.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  -webkit-transform: rotate(180deg) translateX(50%);
+          transform: rotate(180deg) translateX(50%);
+  cursor: pointer;
+  z-index: 999999;
+}
+
+@media screen and (max-width: 60rem) {
+  .climatDetail__gallery-prev,
+  .climatDetail__gallery-next {
+    width: 1.625rem;
+    height: 0.875rem;
+  }
+}
+
+.climatDetail__gallery-prev {
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: 0;
+}
+
+.climatDetail__gallery-next {
+  bottom: 0.75rem;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .climatDetail__gallery-next {
+    bottom: 0;
+  }
+}
+
+.climatDetail__controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.climatDetail__comparison,
+.climatDetail__favourites {
+  margin: 0;
+  color: #485058;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  text-decoration: none;
+  -webkit-transition: color .3s;
+  transition: color .3s;
+}
+
+.climatDetail__comparison svg,
+.climatDetail__favourites svg {
+  stroke: #808890;
+  -webkit-transition: stroke .3s;
+  transition: stroke .3s;
+}
+
+.climatDetail__comparison:hover,
+.climatDetail__comparison.active,
+.climatDetail__favourites:hover,
+.climatDetail__favourites.active {
+  color: #dc1414;
+}
+
+.climatDetail__comparison:hover svg,
+.climatDetail__comparison.active svg,
+.climatDetail__favourites:hover svg,
+.climatDetail__favourites.active svg {
+  stroke: #dc1414;
+}
+
+.climatDetail__comparison {
+  margin-right: 2.1875rem;
+}
+
+.climatDetail__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 2.0625rem;
+}
+
+@media screen and (max-width: 60rem) {
+  .climatDetail__info {
+    padding-top: 1.625rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatDetail__info {
+    padding-top: 0;
+  }
+}
+
+.climatDetail__name {
+  width: 100%;
+  margin: 0;
+  color: #485058;
+  font-family: "Futura PT", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 60rem) {
+  .climatDetail__name {
+    font-size: 1.75rem;
+    letter-spacing: 0.09375rem;
+  }
+}
+
+.climatDetail__model {
+  width: 100%;
+  margin: 0;
+  margin-bottom: 0.75rem;
+  color: #a7aaad;
+  font-family: "Futura PT", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.0625rem;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 60rem) {
+  .climatDetail__model {
+    font-size: 1.375rem;
+    letter-spacing: 0.04375rem;
+  }
+}
+
+.climatDetail__stars.jq-ry-container {
+  padding: 0;
+}
+
+.climatDetail__rating {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 2.375rem;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatDetail__rating {
+    margin-bottom: 26.5625rem;
+  }
+}
+
+.climatDetail__rating p {
+  margin: 0;
+  margin-left: 0.5rem;
+  color: #808890;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1rem;
+}
+
+.climatDetail__socials {
+  margin-bottom: 2.375rem;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatDetail__socials {
+    margin-bottom: 26.5625rem;
+  }
+}
+
+.climatDetail__socials .socials__item {
+  margin-bottom: 0;
+  -webkit-transition: width .3s;
+  transition: width .3s;
+}
+
+.climatDetail__socials .socials__item:not(:last-of-type) {
+  margin-right: 0.625rem;
+}
+
+@media screen and (max-width: 60rem) {
+  .climatDetail__socials .socials__item:not(:last-of-type) {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 60rem) {
+  .climatDetail__socials .socials__item {
+    width: 0;
+  }
+}
+
+.climatDetail__socials .socials__icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+@media screen and (max-width: 60rem) {
+  .climatDetail__socials.opened .socials__item {
+    width: auto;
+  }
+
+  .climatDetail__socials.opened .socials__item:not(:last-of-type) {
+    margin-right: 0.625rem;
+  }
+}
+
+.climatDetail__socials.opened .share {
+  display: none;
+}
+
+.climatDetail__pay-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  width: calc(100% + 20px);
+  margin-right: -1.25rem;
+  padding: 2rem 1.25rem;
+  padding-bottom: 2.5rem;
+  margin-bottom: 3rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-radius: 0.25rem;
+  background-color: #f4f6f8;
+}
+
+@media screen and (max-width: 60rem) {
+  .climatDetail__pay-info {
+    width: calc(100% + 8px);
+    margin-right: -0.5rem;
+    padding: 2rem 0.5rem;
+    padding-bottom: 2.5rem;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatDetail__pay-info {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 3rem;
+    padding: 2rem 1.5rem;
+    padding-bottom: 2.5rem;
+  }
+}
+
+.climatDetail__price {
+  width: 100%;
+  margin: 0;
+  margin-bottom: 0.5rem;
+  color: #dc1414;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.climatDetail__old-price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 2rem;
+}
+
+.climatDetail__old-price span:first-of-type {
+  color: #babec2;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  text-decoration: line-through;
+}
+
+.climatDetail__old-price span:last-of-type {
+  margin-left: 1rem;
+  padding: 0.25rem 0.875rem;
+  border-radius: 0.25rem;
+  background-color: #babec2;
+  color: #f4f6f8;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.climatDetail__basket {
+  width: 10.25rem;
+  height: 3.125rem;
+  margin-right: 1rem;
+}
+
+@media screen and (max-width: 60rem) {
+  .climatDetail__basket {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+.climatDetail__fastBuy {
+  width: 12.5rem;
+  height: 3.125rem;
+  border: 0.125rem solid #dc1414;
+  background-color: #ffffff;
+  color: #dc1414;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+@media screen and (max-width: 60rem) {
+  .climatDetail__fastBuy:not(button) {
+    display: none;
+  }
+}
+
+.climatDetail__fastBuy:active {
+  background-color: #ffffff;
+  color: #dc1414;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.climatDetail__params {
+  padding: 0 1.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: calc(100% + 40px);
+  margin-left: -1.25rem;
+  margin-right: -1.25rem;
+  margin-bottom: -1.25rem;
+}
+
+@media screen and (max-width: 60rem) {
+  .climatDetail__params {
+    position: absolute;
+    left: 0;
+    bottom: 4rem;
+    width: calc(100% + 24px);
+    margin: 0;
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatDetail__params {
+    position: static;
+    width: calc(100% + 4px);
+    margin-left: -0.125rem;
+    margin-right: -0.125rem;
+    margin-bottom: -1.25rem;
+  }
+}
+
+.climatDetail__param {
+  width: calc(33.3% - 10px);
+  margin: 0 0.3125rem;
+  margin-bottom: 1.25rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 60rem) {
+  .climatDetail__param {
+    width: calc(20% - 24px);
+    margin: 0 0.75rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatDetail__param {
+    width: calc(50% - 4px);
+    margin: 0 0.125rem;
+    margin-bottom: 1.25rem;
+  }
+}
+
+.climatDetail__param p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0.8125rem 0.75rem;
+  border-radius: 0.3125rem;
+  border: 0.125rem solid #afb4b9;
+  background-color: #ffffff;
+  margin: 0;
+  color: #a7aaad;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1.25rem;
+}
+
+.climatDetail__param input {
+  display: none;
+}
+
+.climatDetail__param input:checked ~ p {
+  -webkit-box-shadow: inset 0 -1px 0 #808890;
+          box-shadow: inset 0 -1px 0 #808890;
+  border-radius: 0.3125rem;
+  background-color: #babec2;
+  color: #ffffff;
+}
+
+.climatDetail__additional {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 2rem;
+  padding-bottom: 3.75rem;
+  background-color: #f4f6f8;
+}
+
+.climatDetail__additional-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatDetail__additional-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.climatDetail__additional-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 25%;
+  padding: 1.0625rem;
+  color: #485058;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.5rem;
+  text-decoration: none;
+  border-radius: 0.25rem 0.25rem 0 0;
+}
+
+.climatDetail__additional-name span {
+  color: #babec2;
+}
+
+.climatDetail__additional-name.active {
+  background-color: #ffffff;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatDetail__additional-name {
+    width: 100%;
+    border-bottom: 0.0625rem solid #ffffff;
+  }
+
+  .climatDetail__additional-name:first-of-type {
+    border-top: 0.0625rem solid #ffffff;
+  }
+}
+
+.climatDetail__additional-text {
+  display: inline;
+  width: 100%;
+  height: 25rem;
+  -webkit-column-count: 2;
+          column-count: 2;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
+}
+
+@media screen and (max-width: 60rem) {
+  .climatDetail__additional-text {
+    -webkit-column-count: 0;
+            column-count: 0;
+    -webkit-column-gap: 0;
+            column-gap: 0;
+    column-count: 0;
+    height: auto;
+  }
+}
+
+.climatDetail__additional-value {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 2.75rem 2rem;
+  padding-bottom: 3.25rem;
+  background-color: #ffffff;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatDetail__additional-value {
+    width: 100%;
+    padding: 2rem 1rem;
+    padding-bottom: 3rem;
+  }
+}
+
+.climatDetail__additional-value h2 {
+  width: 100%;
+  margin-bottom: 2.5rem;
+  text-align: left;
+}
+
+.climatDetail__additional-value h2::after {
+  left: 0;
+  -webkit-transform: none;
+          transform: none;
+}
+
+.climatDetail__additional-value p {
+  margin: 0;
+  color: #485058;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.5rem;
+}
+
+.climatDetail__additional-value p:not(:last-of-type) {
+  margin-bottom: 3rem;
+}
+
+.climatDetail__additional-value h3 {
+  margin-bottom: 0.375rem;
+}
+
+.climatDetail__additional-value.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.conditionerPopup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 61.25rem;
+  padding: 1.875rem;
+  padding-bottom: 2.5rem;
+  padding-left: 2rem;
+  border-radius: 0.5rem;
+}
+
+@media screen and (max-width: 60rem) {
+  .conditionerPopup {
+    padding: 2.5rem 1.5rem;
+    padding-bottom: 2.5rem;
+    padding-left: 1.5rem;
+    width: 46rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.conditionerPopup__gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 1rem;
+}
+
+@media screen and (max-width: 60rem) {
+  .conditionerPopup__gallery {
+    height: 23.25rem;
+    margin-right: 0;
+    margin-bottom: 2.0625rem;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+}
+
+.conditionerPopup__gallery-list .conditionerPopup__gallery-preview {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.conditionerPopup__gallery-wrap {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.conditionerPopup__gallery-preview {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 23.25rem;
+  height: 23.25rem;
+  height: auto;
+  padding-top: 1.625rem;
+}
+
+@media screen and (max-width: 60rem) {
+  .conditionerPopup__gallery-preview {
+    padding-top: 0;
+  }
+}
+
+.conditionerPopup__gallery-preview img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 0.375rem;
+}
+
+.conditionerPopup__gallery-list {
+  position: relative;
+  padding-top: 1.625rem;
+  padding-bottom: 1.625rem;
+  height: 38.375rem;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 60rem) {
+  .conditionerPopup__gallery-list {
+    height: 24.3125rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+.conditionerPopup__gallery-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 8.625rem;
+  height: 8.625rem;
+  padding: 0.625rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  border: 0.0625rem solid transparent;
+}
+
+@media screen and (max-width: 60rem) {
+  .conditionerPopup__gallery-item {
+    width: 7.1875rem;
+    height: 7.1875rem;
+  }
+
+  .conditionerPopup__gallery-item img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+.conditionerPopup__gallery-item.active {
+  border: 0.0625rem solid #babec2;
+}
+
+.conditionerPopup__gallery-prev,
+.conditionerPopup__gallery-next {
+  position: absolute;
+  left: 50%;
+  width: 1.5rem;
+  height: 0.75rem;
+  padding: 0;
+  text-indent: -9999px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  background-image: url("/img/gui/arrow_big_down.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  -webkit-transform: translateX(-50%) rotate(180deg);
+          transform: translateX(-50%) rotate(180deg);
+  cursor: pointer;
+  z-index: 999999;
+}
+
+.conditionerPopup__gallery-prev {
+  -webkit-transform: rotate(0) translateX(-50%);
+          transform: rotate(0) translateX(-50%);
+  top: 0;
+}
+
+@media screen and (max-width: 60rem) {
+  .conditionerPopup__gallery-prev {
+    top: 0.375rem;
+  }
+}
+
+.conditionerPopup__gallery-next {
+  bottom: 0.75rem;
+}
+
+@media screen and (max-width: 60rem) {
+  .conditionerPopup__gallery-next {
+    bottom: 0;
+  }
+}
+
+.conditionerPopup__controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.conditionerPopup__comparison,
+.conditionerPopup__favourites {
+  margin: 0;
+  color: #485058;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  text-decoration: none;
+  -webkit-transition: color .3s;
+  transition: color .3s;
+}
+
+.conditionerPopup__comparison svg,
+.conditionerPopup__favourites svg {
+  stroke: #808890;
+  -webkit-transition: stroke .3s;
+  transition: stroke .3s;
+}
+
+.conditionerPopup__comparison:hover,
+.conditionerPopup__comparison.active,
+.conditionerPopup__favourites:hover,
+.conditionerPopup__favourites.active {
+  color: #dc1414;
+}
+
+.conditionerPopup__comparison:hover svg,
+.conditionerPopup__comparison.active svg,
+.conditionerPopup__favourites:hover svg,
+.conditionerPopup__favourites.active svg {
+  stroke: #dc1414;
+}
+
+.conditionerPopup__comparison {
+  margin-right: 2.1875rem;
+}
+
+.conditionerPopup__hit,
+.conditionerPopup__best {
+  position: absolute;
+  top: 0;
+  right: 1.875rem;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+  padding-bottom: 0.5625rem;
+  border-radius: 0 0 0.3125rem 0.3125rem;
+  background-color: #dc1414;
+}
+
+.conditionerPopup__hit p,
+.conditionerPopup__best p {
+  margin: 0;
+  color: #ffffff;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1rem;
+}
+
+.conditionerPopup__hit svg,
+.conditionerPopup__best svg {
+  margin-right: 0.5rem;
+}
+
+.conditionerPopup__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 1.625rem;
+}
+
+@media screen and (max-width: 60rem) {
+  .conditionerPopup__info {
+    padding-top: 0;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+}
+
+.conditionerPopup__name {
+  width: 100%;
+  margin: 0;
+  color: #485058;
+  font-family: "Futura PT", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 60rem) {
+  .conditionerPopup__name {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    width: auto;
+    margin-right: 1rem;
+    margin-bottom: 0.8125rem;
+  }
+}
+
+.conditionerPopup__model {
+  width: 100%;
+  margin: 0;
+  margin-bottom: 0.8125rem;
+  color: #a7aaad;
+  font-family: "Futura PT", sans-serif;
+  font-size: 1.375rem;
+  font-weight: 400;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 60rem) {
+  .conditionerPopup__model {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    width: calc(100% - 150px);
+    -webkit-box-flex: 9;
+        -ms-flex-positive: 9;
+            flex-grow: 9;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+}
+
+.conditionerPopup__stars.jq-ry-container {
+  padding: 0;
+}
+
+.conditionerPopup__rating {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1.875rem;
+}
+
+@media screen and (max-width: 60rem) {
+  .conditionerPopup__rating {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.conditionerPopup__rating p {
+  margin: 0;
+  margin-left: 0.5rem;
+  color: #808890;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1rem;
+}
+
+.conditionerPopup__socials {
+  margin-bottom: 1.875rem;
+}
+
+@media screen and (max-width: 60rem) {
+  .conditionerPopup__socials {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.conditionerPopup__socials .socials__item {
+  margin-bottom: 0;
+  -webkit-transition: width .3s;
+  transition: width .3s;
+}
+
+.conditionerPopup__socials .socials__item:not(:last-of-type) {
+  margin-right: 0.625rem;
+}
+
+@media screen and (max-width: 60rem) {
+  .conditionerPopup__socials .socials__item {
+    width: 0;
+  }
+
+  .conditionerPopup__socials .socials__item:not(:last-of-type) {
+    margin-right: 0rem;
+  }
+}
+
+.conditionerPopup__socials .socials__icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+@media screen and (max-width: 60rem) {
+  .conditionerPopup__socials.opened .socials__item {
+    width: auto;
+  }
+
+  .conditionerPopup__socials.opened .socials__item:not(:last-of-type) {
+    margin-right: 0.625rem;
+  }
+
+  .conditionerPopup__socials.opened .share {
+    display: none;
+  }
+}
+
+.conditionerPopup__characteristic {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin: 0;
+}
+
+.conditionerPopup__characteristic dt {
+  width: 50%;
+  padding: 0.375rem 0.5rem;
+  color: #50555a;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1rem;
+}
+
+.conditionerPopup__characteristic dd {
+  width: calc(50% - 2px);
+  padding: 0.375rem 0.5rem;
+  margin-left: 0.125rem;
+  color: #50555a;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1rem;
+}
+
+.conditionerPopup__characteristic:nth-of-type(odd) dt,
+.conditionerPopup__characteristic:nth-of-type(odd) dd {
+  background-color: #f4f6f8;
+}
+
+.conditionerPopup__characteristic:last-of-type {
+  margin-bottom: 2.625rem;
+}
+
+@media screen and (max-width: 60rem) {
+  .conditionerPopup__characteristic:last-of-type {
+    margin-bottom: 1.625rem;
+  }
+}
+
+.conditionerPopup__pay-block {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.conditionerPopup__old-price {
+  margin: 0;
+  margin-bottom: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 60rem) {
+  .conditionerPopup__old-price {
+    margin-right: auto;
+    margin-bottom: 0;
+    padding-bottom: 0.125rem;
+  }
+}
+
+.conditionerPopup__old-price span:first-of-type {
+  color: #babec2;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 300;
+  line-height: 1.125rem;
+  text-decoration: line-through;
+}
+
+.conditionerPopup__old-price span:last-of-type {
+  margin-left: 0.3125rem;
+  color: #dc1414;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.125rem;
+  text-decoration: none;
+}
+
+.conditionerPopup__price {
+  margin: 0;
+  margin-bottom: 1.375rem;
+  margin-right: 1.25rem;
+  color: #dc1414;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+@media screen and (max-width: 60rem) {
+  .conditionerPopup__price {
+    margin-right: 1.5625rem;
+    margin-bottom: 0;
+  }
+}
+
+.conditionerPopup__pay-tip {
+  width: 100%;
+  margin: 0;
+  margin-bottom: 1.75rem;
+  color: #485058;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1.375rem;
+  font-weight: 300;
+  line-height: 2rem;
+  display: none;
+}
+
+.conditionerPopup__basket {
+  width: auto;
+  height: 2.5rem;
+  margin-right: auto;
+  padding: 0.5625rem 1rem;
+  padding-top: 0.6875rem;
+  margin-right: 1rem;
+  font-size: 0.875rem;
+  line-height: normal;
+}
+
+.conditionerPopup__basket span {
+  padding-top: 0.125rem;
+}
+
+.conditionerPopup__basket svg {
+  width: 1.125rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.125rem;
+}
+
+.conditionerPopup__basket svg g {
+  stroke: #ffffff;
+  stroke-width: 1.5px;
+}
+
+@media screen and (max-width: 60rem) {
+  .conditionerPopup__basket {
+    width: 8.25rem;
+    margin-right: 1rem;
+  }
+}
+
+.conditionerPopup__desc {
+  width: auto;
+  height: 2.5rem;
+  padding: 0.5625rem 1rem;
+  padding-top: 0.6875rem;
+  font-size: 0.875rem;
+  line-height: normal;
+}
+
+.conditionerPopup__desc span {
+  margin-top: 0.125rem;
+}
+
+.conditionerPopup__desc svg {
+  height: 1rem;
+  width: 1rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.125rem;
+}
+
+.conditionerPopup__desc svg g {
+  stroke: #ffffff;
+}
+
+@media screen and (max-width: 60rem) {
+  .conditionerPopup__desc {
+    width: 11.4375rem;
+  }
+}
+
+.conditionerPopup__pay {
+  width: auto;
+  height: 2.25rem;
+  width: 10rem;
+  margin-right: 1rem;
+  padding: 0.5625rem 1rem;
+  padding-top: 0.6875rem;
+  font-size: 0.875rem;
+}
+
+.conditionerPopup__pay:not(button) {
+  display: none;
+}
+
+@media screen and (max-width: 60rem) {
+  .conditionerPopup__pay {
+    width: 8.25rem;
+    margin-right: 1rem;
+  }
+}
+
+.conditionerPopup__continue {
+  height: 2.25rem;
+  width: auto;
+  padding: 0.5625rem 1rem;
+  padding-top: 0.6875rem;
+  font-size: 0.875rem;
+}
+
+.conditionerPopup__continue:not(button) {
+  display: none;
+}
+
+@media screen and (max-width: 60rem) {
+  .conditionerPopup__continue {
+    width: 11.4375rem;
+  }
+}
+
+.conditionerPopup_inBasket .conditionerPopup__pay {
+  display: block;
+}
+
+.conditionerPopup_inBasket .conditionerPopup__continue {
+  display: block;
+}
+
+.conditionerPopup_hit .conditionerPopup__hit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.conditionerPopup_best .conditionerPopup__best {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.slider-dots {
+  display: none;
+  margin: 0 auto;
+  margin-top: 1.5rem;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .slider-dots {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.slider-dots__dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  padding: 0;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  background-color: #e6e8ea;
+}
+
+.slider-dots__dot.active {
+  background-color: #dc1414;
+}
+
+.slider-dots__dot:not(:last-of-type) {
+  margin-right: 0.5rem;
 }
 

@@ -739,6 +739,24 @@ $('.climatCard__favourites').on('click', function () {
     }
 });
 
+$('.conditionerPopup__comparison').on('click', function () {
+    $(this).toggleClass('active');
+    if ($(this).is(".active")) {
+        $(this).find('span').text('В сравнении');
+    } else {
+        $(this).find('span').text('К сравнению');
+    }
+});
+
+$('.conditionerPopup__favourites').on('click', function () {
+    $(this).toggleClass('active');
+    if ($(this).is(".active")) {
+        $(this).find('span').text('В избранном');
+    } else {
+        $(this).find('span').text('В избранное');
+    }
+});
+
 $('.climatCatalogue__filter-title').on('click', function () {
     $(this).parent('.climatCatalogue__filter-item').toggleClass('opened');
 });
@@ -751,7 +769,26 @@ $('.climatCard__stars').rateYo({
     fullStar: true,
     readOnly: true
 });
+
 $('.climatCatalogue__stars').rateYo({
+    rating: $(this).attr("data-rateyo-rating"),
+    starWidth: '16px',
+    normalFill: '#babec2',
+    ratedFill: '#dc1414',
+    fullStar: true,
+    readOnly: true
+});
+
+$('.conditionerPopup__stars').rateYo({
+    rating: $(this).attr("data-rateyo-rating"),
+    starWidth: '16px',
+    normalFill: '#babec2',
+    ratedFill: '#dc1414',
+    fullStar: true,
+    readOnly: true
+});
+
+$('.climatDetail__stars').rateYo({
     rating: $(this).attr("data-rateyo-rating"),
     starWidth: '16px',
     normalFill: '#babec2',
@@ -810,4 +847,118 @@ $('.climatCatalogue__sort-item').on('click', function () {
 });
 $('.climatCatalogue__filter-clear').on('click', function (event) {
     event.stopPropagation();
+});
+
+
+$('.conditionerPopup__gallery-prev').on('click', function () {
+
+    let activeSlide = $(this).closest('.conditionerPopup__gallery-list').find('.active');
+
+
+    if( $(activeSlide).prev('.conditionerPopup__gallery-item').length > 0 && $(document).width() > 960) {
+        $(activeSlide).removeClass('active').prev().addClass('active');
+
+        let length = $('.conditionerPopup__gallery-item.active').prevAll(".conditionerPopup__gallery-item").length;
+        length = length * 138;
+        let translate = 'translateY(-' + length + 'px)';
+        $(".conditionerPopup__gallery-wrap").css("transform", translate);
+
+    } else if($(activeSlide).prev('.conditionerPopup__gallery-item').length > 0 && $(document).width() <= 960) {
+        console.log(1);
+        $(activeSlide).removeClass('active').prev().addClass('active');
+
+        let length = $('.conditionerPopup__gallery-item.active').prevAll(".conditionerPopup__gallery-item").length;
+        length = length * 115;
+        let translate = 'translateY(-' + length + 'px)';
+        $(".conditionerPopup__gallery-wrap").css("transform", translate);
+    } else {
+        return;
+    }
+
+});
+
+$('.conditionerPopup__gallery-next').on('click', function () {
+    let activeSlide = $(this).closest('.conditionerPopup__gallery-list').find('.active');
+
+    if( $(activeSlide).next('.conditionerPopup__gallery-item').length > 0 && $(document).width() > 960) {
+        $(activeSlide).removeClass('active').next().addClass('active');
+
+        let length = $('.conditionerPopup__gallery-item.active').prevAll(".conditionerPopup__gallery-item").length;
+        length = length * 138;
+        let translate = 'translateY(-' + length + 'px)';
+        $(".conditionerPopup__gallery-wrap").css("transform", translate);
+
+    } else if($(activeSlide).next('.conditionerPopup__gallery-item').length > 0 && $(document).width() <= 960) {
+        console.log(1);
+        $(activeSlide).removeClass('active').next().addClass('active');
+        let length = $('.conditionerPopup__gallery-item.active').prevAll(".conditionerPopup__gallery-item").length;
+        length = length * 115;
+        let translate = 'translateY(-' + length + 'px)';
+        $(".conditionerPopup__gallery-wrap").css("transform", translate);
+    } else {
+        return;
+    }
+
+});
+
+$('.climatDetail__additional-name').on('click', function() {
+    $(this)
+    .addClass('active').siblings().removeClass('active')
+    .closest('.climatDetail__additional-content').find('.climatDetail__additional-value').removeClass('active').eq($(this).index()).addClass('active');
+});
+
+$('.share').on('click', function () {
+    $(this).closest('.socials').toggleClass('opened');
+});
+
+
+$('.climatDetail__gallery-prev').on('click', function () {
+
+    let activeSlide = $(this).closest('.climatDetail__gallery-list').find('.active');
+
+
+    if( $(activeSlide).prev('.climatDetail__gallery-item').length > 0 && $(document).width() > 960) {
+        $(activeSlide).removeClass('active').prev().addClass('active');
+
+        let length = $('.climatDetail__gallery-item.active').prevAll(".climatDetail__gallery-item").length;
+        length = length * 179;
+        let translate = 'translateY(-' + length + 'px)';
+        $(".climatDetail__gallery-wrap").css("transform", translate);
+
+    } else if($(activeSlide).prev('.climatDetail__gallery-item').length > 0 && $(document).width() <= 960) {
+        console.log(1);
+        $(activeSlide).removeClass('active').prev().addClass('active');
+
+        let length = $('.climatDetail__gallery-item.active').prevAll(".climatDetail__gallery-item").length;
+        length = length * 70;
+        let translate = 'translateY(-' + length + 'px)';
+        $(".climatDetail__gallery-wrap").css("transform", translate);
+    } else {
+        return;
+    }
+
+});
+
+$('.climatDetail__gallery-next').on('click', function () {
+    let activeSlide = $(this).closest('.climatDetail__gallery-list').find('.active');
+
+    if( $(activeSlide).next('.climatDetail__gallery-item').length > 0 && $(document).width() > 960) {
+        $(activeSlide).removeClass('active').next().addClass('active');
+
+        let length = $('.climatDetail__gallery-item.active').prevAll(".climatDetail__gallery-item").length;
+        length = length * 179;
+        let translate = 'translateY(-' + length + 'px)';
+        $(".climatDetail__gallery-wrap").css("transform", translate);
+
+    } else if($(activeSlide).next('.climatDetail__gallery-item').length > 0 && $(document).width() <= 960) {
+        console.log(1);
+        $(activeSlide).removeClass('active').next().addClass('active');
+        let length = $('.climatDetail__gallery-item.active').prevAll(".climatDetail__gallery-item").length;
+        length = length * 70;
+        let translate = 'translateY(-' + length + 'px)';
+        $(".climatDetail__gallery-wrap").css("transform", translate);
+    } else {
+        return;
+    }
+
 });

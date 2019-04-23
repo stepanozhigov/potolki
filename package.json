@@ -21,6 +21,7 @@
     "lodash": "^4.17.4",
     "popper.js": "^1.12",
     "rateyo": "^2.3.5",
+    "slick-carousel": "^1.8.1",
     "tooltipster": "^4.2.6",
     "vue": "^2.5.7"
   },

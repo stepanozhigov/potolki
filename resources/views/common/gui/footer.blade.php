@@ -21,6 +21,10 @@
     <img src="/img/gui/close.svg" alt="" class="popup__close js-close">
     @include('common.article-form')
 </div>
+<div class="popup" id="condition_popup">
+    <img src="/img/gui/close.svg" alt="" class="popup__close js-close">
+    @include('climat.conditionerPopup')
+</div>
 <div id="overlay" class="overlay js-close"></div>
 </main>
 

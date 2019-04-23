@@ -1,4 +1,4 @@
-<article class="climatCard">
+<article data-src="#condition_popup" class="climatCard js-show">
     <div class="climatCard__heading">
         <div class="climatCard__preview">
             <img class="climatCard__image" src="/img/climat/condition.jpg" alt="">

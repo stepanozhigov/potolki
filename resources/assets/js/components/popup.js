@@ -5,6 +5,10 @@ $(document).on('click', '.js-show', function(event) {
         $source = $(source),
         $overlay = $('#overlay');
 
+    if ($this.is('.climatCard') && $(document).width() < 768) {
+        return
+    }
+
     if ($this.is('.review'))
     {
         var offset = 0;
@@ -16,6 +20,7 @@ $(document).on('click', '.js-show', function(event) {
 
         $source.css('top', offset + 150);
     }
+
     else {
         $('body').addClass('overflowed');
     }

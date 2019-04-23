@@ -6,6 +6,8 @@
 	padding-bottom: rem(24);
 	overflow: hidden;
 
+
+
 	&__list {
 		display: flex;
 		justify-content: flex-start;
@@ -118,6 +120,23 @@
 	        font-size: rem(18);
 	        line-height: 1;
 	    }
+	}
+
+	&_detail {
+		padding-bottom: rem(64);
+		border-bottom: rem(1) solid #babec2;
+		.titles  {
+			align-items: flex-start;
+
+			.second-title {
+				margin-bottom: rem(40);
+
+				&::after {
+					left: 0;
+					transform: none;
+				}
+			}
+		}
 	}
 
 }

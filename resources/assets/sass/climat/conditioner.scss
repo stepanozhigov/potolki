@@ -1,0 +1,143 @@
+.conditionerPopup {
+	display: flex;
+	padding: rem(56) rem(24);
+	padding-bottom: rem(48);
+	padding-left: rem(33);
+	border-radius: rem(8);
+
+	&__gallery {
+		 display: flex;
+		 margin-right: rem(16);
+
+		 &-list
+		 &_preview {
+			 display: flex;
+			 flex-direction: column;
+		 }
+	}
+
+	&__controls {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    &__comparison,
+    &__favourites {
+        margin: 0;
+        color: #485058;
+        font-family: $helvetica;
+        font-size: rem(14);
+        font-weight: 300;
+        text-decoration: none;
+        transition: color .3s;
+
+        svg {
+            stroke: #808890;
+            transition: stroke .3s;
+        }
+
+		&:hover,
+		&.active {
+            color: #dc1414;
+
+            svg {
+                stroke: #dc1414;
+            }
+        }
+    }
+
+	&__hit,
+    &__best {
+        position: absolute;
+        top: 0;
+        right: rem(16);
+        display: none;
+        align-items: center;
+        padding: rem(16);
+        padding-bottom: rem(9);
+        border-radius: 0 0 rem(5) rem(5);
+        background-color: #dc1414;
+
+        p {
+            margin: 0;
+            color: #ffffff;
+            font-family: $helvetica;
+            font-size: rem(16);
+            font-weight: 500;
+            line-height: rem(16);
+        }
+
+        svg {
+            margin-right: rem(8);
+        }
+    }
+
+	&__info {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		width: rem(390);
+	}
+
+	&__name {
+		width: 100%;
+		margin: 0;
+		color: #485058;
+		font-family: $futura;
+		font-size: rem(28);
+		font-weight: 500;
+		letter-spacing: 1.5px;
+		text-transform: uppercase;
+	}
+
+	&__model {
+		width: 100%;
+		margin: 0;
+		margin-bottom: rem(13);
+		color: #a7aaad;
+		font-family: $futura;
+		font-size: rem(22);
+		font-weight: 400;
+		letter-spacing: 0.7px;
+		text-transform: uppercase;
+	}
+
+	&__stars {
+        &.jq-ry-container {
+            padding: 0;
+        }
+    }
+
+    &__ratimg {
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        padding-left: rem(80);
+        margin-bottom: rem(16);
+
+        p {
+            margin: 0;
+			margin-left: rem(8);
+            color: #808890;
+            font-family: $helvetica;
+            font-size: rem(16);
+            font-weight: 400;
+            line-height: rem(16);
+        }
+    }
+
+	&_hit {
+        .conditionerPopup__hit {
+            display: flex;
+        }
+    }
+
+    &_best {
+        .conditionerPopup__best {
+            display: flex;
+        }
+    }
+}
