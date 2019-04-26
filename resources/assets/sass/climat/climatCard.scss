@@ -169,6 +169,8 @@
         font-weight: 300;
         text-decoration: none;
         transition: color .3s;
+        display: inline-flex;
+        align-items: center;
 
         @include below($tablet) {
             font-size: rem(12);
@@ -177,8 +179,12 @@
         }
 
         svg {
-            stroke: #808890;
-            transition: stroke .3s;
+            margin-right: rem(4);
+            
+            g {
+				stroke: #808890;
+	            transition: stroke .3s;
+			}
         }
 
 		&:hover,
@@ -186,7 +192,9 @@
             color: #dc1414;
 
             svg {
-                stroke: #dc1414;
+                g{
+					stroke: #dc1414;
+				}
             }
         }
     }

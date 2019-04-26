@@ -1,0 +1,136 @@
+.climatBasket {
+    padding-top: rem(55);
+    padding-bottom: rem(150);
+
+    @extend .container;
+
+    &__heading {
+        display: flex;
+        align-items: center;
+        margin-bottom: rem(30);
+    }
+
+    &__title {
+        margin: 0;
+        margin-right: auto;
+
+        font-family: $playfair;
+        font-size: rem(32);
+        font-weight: 400;
+        line-height: 1;
+        color: #50555f;
+
+        @include below($tablet) {
+            font-size: rem(24);
+        }
+        @include below($mobile) {
+            width: 100%;
+
+            font-size: rem(22);
+            text-align: center;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: rem(40);
+    }
+
+    &__want {
+        margin-right: rem(65);
+
+        font-family: $playfair;
+        font-size: rem(16);
+        font-weight: 300;
+        color: #dc1414;
+
+        @include below($tablet) {
+            margin: 0;
+        }
+        @include below($mobile) {
+            display: none;
+        }
+    }
+
+    &__bottom-content {
+        display: flex;
+        flex-direction: column;
+        width: rem(445);
+        margin-left: auto;
+
+        @include below($mobile) {
+            width: 100%;
+        }
+
+        dl {
+            display: flex;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+
+            &:not(:last-of-type) {
+                margin-bottom: rem(10);
+            }
+
+            &:last-of-type {
+                margin-bottom: rem(20);
+
+                dt,
+                dd {
+                    color: #50555f;
+                }
+            }
+
+            dt {
+                width: calc(100% - 110px);
+                padding: 0;
+                margin: 0;
+                margin-right: rem(35);
+
+                font-family: $helvetica;
+                font-size: rem(16);
+                color: #a7aaad;
+                text-align: right;
+            }
+
+            dd {
+                width: rem(75);
+                padding: 0;
+                margin: 0;
+
+                font-family: $helvetica;
+                font-size: rem(16);
+                color: #a7aaad;
+                text-align: left;
+            }
+        }
+    }
+
+    &__desc {
+        width: 100%;
+        margin: 0;
+        margin-bottom: rem(10);
+
+        font-family: $helvetica;
+        font-size: rem(12);
+        color: #a7aaad;
+        text-align: center;
+    }
+
+    &__checkout {
+        width: 100%;
+        height: rem(50);
+        margin-bottom: rem(16);
+
+        @extend .button;
+    }
+
+    &__help {
+        width: 100%;
+        height: rem(50);
+
+        @extend .button;
+        @extend .button_gray;
+    }
+}

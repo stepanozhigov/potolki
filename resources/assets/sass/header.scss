@@ -294,6 +294,7 @@
         align-items: center;
 		animation: headerSticky .3s;
         transition: left .3s ease-in-out;
+		z-index: 999;
 
         @include below($tablet) {
             padding-top: rem(14);
@@ -384,8 +385,8 @@
             }
 
             @include below($mobile) {
-                width: rem(20);
-                height: rem(15);
+                width: rem(35);
+                height: rem(30);
             }
 
         }
@@ -393,6 +394,11 @@
             &.active {
                 margin-left: 0;
                 padding: 0;
+
+                @include below($mobile) {
+                    padding-left: rem(15);
+                    padding-bottom: rem(15);
+                }
 
             }
 

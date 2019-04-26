@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 40 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="LK---Order-FIZ-and-UR" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="LK-Ur-Order-_1920" transform="translate(-131.000000, -518.000000)" fill="#DC1414" fill-rule="nonzero">
+            <g id="Group" transform="translate(131.000000, 518.000000)">
+                <path d="M5.07035176,25.1055973 L2.10911701,25.1055973 L0,28.7196718 L0,32 L1.09619526,32 C1.38478105,31.074011 2.25987078,30.3960672 3.30868629,30.3960672 C4.35606604,30.3960672 5.23187365,31.074011 5.52045944,32 L9.66547021,32 C9.95405599,31.074011 10.8291457,30.3960672 11.8779612,30.3960672 C12.925341,30.3960672 13.8011486,31.074011 14.0897344,32 L17,32 L17,23 L5.07035176,23 L5.07035176,25.1055973 Z M4.39698492,29.3509329 L1.45872218,29.3509329 L1.45872218,27.821553 L2.68054559,26.135403 L4.3977028,26.135403 L4.3977028,29.3509329 L4.39698492,29.3509329 Z" id="Shape"></path>
+                <circle id="Oval" cx="11.9499969" cy="33.0499878" r="1.75"></circle>
+                <circle id="Oval" cx="3.25" cy="33.0499878" r="1.75"></circle>
+                <rect id="Rectangle-path" x="18" y="7" width="16" height="1"></rect>
+                <rect id="Rectangle-path" x="11" y="7" width="3" height="1"></rect>
+                <rect id="Rectangle-path" x="18" y="12" width="16" height="1"></rect>
+                <rect id="Rectangle-path" x="11" y="12" width="3" height="1"></rect>
+                <rect id="Rectangle-path" x="18" y="17" width="16" height="1"></rect>
+                <rect id="Rectangle-path" x="11" y="17" width="3" height="1"></rect>
+                <rect id="Rectangle-path" x="26" y="24" width="8" height="1"></rect>
+                <path d="M37.8010471,0 L7.19895288,0 C5.98513089,0 5,0.984198232 5,2.19850685 L5,21.1452389 L6.1373822,21.1452389 L6.1373822,1.13694866 L38.9227225,1.13694866 L38.9227225,21.9235103 L38.8464921,22.584528 L38.9227225,30.8821051 L20.0720419,30.8821051 L20.0720419,32 L37.8010471,32 C39.0148691,32 40,31.0158018 40,29.8014932 L40,2.19850685 C40,0.984198232 39.0148691,0 37.8010471,0 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

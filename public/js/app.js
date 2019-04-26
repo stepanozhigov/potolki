@@ -14426,6 +14426,24 @@ $('.conditionerPopup__favourites').on('click', function () {
     }
 });
 
+$('.climatDetail__comparison').on('click', function () {
+    $(this).toggleClass('active');
+    if ($(this).is(".active")) {
+        $(this).find('span').text('В сравнении');
+    } else {
+        $(this).find('span').text('К сравнению');
+    }
+});
+
+$('.climatDetail__favourites').on('click', function () {
+    $(this).toggleClass('active');
+    if ($(this).is(".active")) {
+        $(this).find('span').text('В избранном');
+    } else {
+        $(this).find('span').text('В избранное');
+    }
+});
+
 $('.climatCatalogue__filter-title').on('click', function () {
     $(this).parent('.climatCatalogue__filter-item').toggleClass('opened');
 });
@@ -14466,7 +14484,7 @@ $('.climatDetail__stars').rateYo({
     readOnly: true
 });
 
-$('.climatDetail__review-rating').rateYo({
+$('.climatDetail__review-stars').rateYo({
     rating: $(this).attr("data-rateyo-rating"),
     starWidth: '16px',
     normalFill: '#babec2',

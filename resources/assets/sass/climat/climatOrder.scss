@@ -1,0 +1,338 @@
+.climatOrder {
+    padding-top: rem(55);
+    padding-bottom: rem(150);
+
+    @extend .container;
+
+    &__heading {
+        display: flex;
+        align-items: center;
+        margin-bottom: rem(30);
+    }
+
+    &__title {
+        margin: 0;
+        margin-right: auto;
+
+        font-family: $playfair;
+        font-size: rem(32);
+        font-weight: 400;
+        line-height: 1;
+        color: #50555f;
+
+        @include below($tablet) {
+            font-size: rem(24);
+        }
+        @include below($mobile) {
+            width: 100%;
+
+            font-size: rem(22);
+            text-align: center;
+        }
+    }
+
+    &__repeat {
+        width: rem(315);
+
+        @extend .button;
+        color: #50555f;
+
+        background-color: #f5f5f5;
+        box-shadow: 0 8px 8px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0), inset 0 -1px 0 #c8c8c8;
+
+        &:hover {
+            color: #50555f;
+            background-color: #f5f5f5;
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.16), 0 0 8px rgba(0, 0, 0, 0.08), inset 0 -1px 0 #c8c8c8;
+        }
+
+        &:active {
+            color: #50555f;
+            background-color: #e4e4e4;
+            box-shadow: 0 8px 8px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0), inset 0 -1px 0 #c8c8c8;
+        }
+
+
+
+        @include below($mobile) {
+            display: none;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__info {
+        display: flex;
+        justify-content: space-between;
+        padding: rem(30) 0;
+        margin-bottom: rem(10);
+
+        border-top: 1px solid #c8c8c8;
+
+        @include below($tablet) {
+            position: relative;
+
+            flex-direction: column;
+            padding-bottom: 0;
+            margin-bottom: rem(75);
+        }
+        @include below($mobile) {
+            margin-bottom: rem(80);
+        }
+    }
+
+    &__order-info {
+        display: flex;
+        flex-direction: column;
+
+        @include below($tablet) {
+            margin-bottom: rem(10);
+        }
+
+        dl {
+            display: flex;
+            padding: 0;
+            margin: 0;
+
+            @include below($mobile) {
+                flex-direction: column;
+            }
+
+            &:not(:last-of-type) {
+                margin-bottom: rem(10);
+            }
+
+            dt,
+            dd {
+                padding: 0;
+                margin: 0;
+
+                font-family: $helvetica;
+                font-size: rem(16);
+                font-weight: 300;
+                color: #50555f;
+
+                p {
+                    display: inline;
+                }
+            }
+
+            dt {
+                width: rem(210);
+                margin-right: rem(5);
+            }
+        }
+    }
+
+    &__shipping-company,
+    &__track-number {
+        color: #df0d00;
+    }
+
+    &__ur-download {
+        display: none;
+        margin-top: rem(30);
+
+        @include below($tablet) {
+            position: absolute;
+            bottom: 0;
+        }
+        @include below($mobile) {
+            flex-direction: column;
+        }
+    }
+
+    &__invoice {
+        @include below($mobile) {
+            margin-bottom: rem(35);
+        }
+    }
+
+    &__invoice,
+    &__invoice-facture {
+        display: flex;
+        width: rem(215);
+
+        font-family: $helvetica;
+        font-size: rem(16);
+        font-weight: 300;
+        color: #dc1414;
+        text-decoration: none;
+    }
+
+    &__icon {
+        margin-right: rem(15);
+    }
+
+    &__ur-info {
+        display: flex;
+        flex-direction: column;
+
+        dl {
+            display: flex;
+            padding: 0;
+            margin: 0;
+
+            @include below($mobile) {
+                flex-direction: column;
+            }
+
+            &:not(:last-of-type) {
+                margin-bottom: rem(10);
+            }
+
+            &:not(.climatOrder__persone):not(.climatOrder__tel) {
+                display: none;
+            }
+
+            dt,
+            dd {
+                padding: 0;
+                margin: 0;
+
+                font-family: $helvetica;
+                font-size: rem(16);
+                font-weight: 300;
+                color: #a7aaad;
+
+                p {
+                    display: inline;
+                }
+            }
+
+            dt {
+                width: rem(115);
+                margin-right: rem(5);
+            }
+        }
+
+        .climatOrder__persone,
+        .climatOrder__tel {
+            dt,
+            dd {
+                color: #50555f;
+            }
+        }
+    }
+
+    .climatOrder__ur-info {
+        dl.climatOrder__tel {
+            margin-bottom: rem(20);
+
+            @include below($tablet) {
+                margin-bottom: rem(30);
+            }
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: rem(40);
+
+        .climatOrderingItem__buttons {
+            display: none;
+        }
+    }
+
+    &__list-title {
+        margin: 0;
+        margin-bottom: rem(30);
+
+        font-family: $playfair;
+        font-size: rem(20);
+        font-weight: 400;
+        color: #50555a;
+    }
+
+    &__bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        dl {
+            display: flex;
+            padding: 0;
+            margin: 0;
+
+            @include below($mobile) {
+                width: 100%;
+            }
+
+            &:not(:last-of-type) {
+                margin-bottom: rem(10);
+            }
+
+            dt,
+            dd {
+                padding: 0;
+                margin: 0;
+
+                font-family: $helvetica;
+                font-size: rem(16);
+                color: #a7aaad;
+            }
+
+            dt {
+                margin-right: rem(35);
+
+                text-align: right;
+
+                @include below($mobile) {
+                    flex-grow: 4;
+                }
+            }
+
+            dd {
+                flex-shrink: 0;
+                width: rem(140);
+
+                text-align: left;
+
+                @include below($mobile) {
+                    width: rem(80);
+                }
+            }
+
+            &:last-of-type {
+            }
+        }
+    }
+
+    .climatOrder__bottom {
+        .climatOrder__total {
+            dt,
+            dd {
+                color: #50555f;
+            }
+        }
+
+        dl.climatOrder__shipping-total {
+            margin-bottom: rem(25);
+        }
+    }
+
+    &_ur {
+        .climatOrder__ur-download {
+            display: flex;
+        }
+        .climatOrder__ur-info {
+            dl:not(.climatOrder__persone),
+            dl:not(.climatOrder__tel) {
+                display: flex;
+            }
+        }
+
+        .climatOrder__info {
+            @include below($tablet) {
+                padding-bottom: rem(65);
+            }
+            @include below($mobile) {
+                padding-bottom: rem(140);
+            }
+        }
+    }
+}

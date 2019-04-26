@@ -7,11 +7,6 @@
     </div>
     <div class="orderingItem__price">
         <p class="orderingItem__item-price">Стоимость: <span>55 000</span>₽</p>
-        <label class="orderingItem__label">
-            <input class="orderingItem__checkbox" type="checkbox" name="install" value="install">
-            <span class="orderingItem__checkbox-custom"></span>
-            <p class="orderingItem__checkbox-name">Монтаж:  <span>1 500</span> ₽</p>
-        </label>
     </div>
     <div class="orderingItem__count">
         <p class="orderingItem__count-val"><span>3</span> шт.</p>
