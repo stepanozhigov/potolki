@@ -797,6 +797,15 @@ $('.climatDetail__stars').rateYo({
     readOnly: true
 });
 
+$('.climatDetail__review-rating').rateYo({
+    rating: $(this).attr("data-rateyo-rating"),
+    starWidth: '16px',
+    normalFill: '#babec2',
+    ratedFill: '#dc1414',
+    fullStar: true,
+    readOnly: true
+});
+
 $('.headerClimat__more').on('click', function () {
     $(this).toggleClass('active');
 });
@@ -962,3 +971,62 @@ $('.climatDetail__gallery-next').on('click', function () {
     }
 
 });
+
+
+$('input[name=climatShipping]').on('change', function () {
+    $('.climatOrdering__shipping-value').removeClass('active');
+    $(this).closest('.climatOrdering__shipping-value').addClass('active');
+});
+
+$('input[name=climatPaying]').on('change', function () {
+    $('.climatOrdering__paying-value').removeClass('active');
+    $(this).closest('.climatOrdering__paying-value').addClass('active');
+});
+
+$('.climatOrdering__more').on('click', function () {
+    let $this = $(this),
+        text = $this.text();
+
+    if (text === 'Читать описание') {
+        $this.text('Свернуть описание');
+        $this.prev().show();
+    } else {
+        $this.text('Читать описание');
+        $this.prev().hide();
+    }
+});
+
+
+let onResizeOrder = function () {
+    if ($(window).width() <= 720) {
+        $('.climatOrdering__next').on('click', function () {
+            $(this).closest('.climatOrdering__step').removeClass('active');
+            $(this).closest('.climatOrdering__step').next().addClass('active');
+        });
+        $('.climatOrdering__prev').on('click', function () {
+            if (!$(this).closest('.climatOrdering__step').is($('.climatOrdering__step')[0])) {
+                $(this).closest('.climatOrdering__step').removeClass('active');
+                $(this).closest('.climatOrdering__step').prev().addClass('active');
+            }
+        });
+        $('.climatOrdering__mobile-prev').on('click', function () {
+            $(this).closest('.climatOrdering__step').removeClass('active');
+            $(this).closest('.climatOrdering__step').prev().addClass('active');
+        });
+        $('.climatOrdering__mobile-login').on('click', function () {
+            $('.climatOrdering__contacts-content.active').show();
+            $('.climatOrdering__contacts-data').hide();
+            $('.climatOrdering__step-nav').addClass('visible');
+            $('.climatOrdering__mobile-autorize').hide();
+        });
+        $('.climatOrdering__mobile-register').on('click', function () {
+            $('.climatOrdering__contacts-content.active').show();
+            $('.climatOrdering__contacts-login').hide();
+            $('.climatOrdering__step-nav').addClass('visible');
+            $('.climatOrdering__mobile-autorize').hide();
+        });
+    }
+};
+
+$(document).ready(onResizeOrder);
+$(window).resize(onResizeOrder);

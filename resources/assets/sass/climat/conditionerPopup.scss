@@ -283,19 +283,17 @@
 			margin-bottom: rem(24);
 		}
 
+		.share {
+			display: block;
+		}
+
 		.socials__item  {
 			margin-bottom: 0;
 			transition: width .3s;
+			width: 0;
 
 			&:not(:last-of-type) {
-				margin-right: rem(10);
-			}
-
-			@include below($tablet-small) {
-				width: 0;
-				&:not(:last-of-type) {
-					margin-right: rem(0);
-				}
+				margin-right: rem(0);
 			}
 		}
 
@@ -305,18 +303,15 @@
 		}
 
 		&.opened {
-			@include below($tablet-small) {
-				.socials__item  {
-					width: auto;
-					&:not(:last-of-type) {
-						margin-right: rem(10);
-					}
+			.socials__item  {
+				width: auto;
+				&:not(:last-of-type) {
+					margin-right: rem(10);
 				}
+			}
 
-				.share {
-					display: none;
-				}
-
+			.share {
+				display: none;
 			}
 		}
 

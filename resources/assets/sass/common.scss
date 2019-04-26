@@ -2018,21 +2018,48 @@ input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration { display: none; }
 
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration { display: none; }
+
+input[type=text]::-ms-clear {  display: none; width : 0; height: 0; }
+input[type=text]::-ms-reveal {  display: none; width : 0; height: 0; }
+
 .share {
 	display: none;
-	width: rem(17);
+	width: rem(16);
 	height: rem(16);
 	padding: 0;
 	background-color: transparent;
 	border: none;
 	outline: none;
 	cursor: pointer;
-	background-image: url('/img/share_transparent.svg');
 	background-repeat: no-repeat;
-	text-indent: -9999px;
 	background-size: contain;
+
+	@include below($tablet) {
+		width: rem(20);
+		height: rem(20);
+	}
+
+	svg {
+		width: 100%;
+		height: 100%;
+	}
+
+	g {
+		stroke: #808890;
+		transition: stroke .3s;
+	}
 
 	@include below($tablet-small) {
 		display: block;
+	}
+
+	&:hover {
+		g {
+			stroke: #dc1414;
+		}
 	}
 }

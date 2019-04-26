@@ -654,6 +654,7 @@
     .goTop {
         position: fixed;
         right: 0;
+		padding: rem(22) rem(16);
         bottom: rem(56);
         display: none;
         flex-direction: column;
@@ -694,6 +695,20 @@
         &:not(:last-of-type) {
             margin-right: rem(16);
         }
+
+		&:hover {
+			.basket__name,
+			.comparison__name,
+			.favourites__name {
+				color: #dc1414;
+
+				svg {
+					g {
+						stroke: #dc1414;
+					}
+				}
+			}
+		}
     }
 
 	@include below($tablet-small) {
@@ -728,9 +743,16 @@
         font-family: $helvetica;
         font-size: rem(14);
         font-weight: 300;
+		transition: color .3s;
 
-        img {
+        svg {
+			transition: all .3s;
             margin-right: rem(4);
+
+			g {
+				transition: all .3s;
+				stroke: #808890;
+			}
         }
     }
 
@@ -756,4 +778,13 @@
         font-size: rem(14);
         font-weight: 300;
     }
+}
+
+.basket {
+	&__name {
+		svg {
+			width: rem(20);
+			height: rem(18);
+		}
+	}
 }

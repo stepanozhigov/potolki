@@ -1,0 +1,356 @@
+.orderingItem {
+    position: relative;
+
+    display: flex;
+    align-items: flex-start;
+    padding: rem(15) 0;
+    overflow: hidden;
+
+    border-bottom: 1px solid #c8c8c8;
+
+    @include below($mobile) {
+        flex-wrap: wrap;
+    }
+
+    &:first-of-type {
+        border-top: 1px solid #c8c8c8;
+    }
+
+    &__img {
+        width: rem(133);
+        height: rem(100);
+        margin-right: rem(20);
+
+        object-fit: cover;
+
+        @include below($tablet) {
+            margin-right: rem(10);
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        padding-top: rem(10);
+        margin-right: auto;
+
+        @include below($tablet) {
+            flex-shrink: 0;
+            width: rem(210);
+            margin-right: 0;
+        }
+        @include below($mobile) {
+            width: calc(100% - 143px);
+        }
+    }
+
+    &__name {
+        margin: 0;
+        margin-bottom: rem(15);
+
+        font-family: $futura;
+        font-size: rem(18);
+        font-weight: 400;
+        color: #50555f;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+
+		@include below($tablet) {
+            margin-bottom: rem(12);
+			line-height: rem(25);
+        }
+    }
+
+    &__desc,
+    &__article {
+        margin: 0;
+
+        font-family: $helvetica;
+        font-size: rem(16);
+        font-weight: 300;
+        color: #a7aaad;
+    }
+
+    &__desc {
+        @include below($tablet) {
+            display: none;
+        }
+    }
+
+    &__desc {
+        margin-bottom: rem(5);
+    }
+
+    &__price {
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+        width: rem(232);
+        padding-top: rem(15);
+        margin-right: rem(65);
+
+        @include below($tablet) {
+            width: auto;
+            margin-right: auto;
+
+            &::after {
+                display: none;
+            }
+        }
+        @include below($mobile) {
+            width: 100%;
+        }
+
+        &::after {
+            content: '+';
+
+            position: absolute;
+            top: rem(8);
+            right: 0;
+
+            font-family: $helvetica;
+            font-size: rem(24);
+            color: #c8c8c8;
+
+            transform: rotate(45deg);
+        }
+    }
+
+    &__item-price {
+        margin: 0;
+        margin-bottom: rem(12);
+
+        font-family: $helvetica;
+        font-size: rem(16);
+        color: #50555f;
+
+		@include below($tablet) {
+			margin-bottom: rem(15);
+		}
+    }
+
+    &__label {
+        display: flex;
+        align-items: center;
+
+        cursor: pointer;
+    }
+
+    &__checkbox,
+    &__radio {
+        display: none;
+    }
+
+    &__radio-custom,
+    &__checkbox-custom {
+        position: relative;
+
+        width: rem(16);
+        height: rem(16);
+        margin-right: rem(8);
+
+        border: rem(1) solid #d0d2d4;
+        border-radius: rem(2);
+    }
+
+    &__checkbox-custom,
+    &__radio-custom,
+    &__input-name {
+        display: inline-block;
+
+        vertical-align: middle;
+
+        transition: border .2s;
+    }
+
+    &__checkbox:checked + .orderingItem__checkbox-custom::before,
+    &__radio:checked + .orderingItem__radio-custom::before {
+        content: '';
+
+        position: absolute;
+        top: rem(3);
+        left: rem(3);
+
+        display: block;
+        width: rem(8);
+        height: rem(8);
+
+        border-radius: rem(1);
+        background: $red_crismon;
+        box-shadow: inset 0 -1px 0 #a01414;
+    }
+
+    &__radio-custom,
+    &__radio:checked + .orderingItem__radio-custom::before {
+        border-radius: 50%;
+    }
+
+    &__checkbox-name {
+        margin: 0;
+
+        font-family: $helvetica;
+        font-size: rem(16);
+        font-weight: 300;
+        color: #a7aaad;
+    }
+
+    &__count {
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+        width: rem(120);
+        padding-top: rem(15);
+        margin-right: rem(65);
+
+        @include below($tablet) {
+            position: absolute;
+            bottom: rem(25);
+            left: rem(353);
+
+            flex-direction: row;
+            padding: 0;
+            margin: 0;
+
+            &::after {
+                display: none;
+            }
+        }
+        @include below($mobile) {
+			flex-direction: row-reverse;
+            bottom: rem(82);
+            left: rem(180);
+			justify-content: flex-end;
+        }
+
+        &::after {
+            content: '=';
+
+            position: absolute;
+            top: rem(9);
+            right: 0;
+
+            font-family: $helvetica;
+            font-size: rem(24);
+            color: #c8c8c8;
+        }
+    }
+
+    &__count-val {
+        margin: 0;
+        margin-bottom: rem(5);
+
+        font-family: $helvetica;
+        font-size: rem(16);
+        color: #50555f;
+
+        @include below($tablet) {
+            margin: 0;
+            margin-right: rem(10);
+        }
+
+		@include below($mobile) {
+			margin-right: 0;
+			margin-left: rem(10);
+        }
+    }
+
+    &__buttons {
+        display: flex;
+
+        button {
+            width: rem(20);
+            padding: 0;
+
+            font-family: $helvetica;
+            font-size: rem(18);
+            color: #fff;
+
+            border: none;
+            outline: none;
+            background-color: #a7aaad;
+            box-shadow: inset 0 -1px 0 #6b6b6b;
+        }
+    }
+
+    &__decrement {
+        margin-right: rem(1);
+
+        border-radius: rem(5) 0 0 rem(5);
+    }
+
+    &__increment {
+        border-radius: 0 rem(5) rem(5) 0;
+    }
+
+    &__total {
+        width: rem(130);
+        padding-top: rem(15);
+        padding-right: rem(16);
+        margin: 0;
+
+        font-family: $helvetica;
+        font-size: rem(16);
+        color: #50555f;
+
+        @include below($tablet) {
+            width: rem(168);
+        }
+    }
+
+    &__delite {
+        position: absolute;
+        top: rem(30);
+        right: 0;
+
+        width: rem(16);
+        height: rem(16);
+        padding: 0;
+
+        border: none;
+        border-radius: 50%;
+        outline: none;
+        background-color: #c8c8c8;
+
+        @include below($mobile) {
+            top: rem(20);
+            right: auto;
+            left: 0;
+        }
+
+        &::after,
+        &::before {
+            content: '';
+
+            position: absolute;
+            top: rem(4);
+            left: 50%;
+
+            width: rem(1);
+            height: rem(8);
+
+            border-radius: rem(2);
+            background-color: $white;
+        }
+
+        &::after {
+			top: rem(5);
+            transform: rotate(45deg) translateX(-50%);
+        }
+
+        &::before {
+			top: rem(4);
+            transform: rotate(-45deg) translateX(-50%);
+        }
+    }
+
+    &__summ {
+        display: none;
+        margin-right: rem(10);
+
+        @include below($tablet) {
+            display: inline;
+        }
+    }
+}

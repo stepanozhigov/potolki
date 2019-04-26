@@ -288,11 +288,22 @@
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         left: 0;
         box-sizing: border-box;
-        padding: rem(10) 0;
+        padding: rem(8) 0;
+        padding-bottom: 0;
         flex-direction: row;
         align-items: center;
 		animation: headerSticky .3s;
         transition: left .3s ease-in-out;
+
+        @include below($tablet) {
+            padding-top: rem(14);
+            padding-bottom: rem(14);
+        }
+
+        @include below($mobile) {
+            padding-top: rem(16);
+            padding-bottom: rem(16);
+        }
 
         &.hidden {
             display: none;
@@ -301,28 +312,73 @@
         .header__content {
             @extend .container;
             display: flex;
+            align-items: flex-start;
+
+            @include below($tablet) {
+                align-items: center;
+            }
+
+            @include below($mobile) {
+                align-items: flex-start;
+            }
         }
 
-		.header__phone {
-			margin-right: rem(24);
-		}
-
 		.logo {
-			margin-right: 0;
+			margin-right: auto;
 
 			.logo__icon {
-				display: none;
+				width: rem(27);
+                height: rem(32);
+                margin-right: rem(6);
+
+                @include below($tablet) {
+                    width: rem(31);
+                    height: rem(36);
+                }
 			}
 
 			.logo__text {
 				height: rem(16);
 				width: auto;
+
+                @include below($tablet) {
+                    height: rem(17);
+                }
 			}
+
+            @include below($mobile) {
+                display: none;
+            }
 		}
 
-        .menu,
+        .menu  {
+            margin-left: 0;
+            flex-basis: unset;
+            padding-top: rem(7);
+
+            .menu__item {
+                padding-bottom: rem(31);
+            }
+
+            .menu__item_dropdown:hover .menu__dropdown {
+                top: rem(55);
+            }
+        }
+
         .header__hamburger {
             display: none;
+
+            @include below($tablet) {
+                display: flex;
+                margin-bottom: 0;
+                width: rem(40);
+                height: rem(22);
+            }
+
+            @include below($mobile) {
+                width: rem(20);
+                height: rem(15);
+            }
 
         }
         .header__hamburger {
@@ -340,63 +396,146 @@
 		    height: calc(100vh - 134px);
         }
 
-        .logo {
-            margin-right: rem(15);
-        }
+        .header__feedbacks {
+            padding-top: rem(10);
 
+            @include below($tablet) {
+                padding-top: 0;
+                margin: 0;
+                flex-direction: row;
+            }
 
-        @include below($tablet-small) {
-            .logo__text {
-                display: none;
+            @include below($mobile) {
+                align-items: flex-start;
+                justify-content: space-between;
             }
         }
 
-        @include below($tablet) {
-            padding: rem(20) rem(10);
+        .header__whatsapp {
+            position: relative;
+            display: inline-flex;
+            align-items: flex-start;
+            flex-direction: column;
+            padding-left: rem(24);
+            margin-right: rem(32);
+            color: #485058;
+            font-family: $helvetica;
+            font-size: rem(16);
+            font-weight: 300;
+            line-height: rem(18);
+            text-decoration: none;
 
-            .header__hamburger {
-                &.active {
-                    display: block;
-                    padding: rem(8);
-                    padding-right: 0;
-                    width: rem(28);
-                    height: rem(31);
-					margin-bottom: 0;
+            &:hover {
+                span {
+                    &::after {
+                        bottom: rem(-4);
+                    }
                 }
             }
 
-            .logo {
-                display: none;
+            @include below($mobile) {
+                margin-right: rem(0);
+                line-height: rem(16);
             }
 
-            .header__phone {
+            span {
+                position: relative;
+                color: #808890;
+                font-family: $helvetica;
+                font-size: rem(12);
+                font-weight: 300;
+                line-height: rem(12);
+
+                &::after {
+                    position: absolute;
+                    content: '';
+                    left: 0;
+                    bottom: rem(-2);
+                    width: 100%;
+                    height: rem(1);
+                    border-bottom: rem(1) dashed #babec2;
+                    transition: bottom .3s;
+                }
+            }
+
+            &:after {
+                position: absolute;
+                content: '';
+                left: 0;
+                top: 0;
+                width: rem(16);
+                height: rem(16);
+                background-image: url('/img/gui/whatsapp.svg');
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+        }
+
+        .header__phone {
+            position: relative;
+            display: inline-flex;
+            align-items: flex-start;
+            flex-direction: column;
+            padding-left: rem(18);
+            margin-right: 0;
+            color: #485058;
+            font-family: $helvetica;
+            font-size: rem(18);
+            font-weight: 300;
+            line-height: rem(18);
+            text-decoration: none;
+
+            &:hover {
+                span {
+                    &::after {
+                        bottom: rem(-4);
+                    }
+                }
+            }
+
+            @include below($tablet) {
+                margin-right: rem(48);
                 order: -1;
             }
 
-            .header__hamburger {
-
-                align-self: center;
+            @include below($mobile) {
+                margin-right: rem(0);
+                font-size: rem(16);
+                line-height: rem(16);
             }
 
-            .header__feedbacks {
-                width: 100%;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-            }
+            span {
+                display: inline;
+                position: relative;
+                color: #dc1414;
+                font-family: $helvetica;
+                font-size: rem(12);
+                font-weight: 300;
+                line-height: rem(12);
 
-            .menu_active {
-                top: rem(65);
-                box-shadow: 0 0 rem(4) rgba(0, 0, 0, 0.24), 0 rem(4) rem(4) rgba(0, 0, 0, 0.12), inset 0 -0.0625rem 0 rgba(0, 0, 0, 0);
-            }
 
-            .header__close {
-                &.active {
-                    width: rem(14);
-                    height: rem(14);
-                    margin: 0;
-                    padding: 0;
+                &::after {
+                    position: absolute;
+                    content: '';
+                    left: 0;
+                    bottom: rem(-2);
+                    width: 100%;
+                    height: rem(1);
+                    border-bottom: rem(1) dashed #dc1414;
+                    transition: bottom .3s;
                 }
+            }
+
+            &:after {
+                position: absolute;
+                content: '';
+                left: 0;
+                top: 0;
+                width: rem(10);
+                height: rem(16);
+                background-image: url('/img/gui/phone.svg');
+                background-size: contain;
+                background-repeat: no-repeat;
             }
         }
     }

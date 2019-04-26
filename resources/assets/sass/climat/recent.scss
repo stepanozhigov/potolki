@@ -1,6 +1,7 @@
 .recent {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	@extend .container;
 	margin-bottom: rem(72);
 	padding-bottom: rem(24);

@@ -379,6 +379,14 @@ class PageController extends Controller
         ]);
     }
 
+    public function climatOrdering (City $city)
+    {
+        return view('climat.climatOrdering', [
+			'city'  =>  $city,
+            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
+        ]);
+    }
+
     public function sitemap (Request $request) {
         $cities = City::all();
         $pages = [

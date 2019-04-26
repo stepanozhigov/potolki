@@ -119,4 +119,6 @@ Route::prefix('/{city}')->group(function () {
     Route::get('/climatCatalogue', 'PageController@climatCatalogue')->name('climatCatalogue');
 
     Route::get('/climatDetail', 'PageController@climatDetail')->name('climatDetail');
+
+    Route::get('/climatOrdering', 'PageController@climatOrdering')->name('climatOrdering');
 });

@@ -94,10 +94,22 @@
             <a href="" class="socials__item red-hoverable">
                 <div class="socials__icon socials__icon_ok"></div>
             </a>
-            <a href="" class="socials__item red-hoverable">
-                <div class="socials__icon socials__icon_youtube"></div>
-            </a>
-			<button class="share share_transparent" type="button" name="button"></button>
+			<button class="share" type="button" name="button">
+				<svg width="17px" height="17px" viewBox="0 0 17 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+				    <title>ℹ️ Icon</title>
+				    <desc>Created with Sketch.</desc>
+				    <g id="1.-Catalog" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+				        <g id="ℹ️-Icon" transform="translate(0.000000, 1.000000)" stroke="">
+				            <path d="M15.5002,2.4996 C15.5002,3.6036 14.6042,4.4996 13.5002,4.4996 C12.3962,4.4996 11.5002,3.6036 11.5002,2.4996 C11.5002,1.3956 12.3962,0.4996 13.5002,0.4996 C14.6042,0.4996 15.5002,1.3956 15.5002,2.4996 Z" id="Stroke-1"></path>
+				            <path d="M12.5002,13.4996 C12.5002,14.6036 11.6042,15.4996 10.5002,15.4996 C9.3962,15.4996 8.5002,14.6036 8.5002,13.4996 C8.5002,12.3956 9.3962,11.4996 10.5002,11.4996 C11.6042,11.4996 12.5002,12.3956 12.5002,13.4996 Z" id="Stroke-3"></path>
+				            <path d="M4.5002,6.943 C4.5002,8.047 3.6042,8.943 2.5002,8.943 C1.3962,8.943 0.5002,8.047 0.5002,6.943 C0.5002,5.839 1.3962,4.943 2.5002,4.943 C3.6042,4.943 4.5002,5.839 4.5002,6.943 Z" id="Stroke-5"></path>
+				            <path d="M8.9543,12.233 L4.0473,8.212" id="Stroke-7"></path>
+				            <path d="M4.5002,6.1354 L11.6462,3.2484" id="Stroke-9"></path>
+				        </g>
+				    </g>
+				</svg>
+			</button>
 		</div>
 		<dl class="conditionerPopup__characteristic">
 			<dt>Тип</dt>

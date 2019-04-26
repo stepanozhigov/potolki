@@ -4,12 +4,12 @@
 	&__main {
 		@extend .container;
 		display: flex;
-		padding-top: rem(42);
+		padding-top: rem(32);
 		padding-bottom: rem(64);
 
 		@include below($tablet-small) {
 			position: relative;
-			padding-top: rem(48);
+			padding-top: rem(32);
 			padding-bottom: rem(162);
 		}
 
@@ -25,7 +25,6 @@
 		@include below($tablet-small) {
 			height: rem(455);
 			margin-right: 0;
-			margin-bottom: rem(33);
 			align-self: flex-start;
 		}
 
@@ -54,6 +53,12 @@
 
 			 @include below($tablet-small) {
  				width: rem(360);
+				 padding-top: rem(16);
+				  margin-bottom: 0;
+
+				.slider-dots {
+					display: none;
+				}
  			}
 
 			@include below($mobile) {
@@ -68,6 +73,7 @@
 				align-items: flex-start;
 
 				.slider-dots {
+					display: flex;
 					margin: 0 auto;
 					margin-top: 0;
 					margin-bottom: rem(24);
@@ -90,15 +96,15 @@
 
 		 &-list {
 			 position: relative;
-			 padding-top: rem(30);
-			 padding-bottom: rem(36);
+			 padding-top: rem(32);
+			 padding-bottom: rem(32);
 			 height: rem(577);
 			 overflow: hidden;
 			 margin-right: rem(20);
 
 			 @include below($tablet-small) {
 				height: rem(364);
-	 			padding-top: rem(24);
+	 			padding-top: rem(26);
 				padding-bottom: rem(26);
 				margin-right: rem(16);
 	 		 }
@@ -213,11 +219,13 @@
 	&__info {
 		display: flex;
 		flex-wrap: wrap;
+		align-items: center;
+		align-content: flex-start;
 		justify-content: space-between;
-		padding-top: rem(33);
+		padding-top: rem(32);
 
 		@include below($tablet-small) {
-			padding-top: rem(26);
+			padding-top: rem(16);
 		}
 
 		@include below($mobile) {
@@ -294,16 +302,17 @@
 		   margin-bottom: rem(425);
 		}
 
+		.share {
+			display: block;
+		}
+
 		.socials__item  {
 			margin-bottom: 0;
 			transition: width .3s;
+			width: 0;
 
 			&:not(:last-of-type) {
-				margin-right: rem(10);
-
-				@include below($tablet-small) {
-					margin: 0;
-				}
+				margin: 0;
 			}
 
 			@include below($tablet-small) {
@@ -318,12 +327,10 @@
 
 		&.opened {
 			.socials__item  {
-				@include below($tablet-small) {
-					width: auto;
+				width: auto;
 
-					&:not(:last-of-type) {
-						margin-right: rem(10);
-					}
+				&:not(:last-of-type) {
+					margin-right: rem(10);
 				}
 			}
 
@@ -337,6 +344,8 @@
 		display: flex;
 		flex-wrap: wrap;
 		align-content: flex-start;
+
+
 		width: calc(100% + 20px);
 		margin-right: rem(-20);
 		padding: rem(32) rem(20);
@@ -366,12 +375,12 @@
 	&__price {
 		width: 100%;
 		margin: 0;
-		margin-bottom: rem(8);
+		margin-bottom: rem(12);
 		color: #dc1414;
 		font-family: $helvetica;
 		font-size: rem(40);
 		font-weight: 500;
-		line-height: 1;
+		line-height: normal;
 	}
 
 	&__old-price {
@@ -387,7 +396,7 @@
 				color: #babec2;
 				font-family: $helvetica;
 				font-size: rem(24);
-				line-height: rem(24);
+				line-height: normal;
 				text-decoration: line-through;
 			}
 
@@ -400,7 +409,11 @@
 				font-family: $helvetica;
 				font-size: rem(20);
 				font-weight: 500;
-				line-height: 1;
+				line-height: normal;
+
+				@include below($mobile) {
+					margin-left: auto;
+				}
 			}
 		}
 	}
@@ -414,6 +427,7 @@
 		@include below($tablet-small) {
 			width: 100%;
 			margin-right: 0;
+			margin-bottom: rem(8);
 		}
 	}
 
@@ -427,9 +441,7 @@
 		box-shadow: none;
 
 		@include below($tablet-small) {
-			&:not(button) {
-				display: none;
-			}
+			width: 100%;
 		}
 
 		&:active {
@@ -471,6 +483,7 @@
 	&__param {
 		width: calc(33.3% - 10px);
 		margin: 0 rem(5);
+
 		margin-bottom: rem(20);
 		cursor: pointer;
 
@@ -486,12 +499,13 @@
 		}
 
 		p {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
+			display: inline-flex;
 			justify-content: center;
+			width: 100%;
+			height: rem(48);
+			box-shadow: 0 8px 12px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0);
 
-			padding: rem(13) rem(12);
+			padding: rem(12);
 
 
 			border-radius: rem(5);
@@ -502,16 +516,29 @@
 			color: #a7aaad;
 			font-family: $helvetica;
 			font-size: rem(20);
+			line-height: normal;
+			text-align: center;
+			transition: box-shadow .3s;
+
+			&:hover {
+	            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.16), 0 0 8px rgba(0, 0, 0, 0.08);
+	        }
 		}
 
 		input {
 			display: none;
 
 			&:checked ~ p {
-				box-shadow: inset 0 -1px 0 #808890;
+				box-shadow: 0 8px 12px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0), inset 0 -1px 0 #808890;
 				border-radius: rem(5);
 				background-color: #babec2;
 				color: #ffffff;
+				border: none;
+				padding: rem(14);
+
+				&:hover {
+		            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.16), 0 0 8px rgba(0, 0, 0, 0.08), inset 0 -1px 0 #808890;
+		        }
 			}
 		}
 	}
@@ -521,6 +548,10 @@
 		padding-top: rem(32);
 		padding-bottom: rem(60);
 		background-color: #f4f6f8;
+
+		@include below($tablet-small) {
+			padding-bottom: rem(64);
+		}
 
 
 
@@ -538,7 +569,7 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			width: 25%;
+			width: 33.333%;
 			padding: rem(17);
 			color: #485058;
 			font-family: $helvetica;
@@ -549,6 +580,7 @@
 			border-radius: rem(4) rem(4) 0 0;
 
 			span {
+				margin-left: rem(8);
 				color: #babec2;
 			}
 
@@ -574,10 +606,26 @@
 			column-gap: 20px;
 
 			@include below($tablet-small) {
-				column-count: 0;
 				column-gap:  0;
-				column-count: 0;
+				column-count: 1;
 				height: auto;
+				-webkit-column-break-inside: avoid;
+				page-break-inside: avoid;
+				break-inside: avoid;
+			}
+
+			&_characteristic {
+				height: rem(630);
+
+				h3 {
+					margin-bottom: rem(12)!important;
+				}
+
+				@include below($tablet-small) {
+					column-gap:  0;
+					column-count: 1;
+					height: auto;
+				}
 			}
 
 		}
@@ -588,6 +636,10 @@
 			padding: rem(44) rem(32);
 			padding-bottom: rem(52);
 			background-color: $white;
+
+			@include below($tablet-small) {
+				padding-bottom: rem(48);
+			}
 
 			@include below($mobile) {
 			   	width: 100%;
@@ -618,6 +670,10 @@
 
 				&:not(:last-of-type) {
 					margin-bottom: rem(48);
+
+					@include below($tablet) {
+						margin-bottom: rem(32);
+					}
 				}
 			}
 
@@ -629,6 +685,239 @@
 			&.active {
 				display: flex;
 			}
+
+            &_review {
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: flex-start;
+                align-content: flex-start;
+
+                h2 {
+                    width: auto;
+                }
+            }
 		}
 	}
+
+	&__characteristic {
+		display: flex;
+		flex-direction: column;
+		break-inside: avoid;
+
+		&:not(:last-of-type) {
+			margin-bottom: rem(42);
+		}
+
+		dl {
+			display: flex;
+			margin: 0;
+
+			&:nth-of-type(odd) {
+				dt,
+				dd {
+					background-color: #f4f6f8;
+				}
+			}
+
+			dt,
+			dd {
+				padding: rem(3) rem(8);
+				margin: 0;
+				color: #485058;
+				font-family: $helvetica;
+				font-size: 16px;
+				font-weight: 500;
+				line-height: 24px;
+				border-radius: rem(2);
+			}
+
+			dt {
+				width: rem(216);
+				margin-right: rem(4);
+			}
+
+			dd {
+				width: calc(100% - 220px);
+				font-weight: 300;
+			}
+		}
+	}
+
+    &__add-review {
+        height: rem(50);
+        width: rem(280);
+        margin-left: auto;
+        color: #dc1414;
+        font-family: $helvetica;
+        padding: rem(12) rem(15);
+        font-size: rem(20);
+        border-radius: rem(5);
+        border: rem(2) solid #dc1414;
+        background-color: #ffffff;
+        text-decoration: none;
+        text-align: center;
+
+        @include below($tablet) {
+            width: rem(240);
+        }
+
+        @include below($mobile) {
+            width: 100%;
+        }
+    }
+
+    &__reviews {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: rem(32);
+
+        @include below($mobile) {
+            padding-top: rem(48);
+        }
+
+        .climatDetail__review {
+            &:not(:last-of-type) {
+                margin-bottom: rem(48);
+            }
+        }
+    }
+
+    &__review {
+        display: flex;
+
+        @include below($mobile) {
+            flex-direction: column;
+            padding-bottom: rem(24);
+            border-bottom: rem(1) solid #babec2;
+        }
+
+        &-person {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 20%;
+            margin-right: rem(20);
+
+            @include below($mobile) {
+                flex-direction: row;
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: rem(24);
+            }
+        }
+
+        &-image {
+            width: rem(64);
+            height: rem(64);
+            margin-bottom: rem(16);
+            box-shadow: 0 0 8px 0 rgba(0,0,0,0.08), 0 8px 8px 0 rgba(0,0,0,0.12);
+            border-radius: 50%;
+
+            @include below($mobile) {
+                margin-right: rem(16);
+            }
+
+
+            img {
+                width: 100%;
+                width: 100%;
+                object-fit: cover;
+                border-radius: 50%;
+                overflow: hidden;
+            }
+        }
+        p:not(:last-of-type).climatDetail__review-name {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            margin-bottom: rem(8);
+            color: #485058;
+            font-family: $playfair;
+            font-size: rem(20);
+            font-weight: 400;
+            line-height: rem(24);
+
+            @include below($mobile) {
+                width: 100%;
+                font-size: rem(18);
+                line-height: rem(21);
+                margin-bottom: rem(2);
+            }
+        }
+
+        &-wrap {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+            @include below($mobile) {
+                width: calc(100% - 80px);
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+        }
+
+        &-date {
+            margin: 0;
+            margin-bottom: rem(12);
+            color: #babec2;
+            font-family: $helvetica;
+            font-size: rem(12);
+            font-weight: 300;
+            line-height: rem(20);
+
+            @include below($mobile) {
+                margin-bottom: 0;
+                margin-right: rem(7);
+            }
+        }
+
+        &-rating {
+            &.jq-ry-container {
+                padding: 0;
+            }
+        }
+
+        &-info {
+            display: flex;
+            flex-direction: column;
+            width: calc(80% - 20px);
+            padding-top: rem(80);
+
+            @include below($mobile) {
+                padding-top: 0;
+                width: 100%;
+            }
+
+            dl {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                margin: 0;
+
+                &:not(:last-of-type) {
+                    margin-bottom: rem(24);
+                }
+
+                dt {
+                    margin: 0;
+                    margin-bottom: rem(8);
+                    color: #485058;
+                    font-family: $playfair;
+                    font-size: rem(20);
+                    font-weight: 400;
+                    line-height: rem(24);
+                }
+
+                dd {
+                    margin: 0;
+                    color: #485058;
+                    font-family: $helvetica;
+                    font-size: rem(16);
+                    font-weight: 300;
+                    line-height: rem(24);
+                }
+            }
+        }
+    }
 }

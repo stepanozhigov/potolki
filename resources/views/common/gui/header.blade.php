@@ -1,4 +1,4 @@
-<? 
+<?
 $city = $city ?? App\City::find(1);
 ?>
 <header class="header">
@@ -113,10 +113,54 @@ $city = $city ?? App\City::find(1);
             <img class="logo__icon" src="/img/gui/logo-icon.svg" alt="логотип Твой Стиль">
             <img class="logo__text mobile-hide" src="/img/gui/logo-text.svg" alt="графема Твой Стиль">
         </a>
+        <nav class="menu header__menu" id="">
+            <div class="menu__item menu__item_dropdown">
+
+                <a href="{{ route('calculator', $city) }}" class="text menu__item js-toggle-submenu">Калькулятор</a>
+
+                <div class="menu__dropdown">
+                    <div class="menu__dropdown-heading">
+                        <a href="javascript:void(0);" class="menu__item-nav">
+                            <img width="8" height="16" src="/img/gui/arrow_menu.svg" alt="">
+                        </a>
+                        <a href="{{ route('calculator', $city) }}" class="text menu__dropdown-link">Калькулятор</a>
+                    </div>
+                    <a href="{{ route('calculator', ['city' => $city, 'type' => 'okna']) }}" class="text menu__item menu__item_bordered">Окна</a>
+                    <a href="{{ route('calculator', ['city' => $city, 'type' => 'balkony']) }}" class="text menu__item menu__item_bordered">Балконы</a>
+                    <!--<a href="{{ route('calculator', ['city' => $city, 'type' => 'dveri']) }}" class="text menu__item menu__item_bordered">Двери</a>
+                    <a href="{{ route('calculator', ['city' => $city, 'type' => 'peregorodki']) }}" class="text menu__item menu__item_bordered">Перегородки</a>
+                    <a href="{{ route('calculator', ['city' => $city, 'type' => 'zhalyuzi']) }}" class="text menu__item menu__item_bordered">Жалюзи</a>-->
+                </div>
+            </div>
+
+            <a href="{{ route('services', [$city, 'measurements']) }}" class="text menu__item">Бесплатный замер</a>
+            <a href="{{ route('promos', $city) }}" class="text menu__item">Скидки</a>
+            <a href="{{ route('photos', $city) }}" class="text menu__item">Фото</a>
+            <a href="{{ route('contacts', $city) }}" class="text menu__item">Контакты</a>
+            <div class="menu__item menu__item_dropdown">
+                <a class="text menu__item js-toggle-submenu">Информация</a>
+                <div class="menu__dropdown">
+                    <div class="menu__dropdown-heading">
+                        <a href="javascript:void(0);" class="menu__item-nav">
+                            <img width="8" height="16" src="/img/gui/arrow_menu.svg" alt="">
+                        </a>
+                        <a href="javascript:void(0);" class="text menu__dropdown-link">Информация</a>
+                    </div>
+
+                    <a href="{{ route('services', $city) }}" class="text menu__item menu__item_bordered">Услуги</a>
+                    <a href="{{ route('about', $city) }}" class="text menu__item menu__item_bordered">О компании</a>
+                    <a href="{{ route('employees', $city) }}" class="text menu__item menu__item_bordered">Сотрудники</a>
+                    <a href="{{ route('vacancies', $city) }}" class="text menu__item menu__item_bordered">Вакансии</a>
+                    <a href="{{ route('questions', $city) }}" class="text menu__item menu__item_bordered">Вопрос-ответ</a>
+                    <a href="{{ route('reviews', $city) }}" class="text menu__item menu__item_bordered">Отзывы</a>
+                    <a href="{{ route('articles', $city) }}" class="text menu__item menu__item_bordered">Статьи</a>
+                    <a href="{{ route('dirMessage', $city) }}" class="text menu__item menu__item_bordered">Написать директору</a>
+                </div>
+            </div>
+        </nav>
         <div class="header__feedbacks">
-            <a href="https://api.whatsapp.com/send?phone={{ $city->whatsapp }}" class="text whatsapp header__whatsapp red-hoverable"><img src="/img/gui/whatsapp.svg" alt="" class="whatsapp__icon"> <span class="whatsapp__write-text">Написать в&nbsp</span>WhatsApp <span class="whatsapp__mobile-text">написать</span></a>
-            <a href="tel:{{ $city->phone }}" class="text phone header__phone  red-hoverable"><img class="phone__icon" src="/img/gui/phone.svg" alt="">{{ $city->phone }} <span data-src="#popup_callback" class="js-show">заказать звонок</span></a>
-            <a data-src="#popup_callback" class="text header__callback js-show">Заказать звонок</a>
+            <a href="https://api.whatsapp.com/send?phone={{ $city->whatsapp }}" class="header__whatsapp">WhatsApp<span>написать</span></a>
+            <a href="tel:{{ $city->phone }}" class="header__phone">{{ $city->phone }}<span data-src="#popup_callback" class="js-show">заказать звонок</span></a>
             <img src="/img/gui/nav_hamburger.svg" alt="" class="hamburger header__hamburger active js-toggle-menu">
     		<img src="/img/gui/mobile-menu-close.svg" alt="" class="header__close js-toggle-menu">
         </div>
