@@ -360,6 +360,14 @@
                 padding-bottom: rem(31);
             }
 
+            .menu__item_bordered {
+                padding: 0 rem(15) rem(13) 0;
+            }
+
+            .menu__item_bordered:not(:last-of-type) {
+                margin-bottom: 25px;
+            }
+
             .menu__item_dropdown:hover .menu__dropdown {
                 top: rem(55);
             }

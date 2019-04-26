@@ -5150,6 +5150,14 @@ input {
   padding-bottom: 1.9375rem;
 }
 
+.header_sticky .menu .menu__item_bordered {
+  padding: 0 0.9375rem 0.8125rem 0;
+}
+
+.header_sticky .menu .menu__item_bordered:not(:last-of-type) {
+  margin-bottom: 25px;
+}
+
 .header_sticky .menu .menu__item_dropdown:hover .menu__dropdown {
   top: 3.4375rem;
 }
