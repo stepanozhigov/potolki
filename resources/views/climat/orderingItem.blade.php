@@ -6,7 +6,7 @@
         <p class="orderingItem__article">Арт.: 1234567890 </p>
     </div>
     <div class="orderingItem__price">
-        <p class="orderingItem__item-price">Стоимость: <span>55 000</span>₽</p>
+        <p class="orderingItem__item-price">Стоимость: <span>55 000</span> ₽</p>
     </div>
     <div class="orderingItem__count">
         <p class="orderingItem__count-val"><span>3</span> шт.</p>

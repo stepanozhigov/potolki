@@ -3,9 +3,7 @@
 @section('content')
     @include('common.gui.headerClimat')
     <section class="climatBasket">
-        <div class="climatBasket__heading">
-            <h1 class="climatBasket__title">Корзина товаров</h1>
-        </div>
+        <h1 class="climatBasket__title">Корзина товаров</h1>
         <div class="climatBasket__content">
             @include('climat.orderingItem')
             @include('climat.orderingItem')
@@ -19,9 +17,8 @@
             </dl>
             <p class="climatBasket__desc">Стоимость доставки расчитывается при оформлении заказа.</p>
             <a class="climatBasket__checkout" href="javascript:void(0);">Оформить заказ</a>
-            <a class="climatBasket__help" href="javascript:void(0);">Помощь в выборе</a>
+            <a data-src="#popup_callback" class="climatBasket__help js-show" href="javascript:void(0);">Помощь в выборе</a>
         </div>
     </section>
-    @include('common.gui.survey')
 @include('common.gui.footer')
 @endsection

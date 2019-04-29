@@ -28,11 +28,7 @@
                     </dl>
                     <dl class="climatOrder__shipping">
                         <dt>Способ доставки:</dt>
-                        <dd class="climatOrder__shipping-type">Грузовой компанией "<span class="climatOrder__shipping-company">Ратек</span>"   <p>Трек код:  <span class="climatOrder__track-number">КЕ3489756394</span></p></dd>
-                    </dl>
-                    <dl class="climatOrder__install">
-                        <dt>Необходимость монтажа:</dt>
-                        <dd>Нужен (<span>2</span>шт)</dd>
+                        <dd class="climatOrder__shipping-type">Грузовой компанией <span class="climatOrder__shipping-company">«Ратек»</span>   <p>Трек код:  <span class="climatOrder__track-number">КЕ3489756394</span></p></dd>
                     </dl>
                     <div class="climatOrder__ur-download">
                         <a href="javascript:void(0);" class="climatOrder__invoice"><img width='40' height='35' class="climatOrder__icon" src="/img/climat/invoice.svg" alt="">Скачать<br> накладную</a>
@@ -46,11 +42,11 @@
                     </dl>
                     <dl class="climatOrder__tel">
                         <dt>Телефон:</dt>
-                        <dd>+7 913 456 0000</dd>
+                        <dd>+7 913 456-22-03</dd>
                     </dl>
                     <dl class="climatOrder__ur-type">
                         <dt>ООО</dt>
-                        <dd>"Кондиционер-Компани"</dd>
+                        <dd>«Кондиционер-Компани»</dd>
                     </dl>
                     <dl class="climatOrder__ur-ogrn">
                         <dt>ОГРН:</dt>
@@ -78,26 +74,12 @@
                 @include('climat.orderingItem')
             </div>
             <div class="climatOrder__bottom">
-                <dl class="climatOrder__goods-total">
-                    <dt>Суммарная стоимость товаров:</dt>
-                    <dd><span>217 950</span> ₽</dd>
-                </dl>
-                <dl class="climatOrder__install-total">
-                    <dt>Стоимость все монтажных работ:</dt>
-                    <dd><span>16 500</span> ₽</dd>
-                </dl>
-                <dl class="climatOrder__shipping-total">
-                    <dt>Доставка:</dt>
-                    <dd><span>900</span> ₽</dd>
-                </dl>
                 <dl class="climatOrder__total">
-                    <dt>Итого к оплачено с учетом вашей скидки 10%:</dt>
+                    <dt>Итого к оплате с учетом вашей скидки 10%:</dt>
                     <dd><span>180 090</span> ₽</dd>
                 </dl>
             </div>
         </div>
     </section>
-
-    @include('common.gui.survey')
 @include('common.gui.footer')
 @endsection

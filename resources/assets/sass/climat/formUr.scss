@@ -1,0 +1,448 @@
+.formUr {
+    background-color: transparent!important;
+
+    @include below($mobile) {
+        width: 100%;
+        padding: 0!important;
+        margin-right: rem(-20);
+        margin-left: rem(-20);
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        width: rem(645);
+        height: auto;
+        padding: rem(60);
+        padding-bottom: rem(70);
+
+        border-radius: rem(5);
+        background-color: $white;
+        box-shadow: 0 rem(16) rem(16) rgba(0, 0, 0, .16), 0 0 rem(16) rgba(0, 0, 0, .08), inset 0 rem(-1) 0 rgba(0, 0, 0, .1);
+
+        @include between($phablet, $tablet) {
+            width: rem(610);
+            height: auto;
+            padding: rem(60);
+            padding-top: rem(70);
+            padding-bottom: rem(70);
+        }
+        @include below($mobile) {
+            width: 100%;
+            height: auto;
+            padding: rem(10);
+            padding-top: rem(45);
+            padding-bottom: rem(45);
+        }
+    }
+
+    &__title {
+        padding-bottom: rem(20);
+        margin: 0;
+        margin-bottom: rem(30);
+
+        font-size: rem(26);
+        color: $grey_abbey;
+        text-align: center;
+        letter-spacing: rem(1.5);
+
+        color: #50555a;
+        font-family: $futura;
+        font-size: rem(26);
+        font-weight: 300;
+        letter-spacing: rem(1.5);
+        text-transform: uppercase;
+        position: relative;
+
+        padding-bottom: rem(25);
+
+        &::after {
+            content: '';
+
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            width: rem(160);
+            height: rem(1);
+            margin: 0 auto;
+
+            background-color: $grey_chateau;
+        }
+
+        @include below($phablet) {
+            font-size: rem(18);
+            letter-spacing: rem(5);
+        }
+
+        @include between($phablet, $tablet) {
+            padding-bottom: rem(25);
+            margin-bottom: rem(40);
+
+            font-size: rem(30);
+        }
+        @include below($mobile) {
+            margin-bottom: rem(45);
+
+            font-size: rem(24);
+
+            &::after {
+                content: '';
+
+                width: rem(80);
+            }
+        }
+
+        &::after {
+            content: '';
+
+            width: rem(160);
+        }
+    }
+
+    &__description {
+        padding: 0 rem(30);
+        margin: 0;
+        margin-bottom: rem(30);
+
+        font-size: rem(20);
+        text-align: center;
+
+        font-family: $helvetica;
+        font-weight: 300;
+        color: $grey_abbey;
+
+        @include between($phablet, $tablet) {
+            padding: 0;
+            margin-bottom: rem(40);
+
+            font-size: rem(18);
+        }
+        @include below($mobile) {
+            margin-bottom: rem(20);
+
+            font-size: rem(16);
+        }
+
+        &_color {
+            &_red {
+                color: $red_crismon;
+            }
+        }
+    }
+
+    &__input {
+        width: rem(360);
+        height: rem(50);
+
+        @extend .input;
+        @include between($phablet, $tablet) {
+            height: rem(60);
+        }
+        @include below($mobile) {
+            width: 50%;
+        }
+
+
+        &.error {
+            margin-bottom: rem(15);
+
+            border-color: $red_crismon;
+        }
+
+        & + label.error {
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+
+            padding-left: rem(20);
+
+            font-family: $helvetica;
+            font-weight: 300;
+            color: $grey_abbey;
+            font-size: rem(16);
+            line-height: rem(22);
+        }
+    }
+
+    &__input-wrap {
+        position: relative;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: rem(20);
+
+        @include between($phablet, $tablet) {
+            margin-bottom: rem(30);
+        }
+        @include below($mobile) {
+            margin-bottom: rem(20);
+        }
+
+        &:last-of-type {
+            margin-bottom: rem(30);
+
+            @include between($phablet, $tablet) {
+                margin-bottom: rem(50);
+            }
+            @include below($mobile) {
+                margin-bottom: rem(30);
+            }
+        }
+
+        p {
+            margin: 0;
+
+            font-family: $helvetica;
+            font-size: rem(18);
+            font-weight: 300;
+            color: #6b6b6b;
+        }
+    }
+
+    &__submit {
+        width: 100%;
+        margin-bottom: rem(20);
+
+        @extend .button;
+        @include between($phablet, $tablet) {
+            height: rem(60);
+        }
+    }
+
+    &__rules {
+        width: 80%;
+        margin: 0 auto;
+
+        font-size: rem(12);
+        text-align: center;
+
+        font-family: $helvetica;
+        font-weight: 300;
+        color: $grey_abbey;
+
+        @include between($phablet, $tablet) {
+            width: 100%;
+
+            font-size: rem(16);
+        }
+    }
+
+    &__status-send {
+        display: none;
+
+        text-align: center;
+
+        font-family: $helvetica;
+        font-weight: 300;
+        color: $grey_abbey;
+        font-size: rem(22);
+        line-height: rem(32);
+
+        @include below($phablet) {
+            font-size: rem(20);
+            line-height: rem(30);
+        }
+    }
+
+    &__abort {
+        display: none!important;
+        width: 100%;
+        margin-bottom: rem(20);
+
+        @extend .button;
+
+        @include below($mobile) {
+            display: block!important;
+
+            &:hover {
+                background-color: $white;
+            }
+        }
+    }
+
+    &__data-wrap {
+        position: relative;
+
+        width: rem(360);
+        height: rem(50);
+        overflow: hidden;
+
+        border: rem(1) solid #c8c8c8;
+        border-radius: rem(5);
+        background-color: #fff;
+
+        @include below($mobile) {
+            width: 50%;
+        }
+    }
+
+
+
+    &__data-wrap {
+        select,
+        input {
+            width: 100%;
+            height: 100%;
+            padding-right: rem(30);
+            padding-left: rem(20);
+
+            font-family: $helvetica;
+            font-size: rem(18);
+            font-weight: 300;
+            color: #50555f;
+
+            border: none;
+            outline: none;
+
+            -webkit-appearance: none;
+               -moz-appearance: textfield;
+
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                   -moz-appearance: textfield;
+            }
+        }
+    }
+
+    &__select {
+        position: relative;
+
+        &::after {
+            content: '';
+
+            position: absolute;
+            top: 50%;
+            right: rem(15);
+
+            width: rem(12);
+            height: rem(6);
+
+            background-image: url('%=static=%general/select-arrow.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            transform: translateY(-50%);
+        }
+    }
+
+    &__documents {
+        display: flex;
+        flex-direction: column;
+        padding-top: rem(30);
+        margin-bottom: rem(30);
+
+        border-top: rem(1) solid #a7aaad;
+
+        a {
+            display: flex;
+            align-items: center;
+
+            font-family: $helvetica;
+            font-size: rem(18);
+            font-weight: 300;
+            color: #6b6b6b;
+            text-decoration: underline;
+
+            &:not(:last-of-type) {
+                margin-bottom: rem(10);
+            }
+
+            .formUr__delite {
+                margin-right: rem(10);
+            }
+        }
+    }
+
+    &__documents-heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: rem(20);
+
+        h3 {
+            margin: 0;
+
+            font-family: $playfair;
+            font-size: rem(20);
+            font-weight: 400;
+            color: #50555a;
+
+            @include below($mobile) {
+                margin-right: rem(10);
+
+                font-size: rem(18);
+            }
+        }
+    }
+
+    &__add {
+        width: rem(150);
+        height: rem(35);
+
+        font-size: rem(16);
+
+        cursor: pointer;
+
+        @extend .button;
+        @extend .button_gray;
+    }
+
+    &__add-document {
+        input {
+            display: none;
+        }
+
+        .formUr__add {
+            display: flex;
+        }
+    }
+
+    &__delite {
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: rem(16);
+        height: rem(16);
+        padding: 0;
+
+        border: none;
+        border-radius: 50%;
+        outline: none;
+        background-color: #c8c8c8;
+        text-indent: -9999px;
+        font-size: 0;
+
+        &::after,
+        &::before {
+            content: '';
+
+            position: absolute;
+            top: rem(4);
+            left: 50%;
+
+            width: rem(1);
+            height: rem(8);
+
+            border-radius: rem(2);
+            background-color: $white;
+        }
+
+        &::after {
+            transform: rotate(45deg) translateX(-50%);
+        }
+
+        &::before {
+            transform: rotate(-45deg) translateX(-50%);
+        }
+    }
+}
+
+#formUrPopup {
+    height: auto!important;
+}

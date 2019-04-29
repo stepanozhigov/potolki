@@ -14702,6 +14702,14 @@ var onResizeOrder = function onResizeOrder() {
 $(document).ready(onResizeOrder);
 $(window).resize(onResizeOrder);
 
+$('.climatPersonalData__checkbox').on('change', function () {
+    if ($(this).is(':checked')) {
+        $('.climatPersonalData__ur').addClass('active');
+    } else {
+        $('.climatPersonalData__ur').removeClass('active');
+    }
+});
+
 /***/ }),
 /* 11 */
 /***/ (function(module, exports, __webpack_require__) {

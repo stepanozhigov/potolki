@@ -1756,7 +1756,10 @@ corresponds to the arrow we want to display */
   .titles.climatDetail__additional-content,
   .titles.climatOrdering,
   .titles.climatBasket,
-  .titles.climatOrder {
+  .titles.climatOrder,
+  .titles.climatMaintenance,
+  .titles.climatPersonalData,
+  .titles.videoblock__content {
     margin-bottom: 3.125rem;
   }
 
@@ -2086,7 +2089,14 @@ corresponds to the arrow we want to display */
 .climatOrdering__next,
 .climatBasket__checkout,
 .climatBasket__help,
-.climatOrder__repeat {
+.climatOrder__repeat,
+.climatPersonalData__save,
+.climatPersonalData__add,
+.formAdress__submit,
+.formAdress__abort,
+.formUr__submit,
+.formUr__abort,
+.formUr__add {
   width: 17.5rem;
   max-width: 100%;
   height: 50px;
@@ -2145,7 +2155,14 @@ corresponds to the arrow we want to display */
 .climatOrdering__next:not(button),
 .climatBasket__checkout:not(button),
 .climatBasket__help:not(button),
-.climatOrder__repeat:not(button) {
+.climatOrder__repeat:not(button),
+.climatPersonalData__save:not(button),
+.climatPersonalData__add:not(button),
+.formAdress__submit:not(button),
+.formAdress__abort:not(button),
+.formUr__submit:not(button),
+.formUr__abort:not(button),
+.formUr__add:not(button) {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2182,7 +2199,14 @@ corresponds to the arrow we want to display */
 .climatOrdering__next:hover,
 .climatBasket__checkout:hover,
 .climatBasket__help:hover,
-.climatOrder__repeat:hover {
+.climatOrder__repeat:hover,
+.climatPersonalData__save:hover,
+.climatPersonalData__add:hover,
+.formAdress__submit:hover,
+.formAdress__abort:hover,
+.formUr__submit:hover,
+.formUr__abort:hover,
+.formUr__add:hover {
   -webkit-box-shadow: 0 8px 12px rgba(136, 0, 0, 0.2), 0 0 8px rgba(136, 0, 0, 0.12), inset 0 -1px 0 #a01414;
           box-shadow: 0 8px 12px rgba(136, 0, 0, 0.2), 0 0 8px rgba(136, 0, 0, 0.12), inset 0 -1px 0 #a01414;
 }
@@ -2218,7 +2242,14 @@ corresponds to the arrow we want to display */
 .climatOrdering__next:active,
 .climatBasket__checkout:active,
 .climatBasket__help:active,
-.climatOrder__repeat:active {
+.climatOrder__repeat:active,
+.climatPersonalData__save:active,
+.climatPersonalData__add:active,
+.formAdress__submit:active,
+.formAdress__abort:active,
+.formUr__submit:active,
+.formUr__abort:active,
+.formUr__add:active {
   background-color: #a01414;
   -webkit-box-shadow: 0 8px 8px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0), inset 0 1px 0 #880000;
           box-shadow: 0 8px 8px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0), inset 0 1px 0 #880000;
@@ -2234,7 +2265,9 @@ corresponds to the arrow we want to display */
 .conditionerPopup__continue,
 .climatOrdering__mobile-prev,
 .climatOrdering__prev,
-.climatBasket__help {
+.climatBasket__help,
+.climatPersonalData__add,
+.formUr__add {
   background-color: #a7aaad;
   -webkit-box-shadow: 0 8px 8px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0), inset 0 -1px 0 #646973;
           box-shadow: 0 8px 8px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0), inset 0 -1px 0 #646973;
@@ -2251,7 +2284,9 @@ corresponds to the arrow we want to display */
 .conditionerPopup__continue:hover,
 .climatOrdering__mobile-prev:hover,
 .climatOrdering__prev:hover,
-.climatBasket__help:hover {
+.climatBasket__help:hover,
+.climatPersonalData__add:hover,
+.formUr__add:hover {
   -webkit-box-shadow: 0 8px 12px rgba(0, 0, 0, 0.16), 0 0 8px rgba(0, 0, 0, 0.08), inset 0 -1px 0 #646973;
           box-shadow: 0 8px 12px rgba(0, 0, 0, 0.16), 0 0 8px rgba(0, 0, 0, 0.08), inset 0 -1px 0 #646973;
 }
@@ -2266,7 +2301,9 @@ corresponds to the arrow we want to display */
 .conditionerPopup__continue:active,
 .climatOrdering__mobile-prev:active,
 .climatOrdering__prev:active,
-.climatBasket__help:active {
+.climatBasket__help:active,
+.climatPersonalData__add:active,
+.formUr__add:active {
   background-color: #808890;
   -webkit-box-shadow: 0 8px 8px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0), inset 0 1px 0 #485058;
           box-shadow: 0 8px 8px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0), inset 0 1px 0 #485058;
@@ -2654,7 +2691,10 @@ corresponds to the arrow we want to display */
 .survey.climatDetail__additional-content,
 .survey.climatOrdering,
 .survey.climatBasket,
-.survey.climatOrder {
+.survey.climatOrder,
+.survey.climatMaintenance,
+.survey.climatPersonalData,
+.survey.videoblock__content {
   margin-bottom: 5rem;
 }
 
@@ -3358,7 +3398,9 @@ corresponds to the arrow we want to display */
 .input,
 .headerClimat__search .search__input,
 .calculator__input,
-.climatCatalogue__sort-select select {
+.climatCatalogue__sort-select select,
+.formAdress__input,
+.formUr__input {
   border-radius: 5px;
   border: 1px solid #babec2;
   background-color: #ffffff;
@@ -3377,7 +3419,9 @@ corresponds to the arrow we want to display */
 .input::-webkit-input-placeholder,
 .headerClimat__search .search__input::-webkit-input-placeholder,
 .calculator__input::-webkit-input-placeholder,
-.climatCatalogue__sort-select select::-webkit-input-placeholder {
+.climatCatalogue__sort-select select::-webkit-input-placeholder,
+.formAdress__input::-webkit-input-placeholder,
+.formUr__input::-webkit-input-placeholder {
   color: #808890;
   font-family: "Helvetica Neue", sans-serif;
   font-size: 1.125rem;
@@ -3389,7 +3433,9 @@ corresponds to the arrow we want to display */
 .input:-ms-input-placeholder,
 .headerClimat__search .search__input:-ms-input-placeholder,
 .calculator__input:-ms-input-placeholder,
-.climatCatalogue__sort-select select:-ms-input-placeholder {
+.climatCatalogue__sort-select select:-ms-input-placeholder,
+.formAdress__input:-ms-input-placeholder,
+.formUr__input:-ms-input-placeholder {
   color: #808890;
   font-family: "Helvetica Neue", sans-serif;
   font-size: 1.125rem;
@@ -3401,7 +3447,9 @@ corresponds to the arrow we want to display */
 .input::-ms-input-placeholder,
 .headerClimat__search .search__input::-ms-input-placeholder,
 .calculator__input::-ms-input-placeholder,
-.climatCatalogue__sort-select select::-ms-input-placeholder {
+.climatCatalogue__sort-select select::-ms-input-placeholder,
+.formAdress__input::-ms-input-placeholder,
+.formUr__input::-ms-input-placeholder {
   color: #808890;
   font-family: "Helvetica Neue", sans-serif;
   font-size: 1.125rem;
@@ -3413,7 +3461,9 @@ corresponds to the arrow we want to display */
 .input::placeholder,
 .headerClimat__search .search__input::placeholder,
 .calculator__input::placeholder,
-.climatCatalogue__sort-select select::placeholder {
+.climatCatalogue__sort-select select::placeholder,
+.formAdress__input::placeholder,
+.formUr__input::placeholder {
   color: #808890;
   font-family: "Helvetica Neue", sans-serif;
   font-size: 1.125rem;
@@ -3425,7 +3475,9 @@ corresponds to the arrow we want to display */
 .input:-ms-input-placeholder,
 .headerClimat__search .search__input:-ms-input-placeholder,
 .calculator__input:-ms-input-placeholder,
-.climatCatalogue__sort-select select:-ms-input-placeholder {
+.climatCatalogue__sort-select select:-ms-input-placeholder,
+.formAdress__input:-ms-input-placeholder,
+.formUr__input:-ms-input-placeholder {
   color: #808890;
   font-family: "Helvetica Neue", sans-serif;
   font-size: 1.125rem;
@@ -3436,7 +3488,9 @@ corresponds to the arrow we want to display */
 .input::-ms-input-placeholder,
 .headerClimat__search .search__input::-ms-input-placeholder,
 .calculator__input::-ms-input-placeholder,
-.climatCatalogue__sort-select select::-ms-input-placeholder {
+.climatCatalogue__sort-select select::-ms-input-placeholder,
+.formAdress__input::-ms-input-placeholder,
+.formUr__input::-ms-input-placeholder {
   color: #808890;
   font-family: "Helvetica Neue", sans-serif;
   font-size: 1.125rem;
@@ -3447,7 +3501,9 @@ corresponds to the arrow we want to display */
 .input:disabled,
 .headerClimat__search .search__input:disabled,
 .calculator__input:disabled,
-.climatCatalogue__sort-select select:disabled {
+.climatCatalogue__sort-select select:disabled,
+.formAdress__input:disabled,
+.formUr__input:disabled {
   border: 0.0625rem solid #babec2;
   background-color: #f4f6f8;
   color: #babec2;
@@ -3456,49 +3512,63 @@ corresponds to the arrow we want to display */
 .input:disabled::-webkit-input-placeholder,
 .headerClimat__search .search__input:disabled::-webkit-input-placeholder,
 .calculator__input:disabled::-webkit-input-placeholder,
-.climatCatalogue__sort-select select:disabled::-webkit-input-placeholder {
+.climatCatalogue__sort-select select:disabled::-webkit-input-placeholder,
+.formAdress__input:disabled::-webkit-input-placeholder,
+.formUr__input:disabled::-webkit-input-placeholder {
   color: #babec2;
 }
 
 .input:disabled:-ms-input-placeholder,
 .headerClimat__search .search__input:disabled:-ms-input-placeholder,
 .calculator__input:disabled:-ms-input-placeholder,
-.climatCatalogue__sort-select select:disabled:-ms-input-placeholder {
+.climatCatalogue__sort-select select:disabled:-ms-input-placeholder,
+.formAdress__input:disabled:-ms-input-placeholder,
+.formUr__input:disabled:-ms-input-placeholder {
   color: #babec2;
 }
 
 .input:disabled::-ms-input-placeholder,
 .headerClimat__search .search__input:disabled::-ms-input-placeholder,
 .calculator__input:disabled::-ms-input-placeholder,
-.climatCatalogue__sort-select select:disabled::-ms-input-placeholder {
+.climatCatalogue__sort-select select:disabled::-ms-input-placeholder,
+.formAdress__input:disabled::-ms-input-placeholder,
+.formUr__input:disabled::-ms-input-placeholder {
   color: #babec2;
 }
 
 .input:disabled::placeholder,
 .headerClimat__search .search__input:disabled::placeholder,
 .calculator__input:disabled::placeholder,
-.climatCatalogue__sort-select select:disabled::placeholder {
+.climatCatalogue__sort-select select:disabled::placeholder,
+.formAdress__input:disabled::placeholder,
+.formUr__input:disabled::placeholder {
   color: #babec2;
 }
 
 .input:disabled:-ms-input-placeholder,
 .headerClimat__search .search__input:disabled:-ms-input-placeholder,
 .calculator__input:disabled:-ms-input-placeholder,
-.climatCatalogue__sort-select select:disabled:-ms-input-placeholder {
+.climatCatalogue__sort-select select:disabled:-ms-input-placeholder,
+.formAdress__input:disabled:-ms-input-placeholder,
+.formUr__input:disabled:-ms-input-placeholder {
   color: #babec2;
 }
 
 .input:disabled::-ms-input-placeholder,
 .headerClimat__search .search__input:disabled::-ms-input-placeholder,
 .calculator__input:disabled::-ms-input-placeholder,
-.climatCatalogue__sort-select select:disabled::-ms-input-placeholder {
+.climatCatalogue__sort-select select:disabled::-ms-input-placeholder,
+.formAdress__input:disabled::-ms-input-placeholder,
+.formUr__input:disabled::-ms-input-placeholder {
   color: #babec2;
 }
 
 .input:focus,
 .headerClimat__search .search__input:focus,
 .calculator__input:focus,
-.climatCatalogue__sort-select select:focus {
+.climatCatalogue__sort-select select:focus,
+.formAdress__input:focus,
+.formUr__input:focus {
   border: 1px solid #485058;
   background-color: #ffffff;
   color: #485058;
@@ -3507,49 +3577,63 @@ corresponds to the arrow we want to display */
 .input:focus::-webkit-input-placeholder,
 .headerClimat__search .search__input:focus::-webkit-input-placeholder,
 .calculator__input:focus::-webkit-input-placeholder,
-.climatCatalogue__sort-select select:focus::-webkit-input-placeholder {
+.climatCatalogue__sort-select select:focus::-webkit-input-placeholder,
+.formAdress__input:focus::-webkit-input-placeholder,
+.formUr__input:focus::-webkit-input-placeholder {
   color: #485058;
 }
 
 .input:focus:-ms-input-placeholder,
 .headerClimat__search .search__input:focus:-ms-input-placeholder,
 .calculator__input:focus:-ms-input-placeholder,
-.climatCatalogue__sort-select select:focus:-ms-input-placeholder {
+.climatCatalogue__sort-select select:focus:-ms-input-placeholder,
+.formAdress__input:focus:-ms-input-placeholder,
+.formUr__input:focus:-ms-input-placeholder {
   color: #485058;
 }
 
 .input:focus::-ms-input-placeholder,
 .headerClimat__search .search__input:focus::-ms-input-placeholder,
 .calculator__input:focus::-ms-input-placeholder,
-.climatCatalogue__sort-select select:focus::-ms-input-placeholder {
+.climatCatalogue__sort-select select:focus::-ms-input-placeholder,
+.formAdress__input:focus::-ms-input-placeholder,
+.formUr__input:focus::-ms-input-placeholder {
   color: #485058;
 }
 
 .input:focus::placeholder,
 .headerClimat__search .search__input:focus::placeholder,
 .calculator__input:focus::placeholder,
-.climatCatalogue__sort-select select:focus::placeholder {
+.climatCatalogue__sort-select select:focus::placeholder,
+.formAdress__input:focus::placeholder,
+.formUr__input:focus::placeholder {
   color: #485058;
 }
 
 .input:focus:-ms-input-placeholder,
 .headerClimat__search .search__input:focus:-ms-input-placeholder,
 .calculator__input:focus:-ms-input-placeholder,
-.climatCatalogue__sort-select select:focus:-ms-input-placeholder {
+.climatCatalogue__sort-select select:focus:-ms-input-placeholder,
+.formAdress__input:focus:-ms-input-placeholder,
+.formUr__input:focus:-ms-input-placeholder {
   color: #485058;
 }
 
 .input:focus::-ms-input-placeholder,
 .headerClimat__search .search__input:focus::-ms-input-placeholder,
 .calculator__input:focus::-ms-input-placeholder,
-.climatCatalogue__sort-select select:focus::-ms-input-placeholder {
+.climatCatalogue__sort-select select:focus::-ms-input-placeholder,
+.formAdress__input:focus::-ms-input-placeholder,
+.formUr__input:focus::-ms-input-placeholder {
   color: #485058;
 }
 
 .input.error,
 .headerClimat__search .error.search__input,
 .error.calculator__input,
-.climatCatalogue__sort-select select.error {
+.climatCatalogue__sort-select select.error,
+.error.formAdress__input,
+.error.formUr__input {
   border: 0.0625rem solid #dc1414;
   color: #dc1414;
 }
@@ -3557,42 +3641,54 @@ corresponds to the arrow we want to display */
 .input.error::-webkit-input-placeholder,
 .headerClimat__search .error.search__input::-webkit-input-placeholder,
 .error.calculator__input::-webkit-input-placeholder,
-.climatCatalogue__sort-select select.error::-webkit-input-placeholder {
+.climatCatalogue__sort-select select.error::-webkit-input-placeholder,
+.error.formAdress__input::-webkit-input-placeholder,
+.error.formUr__input::-webkit-input-placeholder {
   color: #dc1414;
 }
 
 .input.error:-ms-input-placeholder,
 .headerClimat__search .error.search__input:-ms-input-placeholder,
 .error.calculator__input:-ms-input-placeholder,
-.climatCatalogue__sort-select select.error:-ms-input-placeholder {
+.climatCatalogue__sort-select select.error:-ms-input-placeholder,
+.error.formAdress__input:-ms-input-placeholder,
+.error.formUr__input:-ms-input-placeholder {
   color: #dc1414;
 }
 
 .input.error::-ms-input-placeholder,
 .headerClimat__search .error.search__input::-ms-input-placeholder,
 .error.calculator__input::-ms-input-placeholder,
-.climatCatalogue__sort-select select.error::-ms-input-placeholder {
+.climatCatalogue__sort-select select.error::-ms-input-placeholder,
+.error.formAdress__input::-ms-input-placeholder,
+.error.formUr__input::-ms-input-placeholder {
   color: #dc1414;
 }
 
 .input.error::placeholder,
 .headerClimat__search .error.search__input::placeholder,
 .error.calculator__input::placeholder,
-.climatCatalogue__sort-select select.error::placeholder {
+.climatCatalogue__sort-select select.error::placeholder,
+.error.formAdress__input::placeholder,
+.error.formUr__input::placeholder {
   color: #dc1414;
 }
 
 .input.error:-ms-input-placeholder,
 .headerClimat__search .error.search__input:-ms-input-placeholder,
 .error.calculator__input:-ms-input-placeholder,
-.climatCatalogue__sort-select select.error:-ms-input-placeholder {
+.climatCatalogue__sort-select select.error:-ms-input-placeholder,
+.error.formAdress__input:-ms-input-placeholder,
+.error.formUr__input:-ms-input-placeholder {
   color: #dc1414;
 }
 
 .input.error::-ms-input-placeholder,
 .headerClimat__search .error.search__input::-ms-input-placeholder,
 .error.calculator__input::-ms-input-placeholder,
-.climatCatalogue__sort-select select.error::-ms-input-placeholder {
+.climatCatalogue__sort-select select.error::-ms-input-placeholder,
+.error.formAdress__input::-ms-input-placeholder,
+.error.formUr__input::-ms-input-placeholder {
   color: #dc1414;
 }
 
@@ -4172,7 +4268,10 @@ input {
 .catalog-cards.climatDetail__additional-content,
 .catalog-cards.climatOrdering,
 .catalog-cards.climatBasket,
-.catalog-cards.climatOrder {
+.catalog-cards.climatOrder,
+.catalog-cards.climatMaintenance,
+.catalog-cards.climatPersonalData,
+.catalog-cards.videoblock__content {
   margin-bottom: 7rem;
 }
 
@@ -4220,7 +4319,10 @@ input {
   .catalog-cards.climatDetail__additional-content,
   .catalog-cards.climatOrdering,
   .catalog-cards.climatBasket,
-  .catalog-cards.climatOrder {
+  .catalog-cards.climatOrder,
+  .catalog-cards.climatMaintenance,
+  .catalog-cards.climatPersonalData,
+  .catalog-cards.videoblock__content {
     margin-bottom: 64px;
   }
 }
@@ -4393,7 +4495,14 @@ input {
   .catalog-cards .buttons .climatOrdering__next,
   .catalog-cards .buttons .climatBasket__checkout,
   .catalog-cards .buttons .climatBasket__help,
-  .catalog-cards .buttons .climatOrder__repeat {
+  .catalog-cards .buttons .climatOrder__repeat,
+  .catalog-cards .buttons .climatPersonalData__save,
+  .catalog-cards .buttons .climatPersonalData__add,
+  .catalog-cards .buttons .formAdress__submit,
+  .catalog-cards .buttons .formAdress__abort,
+  .catalog-cards .buttons .formUr__submit,
+  .catalog-cards .buttons .formUr__abort,
+  .catalog-cards .buttons .formUr__add {
     margin-bottom: 1rem;
     margin-right: 0;
   }
@@ -4408,7 +4517,9 @@ input {
   .catalog-cards .buttons .conditionerPopup__continue,
   .catalog-cards .buttons .climatOrdering__mobile-prev,
   .catalog-cards .buttons .climatOrdering__prev,
-  .catalog-cards .buttons .climatBasket__help {
+  .catalog-cards .buttons .climatBasket__help,
+  .catalog-cards .buttons .climatPersonalData__add,
+  .catalog-cards .buttons .formUr__add {
     margin: 0;
   }
 }
@@ -4827,7 +4938,7 @@ input {
   margin: -2px 0 0 44px;
   position: relative;
   width: 30%;
-  padding-bottom: 1.5625rem;
+  margin-bottom: 1.5625rem;
 }
 
 @media screen and (max-width: 650px) {
@@ -5732,7 +5843,10 @@ input {
 .headerClimat__heading .climatDetail__additional-content,
 .headerClimat__heading .climatOrdering,
 .headerClimat__heading .climatBasket,
-.headerClimat__heading .climatOrder {
+.headerClimat__heading .climatOrder,
+.headerClimat__heading .climatMaintenance,
+.headerClimat__heading .climatPersonalData,
+.headerClimat__heading .videoblock__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -5924,6 +6038,7 @@ input {
 .headerClimat__main .header__logo,
 .headerClimat__main .header__directions {
   padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 .headerClimat__main .header__directions {
@@ -6527,11 +6642,23 @@ input {
           align-items: center;
   padding: 0.5rem 1rem;
   padding-bottom: 0.5rem;
-  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.16), inset 0 -1px 0 rgba(0, 0, 0, 0.12);
-          box-shadow: 0 0 4px rgba(0, 0, 0, 0.16), inset 0 -1px 0 rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.16), 0 0 4px rgba(0, 0, 0, 0), inset 0 -1px 0 rgba(0, 0, 0, 0.12);
+          box-shadow: 0 0 4px rgba(0, 0, 0, 0.16), 0 0 4px rgba(0, 0, 0, 0), inset 0 -1px 0 rgba(0, 0, 0, 0.12);
   border-radius: 0 0 5px 5px;
   background-color: #f4f6f8;
   text-decoration: none;
+  -webkit-transition: -webkit-box-shadow .3s;
+  transition: -webkit-box-shadow .3s;
+  transition: box-shadow .3s;
+  transition: box-shadow .3s, -webkit-box-shadow .3s;
+  cursor: pointer;
+}
+
+.basket:hover,
+.comparison:hover,
+.favourites:hover {
+  -webkit-box-shadow: 0 8px 12px rgba(0, 0, 0, 0.16), 0 0 8px rgba(0, 0, 0, 0.08), inset 0 -1px 0 rgba(0, 0, 0, 0.12);
+          box-shadow: 0 8px 12px rgba(0, 0, 0, 0.16), 0 0 8px rgba(0, 0, 0, 0.08), inset 0 -1px 0 rgba(0, 0, 0, 0.12);
 }
 
 .basket p,
@@ -6741,7 +6868,10 @@ body.no-scroll .header__close {
 .climatDetail__additional-content,
 .climatOrdering,
 .climatBasket,
-.climatOrder {
+.climatOrder,
+.climatMaintenance,
+.climatPersonalData,
+.videoblock__content {
   width: 73.75rem;
   margin: 0 auto;
 }
@@ -6790,7 +6920,10 @@ body.no-scroll .header__close {
   .climatDetail__additional-content,
   .climatOrdering,
   .climatBasket,
-  .climatOrder {
+  .climatOrder,
+  .climatMaintenance,
+  .climatPersonalData,
+  .videoblock__content {
     width: calc(100% - 32px);
     margin: 0 1rem;
   }
@@ -6840,7 +6973,10 @@ body.no-scroll .header__close {
   .climatDetail__additional-content,
   .climatOrdering,
   .climatBasket,
-  .climatOrder {
+  .climatOrder,
+  .climatMaintenance,
+  .climatPersonalData,
+  .videoblock__content {
     width: calc(100% - 32px);
     margin: 0 1rem;
   }
@@ -6890,7 +7026,10 @@ body.no-scroll .header__close {
   .climatDetail__additional-content,
   .climatOrdering,
   .climatBasket,
-  .climatOrder {
+  .climatOrder,
+  .climatMaintenance,
+  .climatPersonalData,
+  .videoblock__content {
     width: calc(100% - 16px);
     margin: 0 0.5rem;
   }
@@ -8126,7 +8265,14 @@ body.no-scroll .header__close {
 .popup__status-send .survey__form .climatOrdering__next,
 .popup__status-send .survey__form .climatBasket__checkout,
 .popup__status-send .survey__form .climatBasket__help,
-.popup__status-send .survey__form .climatOrder__repeat {
+.popup__status-send .survey__form .climatOrder__repeat,
+.popup__status-send .survey__form .climatPersonalData__save,
+.popup__status-send .survey__form .climatPersonalData__add,
+.popup__status-send .survey__form .formAdress__submit,
+.popup__status-send .survey__form .formAdress__abort,
+.popup__status-send .survey__form .formUr__submit,
+.popup__status-send .survey__form .formUr__abort,
+.popup__status-send .survey__form .formUr__add {
   width: 100%;
 }
 
@@ -10253,7 +10399,9 @@ input[type=text]::-ms-reveal {
 .portfolio__buttons .conditionerPopup__continue,
 .portfolio__buttons .climatOrdering__mobile-prev,
 .portfolio__buttons .climatOrdering__prev,
-.portfolio__buttons .climatBasket__help {
+.portfolio__buttons .climatBasket__help,
+.portfolio__buttons .climatPersonalData__add,
+.portfolio__buttons .formUr__add {
   margin-right: 1rem;
 }
 
@@ -10272,7 +10420,9 @@ input[type=text]::-ms-reveal {
   .portfolio__buttons .conditionerPopup__continue,
   .portfolio__buttons .climatOrdering__mobile-prev,
   .portfolio__buttons .climatOrdering__prev,
-  .portfolio__buttons .climatBasket__help {
+  .portfolio__buttons .climatBasket__help,
+  .portfolio__buttons .climatPersonalData__add,
+  .portfolio__buttons .formUr__add {
     margin-right: 0;
     margin-bottom: 1rem;
   }
@@ -11829,7 +11979,9 @@ input[type=text]::-ms-reveal {
 .reviews__buttons .conditionerPopup__continue,
 .reviews__buttons .climatOrdering__mobile-prev,
 .reviews__buttons .climatOrdering__prev,
-.reviews__buttons .climatBasket__help {
+.reviews__buttons .climatBasket__help,
+.reviews__buttons .climatPersonalData__add,
+.reviews__buttons .formUr__add {
   margin-right: 1rem;
 }
 
@@ -11848,7 +12000,9 @@ input[type=text]::-ms-reveal {
   .reviews__buttons .conditionerPopup__continue,
   .reviews__buttons .climatOrdering__mobile-prev,
   .reviews__buttons .climatOrdering__prev,
-  .reviews__buttons .climatBasket__help {
+  .reviews__buttons .climatBasket__help,
+  .reviews__buttons .climatPersonalData__add,
+  .reviews__buttons .formUr__add {
     margin-right: 0;
     margin-bottom: 1rem;
   }
@@ -11935,7 +12089,14 @@ input[type=text]::-ms-reveal {
   .reviews__buttons .climatOrdering__next,
   .reviews__buttons .climatBasket__checkout,
   .reviews__buttons .climatBasket__help,
-  .reviews__buttons .climatOrder__repeat {
+  .reviews__buttons .climatOrder__repeat,
+  .reviews__buttons .climatPersonalData__save,
+  .reviews__buttons .climatPersonalData__add,
+  .reviews__buttons .formAdress__submit,
+  .reviews__buttons .formAdress__abort,
+  .reviews__buttons .formUr__submit,
+  .reviews__buttons .formUr__abort,
+  .reviews__buttons .formUr__add {
     margin: 0;
   }
 
@@ -11974,7 +12135,14 @@ input[type=text]::-ms-reveal {
   .reviews__buttons .climatOrdering__next:not(:last-of-type),
   .reviews__buttons .climatBasket__checkout:not(:last-of-type),
   .reviews__buttons .climatBasket__help:not(:last-of-type),
-  .reviews__buttons .climatOrder__repeat:not(:last-of-type) {
+  .reviews__buttons .climatOrder__repeat:not(:last-of-type),
+  .reviews__buttons .climatPersonalData__save:not(:last-of-type),
+  .reviews__buttons .climatPersonalData__add:not(:last-of-type),
+  .reviews__buttons .formAdress__submit:not(:last-of-type),
+  .reviews__buttons .formAdress__abort:not(:last-of-type),
+  .reviews__buttons .formUr__submit:not(:last-of-type),
+  .reviews__buttons .formUr__abort:not(:last-of-type),
+  .reviews__buttons .formUr__add:not(:last-of-type) {
     margin-bottom: 20px;
   }
 }
@@ -13377,7 +13545,14 @@ input[type=text]::-ms-reveal {
 .turnkey__buttons .climatOrdering__next:first-child,
 .turnkey__buttons .climatBasket__checkout:first-child,
 .turnkey__buttons .climatBasket__help:first-child,
-.turnkey__buttons .climatOrder__repeat:first-child {
+.turnkey__buttons .climatOrder__repeat:first-child,
+.turnkey__buttons .climatPersonalData__save:first-child,
+.turnkey__buttons .climatPersonalData__add:first-child,
+.turnkey__buttons .formAdress__submit:first-child,
+.turnkey__buttons .formAdress__abort:first-child,
+.turnkey__buttons .formUr__submit:first-child,
+.turnkey__buttons .formUr__abort:first-child,
+.turnkey__buttons .formUr__add:first-child {
   margin-right: 1.25rem;
 }
 
@@ -13417,7 +13592,14 @@ input[type=text]::-ms-reveal {
   .turnkey__buttons .climatOrdering__next:first-child,
   .turnkey__buttons .climatBasket__checkout:first-child,
   .turnkey__buttons .climatBasket__help:first-child,
-  .turnkey__buttons .climatOrder__repeat:first-child {
+  .turnkey__buttons .climatOrder__repeat:first-child,
+  .turnkey__buttons .climatPersonalData__save:first-child,
+  .turnkey__buttons .climatPersonalData__add:first-child,
+  .turnkey__buttons .formAdress__submit:first-child,
+  .turnkey__buttons .formAdress__abort:first-child,
+  .turnkey__buttons .formUr__submit:first-child,
+  .turnkey__buttons .formUr__abort:first-child,
+  .turnkey__buttons .formUr__add:first-child {
     margin-right: 0;
     margin-bottom: 1rem;
   }
@@ -17336,7 +17518,9 @@ input[type=text]::-ms-reveal {
 .headerClimat__search .footer-offer__form .search__input,
 .footer-offer__form .calculator__input,
 .footer-offer__form .climatCatalogue__sort-select select,
-.climatCatalogue__sort-select .footer-offer__form select {
+.climatCatalogue__sort-select .footer-offer__form select,
+.footer-offer__form .formAdress__input,
+.footer-offer__form .formUr__input {
   margin-bottom: 0;
 }
 
@@ -17346,7 +17530,9 @@ input[type=text]::-ms-reveal {
   .headerClimat__search .footer-offer__form .search__input,
   .footer-offer__form .calculator__input,
   .footer-offer__form .climatCatalogue__sort-select select,
-  .climatCatalogue__sort-select .footer-offer__form select {
+  .climatCatalogue__sort-select .footer-offer__form select,
+  .footer-offer__form .formAdress__input,
+  .footer-offer__form .formUr__input {
     height: 4rem;
     width: 100%;
   }
@@ -17358,7 +17544,9 @@ input[type=text]::-ms-reveal {
   .headerClimat__search .footer-offer__form .search__input,
   .footer-offer__form .calculator__input,
   .footer-offer__form .climatCatalogue__sort-select select,
-  .climatCatalogue__sort-select .footer-offer__form select {
+  .climatCatalogue__sort-select .footer-offer__form select,
+  .footer-offer__form .formAdress__input,
+  .footer-offer__form .formUr__input {
     height: 3.25rem;
   }
 }
@@ -17915,7 +18103,10 @@ input[type=text]::-ms-reveal {
 .articles.articles_main .articles__list.climatDetail__additional-content,
 .articles.articles_main .articles__list.climatOrdering,
 .articles.articles_main .articles__list.climatBasket,
-.articles.articles_main .articles__list.climatOrder {
+.articles.articles_main .articles__list.climatOrder,
+.articles.articles_main .articles__list.climatMaintenance,
+.articles.articles_main .articles__list.climatPersonalData,
+.articles.articles_main .articles__list.videoblock__content {
   margin-bottom: 3rem;
 }
 
@@ -18452,7 +18643,14 @@ input[type=text]::-ms-reveal {
 .whyus__content .climatOrdering__next,
 .whyus__content .climatBasket__checkout,
 .whyus__content .climatBasket__help,
-.whyus__content .climatOrder__repeat {
+.whyus__content .climatOrder__repeat,
+.whyus__content .climatPersonalData__save,
+.whyus__content .climatPersonalData__add,
+.whyus__content .formAdress__submit,
+.whyus__content .formAdress__abort,
+.whyus__content .formUr__submit,
+.whyus__content .formUr__abort,
+.whyus__content .formUr__add {
   margin-top: 3rem;
 }
 
@@ -24647,7 +24845,14 @@ input[type=text]::-ms-reveal {
   .climatSlider__slide .climatOrdering__next,
   .climatSlider__slide .climatBasket__checkout,
   .climatSlider__slide .climatBasket__help,
-  .climatSlider__slide .climatOrder__repeat {
+  .climatSlider__slide .climatOrder__repeat,
+  .climatSlider__slide .climatPersonalData__save,
+  .climatSlider__slide .climatPersonalData__add,
+  .climatSlider__slide .formAdress__submit,
+  .climatSlider__slide .formAdress__abort,
+  .climatSlider__slide .formUr__submit,
+  .climatSlider__slide .formUr__abort,
+  .climatSlider__slide .formUr__add {
     position: relative;
     z-index: 2;
     text-align: center;
@@ -31022,6 +31227,12 @@ input[type=text]::-ms-reveal {
   text-transform: uppercase;
 }
 
+@media screen and (min-width: 79.9375rem) {
+  .orderingItem__name {
+    margin-bottom: 0.25rem;
+  }
+}
+
 @media screen and (max-width: 79.9375rem) {
   .orderingItem__name {
     margin-bottom: 0.75rem;
@@ -31102,6 +31313,18 @@ input[type=text]::-ms-reveal {
 @media screen and (max-width: 79.9375rem) {
   .orderingItem__item-price {
     margin-bottom: 0.9375rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .orderingItem__item-price span {
+    margin-left: 1rem;
+  }
+}
+
+@media screen and (max-width: 20.125rem) {
+  .orderingItem__item-price span {
+    margin-left: 0.5rem;
   }
 }
 
@@ -31205,8 +31428,8 @@ input[type=text]::-ms-reveal {
     -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
-    bottom: 5.125rem;
-    left: 11.25rem;
+    bottom: 4.125rem;
+    left: 12.25rem;
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
@@ -31289,6 +31512,15 @@ input[type=text]::-ms-reveal {
   }
 }
 
+@media screen and (max-width: 44.9375rem) {
+  .orderingItem__total {
+    width: 100%;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 1rem;
+  }
+}
+
 .orderingItem__delite {
   position: absolute;
   top: 1.875rem;
@@ -31345,24 +31577,27 @@ input[type=text]::-ms-reveal {
   }
 }
 
-.climatBasket {
-  padding-top: 3.4375rem;
-  padding-bottom: 9.375rem;
+@media screen and (max-width: 44.9375rem) {
+  .orderingItem__summ {
+    margin-right: 3.25rem;
+  }
 }
 
-.climatBasket__heading {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-bottom: 1.875rem;
+@media screen and (max-width: 20.125rem) {
+  .orderingItem__summ {
+    margin-right: 2.75rem;
+  }
+}
+
+.climatBasket {
+  padding-top: 4rem;
+  padding-bottom: 5rem;
 }
 
 .climatBasket__title {
   margin: 0;
   margin-right: auto;
+  margin-bottom: 1.875rem;
   font-family: "Playfair Display", serif;
   font-size: 2rem;
   font-weight: 400;
@@ -31393,6 +31628,19 @@ input[type=text]::-ms-reveal {
       -ms-flex-direction: column;
           flex-direction: column;
   margin-bottom: 2.5rem;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatBasket__content {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatBasket__content .orderingItem:last-of-type {
+    margin-bottom: 0;
+    border-bottom: 0;
+  }
 }
 
 .climatBasket__want {
@@ -31434,12 +31682,38 @@ input[type=text]::-ms-reveal {
 }
 
 .climatBasket__bottom-content dl {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
   width: 100%;
   padding: 0;
   margin: 0;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatBasket__bottom-content dl {
+    padding-top: 1.25rem;
+    padding-bottom: 1.5rem;
+    background-color: #f5f5f5;
+    width: calc(100% + 32px);
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media screen and (max-width: 20.125rem) {
+  .climatBasket__bottom-content dl {
+    width: calc(100% + 16px);
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
 }
 
 .climatBasket__bottom-content dl:not(:last-of-type) {
@@ -31463,7 +31737,8 @@ input[type=text]::-ms-reveal {
   font-family: "Helvetica Neue", sans-serif;
   font-size: 1rem;
   color: #a7aaad;
-  text-align: right;
+  text-align: left;
+  line-height: normal;
 }
 
 .climatBasket__bottom-content dl dd {
@@ -31474,6 +31749,7 @@ input[type=text]::-ms-reveal {
   font-size: 1rem;
   color: #a7aaad;
   text-align: left;
+  line-height: normal;
 }
 
 .climatBasket__desc {
@@ -31483,7 +31759,19 @@ input[type=text]::-ms-reveal {
   font-family: "Helvetica Neue", sans-serif;
   font-size: 0.75rem;
   color: #a7aaad;
-  text-align: center;
+  text-align: left;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatBasket__desc {
+    width: 65%;
+  }
+}
+
+@media screen and (max-width: 20.125rem) {
+  .climatBasket__desc {
+    width: 70%;
+  }
 }
 
 .climatBasket__checkout {
@@ -31499,7 +31787,14 @@ input[type=text]::-ms-reveal {
 
 .climatOrder {
   padding-top: 3.4375rem;
-  padding-bottom: 9.375rem;
+  padding-bottom: 5rem;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatOrder {
+    position: relative;
+    padding-bottom: 10rem;
+  }
 }
 
 .climatOrder__heading {
@@ -31510,6 +31805,12 @@ input[type=text]::-ms-reveal {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 1.875rem;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatOrder__heading {
+    margin-bottom: 1.5rem;
+  }
 }
 
 .climatOrder__title {
@@ -31533,6 +31834,10 @@ input[type=text]::-ms-reveal {
     width: 100%;
     font-size: 1.375rem;
     text-align: center;
+  }
+
+  .climatOrder__title span {
+    font-size: 2rem;
   }
 }
 
@@ -31559,8 +31864,14 @@ input[type=text]::-ms-reveal {
 }
 
 @media screen and (max-width: 44.9375rem) {
-  .climatOrder__repeat {
-    display: none;
+  .climatOrder__repeat:not(button) {
+    position: absolute;
+    bottom: 5rem;
+    -webkit-box-shadow: inset 0 -1px 0 #6b6b6b;
+            box-shadow: inset 0 -1px 0 #6b6b6b;
+    border-radius: 5px;
+    background-color: #828282;
+    color: #ffffff;
   }
 }
 
@@ -31601,6 +31912,7 @@ input[type=text]::-ms-reveal {
 @media screen and (max-width: 44.9375rem) {
   .climatOrder__info {
     margin-bottom: 5rem;
+    padding-top: 1.5rem;
   }
 }
 
@@ -31620,10 +31932,19 @@ input[type=text]::-ms-reveal {
   }
 }
 
+@media screen and (max-width: 44.9375rem) {
+  .climatOrder__order-info {
+    margin-bottom: 1rem;
+  }
+}
+
 .climatOrder__order-info dl {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 0;
   margin: 0;
 }
@@ -31641,6 +31962,12 @@ input[type=text]::-ms-reveal {
   margin-bottom: 0.625rem;
 }
 
+@media screen and (max-width: 44.9375rem) {
+  .climatOrder__order-info dl:not(:last-of-type) {
+    margin-bottom: 1rem;
+  }
+}
+
 .climatOrder__order-info dl dt,
 .climatOrder__order-info dl dd {
   padding: 0;
@@ -31649,6 +31976,7 @@ input[type=text]::-ms-reveal {
   font-size: 1rem;
   font-weight: 300;
   color: #50555f;
+  line-height: normal;
 }
 
 .climatOrder__order-info dl dt p,
@@ -31656,14 +31984,55 @@ input[type=text]::-ms-reveal {
   display: inline;
 }
 
+@media screen and (max-width: 44.9375rem) {
+  .climatOrder__order-info dl dt p,
+  .climatOrder__order-info dl dd p {
+    margin: 0;
+    margin-top: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+  }
+
+  .climatOrder__order-info dl dt p span,
+  .climatOrder__order-info dl dd p span {
+    margin-top: 0.25rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatOrder__order-info dl dt,
+  .climatOrder__order-info dl dd {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
 .climatOrder__order-info dl dt {
   width: 13.125rem;
   margin-right: 0.3125rem;
 }
 
+@media screen and (max-width: 44.9375rem) {
+  .climatOrder__order-info dl dt {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 0.25rem;
+  }
+}
+
 .climatOrder__shipping-company,
 .climatOrder__track-number {
   color: #df0d00;
+}
+
+.climatOrder__shipping-company {
+  margin-right: 1.625rem;
 }
 
 .climatOrder__ur-download {
@@ -31741,6 +32110,12 @@ input[type=text]::-ms-reveal {
   margin-bottom: 0.625rem;
 }
 
+@media screen and (max-width: 44.9375rem) {
+  .climatOrder__ur-info dl:not(:last-of-type) {
+    margin-bottom: 1rem;
+  }
+}
+
 .climatOrder__ur-info dl:not(.climatOrder__persone):not(.climatOrder__tel) {
   display: none;
 }
@@ -31763,6 +32138,20 @@ input[type=text]::-ms-reveal {
 .climatOrder__ur-info dl dt {
   width: 7.1875rem;
   margin-right: 0.3125rem;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .climatOrder__ur-info dl dt {
+    width: 13.125rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatOrder__ur-info dl dt {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 0.25rem;
+  }
 }
 
 .climatOrder__ur-info .climatOrder__persone dt,
@@ -31793,8 +32182,21 @@ input[type=text]::-ms-reveal {
   margin-bottom: 2.5rem;
 }
 
-.climatOrder__list .climatOrderingItem__buttons {
+@media screen and (max-width: 44.9375rem) {
+  .climatOrder__list {
+    margin-bottom: 0;
+  }
+}
+
+.climatOrder__list .orderingItem__buttons {
   display: none;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatOrder__list .orderingItem:last-of-type {
+    margin-bottom: 0;
+    border-bottom: none;
+  }
 }
 
 .climatOrder__list-title {
@@ -31819,10 +32221,37 @@ input[type=text]::-ms-reveal {
           align-items: flex-end;
 }
 
+@media screen and (max-width: 44.9375rem) {
+  .climatOrder__bottom {
+    background-color: #f5f5f5;
+    padding: 0 1rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1.5rem;
+    width: calc(100% + 32px);
+    margin-right: -1rem;
+    margin-left: -1rem;
+  }
+}
+
+@media screen and (max-width: 20.125rem) {
+  .climatOrder__bottom {
+    background-color: #f5f5f5;
+    padding: 0 0.5rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1.5rem;
+    width: calc(100% + 16px);
+    margin-right: -0.5rem;
+    margin-left: -0.5rem;
+  }
+}
+
 .climatOrder__bottom dl {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 0;
   margin: 0;
 }
@@ -31830,6 +32259,9 @@ input[type=text]::-ms-reveal {
 @media screen and (max-width: 44.9375rem) {
   .climatOrder__bottom dl {
     width: 100%;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
   }
 }
 
@@ -31844,6 +32276,7 @@ input[type=text]::-ms-reveal {
   font-family: "Helvetica Neue", sans-serif;
   font-size: 1rem;
   color: #a7aaad;
+  line-height: normal;
 }
 
 .climatOrder__bottom dl dt {
@@ -31862,14 +32295,8 @@ input[type=text]::-ms-reveal {
 .climatOrder__bottom dl dd {
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  width: 8.75rem;
+  width: auto;
   text-align: left;
-}
-
-@media screen and (max-width: 44.9375rem) {
-  .climatOrder__bottom dl dd {
-    width: 5rem;
-  }
 }
 
 .climatOrder .climatOrder__bottom .climatOrder__total dt,
@@ -31903,6 +32330,2096 @@ input[type=text]::-ms-reveal {
 @media screen and (max-width: 44.9375rem) {
   .climatOrder_ur .climatOrder__info {
     padding-bottom: 8.75rem;
+  }
+}
+
+.climatMaintenance {
+  padding-top: 3.75rem;
+  padding-bottom: 8.75rem;
+}
+
+.climatMaintenance__heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 3.75rem;
+}
+
+.climatMaintenance__title {
+  margin: 0;
+  margin-bottom: 1.5625rem;
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #50555f;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatMaintenance__title {
+    position: relative;
+    padding-bottom: 1.25rem;
+    margin-bottom: 2.5rem;
+    font-size: 1.375rem;
+  }
+
+  .climatMaintenance__title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.0625rem;
+    background-color: #c8c8c8;
+  }
+}
+
+.climatMaintenance__mobile-text {
+  display: none;
+  width: 100%;
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #dc1414;
+  text-align: center;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatMaintenance__mobile-text {
+    position: relative;
+    display: block;
+    padding: 0;
+    padding-bottom: 1.5625rem;
+    margin-bottom: 1.875rem;
+    font-size: 1.375rem;
+  }
+
+  .climatMaintenance__mobile-text::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 10rem;
+    height: 0.0625rem;
+    background-color: #c8c8c8;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
+
+.climatMaintenance__subtitle {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 300;
+  color: #828282;
+}
+
+.climatMaintenance__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 5.3125rem;
+}
+
+.climatMaintenance__content dl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  margin: 0;
+  border-bottom: 0.0625rem solid #e5e5e5;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatMaintenance__content dl {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatMaintenance__content dl {
+    border-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatMaintenance__content dl:not(:last-of-type) {
+    margin-bottom: 1.25rem;
+  }
+}
+
+.climatMaintenance__content dl dt,
+.climatMaintenance__content dl dd {
+  padding: 1.25rem 0.625rem;
+  margin: 0;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  color: #6b6b6b;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatMaintenance__content dl dt,
+  .climatMaintenance__content dl dd {
+    width: 100%;
+    padding: 0;
+    text-align: left;
+  }
+}
+
+.climatMaintenance__content dl dt {
+  width: 29.375rem;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatMaintenance__content dl dt {
+    width: 100%;
+    margin-bottom: 0.3125rem;
+    font-size: 1.25rem;
+    color: #50555f;
+  }
+}
+
+.climatMaintenance__content dl dd {
+  width: 13.4375rem;
+  padding-left: 1.25rem;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .climatMaintenance__content dl dd {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatMaintenance__content dl dd {
+    width: 100%;
+    padding-left: 0;
+    font-size: 1.25rem;
+    color: #a7aaad;
+    text-align: left;
+  }
+}
+
+.climatMaintenance__content-heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  background-color: #f0f0f0;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatMaintenance__content-heading {
+    background-color: #ffffff;
+  }
+}
+
+.climatMaintenance__content-heading p:not(.climatMaintenance__mobile-text) {
+  width: 13.4375rem;
+  padding: 0.9375rem 1.25rem;
+  margin: 0;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1.375rem;
+  font-weight: 300;
+  color: #6b6b6b;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatMaintenance__content-heading p:not(.climatMaintenance__mobile-text) {
+    display: none;
+  }
+}
+
+.climatMaintenance__content-heading p:not(.climatMaintenance__mobile-text):first-of-type {
+  width: 29.375rem;
+  color: #ffffff;
+  background-color: #dc1414;
+}
+
+.climatMaintenance__info-additional {
+  width: calc(50% - 90px);
+  margin-right: 5.625rem;
+  text-align: right;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .climatMaintenance__info-additional {
+    width: calc(50% - 30px);
+    margin-right: 1.875rem;
+  }
+
+  .climatMaintenance__info-additional h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatMaintenance__info-additional {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 5rem;
+  }
+
+  .climatMaintenance__info-additional h2 {
+    text-align: center;
+  }
+
+  .climatMaintenance__info-additional h2::after {
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+  }
+}
+
+.climatMaintenance__info-additional h2 {
+  text-align: right;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .climatMaintenance__info-additional h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatMaintenance__info-additional h2 {
+    text-align: center;
+  }
+}
+
+.climatMaintenance__info-additional h2::after {
+  right: 0;
+  left: auto;
+  margin: 0;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatMaintenance__info-additional h2::after {
+    right: 0;
+    left: 50%;
+    width: 10rem;
+    margin: 0 auto;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
+
+.climatMaintenance__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatMaintenance__info {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.climatMaintenance__info h2 {
+  margin: 0;
+  margin-bottom: 1.875rem;
+  font-family: "Playfair Display", serif;
+  font-weight: normal;
+  color: #50555a;
+  font-size: 2rem;
+  line-height: 2.375rem;
+  position: relative;
+  padding-bottom: 1.5625rem;
+}
+
+@media screen and (max-width: 45rem) {
+  .climatMaintenance__info h2 {
+    font-size: 1.625rem;
+    line-height: 1.9375rem;
+  }
+}
+
+.climatMaintenance__info h2::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: auto;
+  width: 10rem;
+  height: 0.0625rem;
+  margin: 0 auto;
+  background-color: #a7aaad;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatMaintenance__info h2::after {
+    right: 50%;
+    -webkit-transform: translateX(50%);
+            transform: translateX(50%);
+  }
+}
+
+.climatMaintenance__info dl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.climatMaintenance__info dl dt,
+.climatMaintenance__info dl dd {
+  margin-bottom: 0.3125rem;
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 300;
+  color: #50555a;
+  font-size: 1rem;
+  line-height: 1.375rem;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatMaintenance__info dl dt,
+  .climatMaintenance__info dl dd {
+    text-align: left;
+  }
+}
+
+.climatMaintenance__info dl dt {
+  -webkit-box-flex: 9;
+      -ms-flex-positive: 9;
+          flex-grow: 9;
+  margin-right: 0.625rem;
+}
+
+.climatMaintenance__info dl dd {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 3.125rem;
+  margin-left: 0;
+}
+
+.climatMaintenance__info-time {
+  width: calc(50% - 90px);
+  margin-left: 5.625rem;
+  text-align: left;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .climatMaintenance__info-time {
+    width: calc(50% - 30px);
+    margin-left: 1.875rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatMaintenance__info-time {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.climatMaintenance__info-time dl dt {
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 3.125rem;
+  margin-right: 0.625rem;
+}
+
+.climatMaintenance__info-time dl dd {
+  -webkit-box-flex: 9;
+      -ms-flex-positive: 9;
+          flex-grow: 9;
+  text-align: left;
+}
+
+.climatMaintenance__info-time h2 {
+  text-align: left;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .climatMaintenance__info-time h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatMaintenance__info-time h2 {
+    text-align: center;
+  }
+}
+
+.climatMaintenance__info-time h2::after {
+  right: auto;
+  left: 0;
+  margin: 0;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatMaintenance__info-time h2::after {
+    right: 0;
+    left: 50%;
+    width: 10rem;
+    margin: 0 auto;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
+
+.climatMaintenance__conditions {
+  margin: 0;
+  margin-bottom: 4.375rem;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1.375rem;
+  font-weight: 300;
+  color: #a7aaad;
+  text-align: center;
+}
+
+.climatPersonalData {
+  padding-top: 3.4375rem;
+  padding-bottom: 9.375rem;
+}
+
+.climatPersonalData__heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1.875rem;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatPersonalData__heading {
+    margin-bottom: 0;
+  }
+}
+
+.climatPersonalData__title {
+  margin: 0;
+  margin-right: auto;
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1;
+  color: #50555f;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .climatPersonalData__title {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatPersonalData__title {
+    width: 100%;
+    padding-bottom: 1.25rem;
+    margin-bottom: 2.5rem;
+    font-size: 1.375rem;
+    text-align: center;
+    border-bottom: 0.0625rem solid #c8c8c8;
+  }
+}
+
+.climatPersonalData__become-diller {
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #dc1414;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .climatPersonalData__become-diller {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatPersonalData__become-diller {
+    display: none;
+  }
+}
+
+.climatPersonalData__label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1.875rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatPersonalData__label {
+    position: absolute;
+    top: 22.8125rem;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatPersonalData__label .climatPersonalData__checkbox-name {
+    font-size: 1.125rem;
+    color: #a7aaad;
+  }
+}
+
+.climatPersonalData__checkbox,
+.climatPersonalData__radio {
+  display: none;
+}
+
+.climatPersonalData__radio-custom,
+.climatPersonalData__checkbox-custom {
+  position: relative;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 1.625rem;
+  height: 1.625rem;
+  margin-right: 0.625rem;
+  border: 0.0625rem solid #50555f;
+  border-radius: 0.1875rem;
+}
+
+.climatPersonalData__checkbox-custom,
+.climatPersonalData__radio-custom,
+.climatPersonalData__input-name {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transition: border .2s;
+  transition: border .2s;
+}
+
+.climatPersonalData__checkbox:checked + .climatPersonalData__checkbox-custom::before,
+.climatPersonalData__radio:checked + .climatPersonalData__radio-custom::before {
+  content: '';
+  position: absolute;
+  top: 0.3125rem;
+  left: 0.3125rem;
+  display: block;
+  width: 0.875rem;
+  height: 0.875rem;
+  border-radius: 0.125rem;
+  background: #dc1414;
+  background-color: #dc1414;
+  -webkit-box-shadow: inset 0 -1px 0 #a01414;
+          box-shadow: inset 0 -1px 0 #a01414;
+}
+
+.climatPersonalData__radio-custom,
+.climatPersonalData__radio:checked + .climatPersonalData__radio-custom::before {
+  border-radius: 50%;
+}
+
+.climatPersonalData__checkbox-name {
+  margin: 0;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #50555f;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .climatPersonalData__checkbox-name {
+    -ms-flex-negative: 99999;
+        flex-shrink: 99999;
+  }
+}
+
+.climatPersonalData__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatPersonalData__content {
+    position: relative;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.climatPersonalData__aside {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 11.875rem;
+  margin-right: 2.5rem;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatPersonalData__aside {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+.climatPersonalData__avatar {
+  position: relative;
+  width: 100%;
+  height: 14.375rem;
+  margin-bottom: 2.1875rem;
+  overflow: hidden;
+  border-radius: 0.3125rem;
+  border-radius: 0.3125rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatPersonalData__avatar {
+    position: absolute;
+    top: 13.625rem;
+    width: 5.625rem;
+    height: 6.875rem;
+    margin: 0;
+  }
+}
+
+.climatPersonalData__avatar input {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 2.0625rem;
+  height: 2.0625rem;
+  text-indent: -99999px;
+  border: none;
+  border-radius: 8px 0 0;
+  cursor: pointer;
+  outline: none;
+  background-color: #ffffff;
+  background-image: url("/img/climat/update.svg");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: 1.375rem;
+}
+
+.climatPersonalData__personal-sale {
+  position: relative;
+  padding-bottom: 1.25rem;
+  margin: 0;
+  margin-bottom: 0.9375rem;
+  font-family: "Playfair Display", serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #50555a;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatPersonalData__personal-sale {
+    padding: 0;
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+  }
+}
+
+.climatPersonalData__personal-sale span {
+  font-size: 1.875rem;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatPersonalData__personal-sale span {
+    font-size: 1.625rem;
+  }
+}
+
+.climatPersonalData__personal-sale::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 6.25rem;
+  height: 0.125rem;
+  background-color: #c8c8c8;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatPersonalData__personal-sale::after {
+    display: none;
+  }
+}
+
+.climatPersonalData__sale-info {
+  margin: 0;
+  margin-bottom: 2.8125rem;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: #a7aaad;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatPersonalData__sale-info {
+    font-size: 1.125rem;
+  }
+}
+
+.climatPersonalData__save {
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatPersonalData__save {
+    position: absolute;
+    bottom: 5.8125rem;
+    width: 100%;
+  }
+}
+
+.climatPersonalData__data-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1.25rem 1.875rem;
+  background-color: #f8f8f8;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatPersonalData__data-content {
+    padding: 0;
+    margin: 0;
+    background-color: #fff;
+  }
+}
+
+.climatPersonalData__data-content input {
+  width: 100%;
+  height: 100%;
+  height: 3.125rem;
+  padding: 0.9375rem 1.25rem;
+  overflow: hidden;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 300;
+  color: #50555f;
+  border: none;
+  border: 0.0625rem solid #c8c8c8;
+  border-radius: 0.3125rem;
+  outline: none;
+  background-color: #fff;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}
+
+.climatPersonalData__data-content input::-webkit-outer-spin-button,
+.climatPersonalData__data-content input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}
+
+.climatPersonalData__data-content input:not(:last-of-type) {
+  margin-bottom: 0.625rem;
+}
+
+.climatPersonalData__data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: calc(100% + 40px);
+  margin-right: -1.25rem;
+  margin-left: -1.25rem;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .climatPersonalData__data {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.climatPersonalData__data-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: calc(50% - 40px);
+  margin: 0 1.25rem;
+  margin-bottom: 2.5rem;
+  overflow: hidden;
+  border-radius: 0.3125rem;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .climatPersonalData__data-item {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 2.5rem;
+  }
+}
+
+.climatPersonalData__data-item_long {
+  width: calc(100% - 40px);
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .climatPersonalData__data-item_long {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 2.5rem;
+  }
+}
+
+.climatPersonalData__data-title {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1.25rem 1.875rem;
+  margin: 0;
+  margin-bottom: 0.0625rem;
+  font-family: "Playfair Display", serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #50555a;
+  background-color: #f8f8f8;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatPersonalData__data-title {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 0.625rem;
+    font-size: 1.125rem;
+    background-color: #fff;
+  }
+}
+
+.climatPersonalData__add {
+  width: 9.375rem;
+  height: 2.1875rem;
+  font-size: 1rem;
+}
+
+.climatPersonalData__data-adress {
+  position: relative;
+  padding-right: 3.4375rem;
+  margin: 0;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #50555f;
+}
+
+.climatPersonalData__data-adress:not(:last-of-type) {
+  margin-bottom: 1.25rem;
+}
+
+.climatPersonalData__edit,
+.climatPersonalData__delite {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 1rem;
+  height: 1rem;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  background-color: #c8c8c8;
+  cursor: pointer;
+}
+
+.climatPersonalData__edit {
+  right: 1.5625rem;
+}
+
+.climatPersonalData__edit img {
+  position: relative;
+  right: 0;
+  width: 0.4375rem;
+  height: 0.75rem;
+}
+
+.climatPersonalData__delite::after,
+.climatPersonalData__delite::before {
+  content: '';
+  position: absolute;
+  top: 0.25rem;
+  left: 50%;
+  width: 0.0625rem;
+  height: 0.5rem;
+  border-radius: 0.125rem;
+  background-color: #ffffff;
+}
+
+.climatPersonalData__delite::after {
+  -webkit-transform: rotate(45deg) translateX(-50%);
+          transform: rotate(45deg) translateX(-50%);
+}
+
+.climatPersonalData__delite::before {
+  -webkit-transform: rotate(-45deg) translateX(-50%);
+          transform: rotate(-45deg) translateX(-50%);
+}
+
+.climatPersonalData__ur {
+  display: none;
+  margin-bottom: 1.875rem;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatPersonalData__ur {
+    -webkit-box-ordinal-group: 6;
+        -ms-flex-order: 5;
+            order: 5;
+    margin-bottom: 5rem;
+  }
+}
+
+.climatPersonalData__ur.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.climatPersonalData__ur .climatPersonalData__data-content {
+  position: relative;
+}
+
+.climatPersonalData__ur .climatPersonalData__data-content:not(:last-of-type) {
+  margin-bottom: 0.0625rem;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatPersonalData__ur .climatPersonalData__data-content:not(:last-of-type) {
+    margin-bottom: 2.5rem;
+  }
+}
+
+.climatPersonalData__ur .climatPersonalData__data-content .climatPersonalData__edit {
+  top: 1.5625rem;
+  right: 2.5rem;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatPersonalData__ur .climatPersonalData__data-content .climatPersonalData__edit {
+    top: auto;
+    right: auto;
+    bottom: 1.5625rem;
+    left: 0;
+  }
+}
+
+.climatPersonalData__ur .climatPersonalData__data-content .climatPersonalData__delite {
+  top: 1.5625rem;
+  right: 0.9375rem;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatPersonalData__ur .climatPersonalData__data-content .climatPersonalData__delite {
+    top: auto;
+    right: auto;
+    bottom: 1.5625rem;
+    left: 2.5rem;
+  }
+}
+
+.climatPersonalData__data-ur {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .climatPersonalData__data-ur {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .climatPersonalData__ur-info {
+    margin-bottom: 1.25rem;
+  }
+}
+
+.climatPersonalData__ur-info dl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.climatPersonalData__ur-info dl:not(:last-of-type) {
+  margin-bottom: 0.625rem;
+}
+
+.climatPersonalData__ur-info dl dt,
+.climatPersonalData__ur-info dl dd {
+  padding: 0;
+  margin: 0;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #50555f;
+}
+
+.climatPersonalData__ur-info dl dt {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 7.1875rem;
+}
+
+.climatPersonalData__ur-docs {
+  padding-right: 10rem;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatPersonalData__ur-docs {
+    padding-right: 0;
+  }
+}
+
+.climatPersonalData__ur-docs dl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.climatPersonalData__ur-docs dl:not(:last-of-type) {
+  margin-bottom: 0.625rem;
+}
+
+.climatPersonalData__ur-docs dl dt,
+.climatPersonalData__ur-docs dl dd {
+  padding: 0;
+  margin: 0;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #50555f;
+}
+
+.climatPersonalData__ur-docs dl dt {
+  width: 7.1875rem;
+}
+
+.climatPersonalData__ur-docs dl dd {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.climatPersonalData__ur-docs dl dd a {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #50555f;
+  text-decoration: underline;
+}
+
+.climatPersonalData__ur-docs dl dd a:not(:last-of-type) {
+  margin-bottom: 0.625rem;
+}
+
+.climatPersonalData__desc {
+  width: 100%;
+  padding: 0 1.25rem;
+  margin: 0;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 0.75rem;
+  color: #a7aaad;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .climatPersonalData__desc {
+    padding: 0;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatPersonalData__desc {
+    -webkit-box-ordinal-group: 7;
+        -ms-flex-order: 6;
+            order: 6;
+    padding-top: 4.6875rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatPersonalData__user {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    padding-bottom: 3.75rem;
+    margin-bottom: 4.0625rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatPersonalData__user .climatPersonalData__data-content {
+    padding-left: 6.25rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatPersonalData__user input[name=patronymic] {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatPersonalData__contacts {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatPersonalData__password {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .climatPersonalData__adress {
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
+  }
+}
+
+.formAdress {
+  background-color: transparent !important;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .formAdress {
+    width: 100%;
+    padding: 0 !important;
+    margin-right: -1.25rem;
+    margin-left: -1.25rem;
+  }
+}
+
+.formAdress__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 32rem;
+  height: auto;
+  padding: 3.75rem;
+  padding-bottom: 4.375rem;
+  border-radius: 0.3125rem;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.16), 0 0 1rem rgba(0, 0, 0, 0.08), inset 0 -0.0625rem 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.16), 0 0 1rem rgba(0, 0, 0, 0.08), inset 0 -0.0625rem 0 rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (min-width: 45rem) and (max-width: 79.9375rem) {
+  .formAdress__content {
+    width: 38.125rem;
+    height: auto;
+    padding: 3.75rem;
+    padding-top: 4.375rem;
+    padding-bottom: 4.375rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .formAdress__content {
+    width: 100%;
+    height: auto;
+    padding: 0.625rem;
+    padding-top: 2.8125rem;
+    padding-bottom: 2.8125rem;
+  }
+}
+
+.formAdress__title {
+  padding-bottom: 1.25rem;
+  margin: 0;
+  margin-bottom: 1.875rem;
+  font-size: 1.625rem;
+  color: #50555a;
+  text-align: center;
+  letter-spacing: 0.09375rem;
+  color: #50555a;
+  font-family: "Futura PT", sans-serif;
+  font-size: 1.625rem;
+  font-weight: 300;
+  letter-spacing: 0.09375rem;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 1.5625rem;
+}
+
+.formAdress__title::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 10rem;
+  height: 0.0625rem;
+  margin: 0 auto;
+  background-color: #a7aaad;
+}
+
+@media screen and (max-width: 45rem) {
+  .formAdress__title {
+    font-size: 1.125rem;
+    letter-spacing: 0.3125rem;
+  }
+}
+
+@media screen and (min-width: 45rem) and (max-width: 79.9375rem) {
+  .formAdress__title {
+    padding-bottom: 1.5625rem;
+    margin-bottom: 2.5rem;
+    font-size: 1.875rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .formAdress__title {
+    margin-bottom: 2.8125rem;
+    font-size: 1.5rem;
+  }
+
+  .formAdress__title::after {
+    content: '';
+    width: 5rem;
+  }
+}
+
+.formAdress__title::after {
+  content: '';
+  width: 10rem;
+}
+
+.formAdress__description {
+  padding: 0 1.875rem;
+  margin: 0;
+  margin-bottom: 1.875rem;
+  font-size: 1.25rem;
+  text-align: center;
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 300;
+  color: #50555a;
+}
+
+@media screen and (min-width: 45rem) and (max-width: 79.9375rem) {
+  .formAdress__description {
+    padding: 0;
+    margin-bottom: 2.5rem;
+    font-size: 1.125rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .formAdress__description {
+    margin-bottom: 1.25rem;
+    font-size: 1rem;
+  }
+}
+
+.formAdress__description_color_red {
+  color: #dc1414;
+}
+
+.formAdress__input {
+  width: 100%;
+  height: 3.75rem;
+}
+
+@media screen and (min-width: 45rem) and (max-width: 79.9375rem) {
+  .formAdress__input {
+    height: 3.75rem;
+  }
+}
+
+.formAdress__input.error {
+  margin-bottom: 0.9375rem;
+  border-color: #dc1414;
+}
+
+.formAdress__input + label.error {
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+  padding-left: 1.25rem;
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 300;
+  color: #50555a;
+  font-size: 1rem;
+  line-height: 1.375rem;
+}
+
+.formAdress__input-wrap {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+@media screen and (min-width: 45rem) and (max-width: 79.9375rem) {
+  .formAdress__input-wrap {
+    margin-bottom: 1.875rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .formAdress__input-wrap {
+    margin-bottom: 1.25rem;
+  }
+}
+
+.formAdress__input-wrap:last-of-type {
+  margin-bottom: 1.875rem;
+}
+
+@media screen and (min-width: 45rem) and (max-width: 79.9375rem) {
+  .formAdress__input-wrap:last-of-type {
+    margin-bottom: 3.125rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .formAdress__input-wrap:last-of-type {
+    margin-bottom: 1.875rem;
+  }
+}
+
+.formAdress__submit {
+  width: 100%;
+  margin-bottom: 1.25rem;
+}
+
+@media screen and (min-width: 45rem) and (max-width: 79.9375rem) {
+  .formAdress__submit {
+    height: 3.75rem;
+  }
+}
+
+.formAdress__rules {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 0.75rem;
+  text-align: center;
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 300;
+  color: #50555a;
+}
+
+@media screen and (min-width: 45rem) and (max-width: 79.9375rem) {
+  .formAdress__rules {
+    width: 100%;
+    font-size: 1rem;
+  }
+}
+
+.formAdress__status-send {
+  display: none;
+  text-align: center;
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 300;
+  color: #50555a;
+  font-size: 1.375rem;
+  line-height: 2rem;
+}
+
+@media screen and (max-width: 45rem) {
+  .formAdress__status-send {
+    font-size: 1.25rem;
+    line-height: 1.875rem;
+  }
+}
+
+.formAdress__abort {
+  display: none !important;
+  width: 100%;
+  margin-bottom: 1.25rem;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .formAdress__abort {
+    display: block !important;
+  }
+
+  .formAdress__abort:hover {
+    background-color: #ffffff;
+  }
+}
+
+.formUr {
+  background-color: transparent !important;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .formUr {
+    width: 100%;
+    padding: 0 !important;
+    margin-right: -1.25rem;
+    margin-left: -1.25rem;
+  }
+}
+
+.formUr__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 40.3125rem;
+  height: auto;
+  padding: 3.75rem;
+  padding-bottom: 4.375rem;
+  border-radius: 0.3125rem;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.16), 0 0 1rem rgba(0, 0, 0, 0.08), inset 0 -0.0625rem 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.16), 0 0 1rem rgba(0, 0, 0, 0.08), inset 0 -0.0625rem 0 rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (min-width: 45rem) and (max-width: 79.9375rem) {
+  .formUr__content {
+    width: 38.125rem;
+    height: auto;
+    padding: 3.75rem;
+    padding-top: 4.375rem;
+    padding-bottom: 4.375rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .formUr__content {
+    width: 100%;
+    height: auto;
+    padding: 0.625rem;
+    padding-top: 2.8125rem;
+    padding-bottom: 2.8125rem;
+  }
+}
+
+.formUr__title {
+  padding-bottom: 1.25rem;
+  margin: 0;
+  margin-bottom: 1.875rem;
+  font-size: 1.625rem;
+  color: #50555a;
+  text-align: center;
+  letter-spacing: 0.09375rem;
+  color: #50555a;
+  font-family: "Futura PT", sans-serif;
+  font-size: 1.625rem;
+  font-weight: 300;
+  letter-spacing: 0.09375rem;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 1.5625rem;
+}
+
+.formUr__title::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 10rem;
+  height: 0.0625rem;
+  margin: 0 auto;
+  background-color: #a7aaad;
+}
+
+@media screen and (max-width: 45rem) {
+  .formUr__title {
+    font-size: 1.125rem;
+    letter-spacing: 0.3125rem;
+  }
+}
+
+@media screen and (min-width: 45rem) and (max-width: 79.9375rem) {
+  .formUr__title {
+    padding-bottom: 1.5625rem;
+    margin-bottom: 2.5rem;
+    font-size: 1.875rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .formUr__title {
+    margin-bottom: 2.8125rem;
+    font-size: 1.5rem;
+  }
+
+  .formUr__title::after {
+    content: '';
+    width: 5rem;
+  }
+}
+
+.formUr__title::after {
+  content: '';
+  width: 10rem;
+}
+
+.formUr__description {
+  padding: 0 1.875rem;
+  margin: 0;
+  margin-bottom: 1.875rem;
+  font-size: 1.25rem;
+  text-align: center;
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 300;
+  color: #50555a;
+}
+
+@media screen and (min-width: 45rem) and (max-width: 79.9375rem) {
+  .formUr__description {
+    padding: 0;
+    margin-bottom: 2.5rem;
+    font-size: 1.125rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .formUr__description {
+    margin-bottom: 1.25rem;
+    font-size: 1rem;
+  }
+}
+
+.formUr__description_color_red {
+  color: #dc1414;
+}
+
+.formUr__input {
+  width: 22.5rem;
+  height: 3.125rem;
+}
+
+@media screen and (min-width: 45rem) and (max-width: 79.9375rem) {
+  .formUr__input {
+    height: 3.75rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .formUr__input {
+    width: 50%;
+  }
+}
+
+.formUr__input.error {
+  margin-bottom: 0.9375rem;
+  border-color: #dc1414;
+}
+
+.formUr__input + label.error {
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+  padding-left: 1.25rem;
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 300;
+  color: #50555a;
+  font-size: 1rem;
+  line-height: 1.375rem;
+}
+
+.formUr__input-wrap {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+@media screen and (min-width: 45rem) and (max-width: 79.9375rem) {
+  .formUr__input-wrap {
+    margin-bottom: 1.875rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .formUr__input-wrap {
+    margin-bottom: 1.25rem;
+  }
+}
+
+.formUr__input-wrap:last-of-type {
+  margin-bottom: 1.875rem;
+}
+
+@media screen and (min-width: 45rem) and (max-width: 79.9375rem) {
+  .formUr__input-wrap:last-of-type {
+    margin-bottom: 3.125rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .formUr__input-wrap:last-of-type {
+    margin-bottom: 1.875rem;
+  }
+}
+
+.formUr__input-wrap p {
+  margin: 0;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 300;
+  color: #6b6b6b;
+}
+
+.formUr__submit {
+  width: 100%;
+  margin-bottom: 1.25rem;
+}
+
+@media screen and (min-width: 45rem) and (max-width: 79.9375rem) {
+  .formUr__submit {
+    height: 3.75rem;
+  }
+}
+
+.formUr__rules {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 0.75rem;
+  text-align: center;
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 300;
+  color: #50555a;
+}
+
+@media screen and (min-width: 45rem) and (max-width: 79.9375rem) {
+  .formUr__rules {
+    width: 100%;
+    font-size: 1rem;
+  }
+}
+
+.formUr__status-send {
+  display: none;
+  text-align: center;
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 300;
+  color: #50555a;
+  font-size: 1.375rem;
+  line-height: 2rem;
+}
+
+@media screen and (max-width: 45rem) {
+  .formUr__status-send {
+    font-size: 1.25rem;
+    line-height: 1.875rem;
+  }
+}
+
+.formUr__abort {
+  display: none !important;
+  width: 100%;
+  margin-bottom: 1.25rem;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .formUr__abort {
+    display: block !important;
+  }
+
+  .formUr__abort:hover {
+    background-color: #ffffff;
+  }
+}
+
+.formUr__data-wrap {
+  position: relative;
+  width: 22.5rem;
+  height: 3.125rem;
+  overflow: hidden;
+  border: 0.0625rem solid #c8c8c8;
+  border-radius: 0.3125rem;
+  background-color: #fff;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .formUr__data-wrap {
+    width: 50%;
+  }
+}
+
+.formUr__data-wrap select,
+.formUr__data-wrap input {
+  width: 100%;
+  height: 100%;
+  padding-right: 1.875rem;
+  padding-left: 1.25rem;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 300;
+  color: #50555f;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}
+
+.formUr__data-wrap select::-webkit-outer-spin-button,
+.formUr__data-wrap select::-webkit-inner-spin-button,
+.formUr__data-wrap input::-webkit-outer-spin-button,
+.formUr__data-wrap input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}
+
+.formUr__select {
+  position: relative;
+}
+
+.formUr__select::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0.9375rem;
+  width: 0.75rem;
+  height: 0.375rem;
+  background-image: url("%=static=%general/select-arrow.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.formUr__documents {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 1.875rem;
+  margin-bottom: 1.875rem;
+  border-top: 0.0625rem solid #a7aaad;
+}
+
+.formUr__documents a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 300;
+  color: #6b6b6b;
+  text-decoration: underline;
+}
+
+.formUr__documents a:not(:last-of-type) {
+  margin-bottom: 0.625rem;
+}
+
+.formUr__documents a .formUr__delite {
+  margin-right: 0.625rem;
+}
+
+.formUr__documents-heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.formUr__documents-heading h3 {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #50555a;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .formUr__documents-heading h3 {
+    margin-right: 0.625rem;
+    font-size: 1.125rem;
+  }
+}
+
+.formUr__add {
+  width: 9.375rem;
+  height: 2.1875rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.formUr__add-document input {
+  display: none;
+}
+
+.formUr__add-document .formUr__add {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.formUr__delite {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 1rem;
+  height: 1rem;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  background-color: #c8c8c8;
+  text-indent: -9999px;
+  font-size: 0;
+}
+
+.formUr__delite::after,
+.formUr__delite::before {
+  content: '';
+  position: absolute;
+  top: 0.25rem;
+  left: 50%;
+  width: 0.0625rem;
+  height: 0.5rem;
+  border-radius: 0.125rem;
+  background-color: #ffffff;
+}
+
+.formUr__delite::after {
+  -webkit-transform: rotate(45deg) translateX(-50%);
+          transform: rotate(45deg) translateX(-50%);
+}
+
+.formUr__delite::before {
+  -webkit-transform: rotate(-45deg) translateX(-50%);
+          transform: rotate(-45deg) translateX(-50%);
+}
+
+#formUrPopup {
+  height: auto !important;
+}
+
+.videoblock {
+  width: 100%;
+  height: 27.5rem;
+  padding: 4rem 0;
+  background-color: #000000;
+  background-image: url("/img/videobg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 100%;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .videoblock {
+    display: none;
+  }
+}
+
+.videoblock__content {
+  position: relative;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.videoblock__title {
+  margin: 0;
+  color: #f4f6f8;
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 2.375rem;
+}
+
+.videoblock__link {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 6rem;
+  height: 6rem;
+  text-decoration: none;
+  background-image: url("/img/videoplay.svg");
+  background-size: contain;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-repeat: no-repeat;
+}
+
+.videoblock__link::before {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 50%;
+  width: 10.125rem;
+  height: 10.125rem;
+  background-image: url("/img/videotexture_1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-animation: spin 5s linear 0s infinite;
+          animation: spin 5s linear 0s infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+            transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+            transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+            transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+            transform: translate(-50%, -50%) rotate(360deg);
   }
 }
 

@@ -1,6 +1,11 @@
 .climatOrder {
     padding-top: rem(55);
-    padding-bottom: rem(150);
+    padding-bottom: rem(80);
+
+    @include below($mobile) {
+        position: relative;
+        padding-bottom: rem(160);
+    }
 
     @extend .container;
 
@@ -8,6 +13,10 @@
         display: flex;
         align-items: center;
         margin-bottom: rem(30);
+
+        @include below($mobile) {
+            margin-bottom: rem(24);
+        }
     }
 
     &__title {
@@ -28,6 +37,10 @@
 
             font-size: rem(22);
             text-align: center;
+
+            span {
+                font-size: rem(32);
+            }
         }
     }
 
@@ -55,7 +68,14 @@
 
 
         @include below($mobile) {
-            display: none;
+            &:not(button) {
+				position: absolute;
+                bottom: rem(80);
+                box-shadow: inset 0 -1px 0 #6b6b6b;
+                border-radius: 5px;
+                background-color: #828282;
+                color: #ffffff;
+			}
         }
     }
 
@@ -81,6 +101,7 @@
         }
         @include below($mobile) {
             margin-bottom: rem(80);
+            padding-top: rem(24);
         }
     }
 
@@ -92,8 +113,13 @@
             margin-bottom: rem(10);
         }
 
+        @include below($mobile) {
+            margin-bottom: rem(16);
+        }
+
         dl {
-            display: flex;
+            display: inline-flex;
+			align-items: center;
             padding: 0;
             margin: 0;
 
@@ -103,6 +129,10 @@
 
             &:not(:last-of-type) {
                 margin-bottom: rem(10);
+
+                @include below($mobile) {
+                    margin-bottom: rem(16);
+                }
             }
 
             dt,
@@ -114,15 +144,39 @@
                 font-size: rem(16);
                 font-weight: 300;
                 color: #50555f;
+				line-height: normal;
 
                 p {
                     display: inline;
+
+                    @include below($mobile) {
+                        margin: 0;
+                        margin-top: rem(16);
+                        display: flex;
+                        flex-direction: column;
+                        width: 100%;
+
+                        span {
+                            margin-top: rem(4);
+                        }
+                    }
+                }
+
+                @include below($mobile) {
+                    width: 100%;
+                    margin-right: 0;
                 }
             }
 
             dt {
                 width: rem(210);
                 margin-right: rem(5);
+
+                @include below($mobile) {
+                    width: 100%;
+                    margin-right: 0;
+                    margin-bottom: rem(4);
+                }
             }
         }
     }
@@ -131,6 +185,10 @@
     &__track-number {
         color: #df0d00;
     }
+
+	&__shipping-company {
+		margin-right: rem(26);
+	}
 
     &__ur-download {
         display: none;
@@ -182,6 +240,10 @@
 
             &:not(:last-of-type) {
                 margin-bottom: rem(10);
+
+                @include below($mobile) {
+                    margin-bottom: rem(16);
+                }
             }
 
             &:not(.climatOrder__persone):not(.climatOrder__tel) {
@@ -200,12 +262,25 @@
 
                 p {
                     display: inline;
+
+
                 }
             }
 
             dt {
                 width: rem(115);
                 margin-right: rem(5);
+
+				@include below($tablet) {
+					width: rem(210);
+
+				}
+
+                @include below($mobile) {
+                    width: 100%;
+                    margin: 0;
+                    margin-bottom: rem(4);
+                }
             }
         }
 
@@ -233,8 +308,21 @@
         flex-direction: column;
         margin-bottom: rem(40);
 
-        .climatOrderingItem__buttons {
+        @include below($mobile) {
+            margin-bottom: 0;
+        }
+
+        .orderingItem__buttons {
             display: none;
+        }
+
+        .orderingItem {
+            @include below($mobile) {
+                &:last-of-type {
+                    margin-bottom: 0;
+                    border-bottom: none;
+                }
+            }
         }
     }
 
@@ -253,13 +341,35 @@
         flex-direction: column;
         align-items: flex-end;
 
+        @include below($mobile) {
+            background-color: #f5f5f5;
+            padding: 0 rem(16);
+            padding-top: rem(20);
+            padding-bottom: rem(24);
+            width: calc(100% + 32px);
+            margin-right: rem(-16);
+            margin-left: rem(-16);
+        }
+
+        @include below($mobile-small) {
+            background-color: #f5f5f5;
+            padding: 0 rem(8);
+            padding-top: rem(20);
+            padding-bottom: rem(24);
+            width: calc(100% + 16px);
+            margin-right: rem(-8);
+            margin-left: rem(-8);
+        }
+
         dl {
-            display: flex;
+            display: inline-flex;
+            align-items: center;
             padding: 0;
             margin: 0;
 
             @include below($mobile) {
                 width: 100%;
+                align-items: flex-end;
             }
 
             &:not(:last-of-type) {
@@ -274,6 +384,7 @@
                 font-family: $helvetica;
                 font-size: rem(16);
                 color: #a7aaad;
+                line-height: normal;
             }
 
             dt {
@@ -288,13 +399,9 @@
 
             dd {
                 flex-shrink: 0;
-                width: rem(140);
+                width: auto;
 
                 text-align: left;
-
-                @include below($mobile) {
-                    width: rem(80);
-                }
             }
 
             &:last-of-type {

@@ -55,6 +55,10 @@
         letter-spacing: 1.5px;
         text-transform: uppercase;
 
+		@include above($tablet) {
+            margin-bottom: rem(4);
+        }
+
 		@include below($tablet) {
             margin-bottom: rem(12);
 			line-height: rem(25);
@@ -127,6 +131,18 @@
 
 		@include below($tablet) {
 			margin-bottom: rem(15);
+		}
+
+		@include below($mobile) {
+			span {
+                margin-left: rem(16);
+            }
+		}
+
+		@include below($mobile-small) {
+			span {
+                margin-left: rem(8);
+            }
 		}
     }
 
@@ -219,8 +235,8 @@
         }
         @include below($mobile) {
 			flex-direction: row-reverse;
-            bottom: rem(82);
-            left: rem(180);
+            bottom: rem(66);
+            left: rem(196);
 			justify-content: flex-end;
         }
 
@@ -297,6 +313,13 @@
         @include below($tablet) {
             width: rem(168);
         }
+
+        @include below($mobile) {
+            width: 100%;
+            padding-right: 0;
+            padding-top: 0;
+            padding-bottom: rem(16);
+        }
     }
 
     &__delite {
@@ -351,6 +374,14 @@
 
         @include below($tablet) {
             display: inline;
+        }
+
+        @include below($mobile) {
+            margin-right: rem(52);
+        }
+
+        @include below($mobile-small) {
+            margin-right: rem(44);
         }
     }
 }

@@ -25,6 +25,14 @@
     <img src="/img/gui/close.svg" alt="" class="popup__close js-close">
     @include('climat.conditionerPopup')
 </div>
+<div class="popup" id="formAdressPopup">
+    <img src="/img/gui/close.svg" alt="" class="popup__close js-close">
+    @include('climat.formAdress')
+</div>
+<div class="popup" id="formUrPopup">
+    <img src="/img/gui/close.svg" alt="" class="popup__close js-close">
+    @include('climat.formUr')
+</div>
 <div id="overlay" class="overlay js-close"></div>
 </main>
 

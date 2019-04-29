@@ -1048,3 +1048,11 @@ let onResizeOrder = function () {
 
 $(document).ready(onResizeOrder);
 $(window).resize(onResizeOrder);
+
+$('.climatPersonalData__checkbox').on('change', function () {
+    if ($(this).is(':checked')) {
+        $('.climatPersonalData__ur').addClass('active');
+    } else {
+        $('.climatPersonalData__ur').removeClass('active');
+    }
+});

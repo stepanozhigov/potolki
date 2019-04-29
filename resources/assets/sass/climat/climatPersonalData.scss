@@ -1,0 +1,677 @@
+.climatPersonalData {
+    padding-top: rem(55);
+    padding-bottom: rem(150);
+
+    @extend .container;
+
+    &__heading {
+        display: flex;
+        align-items: center;
+        margin-bottom: rem(30);
+
+        @include below($mobile) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__title {
+        margin: 0;
+        margin-right: auto;
+
+        font-family: $playfair;
+        font-size: rem(32);
+        font-weight: 400;
+        line-height: 1;
+        color: #50555f;
+
+        @include below($tablet) {
+            font-size: rem(24);
+        }
+        @include below($mobile) {
+            width: 100%;
+            padding-bottom: rem(20);
+            margin-bottom: rem(40);
+
+            font-size: rem(22);
+            text-align: center;
+
+            border-bottom: rem(1) solid #c8c8c8;
+        }
+    }
+
+    &__become-diller {
+        font-family: $playfair;
+        font-size: rem(16);
+        font-weight: 300;
+        color: #dc1414;
+
+        @include below($tablet) {
+            margin: 0;
+        }
+        @include below($mobile) {
+            display: none;
+        }
+    }
+
+    &__label {
+        display: flex;
+        align-items: center;
+        margin-bottom: rem(30);
+
+        cursor: pointer;
+
+        @include below($mobile) {
+            position: absolute;
+            top: rem(365);
+
+            width: 100%;
+        }
+
+        .climatPersonalData__checkbox-name {
+            @include below($mobile) {
+                font-size: rem(18);
+                color: #a7aaad;
+            }
+        }
+    }
+
+    &__checkbox,
+    &__radio {
+        display: none;
+    }
+
+    &__radio-custom,
+    &__checkbox-custom {
+        position: relative;
+
+        flex-shrink: 0;
+        width: rem(26);
+        height: rem(26);
+        margin-right: rem(10);
+
+        border: rem(1) solid #50555f;
+        border-radius: rem(3);
+    }
+
+    &__checkbox-custom,
+    &__radio-custom,
+    &__input-name {
+        display: inline-block;
+
+        vertical-align: middle;
+
+        transition: border .2s;
+    }
+
+    &__checkbox:checked + .climatPersonalData__checkbox-custom::before,
+    &__radio:checked + .climatPersonalData__radio-custom::before {
+        content: '';
+
+        position: absolute;
+        top: rem(5);
+        left: rem(5);
+
+        display: block;
+        width: rem(14);
+        height: rem(14);
+
+        border-radius: rem(2);
+        background: $red_crismon;
+        background-color: #dc1414;
+        box-shadow: inset 0 -1px 0 #a01414;
+    }
+
+    &__radio-custom,
+    &__radio:checked + .climatPersonalData__radio-custom::before {
+        border-radius: 50%;
+    }
+
+    &__checkbox-name {
+        margin: 0;
+
+        font-family: $helvetica;
+        font-size: rem(14);
+        font-weight: 300;
+        color: #50555f;
+
+        @include below($tablet) {
+            flex-shrink: 99999;
+        }
+    }
+
+    &__content {
+        display: flex;
+        align-items: flex-start;
+
+        @include below($mobile) {
+            position: relative;
+
+            flex-direction: column;
+        }
+    }
+
+    &__aside {
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
+        width: rem(190);
+        margin-right: rem(40);
+
+        @include below($mobile) {
+            width: 100%;
+            margin-right: 0;
+        }
+    }
+
+    &__avatar {
+        position: relative;
+
+        width: 100%;
+        height: rem(230);
+        margin-bottom: rem(35);
+        overflow: hidden;
+
+        border-radius: rem(5);
+        border-radius: rem(5);
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        @include below($mobile) {
+            position: absolute;
+            top: rem(218);
+
+            width: rem(90);
+            height: rem(110);
+            margin: 0;
+        }
+
+        input {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+
+            width: rem(33);
+            height: rem(33);
+
+            text-indent: -99999px;
+
+            border: none;
+            border-radius: 8px 0 0;
+            cursor: pointer;
+            outline: none;
+            background-color: $white;
+            background-image: url('/img/climat/update.svg');
+            background-repeat: no-repeat;
+            background-position: bottom right;
+            background-size: rem(22);
+        }
+    }
+
+    &__personal-sale {
+        position: relative;
+
+        padding-bottom: rem(20);
+        margin: 0;
+        margin-bottom: rem(15);
+
+        font-family: $playfair;
+        font-size: rem(20);
+        font-weight: 400;
+        color: #50555a;
+
+        @include below($mobile) {
+            padding: 0;
+            margin-bottom: rem(20);
+
+            font-size: rem(20);
+        }
+
+        span {
+            font-size: rem(30);
+
+            @include below($mobile) {
+                font-size: rem(26);
+            }
+        }
+
+        &::after {
+            content: '';
+
+            position: absolute;
+            bottom: 0;
+            left: 0;
+
+            width: rem(100);
+            height: rem(2);
+
+            background-color: #c8c8c8;
+
+            @include below($mobile) {
+                display: none;
+            }
+        }
+    }
+
+    &__sale-info {
+        margin: 0;
+        margin-bottom: rem(45);
+
+        font-family: $helvetica;
+        font-size: rem(12);
+        font-weight: 300;
+        color: #a7aaad;
+
+        @include below($mobile) {
+            font-size: rem(18);
+        }
+    }
+
+    &__save {
+        font-size: rem(16);
+
+        @extend .button;
+
+        @include below($mobile) {
+            position: absolute;
+            bottom: rem(93);
+
+            width: 100%;
+        }
+    }
+
+    &__data-content {
+        display: flex;
+        flex-direction: column;
+        padding: rem(20) rem(30);
+
+        background-color: #f8f8f8;
+
+        @include below($mobile) {
+            padding: 0;
+            margin: 0;
+
+            background-color: #fff;
+        }
+
+        input {
+            width: 100%;
+            height: 100%;
+            height: rem(50);
+            padding: rem(15) rem(20);
+            overflow: hidden;
+
+            font-family: $helvetica;
+            font-size: rem(18);
+            font-weight: 300;
+            color: #50555f;
+
+            border: none;
+            border: rem(1) solid #c8c8c8;
+            border-radius: rem(5);
+            outline: none;
+            background-color: #fff;
+
+            -webkit-appearance: none;
+               -moz-appearance: textfield;
+
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                   -moz-appearance: textfield;
+            }
+
+            &:not(:last-of-type) {
+                margin-bottom: rem(10);
+            }
+        }
+    }
+
+    &__data {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        width: calc(100% + 40px);
+        margin-right: rem(-20);
+        margin-left: rem(-20);
+
+        @include below($tablet) {
+            flex-direction: column;
+            width: 100%;
+            margin: 0;
+        }
+    }
+
+    &__data-item {
+        display: flex;
+        flex-direction: column;
+        width: calc(50% - 40px);
+        margin: 0 rem(20);
+        margin-bottom: rem(40);
+        overflow: hidden;
+
+        border-radius: rem(5);
+
+        @include below($tablet) {
+            width: 100%;
+            margin: 0;
+            margin-bottom: rem(40);
+        }
+
+        &_long {
+            width: calc(100% - 40px);
+
+            @include below($tablet) {
+                width: 100%;
+                margin: 0;
+                margin-bottom: rem(40);
+            }
+        }
+    }
+
+    &__data-title {
+        display: inline-flex;
+        justify-content: space-between;
+        padding: rem(20) rem(30);
+        margin: 0;
+        margin-bottom: rem(1);
+
+        font-family: $playfair;
+        font-size: rem(20);
+        font-weight: 400;
+        color: #50555a;
+
+        background-color: #f8f8f8;
+
+        @include below($mobile) {
+            padding: 0;
+            margin: 0;
+            margin-bottom: rem(10);
+
+            font-size: rem(18);
+
+            background-color: #fff;
+        }
+    }
+
+    &__add {
+        width: rem(150);
+        height: rem(35);
+
+        font-size: rem(16);
+
+        @extend .button;
+        @extend .button_gray;
+    }
+
+    &__data-adress {
+        position: relative;
+
+        padding-right: rem(55);
+        margin: 0;
+
+        font-family: $helvetica;
+        font-size: rem(16);
+        font-weight: 300;
+        color: #50555f;
+
+        &:not(:last-of-type) {
+            margin-bottom: rem(20);
+        }
+    }
+
+    &__edit,
+    &__delite {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: rem(16);
+        height: rem(16);
+        padding: 0;
+
+        border: none;
+        border-radius: 50%;
+        outline: none;
+        background-color: #c8c8c8;
+        cursor: pointer;
+    }
+
+    &__edit {
+        right: rem(25);
+
+        img {
+            position: relative;
+            right: 0;
+
+            width: rem(7);
+            height: rem(12);
+        }
+    }
+
+    &__delite {
+        &::after,
+        &::before {
+            content: '';
+
+            position: absolute;
+            top: rem(4);
+            left: 50%;
+
+            width: rem(1);
+            height: rem(8);
+
+            border-radius: rem(2);
+            background-color: $white;
+        }
+
+        &::after {
+            transform: rotate(45deg) translateX(-50%);
+        }
+
+        &::before {
+            transform: rotate(-45deg) translateX(-50%);
+        }
+    }
+
+    &__ur {
+        display: none;
+        margin-bottom: rem(30);
+
+        @include below($mobile) {
+            order: 5;
+            margin-bottom: rem(80);
+        }
+
+        &.active {
+            display: flex;
+        }
+
+        .climatPersonalData__data-content {
+            position: relative;
+
+            &:not(:last-of-type) {
+                margin-bottom: rem(1);
+
+                @include below($mobile) {
+                    margin-bottom: rem(40);
+                }
+            }
+
+            .climatPersonalData__edit {
+                top: rem(25);
+                right: rem(40);
+
+                @include below($mobile) {
+                    top: auto;
+                    right: auto;
+                    bottom: rem(25);
+                    left: 0;
+                }
+            }
+
+            .climatPersonalData__delite {
+                top: rem(25);
+                right: rem(15);
+
+                @include below($mobile) {
+                    top: auto;
+                    right: auto;
+                    bottom: rem(25);
+                    left: rem(40);
+                }
+            }
+        }
+    }
+
+    &__data-ur {
+        display: flex;
+        justify-content: space-between;
+
+        @include below($tablet) {
+            flex-direction: column;
+        }
+    }
+
+    &__ur-info {
+        @include below($tablet) {
+            margin-bottom: rem(20);
+        }
+        dl {
+            display: flex;
+            padding: 0;
+            margin: 0;
+
+            &:not(:last-of-type) {
+                margin-bottom: rem(10);
+            }
+
+            dt,
+            dd {
+                padding: 0;
+                margin: 0;
+
+                font-family: $helvetica;
+                font-size: rem(16);
+                font-weight: 300;
+                color: #50555f;
+            }
+
+            dt {
+                flex-shrink: 0;
+                width: rem(115);
+            }
+        }
+    }
+
+    &__ur-docs {
+        padding-right: rem(160);
+
+        @include below($mobile) {
+            padding-right: 0;
+        }
+
+        dl {
+            display: flex;
+            padding: 0;
+            margin: 0;
+
+            &:not(:last-of-type) {
+                margin-bottom: rem(10);
+            }
+
+            dt,
+            dd {
+                padding: 0;
+                margin: 0;
+
+                font-family: $helvetica;
+                font-size: rem(16);
+                font-weight: 300;
+                color: #50555f;
+            }
+
+            dt {
+                width: rem(115);
+            }
+
+            dd {
+                display: flex;
+                flex-direction: column;
+
+                a {
+                    font-family: $helvetica;
+                    font-size: rem(16);
+                    font-weight: 300;
+                    color: #50555f;
+                    text-decoration: underline;
+
+                    &:not(:last-of-type) {
+                        margin-bottom: rem(10);
+                    }
+                }
+            }
+        }
+    }
+
+    &__desc {
+        width: 100%;
+        padding: 0 rem(20);
+        margin: 0;
+
+        font-family: $helvetica;
+        font-size: rem(12);
+        color: #a7aaad;
+
+        @include below($tablet) {
+            padding: 0;
+
+            font-size: rem(16);
+        }
+        @include below($mobile) {
+            order: 6;
+            padding-top: rem(75);
+        }
+    }
+
+    &__user {
+        @include below($mobile) {
+            order: 1;
+            padding-bottom: rem(60);
+            margin-bottom: rem(65);
+        }
+
+        .climatPersonalData__data-content {
+            @include below($mobile) {
+                padding-left: rem(100);
+            }
+        }
+
+        input[name=patronymic] {
+            @include below($mobile) {
+                display: none;
+            }
+        }
+    }
+
+    &__contacts {
+        @include below($mobile) {
+            order: 2;
+        }
+    }
+
+    &__password {
+        @include below($mobile) {
+            order: 3;
+        }
+    }
+
+    &__adress {
+        @include below($mobile) {
+            order: 4;
+        }
+    }
+}

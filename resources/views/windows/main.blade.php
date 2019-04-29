@@ -160,6 +160,7 @@
 			<a href="{{ route('add-review', $city) }}" class="button buttons__item">Оставить отзыв</a>
         </div>
     </section>
+	@include('common.videoblock')
     <section class="articles articles_main" id="articles">
         @include('common.gui.titles', [
             'class' =>  "container",
@@ -174,7 +175,7 @@
                     </a>
                 @endif
             @endforeach
-            
+
         </div>
         <posts :posts="{{ $articles }}"></posts>
 
