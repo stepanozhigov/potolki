@@ -35,7 +35,7 @@ $(document).on('click', '.js-show', function(event) {
     if ($this.data('button')) {
         $source.find('button').html($this.data('button'))
     }
-    else {
+    else if ($this.not('.climatDetail__fastBuy') > 0) {
         $source.find('button').html('Заказать звонок');
     }
 

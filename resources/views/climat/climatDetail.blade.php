@@ -109,7 +109,7 @@
 						<span>-120 995  ₽</span>
 					</p>
 					<a class="climatDetail__basket" href="javascript:void(0);">В корзину</a>
-					<a class="climatDetail__fastBuy" href="javascript:void(0);">Быстрая покупка</a>
+					<a class="climatDetail__fastBuy js-show" data-src="#quickBuy" href="javascript:void(0);">Быстрая покупка</a>
 				</div>
 				<div class="climatDetail__params">
 					<label class="climatDetail__param">

@@ -14710,6 +14710,14 @@ $('.climatPersonalData__checkbox').on('change', function () {
     }
 });
 
+$('.quickBuy').on('change', 'input[name=shipping]', function () {
+    if ($(this).val() === 'pickup') {
+        $('.quickBuy__issuePoints').addClass('active');
+    } else {
+        $('.quickBuy__issuePoints').removeClass('active');
+    }
+});
+
 /***/ }),
 /* 11 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -35633,7 +35641,7 @@ $(document).on('click', '.js-show', function (event) {
 
     if ($this.data('button')) {
         $source.find('button').html($this.data('button'));
-    } else {
+    } else if ($this.not('.climatDetail__fastBuy') > 0) {
         $source.find('button').html('Заказать звонок');
     }
 

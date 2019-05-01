@@ -1,0 +1,466 @@
+.quickBuy {
+    display: flex;
+    flex-direction: column;
+    padding: rem(40) rem(20);
+    padding-bottom: rem(20);
+    box-shadow: 0 rem(16) rem(16) rgba(0, 0, 0, 0.16), 0 0 rem(16) rgba(0, 0, 0, 0.08), inset 0 rem(-1) 0 rgba(0, 0, 0, 0.1);
+    border-radius: rem(8);
+    background-color: #ffffff;
+
+    @include below($tablet) {
+        padding: rem(40) rem(16);
+        padding-bottom: rem(12);
+    }
+
+    @include below($mobile) {
+        overflow: scroll;
+        padding: rem(40) rem(8);
+        padding-bottom: rem(16);
+    }
+
+    &__title {
+        width: 100%;
+        margin: 0;
+        margin-bottom: rem(24);
+        padding-bottom: rem(16);
+        color: #485058;
+        font-family: $futura;
+        font-size: rem(26);
+        font-weight: 500;
+        letter-spacing: rem(1.5);
+        line-height: rem(32);
+        text-transform: uppercase;
+        border-bottom: rem(1) solid #babec2;
+
+        @include below($tablet) {
+            margin-bottom: rem(32);
+        }
+
+        @include below($mobile) {
+            margin-bottom: rem(24);
+            padding-bottom: rem(16);
+        }
+    }
+
+    &__info {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-shrink: 0;
+
+        @include below($mobile) {
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: rem(29);
+        }
+    }
+
+    &__item {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: rem(24);
+
+        @include below($mobile) {
+            width: 100%;
+            flex-wrap: wrap;
+            margin-bottom: 0;
+        }
+
+        img {
+            height: rem(120);
+            width: auto;
+            margin-right: rem(16);
+
+            @include below($mobile) {
+                width: rem(140);
+                height: auto;
+            }
+        }
+
+        &-info {
+            display: flex;
+            flex-direction: column;
+            padding-top: rem(18);
+            margin-right: auto;
+
+            @include below($mobile) {
+                flex-grow: 99;
+            }
+        }
+    }
+
+    &__item-name {
+
+        margin: 0;
+        margin-bottom: rem(4);
+
+        color: #485058;
+        font-family: $playfair;
+        font-size: rem(32);
+        font-weight: 400;
+        line-height: rem(38);
+
+        @include below($tablet) {
+            font-size: rem(26);
+            line-height: rem(32);
+            margin-bottom: rem(12);
+        }
+
+        @include below($mobile) {
+            font-size: rem(18);
+            line-height: rem(21);
+            margin-bottom: rem(6);
+        }
+    }
+
+    &__item-model {
+        margin: 0;
+        color: #485058;
+        font-family: $helvetica;
+        font-size: rem(16);
+        font-weight: 300;
+        line-height: rem(24);
+        text-transform: uppercase;
+
+        @include below($tablet) {
+            font-size: rem(18);
+            line-height: rem(26);
+        }
+    }
+
+    &__number {
+        display: flex;
+        height: rem(48);
+        margin-right: auto;
+        border-radius: rem(4);
+        border: rem(1) solid #babec2;
+        margin-top: rem(18);
+
+        @include below($mobile) {
+            margin-top: rem(-21);
+            margin-bottom: 0;
+            margin-left: rem(160);
+        }
+    }
+
+    &__decrement,
+    &__increment,
+    &__number-val {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: rem(40);
+        color: #808890;
+        font-family: $helvetica;
+        font-size: rem(18);
+        font-weight: 300;
+        line-height: normal;
+        text-decoration: none;
+        border: none;
+        outline: none;
+        background-color: transparent;
+    }
+
+    &__total {
+        margin: 0;
+        color: #485058;
+        font-family: $helvetica;
+        font-size: rem(22);
+        font-weight: 500;
+        line-height: rem(48);
+        padding-top: rem(18);
+
+        @include below($mobile) {
+            padding-top: 0;
+            margin-left: rem(160);
+        }
+    }
+
+    &__orderType {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: rem(32);
+        flex-shrink: 0;
+
+        .radio {
+            font-family: $helvetica;
+            font-size: rem(14);
+            font-weight: 300;
+            line-height: rem(16);
+            justify-content: flex-start;
+
+            &:not(:last-of-type) {
+                margin-bottom: rem(12);
+
+                @include below($tablet) {
+                    margin-bottom: rem(16);
+                }
+
+                @include below($mobile) {
+                    margin-bottom: rem(16);
+                }
+            }
+        }
+    }
+
+    &__data {
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
+
+        &-text {
+            margin: 0;
+            margin-bottom: rem(16);
+            color: #485058;
+            font-family: $helvetica;
+            font-size: rem(16);
+            font-weight: 300;
+            line-height: rem(24);
+
+            @include below($tablet) {
+                font-size: rem(18);
+                line-height: rem(26);
+            }
+
+            @include below($mobile) {
+                margin-bottom: rem(24);
+            }
+
+            span {
+                color: #dc1414;
+            }
+        }
+
+        &-wrap {
+            display: flex;
+            margin-bottom: rem(16);
+            flex-shrink: 0;
+
+            @include below($mobile) {
+                flex-direction: column;
+                margin-bottom: rem(24);
+            }
+        }
+
+        .quickBuy__subtitle {
+            margin-bottom: rem(8);
+        }
+    }
+
+    &__subtitle {
+        margin: 0;
+        margin-bottom: rem(16);
+        color: #485058;
+        font-family: $playfair;
+        font-size: rem(20);
+        font-weight: 400;
+        line-height: rem(24);
+
+        @include below($mobile) {
+            font-size: rem(18);
+            line-height: rem(21);
+        }
+
+        a {
+            position: relative;
+            color: #485058;
+            font-family: $playfair;
+            font-size: rem(20);
+            font-weight: 400;
+            line-height: rem(24);
+            text-decoration: none;
+
+            &:hover {
+                &::after {
+                    bottom: rem(-2);
+                }
+            }
+
+            &::after {
+                position: absolute;
+                content: '';
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: rem(1);
+                border-bottom: rem(1) dashed #485058;
+                transition: bottom .3s;
+            }
+
+            @include below($mobile) {
+                font-size: rem(18);
+                line-height: rem(21);
+            }
+        }
+    }
+
+    &__name {
+        @extend .input;
+        width: rem(320);
+        height: rem(48);
+        margin-right: rem(16);
+
+        @include below($tablet) {
+            width: rem(264);
+        }
+
+        @include below($mobile) {
+            width: 100%;
+            margin-bottom: rem(16);
+        }
+
+    }
+
+    .popup__input:last-of-type {
+        margin-bottom: 0;
+
+        @include below($mobile) {
+            margin-bottom: rem(24);
+        }
+    }
+
+    &__tel {
+        @extend .input;
+        width: rem(208);
+        height: rem(48);
+        margin-right: rem(16);
+        margin-bottom: 0;
+
+        @include below($tablet) {
+            width: rem(208);
+        }
+
+        @include below($mobile) {
+            width: 100%;
+            margin-bottom: rem(24);
+        }
+    }
+
+    &__checkout {
+        @extend .button;
+        width: rem(220);
+        height: rem(48);
+
+        @include below($tablet) {
+            width: rem(200);
+        }
+
+        @include below($mobile) {
+            width: 100%;
+        }
+    }
+
+    &__ur {
+        margin-bottom: rem(24);
+        font-family: $helvetica;
+        font-size: rem(14);
+        font-weight: 300;
+        line-height: rem(16);
+
+        @include below($mobile) {
+            margin-bottom: rem(32);
+        }
+    }
+
+    &__personal-data {
+        margin: 0;
+        color: #babec2;
+        font-family: $helvetica;
+        font-size: rem(12);
+        font-weight: 300;
+        line-height: rem(20);
+
+        @include below($tablet) {
+            font-size: rem(14);
+            line-height: rem(24);
+        }
+    }
+
+    &__issuePoints {
+        display: none;
+        flex-direction: column;
+        margin-bottom: rem(32);
+        flex-shrink: 0;
+
+        &-content {
+            display: flex;
+
+            @include below($mobile) {
+                flex-direction: column;
+            }
+        }
+
+        .quickBuy__subtitle {
+            width: 100%;
+            margin-bottom: rem(12);
+            color: #485058;
+            font-family: $playfair;
+            font-size: rem(20);
+            font-weight: 400;
+            line-height: rem(24);
+
+            @include below($mobile) {
+                font-size: rem(18);
+                line-height: rem(21);
+            }
+        }
+
+        &.active {
+            display: flex;
+        }
+    }
+
+    &__map {
+        width: rem(480);
+        height: rem(224);
+        margin-right: rem(20);
+        background-image: url('/img/climat/map.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        flex-shrink: 0;
+
+        @include below($tablet) {
+            width: rem(434);
+            height: rem(260);
+            margin-right: rem(16);
+        }
+
+        @include below($mobile) {
+            width: 100%;
+            height: rem(160);
+            margin-bottom: rem(16);
+        }
+    }
+
+    &__addresses {
+        display: flex;
+        flex-direction: column;
+
+        @include below($mobile) {
+            width: 100%;
+        }
+
+        .radio {
+            font-family: $helvetica;
+            font-size: rem(14);
+            font-weight: 300;
+            line-height: rem(16);
+            justify-content: flex-start;
+
+
+            &:not(:last-of-type) {
+                margin-bottom: rem(16);
+            }
+        }
+    }
+}
+
+#quickBuy {
+    height: auto!important;
+
+    @include below($mobile) {
+        height: 100vh!important;
+    }
+}

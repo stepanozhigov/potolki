@@ -1,4 +1,4 @@
-<div class="formUr formUr__content" id="formUrPopup">
+.<div class="formUr formUr__content" id="formUrPopup">
 	<h3 class="formUr__title">Редактировать юридическое лицо</h3>
 	<form id="formUr" action="https://jsonplaceholder.typicode.com/posts" method="post">
 		<label class="formUr__input-wrap">

@@ -973,7 +973,7 @@ body {
 
     &_active {
         background: white;
-        z-index: 102;
+        z-index: 9999999;
         display: flex;
         position: fixed;
         top: 50%;

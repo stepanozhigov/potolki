@@ -1056,3 +1056,11 @@ $('.climatPersonalData__checkbox').on('change', function () {
         $('.climatPersonalData__ur').removeClass('active');
     }
 });
+
+$('.quickBuy').on('change', 'input[name=shipping]', function () {
+    if ($(this).val() === 'pickup') {
+        $('.quickBuy__issuePoints').addClass('active');
+    } else {
+        $('.quickBuy__issuePoints').removeClass('active');
+    }
+});
