@@ -1,8 +1,8 @@
-<article data-src="#condition_popup" class="climatCard js-show">
+<article class="climatCard">
     <div class="climatCard__heading">
         <div class="climatCard__preview">
             <img class="climatCard__image" src="/img/climat/condition.jpg" alt="">
-            <div class="climatCard__preview-tip">
+            <div data-src="#condition_popup" class="climatCard__preview-tip js-show">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="11" viewBox="0 0 16 11">
                 	<defs><path id="sojda" d="M509.41 967.601c0-.803-.242-1.546-.648-2.172-.966-.546-2.192-.929-3.762-.929-.961 0-1.786.15-2.51.384a3.972 3.972 0 0 0-1.08 2.717 4 4 0 0 0 8 0z"/><path id="sojdb" d="M512 969.5s-2.398 4-7 4c-3.866 0-7-4-7-4s1.273-5 7-5 7 5 7 5z"/><path id="sojdc" d="M504.46 966.695a1.46 1.46 0 0 1 2.046.208 1.46 1.46 0 0 1-.208 2.045c-.386.316-.89.397-1.337.265"/></defs>
                 	<g>
