@@ -419,6 +419,14 @@ class PageController extends Controller
         ]);
     }
 
+    public function serverError (City $city)
+    {
+        return view('common.pages.serverError', [
+			'city'  =>  $city,
+            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
+        ]);
+    }
+
     public function sitemap (Request $request) {
         $cities = City::all();
         $pages = [

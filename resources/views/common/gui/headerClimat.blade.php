@@ -95,17 +95,20 @@
         </a>
 	</div>
 	<div class="headerClimat__footer">
-        <a class="headerClimat__link" href="javascript:void(0);">Бытовые <span>кондиционеры</span> </a>
-        <a class="headerClimat__link" href="javascript:void(0);">Коммерческие <span>кондиционеры</span> </a>
-        <a class="headerClimat__link" href="javascript:void(0);">Промышленные <span>кондиционеры</span> </a>
-        <a class="headerClimat__link" href="javascript:void(0);">Установка</a>
-        <a class="headerClimat__link" href="javascript:void(0);">Опт</a>
-        <a class="headerClimat__more" href="javascript:void(0);">Ещё</a>
-        <div class="headerClimat__dropdown">
-            <a class="headerClimat__link" href="javascript:void(0);">Промышленные <span>кондиционеры</span> </a>
-            <a class="headerClimat__link" href="javascript:void(0);">Установка</a>
-            <a class="headerClimat__link" href="javascript:void(0);">Опт</a>
-        </div>
+		<div class="headerClimat__footer-content">
+			<a class="headerClimat__link" href="javascript:void(0);">Бытовые <span>кондиционеры</span> </a>
+	        <a class="headerClimat__link" href="javascript:void(0);">Коммерческие <span>кондиционеры</span> </a>
+	        <a class="headerClimat__link" href="javascript:void(0);">Промышленные <span>кондиционеры</span> </a>
+	        <a class="headerClimat__link" href="javascript:void(0);">Установка</a>
+	        <a class="headerClimat__link" href="javascript:void(0);">Опт</a>
+	        <a class="headerClimat__more" href="javascript:void(0);">Ещё</a>
+	        <div class="headerClimat__dropdown">
+	            <a class="headerClimat__link" href="javascript:void(0);">Промышленные <span>кондиционеры</span> </a>
+	            <a class="headerClimat__link" href="javascript:void(0);">Установка</a>
+	            <a class="headerClimat__link" href="javascript:void(0);">Опт</a>
+	        </div>
+		</div>
+
 	</div>
     @include('common.gui.mobileMenu')
     <button class="goTop" type="button" name="button">

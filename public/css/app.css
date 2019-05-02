@@ -1717,7 +1717,7 @@ corresponds to the arrow we want to display */
   .titles.seo-block__content,
   .header_sticky .titles.header__content,
   .titles.headerClimat__main,
-  .titles.headerClimat__footer,
+  .titles.headerClimat__footer-content,
   .titles.catalogue__content,
   .titles#ceilings-calc,
   .titles.ceilingsCalc,
@@ -1759,7 +1759,8 @@ corresponds to the arrow we want to display */
   .titles.climatOrder,
   .titles.climatMaintenance,
   .titles.climatPersonalData,
-  .titles.videoblock__content {
+  .titles.videoblock__content,
+  .titles.serverError__content {
     margin-bottom: 3.125rem;
   }
 
@@ -2656,7 +2657,7 @@ corresponds to the arrow we want to display */
 .survey.seo-block__content,
 .header_sticky .survey.header__content,
 .survey.headerClimat__main,
-.survey.headerClimat__footer,
+.survey.headerClimat__footer-content,
 .survey.catalogue__content,
 .survey#ceilings-calc,
 .survey.ceilingsCalc,
@@ -2698,7 +2699,8 @@ corresponds to the arrow we want to display */
 .survey.climatOrder,
 .survey.climatMaintenance,
 .survey.climatPersonalData,
-.survey.videoblock__content {
+.survey.videoblock__content,
+.survey.serverError__content {
   margin-bottom: 5rem;
 }
 
@@ -4289,7 +4291,7 @@ input {
 .catalog-cards.seo-block__content,
 .header_sticky .catalog-cards.header__content,
 .catalog-cards.headerClimat__main,
-.catalog-cards.headerClimat__footer,
+.catalog-cards.headerClimat__footer-content,
 .catalog-cards.catalogue__content,
 .catalog-cards#ceilings-calc,
 .catalog-cards.ceilingsCalc,
@@ -4331,7 +4333,8 @@ input {
 .catalog-cards.climatOrder,
 .catalog-cards.climatMaintenance,
 .catalog-cards.climatPersonalData,
-.catalog-cards.videoblock__content {
+.catalog-cards.videoblock__content,
+.catalog-cards.serverError__content {
   margin-bottom: 7rem;
 }
 
@@ -4340,7 +4343,7 @@ input {
   .catalog-cards.seo-block__content,
   .header_sticky .catalog-cards.header__content,
   .catalog-cards.headerClimat__main,
-  .catalog-cards.headerClimat__footer,
+  .catalog-cards.headerClimat__footer-content,
   .catalog-cards.catalogue__content,
   .catalog-cards#ceilings-calc,
   .catalog-cards.ceilingsCalc,
@@ -4382,7 +4385,8 @@ input {
   .catalog-cards.climatOrder,
   .catalog-cards.climatMaintenance,
   .catalog-cards.climatPersonalData,
-  .catalog-cards.videoblock__content {
+  .catalog-cards.videoblock__content,
+  .catalog-cards.serverError__content {
     margin-bottom: 64px;
   }
 }
@@ -5615,7 +5619,7 @@ input {
 
 .headerClimat__shipping {
   margin-right: 2rem;
-  color: #485058;
+  color: #f4f6f8;
   font-family: "Helvetica Neue", sans-serif;
   font-size: 0.75rem;
   font-weight: 300;
@@ -5642,7 +5646,7 @@ input {
           justify-content: flex-start;
   padding: 0.5rem 0;
   padding-bottom: 0;
-  background-color: #f4f6f8;
+  background-color: #485058;
 }
 
 @media screen and (max-width: 79.9375rem) {
@@ -5784,6 +5788,11 @@ input {
 
 .headerClimat__heading .whatsapp.header__whatsapp {
   margin-right: 3rem;
+  color: #f4f6f8;
+}
+
+.headerClimat__heading .whatsapp.header__whatsapp:hover {
+  color: #f4f6f8;
 }
 
 @media screen and (max-width: 79.9375rem) {
@@ -5821,8 +5830,21 @@ input {
   }
 }
 
+.headerClimat__heading .header__callback {
+  color: #f4f6f8;
+}
+
+.headerClimat__heading .header__callback::after {
+  border-bottom: 0.0625rem dashed #f4f6f8;
+}
+
 .headerClimat__heading .header__phone {
   margin-right: 1rem;
+  color: #f4f6f8;
+}
+
+.headerClimat__heading .header__phone:hover {
+  color: #f4f6f8;
 }
 
 @media screen and (max-width: 79.9375rem) {
@@ -5863,7 +5885,7 @@ input {
 .headerClimat__heading .header_sticky .header__content,
 .header_sticky .headerClimat__heading .header__content,
 .headerClimat__heading .headerClimat__main,
-.headerClimat__heading .headerClimat__footer,
+.headerClimat__heading .headerClimat__footer-content,
 .headerClimat__heading .catalogue__content,
 .headerClimat__heading #ceilings-calc,
 .headerClimat__heading .ceilingsCalc,
@@ -5907,7 +5929,8 @@ input {
 .headerClimat__heading .climatOrder,
 .headerClimat__heading .climatMaintenance,
 .headerClimat__heading .climatPersonalData,
-.headerClimat__heading .videoblock__content {
+.headerClimat__heading .videoblock__content,
+.headerClimat__heading .serverError__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -5938,6 +5961,7 @@ input {
   font-size: 0.75rem;
   line-height: 1;
   padding-bottom: 0;
+  color: #f4f6f8;
 }
 
 .headerClimat__heading .menu__item.menu__item_dropdown {
@@ -5955,12 +5979,21 @@ input {
 }
 
 .headerClimat__heading .menu__item_dropdown:hover .menu__dropdown:after {
-  border-color: #f4f6f8 transparent transparent;
+  border-color: #485058 transparent transparent;
+}
+
+.headerClimat__heading .menu__item_dropdown:hover .menu__dropdown:before {
+  border-color: #485058 transparent transparent;
 }
 
 .headerClimat__heading .dropdown__item.dropdown__item_active {
   font-size: 0.75rem;
   line-height: 1;
+  color: #f4f6f8;
+}
+
+.headerClimat__heading .header__offices :hover .dropdown__item.dropdown__item_active {
+  color: #485058;
 }
 
 .headerClimat__heading .header__offices {
@@ -6080,7 +6113,6 @@ input {
       -ms-flex-align: center;
           align-items: center;
   padding: 2rem 0;
-  border-bottom: 0.0625rem solid #e6e8ea;
 }
 
 @media screen and (max-width: 44.9375rem) {
@@ -6502,6 +6534,12 @@ input {
 }
 
 .headerClimat__footer {
+  background-color: #f8f9fa;
+  -webkit-box-shadow: inset 0 1px 0 #dcdee0;
+          box-shadow: inset 0 1px 0 #dcdee0;
+}
+
+.headerClimat__footer-content {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6890,7 +6928,7 @@ body.no-scroll .header__close {
 .seo-block__content,
 .header_sticky .header__content,
 .headerClimat__main,
-.headerClimat__footer,
+.headerClimat__footer-content,
 .catalogue__content,
 #ceilings-calc,
 .ceilingsCalc,
@@ -6932,7 +6970,8 @@ body.no-scroll .header__close {
 .climatOrder,
 .climatMaintenance,
 .climatPersonalData,
-.videoblock__content {
+.videoblock__content,
+.serverError__content {
   width: 73.75rem;
   margin: 0 auto;
 }
@@ -6942,7 +6981,7 @@ body.no-scroll .header__close {
   .seo-block__content,
   .header_sticky .header__content,
   .headerClimat__main,
-  .headerClimat__footer,
+  .headerClimat__footer-content,
   .catalogue__content,
   #ceilings-calc,
   .ceilingsCalc,
@@ -6984,7 +7023,8 @@ body.no-scroll .header__close {
   .climatOrder,
   .climatMaintenance,
   .climatPersonalData,
-  .videoblock__content {
+  .videoblock__content,
+  .serverError__content {
     width: calc(100% - 32px);
     margin: 0 1rem;
   }
@@ -6995,7 +7035,7 @@ body.no-scroll .header__close {
   .seo-block__content,
   .header_sticky .header__content,
   .headerClimat__main,
-  .headerClimat__footer,
+  .headerClimat__footer-content,
   .catalogue__content,
   #ceilings-calc,
   .ceilingsCalc,
@@ -7037,7 +7077,8 @@ body.no-scroll .header__close {
   .climatOrder,
   .climatMaintenance,
   .climatPersonalData,
-  .videoblock__content {
+  .videoblock__content,
+  .serverError__content {
     width: calc(100% - 32px);
     margin: 0 1rem;
   }
@@ -7048,7 +7089,7 @@ body.no-scroll .header__close {
   .seo-block__content,
   .header_sticky .header__content,
   .headerClimat__main,
-  .headerClimat__footer,
+  .headerClimat__footer-content,
   .catalogue__content,
   #ceilings-calc,
   .ceilingsCalc,
@@ -7090,7 +7131,8 @@ body.no-scroll .header__close {
   .climatOrder,
   .climatMaintenance,
   .climatPersonalData,
-  .videoblock__content {
+  .videoblock__content,
+  .serverError__content {
     width: calc(100% - 16px);
     margin: 0 0.5rem;
   }
@@ -18135,7 +18177,7 @@ input[type=text]::-ms-reveal {
 .articles.articles_main .header_sticky .articles__list.header__content,
 .header_sticky .articles.articles_main .articles__list.header__content,
 .articles.articles_main .articles__list.headerClimat__main,
-.articles.articles_main .articles__list.headerClimat__footer,
+.articles.articles_main .articles__list.headerClimat__footer-content,
 .articles.articles_main .articles__list.catalogue__content,
 .articles.articles_main .articles__list#ceilings-calc,
 .articles.articles_main .articles__list.ceilingsCalc,
@@ -18178,7 +18220,8 @@ input[type=text]::-ms-reveal {
 .articles.articles_main .articles__list.climatOrder,
 .articles.articles_main .articles__list.climatMaintenance,
 .articles.articles_main .articles__list.climatPersonalData,
-.articles.articles_main .articles__list.videoblock__content {
+.articles.articles_main .articles__list.videoblock__content,
+.articles.articles_main .articles__list.serverError__content {
   margin-bottom: 3rem;
 }
 
@@ -35100,6 +35143,314 @@ input[type=text]::-ms-reveal {
   100% {
     -webkit-transform: translate(-50%, -50%) rotate(360deg);
             transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.serverError {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("/img/gui/error_505.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  .serverError {
+    background-size: cover;
+    background-image: url("/img/gui/error_505@2x.jpg");
+  }
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .serverError {
+    background-size: cover;
+    background-image: url("/img/gui/error_505-768@1x.jpg");
+  }
+}
+
+@media screen and (max-width: 79.9375rem) and (-webkit-min-device-pixel-ratio: 1.5), screen and (max-width: 79.9375rem) and (min-resolution: 144dpi), screen and (max-width: 79.9375rem) and (min-resolution: 1.5dppx) {
+  .serverError {
+    background-size: cover;
+    background-image: url("/img/gui/error_505-768@2x.jpg");
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .serverError {
+    background-size: cover;
+    height: auto;
+    width: 100%;
+    background-image: url("/img/gui/error_505-360@1x.jpg");
+  }
+}
+
+@media screen and (max-width: 44.9375rem) and (-webkit-min-device-pixel-ratio: 1.5), screen and (max-width: 44.9375rem) and (min-resolution: 144dpi), screen and (max-width: 44.9375rem) and (min-resolution: 1.5dppx) {
+  .serverError {
+    background-size: cover;
+    background-image: url("/img/gui/error_505-360@2x.jpg");
+  }
+}
+
+.serverError__content {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 4rem 0;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .serverError__content {
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .serverError__content {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+.serverError__content .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  margin-bottom: 8rem;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .serverError__content .logo {
+    margin-bottom: 4.625rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .serverError__content .logo {
+    margin-bottom: 2.625rem;
+  }
+}
+
+.serverError__content .logo__icon {
+  width: 2.4375rem;
+  height: 2.875rem;
+  margin-right: 0.625rem;
+}
+
+.serverError__content .logo__text {
+  width: 7.625rem;
+  height: auto;
+}
+
+.serverError__name {
+  margin: 0;
+  margin-bottom: 0.375rem;
+  color: #ffffff;
+  font-family: "Futura PT", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .serverError__name {
+    font-size: 0.875rem;
+  }
+}
+
+.serverError__title {
+  margin: 0;
+  margin-bottom: 1.125rem;
+  color: #ffffff;
+  font-family: "Playfair Display", serif;
+  font-size: 3.625rem;
+  font-weight: 400;
+  line-height: 3.3125rem;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .serverError__title {
+    font-size: 2.625rem;
+    line-height: 2.375rem;
+    margin-bottom: 1.375rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .serverError__title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.serverError__desc {
+  margin: 0;
+  margin-bottom: 6.75rem;
+  color: #ffffff;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1.375rem;
+  font-weight: 300;
+  line-height: 2rem;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .serverError__desc {
+    line-height: 1.5rem;
+    margin-bottom: 3.5625rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .serverError__desc {
+    margin-bottom: 2.9375rem;
+  }
+}
+
+.serverError__actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: auto;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .serverError__actions {
+    margin-bottom: 2.5rem;
+  }
+}
+
+.serverError__actions-title {
+  margin: 0;
+  margin-bottom: 1.125rem;
+  color: #ffffff;
+  font-family: "Playfair Display", serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .serverError__actions-title {
+    font-size: 1.625rem;
+    line-height: 1.9375rem;
+    margin-bottom: 0.375rem;
+  }
+}
+
+.serverError__actions ul {
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  list-style-type: none;
+}
+
+.serverError__actions-item {
+  position: relative;
+  color: #ffffff;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.375rem;
+  padding-left: 1.625rem;
+}
+
+.serverError__actions-item:not(:last-of-type) {
+  margin-bottom: 0.5rem;
+}
+
+.serverError__actions-item a {
+  color: #ffffff;
+}
+
+.serverError__actions-item::before {
+  position: absolute;
+  content: '';
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.serverError__refresh::before {
+  width: 1rem;
+  height: 1rem;
+  left: 0;
+  background-image: url("/img/gui/505_refresh.svg");
+}
+
+.serverError__wait::before {
+  width: 1rem;
+  height: 1rem;
+  left: 0;
+  background-image: url("/img/gui/505_wait.svg");
+}
+
+.serverError__report::before {
+  width: 1rem;
+  height: 0.9375rem;
+  left: 0;
+  background-image: url("/img/gui/505_report.svg");
+}
+
+.serverError__call::before {
+  width: 0.625rem;
+  height: 1rem;
+  left: 0.125rem;
+  background-image: url("/img/gui/505_call.svg");
+}
+
+.serverError__mail::before {
+  width: 0.9375rem;
+  height: 0.625rem;
+  left: 0;
+  background-image: url("/img/gui/505_mail.svg");
+}
+
+.serverError__socials .socials__item {
+  width: auto;
+}
+
+.serverError__socials .socials__item:not(:last-of-type) {
+  margin-right: 0.75rem;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .serverError__socials .socials__item:not(:last-of-type) {
+    margin-right: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .serverError__socials .socials__icon {
+    width: 3rem;
+    height: 3rem;
   }
 }
 

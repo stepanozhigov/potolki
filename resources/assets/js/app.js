@@ -1014,6 +1014,10 @@ $('.climatOrdering__more').on('click', function () {
     }
 });
 
+$('.serverError__refresh-link').on('click', function () {
+    location.reload();
+});
+
 
 let onResizeOrder = function () {
     if ($(window).width() <= 720) {

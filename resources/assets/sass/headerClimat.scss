@@ -2,7 +2,7 @@
 
     &__shipping {
         margin-right: rem(32);
-        color: #485058;
+        color: #f4f6f8;
         font-family: $helvetica;
         font-size: rem(12);
         font-weight: 300;
@@ -21,7 +21,7 @@
         justify-content: flex-start;
         padding: rem(8) 0;
         padding-bottom: 0;
-        background-color: #f4f6f8;
+        background-color: #485058;
 
 		@include below($tablet) {
 			padding: rem(16) 0;
@@ -66,6 +66,11 @@
 
 		.whatsapp.header__whatsapp {
 			margin-right: rem(48);
+			color: #f4f6f8;
+
+			&:hover {
+				color: #f4f6f8;
+			}
 
 			@include below($tablet) {
 				flex-direction: row;
@@ -92,9 +97,22 @@
 			}
 		}
 
+		.header__callback {
+			color: #f4f6f8;
+
+			&::after {
+				border-bottom: 0.0625rem dashed #f4f6f8;
+			}
+		}
+
 
 		.header__phone {
 			margin-right: rem(16);
+			color: #f4f6f8;
+
+			&:hover {
+				color: #f4f6f8;
+			}
 
 			@include below($tablet) {
 				flex-direction: row;
@@ -147,10 +165,13 @@
             align-self: center;
         }
 
+
+
         .menu__item.js-toggle-submenu {
             font-size: rem(12);
             line-height: 1;
             padding-bottom: 0;
+			color: #f4f6f8;
         }
 
         .menu__item.menu__item_dropdown {
@@ -166,13 +187,26 @@
 		}
 
 		.menu__item_dropdown:hover .menu__dropdown:after {
-			border-color: #f4f6f8 transparent transparent;
+			border-color: #485058 transparent transparent;
+		}
+
+		.menu__item_dropdown:hover .menu__dropdown:before {
+			border-color: #485058 transparent transparent;
 		}
 
         .dropdown__item.dropdown__item_active {
             font-size: rem(12);
             line-height: 1;
+			color: #f4f6f8;
         }
+
+        .header__offices :hover {
+            .dropdown__item.dropdown__item_active {
+                color: #485058;
+            }
+        }
+
+
 
         .header__offices {
             min-width: rem(256);
@@ -205,8 +239,6 @@
         display: flex;
         align-items: center;
         padding: rem(32) 0;
-        border-bottom: rem(1) solid #e6e8ea;
-
         @include below($mobile) {
             padding: rem(24) 0;
         }
@@ -555,13 +587,18 @@
     }
 
     &__footer {
-		position: relative;
-        @extend .container;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-		padding-top: rem(12);
-        padding-bottom: rem(12);
+        background-color: #f8f9fa;
+        box-shadow: inset 0 1px 0 #dcdee0;
+
+        &-content {
+            @extend .container;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+    		padding-top: rem(12);
+            padding-bottom: rem(12);
+        }
     }
 
     &__more {

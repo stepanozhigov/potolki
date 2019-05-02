@@ -14668,6 +14668,10 @@ $('.climatOrdering__more').on('click', function () {
     }
 });
 
+$('.serverError__refresh-link').on('click', function () {
+    location.reload();
+});
+
 var onResizeOrder = function onResizeOrder() {
     if ($(window).width() <= 720) {
         $('.climatOrdering__next').on('click', function () {
