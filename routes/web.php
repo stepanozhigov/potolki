@@ -46,7 +46,7 @@ Route::prefix('/ajax')->group(function () {
 
 Route::prefix('/{city}')->group(function () {
 
-    Route::get('/', 'PageController@main')->name('windows.main');
+    Route::get('/', 'PageController@ceilings')->name('ceilings');
 
     Route::get('/calculator/{type?}', 'PageController@calculator')->name('calculator');
 
@@ -80,9 +80,9 @@ Route::prefix('/{city}')->group(function () {
 
     Route::get('/agreement', 'PageController@agreement')->name('agreement');
 
-    Route::get('/catalogue/{type}', 'PageController@catalogue')->name('catalogue');
+    //Route::get('/catalogue/{type}', 'PageController@catalogue')->name('catalogue');
 
-    Route::get('/ceilings', 'PageController@ceilings')->name('ceilings');
+    //Route::get('/ceilings', 'PageController@ceilings')->name('ceilings');
 
     Route::get('/zamenaPolotna', 'PageController@zamenaPolotna')->name('zamenaPolotna');
 
@@ -96,7 +96,7 @@ Route::prefix('/{city}')->group(function () {
 
     Route::get('/notFound', 'PageController@notFound')->name('notFound');
 
-    Route::get('/catalogueDetail', 'PageController@catalogueDetail')->name('catalogueDetail');
+    Route::get('/catalogue', 'PageController@catalogueDetail')->name('catalogue');
 
     Route::get('/photoprint', 'PageController@photoprint')->name('photoprint');
 
@@ -114,9 +114,4 @@ Route::prefix('/{city}')->group(function () {
 
     Route::get('/credit', 'PageController@credit')->name('credit');
 
-    Route::get('/climat', 'PageController@climat')->name('climat');
-
-    Route::get('/climatCatalogue', 'PageController@climatCatalogue')->name('climatCatalogue');
-
-    Route::get('/climatDetail', 'PageController@climatDetail')->name('climatDetail');
 });

@@ -5,10 +5,10 @@
 
     <main class=" page page_index">
         <section class="index-offer">
-            <h1 class="title index-offer__title">Фабрика пластиковых окон «Твой&#160;стиль»</h1>
+            <h1 class="title index-offer__title">Фабрика натяжных потолков «Твой&#160;стиль»</h1>
             <p class="intro index-offer__intro">Выберите город, чтобы перейти на&nbspсайт</p>
             <div class="index-offer__buttons">
-                <a href="{{ route('windows.main', ['city' => 'sochi']) }}" class="button index-offer__button">Выбрать Сочи</a>
+                <a href="{{ route('ceilings', ['city' => 'sochi']) }}" class="button index-offer__button">Выбрать Сочи</a>
                 <a href="#cities" class="button button_gray index-offer__button">Выбрать другой город</a>
             </div>
         </section>
@@ -18,7 +18,7 @@
                 'secondTitle'  =>  'Филиалы в других городах'
             ])
             @foreach($cities as $city)
-                <a href="{{ route('windows.main', ['city' => $city->code]) }}" class="button button_inline cities__item">{{ $city->name }}</a>
+                <a href="{{ route('ceilings', ['city' => $city->code]) }}" class="button button_inline cities__item">{{ $city->name }}</a>
             @endforeach
             <p class="intro cities__intro">Нет вашего города? Воспользуйтесь поиском</p>
             <div id="city-search" class="cities__search">

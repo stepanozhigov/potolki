@@ -10,4 +10,9 @@ class Direction extends Model
     {
         return $this->hasMany('App\Manufacturer');
     }
+
+    public function catalogueItems ()
+    {
+    	return $this->hasMany('App\CatalogType');
+    }
 }

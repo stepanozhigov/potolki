@@ -51,11 +51,9 @@
         <nav class="footer__nav">
             <div class="nav-group footer__item">
                 <a href="javascript:void(0);" class="card-title footer__title js-open">Каталог</a>
-                <a href="{{ route('catalogue', ['city' => $city, 'type' => 'balkoni']) }}" class="red-hoverable subtext subtext_white nav-group__item">Балконы</a>
-                <a href="{{ route('catalogue', ['city' => $city, 'type' => 'okna']) }}" class="red-hoverable subtext subtext_white nav-group__item">Окна</a>
-                <!--<a href="{{ route('calculator', ['city' => $city, 'type' => 'dveri']) }}" class="red-hoverable subtext subtext_white nav-group__item">Двери</a>
-                <a href="{{ route('calculator', ['city' => $city, 'type' => 'peregorodki']) }}" class="red-hoverable subtext subtext_white nav-group__item">Перегородки</a>
-                <a href="{{ route('calculator', ['city' => $city, 'type' => 'zhalyuzi']) }}" class="red-hoverable subtext subtext_white nav-group__item">Жалюзи</a>-->
+                @foreach($currentDirection->catalogueItems as $type)
+                <a href="{{ route('catalogue', ['city' => $city, 'type' => $type]) }}" class="red-hoverable subtext subtext_white nav-group__item">{{ $type->name }}</a>
+                @endforeach
             </div>
             <div class="nav-group footer__item">
                 <a href="javascript:void(0);" class="card-title footer__title js-open">Услуги</a>
@@ -90,7 +88,7 @@
     <div class="footer__row footer__row_dark">
         <div class="container footer__copyright">
             <div class="footer__company">
-                <a href="{{ route('windows.main', $city) }}" class="logo logo_white footer__logo">
+                <a href="{{ route('ceilings', $city) }}" class="logo logo_white footer__logo">
                     <img class="logo__icon" src="/img/gui/logo-icon.svg" alt="логотип Твой Стиль">
                     <img class="logo__text" src="/img/gui/logo-text.svg" alt="графема Твой Стиль">
                 </a>

@@ -27,8 +27,11 @@ class AppServiceProvider extends ServiceProvider
 
         View::share('cities', City::all());
         //View::share('currentCity', request()->route()->city);
-        View::share('directions', Direction::where('id', '!=', 1)->get());
-        View::share('currentDirection',Direction::find(1));
+        View::share('directions', Direction::where('id', '!=', 2)->get());
+        View::share('currentDirection',Direction::find(2));
+
+        \Route::pattern('domain', '[a-z0-9.\-]+'); 
+        //parent::boot();
     }
 
     /**

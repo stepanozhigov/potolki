@@ -4,7 +4,7 @@ $city = $city ?? App\City::find(1);
 <header class="header">
     <div class="header__top ">
 		<div class="header__top-content container">
-			<a href="{{ route('windows.main', $city) }}" class="header__logo logo">
+			<a href="{{ route('ceilings', $city) }}" class="header__logo logo">
 	            <img class="logo__icon" src="/img/gui/logo-icon.svg" alt="логотип Твой Стиль">
 	            <img class="logo__text mobile-hide" src="/img/gui/logo-text.svg" alt="графема Твой Стиль">
 	        </a>
@@ -24,21 +24,9 @@ $city = $city ?? App\City::find(1);
 	        <nav class="menu header__menu" id="">
 	            <div class="menu__item menu__item_dropdown">
 
-	                <a href="{{ route('calculator', $city) }}" class="text menu__item js-toggle-submenu">Калькулятор</a>
+	                <a href="{{ route('ceilingsCalc', $city) }}" class="text menu__item js-toggle-submenu">Калькулятор</a>
 
-	                <div class="menu__dropdown">
-                        <div class="menu__dropdown-heading">
-                            <a href="javascript:void(0);" class="menu__item-nav">
-                                <img width="8" height="16" src="/img/gui/arrow_menu.svg" alt="">
-                            </a>
-                            <a href="{{ route('calculator', $city) }}" class="text menu__dropdown-link">Калькулятор</a>
-                        </div>
-	                    <a href="{{ route('calculator', ['city' => $city, 'type' => 'okna']) }}" class="text menu__item menu__item_bordered">Окна</a>
-	                    <a href="{{ route('calculator', ['city' => $city, 'type' => 'balkony']) }}" class="text menu__item menu__item_bordered">Балконы</a>
-	                    <!--<a href="{{ route('calculator', ['city' => $city, 'type' => 'dveri']) }}" class="text menu__item menu__item_bordered">Двери</a>
-	                    <a href="{{ route('calculator', ['city' => $city, 'type' => 'peregorodki']) }}" class="text menu__item menu__item_bordered">Перегородки</a>
-	                    <a href="{{ route('calculator', ['city' => $city, 'type' => 'zhalyuzi']) }}" class="text menu__item menu__item_bordered">Жалюзи</a>-->
-	                </div>
+	                
 	            </div>
 
 	            <a href="{{ route('services', [$city, 'measurements']) }}" class="text menu__item">Бесплатный замер</a>
@@ -69,7 +57,7 @@ $city = $city ?? App\City::find(1);
 		</div>
     </div>
     <div class="header__bottom container">
-        @if (!empty(\Request::route()) && \Request::route()->getName() != 'windows.main')
+        @if (!empty(\Request::route()) && \Request::route()->getName() != 'ceilings')
             {{ Breadcrumbs::render(\Request::route()->getName(), $city) }}
         @else
             <div class="header__offices dropdown">
@@ -89,7 +77,7 @@ $city = $city ?? App\City::find(1);
                     <p class="dropdown__title">Офисы в других городах</p>
                     @foreach($cities as $otherCity)
                         @if ($otherCity->offices->count() > 0 && $otherCity->id !== $city->id)
-                            <a href="{{ route('windows.main', $otherCity) }}" class="text dropdown__item dropdown__item_bordered red-hoverable">{{ $otherCity->name}}</a>
+                            <a href="{{ route('ceilings', $otherCity) }}" class="text dropdown__item dropdown__item_bordered red-hoverable">{{ $otherCity->name}}</a>
                         @endif
                     @endforeach
                     <p class="dropdown__title">Не нашли ваш город?</p>
@@ -109,7 +97,7 @@ $city = $city ?? App\City::find(1);
 </header>
 <div class="header header_hidden">
     <div class="header__content">
-        <a href="{{ route('windows.main', $city) }}" class="logo">
+        <a href="{{ route('ceilings', $city) }}" class="logo">
             <img class="logo__icon" src="/img/gui/logo-icon.svg" alt="логотип Твой Стиль">
             <img class="logo__text mobile-hide" src="/img/gui/logo-text.svg" alt="графема Твой Стиль">
         </a>
