@@ -31,7 +31,7 @@ class PageController extends Controller
     }
     public function index () {
         return view('common.pages.index', [
-            'directions' => Direction::where('id', '!=', 1)->get(),
+            'directions' => Direction::where('id', '!=', 2)->get(),
             'cities'    =>  City::where('id', '!=', 1)->with('offices')->get(),
             'currentCity'   =>  City::find(1),
             'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
@@ -44,7 +44,7 @@ class PageController extends Controller
             'reviews'   =>  Review::limit(3)->orderBy('sort', 'asc')->get(),
             'photos'    =>  Photo::all(),
             'offers'    =>  Offer::where('is_active', 1)->get(),
-            'catalogTypes'  => CatalogType::where(['direction_id' => 1])->get(),
+            'catalogTypes'  => CatalogType::where(['direction_id' => 2])->get(),
             'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first(),
             'articles' => Article::where('is_active', 1)->orderBy('sort', 'asc')->get()
         ]);
@@ -220,7 +220,7 @@ class PageController extends Controller
             'reviews'   =>  Review::limit(3)->orderBy('sort', 'asc')->get(),
             'photos'    =>  Photo::all(),
             'offers'    =>  Offer::where('is_active', 1)->get(),
-            'catalogTypes'  => CatalogType::where(['direction_id' => 1])->get(),
+            'catalogTypes'  => CatalogType::where(['direction_id' => 2])->get(),
             'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first(),
             'articles' => Article::where(['is_active' => 1, 'in_main' => 1])->orderBy('sort', 'asc')->get()
         ]);
@@ -334,7 +334,7 @@ class PageController extends Controller
     {
         return view('ceilings.catalogueCeilings', [
             'city'  =>  $city,
-			'catalogTypes'  => CatalogType::where(['direction_id' => 1])->get(),
+			'catalogTypes'  => CatalogType::where(['direction_id' => 2])->get(),
             'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first(),
             'articles' => Article::where(['is_active' => 1, 'in_main' => 1])->orderBy('sort', 'asc')->get()
         ]);
@@ -347,7 +347,7 @@ class PageController extends Controller
             'reviews'   =>  Review::limit(3)->orderBy('sort', 'asc')->get(),
             'photos'    =>  Photo::all(),
             'offers'    =>  Offer::where('is_active', 1)->get(),
-            'catalogTypes'  => CatalogType::where(['direction_id' => 1])->get(),
+            'catalogTypes'  => CatalogType::where(['direction_id' => 2])->get(),
             'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first(),
             'articles' => Article::where(['is_active' => 1, 'in_main' => 1])->orderBy('sort', 'asc')->get()
         ]);

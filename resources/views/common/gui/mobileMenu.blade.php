@@ -1,6 +1,6 @@
 
 <nav class="mobileMenu" id="mobileMenu">
-    <a class="mobileMenu__heading" href="{{ route('windows.main', $city) }}">
+    <a class="mobileMenu__heading" href="{{ route('ceilings', $city) }}">
         <img class="mobileMenu__logo-icon" src="/img/gui/logo-icon.svg" alt="логотип Твой Стиль">
         <img class="mobileMenu__logo-text" src="/img/gui/logo-text.svg" alt="графема Твой Стиль">
     </a>

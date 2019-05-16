@@ -92,7 +92,7 @@
         <div class="catalog-cards__content">
             @foreach ($catalogTypes as $type)
                 <? if ($type->id == 5) continue ?>
-                <a href="{{ route('catalogue', ['city' => $city]) }}" class=" catalog-cards__item b-card is-hoverable">
+                <a href="{{ route('catalogue', ['city' => $city, 'type' => $type]) }}" class=" catalog-cards__item b-card is-hoverable">
                     <img src="{{ Storage::url($type->img) }}" alt="{{ $type->name }}" class="catalog-cards__img">
                     <div class="catalog-cards__item-info">
                         <h3 class="card-title catalog-cards__title">{{ $type->name }}</h3>
@@ -108,7 +108,7 @@
             @endforeach
             <div class="buttons">
     			<button class="button buttons__item js-show" data-src="#popup_callback" data-title="Вызов замерщика" data-button="Вызвать замерщика">Вызвать замерщика</button>
-                <a href="{{ route('catalogue', $city) }}" class="button  button_gray">Перейти в каталог</a>
+                <a href="{{ route('catalogueCeilings', ['city' => $city]) }}" class="button  button_gray">Перейти в каталог</a>
             </div>
         </div>
 
