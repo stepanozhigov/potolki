@@ -26,6 +26,9 @@
             <button data-src="#popup_callback" class="button main-offer__button mobile-only js-show">Вызвать замерщика</button>
         </div>
     </section>
+    <div class="container">
+        <iframe class="container" src="http://potolki-ts.ru/kit-np" width="1180" height="680" style="border: none;"></iframe>
+    </div>
     <section class="whyus whyus_main whyus_ceilings">
         @include('common.gui.titles', [
             'overtitle' =>  'Наши преимущества',

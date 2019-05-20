@@ -13738,6 +13738,8 @@ var rateYo = __webpack_require__(23);
 $(document).ready(function () {
     var yaCounter = typeof window.yaCounter43807824 !== 'undefined' ? window.yaCounter43807824 : undefined,
         gaCounter = typeof ga !== 'undefined' ? ga.getAll()[0] : undefined;
+
+    console.log(yaCounter, gaCounter);
 });
 
 window.Vue2TouchEvents = __webpack_require__(24);
@@ -40367,7 +40369,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.list-complete-item {\r\n  -webkit-transition: all 1s;\r\n  transition: all 1s;\r\n  display: inline-block;\r\n  margin-right: 10px;\n}\n.list-complete-enter, .list-complete-leave-to\r\n/* .list-complete-leave-active до версии 2.1.8 */ {\r\n  opacity: 0;\r\n  -webkit-transform: translateY(30px);\r\n          transform: translateY(30px);\n}\n.list-complete-leave-active {\r\n  position: absolute;\r\n  display: none;\n}\r\n", ""]);
+exports.push([module.i, "\n.list-complete-item {\n  -webkit-transition: all 1s;\n  transition: all 1s;\n  display: inline-block;\n  margin-right: 10px;\n}\n.list-complete-enter, .list-complete-leave-to\n/* .list-complete-leave-active до версии 2.1.8 */ {\n  opacity: 0;\n  -webkit-transform: translateY(30px);\n          transform: translateY(30px);\n}\n.list-complete-leave-active {\n  position: absolute;\n  display: none;\n}\n", ""]);
 
 // exports
 
@@ -44711,7 +44713,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.manufacturers__item {\r\n    -webkit-transition: all 1s;\r\n    transition: all 1s;\n}\n.list-enter {\r\n     opacity: 0;\r\n     -webkit-transform: translateX(250px);\r\n             transform: translateX(250px);\n}\n.list-leave-active {\r\n    opacity: 0;\r\n    position: absolute;\r\n    -webkit-transform: translateX(-250px);\r\n            transform: translateX(-250px);\n}\r\n\r\n\r\n", ""]);
+exports.push([module.i, "\n.manufacturers__item {\n    -webkit-transition: all 1s;\n    transition: all 1s;\n}\n.list-enter {\n     opacity: 0;\n     -webkit-transform: translateX(250px);\n             transform: translateX(250px);\n}\n.list-leave-active {\n    opacity: 0;\n    position: absolute;\n    -webkit-transform: translateX(-250px);\n            transform: translateX(-250px);\n}\n\n\n", ""]);
 
 // exports
 
@@ -45011,7 +45013,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.banks__item {\r\n    -webkit-transition: all 1s;\r\n    transition: all 1s;\n}\n.list-enter {\r\n     opacity: 0;\r\n     -webkit-transform: translateX(250px);\r\n             transform: translateX(250px);\n}\n.list-leave-active {\r\n    opacity: 0;\r\n    position: absolute;\r\n    -webkit-transform: translateX(-250px);\r\n            transform: translateX(-250px);\n}\r\n\r\n\r\n", ""]);
+exports.push([module.i, "\n.banks__item {\n    -webkit-transition: all 1s;\n    transition: all 1s;\n}\n.list-enter {\n     opacity: 0;\n     -webkit-transform: translateX(250px);\n             transform: translateX(250px);\n}\n.list-leave-active {\n    opacity: 0;\n    position: absolute;\n    -webkit-transform: translateX(-250px);\n            transform: translateX(-250px);\n}\n\n\n", ""]);
 
 // exports
 

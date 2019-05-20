@@ -17,6 +17,8 @@ var rateYo = require('rateyo/src/jquery.rateyo.js');
 $(document).ready(function () {
     var yaCounter = typeof window.yaCounter43807824 !== 'undefined' ? window.yaCounter43807824: undefined,
     gaCounter = typeof ga !== 'undefined' ? ga.getAll()[0] : undefined;
+
+    console.log(yaCounter, gaCounter);
 });
 
 window.Vue2TouchEvents = require('vue2-touch-events');
