@@ -1068,3 +1068,27 @@ $('.quickBuy').on('change', 'input[name=shipping]', function () {
         $('.quickBuy__issuePoints').removeClass('active');
     }
 });
+
+$('.climatDelivery__item-heading').on('click', function () {
+    let heading = $(this);
+    heading.closest('.climatDelivery__item').siblings().removeClass('climatDelivery__item_opened');
+    heading.closest('.climatDelivery__item').toggleClass('climatDelivery__item_opened');
+    $('html, body').animate({
+        scrollTop: heading.offset().top
+    }, 500);
+});
+
+$('.climatDelivery__subitem-heading').on('click', function () {
+    let heading = $(this);
+    heading.closest('.climatDelivery__subitem').siblings().removeClass('climatDelivery__subitem_opened');
+    heading.closest('.climatDelivery__subitem').toggleClass('climatDelivery__subitem_opened');
+});
+
+$('.climatInstall__video-arrow').on('click', function () {
+    $(this).prev('.climatInstall__video-desc').toggleClass('opened');
+});
+
+$('.climat-seo__seo-open').on('click', function () {
+    $(this).prev('.climat-seo__seo-content').toggleClass('opened');
+    $(this).toggleClass('reversed');
+});

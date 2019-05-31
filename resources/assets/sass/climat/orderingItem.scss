@@ -238,6 +238,7 @@
             bottom: rem(66);
             left: rem(196);
 			justify-content: flex-end;
+			align-items: center;
         }
 
         &::after {
@@ -260,6 +261,7 @@
         font-family: $helvetica;
         font-size: rem(16);
         color: #50555f;
+		line-height: normal;
 
         @include below($tablet) {
             margin: 0;

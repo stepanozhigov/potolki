@@ -20,7 +20,7 @@
                         Зайти снова через некоторое время
                     </li>
                     <li class="serverError__actions-item serverError__report">
-                        <a  data-src="#popup_callback" class="js-show" href="javascript:void(0);">Пожаловаться</a> в нашу техподдержку
+                        <a href="javascript:void(0);">Пожаловаться</a> в нашу техподдержку
                     </li>
                     <li class="serverError__actions-item serverError__call">
                         Позвонить нам <a href="tel:8 800 333-97-14">8 800 333-97-14</a>
@@ -31,7 +31,7 @@
                 </ul>
             </div>
 
-            <div class="socials serverError__socials">
+            <div class="socials socials_white serverError__socials">
                 <a href="" class="socials__item red-hoverable">
     				<div class="socials__icon socials__icon_insta"></div>
                 </a>
@@ -43,6 +43,9 @@
                 </a>
                 <a href="" class="socials__item red-hoverable">
                     <div class="socials__icon socials__icon_ok"></div>
+                </a>
+                <a href="" class="socials__item red-hoverable">
+                    <div class="socials__icon socials__icon_youtube"></div>
                 </a>
             </div>
         </div>

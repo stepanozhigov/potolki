@@ -37,6 +37,10 @@
     <img src="/img/gui/close.svg" alt="" class="popup__close js-close">
     @include('climat.quickBuy')
 </div>
+<div class="popup" id="videoBlock">
+    <img src="/img/gui/close.svg" alt="" class="popup__close js-close">
+    <iframe width="900" height="506" src="https://www.youtube.com/embed/ZzBDdgLxTxE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 <div id="overlay" class="overlay js-close"></div>
 </main>
 
@@ -66,41 +70,28 @@
         </div>
         <nav class="footer__nav">
             <div class="nav-group footer__item">
-                <a href="javascript:void(0);" class="card-title footer__title js-open">Каталог</a>
-                <a href="{{ route('catalogue', ['city' => $city, 'type' => 'balkoni']) }}" class="red-hoverable subtext subtext_white nav-group__item">Балконы</a>
-                <a href="{{ route('catalogue', ['city' => $city, 'type' => 'okna']) }}" class="red-hoverable subtext subtext_white nav-group__item">Окна</a>
-                <!--<a href="{{ route('calculator', ['city' => $city, 'type' => 'dveri']) }}" class="red-hoverable subtext subtext_white nav-group__item">Двери</a>
-                <a href="{{ route('calculator', ['city' => $city, 'type' => 'peregorodki']) }}" class="red-hoverable subtext subtext_white nav-group__item">Перегородки</a>
-                <a href="{{ route('calculator', ['city' => $city, 'type' => 'zhalyuzi']) }}" class="red-hoverable subtext subtext_white nav-group__item">Жалюзи</a>-->
+                <a href="javascript:void(0);" class="card-title footer__title js-open">Каталог товаров</a>
+                <a href="javascript:void(0);" class="red-hoverable subtext subtext_white nav-group__item">Бытовые кондиционеры</a>
+                <a href="javascript:void(0);" class="red-hoverable subtext subtext_white nav-group__item">Коммерческие кондиционеры</a>
+                <a href="javascript:void(0);" class="red-hoverable subtext subtext_white nav-group__item">Чиллер-фанкоил системы</a>
+                <a href="javascript:void(0);" class="red-hoverable subtext subtext_white nav-group__item">Крышные кондиционеры</a>
+                <a href="javascript:void(0);" class="red-hoverable subtext subtext_white nav-group__item">VRV и VRF системы</a>
             </div>
             <div class="nav-group footer__item">
                 <a href="javascript:void(0);" class="card-title footer__title js-open">Услуги</a>
-                <a href="{{ route('services', ['city' => $city, 'type' => 'measurements']) }}" class="red-hoverable subtext subtext_white nav-group__item">Бесплатный замер</a>
-                <a href="{{ route('services', ['city' => $city, 'type' => 'install']) }}" class="red-hoverable subtext subtext_white nav-group__item">Установка</a>
                 <a href="{{ route('services', ['city' => $city, 'type' => 'delivery']) }}" class="red-hoverable subtext subtext_white nav-group__item">Доставка</a>
-                <a href="{{ route('services', ['city' => $city, 'type' => 'repair']) }}" class="red-hoverable subtext subtext_white nav-group__item">Ремонт</a>
-            </div>
-            <div class="nav-group footer__item">
-                <a href="javascript:void(0);" class="card-title footer__title js-open">Наши работы</a>
-                <a href="{{ route('photos', ['city' => $city, 'type' => 'peregorodki']) }}" class="red-hoverable subtext subtext_white nav-group__item">Перегородки</a>
-                <a href="{{ route('photos', ['city' => $city, 'type' => 'zhalyuzi']) }}" class="red-hoverable subtext subtext_white nav-group__item">Жалюзи</a>
-                <a href="{{ route('photos', ['city' => $city, 'type' => 'balkony']) }}" class="red-hoverable subtext subtext_white nav-group__item">Балконы</a>
-                <a href="{{ route('photos', ['city' => $city, 'type' => 'dveri']) }}" class="red-hoverable subtext subtext_white nav-group__item">Двери</a>
-                <a href="{{ route('photos', ['city' => $city, 'type' => 'okna']) }}" class="red-hoverable subtext subtext_white nav-group__item">Окна</a>
-            </div>
-            <div class="nav-group footer__item">
-                <a href="javascript:void(0);" class="card-title footer__title js-open">Акции</a>
-                <a href="{{ route('services', ['city' => $city, 'type' => 'credit']) }}" class="red-hoverable subtext subtext_white nav-group__item">Рассрочка</a>
-                <a href="{{ route('promos', request()->route()->city) }}" class="red-hoverable subtext subtext_white nav-group__item">Скидки</a>
+				<a href="javascript:void(0);" class="red-hoverable subtext subtext_white nav-group__item">Монтаж и настройка</a>
+				<a href="javascript:void(0);" class="red-hoverable subtext subtext_white nav-group__item">Проектирование систем</a>
+				<a href="javascript:void(0);" class="red-hoverable subtext subtext_white nav-group__item">Сервисное обслуживание</a>
             </div>
             <div class="nav-group footer__item">
                 <a href="javascript:void(0);" class="card-title footer__title js-open">Информация</a>
-                <a href="{{ route('dirMessage', request()->route()->city) }}" class="red-hoverable subtext subtext_white nav-group__item">Написать директору</a>
-                <a href="{{ route('about', request()->route()->city) }}" class="red-hoverable subtext subtext_white nav-group__item">О компании</a>
-                <a href="{{ route('contacts', request()->route()->city) }}" class="red-hoverable subtext subtext_white nav-group__item">Контакты</a>
-                <a href="{{ route('reviews', request()->route()->city) }}" class="red-hoverable subtext subtext_white nav-group__item">Отзывы</a>
-                <a href="{{ route('articles', request()->route()->city) }}" class="red-hoverable subtext subtext_white nav-group__item">Статьи</a>
-            </div>
+				<a href="{{ route('about', request()->route()->city) }}" class="red-hoverable subtext subtext_white nav-group__item">О компании</a>
+				<a href="javascript:void(0);" class="red-hoverable subtext subtext_white nav-group__item">Доставка и оплата</a>
+				<a href="{{ route('reviews', request()->route()->city) }}" class="red-hoverable subtext subtext_white nav-group__item">Отзывы клиентов</a>
+				<a href="{{ route('contacts', request()->route()->city) }}" class="red-hoverable subtext subtext_white nav-group__item">Контактная информация</a>
+				<a href="javascript:void(0);" class="red-hoverable subtext subtext_white nav-group__item">Партнерам</a>
+				<a href="javascript:void(0);" class="red-hoverable subtext subtext_white nav-group__item">Помощь в выборе</a>
         </nav>
     </div>
     <div class="footer__row footer__row_dark">

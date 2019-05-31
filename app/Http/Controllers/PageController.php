@@ -427,6 +427,22 @@ class PageController extends Controller
         ]);
     }
 
+    public function climatDelivery (City $city)
+    {
+        return view('climat.climatDelivery', [
+			'city'  =>  $city,
+            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
+        ]);
+    }
+
+    public function climatInstall (City $city)
+    {
+        return view('climat.climatInstall', [
+			'city'  =>  $city,
+            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
+        ]);
+    }
+
     public function sitemap (Request $request) {
         $cities = City::all();
         $pages = [
