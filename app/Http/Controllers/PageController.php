@@ -46,7 +46,7 @@ class PageController extends Controller
             'offers'    =>  Offer::where('is_active', 1)->get(),
             'catalogTypes'  => CatalogType::where(['direction_id' => 1])->get(),
             'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first(),
-            'articles' => Article::where('is_active', 1)->orderBy('sort', 'asc')->get()
+            'articles' => Article::where('is_active', 1)->orderBy('id', 'desc')->get()
         ]);
     }
     public function photos (City $city, CatalogType $type = null)
@@ -191,7 +191,7 @@ class PageController extends Controller
     {
         return view('common.pages.articles', [
             'city'  =>  $city,
-            'articles' => Article::where('is_active', 1)->orderBy('sort', 'asc')->get(),
+            'articles' => Article::where('is_active', 1)->orderBy('id', 'desc')->get(),
             'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
     }
@@ -222,7 +222,7 @@ class PageController extends Controller
             'offers'    =>  Offer::where('is_active', 1)->get(),
             'catalogTypes'  => CatalogType::where(['direction_id' => 1])->get(),
             'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first(),
-            'articles' => Article::where(['is_active' => 1, 'in_main' => 1])->orderBy('sort', 'asc')->get()
+            'articles' => Article::where(['is_active' => 1, 'in_main' => 1])->orderBy('id', 'desc')->get()
         ]);
     }
 
@@ -336,7 +336,7 @@ class PageController extends Controller
             'city'  =>  $city,
 			'catalogTypes'  => CatalogType::where(['direction_id' => 1])->get(),
             'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first(),
-            'articles' => Article::where(['is_active' => 1, 'in_main' => 1])->orderBy('sort', 'asc')->get()
+            'articles' => Article::where(['is_active' => 1, 'in_main' => 1])->orderBy('id', 'desc')->get()
         ]);
     }
 
@@ -349,7 +349,7 @@ class PageController extends Controller
             'offers'    =>  Offer::where('is_active', 1)->get(),
             'catalogTypes'  => CatalogType::where(['direction_id' => 1])->get(),
             'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first(),
-            'articles' => Article::where(['is_active' => 1, 'in_main' => 1])->orderBy('sort', 'asc')->get()
+            'articles' => Article::where(['is_active' => 1, 'in_main' => 1])->orderBy('id', 'desc')->get()
         ]);
     }
 
@@ -359,7 +359,7 @@ class PageController extends Controller
 			'city'  =>  $city,
             'reviews'   =>  Review::limit(3)->orderBy('sort', 'asc')->get(),
             'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first(),
-            'articles' => Article::where(['is_active' => 1, 'in_main' => 1])->orderBy('sort', 'asc')->get()
+            'articles' => Article::where(['is_active' => 1, 'in_main' => 1])->orderBy('id', 'desc')->get()
         ]);
     }
 

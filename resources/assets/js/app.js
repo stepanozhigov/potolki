@@ -17,6 +17,8 @@ var rateYo = require('rateyo/src/jquery.rateyo.js');
 $(document).ready(function () {
     var yaCounter = typeof window.yaCounter43807824 !== 'undefined' ? window.yaCounter43807824: undefined,
     gaCounter = typeof ga !== 'undefined' ? ga.getAll()[0] : undefined;
+
+    console.log(yaCounter, gaCounter);
 });
 
 window.Vue2TouchEvents = require('vue2-touch-events');
@@ -53,7 +55,7 @@ Vue.component('posts-list', require('./components/ArticlesList.vue'));
 Vue.component('manufacturers', require('./components/ManufacturersCarousel.vue'));
 Vue.component('banks', require('./components/banksCarousel.vue'));
 Vue.component('menu-city-search', require('./components/MenuCitySearch.vue'));
-//Vue.component('portfolio-photos', require('./components/PortfolioPhotos.vue'));
+Vue.component('portfolio-photos', require('./components/PortfolioPhotos.vue'));
 
 
 
@@ -170,11 +172,11 @@ $('.js-add-comment').each(function(index, element) {
     })
 })
 
-// if ($('#portfolio-photos').length > 0) {
-//     const portfolioPhotos = new Vue({
-//         el: '#portfolio-photos'
-//     });
-// }
+if ($('#portfolio-photos').length > 0) {
+     const portfolioPhotos = new Vue({
+        el: '#portfolio-photos'
+    });
+}
 
 if ($('#city-search').length > 0) {
     const citySearch = new Vue({
@@ -641,18 +643,30 @@ $('.catalog-cards__item').on('click', '.catalog-cards__open', function () {
     $(this).closest('.catalog-cards__item').toggleClass('opened');
 });
 
+$(document).on('submit', '.crm-webform-form-container', function (e) {
+    if (typeof window.yaCounter43807824 !== 'undefined') {
+        console.log(123);
+        window.yaCounter43807824.reachGoal('chat');
+    }
+    if (typeof gaCounter !== 'undefined') {
+        ga.getAll()[0].send('event', 'chat', 'start');
+    }
+    fbq('track', 'Lead');
+});
 
 $('.form').on('submit', function (event) {
     event.preventDefault();
     var $this = $(this);
 
-    if (typeof yaCounter !== 'undefined') {
-        yaCounter.reachGoal('form-sub');
+    if (typeof window.yaCounter43807824 !== 'undefined') {
+        window.yaCounter43807824.reachGoal('form-sub');
     }
     if (typeof gaCounter !== 'undefined') {
-        gaCounter.send('event', 'forms', 'sub');
-    }
+        ga.getAll()[0].send('event', 'forms', 'sub');
 
+    }
+    fbq('track', 'Lead');
+    
     $.ajax({
         url: $this.attr('action'),
         data: $this.serialize(),
@@ -666,25 +680,24 @@ $('.form').on('submit', function (event) {
 });
 
 $('.phone').on('click', function () {
-
-    if (typeof yaCounter !== 'undefined') {
-        yaCounter.reachGoal('phone-click');
+    if (typeof window.yaCounter43807824 !== 'undefined') {
+        window.yaCounter43807824.reachGoal('phone-click');
     }
-    if (typeof gaCounter !== 'undefined') {
-        gaCounter.send('event', 'click', 'phone');
+    if (typeof ga.getAll() !== 'undefined') {
+        ga.getAll()[0].send('event', 'click', 'phone');
     }
-
+    fbq('track', 'Lead');
 
 });
 
 $('.whatsapp').on('click', function () {
-    if (typeof yaCounter !== 'undefined') {
-        yaCounter.reachGoal('whatsapp');
+    if (typeof window.yaCounter43807824 !== 'undefined') {
+        window.yaCounter43807824.reachGoal('whatsapp');
     }
-    if (typeof gaCounter !== 'undefined') {
-        gaCounter.send('event', 'whatsapp', 'click');
+    if (typeof ga.getAll() !== 'undefined') {
+        ga.getAll()[0].send('event', 'whatsapp', 'click');
     }
-
+  	fbq('track', 'Lead');
 
 })
 

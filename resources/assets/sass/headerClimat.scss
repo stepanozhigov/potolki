@@ -399,4 +399,19 @@
             }
         }
     }
+
+	.goTop {
+		position: fixed;
+		right: 0;
+		bottom: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: rem(56);
+		height: rem(56);
+		box-shadow: 0 8px 8px rgba(0, 0, 0, 0.12), 0 0 8px rgba(0, 0, 0, 0.08), inset 0 -1px 0 rgba(0, 0, 0, 0.12);
+		border-radius: 5px 0 0 5px;
+		background-color: #f4f6f8;
+	}
 }

@@ -60,7 +60,7 @@
                     </div>
                     <div class="socials">
                         <a target="_blank" href="https://www.instagram.com/business_repin/" class="socials__item">
-                            <div class="socials__icon socials__icon_inst"></div>
+                            <div class="socials__icon socials__icon_insta"></div>
                         </a>
                         <a target="_blank" href="https://vk.com/business.repin" class="socials__item">
                             <div class="socials__icon socials__icon_vk"></div>
@@ -174,7 +174,7 @@
                     </a>
                 @endif
             @endforeach
-            
+
         </div>
         <posts :posts="{{ $articles }}"></posts>
 

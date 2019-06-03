@@ -54,6 +54,7 @@
         </nav>
     </div>
     @include('common.gui.mobileMenu')
+	<button class="goTop" type="button" name="button"></button>
 </header>
 <div class="header header_hidden">
     <div class="header__content">
