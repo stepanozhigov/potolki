@@ -165,7 +165,7 @@
             </div>
             <div class="catalogue__footer">
                 <p>Нужна помощь в&nbsp;выборе или расчёте? Закажите звонок и&nbsp;мы&nbsp;перезвоним вам в&nbsp;течении 5&nbsp;минут.</p>
-                <a class="button js-show" data-src="#popup_callback" data-title="Заказать готовую кострукцию" data-button="Сделать заказ" href="javascript:void(0);">Заказать звонок</a>
+                <a class="button js-show" data-src="#popup_callback" data-title="Заказать звонок" data-button="Заказать звонок" href="javascript:void(0);">Заказать звонок</a>
             </div>
         </div>
         <section class="turnkey">

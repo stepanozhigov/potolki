@@ -126,6 +126,11 @@
         </div>
         <img src="/img/windows/img_calculator.jpg" srcset="/img/img_calculator2x.jpg 2x" alt="">
     </section>
+    <div class="discount">
+        <p>Нашли дешевле?</p>
+        <img src="/img/climat/discount.jpg" alt="">
+        <p>Сделаем скидку!</p>
+    </div>
 
     <section class="portfolio portfolio_main b-texture b-texture_square">
         @include('common.gui.titles', ['secondTitle' => 'Примеры наших работ'])
@@ -190,7 +195,10 @@
         <div id="manufacturers__list"></div>
 
     </section>
-    <section class="seo-block seo-block_main" @if($seoData->background_image) style="background-image: url({{ Storage::url($seoData->background_image) }})" @endif>
+    <section class="seo-block seo-block_main"
+    @if ($seoData->background_mobile) data-backgr-mobile="url({{ Storage::url($seoData->background_mobile) }})" @endif
+    @if ($seoData->background_tablet) data-backgr-tablet="url({{ Storage::url($seoData->background_tablet) }})" @endif
+    @if($seoData->background_image) style="background-image: url({{ Storage::url($seoData->background_image) }})" @endif>
         <div class="seo-block__content">
 			<div class="seo-block__item seo-block__item_numbered">
                 <div class="seo-block__item-text">

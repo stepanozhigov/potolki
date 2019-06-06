@@ -11,7 +11,7 @@
             ])
             <div class="promos__content">
                 @foreach($promos as $promo)
-                    <a class="promo b-card promos__item">
+                    <div class="promo b-card promos__item">
                         <img src="{{ Storage::url($promo->image) }}" alt="Фотопечать" class="promo__img">
                         <div class="promo__inner">
                             <p class="card-title promo__title">{!! $promo->title !!}</p>
@@ -25,10 +25,8 @@
                                 <h3 class="promo__subtitle">Дополнительно</h3>
                                 <p class="text promo__text"> {!! $promo->additional !!}</p>
                             </div>
-
-
                         </div>
-                    </a>
+                    </div>
                 @endforeach
             </div>
 

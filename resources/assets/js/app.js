@@ -643,16 +643,12 @@ $('.catalog-cards__item').on('click', '.catalog-cards__open', function () {
     $(this).closest('.catalog-cards__item').toggleClass('opened');
 });
 
-$(document).on('submit', '.crm-webform-form-container', function (e) {
-    if (typeof window.yaCounter43807824 !== 'undefined') {
-        console.log(123);
-        window.yaCounter43807824.reachGoal('chat');
-    }
-    if (typeof gaCounter !== 'undefined') {
-        ga.getAll()[0].send('event', 'chat', 'start');
-    }
-    fbq('track', 'Lead');
-});
+
+BX.SiteButton.addEventHandler('onSubmitSuccess', function(e) {
+            
+        console.log('init', form);
+
+        });
 
 $('.form').on('submit', function (event) {
     event.preventDefault();
