@@ -2,6 +2,14 @@
     padding-top: rem(130);
     margin-bottom: rem(96);
 
+    .titles {
+        padding-top: 0;
+    }
+
+	@include below($tablet) {
+		margin-bottom: rem(128);
+	}
+
     @include below($mobile) {
         display: none;
         margin-bottom: 0;
@@ -69,8 +77,14 @@
         font-family: $helvetica;
         font-size: rem(12);
         font-weight: 300;
-        line-height: 24px;
+        line-height: rem(24);
         text-align: center;
+
+		@include below($tablet) {
+			font-size: rem(14);
+	        font-weight: 300;
+	        line-height: rem(24);
+        }
     }
 
     &__button {
@@ -94,6 +108,7 @@
     }
 
 	&_ceilings {
+		padding-top: rem(96);
 
 		@include below($mobile) {
 			display: none;

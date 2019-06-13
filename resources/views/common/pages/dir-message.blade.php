@@ -15,7 +15,7 @@
 
                 <div class="socials">
                     <a href="" class="socials__item">
-                        <div class="socials__icon socials__icon_inst"></div>
+                        <div class="socials__icon socials__icon_insta"></div>
                     </a>
                     <a href="" class="socials__item">
                         <div class="socials__icon socials__icon_vk"></div>

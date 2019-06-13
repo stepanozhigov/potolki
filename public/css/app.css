@@ -1234,16 +1234,14 @@ corresponds to the arrow we want to display */
   .titles__overtitle {
     font-size: 1.125rem;
     letter-spacing: 0.3125rem;
-    text-transform: uppercase;
   }
 }
 
-@media screen and (max-width: 44.9375rem) {
+@media screen and (max-width: 20.125rem) {
   .overtitle,
   .titles__overtitle {
-    font-size: 1.0625rem;
+    font-size: 1rem;
     letter-spacing: 0.28125rem;
-    text-transform: uppercase;
   }
 }
 
@@ -1305,10 +1303,18 @@ corresponds to the arrow we want to display */
 .second-title,
 .titles__second-title,
 .catalogueDetail__title,
+.catalogueDetail__filter h2,
 .photoprint__title,
 .photobank__title,
 .photoprintBlock__title,
-.climatDetail__additional-value h2 {
+.dillers__item-heading p,
+.dillers__item-heading h2,
+.dillers__item:first-of-type .dillers__item-heading h2,
+.dillers__item:first-of-type:hover .dillers__item-heading h2,
+.dillers__item_offer .dillers__item-heading h2,
+.dillers__offer-heading h4,
+.climatDetail__additional-value h2,
+.constructor__title {
   position: relative;
   margin: 0;
   padding-bottom: 1.5rem;
@@ -1323,10 +1329,18 @@ corresponds to the arrow we want to display */
 .second-title::after,
 .titles__second-title::after,
 .catalogueDetail__title::after,
+.catalogueDetail__filter h2::after,
 .photoprint__title::after,
 .photobank__title::after,
 .photoprintBlock__title::after,
-.climatDetail__additional-value h2::after {
+.dillers__item-heading p::after,
+.dillers__item-heading h2::after,
+.dillers__item:first-of-type .dillers__item-heading h2::after,
+.dillers__item:first-of-type:hover .dillers__item-heading h2::after,
+.dillers__item_offer .dillers__item-heading h2::after,
+.dillers__offer-heading h4::after,
+.climatDetail__additional-value h2::after,
+.constructor__title::after {
   position: absolute;
   content: '';
   bottom: 0;
@@ -1342,10 +1356,18 @@ corresponds to the arrow we want to display */
   .second-title::after,
   .titles__second-title::after,
   .catalogueDetail__title::after,
+  .catalogueDetail__filter h2::after,
   .photoprint__title::after,
   .photobank__title::after,
   .photoprintBlock__title::after,
-  .climatDetail__additional-value h2::after {
+  .dillers__item-heading p::after,
+  .dillers__item-heading h2::after,
+  .dillers__item:first-of-type .dillers__item-heading h2::after,
+  .dillers__item:first-of-type:hover .dillers__item-heading h2::after,
+  .dillers__item_offer .dillers__item-heading h2::after,
+  .dillers__offer-heading h4::after,
+  .climatDetail__additional-value h2::after,
+  .constructor__title::after {
     width: 6.875rem;
   }
 }
@@ -1354,10 +1376,18 @@ corresponds to the arrow we want to display */
   .second-title,
   .titles__second-title,
   .catalogueDetail__title,
+  .catalogueDetail__filter h2,
   .photoprint__title,
   .photobank__title,
   .photoprintBlock__title,
-  .climatDetail__additional-value h2 {
+  .dillers__item-heading p,
+  .dillers__item-heading h2,
+  .dillers__item:first-of-type .dillers__item-heading h2,
+  .dillers__item:first-of-type:hover .dillers__item-heading h2,
+  .dillers__item_offer .dillers__item-heading h2,
+  .dillers__offer-heading h4,
+  .climatDetail__additional-value h2,
+  .constructor__title {
     font-size: 1.625rem;
     line-height: 2rem;
   }
@@ -1367,10 +1397,18 @@ corresponds to the arrow we want to display */
   .second-title,
   .titles__second-title,
   .catalogueDetail__title,
+  .catalogueDetail__filter h2,
   .photoprint__title,
   .photobank__title,
   .photoprintBlock__title,
-  .climatDetail__additional-value h2 {
+  .dillers__item-heading p,
+  .dillers__item-heading h2,
+  .dillers__item:first-of-type .dillers__item-heading h2,
+  .dillers__item:first-of-type:hover .dillers__item-heading h2,
+  .dillers__item_offer .dillers__item-heading h2,
+  .dillers__offer-heading h4,
+  .climatDetail__additional-value h2,
+  .constructor__title {
     font-size: 1.375rem;
     line-height: 1.625rem;
   }
@@ -1384,14 +1422,16 @@ corresponds to the arrow we want to display */
 .reason__title,
 .notFound__content h2,
 .notFound__content p,
-.catalogueDetail__filter p,
 .photoprint__why h3,
 .serviceReasons__title,
-.dillers__heading p,
 .dillers__steps-content h3,
 .dillers__materials button,
 .dillers__materials table th,
 .dillers__materials-table h3,
+.dillers__designers-right h3,
+.dillers__documentation h3,
+.dillers__offer-advantages p,
+.dillers__offer-what h3,
 .climatDetail__additional-value h3 {
   margin: 0;
   font-family: "Playfair Display", serif;
@@ -1410,14 +1450,16 @@ corresponds to the arrow we want to display */
   .reason__title,
   .notFound__content h2,
   .notFound__content p,
-  .catalogueDetail__filter p,
   .photoprint__why h3,
   .serviceReasons__title,
-  .dillers__heading p,
   .dillers__steps-content h3,
   .dillers__materials button,
   .dillers__materials table th,
   .dillers__materials-table h3,
+  .dillers__designers-right h3,
+  .dillers__documentation h3,
+  .dillers__offer-advantages p,
+  .dillers__offer-what h3,
   .climatDetail__additional-value h3 {
     font-size: 1.125rem;
     line-height: 1.375rem;
@@ -1425,7 +1467,8 @@ corresponds to the arrow we want to display */
 }
 
 .card-title,
-.popup__status-send .popup__send-title {
+.popup__status-send .popup__send-title,
+.staffCard h4 {
   color: #485058;
   font-family: "Futura PT", sans-serif;
   font-size: 1.625rem;
@@ -1441,7 +1484,9 @@ corresponds to the arrow we want to display */
 }
 
 .intro,
-.titles__intro {
+.titles__intro,
+.ceilingsCalc .ceilingCalculator__desc,
+.dillers__heading p {
   margin: 0;
   text-align: center;
   color: #485058;
@@ -1457,14 +1502,19 @@ corresponds to the arrow we want to display */
 
 @media screen and (max-width: 44.9375rem) {
   .intro,
-  .titles__intro {
+  .titles__intro,
+  .ceilingsCalc .ceilingCalculator__desc,
+  .dillers__heading p {
     font-size: 1.25rem;
     line-height: 1.875rem;
   }
 }
 
 .text,
+.titles__text,
 .popup__status-send .survey__title,
+.manufacturers__text,
+.articles__text,
 .serviceDetail__info p,
 .reason__text,
 .catalogueDetail__price,
@@ -1481,6 +1531,7 @@ corresponds to the arrow we want to display */
 .dillers__steps-content ul li,
 .dillers__steps-left p,
 .dillers__shipping,
+.dillers__programm,
 .dillers__shipping-type p,
 .dillers__info p,
 .dillers__info-adress dt,
@@ -1488,8 +1539,6 @@ corresponds to the arrow we want to display */
 .dillers__materials p,
 .dillers__materials table td,
 .dillers__designers p,
-.dillers__designers-left a,
-.dillers__designers-right p,
 .dillers__designers-right ul li,
 .dillers__learning p,
 .dillers__learning h3,
@@ -1503,13 +1552,15 @@ corresponds to the arrow we want to display */
 .dillers__documentation-info dd,
 .dillers__offer-header p,
 .dillers__offer-contacts p,
+.dillers__offer-contacts a,
 .dillers__offer-advantages ol li,
 .dillers__offer-heading p,
 .dillers__offer-footer h4,
 .dillers__offer-footer p,
-.staffCard h4,
+.dillers__offer-what ul li,
 .staffCard p,
-.advantages__item p {
+.advantages__item p,
+.constructor__text {
   margin: 0;
   color: #485058;
   font-family: "Helvetica Neue", sans-serif;
@@ -1529,7 +1580,10 @@ corresponds to the arrow we want to display */
 
 @media screen and (max-width: 79.9375rem) {
   .text,
+  .titles__text,
   .popup__status-send .survey__title,
+  .manufacturers__text,
+  .articles__text,
   .serviceDetail__info p,
   .reason__text,
   .catalogueDetail__price,
@@ -1546,6 +1600,7 @@ corresponds to the arrow we want to display */
   .dillers__steps-content ul li,
   .dillers__steps-left p,
   .dillers__shipping,
+  .dillers__programm,
   .dillers__shipping-type p,
   .dillers__info p,
   .dillers__info-adress dt,
@@ -1553,8 +1608,6 @@ corresponds to the arrow we want to display */
   .dillers__materials p,
   .dillers__materials table td,
   .dillers__designers p,
-  .dillers__designers-left a,
-  .dillers__designers-right p,
   .dillers__designers-right ul li,
   .dillers__learning p,
   .dillers__learning h3,
@@ -1568,13 +1621,15 @@ corresponds to the arrow we want to display */
   .dillers__documentation-info dd,
   .dillers__offer-header p,
   .dillers__offer-contacts p,
+  .dillers__offer-contacts a,
   .dillers__offer-advantages ol li,
   .dillers__offer-heading p,
   .dillers__offer-footer h4,
   .dillers__offer-footer p,
-  .staffCard h4,
+  .dillers__offer-what ul li,
   .staffCard p,
-  .advantages__item p {
+  .advantages__item p,
+  .constructor__text {
     font-size: 1.125rem;
     line-height: 1.625rem;
   }
@@ -1643,7 +1698,7 @@ corresponds to the arrow we want to display */
 
 @media screen and (max-width: 44.9375rem) {
   .titles__overtitle {
-    margin-bottom: 0.8125rem;
+    margin-bottom: 1rem;
   }
 }
 
@@ -1673,6 +1728,29 @@ corresponds to the arrow we want to display */
 
 @media screen and (max-width: 79.9375rem) {
   .titles__intro {
+    width: 100%;
+  }
+}
+
+.titles__text {
+  width: 61.25rem;
+  margin-top: -0.5rem;
+  max-height: 6.5rem;
+  overflow: hidden;
+  text-align: center;
+}
+
+.titles__text.opened {
+  max-height: none;
+}
+
+.titles__text.opened + .titles__arrow {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .titles__text {
     width: 100%;
   }
 }
@@ -1740,6 +1818,7 @@ corresponds to the arrow we want to display */
   .titles.catalogueDetail__title,
   .titles.catalogueDetail__price,
   .titles.catalogueDetail__install,
+  .titles.catalogueDetail__desc,
   .titles.photoprint,
   .titles.photobank__wrap,
   .titles.shutterstock,
@@ -1759,20 +1838,26 @@ corresponds to the arrow we want to display */
   .titles.climatOrder,
   .titles.climatMaintenance,
   .titles.climatPersonalData,
+  .titles.constructor,
   .titles.videoblock__content,
-  .titles.serverError__content {
+  .titles.serverError__content,
+  .titles.discount {
     margin-bottom: 3.125rem;
   }
 
   .titles .intro + .titles__arrow,
-  .titles .titles__intro + .titles__arrow {
+  .titles .titles__intro + .titles__arrow,
+  .titles .ceilingsCalc .ceilingCalculator__desc + .titles__arrow,
+  .ceilingsCalc .titles .ceilingCalculator__desc + .titles__arrow,
+  .titles .dillers__heading p + .titles__arrow,
+  .dillers__heading .titles p + .titles__arrow {
     display: block;
   }
 }
 
 .main-offer {
   background: url(/img/windows/main-offer.jpg) no-repeat center;
-  background-size: cover;
+  background-size: auto 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1784,7 +1869,7 @@ corresponds to the arrow we want to display */
       -ms-flex-align: start;
           align-items: flex-start;
   padding: 87px 0 80px 0;
-  background-position: bottom;
+  background-position: bottom center;
 }
 
 @media screen and (max-width: 79.9375rem) {
@@ -1815,6 +1900,13 @@ corresponds to the arrow we want to display */
   letter-spacing: 0.25rem;
 }
 
+@media screen and (max-width: 79.9375rem) {
+  .main-offer__overtitle {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
 @media screen and (max-width: 44.9375rem) {
   .main-offer__overtitle {
     font-size: 0.625rem;
@@ -1828,10 +1920,11 @@ corresponds to the arrow we want to display */
   color: #ffffff;
   text-align: left;
   font-size: 58px;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
   max-width: 560px;
   height: 134px;
   padding-bottom: 0;
+  line-height: 4rem;
 }
 
 .main-offer__title_center {
@@ -1841,12 +1934,6 @@ corresponds to the arrow we want to display */
 
 .main-offer__title:after {
   content: none;
-}
-
-@media screen and (max-width: 79.9375rem) {
-  .main-offer__title {
-    line-height: 3.375rem;
-  }
 }
 
 @media screen and (max-width: 650px) {
@@ -1894,6 +1981,26 @@ corresponds to the arrow we want to display */
 }
 
 @media screen and (max-width: 79.9375rem) {
+  .main-offer__form {
+    width: 20rem;
+  }
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .main-offer__form .form__button {
+    width: 100%;
+  }
+}
+
+.main-offer__form .form__input:not(:last-of-type) {
+  margin-bottom: 1rem;
+}
+
+.main-offer__form .form__input:last-of-type {
+  margin-bottom: 1.5rem;
+}
+
+@media screen and (max-width: 79.9375rem) {
   .main-offer__form .form__input {
     margin-bottom: 1rem;
   }
@@ -1932,6 +2039,42 @@ corresponds to the arrow we want to display */
       -ms-flex-align: start;
           align-items: flex-start;
   color: #ffffff;
+}
+
+.main-offer_ceilings {
+  background-image: url("/img/ceilings/Ceilings1920.jpg");
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  .main-offer_ceilings {
+    background-image: url("/img/ceilings/Ceilings1920@2x.jpg");
+  }
+}
+
+@media screen and (max-width: 60rem) {
+  .main-offer_ceilings {
+    background-image: url("/img/ceilings/Ceilings768.jpg");
+  }
+}
+
+@media screen and (max-width: 60rem) and (-webkit-min-device-pixel-ratio: 1.5), screen and (max-width: 60rem) and (min-resolution: 144dpi), screen and (max-width: 60rem) and (min-resolution: 1.5dppx) {
+  .main-offer_ceilings {
+    background-image: url("/img/ceilings/Ceilings768@2x.jpg");
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .main-offer_ceilings {
+    background-image: url("/img/ceilings/Ceilings320.jpg");
+    background-size: 100% auto;
+    background-position: top center;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) and (-webkit-min-device-pixel-ratio: 1.5), screen and (max-width: 44.9375rem) and (min-resolution: 144dpi), screen and (max-width: 44.9375rem) and (min-resolution: 1.5dppx) {
+  .main-offer_ceilings {
+    background-image: url("/img/ceilings/Ceilings320@2x.jpg");
+  }
 }
 
 .index-offer {
@@ -2067,7 +2210,8 @@ corresponds to the arrow we want to display */
 .shutterstock__link,
 .dillers__price-buttons button,
 .dillers__info button,
-.dillers__documentation button,
+.dillers__designers-right a,
+.dillers__documentation a,
 .dillers__offer-links a,
 .lamps-slider__button,
 .climatCatalogue__all,
@@ -2098,7 +2242,8 @@ corresponds to the arrow we want to display */
 .formUr__submit,
 .formUr__abort,
 .formUr__add,
-.quickBuy__checkout {
+.quickBuy__checkout,
+.constructor__link {
   width: 17.5rem;
   max-width: 100%;
   height: 50px;
@@ -2134,7 +2279,8 @@ corresponds to the arrow we want to display */
 .shutterstock__link:not(button),
 .dillers__price-buttons button:not(button),
 .dillers__info button:not(button),
-.dillers__documentation button:not(button),
+.dillers__designers-right a:not(button),
+.dillers__documentation a:not(button),
 .dillers__offer-links a:not(button),
 .lamps-slider__button:not(button),
 .climatCatalogue__all:not(button),
@@ -2165,7 +2311,8 @@ corresponds to the arrow we want to display */
 .formUr__submit:not(button),
 .formUr__abort:not(button),
 .formUr__add:not(button),
-.quickBuy__checkout:not(button) {
+.quickBuy__checkout:not(button),
+.constructor__link:not(button) {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2179,7 +2326,8 @@ corresponds to the arrow we want to display */
 .shutterstock__link:hover,
 .dillers__price-buttons button:hover,
 .dillers__info button:hover,
-.dillers__documentation button:hover,
+.dillers__designers-right a:hover,
+.dillers__documentation a:hover,
 .dillers__offer-links a:hover,
 .lamps-slider__button:hover,
 .climatCatalogue__all:hover,
@@ -2210,7 +2358,8 @@ corresponds to the arrow we want to display */
 .formUr__submit:hover,
 .formUr__abort:hover,
 .formUr__add:hover,
-.quickBuy__checkout:hover {
+.quickBuy__checkout:hover,
+.constructor__link:hover {
   -webkit-box-shadow: 0 8px 12px rgba(136, 0, 0, 0.2), 0 0 8px rgba(136, 0, 0, 0.12), inset 0 -1px 0 #a01414;
           box-shadow: 0 8px 12px rgba(136, 0, 0, 0.2), 0 0 8px rgba(136, 0, 0, 0.12), inset 0 -1px 0 #a01414;
 }
@@ -2223,7 +2372,8 @@ corresponds to the arrow we want to display */
 .shutterstock__link:active,
 .dillers__price-buttons button:active,
 .dillers__info button:active,
-.dillers__documentation button:active,
+.dillers__designers-right a:active,
+.dillers__documentation a:active,
 .dillers__offer-links a:active,
 .lamps-slider__button:active,
 .climatCatalogue__all:active,
@@ -2254,7 +2404,8 @@ corresponds to the arrow we want to display */
 .formUr__submit:active,
 .formUr__abort:active,
 .formUr__add:active,
-.quickBuy__checkout:active {
+.quickBuy__checkout:active,
+.constructor__link:active {
   background-color: #a01414;
   -webkit-box-shadow: 0 8px 8px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0), inset 0 1px 0 #880000;
           box-shadow: 0 8px 8px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0), inset 0 1px 0 #880000;
@@ -2263,6 +2414,8 @@ corresponds to the arrow we want to display */
 .button_gray,
 .whyus__button,
 .shutterstock__link,
+.dillers__designers-right a,
+.dillers__offer-links a:not(:first-of-type),
 .lamps-slider__button,
 .climatCatalogue__all,
 .climatCard__button,
@@ -2272,7 +2425,8 @@ corresponds to the arrow we want to display */
 .climatOrdering__prev,
 .climatBasket__help,
 .climatPersonalData__add,
-.formUr__add {
+.formUr__add,
+.constructor__link {
   background-color: #a7aaad;
   -webkit-box-shadow: 0 8px 8px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0), inset 0 -1px 0 #646973;
           box-shadow: 0 8px 8px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0), inset 0 -1px 0 #646973;
@@ -2282,6 +2436,8 @@ corresponds to the arrow we want to display */
 .button_gray:hover,
 .whyus__button:hover,
 .shutterstock__link:hover,
+.dillers__designers-right a:hover,
+.dillers__offer-links a:hover:not(:first-of-type),
 .lamps-slider__button:hover,
 .climatCatalogue__all:hover,
 .climatCard__button:hover,
@@ -2291,7 +2447,8 @@ corresponds to the arrow we want to display */
 .climatOrdering__prev:hover,
 .climatBasket__help:hover,
 .climatPersonalData__add:hover,
-.formUr__add:hover {
+.formUr__add:hover,
+.constructor__link:hover {
   -webkit-box-shadow: 0 8px 12px rgba(0, 0, 0, 0.16), 0 0 8px rgba(0, 0, 0, 0.08), inset 0 -1px 0 #646973;
           box-shadow: 0 8px 12px rgba(0, 0, 0, 0.16), 0 0 8px rgba(0, 0, 0, 0.08), inset 0 -1px 0 #646973;
 }
@@ -2299,6 +2456,8 @@ corresponds to the arrow we want to display */
 .button_gray:active,
 .whyus__button:active,
 .shutterstock__link:active,
+.dillers__designers-right a:active,
+.dillers__offer-links a:active:not(:first-of-type),
 .lamps-slider__button:active,
 .climatCatalogue__all:active,
 .climatCard__button:active,
@@ -2308,7 +2467,8 @@ corresponds to the arrow we want to display */
 .climatOrdering__prev:active,
 .climatBasket__help:active,
 .climatPersonalData__add:active,
-.formUr__add:active {
+.formUr__add:active,
+.constructor__link:active {
   background-color: #808890;
   -webkit-box-shadow: 0 8px 8px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0), inset 0 1px 0 #485058;
           box-shadow: 0 8px 8px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0), inset 0 1px 0 #485058;
@@ -2371,6 +2531,20 @@ corresponds to the arrow we want to display */
   font-weight: 300;
   cursor: pointer;
   text-decoration: none;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .tag {
+    padding: 10px 20px;
+    padding-top: 11px;
+  }
+}
+
+.tag:hover {
+  border: 1px solid #dc1414;
+  color: #be1414;
 }
 
 .tag_active {
@@ -2487,11 +2661,22 @@ corresponds to the arrow we want to display */
   .cities .second-title,
   .cities .titles__second-title,
   .cities .catalogueDetail__title,
+  .cities .catalogueDetail__filter h2,
+  .catalogueDetail__filter .cities h2,
   .cities .photoprint__title,
   .cities .photobank__title,
   .cities .photoprintBlock__title,
+  .cities .dillers__item-heading p,
+  .dillers__item-heading .cities p,
+  .cities .dillers__item-heading h2,
+  .dillers__item-heading .cities h2,
+  .cities .dillers__item:first-of-type .dillers__item-heading h2,
+  .dillers__item:first-of-type .dillers__item-heading .cities h2,
+  .cities .dillers__offer-heading h4,
+  .dillers__offer-heading .cities h4,
   .cities .climatDetail__additional-value h2,
-  .climatDetail__additional-value .cities h2 {
+  .climatDetail__additional-value .cities h2,
+  .cities .constructor__title {
     font-size: 1.625rem;
     line-height: 2rem;
   }
@@ -2680,6 +2865,7 @@ corresponds to the arrow we want to display */
 .survey.catalogueDetail__title,
 .survey.catalogueDetail__price,
 .survey.catalogueDetail__install,
+.survey.catalogueDetail__desc,
 .survey.photoprint,
 .survey.photobank__wrap,
 .survey.shutterstock,
@@ -2699,8 +2885,10 @@ corresponds to the arrow we want to display */
 .survey.climatOrder,
 .survey.climatMaintenance,
 .survey.climatPersonalData,
+.survey.constructor,
 .survey.videoblock__content,
-.survey.serverError__content {
+.survey.serverError__content,
+.survey.discount {
   margin-bottom: 5rem;
 }
 
@@ -3063,13 +3251,15 @@ corresponds to the arrow we want to display */
 
 @media screen and (max-width: 79.9375rem) {
   .seo-block {
-    padding-top: 18.5rem;
+    padding-top: 14rem;
+    background-size: 100% auto;
   }
 }
 
 @media screen and (max-width: 44.9375rem) {
   .seo-block {
     padding-top: 16rem;
+    background-size: auto;
   }
 }
 
@@ -3090,7 +3280,7 @@ corresponds to the arrow we want to display */
 @media screen and (max-width: 79.9375rem) {
   .seo-block__content {
     padding: 0;
-    padding-top: 9.0625rem;
+    padding-top: 9rem;
   }
 }
 
@@ -3187,6 +3377,7 @@ corresponds to the arrow we want to display */
 .seo-block__item_numbered .seo-block__item-img {
   width: calc(50% - 10px);
   height: 20rem;
+  border-radius: 0.5rem;
 }
 
 @media screen and (max-width: 79.9375rem) {
@@ -3202,6 +3393,7 @@ corresponds to the arrow we want to display */
     width: calc(100% + 64px);
     margin-left: -2rem;
     margin-right: -2rem;
+    border-radius: 0;
   }
 }
 
@@ -3211,6 +3403,92 @@ corresponds to the arrow we want to display */
     margin-left: -1.5rem;
     margin-right: -1.5rem;
   }
+}
+
+.seo-block__item_numbered .seo-block__item-video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.seo-block__item_numbered .seo-block__item-videoblock {
+  position: relative;
+  width: calc(50% - 10px);
+  height: 20rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .seo-block__item_numbered .seo-block__item-videoblock {
+    width: calc(40% - 20px);
+    height: 19.875rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .seo-block__item_numbered .seo-block__item-videoblock {
+    height: 13.25rem;
+    width: calc(100% + 64px);
+    margin-left: -2rem;
+    margin-right: -2rem;
+    border-radius: 0;
+  }
+}
+
+@media screen and (max-width: 20.125rem) {
+  .seo-block__item_numbered .seo-block__item-videoblock {
+    width: calc(100% + 48px);
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
+}
+
+.seo-block__item_numbered .seo-block__item-videoblock::after {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 50%;
+  width: 4rem;
+  height: 4rem;
+  background-image: url("/img/videoplay.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.seo-block__item_numbered .seo-block__item-videoblock::before {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 50%;
+  width: 7rem;
+  height: 7rem;
+  background-image: url("/img/videotexture_1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-animation: spin 5s linear 0s infinite;
+          animation: spin 5s linear 0s infinite;
+  z-index: 2;
+}
+
+.seo-block__item_numbered .seo-block__item-videoblock p {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 2;
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  color: #f4f6f8;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
 }
 
 .seo-block__item_numbered .seo-block__item-text {
@@ -3278,7 +3556,7 @@ corresponds to the arrow we want to display */
 @media screen and (max-width: 79.9375rem) {
   .seo-block__item_numbered:nth-of-type(2)::before {
     bottom: auto;
-    top: -3.4375rem;
+    top: -4.5rem;
     right: 3.375rem;
     -webkit-transform: rotate(90deg);
             transform: rotate(90deg);
@@ -3288,7 +3566,7 @@ corresponds to the arrow we want to display */
 @media screen and (max-width: 44.9375rem) {
   .seo-block__item_numbered:nth-of-type(2)::before {
     bottom: auto;
-    top: -2.625rem;
+    top: -4rem;
     right: 1rem;
     width: 7rem;
     height: 9.5rem;
@@ -3312,7 +3590,7 @@ corresponds to the arrow we want to display */
 @media screen and (max-width: 79.9375rem) {
   .seo-block__item_numbered:nth-of-type(3)::before {
     bottom: auto;
-    top: -3.4375rem;
+    top: -4.5rem;
     left: 3.375rem;
     -webkit-transform: rotate(90deg);
             transform: rotate(90deg);
@@ -3322,7 +3600,7 @@ corresponds to the arrow we want to display */
 @media screen and (max-width: 44.9375rem) {
   .seo-block__item_numbered:nth-of-type(3)::before {
     bottom: auto;
-    top: -2.625rem;
+    top: -4rem;
     left: 1rem;
     width: 7rem;
     height: 9.5rem;
@@ -3398,6 +3676,19 @@ corresponds to the arrow we want to display */
 @media screen and (max-width: 44.9375rem) {
   .seo-block_main .seo-block__item_numbered:nth-of-type(2) .seo-block__item-img {
     height: 13.25rem;
+  }
+}
+
+.seo-block_ceilings {
+  margin-bottom: 0;
+  padding-bottom: 4rem;
+  border-bottom: 0.0625rem solid #babec2;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .seo-block_ceilings {
+    border-bottom: 0;
+    padding-bottom: 5rem;
   }
 }
 
@@ -4105,8 +4396,8 @@ corresponds to the arrow we want to display */
   top: 1.75rem;
   width: 1.5rem;
   height: 1.5rem;
-  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.12), 0 0 4px rgba(0, 0, 0, 0.08), inset 0 -1px 0 #d0d2d4;
-          box-shadow: 0 0 4px rgba(0, 0, 0, 0.12), 0 0 4px rgba(0, 0, 0, 0.08), inset 0 -1px 0 #d0d2d4;
+  -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.12), 0 0 4px rgba(0, 0, 0, 0.08), inset 0 -1px 0 #d0d2d4;
+          box-shadow: 0 4px 4px rgba(0, 0, 0, 0.12), 0 0 4px rgba(0, 0, 0, 0.08), inset 0 -1px 0 #d0d2d4;
   border: 0.5rem solid #f4f6f8;
   background-color: #babec2;
   -webkit-transition: background-color .3s;
@@ -4121,9 +4412,9 @@ corresponds to the arrow we want to display */
 
 @media screen and (max-width: 60rem) {
   .range_red .irs-handle {
-    top: 2.1875rem;
-    width: 2.875rem;
-    height: 2.875rem;
+    top: 2.375rem;
+    width: 2.5rem;
+    height: 2.5rem;
     border: 0.875rem solid #f4f6f8;
   }
 }
@@ -4151,6 +4442,7 @@ corresponds to the arrow we want to display */
   .range_red .irs-from,
   .range_red .irs-to,
   .range_red .irs-single {
+    top: 0;
     font-size: 2rem;
     line-height: 2rem;
   }
@@ -4314,6 +4606,7 @@ input {
 .catalog-cards.catalogueDetail__title,
 .catalog-cards.catalogueDetail__price,
 .catalog-cards.catalogueDetail__install,
+.catalog-cards.catalogueDetail__desc,
 .catalog-cards.photoprint,
 .catalog-cards.photobank__wrap,
 .catalog-cards.shutterstock,
@@ -4333,8 +4626,10 @@ input {
 .catalog-cards.climatOrder,
 .catalog-cards.climatMaintenance,
 .catalog-cards.climatPersonalData,
+.catalog-cards.constructor,
 .catalog-cards.videoblock__content,
-.catalog-cards.serverError__content {
+.catalog-cards.serverError__content,
+.catalog-cards.discount {
   margin-bottom: 7rem;
 }
 
@@ -4366,6 +4661,7 @@ input {
   .catalog-cards.catalogueDetail__title,
   .catalog-cards.catalogueDetail__price,
   .catalog-cards.catalogueDetail__install,
+  .catalog-cards.catalogueDetail__desc,
   .catalog-cards.photoprint,
   .catalog-cards.photobank__wrap,
   .catalog-cards.shutterstock,
@@ -4385,8 +4681,10 @@ input {
   .catalog-cards.climatOrder,
   .catalog-cards.climatMaintenance,
   .catalog-cards.climatPersonalData,
+  .catalog-cards.constructor,
   .catalog-cards.videoblock__content,
-  .catalog-cards.serverError__content {
+  .catalog-cards.serverError__content,
+  .catalog-cards.discount {
     margin-bottom: 64px;
   }
 }
@@ -4441,7 +4739,7 @@ input {
   .catalog-cards__price {
     font-size: 1.25rem;
     line-height: 1.375rem;
-    font-weight: 400;
+    font-weight: 500;
   }
 }
 
@@ -4452,8 +4750,9 @@ input {
 
 @media screen and (max-width: 44.9375rem) {
   .catalog-cards__number {
-    font-size: 1.25rem;
+    font-size: 1.625rem;
     line-height: 1.375rem;
+    font-weight: 400;
   }
 }
 
@@ -4484,6 +4783,7 @@ input {
   .catalog-cards__title {
     margin-bottom: 0.5rem;
     padding: 0;
+    font-weight: 300;
   }
 }
 
@@ -4534,8 +4834,10 @@ input {
   .dillers__price-buttons .catalog-cards .buttons button,
   .catalog-cards .buttons .dillers__info button,
   .dillers__info .catalog-cards .buttons button,
-  .catalog-cards .buttons .dillers__documentation button,
-  .dillers__documentation .catalog-cards .buttons button,
+  .catalog-cards .buttons .dillers__designers-right a,
+  .dillers__designers-right .catalog-cards .buttons a,
+  .catalog-cards .buttons .dillers__documentation a,
+  .dillers__documentation .catalog-cards .buttons a,
   .catalog-cards .buttons .dillers__offer-links a,
   .dillers__offer-links .catalog-cards .buttons a,
   .catalog-cards .buttons .lamps-slider__button,
@@ -4567,7 +4869,8 @@ input {
   .catalog-cards .buttons .formUr__submit,
   .catalog-cards .buttons .formUr__abort,
   .catalog-cards .buttons .formUr__add,
-  .catalog-cards .buttons .quickBuy__checkout {
+  .catalog-cards .buttons .quickBuy__checkout,
+  .catalog-cards .buttons .constructor__link {
     margin-bottom: 1rem;
     margin-right: 0;
   }
@@ -4575,6 +4878,10 @@ input {
   .catalog-cards .buttons .button_gray,
   .catalog-cards .buttons .whyus__button,
   .catalog-cards .buttons .shutterstock__link,
+  .catalog-cards .buttons .dillers__designers-right a,
+  .dillers__designers-right .catalog-cards .buttons a,
+  .catalog-cards .buttons .dillers__offer-links a:not(:first-of-type),
+  .dillers__offer-links .catalog-cards .buttons a:not(:first-of-type),
   .catalog-cards .buttons .lamps-slider__button,
   .catalog-cards .buttons .climatCatalogue__all,
   .catalog-cards .buttons .climatCard__button,
@@ -4584,8 +4891,15 @@ input {
   .catalog-cards .buttons .climatOrdering__prev,
   .catalog-cards .buttons .climatBasket__help,
   .catalog-cards .buttons .climatPersonalData__add,
-  .catalog-cards .buttons .formUr__add {
+  .catalog-cards .buttons .formUr__add,
+  .catalog-cards .buttons .constructor__link {
     margin: 0;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .catalog-cards .buttons {
+    margin-top: 0;
   }
 }
 
@@ -4609,6 +4923,17 @@ input {
   font-weight: 300;
   line-height: 1.5rem;
   text-decoration: underline;
+}
+
+.catalog-cards__desc {
+  display: none;
+  margin: 0;
+  margin-bottom: 1.5rem;
+  color: #485058;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.1875rem;
 }
 
 .catalog-cards__item {
@@ -4665,6 +4990,12 @@ input {
   padding-bottom: 2rem;
 }
 
+@media screen and (max-width: 44.9375rem) {
+  .catalog-cards__item-info {
+    padding-bottom: 1.5rem;
+  }
+}
+
 .catalog-cards__item_full .catalog-cards__img {
   height: 11.25rem;
 }
@@ -4693,11 +5024,16 @@ input {
 
   .catalog-cards__item_full .catalog-cards__price {
     text-align: left;
-    font-size: 1.375rem;
+    font-size: 1.25rem;
   }
 
   .catalog-cards__item_full .catalog-cards__price span {
-    font-size: 1.375rem;
+    font-size: 1.625rem;
+    font-weight: 400;
+  }
+
+  .catalog-cards__item_full.opened .catalog-cards__item-info {
+    padding-bottom: 2rem;
   }
 
   .catalog-cards__item_full.opened .catalog-cards__img {
@@ -4717,21 +5053,14 @@ input {
 
   .catalog-cards__item_full.opened .catalog-cards__more {
     display: inline;
-  }
-
-  .catalog-cards__item_full.opened .catalog-cards__price {
-    font-size: 1.5625rem;
-  }
-
-  .catalog-cards__item_full.opened .catalog-cards__price span {
-    font-size: 2.25rem;
-    font-weight: 700;
+    margin-bottom: 1.5rem;
   }
 
   .catalog-cards__item_full.opened .catalog-cards__title {
     position: relative;
-    padding-bottom: 1.125rem;
+    padding-bottom: 1rem;
     margin-bottom: 1.5rem;
+    font-weight: 400;
   }
 
   .catalog-cards__item_full.opened .catalog-cards__title::after {
@@ -4749,29 +5078,123 @@ input {
     display: inline;
     text-align: left;
     margin-bottom: 0.375rem;
+    font-size: 0.875rem;
   }
+}
+
+@media screen and (min-width: 79.9375rem) {
+  .catalog-cards__item_withDesc {
+    height: 23.125rem;
+  }
+
+  .catalog-cards__item_withDesc:hover .catalog-cards__desc {
+    display: block;
+  }
+
+  .catalog-cards__item_withDesc:hover .catalog-cards__img {
+    height: auto;
+    min-height: 9.25rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .catalog-cards_ceilings.container,
+  .catalog-cards_ceilings.seo-block__content,
+  .header_sticky .catalog-cards_ceilings.header__content,
+  .catalog-cards_ceilings.headerClimat__main,
+  .catalog-cards_ceilings.headerClimat__footer-content,
+  .catalog-cards_ceilings.catalogue__content,
+  .catalog-cards_ceilings#ceilings-calc,
+  .catalog-cards_ceilings.ceilingsCalc,
+  .catalog-cards_ceilings.reviews,
+  .catalog-cards_ceilings.about__images,
+  .catalog-cards_ceilings.about__rewards,
+  .catalog-cards_ceilings.turnkey,
+  .catalog-cards_ceilings.facture__content,
+  .catalog-cards_ceilings.videogallery__slider,
+  .catalog-cards_ceilings.calculator__inner,
+  .catalog-cards_ceilings.contacts__footer-content,
+  .catalog-cards_ceilings.articles__content,
+  .articles.articles_main .catalog-cards_ceilings.articles__list,
+  .catalog-cards_ceilings.whyus__content,
+  .catalog-cards_ceilings.whyus__stat,
+  .catalog-cards_ceilings.whyus__advantages,
+  .catalog-cards_ceilings.whyus__machine,
+  .whyus_main .catalog-cards_ceilings.titles,
+  .catalog-cards_ceilings.serviceDetail,
+  .catalog-cards_ceilings.catalogueDetail__title,
+  .catalog-cards_ceilings.catalogueDetail__price,
+  .catalog-cards_ceilings.catalogueDetail__install,
+  .catalog-cards_ceilings.catalogueDetail__desc,
+  .catalog-cards_ceilings.photoprint,
+  .catalog-cards_ceilings.photobank__wrap,
+  .catalog-cards_ceilings.shutterstock,
+  .catalog-cards_ceilings.photoprintBlock,
+  .catalog-cards_ceilings.serviceReasons,
+  .catalog-cards_ceilings.lamps,
+  .catalog-cards_ceilings.printprice,
+  .catalog-cards_ceilings.credit,
+  .catalog-cards_ceilings.climatSlider,
+  .catalog-cards_ceilings.climatCatalogue,
+  .catalog-cards_ceilings.climatAdditional,
+  .catalog-cards_ceilings.recent,
+  .catalog-cards_ceilings.climatDetail__main,
+  .catalog-cards_ceilings.climatDetail__additional-content,
+  .catalog-cards_ceilings.climatOrdering,
+  .catalog-cards_ceilings.climatBasket,
+  .catalog-cards_ceilings.climatOrder,
+  .catalog-cards_ceilings.climatMaintenance,
+  .catalog-cards_ceilings.climatPersonalData,
+  .catalog-cards_ceilings.constructor,
+  .catalog-cards_ceilings.videoblock__content,
+  .catalog-cards_ceilings.serverError__content,
+  .catalog-cards_ceilings.discount {
+    margin-bottom: 5rem;
+  }
+}
+
+.catalog-cards_ceilings .titles__arrow {
+  display: none !important;
 }
 
 .catalog-cards_ceilings .titles__intro {
   width: 48.75rem;
   padding: 0 3rem;
+  max-height: none;
 }
 
 @media screen and (max-width: 79.9375rem) {
   .catalog-cards_ceilings .titles__intro {
-    width: 100%;
+    width: 30rem;
     padding: 0;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .catalog-cards_ceilings .titles__intro {
+    width: 100%;
   }
 }
 
 .catalog-cards_ceilings .second-title,
 .catalog-cards_ceilings .titles__second-title,
 .catalog-cards_ceilings .catalogueDetail__title,
+.catalog-cards_ceilings .catalogueDetail__filter h2,
+.catalogueDetail__filter .catalog-cards_ceilings h2,
 .catalog-cards_ceilings .photoprint__title,
 .catalog-cards_ceilings .photobank__title,
 .catalog-cards_ceilings .photoprintBlock__title,
+.catalog-cards_ceilings .dillers__item-heading p,
+.dillers__item-heading .catalog-cards_ceilings p,
+.catalog-cards_ceilings .dillers__item-heading h2,
+.dillers__item-heading .catalog-cards_ceilings h2,
+.catalog-cards_ceilings .dillers__item:first-of-type .dillers__item-heading h2,
+.dillers__item:first-of-type .dillers__item-heading .catalog-cards_ceilings h2,
+.catalog-cards_ceilings .dillers__offer-heading h4,
+.dillers__offer-heading .catalog-cards_ceilings h4,
 .catalog-cards_ceilings .climatDetail__additional-value h2,
-.climatDetail__additional-value .catalog-cards_ceilings h2 {
+.climatDetail__additional-value .catalog-cards_ceilings h2,
+.catalog-cards_ceilings .constructor__title {
   margin-bottom: 2.5rem;
 }
 
@@ -4783,18 +5206,76 @@ input {
   padding-top: 4rem;
 }
 
+@media screen and (max-width: 44.9375rem) {
+  .catalog-cards_ceilings .titles {
+    margin-bottom: 4rem;
+  }
+}
+
 .catalog-cards__desc {
   margin: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   color: #485058;
   font-family: "Helvetica Neue", sans-serif;
   font-size: 0.75rem;
   font-weight: 300;
   line-height: 1.25rem;
   text-align: center;
+  max-height: 3.5rem;
+  overflow: hidden;
 }
 
-.catalog-cards_materials {
+.catalog-cards_materials.container,
+.catalog-cards_materials.seo-block__content,
+.header_sticky .catalog-cards_materials.header__content,
+.catalog-cards_materials.headerClimat__main,
+.catalog-cards_materials.headerClimat__footer-content,
+.catalog-cards_materials.catalogue__content,
+.catalog-cards_materials#ceilings-calc,
+.catalog-cards_materials.ceilingsCalc,
+.catalog-cards_materials.reviews,
+.catalog-cards_materials.about__images,
+.catalog-cards_materials.about__rewards,
+.catalog-cards_materials.turnkey,
+.catalog-cards_materials.facture__content,
+.catalog-cards_materials.videogallery__slider,
+.catalog-cards_materials.calculator__inner,
+.catalog-cards_materials.contacts__footer-content,
+.catalog-cards_materials.articles__content,
+.articles.articles_main .catalog-cards_materials.articles__list,
+.catalog-cards_materials.whyus__content,
+.catalog-cards_materials.whyus__stat,
+.catalog-cards_materials.whyus__advantages,
+.catalog-cards_materials.whyus__machine,
+.whyus_main .catalog-cards_materials.titles,
+.catalog-cards_materials.serviceDetail,
+.catalog-cards_materials.catalogueDetail__title,
+.catalog-cards_materials.catalogueDetail__price,
+.catalog-cards_materials.catalogueDetail__install,
+.catalog-cards_materials.catalogueDetail__desc,
+.catalog-cards_materials.photoprint,
+.catalog-cards_materials.photobank__wrap,
+.catalog-cards_materials.shutterstock,
+.catalog-cards_materials.photoprintBlock,
+.catalog-cards_materials.serviceReasons,
+.catalog-cards_materials.lamps,
+.catalog-cards_materials.printprice,
+.catalog-cards_materials.credit,
+.catalog-cards_materials.climatSlider,
+.catalog-cards_materials.climatCatalogue,
+.catalog-cards_materials.climatAdditional,
+.catalog-cards_materials.recent,
+.catalog-cards_materials.climatDetail__main,
+.catalog-cards_materials.climatDetail__additional-content,
+.catalog-cards_materials.climatOrdering,
+.catalog-cards_materials.climatBasket,
+.catalog-cards_materials.climatOrder,
+.catalog-cards_materials.climatMaintenance,
+.catalog-cards_materials.climatPersonalData,
+.catalog-cards_materials.constructor,
+.catalog-cards_materials.videoblock__content,
+.catalog-cards_materials.serverError__content,
+.catalog-cards_materials.discount {
   margin-bottom: 4rem;
 }
 
@@ -4806,11 +5287,22 @@ input {
 .catalog-cards_materials .titles .second-title,
 .catalog-cards_materials .titles .titles__second-title,
 .catalog-cards_materials .titles .catalogueDetail__title,
+.catalog-cards_materials .titles .catalogueDetail__filter h2,
+.catalogueDetail__filter .catalog-cards_materials .titles h2,
 .catalog-cards_materials .titles .photoprint__title,
 .catalog-cards_materials .titles .photobank__title,
 .catalog-cards_materials .titles .photoprintBlock__title,
+.catalog-cards_materials .titles .dillers__item-heading p,
+.dillers__item-heading .catalog-cards_materials .titles p,
+.catalog-cards_materials .titles .dillers__item-heading h2,
+.dillers__item-heading .catalog-cards_materials .titles h2,
+.catalog-cards_materials .titles .dillers__item:first-of-type:hover .dillers__item-heading h2,
+.dillers__item:first-of-type:hover .dillers__item-heading .catalog-cards_materials .titles h2,
+.catalog-cards_materials .titles .dillers__offer-heading h4,
+.dillers__offer-heading .catalog-cards_materials .titles h4,
 .catalog-cards_materials .titles .climatDetail__additional-value h2,
-.climatDetail__additional-value .catalog-cards_materials .titles h2 {
+.climatDetail__additional-value .catalog-cards_materials .titles h2,
+.catalog-cards_materials .titles .constructor__title {
   margin-bottom: 0;
 }
 
@@ -4822,8 +5314,66 @@ input {
   margin-bottom: -2rem;
 }
 
-.catalog-cards_tech {
-  margin-bottom: 9rem;
+@media screen and (max-width: 79.9375rem) {
+  .catalog-cards_materials .catalog-cards__content {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.catalog-cards_tech.container,
+.catalog-cards_tech.seo-block__content,
+.header_sticky .catalog-cards_tech.header__content,
+.catalog-cards_tech.headerClimat__main,
+.catalog-cards_tech.headerClimat__footer-content,
+.catalog-cards_tech.catalogue__content,
+.catalog-cards_tech#ceilings-calc,
+.catalog-cards_tech.ceilingsCalc,
+.catalog-cards_tech.reviews,
+.catalog-cards_tech.about__images,
+.catalog-cards_tech.about__rewards,
+.catalog-cards_tech.turnkey,
+.catalog-cards_tech.facture__content,
+.catalog-cards_tech.videogallery__slider,
+.catalog-cards_tech.calculator__inner,
+.catalog-cards_tech.contacts__footer-content,
+.catalog-cards_tech.articles__content,
+.articles.articles_main .catalog-cards_tech.articles__list,
+.catalog-cards_tech.whyus__content,
+.catalog-cards_tech.whyus__stat,
+.catalog-cards_tech.whyus__advantages,
+.catalog-cards_tech.whyus__machine,
+.whyus_main .catalog-cards_tech.titles,
+.catalog-cards_tech.serviceDetail,
+.catalog-cards_tech.catalogueDetail__title,
+.catalog-cards_tech.catalogueDetail__price,
+.catalog-cards_tech.catalogueDetail__install,
+.catalog-cards_tech.catalogueDetail__desc,
+.catalog-cards_tech.photoprint,
+.catalog-cards_tech.photobank__wrap,
+.catalog-cards_tech.shutterstock,
+.catalog-cards_tech.photoprintBlock,
+.catalog-cards_tech.serviceReasons,
+.catalog-cards_tech.lamps,
+.catalog-cards_tech.printprice,
+.catalog-cards_tech.credit,
+.catalog-cards_tech.climatSlider,
+.catalog-cards_tech.climatCatalogue,
+.catalog-cards_tech.climatAdditional,
+.catalog-cards_tech.recent,
+.catalog-cards_tech.climatDetail__main,
+.catalog-cards_tech.climatDetail__additional-content,
+.catalog-cards_tech.climatOrdering,
+.catalog-cards_tech.climatBasket,
+.catalog-cards_tech.climatOrder,
+.catalog-cards_tech.climatMaintenance,
+.catalog-cards_tech.climatPersonalData,
+.catalog-cards_tech.constructor,
+.catalog-cards_tech.videoblock__content,
+.catalog-cards_tech.serverError__content,
+.catalog-cards_tech.discount {
+  margin-bottom: 0;
 }
 
 .catalog-cards_tech .titles {
@@ -4834,11 +5384,22 @@ input {
 .catalog-cards_tech .titles .second-title,
 .catalog-cards_tech .titles .titles__second-title,
 .catalog-cards_tech .titles .catalogueDetail__title,
+.catalog-cards_tech .titles .catalogueDetail__filter h2,
+.catalogueDetail__filter .catalog-cards_tech .titles h2,
 .catalog-cards_tech .titles .photoprint__title,
 .catalog-cards_tech .titles .photobank__title,
 .catalog-cards_tech .titles .photoprintBlock__title,
+.catalog-cards_tech .titles .dillers__item-heading p,
+.dillers__item-heading .catalog-cards_tech .titles p,
+.catalog-cards_tech .titles .dillers__item-heading h2,
+.dillers__item-heading .catalog-cards_tech .titles h2,
+.catalog-cards_tech .titles .dillers__item:first-of-type:hover .dillers__item-heading h2,
+.dillers__item:first-of-type:hover .dillers__item-heading .catalog-cards_tech .titles h2,
+.catalog-cards_tech .titles .dillers__offer-heading h4,
+.dillers__offer-heading .catalog-cards_tech .titles h4,
 .catalog-cards_tech .titles .climatDetail__additional-value h2,
-.climatDetail__additional-value .catalog-cards_tech .titles h2 {
+.climatDetail__additional-value .catalog-cards_tech .titles h2,
+.catalog-cards_tech .titles .constructor__title {
   margin-bottom: 0;
 }
 
@@ -5003,7 +5564,7 @@ input {
   margin: -2px 0 0 44px;
   position: relative;
   width: 30%;
-  margin-bottom: 1.5625rem;
+  padding-bottom: 1.5625rem;
 }
 
 @media screen and (max-width: 650px) {
@@ -5017,13 +5578,11 @@ input {
 .header__directions:before {
   content: '';
   position: absolute;
-  top: 50%;
+  top: -11px;
   left: -24px;
   width: .0625rem;
   height: 2.8125rem;
-  background-color: #babec2;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  background-color: #a7aaad;
 }
 
 @media screen and (max-width: 650px) {
@@ -5701,8 +6260,11 @@ input {
   }
 
   .headerClimat__heading .header__feedbacks .header__phone.text,
+  .headerClimat__heading .header__feedbacks .header__phone.titles__text,
   .headerClimat__heading .header__feedbacks .popup__status-send .header__phone.survey__title,
   .popup__status-send .headerClimat__heading .header__feedbacks .header__phone.survey__title,
+  .headerClimat__heading .header__feedbacks .header__phone.manufacturers__text,
+  .headerClimat__heading .header__feedbacks .header__phone.articles__text,
   .headerClimat__heading .header__feedbacks .serviceDetail__info p.header__phone,
   .serviceDetail__info .headerClimat__heading .header__feedbacks p.header__phone,
   .headerClimat__heading .header__feedbacks .header__phone.reason__text,
@@ -5724,6 +6286,7 @@ input {
   .headerClimat__heading .header__feedbacks .dillers__steps-left p.header__phone,
   .dillers__steps-left .headerClimat__heading .header__feedbacks p.header__phone,
   .headerClimat__heading .header__feedbacks .header__phone.dillers__shipping,
+  .headerClimat__heading .header__feedbacks .header__phone.dillers__programm,
   .headerClimat__heading .header__feedbacks .dillers__shipping-type p.header__phone,
   .dillers__shipping-type .headerClimat__heading .header__feedbacks p.header__phone,
   .headerClimat__heading .header__feedbacks .dillers__info p.header__phone,
@@ -5738,10 +6301,6 @@ input {
   .dillers__materials table .headerClimat__heading .header__feedbacks td.header__phone,
   .headerClimat__heading .header__feedbacks .dillers__designers p.header__phone,
   .dillers__designers .headerClimat__heading .header__feedbacks p.header__phone,
-  .headerClimat__heading .header__feedbacks .dillers__designers-left a.header__phone,
-  .dillers__designers-left .headerClimat__heading .header__feedbacks a.header__phone,
-  .headerClimat__heading .header__feedbacks .dillers__designers-right p.header__phone,
-  .dillers__designers-right .headerClimat__heading .header__feedbacks p.header__phone,
   .headerClimat__heading .header__feedbacks .dillers__designers-right ul li.header__phone,
   .dillers__designers-right ul .headerClimat__heading .header__feedbacks li.header__phone,
   .headerClimat__heading .header__feedbacks .dillers__learning p.header__phone,
@@ -5768,6 +6327,8 @@ input {
   .dillers__offer-header .headerClimat__heading .header__feedbacks p.header__phone,
   .headerClimat__heading .header__feedbacks .dillers__offer-contacts p.header__phone,
   .dillers__offer-contacts .headerClimat__heading .header__feedbacks p.header__phone,
+  .headerClimat__heading .header__feedbacks .dillers__offer-contacts a.header__phone,
+  .dillers__offer-contacts .headerClimat__heading .header__feedbacks a.header__phone,
   .headerClimat__heading .header__feedbacks .dillers__offer-advantages ol li.header__phone,
   .dillers__offer-advantages ol .headerClimat__heading .header__feedbacks li.header__phone,
   .headerClimat__heading .header__feedbacks .dillers__offer-heading p.header__phone,
@@ -5776,12 +6337,13 @@ input {
   .dillers__offer-footer .headerClimat__heading .header__feedbacks h4.header__phone,
   .headerClimat__heading .header__feedbacks .dillers__offer-footer p.header__phone,
   .dillers__offer-footer .headerClimat__heading .header__feedbacks p.header__phone,
-  .headerClimat__heading .header__feedbacks .staffCard h4.header__phone,
-  .staffCard .headerClimat__heading .header__feedbacks h4.header__phone,
+  .headerClimat__heading .header__feedbacks .dillers__offer-what ul li.header__phone,
+  .dillers__offer-what ul .headerClimat__heading .header__feedbacks li.header__phone,
   .headerClimat__heading .header__feedbacks .staffCard p.header__phone,
   .staffCard .headerClimat__heading .header__feedbacks p.header__phone,
   .headerClimat__heading .header__feedbacks .advantages__item p.header__phone,
-  .advantages__item .headerClimat__heading .header__feedbacks p.header__phone {
+  .advantages__item .headerClimat__heading .header__feedbacks p.header__phone,
+  .headerClimat__heading .header__feedbacks .header__phone.constructor__text {
     font-size: 1rem;
   }
 }
@@ -5910,6 +6472,7 @@ input {
 .headerClimat__heading .catalogueDetail__title,
 .headerClimat__heading .catalogueDetail__price,
 .headerClimat__heading .catalogueDetail__install,
+.headerClimat__heading .catalogueDetail__desc,
 .headerClimat__heading .photoprint,
 .headerClimat__heading .photobank__wrap,
 .headerClimat__heading .shutterstock,
@@ -5929,8 +6492,10 @@ input {
 .headerClimat__heading .climatOrder,
 .headerClimat__heading .climatMaintenance,
 .headerClimat__heading .climatPersonalData,
+.headerClimat__heading .constructor,
 .headerClimat__heading .videoblock__content,
-.headerClimat__heading .serverError__content {
+.headerClimat__heading .serverError__content,
+.headerClimat__heading .discount {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6019,8 +6584,11 @@ input {
 }
 
 .headerClimat__heading .header__feedbacks .text,
+.headerClimat__heading .header__feedbacks .titles__text,
 .headerClimat__heading .header__feedbacks .popup__status-send .survey__title,
 .popup__status-send .headerClimat__heading .header__feedbacks .survey__title,
+.headerClimat__heading .header__feedbacks .manufacturers__text,
+.headerClimat__heading .header__feedbacks .articles__text,
 .headerClimat__heading .header__feedbacks .serviceDetail__info p,
 .serviceDetail__info .headerClimat__heading .header__feedbacks p,
 .headerClimat__heading .header__feedbacks .reason__text,
@@ -6042,6 +6610,7 @@ input {
 .headerClimat__heading .header__feedbacks .dillers__steps-left p,
 .dillers__steps-left .headerClimat__heading .header__feedbacks p,
 .headerClimat__heading .header__feedbacks .dillers__shipping,
+.headerClimat__heading .header__feedbacks .dillers__programm,
 .headerClimat__heading .header__feedbacks .dillers__shipping-type p,
 .dillers__shipping-type .headerClimat__heading .header__feedbacks p,
 .headerClimat__heading .header__feedbacks .dillers__info p,
@@ -6056,10 +6625,6 @@ input {
 .dillers__materials table .headerClimat__heading .header__feedbacks td,
 .headerClimat__heading .header__feedbacks .dillers__designers p,
 .dillers__designers .headerClimat__heading .header__feedbacks p,
-.headerClimat__heading .header__feedbacks .dillers__designers-left a,
-.dillers__designers-left .headerClimat__heading .header__feedbacks a,
-.headerClimat__heading .header__feedbacks .dillers__designers-right p,
-.dillers__designers-right .headerClimat__heading .header__feedbacks p,
 .headerClimat__heading .header__feedbacks .dillers__designers-right ul li,
 .dillers__designers-right ul .headerClimat__heading .header__feedbacks li,
 .headerClimat__heading .header__feedbacks .dillers__learning p,
@@ -6086,6 +6651,8 @@ input {
 .dillers__offer-header .headerClimat__heading .header__feedbacks p,
 .headerClimat__heading .header__feedbacks .dillers__offer-contacts p,
 .dillers__offer-contacts .headerClimat__heading .header__feedbacks p,
+.headerClimat__heading .header__feedbacks .dillers__offer-contacts a,
+.dillers__offer-contacts .headerClimat__heading .header__feedbacks a,
 .headerClimat__heading .header__feedbacks .dillers__offer-advantages ol li,
 .dillers__offer-advantages ol .headerClimat__heading .header__feedbacks li,
 .headerClimat__heading .header__feedbacks .dillers__offer-heading p,
@@ -6094,12 +6661,13 @@ input {
 .dillers__offer-footer .headerClimat__heading .header__feedbacks h4,
 .headerClimat__heading .header__feedbacks .dillers__offer-footer p,
 .dillers__offer-footer .headerClimat__heading .header__feedbacks p,
-.headerClimat__heading .header__feedbacks .staffCard h4,
-.staffCard .headerClimat__heading .header__feedbacks h4,
+.headerClimat__heading .header__feedbacks .dillers__offer-what ul li,
+.dillers__offer-what ul .headerClimat__heading .header__feedbacks li,
 .headerClimat__heading .header__feedbacks .staffCard p,
 .staffCard .headerClimat__heading .header__feedbacks p,
 .headerClimat__heading .header__feedbacks .advantages__item p,
-.advantages__item .headerClimat__heading .header__feedbacks p {
+.advantages__item .headerClimat__heading .header__feedbacks p,
+.headerClimat__heading .header__feedbacks .constructor__text {
   font-size: 0.75rem;
   line-height: 1;
 }
@@ -6951,6 +7519,7 @@ body.no-scroll .header__close {
 .catalogueDetail__title,
 .catalogueDetail__price,
 .catalogueDetail__install,
+.catalogueDetail__desc,
 .photoprint,
 .photobank__wrap,
 .shutterstock,
@@ -6970,8 +7539,10 @@ body.no-scroll .header__close {
 .climatOrder,
 .climatMaintenance,
 .climatPersonalData,
+.constructor,
 .videoblock__content,
-.serverError__content {
+.serverError__content,
+.discount {
   width: 73.75rem;
   margin: 0 auto;
 }
@@ -7004,6 +7575,7 @@ body.no-scroll .header__close {
   .catalogueDetail__title,
   .catalogueDetail__price,
   .catalogueDetail__install,
+  .catalogueDetail__desc,
   .photoprint,
   .photobank__wrap,
   .shutterstock,
@@ -7023,8 +7595,10 @@ body.no-scroll .header__close {
   .climatOrder,
   .climatMaintenance,
   .climatPersonalData,
+  .constructor,
   .videoblock__content,
-  .serverError__content {
+  .serverError__content,
+  .discount {
     width: calc(100% - 32px);
     margin: 0 1rem;
   }
@@ -7058,6 +7632,7 @@ body.no-scroll .header__close {
   .catalogueDetail__title,
   .catalogueDetail__price,
   .catalogueDetail__install,
+  .catalogueDetail__desc,
   .photoprint,
   .photobank__wrap,
   .shutterstock,
@@ -7077,8 +7652,10 @@ body.no-scroll .header__close {
   .climatOrder,
   .climatMaintenance,
   .climatPersonalData,
+  .constructor,
   .videoblock__content,
-  .serverError__content {
+  .serverError__content,
+  .discount {
     width: calc(100% - 32px);
     margin: 0 1rem;
   }
@@ -7112,6 +7689,7 @@ body.no-scroll .header__close {
   .catalogueDetail__title,
   .catalogueDetail__price,
   .catalogueDetail__install,
+  .catalogueDetail__desc,
   .photoprint,
   .photobank__wrap,
   .shutterstock,
@@ -7131,8 +7709,10 @@ body.no-scroll .header__close {
   .climatOrder,
   .climatMaintenance,
   .climatPersonalData,
+  .constructor,
   .videoblock__content,
-  .serverError__content {
+  .serverError__content,
+  .discount {
     width: calc(100% - 16px);
     margin: 0 0.5rem;
   }
@@ -8046,7 +8626,11 @@ body.no-scroll .header__close {
 }
 
 .page__employers .intro,
-.page__employers .titles__intro {
+.page__employers .titles__intro,
+.page__employers .ceilingsCalc .ceilingCalculator__desc,
+.ceilingsCalc .page__employers .ceilingCalculator__desc,
+.page__employers .dillers__heading p,
+.dillers__heading .page__employers p {
   margin-bottom: 3.75rem;
 }
 
@@ -8068,8 +8652,16 @@ body.no-scroll .header__close {
 
 .page__questions .intro,
 .page__questions .titles__intro,
+.page__questions .ceilingsCalc .ceilingCalculator__desc,
+.ceilingsCalc .page__questions .ceilingCalculator__desc,
+.page__questions .dillers__heading p,
+.dillers__heading .page__questions p,
 .page__jobs .intro,
-.page__jobs .titles__intro {
+.page__jobs .titles__intro,
+.page__jobs .ceilingsCalc .ceilingCalculator__desc,
+.ceilingsCalc .page__jobs .ceilingCalculator__desc,
+.page__jobs .dillers__heading p,
+.dillers__heading .page__jobs p {
   margin-bottom: 3.75rem;
 }
 
@@ -8086,7 +8678,11 @@ body.no-scroll .header__close {
 }
 
 .page__review .intro,
-.page__review .titles__intro {
+.page__review .titles__intro,
+.page__review .ceilingsCalc .ceilingCalculator__desc,
+.ceilingsCalc .page__review .ceilingCalculator__desc,
+.page__review .dillers__heading p,
+.dillers__heading .page__review p {
   margin-bottom: 3.75rem;
 }
 
@@ -8110,6 +8706,32 @@ body.no-scroll .header__close {
   position: fixed;
   top: 0;
   left: 0;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  #videoBlock iframe {
+    width: 37.5rem;
+    height: 21.125rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  #videoBlock iframe {
+    width: 18.75rem;
+    height: 10.875rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  #videoBlock.popup_active {
+    width: auto;
+    height: auto !important;
+  }
+
+  #videoBlock.popup_active .popup__close {
+    top: -18px;
+    right: -6px;
+  }
 }
 
 .popup {
@@ -8343,8 +8965,10 @@ body.no-scroll .header__close {
 .dillers__price-buttons .popup__status-send .survey__form button,
 .popup__status-send .survey__form .dillers__info button,
 .dillers__info .popup__status-send .survey__form button,
-.popup__status-send .survey__form .dillers__documentation button,
-.dillers__documentation .popup__status-send .survey__form button,
+.popup__status-send .survey__form .dillers__designers-right a,
+.dillers__designers-right .popup__status-send .survey__form a,
+.popup__status-send .survey__form .dillers__documentation a,
+.dillers__documentation .popup__status-send .survey__form a,
 .popup__status-send .survey__form .dillers__offer-links a,
 .dillers__offer-links .popup__status-send .survey__form a,
 .popup__status-send .survey__form .lamps-slider__button,
@@ -8376,7 +9000,8 @@ body.no-scroll .header__close {
 .popup__status-send .survey__form .formUr__submit,
 .popup__status-send .survey__form .formUr__abort,
 .popup__status-send .survey__form .formUr__add,
-.popup__status-send .survey__form .quickBuy__checkout {
+.popup__status-send .survey__form .quickBuy__checkout,
+.popup__status-send .survey__form .constructor__link {
   width: 100%;
 }
 
@@ -8578,6 +9203,7 @@ body.no-scroll .header__close {
 .catalogueDetail__main,
 .photoprint__gallery,
 .printprice .page__wrapper,
+.catalogueCeilings__wrap,
 .climatCatalogue:not(.climatCatalogue_main),
 .climatCatalogue_main .climatCatalogue__content {
   position: relative;
@@ -8596,6 +9222,7 @@ body.no-scroll .header__close {
 .catalogueDetail__main:before,
 .photoprint__gallery:before,
 .printprice .page__wrapper:before,
+.catalogueCeilings__wrap:before,
 .climatCatalogue:not(.climatCatalogue_main):before,
 .climatCatalogue_main .climatCatalogue__content:before {
   z-index: -1;
@@ -8627,6 +9254,7 @@ body.no-scroll .header__close {
   .catalogueDetail__main:before,
   .photoprint__gallery:before,
   .printprice .page__wrapper:before,
+  .catalogueCeilings__wrap:before,
   .climatCatalogue:not(.climatCatalogue_main):before,
   .climatCatalogue_main .climatCatalogue__content:before {
     width: 480px;
@@ -8647,6 +9275,7 @@ body.no-scroll .header__close {
   .catalogueDetail__main:before,
   .photoprint__gallery:before,
   .printprice .page__wrapper:before,
+  .catalogueCeilings__wrap:before,
   .climatCatalogue:not(.climatCatalogue_main):before,
   .climatCatalogue_main .climatCatalogue__content:before {
     width: 64vw;
@@ -8672,7 +9301,8 @@ body.no-scroll .header__close {
 
 .is-hoverable,
 .portfolio__item,
-.review:not(.review_popup) {
+.review:not(.review_popup),
+.staffCard {
   will-change: transform;
   -webkit-transform: scale(1);
           transform: scale(1);
@@ -8684,7 +9314,8 @@ body.no-scroll .header__close {
 
 .is-hoverable:hover,
 .portfolio__item:hover,
-.review:hover:not(.review_popup) {
+.review:hover:not(.review_popup),
+.staffCard:hover {
   position: relative;
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
@@ -8696,7 +9327,8 @@ body.no-scroll .header__close {
 @media screen and (max-width: 768px) {
   .is-hoverable:hover,
   .portfolio__item:hover,
-  .review:hover:not(.review_popup) {
+  .review:hover:not(.review_popup),
+  .staffCard:hover {
     -webkit-transform: none;
             transform: none;
   }
@@ -8712,7 +9344,8 @@ body.no-scroll .header__close {
   color: #dc1414;
 }
 
-.b-card {
+.b-card,
+.staffCard {
   background: #ffffff;
   -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.16), 0 0 0.5rem rgba(0, 0, 0, 0), inset 0 -1px 0 rgba(0, 0, 0, 0.12);
           box-shadow: 0 0 2px rgba(0, 0, 0, 0.16), 0 0 0.5rem rgba(0, 0, 0, 0), inset 0 -1px 0 rgba(0, 0, 0, 0.12);
@@ -9482,6 +10115,41 @@ input[type=text]::-ms-reveal {
           animation: menuSlide .3s;
 }
 
+.menu__dropdown_big {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.menu__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 11.25rem;
+}
+
+.menu__wrap:not(:last-of-type) {
+  margin-right: 1.875rem;
+}
+
+.menu__item-title {
+  margin: 0;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  font-family: "Futura PT", sans-serif;
+  font-weight: 300;
+  color: #a7aaad;
+  white-space: normal;
+  letter-spacing: 0.1875rem;
+  text-transform: uppercase;
+  text-overflow: ellipsis;
+}
+
 .menu__item {
   position: relative;
   padding-bottom: 2.1875rem;
@@ -9612,7 +10280,7 @@ input[type=text]::-ms-reveal {
     background-color: #ffffff;
     padding: 30px 20px 22px 23px;
     z-index: 99;
-    left: -50%;
+    left: -4rem;
     border-top: .0625rem solid #e4e6e8;
     top: 3.6875rem;
     border-top-left-radius: 0;
@@ -9632,12 +10300,12 @@ input[type=text]::-ms-reveal {
     content: '';
     position: absolute;
     top: -3px;
-    left: 42%;
+    left: 50%;
     border-width: .625rem .625rem 0;
     border-style: solid;
     border-color: #e4e6e8 transparent transparent;
-    -webkit-transform: translateY(2px) rotate(0);
-            transform: translateY(2px) rotate(0);
+    -webkit-transform: translateX(-50%) translateY(2px) rotate(0);
+            transform: translateX(-50%) translateY(2px) rotate(0);
   }
 
   .menu__item_dropdown:hover .menu__dropdown:after {
@@ -9645,9 +10313,20 @@ input[type=text]::-ms-reveal {
     content: '';
     position: absolute;
     top: -3px;
-    left: 42%;
+    left: 50%;
     border-width: .625rem .625rem 0;
     border-style: solid;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+
+  .menu__item_dropdown:hover .menu__dropdown_big {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: auto;
+    left: -10.625rem;
   }
 }
 
@@ -10101,14 +10780,18 @@ input[type=text]::-ms-reveal {
 @media screen and (max-width: 60rem) {
   .ceilingCalculator {
     width: 100%;
-    padding: 2.75rem 5.875rem;
+    padding: 2.75rem 3rem;
     padding-bottom: 4rem;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
   }
 }
 
 @media screen and (max-width: 44.9375rem) {
   .ceilingCalculator {
     padding: 2.625rem 1.5rem;
+    padding-bottom: 4rem;
   }
 }
 
@@ -10167,7 +10850,7 @@ input[type=text]::-ms-reveal {
   .ceilingCalculator__desc {
     font-size: 0.875rem;
     line-height: 1.5rem;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
     color: #485058;
   }
 }
@@ -10229,6 +10912,7 @@ input[type=text]::-ms-reveal {
 @media screen and (max-width: 44.9375rem) {
   .ceilingCalculator__item {
     width: 100%;
+    margin-bottom: 3rem;
   }
 }
 
@@ -10252,6 +10936,12 @@ input[type=text]::-ms-reveal {
   line-height: 1.5rem;
 }
 
+@media screen and (max-width: 60rem) {
+  .ceilingCalculator__item-name {
+    margin-bottom: 1rem;
+  }
+}
+
 @media screen and (max-width: 44.9375rem) {
   .ceilingCalculator__item-name {
     font-size: 1.125rem;
@@ -10264,8 +10954,33 @@ input[type=text]::-ms-reveal {
   margin-bottom: 6rem;
 }
 
+.ceilingsCalc .titles .titles__title {
+  padding-bottom: 0;
+}
+
+.ceilingsCalc .titles .titles__title::after {
+  display: none;
+}
+
 .ceilingsCalc .ceilingCalculator__title {
   display: none;
+}
+
+.ceilingsCalc .ceilingCalculator__desc {
+  width: 48.75rem;
+  margin-bottom: 3rem;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .ceilingsCalc .ceilingCalculator__desc {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .ceilingsCalc .ceilingCalculator__desc {
+    text-align: left;
+  }
 }
 
 .ceilingsCalc .ceilingCalculator {
@@ -10496,6 +11211,10 @@ input[type=text]::-ms-reveal {
 .portfolio__buttons .button_gray,
 .portfolio__buttons .whyus__button,
 .portfolio__buttons .shutterstock__link,
+.portfolio__buttons .dillers__designers-right a,
+.dillers__designers-right .portfolio__buttons a,
+.portfolio__buttons .dillers__offer-links a:not(:first-of-type),
+.dillers__offer-links .portfolio__buttons a:not(:first-of-type),
 .portfolio__buttons .lamps-slider__button,
 .portfolio__buttons .climatCatalogue__all,
 .portfolio__buttons .climatCard__button,
@@ -10505,7 +11224,8 @@ input[type=text]::-ms-reveal {
 .portfolio__buttons .climatOrdering__prev,
 .portfolio__buttons .climatBasket__help,
 .portfolio__buttons .climatPersonalData__add,
-.portfolio__buttons .formUr__add {
+.portfolio__buttons .formUr__add,
+.portfolio__buttons .constructor__link {
   margin-right: 1rem;
 }
 
@@ -10517,6 +11237,10 @@ input[type=text]::-ms-reveal {
   .portfolio__buttons .button_gray,
   .portfolio__buttons .whyus__button,
   .portfolio__buttons .shutterstock__link,
+  .portfolio__buttons .dillers__designers-right a,
+  .dillers__designers-right .portfolio__buttons a,
+  .portfolio__buttons .dillers__offer-links a:not(:first-of-type),
+  .dillers__offer-links .portfolio__buttons a:not(:first-of-type),
   .portfolio__buttons .lamps-slider__button,
   .portfolio__buttons .climatCatalogue__all,
   .portfolio__buttons .climatCard__button,
@@ -10526,7 +11250,8 @@ input[type=text]::-ms-reveal {
   .portfolio__buttons .climatOrdering__prev,
   .portfolio__buttons .climatBasket__help,
   .portfolio__buttons .climatPersonalData__add,
-  .portfolio__buttons .formUr__add {
+  .portfolio__buttons .formUr__add,
+  .portfolio__buttons .constructor__link {
     margin-right: 0;
     margin-bottom: 1rem;
   }
@@ -10547,11 +11272,22 @@ input[type=text]::-ms-reveal {
   .portfolio_main .titles .second-title,
   .portfolio_main .titles .titles__second-title,
   .portfolio_main .titles .catalogueDetail__title,
+  .portfolio_main .titles .catalogueDetail__filter h2,
+  .catalogueDetail__filter .portfolio_main .titles h2,
   .portfolio_main .titles .photoprint__title,
   .portfolio_main .titles .photobank__title,
   .portfolio_main .titles .photoprintBlock__title,
+  .portfolio_main .titles .dillers__item-heading p,
+  .dillers__item-heading .portfolio_main .titles p,
+  .portfolio_main .titles .dillers__item-heading h2,
+  .dillers__item-heading .portfolio_main .titles h2,
+  .portfolio_main .titles .dillers__item:first-of-type:hover .dillers__item-heading h2,
+  .dillers__item:first-of-type:hover .dillers__item-heading .portfolio_main .titles h2,
+  .portfolio_main .titles .dillers__offer-heading h4,
+  .dillers__offer-heading .portfolio_main .titles h4,
   .portfolio_main .titles .climatDetail__additional-value h2,
-  .climatDetail__additional-value .portfolio_main .titles h2 {
+  .climatDetail__additional-value .portfolio_main .titles h2,
+  .portfolio_main .titles .constructor__title {
     margin-bottom: 0;
   }
 }
@@ -11335,6 +12071,22 @@ input[type=text]::-ms-reveal {
   }
 }
 
+.manufacturers__text {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  width: 48.75rem;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .manufacturers__text {
+    width: 100%;
+  }
+}
+
 .manufacturers__item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -11361,8 +12113,76 @@ input[type=text]::-ms-reveal {
   border-top: 1px solid #a7aaad;
 }
 
-.manufacturers_ceilings .titles {
+.manufacturers__more {
   margin-bottom: 3rem;
+  position: relative;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 0.875rem;
+  color: #babec2;
+  text-decoration: none;
+  font-weight: 300;
+  outline: none;
+  text-align: center;
+}
+
+.manufacturers__more::after {
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: -0.125rem;
+  width: 100%;
+  height: 0.0625rem;
+  border-bottom: 0.0625rem dashed #babec2;
+}
+
+@media screen and (min-width: 44.9375rem) {
+  .manufacturers__more {
+    display: none;
+  }
+}
+
+.manufacturers_ceilings .titles {
+  margin-bottom: 2.5rem;
+}
+
+.manufacturers_ceilings .titles .second-title,
+.manufacturers_ceilings .titles .titles__second-title,
+.manufacturers_ceilings .titles .catalogueDetail__title,
+.manufacturers_ceilings .titles .catalogueDetail__filter h2,
+.catalogueDetail__filter .manufacturers_ceilings .titles h2,
+.manufacturers_ceilings .titles .photoprint__title,
+.manufacturers_ceilings .titles .photobank__title,
+.manufacturers_ceilings .titles .photoprintBlock__title,
+.manufacturers_ceilings .titles .dillers__item-heading p,
+.dillers__item-heading .manufacturers_ceilings .titles p,
+.manufacturers_ceilings .titles .dillers__item-heading h2,
+.dillers__item-heading .manufacturers_ceilings .titles h2,
+.manufacturers_ceilings .titles .dillers__item:first-of-type:hover .dillers__item-heading h2,
+.dillers__item:first-of-type:hover .dillers__item-heading .manufacturers_ceilings .titles h2,
+.manufacturers_ceilings .titles .dillers__offer-heading h4,
+.dillers__offer-heading .manufacturers_ceilings .titles h4,
+.manufacturers_ceilings .titles .climatDetail__additional-value h2,
+.climatDetail__additional-value .manufacturers_ceilings .titles h2,
+.manufacturers_ceilings .titles .constructor__title {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .manufacturers_ceilings {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .manufacturers_ceilings .manufacturers__text {
+    height: 5rem;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+  }
+
+  .manufacturers_ceilings .manufacturers__text.opened {
+    height: 100%;
+  }
 }
 
 .manufacturers_climat {
@@ -11985,7 +12805,11 @@ input[type=text]::-ms-reveal {
   }
 
   .comment__controls .intro,
-  .comment__controls .titles__intro {
+  .comment__controls .titles__intro,
+  .comment__controls .ceilingsCalc .ceilingCalculator__desc,
+  .ceilingsCalc .comment__controls .ceilingCalculator__desc,
+  .comment__controls .dillers__heading p,
+  .dillers__heading .comment__controls p {
     margin-bottom: 1.5rem;
   }
 }
@@ -12076,6 +12900,10 @@ input[type=text]::-ms-reveal {
 .reviews__buttons .button_gray,
 .reviews__buttons .whyus__button,
 .reviews__buttons .shutterstock__link,
+.reviews__buttons .dillers__designers-right a,
+.dillers__designers-right .reviews__buttons a,
+.reviews__buttons .dillers__offer-links a:not(:first-of-type),
+.dillers__offer-links .reviews__buttons a:not(:first-of-type),
 .reviews__buttons .lamps-slider__button,
 .reviews__buttons .climatCatalogue__all,
 .reviews__buttons .climatCard__button,
@@ -12085,7 +12913,8 @@ input[type=text]::-ms-reveal {
 .reviews__buttons .climatOrdering__prev,
 .reviews__buttons .climatBasket__help,
 .reviews__buttons .climatPersonalData__add,
-.reviews__buttons .formUr__add {
+.reviews__buttons .formUr__add,
+.reviews__buttons .constructor__link {
   margin-right: 1rem;
 }
 
@@ -12097,6 +12926,10 @@ input[type=text]::-ms-reveal {
   .reviews__buttons .button_gray,
   .reviews__buttons .whyus__button,
   .reviews__buttons .shutterstock__link,
+  .reviews__buttons .dillers__designers-right a,
+  .dillers__designers-right .reviews__buttons a,
+  .reviews__buttons .dillers__offer-links a:not(:first-of-type),
+  .dillers__offer-links .reviews__buttons a:not(:first-of-type),
   .reviews__buttons .lamps-slider__button,
   .reviews__buttons .climatCatalogue__all,
   .reviews__buttons .climatCard__button,
@@ -12106,7 +12939,8 @@ input[type=text]::-ms-reveal {
   .reviews__buttons .climatOrdering__prev,
   .reviews__buttons .climatBasket__help,
   .reviews__buttons .climatPersonalData__add,
-  .reviews__buttons .formUr__add {
+  .reviews__buttons .formUr__add,
+  .reviews__buttons .constructor__link {
     margin-right: 0;
     margin-bottom: 1rem;
   }
@@ -12143,114 +12977,6 @@ input[type=text]::-ms-reveal {
           justify-content: center;
   margin: 0 auto;
   width: 100%;
-}
-
-@media screen and (max-width: 800px) {
-  .reviews__buttons {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .reviews__buttons .button,
-  .reviews__buttons .ceilingCalculator__callback,
-  .reviews__buttons .calculator__button,
-  .reviews__buttons .articles__button,
-  .reviews__buttons .whyus__button,
-  .reviews__buttons .shutterstock__link,
-  .reviews__buttons .dillers__price-buttons button,
-  .dillers__price-buttons .reviews__buttons button,
-  .reviews__buttons .dillers__info button,
-  .dillers__info .reviews__buttons button,
-  .reviews__buttons .dillers__documentation button,
-  .dillers__documentation .reviews__buttons button,
-  .reviews__buttons .dillers__offer-links a,
-  .dillers__offer-links .reviews__buttons a,
-  .reviews__buttons .lamps-slider__button,
-  .reviews__buttons .climatCatalogue__all,
-  .reviews__buttons .climatCatalogue__link,
-  .reviews__buttons .climatCatalogue__filter-apply,
-  .reviews__buttons .climatCatalogue__filter-resetall,
-  .reviews__buttons .climatCard__button,
-  .reviews__buttons .climatDetail__basket,
-  .reviews__buttons .climatDetail__fastBuy,
-  .reviews__buttons .conditionerPopup__basket,
-  .reviews__buttons .conditionerPopup__desc,
-  .reviews__buttons .conditionerPopup__pay,
-  .reviews__buttons .conditionerPopup__continue,
-  .reviews__buttons .climatOrdering__button-login,
-  .reviews__buttons .climatOrdering__pay,
-  .reviews__buttons .climatOrdering__mobile-login,
-  .reviews__buttons .climatOrdering__mobile-register,
-  .reviews__buttons .climatOrdering__mobile-prev,
-  .reviews__buttons .climatOrdering__prev,
-  .reviews__buttons .climatOrdering__next,
-  .reviews__buttons .climatBasket__checkout,
-  .reviews__buttons .climatBasket__help,
-  .reviews__buttons .climatOrder__repeat,
-  .reviews__buttons .climatPersonalData__save,
-  .reviews__buttons .climatPersonalData__add,
-  .reviews__buttons .formAdress__submit,
-  .reviews__buttons .formAdress__abort,
-  .reviews__buttons .formUr__submit,
-  .reviews__buttons .formUr__abort,
-  .reviews__buttons .formUr__add,
-  .reviews__buttons .quickBuy__checkout {
-    margin: 0;
-  }
-
-  .reviews__buttons .button:not(:last-of-type),
-  .reviews__buttons .ceilingCalculator__callback:not(:last-of-type),
-  .reviews__buttons .calculator__button:not(:last-of-type),
-  .reviews__buttons .articles__button:not(:last-of-type),
-  .reviews__buttons .whyus__button:not(:last-of-type),
-  .reviews__buttons .shutterstock__link:not(:last-of-type),
-  .reviews__buttons .dillers__price-buttons button:not(:last-of-type),
-  .dillers__price-buttons .reviews__buttons button:not(:last-of-type),
-  .reviews__buttons .dillers__info button:not(:last-of-type),
-  .dillers__info .reviews__buttons button:not(:last-of-type),
-  .reviews__buttons .dillers__documentation button:not(:last-of-type),
-  .dillers__documentation .reviews__buttons button:not(:last-of-type),
-  .reviews__buttons .dillers__offer-links a:not(:last-of-type),
-  .dillers__offer-links .reviews__buttons a:not(:last-of-type),
-  .reviews__buttons .lamps-slider__button:not(:last-of-type),
-  .reviews__buttons .climatCatalogue__all:not(:last-of-type),
-  .reviews__buttons .climatCatalogue__link:not(:last-of-type),
-  .reviews__buttons .climatCatalogue__filter-apply:not(:last-of-type),
-  .reviews__buttons .climatCatalogue__filter-resetall:not(:last-of-type),
-  .reviews__buttons .climatCard__button:not(:last-of-type),
-  .reviews__buttons .climatDetail__basket:not(:last-of-type),
-  .reviews__buttons .climatDetail__fastBuy:not(:last-of-type),
-  .reviews__buttons .conditionerPopup__basket:not(:last-of-type),
-  .reviews__buttons .conditionerPopup__desc:not(:last-of-type),
-  .reviews__buttons .conditionerPopup__pay:not(:last-of-type),
-  .reviews__buttons .conditionerPopup__continue:not(:last-of-type),
-  .reviews__buttons .climatOrdering__button-login:not(:last-of-type),
-  .reviews__buttons .climatOrdering__pay:not(:last-of-type),
-  .reviews__buttons .climatOrdering__mobile-login:not(:last-of-type),
-  .reviews__buttons .climatOrdering__mobile-register:not(:last-of-type),
-  .reviews__buttons .climatOrdering__mobile-prev:not(:last-of-type),
-  .reviews__buttons .climatOrdering__prev:not(:last-of-type),
-  .reviews__buttons .climatOrdering__next:not(:last-of-type),
-  .reviews__buttons .climatBasket__checkout:not(:last-of-type),
-  .reviews__buttons .climatBasket__help:not(:last-of-type),
-  .reviews__buttons .climatOrder__repeat:not(:last-of-type),
-  .reviews__buttons .climatPersonalData__save:not(:last-of-type),
-  .reviews__buttons .climatPersonalData__add:not(:last-of-type),
-  .reviews__buttons .formAdress__submit:not(:last-of-type),
-  .reviews__buttons .formAdress__abort:not(:last-of-type),
-  .reviews__buttons .formUr__submit:not(:last-of-type),
-  .reviews__buttons .formUr__abort:not(:last-of-type),
-  .reviews__buttons .formUr__add:not(:last-of-type),
-  .reviews__buttons .quickBuy__checkout:not(:last-of-type) {
-    margin-bottom: 20px;
-  }
 }
 
 .reviews__button {
@@ -12290,11 +13016,22 @@ input[type=text]::-ms-reveal {
   .reviews_main .titles .second-title,
   .reviews_main .titles .titles__second-title,
   .reviews_main .titles .catalogueDetail__title,
+  .reviews_main .titles .catalogueDetail__filter h2,
+  .catalogueDetail__filter .reviews_main .titles h2,
   .reviews_main .titles .photoprint__title,
   .reviews_main .titles .photobank__title,
   .reviews_main .titles .photoprintBlock__title,
+  .reviews_main .titles .dillers__item-heading p,
+  .dillers__item-heading .reviews_main .titles p,
+  .reviews_main .titles .dillers__item-heading h2,
+  .dillers__item-heading .reviews_main .titles h2,
+  .reviews_main .titles .dillers__item:first-of-type:hover .dillers__item-heading h2,
+  .dillers__item:first-of-type:hover .dillers__item-heading .reviews_main .titles h2,
+  .reviews_main .titles .dillers__offer-heading h4,
+  .dillers__offer-heading .reviews_main .titles h4,
   .reviews_main .titles .climatDetail__additional-value h2,
-  .climatDetail__additional-value .reviews_main .titles h2 {
+  .climatDetail__additional-value .reviews_main .titles h2,
+  .reviews_main .titles .constructor__title {
     margin-bottom: 0;
   }
 }
@@ -12319,7 +13056,11 @@ input[type=text]::-ms-reveal {
     width: 97%;
   }
 
-  .reviews_main .reviews__item:nth-of-type(n + 3) {
+  .reviews_main .reviews__item:first-of-type {
+    margin-bottom: 3rem;
+  }
+
+  .reviews_main .reviews__item:nth-of-type(n + 4) {
     display: none;
   }
 }
@@ -12754,7 +13495,7 @@ input[type=text]::-ms-reveal {
   letter-spacing: 1px;
   text-transform: uppercase;
   padding-bottom: 4px;
-  margin-bottom: 12px;
+  margin-bottom: 1rem;
 }
 
 .footer__title::before {
@@ -12919,10 +13660,11 @@ input[type=text]::-ms-reveal {
 .nav-group__item {
   font-size: 1rem;
   color: #f4f6f8;
+  line-height: 1rem;
 }
 
 .nav-group__item:not(:last-of-type) {
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 
 @media screen and (max-width: 44.9375rem) {
@@ -13400,6 +14142,7 @@ input[type=text]::-ms-reveal {
 .about .photoprint__gallery,
 .about .printprice .page__wrapper,
 .printprice .about .page__wrapper,
+.about .catalogueCeilings__wrap,
 .about .climatCatalogue:not(.climatCatalogue_main),
 .about .climatCatalogue_main .climatCatalogue__content,
 .climatCatalogue_main .about .climatCatalogue__content {
@@ -13626,8 +14369,10 @@ input[type=text]::-ms-reveal {
 .dillers__price-buttons .turnkey__buttons button:first-child,
 .turnkey__buttons .dillers__info button:first-child,
 .dillers__info .turnkey__buttons button:first-child,
-.turnkey__buttons .dillers__documentation button:first-child,
-.dillers__documentation .turnkey__buttons button:first-child,
+.turnkey__buttons .dillers__designers-right a:first-child,
+.dillers__designers-right .turnkey__buttons a:first-child,
+.turnkey__buttons .dillers__documentation a:first-child,
+.dillers__documentation .turnkey__buttons a:first-child,
 .turnkey__buttons .dillers__offer-links a:first-child,
 .dillers__offer-links .turnkey__buttons a:first-child,
 .turnkey__buttons .lamps-slider__button:first-child,
@@ -13659,7 +14404,8 @@ input[type=text]::-ms-reveal {
 .turnkey__buttons .formUr__submit:first-child,
 .turnkey__buttons .formUr__abort:first-child,
 .turnkey__buttons .formUr__add:first-child,
-.turnkey__buttons .quickBuy__checkout:first-child {
+.turnkey__buttons .quickBuy__checkout:first-child,
+.turnkey__buttons .constructor__link:first-child {
   margin-right: 1.25rem;
 }
 
@@ -13674,8 +14420,10 @@ input[type=text]::-ms-reveal {
   .dillers__price-buttons .turnkey__buttons button:first-child,
   .turnkey__buttons .dillers__info button:first-child,
   .dillers__info .turnkey__buttons button:first-child,
-  .turnkey__buttons .dillers__documentation button:first-child,
-  .dillers__documentation .turnkey__buttons button:first-child,
+  .turnkey__buttons .dillers__designers-right a:first-child,
+  .dillers__designers-right .turnkey__buttons a:first-child,
+  .turnkey__buttons .dillers__documentation a:first-child,
+  .dillers__documentation .turnkey__buttons a:first-child,
   .turnkey__buttons .dillers__offer-links a:first-child,
   .dillers__offer-links .turnkey__buttons a:first-child,
   .turnkey__buttons .lamps-slider__button:first-child,
@@ -13707,7 +14455,8 @@ input[type=text]::-ms-reveal {
   .turnkey__buttons .formUr__submit:first-child,
   .turnkey__buttons .formUr__abort:first-child,
   .turnkey__buttons .formUr__add:first-child,
-  .turnkey__buttons .quickBuy__checkout:first-child {
+  .turnkey__buttons .quickBuy__checkout:first-child,
+  .turnkey__buttons .constructor__link:first-child {
     margin-right: 0;
     margin-bottom: 1rem;
   }
@@ -16227,13 +16976,9 @@ input[type=text]::-ms-reveal {
 .notFound__content .jobs h2,
 .jobs .notFound__content p,
 .notFound__content .jobs p,
-.jobs .catalogueDetail__filter p,
-.catalogueDetail__filter .jobs p,
 .jobs .photoprint__why h3,
 .photoprint__why .jobs h3,
 .jobs .serviceReasons__title,
-.jobs .dillers__heading p,
-.dillers__heading .jobs p,
 .jobs .dillers__steps-content h3,
 .dillers__steps-content .jobs h3,
 .jobs .dillers__materials button,
@@ -16242,6 +16987,14 @@ input[type=text]::-ms-reveal {
 .dillers__materials table .jobs th,
 .jobs .dillers__materials-table h3,
 .dillers__materials-table .jobs h3,
+.jobs .dillers__designers-right h3,
+.dillers__designers-right .jobs h3,
+.jobs .dillers__documentation h3,
+.dillers__documentation .jobs h3,
+.jobs .dillers__offer-advantages p,
+.dillers__offer-advantages .jobs p,
+.jobs .dillers__offer-what h3,
+.dillers__offer-what .jobs h3,
 .jobs .climatDetail__additional-value h3,
 .climatDetail__additional-value .jobs h3 {
   margin: 0;
@@ -16922,11 +17675,22 @@ input[type=text]::-ms-reveal {
 .contacts__item .second-title,
 .contacts__item .titles__second-title,
 .contacts__item .catalogueDetail__title,
+.contacts__item .catalogueDetail__filter h2,
+.catalogueDetail__filter .contacts__item h2,
 .contacts__item .photoprint__title,
 .contacts__item .photobank__title,
 .contacts__item .photoprintBlock__title,
+.contacts__item .dillers__item-heading p,
+.dillers__item-heading .contacts__item p,
+.contacts__item .dillers__item-heading h2,
+.dillers__item-heading .contacts__item h2,
+.contacts__item .dillers__item:first-of-type .dillers__item-heading h2,
+.dillers__item:first-of-type .dillers__item-heading .contacts__item h2,
+.contacts__item .dillers__offer-heading h4,
+.dillers__offer-heading .contacts__item h4,
 .contacts__item .climatDetail__additional-value h2,
-.climatDetail__additional-value .contacts__item h2 {
+.climatDetail__additional-value .contacts__item h2,
+.contacts__item .constructor__title {
   text-align: center;
   padding: 0;
   font-size: 24px;
@@ -16936,11 +17700,22 @@ input[type=text]::-ms-reveal {
 .contacts__item .second-title::after,
 .contacts__item .titles__second-title::after,
 .contacts__item .catalogueDetail__title::after,
+.contacts__item .catalogueDetail__filter h2::after,
+.catalogueDetail__filter .contacts__item h2::after,
 .contacts__item .photoprint__title::after,
 .contacts__item .photobank__title::after,
 .contacts__item .photoprintBlock__title::after,
+.contacts__item .dillers__item-heading p::after,
+.dillers__item-heading .contacts__item p::after,
+.contacts__item .dillers__item-heading h2::after,
+.dillers__item-heading .contacts__item h2::after,
+.contacts__item .dillers__item:first-of-type .dillers__item-heading h2::after,
+.dillers__item:first-of-type .dillers__item-heading .contacts__item h2::after,
+.contacts__item .dillers__offer-heading h4::after,
+.dillers__offer-heading .contacts__item h4::after,
 .contacts__item .climatDetail__additional-value h2::after,
-.climatDetail__additional-value .contacts__item h2::after {
+.climatDetail__additional-value .contacts__item h2::after,
+.contacts__item .constructor__title::after {
   display: none;
 }
 
@@ -17065,11 +17840,22 @@ input[type=text]::-ms-reveal {
   .contacts .second-title,
   .contacts .titles__second-title,
   .contacts .catalogueDetail__title,
+  .contacts .catalogueDetail__filter h2,
+  .catalogueDetail__filter .contacts h2,
   .contacts .photoprint__title,
   .contacts .photobank__title,
   .contacts .photoprintBlock__title,
+  .contacts .dillers__item-heading p,
+  .dillers__item-heading .contacts p,
+  .contacts .dillers__item-heading h2,
+  .dillers__item-heading .contacts h2,
+  .contacts .dillers__item:first-of-type .dillers__item-heading h2,
+  .dillers__item:first-of-type .dillers__item-heading .contacts h2,
+  .contacts .dillers__offer-heading h4,
+  .dillers__offer-heading .contacts h4,
   .contacts .climatDetail__additional-value h2,
-  .climatDetail__additional-value .contacts h2 {
+  .climatDetail__additional-value .contacts h2,
+  .contacts .constructor__title {
     font-size: 24px;
   }
 }
@@ -17467,10 +18253,16 @@ input[type=text]::-ms-reveal {
 .footer-offer {
   position: relative;
   z-index: 2;
-  padding-top: 5rem;
-  padding-bottom: 4.0625rem;
+  padding-top: 3rem;
+  padding-bottom: 4rem;
   background-image: url("/img/footer-form.jpg");
   background-size: cover;
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  .footer-offer {
+    background-image: url("/img/footer-form@2x.jpg");
+  }
 }
 
 @media screen and (max-width: 79.9375rem) {
@@ -17478,14 +18270,27 @@ input[type=text]::-ms-reveal {
     background-position: center;
     padding-top: 3.375rem;
     padding-bottom: 2.6875rem;
+    background-image: url("/img/gui/request-call-fon-768@2x.jpg");
+  }
+}
+
+@media screen and (max-width: 79.9375rem) and (-webkit-min-device-pixel-ratio: 1.5), screen and (max-width: 79.9375rem) and (min-resolution: 144dpi), screen and (max-width: 79.9375rem) and (min-resolution: 1.5dppx) {
+  .footer-offer {
+    background-image: url("/img/gui/request-call-fon-768@1x.jpg");
   }
 }
 
 @media screen and (max-width: 640px) {
   .footer-offer {
-    background-image: url("/img/gui/footer-offer_mobile.jpg");
+    background-image: url("/img/gui/request-call-fon-320@1x.jpg");
     -webkit-box-shadow: initial;
             box-shadow: initial;
+  }
+}
+
+@media screen and (max-width: 640px) and (-webkit-min-device-pixel-ratio: 1.5), screen and (max-width: 640px) and (min-resolution: 144dpi), screen and (max-width: 640px) and (min-resolution: 1.5dppx) {
+  .footer-offer {
+    background-image: url("/img/gui/request-call-fon-320@2x.jpg");
   }
 }
 
@@ -17519,14 +18324,16 @@ input[type=text]::-ms-reveal {
     font-size: 1.25rem;
     width: calc(100% - 245px);
     text-align: center;
+    letter-spacing: 0.078125rem;
   }
 }
 
 @media screen and (max-width: 44.9375rem) {
   .footer-offer__title {
-    font-size: 1.1875rem;
+    font-size: 1rem;
     width: 100%;
-    line-height: 1.75rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.046875rem;
   }
 }
 
@@ -17679,7 +18486,7 @@ input[type=text]::-ms-reveal {
 @media screen and (max-width: 44.9375rem) {
   .footer-offer__form .form__button {
     height: 3.125rem;
-    width: 16.25rem;
+    width: 100%;
   }
 }
 
@@ -17692,6 +18499,16 @@ input[type=text]::-ms-reveal {
 .additional {
   padding-top: 8.125rem;
   margin-bottom: 6rem;
+}
+
+.additional .titles {
+  padding-top: 0;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .additional {
+    margin-bottom: 8rem;
+  }
 }
 
 @media screen and (max-width: 44.9375rem) {
@@ -17777,8 +18594,16 @@ input[type=text]::-ms-reveal {
   font-family: "Helvetica Neue", sans-serif;
   font-size: 0.75rem;
   font-weight: 300;
-  line-height: 24px;
+  line-height: 1.5rem;
   text-align: center;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .additional__text {
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.5rem;
+  }
 }
 
 .additional__button {
@@ -17799,11 +18624,22 @@ input[type=text]::-ms-reveal {
 .additional .titles .second-title,
 .additional .titles .titles__second-title,
 .additional .titles .catalogueDetail__title,
+.additional .titles .catalogueDetail__filter h2,
+.catalogueDetail__filter .additional .titles h2,
 .additional .titles .photoprint__title,
 .additional .titles .photobank__title,
 .additional .titles .photoprintBlock__title,
+.additional .titles .dillers__item-heading p,
+.dillers__item-heading .additional .titles p,
+.additional .titles .dillers__item-heading h2,
+.dillers__item-heading .additional .titles h2,
+.additional .titles .dillers__item:first-of-type:hover .dillers__item-heading h2,
+.dillers__item:first-of-type:hover .dillers__item-heading .additional .titles h2,
+.additional .titles .dillers__offer-heading h4,
+.dillers__offer-heading .additional .titles h4,
 .additional .titles .climatDetail__additional-value h2,
-.climatDetail__additional-value .additional .titles h2 {
+.climatDetail__additional-value .additional .titles h2,
+.additional .titles .constructor__title {
   margin: 0;
 }
 
@@ -17811,6 +18647,10 @@ input[type=text]::-ms-reveal {
   .additional .titles {
     padding: 0;
   }
+}
+
+.additional_ceilings {
+  padding-top: 6rem;
 }
 
 @media screen and (max-width: 44.9375rem) {
@@ -18201,6 +19041,7 @@ input[type=text]::-ms-reveal {
 .articles.articles_main .articles__list.catalogueDetail__title,
 .articles.articles_main .articles__list.catalogueDetail__price,
 .articles.articles_main .articles__list.catalogueDetail__install,
+.articles.articles_main .articles__list.catalogueDetail__desc,
 .articles.articles_main .articles__list.photoprint,
 .articles.articles_main .articles__list.photobank__wrap,
 .articles.articles_main .articles__list.shutterstock,
@@ -18220,9 +19061,79 @@ input[type=text]::-ms-reveal {
 .articles.articles_main .articles__list.climatOrder,
 .articles.articles_main .articles__list.climatMaintenance,
 .articles.articles_main .articles__list.climatPersonalData,
+.articles.articles_main .articles__list.constructor,
 .articles.articles_main .articles__list.videoblock__content,
-.articles.articles_main .articles__list.serverError__content {
+.articles.articles_main .articles__list.serverError__content,
+.articles.articles_main .articles__list.discount {
   margin-bottom: 3rem;
+}
+
+.articles.articles_ceilings {
+  position: relative;
+  background-color: #ffffff;
+  padding-top: 4rem;
+}
+
+.articles.articles_ceilings .articles__button {
+  position: relative;
+  z-index: 2;
+}
+
+.articles.articles_ceilings .titles {
+  margin-bottom: 2.5rem;
+}
+
+.articles.articles_ceilings .titles__second-title {
+  margin-bottom: 0;
+}
+
+.articles.articles_ceilings .articles__slider:hover .articles__next:hover svg,
+.articles.articles_ceilings .articles__slider:hover .articles__prev:hover svg {
+  fill: #ffffff;
+}
+
+.articles.articles_ceilings::before {
+  position: absolute;
+  content: '';
+  width: 48.75rem;
+  top: 0;
+  left: calc(50% - 390px);
+  height: 100%;
+  background-color: #f4f6f8;
+  border-radius: 0.5rem;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .articles.articles_ceilings::before {
+    width: 30rem;
+    left: calc(50% - 240px);
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .articles.articles_ceilings::before {
+    width: 16rem;
+    left: calc(50% - 128px);
+  }
+}
+
+@media screen and (max-width: 20.125rem) {
+  .articles.articles_ceilings::before {
+    width: 12.5rem;
+    left: calc(50% - 100px);
+  }
+}
+
+.articles.articles_ceilings .articles__slide {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.articles.articles_ceilings .articles__slide svg {
+  fill: #BABEC2;
+}
+
+.articles.articles_ceilings .articles__slider:hover .articles__slide {
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .articles__slider-dots {
@@ -18258,6 +19169,22 @@ input[type=text]::-ms-reveal {
 
 .articles__slider-dot:not(:last-of-type) {
   margin-right: 0.5rem;
+}
+
+.articles__text {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  width: 48.75rem;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .articles__text {
+    width: 100%;
+    padding: 0.5rem 0;
+  }
 }
 
 .articles.articles_climat.articles_main {
@@ -18720,6 +19647,7 @@ input[type=text]::-ms-reveal {
   .whyus__content {
     padding-left: 0;
     padding-right: 0;
+    padding-bottom: 2rem;
   }
 }
 
@@ -18733,8 +19661,10 @@ input[type=text]::-ms-reveal {
 .dillers__price-buttons .whyus__content button,
 .whyus__content .dillers__info button,
 .dillers__info .whyus__content button,
-.whyus__content .dillers__documentation button,
-.dillers__documentation .whyus__content button,
+.whyus__content .dillers__designers-right a,
+.dillers__designers-right .whyus__content a,
+.whyus__content .dillers__documentation a,
+.dillers__documentation .whyus__content a,
 .whyus__content .dillers__offer-links a,
 .dillers__offer-links .whyus__content a,
 .whyus__content .lamps-slider__button,
@@ -18766,7 +19696,8 @@ input[type=text]::-ms-reveal {
 .whyus__content .formUr__submit,
 .whyus__content .formUr__abort,
 .whyus__content .formUr__add,
-.whyus__content .quickBuy__checkout {
+.whyus__content .quickBuy__checkout,
+.whyus__content .constructor__link {
   margin-top: 3rem;
 }
 
@@ -18820,7 +19751,7 @@ input[type=text]::-ms-reveal {
 
 @media screen and (max-width: 79.9375rem) {
   .whyus__item_reverse {
-    padding-bottom: 3rem;
+    padding-bottom: 4rem;
   }
 }
 
@@ -18897,9 +19828,18 @@ input[type=text]::-ms-reveal {
   margin-left: auto;
 }
 
+@media screen and (max-width: 79.9375rem) {
+  .whyus__item-info .signature {
+    margin-top: 1rem;
+  }
+}
+
 .whyus__item-image {
   width: auto;
   height: 20rem;
+  border-radius: 0.5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 @media screen and (max-width: 79.9375rem) {
@@ -18922,12 +19862,19 @@ input[type=text]::-ms-reveal {
 
 .whyus__item-title {
   margin: 0;
-  margin-bottom: 0.9375rem;
+  margin-bottom: 1rem;
   color: #485058;
   font-family: "Playfair Display", serif;
   font-size: 2rem;
   font-weight: 400;
   line-height: 2.375rem;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .whyus__item-title {
+    font-size: 1.625rem;
+    line-height: 2rem;
+  }
 }
 
 @media screen and (max-width: 44.9375rem) {
@@ -18999,6 +19946,7 @@ input[type=text]::-ms-reveal {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    margin-top: 1rem;
   }
 }
 
@@ -19086,6 +20034,7 @@ input[type=text]::-ms-reveal {
 @media screen and (max-width: 79.9375rem) {
   .whyus__stat-item:nth-of-type(1) {
     margin-right: 8.125rem;
+    padding-left: 2rem;
   }
 }
 
@@ -19102,7 +20051,7 @@ input[type=text]::-ms-reveal {
 
 @media screen and (max-width: 79.9375rem) {
   .whyus__stat-item:nth-of-type(2) {
-    margin-right: 5rem;
+    margin-right: auto;
   }
 }
 
@@ -19297,7 +20246,11 @@ input[type=text]::-ms-reveal {
   }
 
   .whyus_main .titles .intro,
-  .whyus_main .titles .titles__intro {
+  .whyus_main .titles .titles__intro,
+  .whyus_main .titles .ceilingsCalc .ceilingCalculator__desc,
+  .ceilingsCalc .whyus_main .titles .ceilingCalculator__desc,
+  .whyus_main .titles .dillers__heading p,
+  .dillers__heading .whyus_main .titles p {
     max-height: none;
   }
 
@@ -19306,8 +20259,39 @@ input[type=text]::-ms-reveal {
   }
 }
 
+@media screen and (max-width: 44.9375rem) {
+  .whyus_ceilings .titles {
+    margin-bottom: 4rem;
+  }
+}
+
+.whyus_ceilings .whyus__content {
+  padding-top: 0.875rem;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .whyus_ceilings .whyus__content {
+    padding-top: 0;
+  }
+}
+
 .whyus_ceilings .whyus__content::before {
   display: none;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .whyus_ceilings .whyus__content {
+    margin-bottom: 3rem;
+  }
+}
+
+.whyus_ceilings .whyus__stat {
+  margin-top: 5rem;
+  margin-bottom: 7rem;
+}
+
+.whyus_ceilings .whyus__stat-item:first-of-type .whyus__stat-num {
+  margin-left: -2rem;
 }
 
 .serviceDetail .reason:not(:last-of-type) {
@@ -19952,12 +20936,8 @@ input[type=text]::-ms-reveal {
   }
 }
 
-.catalogueDetail {
-  padding-bottom: 5rem;
-}
-
 .catalogueDetail .titles {
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
 .catalogueDetail__main {
@@ -19973,7 +20953,7 @@ input[type=text]::-ms-reveal {
           align-items: center;
   width: 100%;
   padding: 4rem 0;
-  margin-bottom: 5.25rem;
+  margin-bottom: 5rem;
   overflow: hidden;
 }
 
@@ -20027,7 +21007,7 @@ input[type=text]::-ms-reveal {
   display: flex;
 }
 
-@media screen and (max-width: 60rem) {
+@media screen and (max-width: 44.9375rem) {
   .catalogueDetail__buttons {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -20037,32 +21017,45 @@ input[type=text]::-ms-reveal {
 }
 
 .catalogueDetail__desc {
-  width: 48.75rem;
-  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin-bottom: 4rem;
-}
-
-@media screen and (max-width: 79.9375rem) {
-  .catalogueDetail__desc {
-    width: calc(100% - 40px);
-    margin: 0 1.25rem;
-    margin-bottom: 4rem;
-  }
 }
 
 @media screen and (max-width: 44.9375rem) {
   .catalogueDetail__desc {
-    width: calc(100% - 32px);
-    margin: 0 1rem;
-    margin-bottom: 4rem;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
 }
 
-@media screen and (max-width: 20.125rem) {
-  .catalogueDetail__desc {
-    width: calc(100% - 16px);
-    margin: 0 0.5rem;
-    margin-bottom: 3.75rem;
+.catalogueDetail__desc-content {
+  width: 48.75rem;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .catalogueDetail__desc-content {
+    width: 30rem;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .catalogueDetail__desc-content {
+    width: 100%;
+    max-height: 14.625rem;
+    overflow: hidden;
+  }
+
+  .catalogueDetail__desc-content.opened {
+    max-height: none;
   }
 }
 
@@ -20070,9 +21063,37 @@ input[type=text]::-ms-reveal {
   margin-bottom: 1rem;
 }
 
+.catalogueDetail__desc-more {
+  position: relative;
+  margin-top: 0.5rem;
+  font-family: "Helvetica Neue", sans-serif;
+  color: #babec2;
+  font-size: 1.125rem;
+  font-weight: 300;
+  line-height: 1.625rem;
+  text-decoration: none;
+}
+
+.catalogueDetail__desc-more::after {
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0.0625rem;
+  border-bottom: 0.0625rem dashed #babec2;
+}
+
+@media screen and (min-width: 44.9375rem) {
+  .catalogueDetail__desc-more {
+    display: none;
+  }
+}
+
 .catalogueDetail__filter {
   width: 50rem;
   margin: 0 auto;
+  margin-bottom: 4rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -20086,6 +21107,7 @@ input[type=text]::-ms-reveal {
   .catalogueDetail__filter {
     width: calc(100% - 40px);
     margin: 0 1.25rem;
+    margin-bottom: 4rem;
   }
 }
 
@@ -20093,6 +21115,7 @@ input[type=text]::-ms-reveal {
   .catalogueDetail__filter {
     width: calc(100% - 32px);
     margin: 0 1rem;
+    margin-bottom: 4rem;
   }
 }
 
@@ -20100,10 +21123,11 @@ input[type=text]::-ms-reveal {
   .catalogueDetail__filter {
     width: calc(100% - 16px);
     margin: 0 0.5rem;
+    margin-bottom: 4rem;
   }
 }
 
-.catalogueDetail__filter p {
+.catalogueDetail__filter h2 {
   width: 100%;
   margin-bottom: 2.375rem;
   text-align: center;
@@ -22100,9 +23124,11 @@ input[type=text]::-ms-reveal {
   height: 30.625rem;
   padding-top: 6.25rem;
   padding-bottom: 6.5625rem;
-  margin-bottom: 5.625rem;
+  margin-bottom: 5rem;
   background-image: url("/img/ceilings/dillers-heading.jpg");
-  background-size: cover;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 @media screen and (max-width: 44.9375rem) {
@@ -22137,7 +23163,8 @@ input[type=text]::-ms-reveal {
     max-height: 5.625rem;
     margin-bottom: 1.875rem;
     overflow: hidden;
-    font-size: 1.375rem;
+    font-size: 1.25rem;
+    line-height: 1.875rem;
   }
 }
 
@@ -22187,12 +23214,18 @@ input[type=text]::-ms-reveal {
   padding-bottom: 11.25rem;
 }
 
+@media screen and (max-width: 44.9375rem) {
+  .dillers__content {
+    padding-bottom: 1.5rem;
+  }
+}
+
 .dillers__item-heading {
   position: relative;
-  width: 100%;
-  min-height: 5.9375rem;
-  padding-top: 2.1875rem;
-  padding-bottom: 2.1875rem;
+  width: 48.75rem;
+  min-height: 6rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   padding-left: 5rem;
   border-top: 0.125rem solid #d0d2d4;
   cursor: pointer;
@@ -22207,58 +23240,39 @@ input[type=text]::-ms-reveal {
 
 @media screen and (max-width: 79.9375rem) {
   .dillers__item-heading {
-    width: calc(100% + 40px);
-    padding-left: 4.375rem;
-    margin-right: -1.25rem;
-    margin-left: -1.25rem;
+    width: 100%;
   }
 }
 
 @media screen and (max-width: 44.9375rem) {
   .dillers__item-heading {
-    width: calc(100% + 20px);
-    margin-right: -0.625rem;
-    margin-left: -0.625rem;
+    padding-left: 3.75rem;
   }
 }
 
-.dillers__item-heading:hover {
-  border-top: 0.125rem solid transparent;
-  border-radius: 0.3125rem;
-  background-color: #be1414;
+.dillers__item-heading:hover p,
+.dillers__item-heading:hover h2 {
+  color: #dc1414;
 }
 
-@media screen and (max-width: 79.9375rem) {
-  .dillers__item-heading:hover {
-    border-radius: 0;
-  }
-}
-
-.dillers__item-heading:hover p {
-  color: #ffffff;
-}
-
-.dillers__item-heading:hover::before {
-  border-color: #ffffff transparent transparent;
-}
-
-.dillers__item-heading:hover::after {
-  border-color: #be1414 transparent transparent;
-}
-
-.dillers__item-heading p {
+.dillers__item-heading p,
+.dillers__item-heading h2 {
   margin: 0;
-  line-height: 1.1;
-  text-align: left;
-  font-family: "Futura PT", sans-serif;
-  font-size: 1.625rem;
-  text-transform: uppercase;
-  color: #50555a;
+  padding: 0;
+  -webkit-transition: color .3s;
+  transition: color .3s;
+}
+
+.dillers__item-heading p::after,
+.dillers__item-heading h2::after {
+  display: none;
 }
 
 @media screen and (max-width: 44.9375rem) {
-  .dillers__item-heading p {
+  .dillers__item-heading p,
+  .dillers__item-heading h2 {
     font-size: 1.375rem;
+    text-align: left;
   }
 }
 
@@ -22270,7 +23284,7 @@ input[type=text]::-ms-reveal {
   left: 1.875rem;
   width: 0;
   height: 0;
-  border-width: 1.125rem 1.125rem 0;
+  border-width: 0.75rem 0.625rem 0;
   border-style: solid;
 }
 
@@ -22285,12 +23299,13 @@ input[type=text]::-ms-reveal {
 @media screen and (max-width: 79.9375rem) {
   .dillers__item-heading::after,
   .dillers__item-heading::before {
-    left: 1.25rem;
+    top: calc(50% - 8px);
+    left: 0.75rem;
   }
 }
 
 .dillers__item-heading::before {
-  border-color: #be1414 transparent transparent;
+  border-color: #babec2 transparent transparent;
   -webkit-transform: translateY(3px);
           transform: translateY(3px);
 }
@@ -22307,88 +23322,124 @@ input[type=text]::-ms-reveal {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
 }
 
-.dillers__item:hover + .dillers__item .dillers__item-heading {
-  border-top: 0.125rem solid #ffffff;
+.dillers__item:first-of-type .dillers__item-heading,
+.dillers__item:first-of-type:hover .dillers__item-heading {
+  border-top: none;
+  cursor: auto;
+  padding: 2.1875rem 0;
 }
 
-@media screen and (max-width: 79.9375rem) {
-  .dillers__item:hover + .dillers__item .dillers__item-heading {
-    border-top: 0.125rem solid #d0d2d4;
-  }
+.dillers__item:first-of-type .dillers__item-heading::before,
+.dillers__item:first-of-type .dillers__item-heading::after,
+.dillers__item:first-of-type:hover .dillers__item-heading::before,
+.dillers__item:first-of-type:hover .dillers__item-heading::after {
+  display: none;
 }
 
-.dillers__item:last-of-type {
-  border-bottom: 0.125rem solid #d0d2d4;
+.dillers__item:first-of-type .dillers__item-heading h2,
+.dillers__item:first-of-type:hover .dillers__item-heading h2 {
+  padding-bottom: 0;
+  text-transform: initial;
 }
 
-.dillers__item:last-of-type:hover {
-  border-bottom: 0.125rem solid #ffffff;
+.dillers__item:first-of-type .dillers__item-heading h2::after,
+.dillers__item:first-of-type:hover .dillers__item-heading h2::after {
+  display: none;
 }
 
-.dillers__item:last-of-type.dillers__item_opened:hover {
-  border-bottom: 0.125rem solid #d0d2d4;
+.dillers__item_offer {
+  border-bottom: none;
 }
 
-.dillers__item_opened .dillers__item-content {
+.dillers__item_offer .dillers__item-heading {
+  padding: 0 !important;
+  width: 100%;
+  min-height: auto;
+}
+
+.dillers__item_opened .dillers__item-content,
+.dillers__item_offer .dillers__item-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
 .dillers__item_opened .dillers__item-heading::after,
-.dillers__item_opened .dillers__item-heading::before {
+.dillers__item_offer .dillers__item-heading::after,
+.dillers__item_opened .dillers__item-heading::before,
+.dillers__item_offer .dillers__item-heading::before {
   content: '';
   top: calc(50% - 4px);
 }
 
-.dillers__item_opened .dillers__item-heading::after {
+.dillers__item_opened .dillers__item-heading::after,
+.dillers__item_offer .dillers__item-heading::after {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
 
-.dillers__item_opened .dillers__item-heading::before {
+.dillers__item_opened .dillers__item-heading::before,
+.dillers__item_offer .dillers__item-heading::before {
   -webkit-transform: translateY(-3px) rotate(180deg) !important;
           transform: translateY(-3px) rotate(180deg) !important;
 }
 
-.dillers__item_opened .dillers__item-heading:hover {
+.dillers__item_opened .dillers__item-heading p::after,
+.dillers__item_offer .dillers__item-heading p::after {
+  display: block;
+  bottom: -2rem;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .dillers__item_opened .dillers__item-heading p::after,
+  .dillers__item_offer .dillers__item-heading p::after {
+    display: none;
+  }
+}
+
+.dillers__item_opened .dillers__item-heading:hover,
+.dillers__item_offer .dillers__item-heading:hover {
   border-top: 0.125rem solid #d0d2d4;
   border-radius: 0;
   background-color: #ffffff;
 }
 
-.dillers__item_opened .dillers__item-heading:hover p {
+.dillers__item_opened .dillers__item-heading:hover p,
+.dillers__item_offer .dillers__item-heading:hover p,
+.dillers__item_opened .dillers__item-heading:hover h2,
+.dillers__item_offer .dillers__item-heading:hover h2 {
   color: #50555a;
 }
 
-.dillers__item_opened .dillers__item-heading:hover::before {
+.dillers__item_opened .dillers__item-heading:hover::before,
+.dillers__item_offer .dillers__item-heading:hover::before {
   border-color: #be1414 transparent transparent;
 }
 
-.dillers__item_opened .dillers__item-heading:hover::after {
+.dillers__item_opened .dillers__item-heading:hover::after,
+.dillers__item_offer .dillers__item-heading:hover::after {
   border-color: #ffffff transparent transparent;
-}
-
-.dillers__item_opened:hover + .dillers__item .dillers__item-heading {
-  border-top: 0.125rem solid #d0d2d4;
 }
 
 .dillers__item-content {
   display: none;
+  width: 100%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 0 1.875rem;
+  padding-top: 2.5rem;
   padding-bottom: 6.25rem;
 }
 
 @media screen and (max-width: 79.9375rem) {
   .dillers__item-content {
-    padding: 0;
     padding-bottom: 6.25rem;
   }
 }
@@ -22601,16 +23652,47 @@ input[type=text]::-ms-reveal {
   }
 }
 
-.dillers__shipping {
-  margin: 0;
+@media screen and (max-width: 79.9375rem) {
+  .dillers__programm {
+    margin-bottom: 0;
+  }
 }
 
-.dillers__shipping:nth-of-type(1) {
+.dillers__shipping,
+.dillers__programm {
+  margin: 0;
+  width: 48.75rem;
+  margin: 0 auto;
+}
+
+.dillers__shipping p,
+.dillers__programm p {
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+.dillers__shipping:nth-of-type(1),
+.dillers__programm:nth-of-type(1) {
   margin-bottom: 1.875rem;
 }
 
-.dillers__shipping:nth-of-type(2) {
+.dillers__shipping:nth-of-type(2),
+.dillers__programm:nth-of-type(2) {
   margin-bottom: 0.9375rem;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .dillers__shipping,
+  .dillers__programm {
+    width: 30rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .dillers__shipping,
+  .dillers__programm {
+    width: 100%;
+  }
 }
 
 .dillers__shipping-type {
@@ -22619,7 +23701,7 @@ input[type=text]::-ms-reveal {
   display: flex;
 }
 
-@media screen and (max-width: 44.9375rem) {
+@media screen and (max-width: 79.9375rem) {
   .dillers__shipping-type {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -22636,6 +23718,13 @@ input[type=text]::-ms-reveal {
   width: 13.125rem;
   height: 7.3125rem;
   margin-right: 1.5625rem;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .dillers__shipping-type img {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
 }
 
 @media screen and (max-width: 44.9375rem) {
@@ -22909,6 +23998,14 @@ input[type=text]::-ms-reveal {
   }
 }
 
+@media screen and (max-width: 44.9375rem) {
+  .dillers__materials table tr:last-of-type {
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+}
+
 .dillers__materials table th {
   padding-bottom: 1.25rem;
   color: #50555a;
@@ -23111,27 +24208,6 @@ input[type=text]::-ms-reveal {
   }
 }
 
-.dillers__materials-table {
-  max-height: 37.8125rem;
-  overflow: hidden;
-}
-
-@media screen and (max-width: 79.9375rem) {
-  .dillers__materials-table {
-    margin-bottom: 2.8125rem;
-  }
-}
-
-@media screen and (max-width: 44.9375rem) {
-  .dillers__materials-table {
-    max-height: 73.5rem;
-  }
-}
-
-.dillers__materials-table.opened {
-  max-height: none;
-}
-
 .dillers__materials-table h3 {
   display: none;
   padding-bottom: 1.25rem;
@@ -23152,6 +24228,8 @@ input[type=text]::-ms-reveal {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  width: 48.75rem;
+  margin: 0 auto;
 }
 
 .dillers__designers p {
@@ -23160,16 +24238,36 @@ input[type=text]::-ms-reveal {
   margin-bottom: 2.1875rem;
 }
 
+@media screen and (max-width: 79.9375rem) {
+  .dillers__designers {
+    width: 30rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .dillers__designers {
+    width: 100%;
+  }
+}
+
 .dillers__designers-left {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 13.125rem;
-  margin-right: 2.1875rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  margin-bottom: 2.1875rem;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .dillers__designers-left {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 @media screen and (max-width: 44.9375rem) {
@@ -23181,37 +24279,22 @@ input[type=text]::-ms-reveal {
 }
 
 .dillers__designers-left img {
-  width: 100%;
+  width: calc(33,3% - 10px);
   height: auto;
-  margin-bottom: 1.25rem;
 }
 
-.dillers__designers-left a {
-  position: relative;
-  color: #dc1414;
-}
+@media screen and (max-width: 79.9375rem) {
+  .dillers__designers-left img {
+    width: 100%;
+  }
 
-@media screen and (max-width: 44.9375rem) {
-  .dillers__designers-left a {
-    width: 12.5rem;
-    margin: 0 auto;
+  .dillers__designers-left img:not(:last-of-type) {
+    margin-bottom: 1rem;
   }
 }
 
-.dillers__designers-left a::after {
-  content: '';
-  position: absolute;
-  top: calc(50% - 5px);
-  right: 0;
-  width: 0.75rem;
-  height: 0.6875rem;
-  background-image: url(/img/ceilings/arrow.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
 .dillers__designers-right {
-  width: calc(100% - 245px);
+  width: 100%;
 }
 
 @media screen and (max-width: 44.9375rem) {
@@ -23220,13 +24303,17 @@ input[type=text]::-ms-reveal {
   }
 }
 
-.dillers__designers-right p {
+.dillers__designers-right a {
+  margin: 0 auto;
+}
+
+.dillers__designers-right h3 {
   width: 100%;
   margin-bottom: 1.25rem;
-  font-weight: 700;
 }
 
 .dillers__designers-right ul {
+  list-style-type: none;
   margin: 0;
 }
 
@@ -23240,8 +24327,23 @@ input[type=text]::-ms-reveal {
   margin-bottom: 1.875rem;
 }
 
+.dillers__designers-right ul:last-of-type {
+  margin-bottom: 4rem;
+}
+
 .dillers__designers-right ul li {
+  position: relative;
   margin: 0;
+}
+
+.dillers__designers-right ul li:not(:last-of-type) {
+  margin-bottom: 0.25rem;
+}
+
+.dillers__designers-right ul li::before {
+  position: absolute;
+  content: '\2014';
+  left: -1.5rem;
 }
 
 .dillers__learning {
@@ -23250,6 +24352,20 @@ input[type=text]::-ms-reveal {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  width: 48.75rem;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .dillers__learning {
+    width: 30rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .dillers__learning {
+    width: 100%;
+  }
 }
 
 .dillers__learning p {
@@ -23279,59 +24395,17 @@ input[type=text]::-ms-reveal {
 
 .dillers__learning ul li {
   position: relative;
-  padding-left: 1.875rem;
+  margin: 0;
 }
 
 .dillers__learning ul li:not(:last-of-type) {
-  margin-bottom: 0.9375rem;
-}
-
-.dillers__learning ul li::after,
-.dillers__learning ul li::before {
-  background-color: #50555a;
+  margin-bottom: 0.25rem;
 }
 
 .dillers__learning ul li::before {
-  content: '';
   position: absolute;
-  top: 0.625rem;
-  left: 5px;
-  width: 20px;
-  height: 2px;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-}
-
-.dillers__learning ul li::after {
-  content: '';
-  position: absolute;
-  top: 13px;
-  left: 0;
-  width: 10px;
-  height: 2px;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
-
-.dillers__learning ul li ul {
-  padding-top: 0.9375rem;
-  margin-bottom: 0;
-  list-style-type: disc;
-}
-
-@media screen and (max-width: 79.9375rem) {
-  .dillers__learning ul li ul {
-    padding-left: 1.875rem;
-  }
-}
-
-.dillers__learning ul li ul li {
-  padding-left: 0;
-}
-
-.dillers__learning ul li ul li::before,
-.dillers__learning ul li ul li::after {
-  display: none;
+  content: '\2014';
+  left: -1.5rem;
 }
 
 .dillers__learning-wrap {
@@ -23341,7 +24415,7 @@ input[type=text]::-ms-reveal {
   margin-bottom: 2.8125rem;
 }
 
-@media screen and (max-width: 44.9375rem) {
+@media screen and (max-width: 79.9375rem) {
   .dillers__learning-wrap {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -23356,7 +24430,7 @@ input[type=text]::-ms-reveal {
   margin-right: 1.5625rem;
 }
 
-@media screen and (max-width: 44.9375rem) {
+@media screen and (max-width: 79.9375rem) {
   .dillers__learning-wrap img {
     width: 100%;
     height: auto;
@@ -23393,6 +24467,27 @@ input[type=text]::-ms-reveal {
   margin-bottom: 0.9375rem;
 }
 
+.dillers__documentation {
+  width: 48.75rem;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .dillers__documentation {
+    width: 30rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .dillers__documentation {
+    width: 100%;
+  }
+}
+
+.dillers__documentation h3 {
+  margin-bottom: 1rem;
+}
+
 .dillers__documentation p {
   margin: 0;
   margin-bottom: 1.875rem;
@@ -23402,28 +24497,35 @@ input[type=text]::-ms-reveal {
   margin-bottom: 0.9375rem;
 }
 
-.dillers__documentation button {
+.dillers__documentation a {
   width: 19.375rem;
   height: 3.125rem;
-  margin-bottom: 1.5625rem;
+  margin-bottom: 4rem;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .dillers__documentation a {
+    margin: 0 auto;
+    margin-bottom: 4rem;
+  }
 }
 
 @media screen and (max-width: 44.9375rem) {
-  .dillers__documentation button {
+  .dillers__documentation a {
     width: 100%;
   }
 }
 
 .dillers__documentation ul {
-  width: 31.25rem;
   margin: 0;
   margin-bottom: 2.5rem;
+  list-style-type: none;
+  padding-left: 0;
 }
 
 @media screen and (max-width: 44.9375rem) {
   .dillers__documentation ul {
     width: 100%;
-    padding-left: 1.25rem;
   }
 }
 
@@ -23481,7 +24583,7 @@ input[type=text]::-ms-reveal {
   display: flex;
 }
 
-@media screen and (max-width: 44.9375rem) {
+@media screen and (max-width: 79.9375rem) {
   .dillers__documentation-wrap {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -23499,13 +24601,9 @@ input[type=text]::-ms-reveal {
 
 @media screen and (max-width: 79.9375rem) {
   .dillers__documentation-wrap img {
-    margin-right: 1.875rem;
-  }
-}
-
-@media screen and (max-width: 44.9375rem) {
-  .dillers__documentation-wrap img {
     width: 100%;
+    height: auto;
+    margin-right: 0;
     margin-bottom: 2rem;
   }
 }
@@ -23518,6 +24616,16 @@ input[type=text]::-ms-reveal {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.dillers__documentation-info h3 {
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .dillers__documentation-info h3 {
+    margin-bottom: 3rem;
+  }
 }
 
 .dillers__documentation-info p {
@@ -23570,8 +24678,6 @@ input[type=text]::-ms-reveal {
 .dillers__documentation-info dt,
 .dillers__documentation-info dd {
   margin: 0;
-  font-weight: 500;
-  line-height: 1.1;
 }
 
 @media screen and (max-width: 79.9375rem) {
@@ -23581,16 +24687,25 @@ input[type=text]::-ms-reveal {
 }
 
 .dillers__offer-header {
-  padding: 0 0.625rem;
-  padding-top: 3.4375rem;
-  padding-bottom: 4.375rem;
+  padding: 0 2rem;
+  padding-top: 3rem;
+  padding-bottom: 4rem;
   margin-bottom: 2.8125rem;
   border-radius: 0.3125rem;
   background-color: #f1f1f1;
 }
 
+@media screen and (max-width: 79.9375rem) {
+  .dillers__offer-header {
+    padding: 0 3.5rem;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+  }
+}
+
 @media screen and (max-width: 44.9375rem) {
   .dillers__offer-header {
+    padding: 0 1rem;
     padding-top: 2.8125rem;
     padding-bottom: 2.8125rem;
   }
@@ -23627,8 +24742,19 @@ input[type=text]::-ms-reveal {
   text-align: center;
 }
 
+@media screen and (max-width: 79.9375rem) {
+  .dillers__offer-header p {
+    font-size: 1.375rem;
+    line-height: 2rem;
+  }
+}
+
 .dillers__offer-header p:not(:last-of-type) {
   margin-bottom: 1.5625rem;
+}
+
+.dillers__offer-header p:last-of-type {
+  margin-bottom: 3rem;
 }
 
 .dillers__offer-header p span {
@@ -23643,13 +24769,32 @@ input[type=text]::-ms-reveal {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-bottom: 1.5625rem;
+  margin-bottom: 5rem;
+  padding: 0 5.5rem;
 }
 
 @media screen and (max-width: 79.9375rem) {
   .dillers__offer-contacts {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .dillers__offer-contacts {
+    padding: 0 1rem;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
 }
 
@@ -23661,58 +24806,139 @@ input[type=text]::-ms-reveal {
       -ms-flex-align: center;
           align-items: center;
   margin: 0;
-  margin-bottom: 1.25rem;
-  font-size: 1.25rem;
-  font-weight: 300;
   color: #a7aaad;
 }
 
-.dillers__offer-contacts span {
+@media screen and (max-width: 79.9375rem) {
+  .dillers__offer-contacts p:not(:last-of-type) {
+    margin-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .dillers__offer-contacts p {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .dillers__offer-contacts p:nth-of-type(1) .dillers__offer-icon {
+    margin-top: 0.1875rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .dillers__offer-contacts p:nth-of-type(2) .dillers__offer-icon {
+    margin-top: 0.1875rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .dillers__offer-contacts p:nth-of-type(3) .dillers__offer-icon {
+    margin-top: 0.1875rem;
+  }
+}
+
+.dillers__offer-contacts a {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0;
+  color: #a7aaad;
+  text-decoration: none;
+}
+
+.dillers__offer-contacts a:not(:last-of-type) {
+  margin-right: 0.5rem;
+}
+
+.dillers__offer-contacts .diller__whatsapp {
+  position: relative;
+}
+
+.dillers__offer-contacts .diller__whatsapp:hover::after {
+  bottom: -0.125rem;
+}
+
+.dillers__offer-contacts .diller__whatsapp::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 0.0625rem;
+  border-bottom: 0.0625rem dashed #a7aaad;
+  bottom: 0;
+  left: 0;
+  -webkit-transition: bottom .3s;
+  transition: bottom .3s;
+}
+
+.dillers__offer-contacts span,
+.dillers__offer-contacts a {
   color: #50555a;
 }
 
 .dillers__offer-icon {
   margin-right: 0.9375rem;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
   fill: #a7aaad;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .dillers__offer-icon {
+    margin-right: 0.5rem;
+  }
 }
 
 .dillers__offer-links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin-bottom: 5.3125rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 @media screen and (max-width: 79.9375rem) {
   .dillers__offer-links {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    margin-bottom: 4.0625rem;
-  }
-}
-
-@media screen and (max-width: 44.9375rem) {
-  .dillers__offer-links {
-    margin-bottom: 3.125rem;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-bottom: 0;
+    margin-bottom: -1.5625rem;
   }
 }
 
 .dillers__offer-links a {
-  height: 3.125rem;
-  padding: 0 2.5rem;
+  height: 3rem;
+  padding: 0 1.5rem;
   width: auto;
+}
+
+.dillers__offer-links a:not(:last-of-type) {
+  margin-right: 1rem;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .dillers__offer-links a:not(:last-of-type) {
+    margin-right: 0;
+    margin-left: 0;
+  }
 }
 
 @media screen and (max-width: 79.9375rem) {
   .dillers__offer-links a {
-    width: 21.875rem;
+    width: 18.125rem;
     margin-bottom: 1.5625rem;
+    margin-right: 0;
+    margin-left: 0;
   }
 }
 
@@ -23720,6 +24946,7 @@ input[type=text]::-ms-reveal {
   .dillers__offer-links a {
     width: 100%;
     margin-bottom: 1.25rem;
+    padding: 0 1rem;
   }
 }
 
@@ -23727,7 +24954,8 @@ input[type=text]::-ms-reveal {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 4.6875rem;
+  margin-bottom: 5rem;
+  background-color: #f1f1f1;
 }
 
 @media screen and (max-width: 79.9375rem) {
@@ -23739,6 +24967,23 @@ input[type=text]::-ms-reveal {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    padding-bottom: 4rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .dillers__offer-why {
+    width: calc(100% + 32px);
+    margin-right: -1rem;
+    margin-left: -1rem;
+  }
+}
+
+@media screen and (max-width: 20.125rem) {
+  .dillers__offer-why {
+    width: calc(100% + 16px);
+    margin-right: -0.5rem;
+    margin-left: -0.5rem;
   }
 }
 
@@ -23750,60 +24995,60 @@ input[type=text]::-ms-reveal {
 
 @media screen and (max-width: 79.9375rem) {
   .dillers__offer-video {
-    width: 45.5rem;
+    width: 100%;
     height: 26.875rem;
     margin-right: 0;
-    margin-bottom: 4.375rem;
+    margin-bottom: 4rem;
   }
 }
 
 @media screen and (max-width: 44.9375rem) {
   .dillers__offer-video {
-    width: 20rem;
+    width: 100%;
     height: 11.875rem;
-    margin-right: -0.625rem;
-    margin-bottom: 3.125rem;
+  }
+}
+
+.dillers__offer-advantages {
+  padding-top: 3rem;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .dillers__offer-advantages {
+    padding: 0 3rem;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .dillers__offer-advantages {
+    padding: 0 1rem;
   }
 }
 
 .dillers__offer-advantages p {
   margin: 0;
-  margin-bottom: 1.875rem;
-  font-family: "Futura PT", sans-serif;
-  font-size: 2.25rem;
-  font-weight: 300;
-  color: #50555a;
-  text-align: center;
-  letter-spacing: 0.13rem;
+  margin-bottom: 1rem;
 }
 
 @media screen and (max-width: 79.9375rem) {
   .dillers__offer-advantages p {
     position: relative;
-    padding-bottom: 2.8125rem;
-    margin-bottom: 2.8125rem;
+    padding-bottom: 0;
+    margin-bottom: 1rem;
   }
 
   .dillers__offer-advantages p::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 12.5rem;
-    height: 0.125rem;
-    background-color: #979797;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    display: none;
   }
 }
 
 @media screen and (max-width: 44.9375rem) {
   .dillers__offer-advantages p {
     width: 100%;
-    padding-bottom: 1.5625rem;
     margin-bottom: 1.5625rem;
     font-size: 1.875rem;
-    letter-spacing: 0.08125rem;
+    line-height: normal;
   }
 }
 
@@ -23816,11 +25061,8 @@ input[type=text]::-ms-reveal {
 
 .dillers__offer-advantages ol li {
   position: relative;
-  height: 1.6875rem;
-  padding-left: 2.8125rem;
-  margin-bottom: 0.625rem;
-  font-size: 1.25rem;
-  font-weight: 400;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 @media screen and (max-width: 44.9375rem) {
@@ -23833,33 +25075,10 @@ input[type=text]::-ms-reveal {
 }
 
 .dillers__offer-advantages ol li:before {
-  content: counter(item);
   position: absolute;
+  content: '\2014';
   top: 0;
   left: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 1.6875rem;
-  height: 1.6875rem;
-  font-family: "Futura PT", sans-serif;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: #ffffff;
-  letter-spacing: 0.060625rem;
-  border-radius: 50%;
-  background-color: #dc1414;
-  counter-increment: item;
 }
 
 .dillers__offer-wrap {
@@ -23888,7 +25107,6 @@ input[type=text]::-ms-reveal {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-bottom: 4.6875rem;
 }
 
 @media screen and (max-width: 79.9375rem) {
@@ -23896,17 +25114,16 @@ input[type=text]::-ms-reveal {
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .dillers__offer-staff {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-  }
-
-  .dillers__offer-staff .staffCard:not(:last-of-type) {
-    margin-bottom: 2.1875rem;
   }
 }
 
@@ -23915,59 +25132,20 @@ input[type=text]::-ms-reveal {
 }
 
 .dillers__offer-heading h4 {
-  margin: 0;
-  margin-bottom: 2.1875rem;
-  font-family: "Futura PT", sans-serif;
-  font-size: 2.25rem;
-  font-weight: 300;
-  color: #50555a;
-  text-align: center;
-  letter-spacing: 0.13rem;
-}
-
-@media screen and (max-width: 44.9375rem) {
-  .dillers__offer-heading h4 {
-    margin-bottom: 1.25rem;
-    font-size: 1.875rem;
-    letter-spacing: 0.0875rem;
-  }
+  margin-bottom: 2.5rem;
 }
 
 .dillers__offer-heading p {
-  position: relative;
-  padding-bottom: 2.1875rem;
-  margin: 0;
-  margin-bottom: 3.125rem;
-  font-size: 1.125rem;
-  font-weight: 300;
-  color: #787d82;
+  margin: 0 auto;
+  margin-bottom: 3rem;
   text-align: center;
+  width: 47.5rem;
 }
 
 @media screen and (max-width: 79.9375rem) {
   .dillers__offer-heading p {
-    padding-bottom: 3.125rem;
+    width: 100%;
   }
-}
-
-@media screen and (max-width: 44.9375rem) {
-  .dillers__offer-heading p {
-    padding-bottom: 2.1875rem;
-    margin-bottom: 1.875rem;
-    font-size: 1.125rem;
-  }
-}
-
-.dillers__offer-heading p::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 12.5rem;
-  height: 0.0625rem;
-  background-color: #979797;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
 }
 
 .dillers__offer-footer {
@@ -24037,71 +25215,53 @@ input[type=text]::-ms-reveal {
 }
 
 .dillers__offer-what {
+  margin: 0 auto;
   margin-bottom: 5rem;
+  width: 48.75rem;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .dillers__offer-what {
+    width: 30rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .dillers__offer-what {
+    width: 100%;
+  }
 }
 
 .dillers__offer-what h3 {
   margin: 0;
-  margin-bottom: 2.25rem;
+  margin-bottom: 1.5rem;
   padding-left: 2.125rem;
-  color: #50555a;
-  font-family: "Helvetica Neue", sans-serif;
-  font-size: 2.25rem;
-  font-weight: 100;
-  letter-spacing: 2.08px;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .dillers__offer-what ul {
+    padding-left: 1.625rem;
+  }
 }
 
 .dillers__offer-what ul li {
   position: relative;
   color: #50555a;
-  font-family: "Helvetica Neue", sans-serif;
-  font-size: 1.125rem;
-  font-weight: 300;
-  line-height: 1.5rem;
   list-style: none;
 }
 
 .dillers__offer-what ul li:not(:last-of-type) {
-  margin-bottom: 1.875rem;
+  margin-bottom: 1.5rem;
 }
 
 .dillers__offer-what ul li::before {
-  content: '';
+  content: '\2014';
   position: absolute;
-  top: .625rem;
+  top: 0;
   left: -1.5625rem;
-  width: 1.25rem;
-  height: 0.125rem;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-  background-color: #3ba08c;
 }
 
-.dillers__offer-what ul li::after {
-  content: '';
-  position: absolute;
-  top: 0.8125rem;
-  left: -1.875rem;
-  width: 0.625rem;
-  height: 0.125rem;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-  background-color: #3ba08c;
-}
-
-.dillers .easy-info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.dillers .easy-info iframe {
-  margin-right: 1.875rem;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-}
-
-.dillers .easy-info .easy-text {
+.dillers .easy-text {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -24111,7 +25271,7 @@ input[type=text]::-ms-reveal {
           flex-direction: column;
 }
 
-.dillers .easy-info .easy-text h4 {
+.dillers .easy-text h4 {
   color: #50555a;
   font-family: "Playfair Display", serif;
   font-size: 1.5rem;
@@ -24121,7 +25281,7 @@ input[type=text]::-ms-reveal {
   margin-bottom: 1rem;
 }
 
-.dillers .easy-info .easy-text p {
+.dillers .easy-text p {
   margin: 0;
   color: #50555a;
   font-family: "Helvetica Neue", sans-serif;
@@ -24130,64 +25290,151 @@ input[type=text]::-ms-reveal {
   line-height: 1.375rem;
 }
 
-.dillers .easy-info .easy-text p:not(:last-of-type) {
+.dillers .easy-text p:not(:last-of-type) {
   margin-bottom: 1.875rem;
+}
+
+.dillers .easy-text:first-of-type {
+  margin-bottom: 3rem;
+}
+
+.dillers .easy-text:last-of-type {
+  margin-bottom: 0;
+}
+
+.dillers .easy-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dillers .easy-info iframe {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  margin-bottom: 3rem;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .dillers .easy-info iframe {
+    width: 100%;
+    height: 10rem;
+  }
 }
 
 .staffCard {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: calc(33.3% - 16px);
+  margin: 0 0.5rem;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .staffCard {
+    width: 100%;
+    margin: 0;
+  }
+
+  .staffCard:not(:last-of-type) {
+    margin-bottom: 1rem;
+  }
+}
+
+.staffCard__info {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  padding: 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
 }
 
 @media screen and (max-width: 44.9375rem) {
   .staffCard__info {
-    width: calc(100% - 90px);
+    padding-bottom: 1.5rem;
   }
 }
 
 .staffCard__avatar {
-  width: 9.375rem;
-  height: 9.375rem;
-  margin-right: 1.875rem;
-  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 220px;
+  border-radius: 5px;
+  margin: 0;
 }
 
 @media screen and (max-width: 44.9375rem) {
   .staffCard__avatar {
-    width: 4.375rem;
-    height: 4.375rem;
-    margin-top: 3.125rem;
-    margin-right: 1.25rem;
+    display: none;
   }
 }
 
 .staffCard h4 {
+  position: relative;
+  padding-bottom: 0.5rem;
   margin: 0;
-  margin-bottom: 1.25rem;
-  font-size: 1.5rem;
-  letter-spacing: 0.08125rem;
+  margin-bottom: 1.4375rem;
+  text-align: center;
 }
 
 @media screen and (max-width: 44.9375rem) {
   .staffCard h4 {
-    width: calc(100% + 90px);
-    margin-bottom: 1.5625rem;
-    margin-left: -5.625rem;
-    text-align: center;
+    margin-bottom: 0.5rem;
+    padding: 0;
+    font-weight: 300;
+  }
+}
+
+.staffCard h4::after {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 50%;
+  width: 5rem;
+  height: 0.0625rem;
+  background-color: #babec2;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .staffCard h4::after {
+    width: 50%;
+    display: none;
+    left: 0;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
 }
 
 .staffCard p {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   margin: 0;
   font-size: 1.125rem;
   line-height: 1.3;
+  text-align: center;
 }
 
 @media screen and (max-width: 44.9375rem) {
@@ -24219,9 +25466,244 @@ input[type=text]::-ms-reveal {
   margin-bottom: 7rem;
 }
 
+@media screen and (max-width: 79.9375rem) {
+  .catalogueCeilings__titles .intro + .titles__arrow,
+  .catalogueCeilings__titles .titles__intro + .titles__arrow,
+  .catalogueCeilings__titles .ceilingsCalc .ceilingCalculator__desc + .titles__arrow,
+  .ceilingsCalc .catalogueCeilings__titles .ceilingCalculator__desc + .titles__arrow,
+  .catalogueCeilings__titles .dillers__heading p + .titles__arrow,
+  .dillers__heading .catalogueCeilings__titles p + .titles__arrow {
+    display: block;
+  }
+}
+
+.catalogueCeilings__wrap {
+  padding-top: 3rem;
+  padding-bottom: 4rem;
+}
+
+.catalogueCeilings__wrap .titles {
+  margin-bottom: 3rem !important;
+}
+
+.catalogueCeilings__wrap .titles .second-title,
+.catalogueCeilings__wrap .titles .titles__second-title,
+.catalogueCeilings__wrap .titles .catalogueDetail__title,
+.catalogueCeilings__wrap .titles .catalogueDetail__filter h2,
+.catalogueDetail__filter .catalogueCeilings__wrap .titles h2,
+.catalogueCeilings__wrap .titles .photoprint__title,
+.catalogueCeilings__wrap .titles .photobank__title,
+.catalogueCeilings__wrap .titles .photoprintBlock__title,
+.catalogueCeilings__wrap .titles .dillers__item-heading p,
+.dillers__item-heading .catalogueCeilings__wrap .titles p,
+.catalogueCeilings__wrap .titles .dillers__item-heading h2,
+.dillers__item-heading .catalogueCeilings__wrap .titles h2,
+.catalogueCeilings__wrap .titles .dillers__item:first-of-type:hover .dillers__item-heading h2,
+.dillers__item:first-of-type:hover .dillers__item-heading .catalogueCeilings__wrap .titles h2,
+.catalogueCeilings__wrap .titles .dillers__offer-heading h4,
+.dillers__offer-heading .catalogueCeilings__wrap .titles h4,
+.catalogueCeilings__wrap .titles .climatDetail__additional-value h2,
+.climatDetail__additional-value .catalogueCeilings__wrap .titles h2,
+.catalogueCeilings__wrap .titles .constructor__title {
+  padding-top: 0;
+  margin-bottom: 0rem !important;
+}
+
 .catalogueCeilings__rooms {
   border-bottom: 0.0625rem solid #babec2;
   margin-bottom: 5rem;
+}
+
+.catalogueCeilings__rooms .titles .text,
+.catalogueCeilings__rooms .titles .titles__text,
+.catalogueCeilings__rooms .titles .popup__status-send .survey__title,
+.popup__status-send .catalogueCeilings__rooms .titles .survey__title,
+.catalogueCeilings__rooms .titles .manufacturers__text,
+.catalogueCeilings__rooms .titles .articles__text,
+.catalogueCeilings__rooms .titles .serviceDetail__info p,
+.serviceDetail__info .catalogueCeilings__rooms .titles p,
+.catalogueCeilings__rooms .titles .reason__text,
+.catalogueCeilings__rooms .titles .catalogueDetail__price,
+.catalogueCeilings__rooms .titles .catalogueDetail__install,
+.catalogueCeilings__rooms .titles .catalogueDetail__desc p,
+.catalogueDetail__desc .catalogueCeilings__rooms .titles p,
+.catalogueCeilings__rooms .titles .shutterstock__text,
+.catalogueCeilings__rooms .titles .shutterstock__text-bold,
+.catalogueCeilings__rooms .titles .photoprintBlock__desc,
+.catalogueCeilings__rooms .titles .photoprintBlock__item,
+.catalogueCeilings__rooms .titles .categoryLink__name,
+.catalogueCeilings__rooms .titles .serviceReasons__reason-text,
+.catalogueCeilings__rooms .titles .serviceReasons__desc,
+.catalogueCeilings__rooms .titles .dillers__price-list p,
+.dillers__price-list .catalogueCeilings__rooms .titles p,
+.catalogueCeilings__rooms .titles .dillers__steps-content ul li,
+.dillers__steps-content ul .catalogueCeilings__rooms .titles li,
+.catalogueCeilings__rooms .titles .dillers__steps-left p,
+.dillers__steps-left .catalogueCeilings__rooms .titles p,
+.catalogueCeilings__rooms .titles .dillers__shipping,
+.catalogueCeilings__rooms .titles .dillers__programm,
+.catalogueCeilings__rooms .titles .dillers__shipping-type p,
+.dillers__shipping-type .catalogueCeilings__rooms .titles p,
+.catalogueCeilings__rooms .titles .dillers__info p,
+.dillers__info .catalogueCeilings__rooms .titles p,
+.catalogueCeilings__rooms .titles .dillers__info-adress dt,
+.dillers__info-adress .catalogueCeilings__rooms .titles dt,
+.catalogueCeilings__rooms .titles .dillers__info-adress dd,
+.dillers__info-adress .catalogueCeilings__rooms .titles dd,
+.catalogueCeilings__rooms .titles .dillers__materials p,
+.dillers__materials .catalogueCeilings__rooms .titles p,
+.catalogueCeilings__rooms .titles .dillers__materials table td,
+.dillers__materials table .catalogueCeilings__rooms .titles td,
+.catalogueCeilings__rooms .titles .dillers__designers p,
+.dillers__designers .catalogueCeilings__rooms .titles p,
+.catalogueCeilings__rooms .titles .dillers__designers-right ul li,
+.dillers__designers-right ul .catalogueCeilings__rooms .titles li,
+.catalogueCeilings__rooms .titles .dillers__learning p,
+.dillers__learning .catalogueCeilings__rooms .titles p,
+.catalogueCeilings__rooms .titles .dillers__learning h3,
+.dillers__learning .catalogueCeilings__rooms .titles h3,
+.catalogueCeilings__rooms .titles .dillers__learning ul li,
+.dillers__learning ul .catalogueCeilings__rooms .titles li,
+.catalogueCeilings__rooms .titles .dillers__learning-wrap ul li,
+.dillers__learning-wrap ul .catalogueCeilings__rooms .titles li,
+.catalogueCeilings__rooms .titles .dillers__documentation p,
+.dillers__documentation .catalogueCeilings__rooms .titles p,
+.catalogueCeilings__rooms .titles .dillers__documentation ul li dt,
+.dillers__documentation ul li .catalogueCeilings__rooms .titles dt,
+.catalogueCeilings__rooms .titles .dillers__documentation ul li dd,
+.dillers__documentation ul li .catalogueCeilings__rooms .titles dd,
+.catalogueCeilings__rooms .titles .dillers__documentation-info p,
+.dillers__documentation-info .catalogueCeilings__rooms .titles p,
+.catalogueCeilings__rooms .titles .dillers__documentation-info dt,
+.dillers__documentation-info .catalogueCeilings__rooms .titles dt,
+.catalogueCeilings__rooms .titles .dillers__documentation-info dd,
+.dillers__documentation-info .catalogueCeilings__rooms .titles dd,
+.catalogueCeilings__rooms .titles .dillers__offer-header p,
+.dillers__offer-header .catalogueCeilings__rooms .titles p,
+.catalogueCeilings__rooms .titles .dillers__offer-contacts p,
+.dillers__offer-contacts .catalogueCeilings__rooms .titles p,
+.catalogueCeilings__rooms .titles .dillers__offer-contacts a,
+.dillers__offer-contacts .catalogueCeilings__rooms .titles a,
+.catalogueCeilings__rooms .titles .dillers__offer-advantages ol li,
+.dillers__offer-advantages ol .catalogueCeilings__rooms .titles li,
+.catalogueCeilings__rooms .titles .dillers__offer-heading p,
+.dillers__offer-heading .catalogueCeilings__rooms .titles p,
+.catalogueCeilings__rooms .titles .dillers__offer-footer h4,
+.dillers__offer-footer .catalogueCeilings__rooms .titles h4,
+.catalogueCeilings__rooms .titles .dillers__offer-footer p,
+.dillers__offer-footer .catalogueCeilings__rooms .titles p,
+.catalogueCeilings__rooms .titles .dillers__offer-what ul li,
+.dillers__offer-what ul .catalogueCeilings__rooms .titles li,
+.catalogueCeilings__rooms .titles .staffCard p,
+.staffCard .catalogueCeilings__rooms .titles p,
+.catalogueCeilings__rooms .titles .advantages__item p,
+.advantages__item .catalogueCeilings__rooms .titles p,
+.catalogueCeilings__rooms .titles .constructor__text {
+  width: 48.75rem;
+  overflow: visible;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .catalogueCeilings__rooms .titles .text,
+  .catalogueCeilings__rooms .titles .titles__text,
+  .catalogueCeilings__rooms .titles .popup__status-send .survey__title,
+  .popup__status-send .catalogueCeilings__rooms .titles .survey__title,
+  .catalogueCeilings__rooms .titles .manufacturers__text,
+  .catalogueCeilings__rooms .titles .articles__text,
+  .catalogueCeilings__rooms .titles .serviceDetail__info p,
+  .serviceDetail__info .catalogueCeilings__rooms .titles p,
+  .catalogueCeilings__rooms .titles .reason__text,
+  .catalogueCeilings__rooms .titles .catalogueDetail__price,
+  .catalogueCeilings__rooms .titles .catalogueDetail__install,
+  .catalogueCeilings__rooms .titles .catalogueDetail__desc p,
+  .catalogueDetail__desc .catalogueCeilings__rooms .titles p,
+  .catalogueCeilings__rooms .titles .shutterstock__text,
+  .catalogueCeilings__rooms .titles .shutterstock__text-bold,
+  .catalogueCeilings__rooms .titles .photoprintBlock__desc,
+  .catalogueCeilings__rooms .titles .photoprintBlock__item,
+  .catalogueCeilings__rooms .titles .categoryLink__name,
+  .catalogueCeilings__rooms .titles .serviceReasons__reason-text,
+  .catalogueCeilings__rooms .titles .serviceReasons__desc,
+  .catalogueCeilings__rooms .titles .dillers__price-list p,
+  .dillers__price-list .catalogueCeilings__rooms .titles p,
+  .catalogueCeilings__rooms .titles .dillers__steps-content ul li,
+  .dillers__steps-content ul .catalogueCeilings__rooms .titles li,
+  .catalogueCeilings__rooms .titles .dillers__steps-left p,
+  .dillers__steps-left .catalogueCeilings__rooms .titles p,
+  .catalogueCeilings__rooms .titles .dillers__shipping,
+  .catalogueCeilings__rooms .titles .dillers__programm,
+  .catalogueCeilings__rooms .titles .dillers__shipping-type p,
+  .dillers__shipping-type .catalogueCeilings__rooms .titles p,
+  .catalogueCeilings__rooms .titles .dillers__info p,
+  .dillers__info .catalogueCeilings__rooms .titles p,
+  .catalogueCeilings__rooms .titles .dillers__info-adress dt,
+  .dillers__info-adress .catalogueCeilings__rooms .titles dt,
+  .catalogueCeilings__rooms .titles .dillers__info-adress dd,
+  .dillers__info-adress .catalogueCeilings__rooms .titles dd,
+  .catalogueCeilings__rooms .titles .dillers__materials p,
+  .dillers__materials .catalogueCeilings__rooms .titles p,
+  .catalogueCeilings__rooms .titles .dillers__materials table td,
+  .dillers__materials table .catalogueCeilings__rooms .titles td,
+  .catalogueCeilings__rooms .titles .dillers__designers p,
+  .dillers__designers .catalogueCeilings__rooms .titles p,
+  .catalogueCeilings__rooms .titles .dillers__designers-right ul li,
+  .dillers__designers-right ul .catalogueCeilings__rooms .titles li,
+  .catalogueCeilings__rooms .titles .dillers__learning p,
+  .dillers__learning .catalogueCeilings__rooms .titles p,
+  .catalogueCeilings__rooms .titles .dillers__learning h3,
+  .dillers__learning .catalogueCeilings__rooms .titles h3,
+  .catalogueCeilings__rooms .titles .dillers__learning ul li,
+  .dillers__learning ul .catalogueCeilings__rooms .titles li,
+  .catalogueCeilings__rooms .titles .dillers__learning-wrap ul li,
+  .dillers__learning-wrap ul .catalogueCeilings__rooms .titles li,
+  .catalogueCeilings__rooms .titles .dillers__documentation p,
+  .dillers__documentation .catalogueCeilings__rooms .titles p,
+  .catalogueCeilings__rooms .titles .dillers__documentation ul li dt,
+  .dillers__documentation ul li .catalogueCeilings__rooms .titles dt,
+  .catalogueCeilings__rooms .titles .dillers__documentation ul li dd,
+  .dillers__documentation ul li .catalogueCeilings__rooms .titles dd,
+  .catalogueCeilings__rooms .titles .dillers__documentation-info p,
+  .dillers__documentation-info .catalogueCeilings__rooms .titles p,
+  .catalogueCeilings__rooms .titles .dillers__documentation-info dt,
+  .dillers__documentation-info .catalogueCeilings__rooms .titles dt,
+  .catalogueCeilings__rooms .titles .dillers__documentation-info dd,
+  .dillers__documentation-info .catalogueCeilings__rooms .titles dd,
+  .catalogueCeilings__rooms .titles .dillers__offer-header p,
+  .dillers__offer-header .catalogueCeilings__rooms .titles p,
+  .catalogueCeilings__rooms .titles .dillers__offer-contacts p,
+  .dillers__offer-contacts .catalogueCeilings__rooms .titles p,
+  .catalogueCeilings__rooms .titles .dillers__offer-contacts a,
+  .dillers__offer-contacts .catalogueCeilings__rooms .titles a,
+  .catalogueCeilings__rooms .titles .dillers__offer-advantages ol li,
+  .dillers__offer-advantages ol .catalogueCeilings__rooms .titles li,
+  .catalogueCeilings__rooms .titles .dillers__offer-heading p,
+  .dillers__offer-heading .catalogueCeilings__rooms .titles p,
+  .catalogueCeilings__rooms .titles .dillers__offer-footer h4,
+  .dillers__offer-footer .catalogueCeilings__rooms .titles h4,
+  .catalogueCeilings__rooms .titles .dillers__offer-footer p,
+  .dillers__offer-footer .catalogueCeilings__rooms .titles p,
+  .catalogueCeilings__rooms .titles .dillers__offer-what ul li,
+  .dillers__offer-what ul .catalogueCeilings__rooms .titles li,
+  .catalogueCeilings__rooms .titles .staffCard p,
+  .staffCard .catalogueCeilings__rooms .titles p,
+  .catalogueCeilings__rooms .titles .advantages__item p,
+  .advantages__item .catalogueCeilings__rooms .titles p,
+  .catalogueCeilings__rooms .titles .constructor__text {
+    width: 100%;
+    overflow: hidden;
+  }
+}
+
+.catalogueCeilings__rooms .titles .titles__arrow_longtext {
+  display: none;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .catalogueCeilings__rooms .titles .titles__arrow_longtext {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 .catalogueCeilings__rooms .categoryLink {
@@ -24250,11 +25732,22 @@ input[type=text]::-ms-reveal {
 .catalogueCeilings .titles .second-title,
 .catalogueCeilings .titles .titles__second-title,
 .catalogueCeilings .titles .catalogueDetail__title,
+.catalogueCeilings .titles .catalogueDetail__filter h2,
+.catalogueDetail__filter .catalogueCeilings .titles h2,
 .catalogueCeilings .titles .photoprint__title,
 .catalogueCeilings .titles .photobank__title,
 .catalogueCeilings .titles .photoprintBlock__title,
+.catalogueCeilings .titles .dillers__item-heading p,
+.dillers__item-heading .catalogueCeilings .titles p,
+.catalogueCeilings .titles .dillers__item-heading h2,
+.dillers__item-heading .catalogueCeilings .titles h2,
+.catalogueCeilings .titles .dillers__item:first-of-type:hover .dillers__item-heading h2,
+.dillers__item:first-of-type:hover .dillers__item-heading .catalogueCeilings .titles h2,
+.catalogueCeilings .titles .dillers__offer-heading h4,
+.dillers__offer-heading .catalogueCeilings .titles h4,
 .catalogueCeilings .titles .climatDetail__additional-value h2,
-.climatDetail__additional-value .catalogueCeilings .titles h2 {
+.climatDetail__additional-value .catalogueCeilings .titles h2,
+.catalogueCeilings .titles .constructor__title {
   padding-top: 0;
   margin-bottom: 2.5rem;
 }
@@ -24270,11 +25763,34 @@ input[type=text]::-ms-reveal {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 8rem;
+  margin-bottom: 4rem;
 }
 
 .lamps-slider .titles {
   padding-top: 0;
+  margin-bottom: 3rem;
+}
+
+.lamps-slider .titles .second-title,
+.lamps-slider .titles .titles__second-title,
+.lamps-slider .titles .catalogueDetail__title,
+.lamps-slider .titles .catalogueDetail__filter h2,
+.catalogueDetail__filter .lamps-slider .titles h2,
+.lamps-slider .titles .photoprint__title,
+.lamps-slider .titles .photobank__title,
+.lamps-slider .titles .photoprintBlock__title,
+.lamps-slider .titles .dillers__item-heading p,
+.dillers__item-heading .lamps-slider .titles p,
+.lamps-slider .titles .dillers__item-heading h2,
+.dillers__item-heading .lamps-slider .titles h2,
+.lamps-slider .titles .dillers__item:first-of-type:hover .dillers__item-heading h2,
+.dillers__item:first-of-type:hover .dillers__item-heading .lamps-slider .titles h2,
+.lamps-slider .titles .dillers__offer-heading h4,
+.dillers__offer-heading .lamps-slider .titles h4,
+.lamps-slider .titles .climatDetail__additional-value h2,
+.climatDetail__additional-value .lamps-slider .titles h2,
+.lamps-slider .titles .constructor__title {
+  margin-bottom: 0;
 }
 
 .advantages__content {
@@ -24414,11 +25930,22 @@ input[type=text]::-ms-reveal {
 .credit__banks .titles .second-title,
 .credit__banks .titles .titles__second-title,
 .credit__banks .titles .catalogueDetail__title,
+.credit__banks .titles .catalogueDetail__filter h2,
+.catalogueDetail__filter .credit__banks .titles h2,
 .credit__banks .titles .photoprint__title,
 .credit__banks .titles .photobank__title,
 .credit__banks .titles .photoprintBlock__title,
+.credit__banks .titles .dillers__item-heading p,
+.dillers__item-heading .credit__banks .titles p,
+.credit__banks .titles .dillers__item-heading h2,
+.dillers__item-heading .credit__banks .titles h2,
+.credit__banks .titles .dillers__item:first-of-type:hover .dillers__item-heading h2,
+.dillers__item:first-of-type:hover .dillers__item-heading .credit__banks .titles h2,
+.credit__banks .titles .dillers__offer-heading h4,
+.dillers__offer-heading .credit__banks .titles h4,
 .credit__banks .titles .climatDetail__additional-value h2,
-.climatDetail__additional-value .credit__banks .titles h2 {
+.climatDetail__additional-value .credit__banks .titles h2,
+.credit__banks .titles .constructor__title {
   margin-bottom: 0;
 }
 
@@ -24936,8 +26463,10 @@ input[type=text]::-ms-reveal {
   .dillers__price-buttons .climatSlider__slide button,
   .climatSlider__slide .dillers__info button,
   .dillers__info .climatSlider__slide button,
-  .climatSlider__slide .dillers__documentation button,
-  .dillers__documentation .climatSlider__slide button,
+  .climatSlider__slide .dillers__designers-right a,
+  .dillers__designers-right .climatSlider__slide a,
+  .climatSlider__slide .dillers__documentation a,
+  .dillers__documentation .climatSlider__slide a,
   .climatSlider__slide .dillers__offer-links a,
   .dillers__offer-links .climatSlider__slide a,
   .climatSlider__slide .lamps-slider__button,
@@ -24969,7 +26498,8 @@ input[type=text]::-ms-reveal {
   .climatSlider__slide .formUr__submit,
   .climatSlider__slide .formUr__abort,
   .climatSlider__slide .formUr__add,
-  .climatSlider__slide .quickBuy__checkout {
+  .climatSlider__slide .quickBuy__checkout,
+  .climatSlider__slide .constructor__link {
     position: relative;
     z-index: 2;
     text-align: center;
@@ -25843,11 +27373,22 @@ input[type=text]::-ms-reveal {
   .climatCatalogue_main .second-title,
   .climatCatalogue_main .titles__second-title,
   .climatCatalogue_main .catalogueDetail__title,
+  .climatCatalogue_main .catalogueDetail__filter h2,
+  .catalogueDetail__filter .climatCatalogue_main h2,
   .climatCatalogue_main .photoprint__title,
   .climatCatalogue_main .photobank__title,
   .climatCatalogue_main .photoprintBlock__title,
+  .climatCatalogue_main .dillers__item-heading p,
+  .dillers__item-heading .climatCatalogue_main p,
+  .climatCatalogue_main .dillers__item-heading h2,
+  .dillers__item-heading .climatCatalogue_main h2,
+  .climatCatalogue_main .dillers__item:first-of-type .dillers__item-heading h2,
+  .dillers__item:first-of-type .dillers__item-heading .climatCatalogue_main h2,
+  .climatCatalogue_main .dillers__offer-heading h4,
+  .dillers__offer-heading .climatCatalogue_main h4,
   .climatCatalogue_main .climatDetail__additional-value h2,
-  .climatDetail__additional-value .climatCatalogue_main h2 {
+  .climatDetail__additional-value .climatCatalogue_main h2,
+  .climatCatalogue_main .constructor__title {
     margin-bottom: 2rem;
   }
 }
@@ -27058,11 +28599,22 @@ input[type=text]::-ms-reveal {
   .climatAdditional .second-title,
   .climatAdditional .titles__second-title,
   .climatAdditional .catalogueDetail__title,
+  .climatAdditional .catalogueDetail__filter h2,
+  .catalogueDetail__filter .climatAdditional h2,
   .climatAdditional .photoprint__title,
   .climatAdditional .photobank__title,
   .climatAdditional .photoprintBlock__title,
+  .climatAdditional .dillers__item-heading p,
+  .dillers__item-heading .climatAdditional p,
+  .climatAdditional .dillers__item-heading h2,
+  .dillers__item-heading .climatAdditional h2,
+  .climatAdditional .dillers__item:first-of-type .dillers__item-heading h2,
+  .dillers__item:first-of-type .dillers__item-heading .climatAdditional h2,
+  .climatAdditional .dillers__offer-heading h4,
+  .dillers__offer-heading .climatAdditional h4,
   .climatAdditional .climatDetail__additional-value h2,
-  .climatDetail__additional-value .climatAdditional h2 {
+  .climatDetail__additional-value .climatAdditional h2,
+  .climatAdditional .constructor__title {
     margin-bottom: 2.5rem;
   }
 }
@@ -27309,22 +28861,44 @@ input[type=text]::-ms-reveal {
 .recent_detail .titles .second-title,
 .recent_detail .titles .titles__second-title,
 .recent_detail .titles .catalogueDetail__title,
+.recent_detail .titles .catalogueDetail__filter h2,
+.catalogueDetail__filter .recent_detail .titles h2,
 .recent_detail .titles .photoprint__title,
 .recent_detail .titles .photobank__title,
 .recent_detail .titles .photoprintBlock__title,
+.recent_detail .titles .dillers__item-heading p,
+.dillers__item-heading .recent_detail .titles p,
+.recent_detail .titles .dillers__item-heading h2,
+.dillers__item-heading .recent_detail .titles h2,
+.recent_detail .titles .dillers__item:first-of-type:hover .dillers__item-heading h2,
+.dillers__item:first-of-type:hover .dillers__item-heading .recent_detail .titles h2,
+.recent_detail .titles .dillers__offer-heading h4,
+.dillers__offer-heading .recent_detail .titles h4,
 .recent_detail .titles .climatDetail__additional-value h2,
-.climatDetail__additional-value .recent_detail .titles h2 {
+.climatDetail__additional-value .recent_detail .titles h2,
+.recent_detail .titles .constructor__title {
   margin-bottom: 2.5rem;
 }
 
 .recent_detail .titles .second-title::after,
 .recent_detail .titles .titles__second-title::after,
 .recent_detail .titles .catalogueDetail__title::after,
+.recent_detail .titles .catalogueDetail__filter h2::after,
+.catalogueDetail__filter .recent_detail .titles h2::after,
 .recent_detail .titles .photoprint__title::after,
 .recent_detail .titles .photobank__title::after,
 .recent_detail .titles .photoprintBlock__title::after,
+.recent_detail .titles .dillers__item-heading p::after,
+.dillers__item-heading .recent_detail .titles p::after,
+.recent_detail .titles .dillers__item-heading h2::after,
+.dillers__item-heading .recent_detail .titles h2::after,
+.recent_detail .titles .dillers__item:first-of-type:hover .dillers__item-heading h2::after,
+.dillers__item:first-of-type:hover .dillers__item-heading .recent_detail .titles h2::after,
+.recent_detail .titles .dillers__offer-heading h4::after,
+.dillers__offer-heading .recent_detail .titles h4::after,
 .recent_detail .titles .climatDetail__additional-value h2::after,
-.climatDetail__additional-value .recent_detail .titles h2::after {
+.climatDetail__additional-value .recent_detail .titles h2::after,
+.recent_detail .titles .constructor__title::after {
   left: 0;
   -webkit-transform: none;
           transform: none;
@@ -35047,6 +36621,94 @@ input[type=text]::-ms-reveal {
   }
 }
 
+.constructor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 5rem 0;
+  padding-top: 1rem;
+}
+
+.constructor__image {
+  width: 46.25rem;
+  height: 26.625rem;
+  background-image: url("/img/ceilings/w3.png");
+  margin-bottom: 3rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  .constructor__image {
+    background-image: url("/img/ceilings/w3@2x.png");
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .constructor__image {
+    width: 20rem;
+    height: 42.625rem;
+    background-image: url("/img/ceilings/w2.png");
+  }
+}
+
+@media screen and (max-width: 44.9375rem) and (-webkit-min-device-pixel-ratio: 1.5), screen and (max-width: 44.9375rem) and (min-resolution: 144dpi), screen and (max-width: 44.9375rem) and (min-resolution: 1.5dppx) {
+  .constructor__image {
+    background-image: url("/img/ceilings/w2@2x.png");
+  }
+}
+
+.constructor__title {
+  margin: 0;
+  margin-bottom: 2.5rem;
+}
+
+.constructor__text {
+  margin: 0;
+  margin-bottom: 3rem;
+  width: 36.25rem;
+  text-align: center;
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .constructor__text {
+    width: 33.75rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .constructor__text {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 79.9375rem) {
+  .constructor iframe {
+    height: 84.375rem;
+    width: calc(100% + 32px);
+    margin-right: -1rem;
+    margin-left: -1rem;
+  }
+}
+
+@media screen and (max-width: 20.125rem) {
+  .constructor iframe {
+    width: calc(100% + 16px);
+    margin-right: -0.5rem;
+    margin-left: -0.5rem;
+  }
+}
+
 .videoblock {
   width: 100%;
   height: 27.5rem;
@@ -35451,6 +37113,71 @@ input[type=text]::-ms-reveal {
   .serverError__socials .socials__icon {
     width: 3rem;
     height: 3rem;
+  }
+}
+
+.discount {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 5rem;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .discount {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.discount p {
+  margin: 0;
+  color: #485058;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.01875rem;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .discount p {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .discount p:first-of-type {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.discount img {
+  width: 16rem;
+  height: 16rem;
+  margin: 0 2.25rem;
+}
+
+@media screen and (max-width: 60rem) {
+  .discount img {
+    margin: 0;
+    margin-right: 1.6875rem;
+    width: 14rem;
+    height: 14rem;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .discount img {
+    margin: 0;
+    margin-bottom: 1.5rem;
   }
 }
 

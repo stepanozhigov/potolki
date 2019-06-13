@@ -1,20 +1,36 @@
 .footer-offer {
 	position: relative;
 	z-index: 2;
-    padding-top: rem(80);
-    padding-bottom: rem(65);
+    padding-top: rem(48);
+    padding-bottom: rem(64);
     background-image: url('/img/footer-form.jpg');
     background-size: cover;
+
+	@media (min-resolution: 144dpi),
+	(min-resolution: 1.5dppx) {
+		background-image: url('/img/footer-form@2x.jpg');
+	}
 
 	@include below($tablet) {
 		background-position: center;
 		padding-top: rem(54);
 		padding-bottom: rem(43);
+		background-image: url('/img/gui/request-call-fon-768@2x.jpg');
+
+		@media (min-resolution: 144dpi),
+		(min-resolution: 1.5dppx) {
+			background-image: url('/img/gui/request-call-fon-768@1x.jpg');
+		}
 	}
 
     @media screen and (max-width: 640px) {
-        background-image: url('/img/gui/footer-offer_mobile.jpg');
+        background-image: url('/img/gui/request-call-fon-320@1x.jpg');
         box-shadow: initial;
+
+		@media (min-resolution: 144dpi),
+		(min-resolution: 1.5dppx) {
+			background-image: url('/img/gui/request-call-fon-320@2x.jpg');
+		}
     }
 
     &__content {
@@ -38,12 +54,14 @@
 			font-size: rem(20);
 			width: calc(100% - 245px);
 			text-align: center;
+			letter-spacing: rem(1.25);
 		}
 
 		@include below($mobile) {
-			font-size: rem(19);
+			font-size: rem(16);
 			width: 100%;
-			line-height: rem(28);
+			line-height: rem(24);
+			letter-spacing: rem(0.75);
 		}
 
 		span {
@@ -137,7 +155,7 @@
 
 			@include below($mobile) {
 				height: rem(50);
-				width: rem(260);
+				width: 100%;
 			}
 		}
 

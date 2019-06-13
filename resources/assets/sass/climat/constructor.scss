@@ -1,0 +1,75 @@
+.constructor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: rem(80) 0;
+    padding-top: rem(16);
+    @extend .container;
+
+    &__image {
+        width: rem(740);
+        height: rem(426);
+        background-image: url('/img/ceilings/w3.png');
+        margin-bottom: rem(48);
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        @media (min-resolution: 144dpi),
+        (min-resolution: 1.5dppx) {
+            background-image: url('/img/ceilings/w3@2x.png');
+        }
+
+        @include below($mobile) {
+            width: rem(320);
+            height: rem(682);
+            background-image: url('/img/ceilings/w2.png');
+
+            @media (min-resolution: 144dpi),
+            (min-resolution: 1.5dppx) {
+                background-image: url('/img/ceilings/w2@2x.png');
+            }
+        }
+    }
+
+    &__title {
+        margin: 0;
+        margin-bottom: rem(40);
+        @extend .second-title;
+    }
+
+    &__text {
+        margin: 0;
+        margin-bottom: rem(48);
+        @extend .text;
+        width: rem(580);
+        text-align: center;
+
+        @include below($tablet) {
+            width: rem(540);
+        }
+
+        @include below($mobile) {
+            width: 100%;
+        }
+    }
+
+    &__link {
+        @extend .button;
+        @extend .button_gray;
+    }
+
+	iframe {
+		@include below($tablet) {
+			height: rem(1350);
+            width: calc(100% + 32px);
+            margin-right: rem(-16);
+            margin-left: rem(-16);
+        }
+		@include below($mobile-small) {
+            width: calc(100% + 16px);
+            margin-right: rem(-8);
+            margin-left: rem(-8);
+        }
+	}
+}

@@ -7,19 +7,72 @@
     <ul class="mobileMenu__list scrollable">
         <li class="mobileMenu__item mobileMenu__item_category">
             <div class="mobileMenu__item-category">
-                <p>Калькулятор</p>
+                <p>Каталог</p>
                 <div class="mobileMenu__category">
                     <div class="mobileMenu__category-heading">
                         <a class="mobileMenu__link-prev" href="javascript:void(0);"></a>
-                        <a class="mobileMenu__link-category" href="javascript:void(0);">Калькулятор</a>
+                        <a class="mobileMenu__link-category" href="javascript:void(0);">Каталог</a>
                         <a class="mobileMenu__link-category mobileMenu__link-arrow" href="javascript:void(0);"></a>
                     </div>
                     <ul class="scrollable scrollable">
                         <li class="mobileMenu__item">
-                            <a  href="{{ route('calculator', ['city' => $city, 'type' => 'okna']) }}">Окна</a>
+                            <a  href="">Матовые</a>
                         </li>
                         <li class="mobileMenu__item">
-                            <a  href="{{ route('calculator', ['city' => $city, 'type' => 'balkony']) }}">Балконы</a>
+                            <a  href="">Глянцевые</a>
+                        </li>
+                        <li class="mobileMenu__item">
+                            <a  href="">Сатиновые</a>
+                        </li>
+                        <li class="mobileMenu__item">
+                            <a  href="">Тканевые</a>
+                        </li>
+                        <li class="mobileMenu__item">
+                            <a  href="">Резные</a>
+                        </li>
+                        <li class="mobileMenu__item">
+                            <a  href="">Парящие</a>
+                        </li>
+                        <li class="mobileMenu__item">
+                            <a  href="">Звездное небо</a>
+                        </li>
+                        <li class="mobileMenu__item">
+                            <a  href="">Двухуровневые</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+        <li class="mobileMenu__item mobileMenu__item_category">
+            <div class="mobileMenu__item-category">
+                <p>Услуги</p>
+                <div class="mobileMenu__category">
+                    <div class="mobileMenu__category-heading">
+                        <a class="mobileMenu__link-prev" href="javascript:void(0);"></a>
+                        <a class="mobileMenu__link-category" href="javascript:void(0);">Услуги</a>
+                        <a class="mobileMenu__link-category mobileMenu__link-arrow" href="javascript:void(0);"></a>
+                    </div>
+                    <ul class="scrollable scrollable">
+                        <li class="mobileMenu__item">
+                            <a  href="">Бесплатный замер</a>
+                        </li>
+                        <li class="mobileMenu__item">
+                            <a  href="">Фотопечать</a>
+                        </li>
+                        <li class="mobileMenu__item">
+                            <a  href="">Установка</a>
+                        </li>
+                        <li class="mobileMenu__item">
+                            <a  href="">Слив воды</a>
+                        </li>
+                        <li class="mobileMenu__item">
+                            <a  href="">Замена полотна</a>
+                        </li>
+                        <li class="mobileMenu__item">
+                            <a  href="">Ремонт</a>
+                        </li>
+                        <li class="mobileMenu__item">
+                            <a  href="">Рассрочка</a>
                         </li>
                     </ul>
                 </div>
@@ -27,7 +80,7 @@
         </li>
         <li class="mobileMenu__item">
             <a  href="{{ route('services', [$city, 'measurements']) }}">
-                Бесплатный замер
+                Калькулятор
             </a>
         </li>
         <li class="mobileMenu__item">
@@ -38,11 +91,6 @@
         <li class="mobileMenu__item">
             <a  href="{{ route('photos', $city) }}">
                 Фото
-            </a>
-        </li>
-        <li class="mobileMenu__item">
-            <a  href="{{ route('contacts', $city) }}">
-                Контакты
             </a>
         </li>
         <li class="mobileMenu__item mobileMenu__item_category">
@@ -56,22 +104,22 @@
                     </div>
                     <ul class="scrollable">
                         <li class="mobileMenu__item">
-                            <a  href="{{ route('services', $city) }}">Услуги</a>
+                            <a href="{{ route('about', $city) }}">О компании</a>
                         </li>
                         <li class="mobileMenu__item">
-                            <a href="{{ route('about', $city) }}">О компании</a>
+                            <a  href="{{ route('dillers', $city) }}">Диллерам</a>
+                        </li>
+                        <li class="mobileMenu__item">
+                            <a href="{{ route('contacts', $city) }}">Контакты</a>
                         </li>
                         <li class="mobileMenu__item">
                             <a href="{{ route('employees', $city) }}">Сотрудники</a>
                         </li>
                         <li class="mobileMenu__item">
-                            <a href="{{ route('vacancies', $city) }}">Вакансии</a>
+                            <a href="{{ route('reviews', $city) }}">Отзывы</a>
                         </li>
                         <li class="mobileMenu__item">
-                            <a href="{{ route('questions', $city) }}">Вопрос-ответ</a>
-                        </li>
-                        <li class="mobileMenu__item">
-                            <a href="{{ route('articles', $city) }}">Статьи</a>
+                            <a href="{{ route('questions', $city) }}">Вопросы-ответы</a>
                         </li>
                         <li class="mobileMenu__item">
                             <a href="{{ route('dirMessage', $city) }}">Написать директору</a>

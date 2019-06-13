@@ -1,24 +1,24 @@
 <template>
     <div class="ceilingCalculator">
         <h2 class="ceilingCalculator__title">Калькулятор</h2>
-        <p class="ceilingCalculator__desc">Рассчитайте стоимость натяжного потолока онлайн. Матовые, сатиновые, глянцевые — все по одной цене! Выберите параметры вашего помещения, перемещая ползунки:</p>
+        <p class="ceilingCalculator__desc">Рассчитайте стоимость натяжного потолока онлайн. Матовые, сатиновые, глянцевые — все по одной цене! Выберите параметры вашего помещения, перемещая&nbsp;ползунки.</p>
         <div class="ceilingCalculator__item">
             <p class="ceilingCalculator__item-name">
-                Площадь помещения, м2
+                Площадь помещения, м<sup>2</sup>
             </p>
-            <input data-min="0" data-max="150" class="range" type="text" name="" value="">
+            <input data-min="0" data-from="25" data-max="150" class="range" type="text" name="" value="">
         </div>
         <div class="ceilingCalculator__item">
             <p class="ceilingCalculator__item-name">
                 Количество труб
             </p>
-            <input data-min="0" data-max="10" class="range" type="text" name="" value="">
+            <input data-min="0"  data-max="10" class="range" type="text" name="" value="">
         </div>
         <div class="ceilingCalculator__item">
             <p class="ceilingCalculator__item-name">
                 Количество углов
             </p>
-            <input data-min="0" data-max="30" class="range" type="text" name="" value="">
+            <input data-min="0" data-from="4" data-max="30" class="range" type="text" name="" value="">
         </div>
         <div class="ceilingCalculator__item">
             <p class="ceilingCalculator__item-name">

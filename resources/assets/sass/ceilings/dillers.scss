@@ -4,10 +4,12 @@
         height: rem(490);
         padding-top: rem(100);
         padding-bottom: rem(105);
-        margin-bottom: rem(90);
+        margin-bottom: rem(80);
 
         background-image: url('/img/ceilings/dillers-heading.jpg');
-        background-size: cover;
+		background-size: auto 100%;
+		background-repeat: no-repeat;
+		background-position: center;
 
         @include below($mobile) {
             height: auto;
@@ -31,16 +33,17 @@
         p {
             margin: 0;
 
+            @extend .intro;
             color: $white;
             text-align: center;
 
-            @extend .third-title;
             @include below($mobile) {
                 max-height: rem(90);
                 margin-bottom: rem(30);
                 overflow: hidden;
 
-                font-size: rem(22);
+                font-size: rem(20);
+                line-height: rem(30);
             }
 
             &.opened {
@@ -83,15 +86,19 @@
 
     &__content {
         padding-bottom: rem(180);
+
+        @include below($mobile) {
+            padding-bottom: rem(24);
+        }
     }
 
     &__item-heading {
         position: relative;
 
-        width: 100%;
-        min-height: rem(95);
-        padding-top: rem(35);
-        padding-bottom: rem(35);
+        width: rem(780);
+        min-height: rem(96);
+        padding-top: rem(32);
+        padding-bottom: rem(32);
         padding-left: rem(80);
 
         border-top: rem(2) solid #d0d2d4;
@@ -101,53 +108,36 @@
             transition: background-color .3s;
         }
         @include below($tablet) {
-            width: calc(100% + 40px);
-            padding-left: rem(70);
-            margin-right: rem(-20);
-            margin-left: rem(-20);
+            width: 100%;
         }
         @include below($mobile) {
-            width: calc(100% + 20px);
-            margin-right: rem(-10);
-            margin-left: rem(-10);
+            padding-left: rem(60);
         }
 
         &:hover {
-            border-top: rem(2) solid transparent;
-            border-radius: rem(5);
-            background-color: $red_thunderbird;
-
-            @include below($tablet) {
-                border-radius: 0;
-            }
 
 
-            & p {
-                color: $white;
-            }
-
-            &::before {
-                border-color: $white transparent transparent;
-            }
-
-            &::after {
-                border-color: $red_thunderbird transparent transparent;
+            & p,
+            & h2 {
+                color: #dc1414;
             }
         }
 
-        p {
+        p,
+        h2 {
             margin: 0;
+            padding: 0;
 
-            line-height: 1.1;
-            text-align: left;
+            @extend .second-title;
+            transition: color .3s;
 
-            font-family: $futura;
-            font-size: rem(26);
-            text-transform: uppercase;
-            color: #50555a;
+            &::after {
+                display: none;
+            }
 
             @include below($mobile) {
                 font-size: rem(22);
+                text-align: left;
             }
         }
 
@@ -162,19 +152,20 @@
             width: 0;
             height: 0;
 
-            border-width: rem(18) rem(18) 0;
+            border-width: rem(12) rem(10) 0;
             border-style: solid;
 
             @include above($tablet) {
                 transition: border-color .3s;
             }
             @include below($tablet) {
-                left: rem(20);
+                top: calc(50% - 8px);
+                left: rem(12);
             }
         }
 
         &::before {
-            border-color: $red_thunderbird transparent transparent;
+            border-color: #babec2 transparent transparent;
             transform: translateY(3px);
         }
 
@@ -186,30 +177,50 @@
     &__item {
         display: flex;
         flex-direction: column;
+        align-items: center;
         width: 100%;
 
-        &:hover + .dillers__item {
+        &:first-of-type,
+        &:first-of-type:hover {
             .dillers__item-heading {
-                border-top: rem(2) solid $white;
+                border-top: none;
+                cursor: auto;
+                padding: rem(35) 0;
 
-                @include below($tablet) {
-                    border-top: rem(2) solid #d0d2d4;
+                &::before,
+                &::after {
+                    display: none;
+                }
+
+                h2 {
+                    @extend .second-title;
+                    padding-bottom: 0;
+                    text-transform: initial;
+
+                    &::after {
+                        display: none;
+                    }
                 }
             }
         }
 
-        &:last-of-type {
-            border-bottom: rem(2) solid #d0d2d4;
+        &_offer {
+            @extend .dillers__item_opened;
+            border-bottom: none;
 
-            &:hover {
-                border-bottom: rem(2) solid $white;
-            }
+            .dillers__item-heading {
+                padding: 0!important;
+                width: 100%;
+                min-height: auto;
 
-            &.dillers__item_opened {
-                &:hover {
-                    border-bottom: rem(2) solid #d0d2d4;
+
+                h2 {
+                    @extend .second-title;
+
                 }
             }
+
+
         }
 
         &_opened {
@@ -231,13 +242,25 @@
                 &::before {
                     transform: translateY(-3px) rotate(180deg)!important;
                 }
+
+                p {
+                    &::after {
+                        display: block;
+                        bottom: rem(-32);
+
+                        @include below($mobile) {
+                            display: none;
+                        }
+                    }
+                }
             }
             .dillers__item-heading:hover {
                 border-top: rem(2) solid #d0d2d4;
                 border-radius: 0;
                 background-color: $white;
 
-                & p {
+                & p,
+                & h2 {
                     color: $grey_abbey;
                 }
 
@@ -249,23 +272,17 @@
                     border-color: $white transparent transparent;
                 }
             }
-
-            &:hover + .dillers__item {
-                .dillers__item-heading {
-                    border-top: rem(2) solid #d0d2d4;
-                }
-            }
         }
     }
 
     &__item-content {
         display: none;
+        width: 100%;
         flex-direction: column;
-        padding: 0 rem(30);
+        padding-top: rem(40);
         padding-bottom: rem(100);
 
         @include below($tablet) {
-            padding: 0;
             padding-bottom: rem(100);
         }
     }
@@ -440,24 +457,48 @@
         }
     }
 
-    &__shipping {
+    &__programm {
+        @include below($tablet) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__shipping,
+    &__programm {
         margin: 0;
+        width: rem(780);
+        margin: 0 auto;
 
         @extend .text;
 
+        p {
+            margin: 0;
+            margin-bottom: rem(16);
+        }
+
         &:nth-of-type(1) {
             margin-bottom: rem(30);
+
+
         }
 
         &:nth-of-type(2) {
             margin-bottom: rem(15);
+        }
+
+        @include below($tablet) {
+            width: rem(480);
+        }
+
+        @include below($mobile) {
+            width: 100%;
         }
     }
 
     &__shipping-type {
         display: flex;
 
-        @include below($mobile) {
+        @include below($tablet) {
             flex-direction: column;
         }
 
@@ -469,6 +510,11 @@
             width: rem(210);
             height: rem(117);
             margin-right: rem(25);
+
+            @include below($tablet) {
+                margin-right: 0;
+                margin-bottom: rem(8);
+            }
 
             @include below($mobile) {
                 width: 100%;
@@ -702,6 +748,14 @@
                         margin-bottom: rem(20);
                     }
                 }
+
+                &:last-of-type {
+                    @include below($mobile) {
+                        margin: 0;
+                        padding: 0;
+                        border: none;
+                    }
+                }
             }
 
             th {
@@ -853,19 +907,6 @@
     }
 
     &__materials-table {
-        max-height: rem(605);
-        overflow: hidden;
-
-        @include below($tablet) {
-            margin-bottom: rem(45);
-        }
-        @include below($mobile) {
-            max-height: rem(1176);
-        }
-
-        &.opened {
-            max-height: none;
-        }
 
         h3 {
             display: none;
@@ -886,6 +927,8 @@
     &__designers {
         display: flex;
         flex-wrap: wrap;
+        width: rem(780);
+        margin: 0 auto;
 
         p {
             width: 100%;
@@ -894,13 +937,25 @@
 
             @extend .text;
         }
+
+        @include below($tablet) {
+            width: rem(480);
+        }
+
+        @include below($mobile) {
+            width: 100%;
+        }
     }
 
     &__designers-left {
         display: flex;
-        flex-direction: column;
-        width: rem(210);
-        margin-right: rem(35);
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: rem(35);
+
+        @include below($tablet) {
+            flex-direction: column;
+        }
 
         @include below($mobile) {
             width: 100%;
@@ -909,56 +964,44 @@
         }
 
         img {
-            width: 100%;
+            width: calc(33,3% - 10px);
             height: auto;
-            margin-bottom: rem(20);
-        }
 
-        a {
-            position: relative;
+            @include below($tablet) {
+                width: 100%;
 
-            color: $red_crismon;
-
-            @extend .text;
-            @include below($mobile) {
-                width: rem(200);
-                margin: 0 auto;
-            }
-
-            &::after {
-                content: '';
-
-                position: absolute;
-                top: calc(50% - 5px);
-                right: 0;
-
-                width: rem(12);
-                height: rem(11);
-
-                background-image: url(/img/ceilings/arrow.png);
-                background-repeat: no-repeat;
-                background-size: contain;
+                &:not(:last-of-type) {
+                    margin-bottom: rem(16);
+                }
             }
         }
+
+
     }
 
     &__designers-right {
-        width: calc(100% - 245px);
+        width: 100%;
 
         @include below($mobile) {
             width: 100%;
         }
 
-        p {
+        a {
+
+            @extend .button;
+            @extend .button_gray;
+            margin: 0 auto;
+        }
+
+        h3 {
             width: 100%;
             margin-bottom: rem(20);
 
-            font-weight: 700;
-
-            @extend .text;
+            @extend .third-title;
         }
 
         ul {
+            list-style-type: none;
             margin: 0;
 
             @include below($mobile) {
@@ -969,10 +1012,25 @@
                 margin-bottom: rem(30);
             }
 
+            &:last-of-type {
+                margin-bottom: rem(64);
+            }
+
             li {
+                position: relative;
                 margin: 0;
 
+                &:not(:last-of-type) {
+                    margin-bottom: rem(4);
+                }
+
                 @extend .text;
+
+                &::before {
+                    position: absolute;
+                    content: '\2014';
+                    left: rem(-24);
+                }
             }
         }
     }
@@ -980,6 +1038,16 @@
     &__learning {
         display: flex;
         flex-wrap: wrap;
+        width: rem(780);
+        margin: 0 auto;
+
+        @include below($tablet) {
+            width: rem(480);
+        }
+
+        @include below($mobile) {
+            width: 100%;
+        }
 
         p {
             margin: 0;
@@ -1011,64 +1079,18 @@
 
             li {
                 position: relative;
+                margin: 0;
 
-                padding-left: rem(30);
+                &:not(:last-of-type) {
+                    margin-bottom: rem(4);
+                }
 
                 @extend .text;
 
-                &:not(:last-of-type) {
-                    margin-bottom: rem(15);
-                }
-
-                &::after,
                 &::before {
-                    background-color: $grey_abbey;
-                }
-
-                &::before {
-                    content: '';
-
                     position: absolute;
-                    top: rem(10);
-                    left: 5px;
-
-                    width: 20px;
-                    height: 2px;
-
-                    transform: rotate(-45deg);
-                }
-
-                &::after {
-                    content: '';
-
-                    position: absolute;
-                    top: 13px;
-                    left: 0;
-
-                    width: 10px;
-                    height: 2px;
-
-                    transform: rotate(45deg);
-                }
-
-                ul {
-                    padding-top: rem(15);
-                    margin-bottom: 0;
-
-                    list-style-type: disc;
-
-                    @include below($tablet) {
-                        padding-left: rem(30);
-                    }
-
-                    li {
-                        padding-left: 0;
-
-                        &::before,
-                        &::after {
-                            display: none;
-                        }
-                    }
+                    content: '\2014';
+                    left: rem(-24);
                 }
             }
         }
@@ -1078,7 +1100,7 @@
         display: flex;
         margin-bottom: rem(45);
 
-        @include below($mobile) {
+        @include below($tablet) {
             flex-direction: column;
         }
 
@@ -1087,7 +1109,7 @@
             height: rem(175);
             margin-right: rem(25);
 
-            @include below($mobile) {
+            @include below($tablet) {
                 width: 100%;
                 height: auto;
                 margin-right: 0;
@@ -1127,6 +1149,22 @@
     }
 
     &__documentation {
+        width: rem(780);
+        margin: 0 auto;
+
+        @include below($tablet) {
+            width: rem(480);
+        }
+
+        @include below($mobile) {
+            width: 100%;
+        }
+
+        h3 {
+            @extend .third-title;
+            margin-bottom: rem(16);
+        }
+
         p {
             margin: 0;
             margin-bottom: rem(30);
@@ -1138,25 +1176,30 @@
             }
         }
 
-        button {
+        a {
             width: rem(310);
             height: rem(50);
-            margin-bottom: rem(25);
+            margin-bottom: rem(64);
 
             @extend .button;
+
+            @include below($tablet) {
+                margin: 0 auto;
+                margin-bottom: rem(64);
+            }
             @include below($mobile) {
                 width: 100%;
             }
         }
 
         ul {
-            width: rem(500);
             margin: 0;
             margin-bottom: rem(40);
+            list-style-type: none;
+            padding-left: 0;
 
             @include below($mobile) {
                 width: 100%;
-                padding-left: rem(20);
             }
 
             li {
@@ -1206,7 +1249,7 @@
     &__documentation-wrap {
         display: flex;
 
-        @include below($mobile) {
+        @include below($tablet) {
             flex-direction: column;
         }
 
@@ -1218,10 +1261,9 @@
             border-radius: rem(5);
 
             @include below($tablet) {
-                margin-right: rem(30);
-            }
-            @include below($mobile) {
                 width: 100%;
+                height: auto;
+                margin-right: 0;
                 margin-bottom: rem(32);
             }
         }
@@ -1230,6 +1272,14 @@
     &__documentation-info {
         display: flex;
         flex-direction: column;
+
+        h3 {
+            margin-bottom: rem(16);
+
+            @include below($mobile) {
+                margin-bottom: rem(48);
+            }
+        }
 
         p {
             margin: 0;
@@ -1270,9 +1320,6 @@
         dd {
             margin: 0;
 
-            font-weight: 500;
-            line-height: 1.1;
-
             @extend .text;
         }
         dd {
@@ -1283,15 +1330,22 @@
     }
 
     &__offer-header {
-        padding: 0 rem(10);
-        padding-top: rem(55);
-        padding-bottom: rem(70);
+        padding: 0 rem(32);
+        padding-top: rem(48);
+        padding-bottom: rem(64);
         margin-bottom: rem(45);
 
         border-radius: rem(5);
         background-color: #f1f1f1;
 
+        @include below($tablet) {
+            padding: 0 rem(56);
+            padding-top: rem(48);
+            padding-bottom: rem(64);
+        }
+
         @include below($mobile) {
+            padding: 0 rem(16);
             padding-top: rem(45);
             padding-bottom: rem(45);
         }
@@ -1327,8 +1381,17 @@
 
             @extend .text;
 
+            @include below($tablet) {
+                font-size: rem(22);
+                line-height: rem(32);
+            }
+
             &:not(:last-of-type) {
                 margin-bottom: rem(25);
+            }
+
+            &:last-of-type {
+                margin-bottom: rem(48);
             }
 
             span {
@@ -1341,74 +1404,181 @@
     &__offer-contacts {
         display: flex;
         justify-content: space-between;
-        margin-bottom: rem(25);
+        margin-bottom: rem(80);
+        padding: 0 rem(88);
 
         @include below($tablet) {
-            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 0;
+        }
+
+        @include below($mobile) {
+            padding: 0 rem(16);
+            align-items: flex-start;
         }
 
         p {
             display: inline-flex;
             align-items: center;
             margin: 0;
-            margin-bottom: rem(20);
 
-            font-size: rem(20);
-            font-weight: 300;
             color: $grey_chateau;
 
             @extend .text;
+
+            @include below($tablet) {
+                &:not(:last-of-type) {
+                    margin-bottom: rem(32);
+                }
+            }
+
+            @include below($mobile) {
+                align-items: flex-start;
+            }
+
+            &:nth-of-type(1) {
+                .dillers__offer-icon {
+                    @include below($mobile) {
+                        margin-top: rem(3);
+                    }
+                }
+            }
+            &:nth-of-type(2) {
+                .dillers__offer-icon {
+                    @include below($mobile) {
+                        margin-top: rem(3);
+                    }
+                }
+            }
+            &:nth-of-type(3) {
+                .dillers__offer-icon {
+                    @include below($mobile) {
+                        margin-top: rem(3);
+                    }
+                }
+            }
         }
 
-        span {
+        a {
+            display: inline-flex;
+            align-items: center;
+            margin: 0;
+
+            color: $grey_chateau;
+            text-decoration: none;
+
+            @extend .text;
+
+            &:not(:last-of-type) {
+                margin-right: rem(8);
+            }
+        }
+
+        .diller__whatsapp {
+            position: relative;
+
+            &:hover {
+                &::after {
+                    bottom: rem(-2);
+                }
+            }
+
+            &::after {
+                position: absolute;
+                content: '';
+                width: 100%;
+                height: rem(1);
+                border-bottom: rem(1) dashed $grey_chateau;
+                bottom: 0;
+                left: 0;
+                transition: bottom .3s;
+            }
+        }
+
+        span,
+        a {
             color: $grey_abbey;
         }
     }
 
     &__offer-icon {
         margin-right: rem(15);
+        flex-shrink: 0;
 
         fill: #a7aaad;
+
+        @include below($mobile) {
+            margin-right: rem(8);
+        }
     }
 
     &__offer-links {
         display: flex;
-        justify-content: space-between;
-        margin-bottom: rem(85);
+        justify-content: center;
 
         @include below($tablet) {
             flex-wrap: wrap;
-            justify-content: space-evenly;
-            margin-bottom: rem(65);
+            justify-content: space-between;
+            margin-bottom: 0;
+            margin-bottom: rem(-25);
         }
-        @include below($mobile) {
-            margin-bottom: rem(50);
-        }
-
         a {
-            height: rem(50);
-            padding: 0 rem(40);
+            height: rem(48);
+            padding: 0 rem(24);
 
             @extend .button;
             width: auto;
+
+            &:not(:first-of-type) {
+                @extend .button_gray;
+            }
+
+            &:not(:last-of-type) {
+                margin-right: rem(16);
+
+                @include below($tablet) {
+                    margin-right: 0;
+                    margin-left: 0;
+                }
+            }
+
             @include below($tablet) {
-                width: rem(350);
+                width: rem(290);
                 margin-bottom: rem(25);
+                margin-right: 0;
+                margin-left: 0;
             }
             @include below($mobile) {
                 width: 100%;
                 margin-bottom: rem(20);
+                padding: 0 rem(16);
             }
         }
     }
 
     &__offer-why {
         display: flex;
-        margin-bottom: rem(75);
+        margin-bottom: rem(80);
+        background-color: #f1f1f1;
 
         @include below($tablet) {
             flex-direction: column;
             align-items: center;
+            padding-bottom: rem(64);
+        }
+
+        @include below($mobile) {
+            width: calc(100% + 32px);
+            margin-right: rem(-16);
+            margin-left: rem(-16);
+        }
+
+        @include below($mobile-small) {
+            width: calc(100% + 16px);
+            margin-right: rem(-8);
+            margin-left: rem(-8);
         }
     }
 
@@ -1418,58 +1588,51 @@
         margin-right: rem(50);
 
         @include below($tablet) {
-            width: rem(728);
+            width: 100%;
             height: rem(430);
             margin-right: 0;
-            margin-bottom: rem(70);
+            margin-bottom: rem(64);
         }
         @include below($mobile) {
-            width: rem(320);
+            width: 100%;
             height: rem(190);
-            margin-right: rem(-10);
-            margin-bottom: rem(50);
         }
     }
 
     &__offer-advantages {
+        padding-top: rem(48);
+
+        @include below($tablet) {
+            padding: 0 rem(48);
+            width: 100%;
+        }
+
+        @include below($mobile) {
+            padding: 0 rem(16);
+        }
+
         p {
             margin: 0;
-            margin-bottom: rem(30);
+            margin-bottom: rem(16);
 
-            font-family: $futura;
-            font-size: rem(36);
-            font-weight: 300;
-            color: $grey_abbey;
-            text-align: center;
-            letter-spacing: rem(2.08);
+            @extend .third-title;
 
             @include below($tablet) {
                 position: relative;
 
-                padding-bottom: rem(45);
-                margin-bottom: rem(45);
+                padding-bottom: 0;
+                margin-bottom: rem(16);
 
                 &::after {
-                    content: '';
-
-                    position: absolute;
-                    bottom: 0;
-                    left: 50%;
-
-                    width: rem(200);
-                    height: rem(2);
-
-                    background-color: #979797;
-                    transform: translateX(-50%);
+                    display: none;
                 }
             }
             @include below($mobile) {
                 width: 100%;
-                padding-bottom: rem(25);
                 margin-bottom: rem(25);
 
                 font-size: rem(30);
-                letter-spacing: rem(1.3);
+                line-height: normal;
             }
         }
 
@@ -1484,12 +1647,8 @@
             li {
                 position: relative;
 
-                height: rem(27);
-                padding-left: rem(45);
-                margin-bottom: rem(10);
-
-                font-size: rem(20);
-                font-weight: 400;
+                padding-left: rem(24);
+                margin-bottom: rem(8);
 
                 @extend .text;
                 @include below($mobile) {
@@ -1501,29 +1660,10 @@
                 }
 
                 &:before {
-                    content: counter(item);
-
                     position: absolute;
+                    content: '—';
                     top: 0;
                     left: 0;
-
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                    width: rem(27);
-                    height: rem(27);
-
-                    font-family: $futura;
-                    font-size: rem(14);
-                    font-weight: 500;
-                    color: $white;
-                    letter-spacing: rem(.97);
-
-                    border-radius: 50%;
-                    background-color: $red_crismon;
-
-                    counter-increment: item;
                 }
             }
         }
@@ -1544,18 +1684,14 @@
     &__offer-staff {
         display: flex;
         justify-content: space-between;
-        margin-bottom: rem(75);
 
         @include below($tablet) {
             display: inline-flex;
-            flex-direction: column;
-            align-items: flex-start;
+            width: 100%;
+        }
 
-            .staffCard {
-                &:not(:last-of-type) {
-                    margin-bottom: rem(35);
-                }
-            }
+        @include below($mobile) {
+            flex-direction: column;
         }
     }
 
@@ -1563,59 +1699,19 @@
         width: 100%;
 
         h4 {
-            margin: 0;
-            margin-bottom: rem(35);
-
-            font-family: $futura;
-            font-size: rem(36);
-            font-weight: 300;
-            color: $grey_abbey;
-            text-align: center;
-            letter-spacing: rem(2.08);
-
-            @include below($mobile) {
-                margin-bottom: rem(20);
-
-                font-size: rem(30);
-                letter-spacing: rem(1.4);
-            }
+            @extend .second-title;
+            margin-bottom: rem(40);
         }
 
         p {
-            position: relative;
-
-            padding-bottom: rem(35);
-            margin: 0;
-            margin-bottom: rem(50);
-
-            font-size: rem(18);
-            font-weight: 300;
-            color: $grey_stone;
-            text-align: center;
-
             @extend .text;
+            margin: 0 auto;
+            margin-bottom: rem(48);
+            text-align: center;
+            width: rem(760);
+
             @include below($tablet) {
-                padding-bottom: rem(50);
-            }
-            @include below($mobile) {
-                padding-bottom: rem(35);
-                margin-bottom: rem(30);
-
-                font-size: rem(18);
-            }
-
-            &::after {
-                content: '';
-
-                position: absolute;
-                bottom: 0;
-                left: 50%;
-
-                width: rem(200);
-                height: rem(1);
-
-                background-color: #979797;
-                transform: translateX(-50%);
+                width: 100%;
             }
         }
     }
@@ -1681,92 +1777,103 @@
     }
 
     &__offer-what {
+        margin: 0 auto;
         margin-bottom: rem(80);
+        width: rem(780);
+
+        @include below($tablet) {
+            width: rem(480);
+        }
+
+        @include below($mobile) {
+            width: 100%;
+        }
+
 
         h3 {
             margin: 0;
-            margin-bottom: rem(36);
+            margin-bottom: rem(24);
             padding-left: rem(34);
-            color: #50555a;
-            font-family: $helvetica;
-            font-size: rem(36);
-            font-weight: 100;
-            letter-spacing: 2.08px;
+            @extend .third-title;
         }
 
         ul {
+
+            @include below($mobile) {
+                padding-left: rem(26);
+            }
+
             li {
                 position: relative;
                 color: #50555a;
-                font-family: $helvetica;
-                font-size: rem(18);
-                font-weight: 300;
-                line-height: rem(24);
+                @extend .text;
                 list-style: none;
 
                 &:not(:last-of-type) {
-                    margin-bottom: rem(30);
+                    margin-bottom: rem(24);
                 }
 
                 &::before {
-                    content: '';
+                    content: '—';
                     position: absolute;
-                    top: .625rem;
+                    top: 0;
                     left: rem(-25);
-                    width: rem(20);
-                    height: rem(2);
-                    transform: rotate(-45deg);
-                    background-color: #3ba08c;
-                }
-
-                &::after {
-                    content: '';
-                    position: absolute;
-                    top: rem(13);
-                    left: rem(-30);
-                    width: rem(10);
-                    height: rem(2);
-                    transform: rotate(45deg);
-                    background-color: #3ba08c;
                 }
             }
         }
     }
 
+    .easy-text {
+        display: flex;
+        flex-direction: column;
+
+        h4 {
+            color: #50555a;
+            font-family: $playfair;
+            font-size: rem(24);
+            font-weight: 400;
+            line-height: rem(22);
+            margin: 0;
+            margin-bottom: rem(16);
+        }
+
+        p {
+            margin: 0;
+            color: #50555a;
+            font-family: $helvetica;
+            font-size: rem(16);
+            font-weight: 300;
+            line-height: rem(22);
+
+            &:not(:last-of-type) {
+                margin-bottom: rem(30);
+            }
+        }
+        &:first-of-type {
+            margin-bottom: rem(48);
+        }
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
     .easy-info {
         display: flex;
+		flex-direction: column;
+		align-items: center;
+
+
 
         iframe {
-            margin-right: rem(30);
             flex-shrink: 0;
-        }
+			margin-bottom: rem(48);
 
-        .easy-text {
-            display: flex;
-            flex-direction: column;
-
-            h4 {
-                color: #50555a;
-                font-family: $playfair;
-                font-size: rem(24);
-                font-weight: 400;
-                line-height: rem(22);
-                margin: 0;
-                margin-bottom: rem(16);
-            }
-
-            p {
-                margin: 0;
-                color: #50555a;
-                font-family: $helvetica;
-                font-size: rem(16);
-                font-weight: 300;
-                line-height: rem(22);
-
-                &:not(:last-of-type) {
-                    margin-bottom: rem(30);
-                }
+            @include below($mobile) {
+                width: 100%;
+                height: rem(160);
             }
         }
+
+
     }
 }

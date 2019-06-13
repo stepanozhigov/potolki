@@ -12,15 +12,15 @@
         <div class="photoprint__directions">
             <article class="photoprint__dirention">
                 <img src="/img/ceilings/catalogue-item-9.jpg" alt="">
-                <a href="javascript:void(0)">Каталог изображений</a>
+                <a href="{{ route('photobank', $city) }}">Каталог изображений</a>
             </article>
             <article class="photoprint__dirention">
                 <img src="/img/ceilings/catalogue-item-10.jpg" alt="">
-                <a href="javascript:void(0)">Каталог поверхностей</a>
+                <a href="{{ route('surfaces', $city) }}">Каталог поверхностей</a>
             </article>
             <article class="photoprint__dirention">
                 <img src="/img/ceilings/catalogue-item-price.jpg" alt="">
-                <a href="javascript:void(0)">Цены на фотопечать</a>
+                <a href="{{ route('printprice', $city) }}">Цены на фотопечать</a>
             </article>
         </div>
         <div class="photoprint__info">

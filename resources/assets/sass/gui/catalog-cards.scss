@@ -12,6 +12,8 @@
         }
     }
 
+
+
     &__content {
         display: flex;
         flex-wrap: wrap;
@@ -50,7 +52,7 @@
         @include below($mobile) {
             font-size: rem(20);
             line-height: rem(22);
-            font-weight: 400;
+            font-weight: 500;
         }
     }
     &__number {
@@ -58,8 +60,9 @@
         font-weight: 400;
 
         @include below($mobile) {
-            font-size: rem(20);
+            font-size: rem(26);
             line-height: rem(22);
+            font-weight: 400;
         }
     }
     &__img {
@@ -74,6 +77,7 @@
         }
     }
     &__title {
+        
         position: relative;
         padding-bottom: rem(8);
         margin: 0;
@@ -83,6 +87,7 @@
         @include below($mobile) {
             margin-bottom: rem(8);
             padding: 0;
+            font-weight: 300;
         }
 
         &::after {
@@ -121,6 +126,10 @@
 
             }
         }
+
+        @include below($mobile) {
+            margin-top: 0;
+        }
     }
 
     .titles {
@@ -141,6 +150,17 @@
         font-weight: 300;
         line-height: rem(24);
         text-decoration: underline;
+    }
+
+    &__desc {
+        display: none;
+        margin: 0;
+        margin-bottom: rem(24);
+        color: #485058;
+        font-family: $helvetica;
+        font-size: rem(14);
+        font-weight: 300;
+        line-height: rem(19);
     }
 
     &__item {
@@ -178,6 +198,10 @@
             padding: rem(16);
             padding-top: rem(24);
             padding-bottom: rem(32);
+
+            @include below($mobile) {
+                padding-bottom: rem(24);
+            }
         }
 
         &_full {
@@ -208,19 +232,27 @@
 
                 .catalog-cards__price {
                     text-align: left;
-                    font-size: rem(22);
+                    font-size: rem(20);
 
                     span {
-                        font-size: rem(22);
+                        font-size: rem(26);
+                        font-weight: 400;
                     }
                 }
 
                 &.opened {
+
+                    .catalog-cards__item-info {
+                        padding-bottom: rem(32);
+                    }
+
                     .catalog-cards__img {
                         display: block;
                         width: 100%;
                         height: rem(220);
                     }
+
+
 
                     .catalog-cards__open {
                         height: auto;
@@ -231,22 +263,16 @@
 
                     .catalog-cards__more {
                         display: inline;
-
+                        margin-bottom: rem(24);
                     }
 
-                    .catalog-cards__price {
-                        font-size: rem(25);
 
-                        span {
-                            font-size: rem(36);
-                            font-weight: 700;
-                        }
-                    }
 
                     .catalog-cards__title {
                         position: relative;
-                        padding-bottom: rem(18);
+                        padding-bottom: rem(16);
                         margin-bottom: rem(24);
+                        font-weight: 400;
 
                         &::after {
                             position: absolute;
@@ -264,6 +290,25 @@
                         display: inline;
                         text-align: left;
                         margin-bottom: rem(6);
+                        font-size: rem(14);
+                    }
+                }
+            }
+        }
+
+        &_withDesc {
+            @include above($tablet) {
+                height: rem(370);
+
+                &:hover {
+                    .catalog-cards__desc {
+                        display: block;
+
+                    }
+
+                    .catalog-cards__img {
+                        height: auto;
+                        min-height: rem(148);
                     }
                 }
             }
@@ -274,13 +319,28 @@
 	&_ceilings {
 		@extend .b-texture;
 
+        &.container {
+            @include below($mobile) {
+                margin-bottom: rem(80)
+            }
+        }
+
+        .titles__arrow {
+            display: none!important;
+        }
+
         .titles__intro {
             width: rem(780);
             padding: 0 rem(48);
+            max-height: none;
 
             @include below($tablet) {
-                width: 100%;
+                width: rem(480);
                 padding: 0;
+            }
+
+            @include below($mobile) {
+                width: 100%;
             }
         }
 
@@ -294,22 +354,33 @@
 
         .titles  {
             padding-top: rem(64);
+
+            @include below($mobile) {
+                margin-bottom: rem(64);
+            }
         }
 	}
 
 	&__desc {
 		margin: 0;
-		margin-bottom: rem(16);
+		margin-bottom: rem(24);
 		color: #485058;
 		font-family: $helvetica;
 		font-size: rem(12);
 		font-weight: 300;
 		line-height: rem(20);
 		text-align: center;
+        max-height: rem(56);
+        overflow: hidden;
 	}
 
+
+
     &_materials {
-        margin-bottom: rem(64);
+        &.container {
+			margin-bottom: rem(64);
+		}
+
 
         .titles {
             padding: 0;
@@ -326,11 +397,21 @@
             margin-left: rem(-8);
             padding: 0;
             margin-bottom: rem(-32);
+
+            @include below($tablet) {
+                width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+
         }
     }
 
     &_tech {
-        margin-bottom: rem(144);
+        &.container {
+            margin-bottom: 0;
+        }
 
         .titles {
             padding: 0;

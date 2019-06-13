@@ -397,7 +397,7 @@
             top: rem(28);
             width: rem(24);
             height: rem(24);
-            box-shadow: 0 0 4px rgba(0, 0, 0, 0.12), 0 0 4px rgba(0, 0, 0, 0.08), inset 0 -1px 0 #d0d2d4;
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.12), 0 0 4px rgba(0, 0, 0, 0.08), inset 0 -1px 0 #d0d2d4;
             border: rem(8) solid #f4f6f8;
             background-color: #babec2;
             transition: background-color .3s;
@@ -409,9 +409,9 @@
             }
 
             @include below($tablet-small) {
-                top: rem(35);
-                width: rem(46);
-                height: rem(46);
+                top: rem(38);
+                width: rem(40);
+                height: rem(40);
                 border: rem(14) solid #f4f6f8;
             }
         }
@@ -432,6 +432,7 @@
             }
 
             @include below($tablet-small) {
+				top: 0;
                 font-size: rem(32);
                 line-height: rem(32);
             }

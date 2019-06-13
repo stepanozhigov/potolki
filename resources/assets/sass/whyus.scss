@@ -6,6 +6,8 @@
 	flex-direction: column;
 	align-items: center;
 
+
+
 	&__content {
 		@extend .container;
 		@extend .b-texture;
@@ -20,7 +22,10 @@
 		@include below($tablet) {
 			padding-left: 0;
 			padding-right: 0;
+			padding-bottom: rem(32);
 		}
+
+
 
 		.button {
 			margin-top: rem(48);
@@ -54,7 +59,7 @@
 			flex-direction: row-reverse;
 
 			@include below($tablet) {
-				padding-bottom: rem(48);
+				padding-bottom: rem(64);
 			}
 
 			@include below($mobile) {
@@ -109,12 +114,18 @@
 
 		.signature {
 			margin-left: auto;
+
+			@include below($tablet) {
+				margin-top: rem(16);
+			}
 		}
 	}
 
 	&__item-image {
 		width: auto;
 		height: rem(320);
+		border-radius: rem(8);
+		object-fit: cover;
 
 		@include below($tablet) {
 			width: rem(352);
@@ -131,12 +142,17 @@
 
 	&__item-title {
 		margin: 0;
-		margin-bottom: rem(15);
+		margin-bottom: rem(16);
 		color: #485058;
 		font-family: $playfair;
 		font-size: rem(32);
 		font-weight: 400;
 		line-height: rem(38);
+
+		@include below($tablet) {
+			font-size: rem(26);
+			line-height: rem(32);
+		}
 
 		@include below($mobile) {
 			margin-bottom: rem(8);
@@ -190,6 +206,7 @@
 			position: static;
 			transform: none;
 			justify-content: center;
+			margin-top: rem(16);
 		}
 
 		.socials__item {
@@ -253,6 +270,7 @@
 
 			@include below($tablet) {
 				margin-right: rem(130);
+				padding-left: rem(32);
 			}
 
 			@include below($mobile) {
@@ -265,7 +283,7 @@
 			margin-right: rem(160);
 
 			@include below($tablet) {
-				margin-right: rem(80);
+				margin-right: auto;
 			}
 
 			@include below($mobile) {
@@ -431,9 +449,38 @@
 	}
 
 	&_ceilings {
+		.titles {
+			@include below($mobile) {
+				margin-bottom: rem(64);
+			}
+		}
+
 		.whyus__content {
+			padding-top: rem(14);
+
+			@include below($mobile) {
+	            padding-top: 0;
+	        }
+
 			&::before {
 				display: none;
+			}
+
+			@include below($mobile) {
+				margin-bottom: rem(48);
+			}
+		}
+
+		.whyus__stat {
+			margin-top: rem(80);
+			margin-bottom: rem(112);
+		}
+
+		.whyus__stat-item {
+			&:first-of-type {
+				.whyus__stat-num {
+					margin-left: rem(-32);
+				}
 			}
 		}
 	}

@@ -293,7 +293,7 @@
         letter-spacing: 1px;
         text-transform: uppercase;
         padding-bottom: 4px;
-        margin-bottom: 12px;
+        margin-bottom: rem(16);
 
         &::before {
             position: absolute;
@@ -433,9 +433,10 @@
     &__item {
         font-size: rem(16);
         color: #f4f6f8;
+		line-height: rem(16);
 
 		&:not(:last-of-type) {
-			margin-bottom: 10px;
+			margin-bottom: rem(16);
 		}
         @include below($mobile) {
             display: none;

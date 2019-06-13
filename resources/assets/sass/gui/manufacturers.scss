@@ -15,6 +15,21 @@
         }
     }
 
+	&__text {
+        position: relative;
+        z-index: 2;
+		@extend .text;
+        text-align: center;
+        width: rem(780);
+        margin: 0 auto;
+        margin-bottom: rem(48);
+        text-align: center;
+
+        @include below($tablet) {
+            width: 100%;
+        }
+	}
+
     &__item {
         display: flex;
         flex-direction: column;
@@ -35,21 +50,67 @@
         border-top: 1px solid #a7aaad;
     }
 
+    &__more {
+        margin-bottom: rem(48);
+        position: relative;
+        font-family: $helvetica;
+        font-size: rem(14);
+        color: #babec2;
+        text-decoration: none;
+        font-weight: 300;
+        outline: none;
+        text-align: center;
+
+        &::after {
+            position: absolute;
+            content: '';
+            left: 0;
+            bottom: rem(-2);
+            width: 100%;
+            height: rem(1);
+            border-bottom: rem(1) dashed #babec2;
+        }
+
+        @include above($mobile) {
+            display: none;
+        }
+    }
+
     &_main {
 
     }
 
 	&_ceilings {
 		.titles  {
-			margin-bottom: rem(48);
+			margin-bottom: rem(40);
+
+            .second-title {
+                margin-bottom: 0;
+            }
 		}
+
+        @include below($mobile) {
+            align-items: center;
+
+            .manufacturers__text {
+                height: rem(80);
+                overflow: hidden;
+                margin-bottom: rem(8);
+
+                &.opened {
+                    height: 100%;
+                }
+            }
+        }
+
+
 	}
 
 	&_climat {
 		padding-bottom: rem(48);
 		background-color: #f4f6f8;
 		margin-bottom: 0;
-		
+
 		.titles  {
 			padding-top: rem(64)
 		}

@@ -25,5 +25,19 @@
         @endif
     @endisset
 
+    @isset($text)
+        <p class="text titles__text">{!! $text !!}</p>
+        @if (mb_strlen($text) > 367)
+            <button class="titles__arrow titles__arrow_longtext" type="button">
+                <img src="/img/arrow-down.svg" alt="">
+            </button>
+        @endif
+        @if (mb_strlen($text) > 66)
+            <button class="titles__arrow" type="button">
+                <img src="/img/arrow-down.svg" alt="">
+            </button>
+        @endif
+    @endisset
+
 
 </div>

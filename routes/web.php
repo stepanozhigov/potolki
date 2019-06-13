@@ -133,4 +133,6 @@ Route::prefix('/{city}')->group(function () {
 
     Route::get('/serverError', 'PageController@serverError')->name('serverError');
 
+    Route::get('/constructor', 'PageController@constructor')->name('constructor');
+
 });

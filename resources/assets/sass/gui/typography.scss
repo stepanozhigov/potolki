@@ -113,13 +113,11 @@
     @include below($tablet) {
         font-size: rem(18);
         letter-spacing: rem(5);
-        text-transform: uppercase;
     }
 
-    @include below($mobile) {
-        font-size: rem(17);
+    @include below($mobile-small) {
+        font-size: rem(16);
         letter-spacing: rem(4.5);
-        text-transform: uppercase;
     }
 }
 
@@ -325,7 +323,7 @@
         }
 
         @include below($mobile) {
-            margin-bottom: rem(13);
+            margin-bottom: rem(16);
         }
     }
 
@@ -348,6 +346,29 @@
         margin-top: rem(-8);
         max-height: rem(92);
         overflow: hidden;
+
+        &.opened {
+            max-height: none;
+
+            & + .titles__arrow {
+                transform: rotate(180deg);
+            }
+        }
+
+        @include below($tablet) {
+            width: 100%;
+        }
+
+    }
+
+    &__text {
+        @extend .text;
+        width: rem(980);
+
+        margin-top: rem(-8);
+        max-height: rem(104);
+        overflow: hidden;
+        text-align: center;
 
         &.opened {
             max-height: none;

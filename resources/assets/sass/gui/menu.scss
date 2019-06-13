@@ -88,6 +88,33 @@
             display: flex;
             animation: menuSlide .3s;
         }
+
+        &_big {
+            flex-direction: row;
+        }
+    }
+
+    &__wrap {
+        display: flex;
+        flex-direction: column;
+        width: rem(180);
+
+        &:not(:last-of-type) {
+            margin-right: rem(30);
+        }
+    }
+
+    &__item-title {
+        margin: 0;
+        margin-bottom: rem(16);
+        overflow: hidden;
+        font-family: $futura;
+        font-weight: 300;
+        color: #a7aaad;
+        white-space: normal;
+        letter-spacing: rem(3);
+        text-transform: uppercase;
+        text-overflow: ellipsis;
     }
 
     &__item {
@@ -214,7 +241,7 @@
                         background-color: $white;
                         padding: 30px 20px 22px 23px;
                         z-index: 99;
-                        left: -50%;
+                        left: rem(-64);
                         border-top: .0625rem solid #e4e6e8;
                         top: rem(59);
                         border-top-left-radius: 0;
@@ -229,20 +256,28 @@
                             content: '';
                             position: absolute;
                             top: -3px;
-                            left: 42%;
+                            left: 50%;
                             border-width: .625rem .625rem 0;
                             border-style: solid;
                             border-color: #e4e6e8 transparent transparent;
-                            transform: translateY(2px) rotate(0);
+                            transform: translateX(-50%) translateY(2px) rotate(0);
                         }
                         &:after {
                             border-color: #fff transparent transparent;
                             content: '';
                             position: absolute;
                             top: -3px;
-                            left: 42%;
+                            left: 50%;
                             border-width: .625rem .625rem 0;
                             border-style: solid;
+							transform: translateX(-50%);
+                        }
+
+                        &_big {
+                            flex-direction: row;
+                            width: auto;
+							left: rem(-170);
+
                         }
                     }
                 }
@@ -250,6 +285,7 @@
         }
 
     }
+
 
     &.opened {
         .menu__item:not(.menu__item_dropdown) {

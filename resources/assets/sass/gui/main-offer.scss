@@ -3,12 +3,14 @@
 
 .main-offer {
     background: url(/img/windows/main-offer.jpg) no-repeat center;
-    background-size: cover;
+    background-size: auto 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding: 87px 0 80px 0;
-    background-position: bottom;
+    background-position: bottom center;
+
+
 
 
 
@@ -32,6 +34,11 @@
         text-transform: uppercase;
         letter-spacing: rem(4);
 
+        @include below($tablet) {
+            font-size: rem(16);
+			line-height: rem(24);
+        }
+
 		@include below($mobile) {
 			font-size: rem(10);
             text-align: center;
@@ -44,10 +51,11 @@
         color: $white;
         text-align: left;
         font-size: 58px;
-        margin-bottom: rem(8);
+        margin-bottom: rem(24);
         max-width: 560px;
         height: 134px;
         padding-bottom: 0;
+		line-height: rem(64);
 
         &_center {
             text-align: center;
@@ -56,10 +64,6 @@
 
         &:after {
             content: none;
-        }
-
-        @include below($tablet) {
-            line-height: rem(54);
         }
 
         @media screen and (max-width: 650px){
@@ -98,9 +102,27 @@
     &__form {
         max-width: 380px;
 
+		@include below($tablet) {
+			width: rem(320);
+		}
+
+        .form__button {
+			@include below($tablet) {
+				width: 100%;
+			}
+		}
         .form__input {
+			&:not(:last-of-type) {
+				margin-bottom: rem(16);
+			}
+
+			&:last-of-type {
+				margin-bottom: rem(24);
+			}
+
             @include below($tablet) {
                 margin-bottom: rem(16);
+
 
                 &:last-of-type {
                     margin-bottom: rem(32);
@@ -127,6 +149,35 @@
 		align-items: flex-start;
 		color: $white;
 	}
+
+    &_ceilings {
+        background-image: url('/img/ceilings/Ceilings1920.jpg');
+
+        @media (min-resolution: 144dpi),
+        (min-resolution: 1.5dppx) {
+            background-image: url('/img/ceilings/Ceilings1920@2x.jpg');
+        }
+
+		@include below($tablet-small) {
+			background-image: url('/img/ceilings/Ceilings768.jpg');
+
+	        @media (min-resolution: 144dpi),
+	        (min-resolution: 1.5dppx) {
+	            background-image: url('/img/ceilings/Ceilings768@2x.jpg');
+	        }
+		}
+
+		@include below($mobile) {
+			background-image: url('/img/ceilings/Ceilings320.jpg');
+            background-size: 100% auto;
+            background-position: top center;
+
+	        @media (min-resolution: 144dpi),
+	        (min-resolution: 1.5dppx) {
+	            background-image: url('/img/ceilings/Ceilings320@2x.jpg');
+	        }
+		}
+    }
 
 }
 
@@ -179,6 +230,8 @@
             margin-right: 0;
         }
     }
+
+
 
 }
 
@@ -237,4 +290,6 @@
             padding: 15px 18px;
         }
     }
+
+
 }

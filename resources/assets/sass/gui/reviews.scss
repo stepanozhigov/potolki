@@ -82,23 +82,6 @@
         justify-content: center;
         margin: 0 auto;
         width: 100%;
-
-        @media screen and (max-width: 800px) {
-            flex-direction: column;
-            align-items: center;
-
-
-        }
-
-        .button {
-            @media screen and (max-width: 800px) {
-                margin: 0;
-
-                &:not(:last-of-type) {
-                    margin-bottom: 20px;
-                }
-            }
-        }
     }
 
     &__button {
@@ -152,9 +135,12 @@
             @include below($mobile) {
                 width: 97%;
 
-                &:nth-of-type(n + 3) {
-                    display: none;
+                &:first-of-type {
+                    margin-bottom: rem(48);
+                }
 
+                &:nth-of-type(n + 4) {
+                    display: none;
                 }
             }
         }

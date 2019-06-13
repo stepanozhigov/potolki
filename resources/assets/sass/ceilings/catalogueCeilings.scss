@@ -1,11 +1,52 @@
 .catalogueCeilings {
     &__titles {
         margin-bottom: rem(112);
+
+        .intro + .titles__arrow{
+            @include below($tablet) {
+                display: block;
+            }
+        }
+    }
+
+	&__wrap {
+		padding-top: rem(48);
+		padding-bottom: rem(64);
+        @extend .b-texture;
+
+		.titles {
+	        margin-bottom: rem(48)!important;
+	        .second-title {
+	            padding-top: 0;
+	            margin-bottom: rem(0)!important;
+	        }
+
+
+	    }
     }
 
     &__rooms {
         border-bottom: rem(1) solid #babec2;
         margin-bottom: rem(80);
+
+        .titles  {
+            .text {
+                width: rem(780);
+                overflow: visible;
+
+				@include below($tablet) {
+					width: 100%;
+					overflow: hidden;
+				}
+            }
+
+            .titles__arrow_longtext  {
+                display: none;
+                @include below($tablet) {
+					display: flex;
+				}
+            }
+        }
 
         .categoryLink  {
             width: calc(25% - 70px);

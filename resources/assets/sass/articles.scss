@@ -226,6 +226,8 @@
         }
     }
 
+
+
     &.articles_main     {
         position: relative;
 
@@ -282,6 +284,72 @@
         }
     }
 
+	&.articles_ceilings {
+		position: relative;
+		background-color: $white;
+		padding-top: rem(64);
+
+		.articles__button {
+			position: relative;
+			z-index: 2;
+		}
+
+		.titles  {
+			margin-bottom: rem(40);
+		}
+		.titles__second-title {
+			margin-bottom: 0;
+		}
+
+		.articles__slider:hover .articles__next:hover svg, .articles__slider:hover .articles__prev:hover svg {
+		    fill: #ffffff;
+		}
+
+		&::before {
+			position: absolute;
+			content: '';
+			width: rem(780);
+			top: 0;
+			left: calc(50% - 390px);
+			height: 100%;
+			background-color: #f4f6f8;
+			border-radius: rem(8);
+
+			@include below($tablet) {
+		        width: rem(480);
+				left: calc(50% - 240px);
+		    }
+
+		    @include below($mobile) {
+		        width: rem(256);
+				left: calc(50% - 128px);
+		    }
+
+		    @include below($mobile-small) {
+		        width: rem(200);
+				left: calc(50% - 100px);
+		    }
+		}
+
+		.articles__slide  {
+		    background-color: rgba(0, 0, 0, 0.4);
+
+			svg {
+				fill: #BABEC2;
+			}
+		}
+
+		.articles__slider {
+			&:hover {
+				.articles__slide  {
+				    background-color: rgba(0, 0, 0, 0.6);
+
+
+				}
+			}
+		}
+	}
+
 	&__slider-dots {
 		display: none;
 		position: absolute;
@@ -312,10 +380,28 @@
 		}
 	}
 
+	&__text {
+		position: relative;
+		z-index: 2;
+		text-align: center;
+		@extend .text;
+		width: rem(780);
+        margin: 0 auto;
+        margin-bottom: rem(16);
+
+        @include below($tablet) {
+            width: 100%;
+			padding: rem(8) 0;
+        }
+	}
+
 	&.articles_climat.articles_main  {
 		background-color: $white;
 		position: relative;
 		margin-bottom: rem(80);
+
+
+
 
 		&::after {
 			position: absolute;
@@ -680,4 +766,6 @@
             }
         }
     }
+
+
 }

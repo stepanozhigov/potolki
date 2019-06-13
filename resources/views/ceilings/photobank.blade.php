@@ -129,7 +129,7 @@
                     Для наших клиентов картинки на сайте абсолютно бесплатны, Вам необходимо
                     только записать номер изображения.</p>
                     <button class="arrow shutterstock__arrow">Подробнее</button>
-                    <a href="javascript:void(0);" class="shutterstock__link">Подобрать изображение</a>
+                    <a href="https://www.shutterstock.com/" target="_blank" class="shutterstock__link">Подобрать изображение</a>
                 </div>
             </section>
         <section class="photoprintBlock page__photoprintBlock">

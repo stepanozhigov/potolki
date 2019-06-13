@@ -419,6 +419,14 @@ class PageController extends Controller
         ]);
     }
 
+    public function constructor (City $city)
+    {
+        return view('ceilings.constructor', [
+			'city'  =>  $city,
+            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
+        ]);
+    }
+
     public function serverError (City $city)
     {
         return view('common.pages.serverError', [

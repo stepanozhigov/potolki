@@ -445,6 +445,7 @@ $('.facture').on('click', '.facture__item', function () {
 
 $('.titles__arrow').on('click', function () {
     $(this).prev('.intro ').toggleClass('opened');
+    $(this).prev('.text ').toggleClass('opened');
 });
 
 $('.js-link').on('click', function (e) {
@@ -617,12 +618,17 @@ $('.lamp__tab-caption').on('click', 'label:not(.active)', function () {
 });
 
 $('.dillers__item-heading').on('click', function () {
-    let heading = $(this);
-    heading.closest('.dillers__item').siblings().removeClass('dillers__item_opened');
-    heading.closest('.dillers__item').toggleClass('dillers__item_opened');
-    $('html, body').animate({
-        scrollTop: heading.offset().top
-    }, 500);
+    if ($(this).parent().hasClass('dillers__item_offer')) {
+        return
+    } else {
+        let heading = $(this);
+        heading.closest('.dillers__item').siblings().removeClass('dillers__item_opened');
+        heading.closest('.dillers__item').toggleClass('dillers__item_opened');
+        $('html, body').animate({
+            scrollTop: heading.offset().top - 68
+        }, 500);
+    }
+
 });
 
 $('.dillers__materials-open').on('click', function () {
@@ -1068,5 +1074,20 @@ $('.quickBuy').on('change', 'input[name=shipping]', function () {
         $('.quickBuy__issuePoints').addClass('active');
     } else {
         $('.quickBuy__issuePoints').removeClass('active');
+    }
+});
+
+$('.manufacturers__more').on('click', function () {
+	$(this).prev('.manufacturers__text').toggleClass('opened')
+});
+
+$('.catalogueDetail__desc-more').on('click', function () {
+	$(this).prev('.catalogueDetail__desc-content').toggleClass('opened');
+    let $this = $(this),
+        text = $this.text();
+    if (text === 'Читать далее') {
+        $this.text('Свернуть текст');
+    } else {
+        $this.text('Читать далее');
     }
 });

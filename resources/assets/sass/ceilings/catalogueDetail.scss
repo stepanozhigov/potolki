@@ -1,9 +1,8 @@
 
 .catalogueDetail {
-    padding-bottom: rem(80);
 
     .titles {
-        margin-bottom: rem(48);
+        margin-bottom: rem(64);
     }
 
     &__main {
@@ -13,7 +12,7 @@
         align-items: center;
         width: 100%;
         padding: rem(64) 0;
-        margin-bottom: rem(84);
+        margin-bottom: rem(80);
         overflow: hidden;
 
     }
@@ -64,32 +63,40 @@
     &__buttons {
         display: flex;
 
-        @include below($tablet-small) {
-			flex-direction: column;
+        @include below($mobile) {
+            flex-direction: column;
         }
     }
 
     &__desc {
-        width: rem(780);
-        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        @extend .container;
         margin-bottom: rem(64);
 
-        @include below($tablet) {
-            width: calc(100% - 40px);
-            margin: 0 rem(20);
-            margin-bottom: rem(64);
-        }
-
         @include below($mobile) {
-            width: calc(100% - 32px);
-            margin: 0 rem(16);
-            margin-bottom: rem(64);
+            align-items: flex-start;
         }
 
-        @include below($mobile-small) {
-            width: calc(100% - 16px);
-            margin: 0 rem(8);
-            margin-bottom: rem(60);
+        &-content {
+            width: rem(780);
+            margin: 0 auto;
+
+
+            @include below($tablet) {
+                width: rem(480);
+                margin: 0 auto;
+            }
+
+            @include below($mobile) {
+                width: 100%;
+                max-height: rem(234);
+                overflow: hidden;
+
+                &.opened {
+                    max-height: none;
+                }
+            }
         }
 
         p {
@@ -99,31 +106,60 @@
                 margin-bottom: rem(16);
             }
         }
+
+        &-more {
+            position: relative;
+            margin-top: rem(8);
+            font-family: $helvetica;
+            color: #babec2;
+            font-size: rem(18);
+            font-weight: 300;
+            line-height: rem(26);
+            text-decoration: none;
+
+            &::after {
+                position: absolute;
+                content: '';
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: rem(1);
+                border-bottom: rem(1) dashed #babec2;
+            }
+
+            @include above($mobile) {
+                display: none;
+            }
+        }
     }
 
     &__filter {
         width: rem(800);
         margin: 0 auto;
+        margin-bottom: rem(64);
         display: flex;
         flex-direction: column;
 
         @include below($tablet) {
             width: calc(100% - 40px);
             margin: 0 rem(20);
+            margin-bottom: rem(64);
         }
 
         @include below($mobile) {
             width: calc(100% - 32px);
             margin: 0 rem(16);
+            margin-bottom: rem(64);
         }
 
         @include below($mobile-small) {
             width: calc(100% - 16px);
             margin: 0 rem(8);
+            margin-bottom: rem(64);
         }
 
-        p {
-            @extend .third-title;
+        h2 {
+            @extend .second-title;
             width: 100%;
             margin-bottom: rem(38);
             text-align: center;

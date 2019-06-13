@@ -967,6 +967,30 @@ body {
     }
 
 }
+#videoBlock {
+    iframe {
+        @include below($tablet) {
+            width: rem(600);
+            height: rem(338);
+        }
+        @include below($mobile) {
+            width: rem(300);
+            height: rem(174);
+        }
+    }
+
+	 &.popup_active{
+		 @include below($mobile) {
+			 width: auto;
+			height: auto!important;
+
+			.popup__close {
+				top: -18px;
+			    right: -6px;
+			}
+         }
+	 }
+}
 
 .popup {
     display: none;

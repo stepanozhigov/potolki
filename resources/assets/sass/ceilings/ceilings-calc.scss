@@ -13,12 +13,14 @@
 
     @include below($tablet-small) {
         width: 100%;
-        padding: rem(44) rem(94);
+        padding: rem(44) rem(48);
         padding-bottom: rem(64);
+        align-items: flex-end;
     }
 
     @include below($mobile) {
         padding: rem(42) rem(24);
+        padding-bottom: rem(64);
     }
 
     &__title {
@@ -68,7 +70,7 @@
         @include below($mobile) {
             font-size: rem(14);
             line-height: rem(24);
-            margin-bottom: rem(64);
+            margin-bottom: rem(48);
             color: #485058;
         }
     }
@@ -124,6 +126,7 @@
 
         @include below($mobile) {
             width: 100%;
+            margin-bottom: rem(48);
         }
 
         &:nth-of-type(odd) {
@@ -142,6 +145,10 @@
             font-size: rem(20);
             font-weight: 400;
             line-height: rem(24);
+
+            @include below($tablet-small) {
+                margin-bottom: rem(16);
+            }
 
             @include below($mobile) {
                 font-size: rem(18);
@@ -165,8 +172,31 @@
     padding-bottom: rem(64);
     margin-bottom: rem(96);
 
+	.titles {
+		.titles__title {
+			padding-bottom: 0;
+			&::after {
+				display: none;
+			}
+		}
+	}
+
     .ceilingCalculator__title {
         display: none;
+    }
+
+    .ceilingCalculator__desc {
+        width: rem(780);
+        @extend .intro;
+        margin-bottom: rem(48);
+
+        @include below($tablet) {
+            width: 100%;
+        }
+
+        @include below($mobile) {
+            text-align: left;
+        }
     }
 
     .ceilingCalculator {

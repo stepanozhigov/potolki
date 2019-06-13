@@ -14131,6 +14131,7 @@ $('.facture').on('click', '.facture__item', function () {
 
 $('.titles__arrow').on('click', function () {
     $(this).prev('.intro ').toggleClass('opened');
+    $(this).prev('.text ').toggleClass('opened');
 });
 
 $('.js-link').on('click', function (e) {
@@ -14293,12 +14294,16 @@ $('.lamp__tab-caption').on('click', 'label:not(.active)', function () {
 });
 
 $('.dillers__item-heading').on('click', function () {
-    var heading = $(this);
-    heading.closest('.dillers__item').siblings().removeClass('dillers__item_opened');
-    heading.closest('.dillers__item').toggleClass('dillers__item_opened');
-    $('html, body').animate({
-        scrollTop: heading.offset().top
-    }, 500);
+    if ($(this).parent().hasClass('dillers__item_offer')) {
+        return;
+    } else {
+        var heading = $(this);
+        heading.closest('.dillers__item').siblings().removeClass('dillers__item_opened');
+        heading.closest('.dillers__item').toggleClass('dillers__item_opened');
+        $('html, body').animate({
+            scrollTop: heading.offset().top - 68
+        }, 500);
+    }
 });
 
 $('.dillers__materials-open').on('click', function () {
@@ -14721,6 +14726,21 @@ $('.quickBuy').on('change', 'input[name=shipping]', function () {
         $('.quickBuy__issuePoints').addClass('active');
     } else {
         $('.quickBuy__issuePoints').removeClass('active');
+    }
+});
+
+$('.manufacturers__more').on('click', function () {
+    $(this).prev('.manufacturers__text').toggleClass('opened');
+});
+
+$('.catalogueDetail__desc-more').on('click', function () {
+    $(this).prev('.catalogueDetail__desc-content').toggleClass('opened');
+    var $this = $(this),
+        text = $this.text();
+    if (text === 'Читать далее') {
+        $this.text('Свернуть текст');
+    } else {
+        $this.text('Читать далее');
     }
 });
 
@@ -38090,19 +38110,21 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("p", { staticClass: "ceilingCalculator__desc" }, [
         _vm._v(
-          "Рассчитайте стоимость натяжного потолока онлайн. Матовые, сатиновые, глянцевые — все по одной цене! Выберите параметры вашего помещения, перемещая ползунки:"
+          "Рассчитайте стоимость натяжного потолока онлайн. Матовые, сатиновые, глянцевые — все по одной цене! Выберите параметры вашего помещения, перемещая ползунки."
         )
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "ceilingCalculator__item" }, [
         _c("p", { staticClass: "ceilingCalculator__item-name" }, [
-          _vm._v("\n            Площадь помещения, м2\n        ")
+          _vm._v("\n            Площадь помещения, м"),
+          _c("sup", [_vm._v("2")])
         ]),
         _vm._v(" "),
         _c("input", {
           staticClass: "range",
           attrs: {
             "data-min": "0",
+            "data-from": "25",
             "data-max": "150",
             type: "text",
             name: "",
@@ -38137,6 +38159,7 @@ var staticRenderFns = [
           staticClass: "range",
           attrs: {
             "data-min": "0",
+            "data-from": "4",
             "data-max": "30",
             type: "text",
             name: "",

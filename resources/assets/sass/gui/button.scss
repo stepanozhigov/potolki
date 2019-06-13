@@ -94,6 +94,17 @@
     font-weight: 300;
     cursor: pointer;
     text-decoration: none;
+	transition: all .3s;
+
+	@include below($mobile) {
+		padding: 10px 20px;
+		padding-top: 11px;
+	}
+
+	&:hover {
+		border: 1px solid #dc1414;
+		color: #be1414;
+	}
 
     &_active {
         border: 1px solid $red_crismon;
