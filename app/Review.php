@@ -8,17 +8,17 @@ use Illuminate\Support\Facades\Storage;
 class Review extends Model
 {
 
-    public function photos ()
+    public function getPhotos ()
     {
         return json_decode($this->photos) ?? [];
     }
-    public function video ()
+    public function getVideo ()
     {
         $object = json_decode($this->video);
         return $object[0]->download_link ?? $this->video;
     }
 
-    public function avatar ()
+    public function getAvatar ()
     {
         if (empty($this->avatar)) {
             return '/img/gui/user_default.jpg';

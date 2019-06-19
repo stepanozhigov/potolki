@@ -1,5 +1,5 @@
 <template>
-    <transition-group v-if="showCount < 5" name="list"  tag="div" class="manufacturers__list">
+    <transition-group v-if="showCount < 3" name="list"  tag="div" class="manufacturers__list">
         <div v-for="manufacturer in showedItems" :key="manufacturer.id" class="manufacturers__item" v-touch:swipe="offsetShowPoint">
             <img v-bind:src="manufacturer.img" alt="" class="manufacturers__item-image">
         </div>
@@ -31,16 +31,14 @@
     export default {
         data: function () {
             return {
-                showCount: 5,
+                showCount: 3,
                 showPoint: 0,
                 interval: 0,
                 currentPhotoIndex: 0,
                 manufacturers: [
-                    {'id':0, 'img': '/img/manufacturers/Monblanc.svg'},
-                    {'id': 1, 'img': '/img/manufacturers/Veka.svg'},
-                    {'id': 2, 'img': '/img/manufacturers/Kbe.svg'},
-                    {'id': 3, 'img': '/img/manufacturers/Rehau.svg'},
-                    {'id': 4, 'img': '/img/manufacturers/Deceuninck.svg'}
+                    {'id':0, 'img': '/img/manufacturers/msd.svg'},
+                    {'id': 1, 'img': '/img/manufacturers/ptmc.svg'},
+                    {'id': 2, 'img': '/img/manufacturers/pongs (2).png'}, 
                 ]
             }
         },

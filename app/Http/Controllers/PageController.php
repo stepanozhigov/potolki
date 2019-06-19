@@ -39,10 +39,12 @@ class PageController extends Controller
     }
     public function main (City $city, Request $request)
     {
+        //dd(1);
+        //dd(Photo::whereIn('catalog_type_id', [15,16,17,18,19,20,21,22,23,24])->get()); 
         return view('windows.main', [
             'city'  =>  $city,
             'reviews'   =>  Review::limit(3)->orderBy('sort', 'asc')->get(),
-            'photos'    =>  Photo::all(),
+            'photos'    =>  Photo::whereIn('catalog_type_id', [15,16,17,18,19,20,21,22,23,24])->get(),
             'offers'    =>  Offer::where('is_active', 1)->get(),
             'catalogTypes'  => CatalogType::where(['direction_id' => 2])->get(),
             'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first(),
@@ -53,8 +55,8 @@ class PageController extends Controller
     {
         return view ('common.pages.photos', [
             'city'  =>  $city,
-            'types' =>  CatalogType::all(),
-            'photos'    =>  $type->photos ?? Photo::all(),
+            'types' =>  CatalogType::where('direction_id', 2)->get(),
+            'photos'    =>  $type->photos ?? Photo::whereIn('catalog_type_id', [15,16,17,18,19,20,21,22,23,24,25])->get(),
             'currentType'  =>  $type,
             'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
@@ -80,7 +82,7 @@ class PageController extends Controller
     {
         return view ('common.pages.promos', [
             'city'  =>  $city,
-            'promos'    =>  Promo::all(),
+            'promos'    =>  Promo::where('direction_id', 2)->get(),
             'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
     }
@@ -137,7 +139,7 @@ class PageController extends Controller
             'city'  =>  $city,
             'categories'    => QuestionCategory::all(),
             'currentCategory'  =>  $category,
-            'questions' =>  $category->questions,
+            'questions' =>  $category->questions->where('direction_id', 2), 
             'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
     }
@@ -154,7 +156,7 @@ class PageController extends Controller
     {
         return view('common.pages.reviews', [
             'city'  =>  $city,
-            'reviews'   =>  Review::where('is_active', 1)->orderBy('sort', 'asc')->paginate(6),
+            'reviews'   =>  Review::where(['is_active' => 1, 'direction_id' => 2])->orderBy('sort', 'asc')->paginate(6),
             'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
     }
@@ -217,8 +219,8 @@ class PageController extends Controller
     {
         return view('ceilings.ceilings', [
             'city'  =>  $city,
-            'reviews'   =>  Review::limit(3)->orderBy('sort', 'asc')->get(),
-            'photos'    =>  Photo::all(),
+            'reviews'   =>  Review::where('direction_id', 2)->limit(3)->orderBy('sort', 'asc')->get(),
+            'photos'    =>  Photo::whereIn('catalog_type_id', [15,16,17,18,19,20,21,22,23,24,25])->get(),
             'offers'    =>  Offer::where('is_active', 1)->get(),
             'catalogTypes'  => CatalogType::where(['direction_id' => 2])->get(),
             'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first(),
@@ -274,10 +276,12 @@ class PageController extends Controller
         ]);
     }
 
-    public function catalogueDetail (City $city)
+    public function catalogueDetail (City $city, CatalogType $type)
     {
         return view('ceilings.catalogueDetail', [
             'city'  =>  $city,
+            'type'  =>  $type,
+            'photos'    =>  $type->photos,
             'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
     }
@@ -334,7 +338,9 @@ class PageController extends Controller
     {
         return view('ceilings.catalogueCeilings', [
             'city'  =>  $city,
-			'catalogTypes'  => CatalogType::where(['direction_id' => 2])->get(),
+            'materials' =>   CatalogType::where(['direction_id' => 2, 'type' => 'material'])->get(),
+            'techs' =>   CatalogType::where(['direction_id' => 2, 'type' => 'tech'])->get(),
+            'rooms' =>   CatalogType::where(['direction_id' => 2, 'type' => 'rooms'])->get(),
             'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first(),
             'articles' => Article::where(['is_active' => 1, 'in_main' => 1])->orderBy('sort', 'asc')->get()
         ]);

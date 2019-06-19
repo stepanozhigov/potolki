@@ -23,7 +23,7 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
-Route::get('/', 'PageController@index')->name('index');
+Route::get('/', 'PageController@index')->name('ceilings-index');
 
 Route::get('/err-handler', function() {
     Log::info([
@@ -96,7 +96,9 @@ Route::prefix('/{city}')->group(function () {
 
     Route::get('/notFound', 'PageController@notFound')->name('notFound');
 
-    Route::get('/catalogue', 'PageController@catalogueDetail')->name('catalogue');
+    Route::get('/catalogue/', 'PageController@catalogueCeilings')->name('catalogueCeilings');
+
+    Route::get('/catalogue/{type}', 'PageController@catalogueDetail')->name('catalogue');
 
     Route::get('/photoprint', 'PageController@photoprint')->name('photoprint');
 
@@ -110,7 +112,7 @@ Route::prefix('/{city}')->group(function () {
 
     Route::get('/dillers', 'PageController@dillers')->name('dillers');
 
-    Route::get('/catalogueCeilings', 'PageController@catalogueCeilings')->name('catalogueCeilings');
+    
 
     Route::get('/credit', 'PageController@credit')->name('credit');
 

@@ -2,7 +2,7 @@
     <div class="review__body b-card">
         <a target="_blank" @if(!empty($review->link)) href="{{ $review->link }}" @endif class="person review__person js-link">
             <div class="avatar person__photo">
-                <img src="{{ $review->avatar() }}" alt="" class="avatar person__photo">
+                <img src="{{ $review->getAvatar() }}" alt="" class="avatar person__photo">
                 <img src="/img/gui/{{ $review->social }}_hover.svg" alt="" class="person__social">
             </div>
 
@@ -12,7 +12,7 @@
             </div>
         </a>
 
-        <hr class="line review__line">
+        <hr class="line review__line"> 
         <?  setlocale(LC_TIME, 'ru_RU.UTF-8');  ?>
         <p class="subtext review__date">{{ $review->created_at->formatLocalized('%d %B %Y') }}</p>
         <p class="subtext review__text">
@@ -36,7 +36,7 @@
     <div class="review review_popup">
         <div class="review__body b-card">
             <a class="person review__person">
-                <img src="{{ $review->avatar() }}" alt="" class="avatar person__photo">
+                <img src="{{ $review->getAvatar() }}" alt="" class="avatar person__photo">
                 <div class="person__info">
                     <p class="person__name">{{ $review->fio }}</p>
                 </div>
@@ -47,12 +47,12 @@
                     {{ $review->text }}
             </p>
             <div class="review__media review__media_popup {{ $review->video ? 'review__media_video':'' }}">
-                @foreach ($review->photos() as $photo)
+                @foreach ($review->getPhotos() as $photo)
                     <img class="review__img" src="{{ Storage::url($photo) }}" alt="">
                 @endforeach
             </div>
             @if ($review->video)
-                <video class="review__video" controls src="{{ Storage::url($review->video()) }}"></video>
+                <video class="review__video" controls src="{{ Storage::url($review->getVideo()) }}"></video>
             @endif
         </div>
     </div>
@@ -75,7 +75,7 @@
                             </div>
                         @else
                             <div class="user__left">
-                                <img src="{{ $comment->avatar() }}" alt="" class="user__avatar">
+                                <img src="{{ $comment->getAvatar() }}" alt="" class="user__avatar">
                             </div>
                             <div class="user__right">
                                 <p class="text user__name">{{ $comment->fio }}</p>

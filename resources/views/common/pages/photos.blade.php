@@ -11,9 +11,9 @@
             ])
 
             @if($types && count($types))
-                <portfolio-photos id="portfolio-photos" :types="{{$types}}"></portfolio-photos>
+                <!--<portfolio-photos id="portfolio-photos" :types="{{$types}}"></portfolio-photos>-->
             @endif
-            {{-- Предыдущая версия без ajax подгрузки изображений
+
             <div class="portfolio__content container b-texture">
                 <div class="portfolio__filter">
                     <a href="{{ route('photos', $city) }}" class="tag portfolio__tag {{ $currentType == null ? 'tag_active':'' }}">Все работы</a>
@@ -31,7 +31,7 @@
                     @endforeach
                 </div>
             </div>
-            --}}
+            
         </section>
 
         @include('common.gui.footer')

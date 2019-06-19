@@ -7,31 +7,26 @@
         @include('common.gui.titles', [
             'overtitle' =>  'Цена и фото',
             'class' =>  'container',
-            'title' =>  "Глянцевые натяжные потолки {$city->name_formatted}",
-            'intro' =>  "Глянцевые полотна одни из&nbsp;самых популярных видов натяжных потолков. Благодаря своей лаковой поверхности, обладают ярко выраженным светоотражающим эффектом."
+            'title' =>  str_replace('#city_title#', $city->name_formatted, $type->ceiling_title),
+            'intro' =>  $type->ceiling_intro
         ])
 
         <div class="catalogueDetail__main">
             <div id="catalogue-slider">
-                <catalogue-slider></catalogue-slider>
+                <catalogue-slider :photos="{{ $photos }}"></catalogue-slider>
             </div>
             <h2 class="catalogueDetail__title">Цена на потолок</h2>
-            <p class="catalogueDetail__price">Полотно — от 100 ₽/м2</p>
-            <p class="catalogueDetail__install">С установкой — от 350 ₽/м2</p>
+            <p class="catalogueDetail__price">Полотно — от {{ $type->price }} ₽/м2</p>
+            <p class="catalogueDetail__install">С установкой — от {{ $type->price_install }} ₽/м2</p>
             <div class="catalogueDetail__buttons">
-                <button class="button buttons__item js-show" data-src="#popup_callback" data-title="Вызов замерщика" data-button="Вызвать замерщика">Вызвать замерщика</button>
-                <a href="javascript:void(0);" class="button  button_gray">Рассчитать стоимость</a>
+                <button class="button buttons__item js-show" data-src="#popup_callback" data-title="Вызов замерщика" data-button="Вызвать замерщика">Вызвать замерщика</button> 
+                <a href="{{ route('ceilingsCalc', $city) }}" class="button  button_gray">Рассчитать стоимость</a>
             </div>
         </div>
         </div>
         <div class="catalogueDetail__desc">
             <div class="catalogueDetail__desc-content">
-                <p>
-                     Глянцевые натяжные потолки&nbsp;дают&nbsp;отличную возможность сформировать яркий акцент на Вашем потолке&nbsp;в&nbsp;любом интерьере и&nbsp;подчеркнуть его изысканный дизайн. Идеально ровная светоотражающая поверхность может отражать до&nbsp;90% света. Благодаря этому в&nbsp;помещении всегда будет много света, а&nbsp;пространство зрительно увеличится.
-                </p>
-                <p>
-                     Глянцевые натяжные потолки&nbsp;дают&nbsp;отличную возможность сформировать яркий акцент на Вашем потолке&nbsp;в&nbsp;любом интерьере и&nbsp;подчеркнуть его изысканный дизайн. Идеально ровная светоотражающая поверхность может отражать до&nbsp;90% света. Благодаря этому в&nbsp;помещении всегда будет много света, а&nbsp;пространство зрительно увеличится.
-                </p>
+                {!! $type->ceiling_desc !!}
             </div>
             <a class="catalogueDetail__desc-more" href="javascript:void(0);">Читать далее</a>
         </div>

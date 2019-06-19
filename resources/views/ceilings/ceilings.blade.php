@@ -3,7 +3,7 @@
 @section('content')
     @include('common.gui.header')
 
-    <section class="main-offer main-offer_ceilings js-offer-slider" @if ($offers->count() > 1) data-offers="{{ $offers }}" id="js-offer-slider" @endif>
+    <section class="main-offer main-offer_ceilings js-offer-slider" data-offers="{{ $offers }}" id="js-offer-slider" >
         <div class="main-offer__inner container">
             <p class="text main-offer__overtitle">Монтаж за 1 день | Гарантия 30&nbsp;лет</p>
             @php
@@ -91,8 +91,12 @@
         ])
         <div class="catalog-cards__content">
             @foreach ($catalogTypes as $type)
-                <? if ($type->id == 5) continue ?>
-                <a href="{{ route('catalogue', ['city' => $city, 'type' => $type]) }}" class=" catalog-cards__item b-card is-hoverable">
+                <? if ($type->id == 5 || $type->type == 'rooms') continue ?>
+                @if ($type->id == 23)
+                    <a href="{{ route('photoprint', ['city' => $city]) }}" class=" catalog-cards__item b-card is-hoverable">
+                @else
+                    <a href="{{ route('catalogue', ['city' => $city, 'type' => $type]) }}" class=" catalog-cards__item b-card is-hoverable">
+                @endif
                     <img src="{{ Storage::url($type->img) }}" alt="{{ $type->name }}" class="catalog-cards__img">
                     <div class="catalog-cards__item-info">
                         <h3 class="card-title catalog-cards__title">{{ $type->name }}</h3>
@@ -158,7 +162,7 @@
 			<a href="{{ route('add-review', $city) }}" class="button buttons__item">Оставить отзыв</a>
         </div>
     </section>
-    <section class="articles articles_main articles_ceilings" id="articles">
+    <!--<section class="articles articles_main articles_ceilings" id="articles">
         @include('common.gui.titles', [
             'class' =>  "container",
             'secondTitle' =>  "Социальные сети"
@@ -187,7 +191,7 @@
 
        <a href="http://89.108.103.224/sochi/articles" class="articles__button">Все посты</a>
 
-    </section>
+    </section>-->
 
     <section class="manufacturers manufacturers_main manufacturers_ceilings container">
         @include('common.gui.titles', [
@@ -195,7 +199,17 @@
         ])
         <p class="manufacturers__text">Компания &laquo;Твой стиль&raquo; ипользует плёнку для натяжных потолков ведущих мировых производителей. Мы&nbsp;предлагаем нашим клиентам только сертифицированные материалы. В&nbsp;нашем ассортименте можно выбрать полотна из&nbsp;пленки ПВХ и&nbsp;тканевые полотна следующих производителей.</p>
         <a class="manufacturers__more" href="javascript:void(0);">Подробнее</a>
-        <div id="manufacturers__list"></div>
+        <div class="manufacturers__list">
+            <div class="manufacturers__item">
+                <img height="65px" src="/img/manufacturers/msd.svg" alt="" class="manufacturers__item-image">
+            </div>
+            <div class="manufacturers__item">
+                <img height="80px" src="/img/manufacturers/ptmc.svg" alt="" class="manufacturers__item-image">
+            </div>
+            <div class="manufacturers__item">
+                <img height="105px" src="/img/manufacturers/pongs (2).png" alt="" class="manufacturers__item-image">
+            </div>
+        </div>
     </section>
 
 	<section class="seo-block seo-block_main seo-block_ceilings" @if($seoData->background_image) style="background-image: url({{ Storage::url($seoData->background_image) }})" @endif>

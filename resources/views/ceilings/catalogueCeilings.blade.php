@@ -16,8 +16,7 @@
 	                    'secondTitle' =>  "Материалы натяжных потолков"
 	                ])
 	                <div class="catalog-cards__content">
-	                    @foreach ($catalogTypes as $type)
-	                        <? if ($type->id == 5) continue ?>
+	                    @foreach ($materials as $type)
 	                        <a href="{{ route('catalogue', ['city' => $city, 'type' => $type]) }}" class=" catalog-cards__item catalog-cards__item_full b-card is-hoverable">
 	                            <img src="{{ Storage::url($type->img) }}" alt="{{ $type->name }}" class="catalog-cards__img">
 	                            <div class="catalog-cards__item-info">
@@ -42,7 +41,7 @@
 	                    'secondTitle' =>  "Технологии натяжных потолков"
 	                ])
 	                <div class="catalog-cards__content">
-	                    @foreach ($catalogTypes as $type)
+	                    @foreach ($techs as $type)
 	                        <? if ($type->id == 5) continue ?>
 	                        <a href="{{ route('catalogue', ['city' => $city, 'type' => $type]) }}" class=" catalog-cards__item catalog-cards__item_full b-card is-hoverable">
 	                            <img src="{{ Storage::url($type->img) }}" alt="{{ $type->name }}" class="catalog-cards__img">
@@ -73,50 +72,25 @@
                 ])
                 <div class="photobank__wrap">
                     <div class="photobank__list photobank__list_rooms">
-                        <a href="javascript:void(0)" class="categoryLink categoryLink_photobank">
-                            <img src="/img/ceilings/hall-1@1x.jpg" alt="" class="categoryLink__image">
-                            <p class="categoryLink__name">Прихожая</p>
+                        @foreach($rooms as $type)
+                        <a href="{{ route('catalogue', ['city' => $city, 'type' => $type]) }}" class="categoryLink categoryLink_photobank">
+                            <img src="{{ Storage::url($type->img) }}" alt="" class="categoryLink__image">
+                            <p class="categoryLink__name">{{ $type->name }}</p>
                         </a>
-                        <a href="javascript:void(0)" class="categoryLink categoryLink_photobank">
-                            <img src="/img/ceilings/living@1x.jpg" alt="" class="categoryLink__image">
-                            <p class="categoryLink__name">Зал</p>
-                        </a>
-                        <a href="javascript:void(0)" class="categoryLink categoryLink_photobank">
-                            <img src="/img/ceilings/bedroom@1x.jpg" alt="" class="categoryLink__image">
-                            <p class="categoryLink__name">Спальня</p>
-                        </a>
-                        <a href="javascript:void(0)" class="categoryLink categoryLink_photobank">
-                            <img src="/img/ceilings/kitchen@1x.jpg" alt="" class="categoryLink__image">
-                            <p class="categoryLink__name">Кухня</p>
-                        </a>
-                        <a href="javascript:void(0)" class="categoryLink categoryLink_photobank">
-                            <img src="/img/ceilings/guest@1x.jpg" alt="" class="categoryLink__image">
-                            <p class="categoryLink__name">Гостиная</p>
-                        </a>
-                        <a href="javascript:void(0)" class="categoryLink categoryLink_photobank">
-                            <img src="/img/ceilings/bath@1x.jpg" alt="" class="categoryLink__image">
-                            <p class="categoryLink__name">Ванная</p>
-                        </a>
-                        <a href="javascript:void(0)" class="categoryLink categoryLink_photobank">
-                            <img src="/img/ceilings/children@1x.jpg" alt="" class="categoryLink__image">
-                            <p class="categoryLink__name">Детская</p>
-                        </a>
-                        <a href="javascript:void(0)" class="categoryLink categoryLink_photobank">
-                            <img src="/img/ceilings/mansarda@1x.jpg" alt="" class="categoryLink__image">
-                            <p class="categoryLink__name">Мансарда</p>
-                        </a>
+                        @endforeach
+                        
                     </div>
                 </div>
             </section>
 
-            <section class="lamps-slider">
+            {{--<section class="lamps-slider">
                 @include('common.gui.titles', [
                     'class' =>  "container",
                     'secondTitle' =>  "Светильники для натяжных потолков"
                 ])
 
                <a href="{{ route('lamps', $city) }}" class="lamps-slider__button">Все светильники</a>
-            </section>
+            </section>--}}
     	</section>
     @include('common.gui.footer')
 @endsection
