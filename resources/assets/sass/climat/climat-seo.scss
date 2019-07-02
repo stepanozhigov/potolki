@@ -1,0 +1,202 @@
+.climat-seo {
+    position: relative;
+    display: flex;
+    padding-top: rem(64);
+    padding-bottom: rem(64);
+
+
+    &::after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-image: url('/img/gui/sand-bg--2x.png');
+        background-repeat: repeat;
+        opacity: 0.4;
+    }
+
+    &::before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: rem(320);
+        top: 0;
+        left: 0;
+        background-image: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+        z-index: 2;
+    }
+
+    &__content {
+        position: relative;
+        z-index: 3;
+        @extend .container;
+        display: flex;
+
+        @include below($tablet-small) {
+            flex-direction: column-reverse;
+        }
+    }
+
+    &__seo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: calc(100% - 400px);
+        margin-right: rem(40);
+
+        @include below($tablet-small) {
+            width: 100%;
+            margin-right: 0;
+        }
+
+        &-content {
+            display: flex;
+            flex-direction: column;
+            max-height: rem(275);
+            overflow: hidden;
+            margin-bottom: rem(40);
+
+            @include below($tablet-small) {
+                max-height: rem(299);
+                margin-bottom: rem(16);
+            }
+
+            &.opened {
+                max-height: none;
+            }
+        }
+
+        &-open {
+            width: rem(32);
+            height: rem(16);
+            border: none;
+            background-color: transparent;
+            outline: none;
+            padding: 0;
+            cursor: pointer;
+
+            &.reversed {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &__form {
+        position: relative;
+        z-index: 3;
+        width: rem(360);
+
+        @include below($tablet-small) {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin-bottom: rem(46);
+
+            .climat-seo__title,
+            .climat-seo__text {
+                width: 100%;
+            }
+        }
+
+        .form__input  {
+            width: 100%;
+            margin-bottom: rem(16);
+
+            &:not(:last-of-type) {
+                @include below($tablet-small) {
+                    width: rem(280);
+                    margin-right: rem(16);
+                }
+
+                @include below($mobile) {
+                    width: 100%;
+                    margin-right: 0;
+                }
+            }
+
+            &:last-of-type {
+                margin-bottom: rem(24);
+
+                @include below($tablet-small) {
+                    width: rem(230);
+                    margin-right: rem(16);
+                    margin-bottom: rem(16);
+                }
+
+                @include below($mobile) {
+                    width: 100%;
+                    margin-right: 0;
+                }
+            }
+        }
+
+        .button {
+            width: 100%;
+            margin-bottom: rem(16);
+            margin-right: 0;
+
+            @include below($tablet-small) {
+                width: rem(190);
+            }
+
+            @include below($mobile) {
+                width: 100%;
+            }
+        }
+    }
+
+    &__title {
+        margin: 0;
+        margin-bottom: rem(12);
+        color: #485058;
+        font-family: $playfair;
+        font-size: rem(32);
+        font-weight: 400;
+        line-height: rem(38);
+
+        @include below($mobile) {
+            font-size: rem(22);
+            line-height: rem(26);
+        }
+    }
+
+    &__text {
+        margin: 0;
+        color: #485058;
+        font-family: $helvetica;
+        font-size: rem(16);
+        font-weight: 300;
+        line-height: rem(24);
+
+        &:not(:last-of-type) {
+            margin-bottom: rem(24);
+        }
+
+        @include below($mobile) {
+            font-size: rem(18);
+            line-height: rem(26);
+        }
+
+        & + .climat-seo__subtitle {
+            margin-top: rem(24);
+        }
+    }
+
+    &__subtitle {
+        margin: 0;
+        margin-bottom: rem(6);
+        color: #485058;
+        font-family: $playfair;
+        font-size: rem(20);
+        font-weight: 400;
+        line-height: rem(24);
+
+        @include below($mobile) {
+            font-size: rem(18);
+            line-height: rem(21);
+        }
+    }
+}

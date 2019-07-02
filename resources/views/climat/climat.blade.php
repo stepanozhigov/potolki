@@ -188,5 +188,5 @@
     </section>
 
     @include('common.gui.survey')
-    @include('common.gui.footer')
+    @include('climat.footer_climat')
 @endsection

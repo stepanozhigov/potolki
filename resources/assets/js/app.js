@@ -1090,4 +1090,5 @@ $('.catalogueDetail__desc-more').on('click', function () {
     } else {
         $this.text('Читать далее');
     }
+
 });

@@ -139,6 +139,7 @@
                 <a href="{{ route('credit', $city) }}" class="red-hoverable subtext subtext_white nav-group__item">Рассрочка</a>
                 <a href="{{ route('promos', $city) }}" class="red-hoverable subtext subtext_white nav-group__item">Скидки</a>
             </div>
+
         </nav>
     </div>
     <div class="footer__row footer__row_dark">

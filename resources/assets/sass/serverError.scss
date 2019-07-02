@@ -1,14 +1,14 @@
 .serverError {
     width: 100vw;
     height: 100vh;
-    background-image: url('/img/gui/error_505.jpg');
+    background-image: url('/img/gui/error_505-1080@1x.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 
     @media (min-resolution: 144dpi),
     (min-resolution: 1.5dppx) {
         background-size: cover;
-        background-image: url('/img/gui/error_505@2x.jpg');
+        background-image: url('/img/gui/error_505-1080@2x.jpg');
     }
 
     @include below($tablet) {
@@ -26,6 +26,7 @@
         background-size: cover;
         height: auto;
         width: 100%;
+        min-height: 100vh;
         background-image: url('/img/gui/error_505-360@1x.jpg');
 
         @media (min-resolution: 144dpi),
@@ -61,7 +62,7 @@
             margin-bottom: rem(128);
 
             @include below($tablet) {
-                margin-bottom: rem(74);
+                margin-left: rem(-12);
             }
 
             @include below($mobile) {
@@ -83,11 +84,11 @@
 
     &__name {
         margin: 0;
-        margin-bottom: rem(6);
+        margin-bottom: rem(8);
         color: $white;
         font-family: $futura;
         font-size: rem(16);
-        font-weight: 400;
+        font-weight: 500;
         letter-spacing: rem(4);
         text-transform: uppercase;
 
@@ -98,7 +99,7 @@
 
     &__title {
         margin: 0;
-        margin-bottom: rem(18);
+        margin-bottom: rem(32);
         color: $white;
         font-family: $playfair;
         font-size: rem(58);
@@ -108,7 +109,6 @@
         @include below($tablet) {
             font-size: rem(42);
             line-height: rem(38);
-            margin-bottom: rem(22);
         }
 
         @include below($mobile) {
@@ -127,8 +127,8 @@
         line-height: rem(32);
 
         @include below($tablet) {
-            line-height: rem(24);
-            margin-bottom: rem(57);
+            line-height: rem(32);
+            margin-bottom: rem(96);
         }
 
         @include below($mobile) {
@@ -157,7 +157,7 @@
             @include below($tablet) {
                 font-size: rem(26);
                 line-height: rem(31);
-                margin-bottom: rem(6);
+                margin-bottom: rem(8);
             }
         }
 
@@ -249,14 +249,21 @@
     }
 
     &__socials {
+        flex-wrap: nowrap;
+
         .socials__item  {
             width: auto;
+            margin-bottom: 0;
 
             &:not(:last-of-type) {
                 margin-right: rem(12);
 
                 @include below($tablet) {
                     margin-right: rem(24);
+                }
+
+                @include below($mobile) {
+                    margin-right: rem(16);
                 }
             }
         }

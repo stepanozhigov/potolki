@@ -1,0 +1,569 @@
+.climatDelivery {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: rem(140);
+
+    @extend .container;
+    @include below($mobile) {
+        padding-top: rem(60);
+    }
+
+    &__content {
+        @include below($mobile) {
+            position: relative;
+
+            padding-bottom: rem(60);
+
+            &::after {
+                content: '';
+
+                position: absolute;
+
+                width: rem(240);
+                height: 100%;
+                margin-right: auto;
+                margin-left: auto;
+
+                border-radius: rem(5);
+                background-image: url('/img/texture2.png');
+
+                @include stretch;
+            }
+        }
+    }
+
+    &__title {
+        padding-top: rem(40);
+        margin: 0;
+        margin-bottom: rem(60);
+
+        font-family: $playfair;
+        font-size: rem(32);
+        font-weight: 400;
+        color: #50555f;
+
+        @include below($mobile) {
+            position: relative;
+            z-index: 2;
+
+            padding-bottom: rem(60);
+            margin-bottom: rem(50);
+
+            font-size: rem(22);
+            text-align: center;
+        }
+
+        span {
+            position: relative;
+            top: 5px;
+
+            font-size: rem(48);
+
+            @include below($mobile) {
+                font-size: rem(36);
+            }
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__item-content {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 rem(40);
+
+        @include below($tablet) {
+            padding: 0;
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+
+        border-top: rem(1) solid #979797;
+
+        @include below($mobile) {
+            position: relative;
+            z-index: 2;
+
+            border: none;
+
+            &:not(:last-of-type) {
+                margin-bottom: rem(25);
+            }
+        }
+
+        &:hover {
+            border-top: rem(1) solid transparent;
+
+            @include below($mobile) {
+                border-top: none;
+            }
+
+            &:not(.climatDelivery__item_opened) + .climatDelivery__item {
+                border-top: rem(1) solid transparent;
+
+                @include below($mobile) {
+                    border-top: none;
+                }
+            }
+        }
+
+        &_opened {
+            border-top: rem(1) solid #979797;
+
+            @include below($mobile) {
+                border-top: none;
+            }
+
+            &:hover {
+                border-top: rem(1) solid #979797;
+
+                @include below($mobile) {
+                    border-top: none;
+                }
+            }
+
+            .climatDelivery__item-content {
+                display: flex;
+            }
+
+            .climatDelivery__item-heading {
+                color: #dc1414;
+
+                @include below($mobile) {
+                    margin-bottom: rem(50);
+
+                    border: rem(1) solid #dc1414;
+                }
+
+                &::after,
+                &::before {
+                    content: '';
+
+                    top: calc(50% - 4px);
+
+                    @include below($mobile) {
+                        top: auto;
+                        bottom: -35px;
+                        left: calc(50% - 14px);
+
+                        display: block;
+                    }
+                }
+
+                &::after {
+                    @include above($mobile) {
+                        transform: rotate(180deg);
+                    }
+                }
+                &::before {
+                    @include above($mobile) {
+                        border-color: #dc1414 transparent transparent;
+                        transform: translateY(-2px) rotate(180deg)!important;
+                    }
+                    @include below($mobile) {
+                        border-color: #dc1414 transparent transparent;
+                    }
+                }
+            }
+
+            .climatDelivery__item-heading:hover {
+                color: #50555f;
+
+                border-radius: 0;
+                background-color: $white;
+
+                @include below($mobile) {
+                    border-radius: rem(30);
+                }
+
+                &::before {
+                    border-color: #dc1414 transparent transparent;
+                }
+
+                &::after {
+                    border-color: $white transparent transparent;
+                }
+            }
+
+            &:hover + .dillers__item {
+                .dillers__item-heading {
+                    border-top: rem(2) solid #d0d2d4;
+
+                    @include below($mobile) {
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
+
+    &__item-desc {
+        width: 100%;
+        margin: 0;
+        margin-bottom: rem(40);
+
+        font-family: $helvetica;
+        font-size: rem(18);
+        font-weight: 300;
+        color: #6b6b6b;
+
+        @include below($mobile) {
+            text-align: center;
+        }
+    }
+
+    &__item-heading {
+        position: relative;
+
+        padding: rem(40);
+        padding-left: rem(45);
+        margin: 0;
+
+        font-family: $futura;
+        font-size: rem(26);
+        font-weight: 300;
+        line-height: 1;
+        color: #50555f;
+        text-transform: uppercase;
+
+        cursor: pointer;
+
+        @include above($tablet) {
+            transition: background-color .3s, color .3s;
+        }
+        @include below($mobile) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: rem(75);
+            padding: rem(12) rem(55);
+
+            font-size: rem(18);
+            text-align: center;
+            text-transform: none;
+
+            border: rem(1) solid #a7aaad;
+            border-radius: rem(30);
+            background-color: $white;
+        }
+
+        &:hover {
+            @include above($mobile) {
+                color: $white;
+
+                border-radius: rem(5);
+                background-color: $red_thunderbird;
+
+                @include below($tablet) {
+                    border-radius: 0;
+                }
+
+
+                & p {
+                    color: $white;
+                }
+
+                &::before {
+                    border-color: $white transparent transparent;
+                }
+
+                &::after {
+                    border-color: $red_thunderbird transparent transparent;
+                }
+            }
+        }
+
+        &::after,
+        &::before {
+            content: '';
+
+            position: absolute;
+            top: calc(50% - 5px);
+            left: rem(5);
+
+            width: 0;
+            height: 0;
+
+            border-width: rem(14) rem(14) 0;
+            border-style: solid;
+
+            @include above($tablet) {
+                transition: border-color .3s;
+            }
+            @include below($mobile) {
+                display: none;
+            }
+        }
+
+        &::before {
+            border-color: #50555f transparent transparent;
+            transform: translateY(2px);
+        }
+
+        &::after {
+            border-color: $white transparent transparent;
+        }
+    }
+
+    &__subitems {
+        display: flex;
+        flex-direction: column;
+
+        @include below($tablet) {
+            width: 100%;
+        }
+    }
+
+    &__subitem {
+        display: flex;
+        flex-direction: column;
+        width: rem(610);
+
+        border-top: rem(1) solid #c8c8c8;
+
+        @include below($tablet) {
+            width: 100%;
+        }
+        @include below($mobile) {
+            border: none;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 0 2px rgba(0, 0, 0, .08), inset 0 -1px 0 rgba(0, 0, 0, .12);
+
+
+            &:not(:last-of-type) {
+                margin-bottom: rem(10);
+            }
+        }
+
+        &_opened {
+            .climatDelivery__subitem-content {
+                display: flex;
+            }
+
+            .climatDelivery__subitem-heading {
+                color: #dc1414;
+
+                &::before {
+                    border-color: #dc1414 transparent transparent;
+                    transform: translateY(-2px) rotate(180deg)!important;
+                }
+
+                &::after {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+
+    &__subitem-heading {
+        position: relative;
+
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: rem(25) rem(35);
+        padding-right: 0;
+        margin: 0;
+
+        font-family: $futura;
+        font-size: rem(20);
+        font-weight: 300;
+        line-height: 1;
+        color: #50555f;
+        letter-spacing: 1.15px;
+        text-transform: uppercase;
+
+        cursor: pointer;
+
+        @include below($mobile) {
+            padding: rem(20);
+            padding-left: rem(55);
+        }
+
+        &::after,
+        &::before {
+            content: '';
+
+            position: absolute;
+            top: calc(50% - 5px);
+            left: 0;
+
+            width: 0;
+            height: 0;
+
+            border-width: rem(10) rem(10) 0;
+            border-style: solid;
+
+            @include above($tablet) {
+                transition: border-color .3s;
+            }
+            @include below($mobile) {
+                left: rem(20);
+            }
+        }
+
+        &::before {
+            border-color: #50555f transparent transparent;
+            transform: translateY(2px);
+        }
+
+        &::after {
+            border-color: $white transparent transparent;
+        }
+
+        a {
+            position: relative;
+
+            padding-left: rem(35);
+
+            font-family: $helvetica;
+            font-size: rem(18);
+            font-weight: 300;
+            color: #a7aaad;
+            text-decoration: underline;
+            text-transform: none;
+
+            @include below($mobile) {
+                width: 0;
+
+                font-size: 0;
+            }
+
+            &::before {
+                content: '';
+
+                position: absolute;
+                top: calc(50% - 13px);
+                left: 0;
+
+                width: rem(18);
+                height: rem(26);
+
+                background-image: url('/img/geo_light.svg');
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+        }
+    }
+
+    &__subitem-content {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding-bottom: rem(30);
+
+        @include below($mobile) {
+            padding: rem(20);
+        }
+
+        dl {
+            display: flex;
+            padding: 0;
+            margin: 0;
+
+            @include below($mobile) {
+                flex-direction: column;
+            }
+
+            &:not(:last-of-type) {
+                margin-bottom: rem(10);
+
+                @include below($mobile) {
+                    margin-bottom: rem(35);
+                }
+            }
+
+            dt,
+            dd {
+                padding: 0;
+                margin: 0;
+
+                font-family: $helvetica;
+                font-size: rem(18);
+                font-weight: 300;
+                color: #6b6b6b;
+
+                @include below($mobile) {
+                    line-height: 1.5;
+                }
+            }
+
+            dt {
+                flex-grow: 9;
+
+                @include below($mobile) {
+                    width: 100%;
+
+                    font-weight: 500;
+                    color: #50555f;
+                }
+            }
+
+            dd {
+                flex-shrink: 0;
+                width: rem(60);
+
+                @include below($mobile) {
+                    width: 100%;
+
+                    color: #6b6b6b;
+                }
+            }
+        }
+    }
+
+    &__item-list {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        margin-bottom: rem(-60);
+
+        @include below($mobile) {
+            flex-direction: column;
+            width: 100%;
+            margin-bottom: rem(-10);
+        }
+    }
+
+    &__company {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 20%;
+        margin-bottom: rem(60);
+
+        @include below($mobile) {
+            width: 100%;
+            padding: rem(30);
+            margin-bottom: rem(10);
+
+            border-radius: rem(5);
+            background-color: #fff;
+            box-shadow: 0 0 2px rgba(0, 0, 0, .08), inset 0 -1px 0 rgba(0, 0, 0, .12);
+        }
+
+        img {
+            margin-bottom: rem(25);
+        }
+
+        a {
+            font-family: $helvetica;
+            font-size: rem(18);
+            color: #50555f;
+            text-decoration: underline;
+
+            @include below($mobile) {
+                font-size: 24px;
+            }
+        }
+    }
+}

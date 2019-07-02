@@ -565,6 +565,57 @@ body {
     &__name {
         margin-left: 8px;
     }
+
+	&_white {
+        .socials__icon {
+            &_insta {
+                &::after {
+                    position: absolute;
+                    content: '';
+                    background-image: url('/img/gui/social_white_inst.svg');
+                }
+            }
+
+            &_fb {
+                &::after {
+                    position: absolute;
+                    content: '';
+                    background-image: url('/img/gui/social_white_fb.svg');
+                }
+            }
+
+            &_youtube {
+                &::after {
+                    position: absolute;
+                    content: '';
+                    background-image: url('/img/gui/social_white_youtube.svg');
+                }
+            }
+            &_ok {
+                &::after {
+                    position: absolute;
+                    content: '';
+                    background-image: url('/img/gui/social_white_ok.svg');
+                }
+            }
+
+            &_vk {
+                &::after {
+                    position: absolute;
+                    content: '';
+                    background-image: url('/img/gui/social_white_vk.svg');
+                }
+            }
+
+            &_whatsapp {
+                &::after {
+                    position: absolute;
+                    content: '';
+                    background-image: url('/img/gui/social_white_whatsapp.svg');
+                }
+            }
+        }
+    }
 }
 
 .mail {
