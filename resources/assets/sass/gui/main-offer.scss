@@ -78,9 +78,10 @@
 
     &__subtitle {
         margin: 0;
-        font-family: $helvetica;
+        font-family: "Helvetica Neue", sans-serif;
         font-weight: 400;
-        font-size: 32px;
+        font-size: 26px;
+        line-height: 32px;
         margin-bottom: 40px;
         text-align: left;
         color: $white;

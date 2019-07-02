@@ -9,6 +9,12 @@ class City extends Model
     public function getRouteKeyName() {
         return 'code';
     }
+
+    // public function resolveRouteBinding($value)
+    // {
+        // dd($value, 123); 
+        // return $this->where('name', $value)->first() ?? abort(404);
+    // }
     
     public function photos ()
     {
@@ -25,7 +31,7 @@ class City extends Model
     }
     public function socials ()
     {
-        return $this->hasMany('App\Social');
+        return $this->hasMany('App\Social')->where('socials.direction_id', '=', 2);
     }
     public function mainOffice ()
     {

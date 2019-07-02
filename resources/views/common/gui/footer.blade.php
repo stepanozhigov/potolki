@@ -93,11 +93,9 @@
             </a>
             <div class="socials">
 				@foreach($city->socials as $social)
-					@if ($social->direction_id == 1)
-						<a target="_blank" href="{{ $social->link }}" class="socials__item">
-							<div class="socials__icon socials__icon_{{ $social->icon }}"></div>
-						</a>
-					@endif
+					<a target="_blank" href="{{ $social->link }}" class="socials__item">
+						<div class="socials__icon socials__icon_{{ $social->icon }}"></div>
+					</a>
 				@endforeach
             </div>
         </div>
@@ -110,24 +108,22 @@
                 <a href="{{ route('reviews', $city) }}" class="red-hoverable subtext subtext_white nav-group__item">Отзывы</a>
             </div>
             <div class="nav-group footer__item">
-                <a href="javascript:void(0);" class="card-title footer__title js-open">Фактуры</a>
-                <a href="" class="red-hoverable subtext subtext_white nav-group__item">Сатиновые</a>
-                <a href="" class="red-hoverable subtext subtext_white nav-group__item">Глянцевые</a>
-                <a href="" class="red-hoverable subtext subtext_white nav-group__item">Тканевые</a>
-                <a href="" class="red-hoverable subtext subtext_white nav-group__item">Матовые</a>
+                <a class="card-title footer__title js-open">Фактуры</a>
+                <a href="{{ route('catalogue', ['city' => request()->route()->city, 'type' => 'satinovye']) }}" class="red-hoverable subtext subtext_white nav-group__item">Сатиновые</a>
+                <a href="{{ route('catalogue', ['city' => request()->route()->city, 'type' => 'gljancevye']) }}" class="red-hoverable subtext subtext_white nav-group__item">Глянцевые</a>
+                <a href="{{ route('catalogue', ['city' => request()->route()->city, 'type' => 'matovye']) }}" class="red-hoverable subtext subtext_white nav-group__item">Матовые</a>
             </div>
             <div class="nav-group footer__item">
-                <a href="javascript:void(0);" class="card-title footer__title js-open">Технологии</a>
-                <a href="" class="red-hoverable subtext subtext_white nav-group__item">Двухуровневые</a>
-                <a href="" class="red-hoverable subtext subtext_white nav-group__item">Звездное небо</a>
-                <a href="" class="red-hoverable subtext subtext_white nav-group__item">Парящие</a>
-                <a href="" class="red-hoverable subtext subtext_white nav-group__item">Резные</a>
+                <a class="card-title footer__title js-open">Технологии</a>
+                <a href="{{ route('catalogue', ['city' => request()->route()->city, 'type' => 'dvuhurovnevye']) }}" class="red-hoverable subtext subtext_white nav-group__item">Двухуровневые</a>
+                <a href="{{ route('catalogue', ['city' => request()->route()->city, 'type' => 'paryashie']) }}" class="red-hoverable subtext subtext_white nav-group__item">Парящие</a>
+                <a href="{{ route('catalogue', ['city' => request()->route()->city, 'type' => 'reznye']) }}" class="red-hoverable subtext subtext_white nav-group__item">Резные</a>
             </div>
             <div class="nav-group footer__item">
-                <a href="javascript:void(0);" class="card-title footer__title js-open">Фотопечать</a>
-                <a href="" class="red-hoverable subtext subtext_white nav-group__item">Поверхности</a>
-                <a href="" class="red-hoverable subtext subtext_white nav-group__item">Технологии</a>
-                <a href="" class="red-hoverable subtext subtext_white nav-group__item">Каталог</a>
+                <a href="{{ route('photoprint', request()->route()->city) }}" class="card-title footer__title js-open">Фотопечать</a>
+                <a href="{{ route('surfaces', request()->route()->city) }}" class="red-hoverable subtext subtext_white nav-group__item">Поверхности</a>
+                <a href="{{ route('printprice', request()->route()->city) }}" class="red-hoverable subtext subtext_white nav-group__item">Цены</a>
+                <a href="{{ route('photobank', request()->route()->city) }}" class="red-hoverable subtext subtext_white nav-group__item">Каталог</a>
             </div>
             <div class="nav-group footer__item">
                 <a href="javascript:void(0);" class="card-title footer__title js-open">Услуги</a>

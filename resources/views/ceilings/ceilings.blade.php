@@ -3,16 +3,11 @@
 @section('content')
     @include('common.gui.header')
 
-    <section class="main-offer main-offer_ceilings js-offer-slider" data-offers="{{ $offers }}" id="js-offer-slider" >
+    <section class="main-offer main-offer_ceilings js-offer-slider" data-offers="{{ $offers }}" id="js-offer-slider">
         <div class="main-offer__inner container">
             <p class="text main-offer__overtitle">Монтаж за 1 день | Гарантия 30&nbsp;лет</p>
-            @php
-                $texts = json_encode([
-                    'Бесплатный выезд замерного мастера!',
-                    'Успейте заказать сейчас!'
-                ]);
-            @endphp
-            <h1 class="title main-offer__title js-writen" data-texts="{{$texts}}">Натяжные потолки со скидкой 30%</h1>
+            
+            <h1 class="title main-offer__title js-writen">Натяжные потолки от 100 ₽/м2</h1>
             <p class="main-offer__subtitle">Вызовите специалиста для&nbsp;замера и&nbsp;расчёта</p>
 
             <form class="form main-offer__form mobile-hide" action="" id="offer-form">
@@ -80,7 +75,7 @@
             </div>
             <div class="whyus__stat-item">
                 <p class="whyus__stat-num">397</p>
-                <p class="whyus__stat-text">квадратных метров <br> в месяц</p>
+                <p class="whyus__stat-text">квадратных метров <br> в день</p>
             </div>
         </div>
     </section>

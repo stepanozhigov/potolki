@@ -20,7 +20,7 @@ use App\Service;
 use App\Offer;
 use App\Article;
 use App\SeoBlock;
-
+use App\Social;
 use App\Visit;
 
 class PageController extends Controller
@@ -37,20 +37,7 @@ class PageController extends Controller
             'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
     }
-    public function main (City $city, Request $request)
-    {
-        //dd(1);
-        //dd(Photo::whereIn('catalog_type_id', [15,16,17,18,19,20,21,22,23,24])->get()); 
-        return view('windows.main', [
-            'city'  =>  $city,
-            'reviews'   =>  Review::limit(3)->orderBy('sort', 'asc')->get(),
-            'photos'    =>  Photo::whereIn('catalog_type_id', [15,16,17,18,19,20,21,22,23,24])->get(),
-            'offers'    =>  Offer::where('is_active', 1)->get(),
-            'catalogTypes'  => CatalogType::where(['direction_id' => 2])->get(),
-            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first(),
-            'articles' => Article::where('is_active', 1)->orderBy('sort', 'asc')->get()
-        ]);
-    }
+
     public function photos (City $city, CatalogType $type = null)
     {
         return view ('common.pages.photos', [
@@ -115,8 +102,9 @@ class PageController extends Controller
 
     public function contacts (City $city)
     {
-        return view ('common.pages.contacts', [
+        return view ('common.pages.contacts', [ 
             'city'  =>  $city,
+            'socials'   =>  Social::where(['city_id' => $city->id, 'direction_id' => 2])->get(),
             'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
     }
@@ -217,11 +205,15 @@ class PageController extends Controller
 
     public function ceilings (City $city)
     {
+        if (empty($city->code)) {
+            $city = City::where('code', 'moskva')->first();
+        }
+        //dd($city);
         return view('ceilings.ceilings', [
             'city'  =>  $city,
             'reviews'   =>  Review::where('direction_id', 2)->limit(3)->orderBy('sort', 'asc')->get(),
             'photos'    =>  Photo::whereIn('catalog_type_id', [15,16,17,18,19,20,21,22,23,24,25])->get(),
-            'offers'    =>  Offer::where('is_active', 1)->get(),
+            'offers'    =>  Offer::where(['is_active' =>  1, 'direction_id' => 2])->get(),
             'catalogTypes'  => CatalogType::where(['direction_id' => 2])->get(),
             'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first(),
             'articles' => Article::where(['is_active' => 1, 'in_main' => 1])->orderBy('sort', 'asc')->get()
@@ -278,11 +270,16 @@ class PageController extends Controller
 
     public function catalogueDetail (City $city, CatalogType $type)
     {
+        $seoData = SeoBlock::where(['route' => Route::currentRouteName(), 'direction_id' => 2])->first();
+
+        $typeTitle = mb_strtolower($type->ceiling_title);
+        $seoData->meta_title = str_replace('#type#', $typeTitle, $seoData->meta_title);
+        $seoData->meta_description = str_replace('#price#', $type->price, $seoData->meta_description);
         return view('ceilings.catalogueDetail', [
             'city'  =>  $city,
-            'type'  =>  $type,
+            'type'  =>  $type, 
             'photos'    =>  $type->photos,
-            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
+            'seoData'   =>  $seoData
         ]);
     }
 

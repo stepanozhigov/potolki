@@ -76,9 +76,9 @@
             margin: 0;
             color: #485058;
             font-family: $helvetica;
-            font-size: rem(12);
+            font-size: rem(14);
             font-weight: 300;
-            line-height: rem(20);
+            line-height: rem(22); 
 
             &:not(:last-of-type) {
                 margin-bottom: rem(8);

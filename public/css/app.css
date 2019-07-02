@@ -1951,7 +1951,8 @@ corresponds to the arrow we want to display */
   margin: 0;
   font-family: "Helvetica Neue", sans-serif;
   font-weight: 400;
-  font-size: 32px;
+  font-size: 26px;
+  line-height: 32px;
   margin-bottom: 40px;
   text-align: left;
   color: #ffffff;
@@ -3353,9 +3354,9 @@ corresponds to the arrow we want to display */
   margin: 0;
   color: #485058;
   font-family: "Helvetica Neue", sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   font-weight: 300;
-  line-height: 1.25rem;
+  line-height: 1.375rem;
 }
 
 .seo-block__item p:not(:last-of-type) {

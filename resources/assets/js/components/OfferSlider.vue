@@ -81,12 +81,13 @@
 
                 var titleString = this.currentOffer.title,
                     titleContainer = document.querySelector('.js-title'),
-                    arTitles = titleString.split('|');
+                    //arTitles = titleString.split('|');  
+                    arTitles = titleString;
 
                 new typewriter(titleContainer, {
                     strings: arTitles,
                     autoStart: true,
-                    loop: true,
+                    loop: false,
                     delay: 70
                 });
             },

@@ -38144,7 +38144,7 @@ $(document).on('input', '.range', function (e) {
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            area: 0,
+            area: 1,
             tubes: 0,
             angles: 4,
             lamps: 0
@@ -38172,7 +38172,7 @@ var render = function() {
     _vm._v(" "),
     _c("p", { staticClass: "ceilingCalculator__desc" }, [
       _vm._v(
-        "Рассчитайте стоимость натяжного потолока онлайн. Матовые, сатиновые, глянцевые — все по одной цене! Выберите параметры вашего помещения, перемещая ползунки."
+        "Рассчитайте стоимость натяжного потолка онлайн. Матовые, сатиновые, глянцевые — все по одной цене! Выберите параметры вашего помещения, перемещая ползунки."
       )
     ]),
     _vm._v(" "),
@@ -38250,9 +38250,10 @@ var staticRenderFns = [
       _c("input", {
         staticClass: "range",
         attrs: {
+          value: "1",
           name: "area",
           "data-min": "0",
-          "data-from": "25",
+          "data-from": "1",
           "data-max": "150",
           type: "text"
         }
@@ -38304,7 +38305,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("p", { staticClass: "ceilingCalculator__total" }, [
-      _c("span", { staticClass: "js-calc-price" }),
+      _c("span", { staticClass: "js-calc-price" }, [_vm._v("350")]),
       _vm._v(" ₽")
     ])
   }
@@ -40123,12 +40124,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             var titleString = this.currentOffer.title,
                 titleContainer = document.querySelector('.js-title'),
-                arTitles = titleString.split('|');
+
+            //arTitles = titleString.split('|');  
+            arTitles = titleString;
 
             new __WEBPACK_IMPORTED_MODULE_0_typewriter_effect_dist_core___default.a(titleContainer, {
                 strings: arTitles,
                 autoStart: true,
-                loop: true,
+                loop: false,
                 delay: 70
             });
         },
@@ -40254,6 +40257,7 @@ var render = function() {
                             ],
                             staticClass: "input form__input",
                             attrs: {
+                              required: "",
                               name: "name",
                               type: "text",
                               placeholder: "Ваше имя"
@@ -40282,6 +40286,7 @@ var render = function() {
                             ],
                             staticClass: "input form__input",
                             attrs: {
+                              required: "",
                               name: "phone",
                               type: "tel",
                               placeholder: "Ваш телефон"

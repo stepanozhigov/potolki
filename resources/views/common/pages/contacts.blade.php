@@ -59,11 +59,9 @@
                     <p class="second-title">Социальные сети</p>
                     <div class="socials contacts__socials">
                          @foreach($city->socials as $social)
-                            @if ($social->direction_id == 1)
-                                <a target="_blank" href="{{ $social->link }}" class="socials__item">
-                                    <div class="socials__icon socials__icon_{{ $social->icon }}"></div>
-                                </a>
-                            @endif
+                            <a target="_blank" href="{{ $social->link }}" class="socials__item">
+                                <div class="socials__icon socials__icon_{{ $social->icon }}"></div>
+                            </a>
                         @endforeach
                         
                     </div>

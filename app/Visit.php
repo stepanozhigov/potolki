@@ -25,7 +25,7 @@ class Visit {
 		
 		//$data = json_encode(session()->all());
 		$data = json_encode(session('visits'));
-		echo "<script>console.log({$data})</script>";
+		//echo "<script>console.log({$data})</script>";
 		//var_dump(session()->all());
 	}
 }
