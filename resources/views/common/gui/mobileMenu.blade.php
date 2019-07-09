@@ -11,34 +11,15 @@
                 <div class="mobileMenu__category">
                     <div class="mobileMenu__category-heading">
                         <a class="mobileMenu__link-prev" href="javascript:void(0);"></a>
-                        <a class="mobileMenu__link-category" href="javascript:void(0);">Каталог</a>
+                        <a class="mobileMenu__link-category" href="{{ route('catalogueCeilings', $city) }}">Каталог</a>
                         <a class="mobileMenu__link-category mobileMenu__link-arrow" href="javascript:void(0);"></a>
                     </div>
                     <ul class="scrollable scrollable">
-                        <li class="mobileMenu__item">
-                            <a  href="">Матовые</a>
-                        </li>
-                        <li class="mobileMenu__item">
-                            <a  href="">Глянцевые</a>
-                        </li>
-                        <li class="mobileMenu__item">
-                            <a  href="">Сатиновые</a>
-                        </li>
-                        <li class="mobileMenu__item">
-                            <a  href="">Тканевые</a>
-                        </li>
-                        <li class="mobileMenu__item">
-                            <a  href="">Резные</a>
-                        </li>
-                        <li class="mobileMenu__item">
-                            <a  href="">Парящие</a>
-                        </li>
-                        <li class="mobileMenu__item">
-                            <a  href="">Звездное небо</a>
-                        </li>
-                        <li class="mobileMenu__item">
-                            <a  href="">Двухуровневые</a>
-                        </li>
+                        @foreach(App\CatalogType::where(['direction_id' => 2])->get() as $section)
+                            <li class="mobileMenu__item">
+                                <a href="{{ route('catalogue', ['city' => $city, 'type' => $section]) }}">{{ $section->name }}</a>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
@@ -49,37 +30,37 @@
                 <div class="mobileMenu__category">
                     <div class="mobileMenu__category-heading">
                         <a class="mobileMenu__link-prev" href="javascript:void(0);"></a>
-                        <a class="mobileMenu__link-category" href="javascript:void(0);">Услуги</a>
+                        <a class="mobileMenu__link-category">Услуги</a>
                         <a class="mobileMenu__link-category mobileMenu__link-arrow" href="javascript:void(0);"></a>
                     </div>
                     <ul class="scrollable scrollable">
                         <li class="mobileMenu__item">
-                            <a  href="">Бесплатный замер</a>
+                            <a href="{{ route('services', [$city, 'measurements']) }}">Бесплатный замер</a>
                         </li>
                         <li class="mobileMenu__item">
-                            <a  href="">Фотопечать</a>
+                            <a href="{{ route('photoprint', $city) }}">Фотопечать</a>
                         </li>
                         <li class="mobileMenu__item">
-                            <a  href="">Установка</a>
+                            <a href="{{ route('ustanovka', $city) }}">Установка</a>
                         </li>
                         <li class="mobileMenu__item">
-                            <a  href="">Слив воды</a>
+                            <a href="{{ route('sliv', $city) }}">Слив воды</a>
                         </li>
                         <li class="mobileMenu__item">
-                            <a  href="">Замена полотна</a>
+                            <a  href="{{ route('zamenaPolotna', $city) }}">Замена полотна</a>
                         </li>
                         <li class="mobileMenu__item">
-                            <a  href="">Ремонт</a>
+                            <a  href="{{ route('remont', $city) }}">Ремонт</a>
                         </li>
                         <li class="mobileMenu__item">
-                            <a  href="">Рассрочка</a>
+                            <a  href="{{ route('credit', $city) }}">Рассрочка</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </li>
         <li class="mobileMenu__item">
-            <a  href="{{ route('services', [$city, 'measurements']) }}">
+            <a  href="{{ route('ceilingsCalc', $city) }}">
                 Калькулятор
             </a>
         </li>

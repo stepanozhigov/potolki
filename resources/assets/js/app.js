@@ -55,9 +55,40 @@ Vue.component('posts-list', require('./components/ArticlesList.vue'));
 Vue.component('manufacturers', require('./components/ManufacturersCarousel.vue'));
 Vue.component('banks', require('./components/banksCarousel.vue'));
 Vue.component('menu-city-search', require('./components/MenuCitySearch.vue'));
+
 // Vue.component('portfolio-photos', require('./components/PortfolioPhotos.vue'));
+$('[href="http://89.108.103.224:699/sochi/catalogue/svetovye-linii"]').on('click', function(ev) {
+    ev.preventDefault();
+    $('.header__callback').trigger('click');
+})
 
+$('.survey__form').on('submit', function (e) {
+    e.preventDefault();
+    var $form = $(e.target);
+    $.ajax({
+        url: '/forms/survey',
+        method: 'post',
+        data: $form.serialize(),
+        success: function () {
+            $('.survey__thankyou').slideDown();
+            $form.hide();
+        }
+    });
+});
 
+$('.js-dir').on('submit', function (e) {
+    e.preventDefault();
+    var $form = $(e.target);
+    $.ajax({
+        url: '/forms/survey',
+        method: 'post',
+        data: $form.serialize(),
+        success: function () {
+            $('.dir-message__submit').hide();
+            $('.dir-message__status-send').show();
+        }
+    });
+})
 
 $(document).on('scroll', function () {
     var scrollPosition = $(window).scrollTop(),
@@ -175,7 +206,7 @@ $('.js-add-comment').each(function(index, element) {
 })
 
 if ($('#portfolio-photos').length > 0) {
-    const portfolioPhotos = new Vue({
+     const portfolioPhotos = new Vue({
         el: '#portfolio-photos'
     });
 }
@@ -674,19 +705,29 @@ $('.form').on('submit', function (event) {
     event.preventDefault();
     var $this = $(this);
 
-    if (typeof yaCounter !== 'undefined') {
-        yaCounter.reachGoal('form-sub');
+    if (typeof window.yaCounter43807824 !== 'undefined') {
+        window.yaCounter43807824.reachGoal('form-sub');
     }
     if (typeof gaCounter !== 'undefined') {
-        gaCounter.send('event', 'forms', 'sub');
-    }
+        ga.getAll()[0].send('event', 'forms', 'sub');
 
+    }
+    fbq('track', 'Lead');
+    var successEl = $this.next('.popup__status-send');
+
+    if (successEl.length > 0) {
+        $this.hide();
+        $this.next('.popup__status-send').show();
+    }
+            
     $.ajax({
         url: $this.attr('action'),
         data: $this.serialize(),
         method: 'POST',
         success: function () {
+            
             $this.addClass('form_status-send');
+           
             $this.find('button[type="submit"]').text('Заявка отправлена!').prop('disabled', true);
             $this.find('input').prop('disabled', true);
         }
@@ -694,37 +735,38 @@ $('.form').on('submit', function (event) {
 });
 
 $('.phone').on('click', function () {
-
-    if (typeof yaCounter !== 'undefined') {
-        yaCounter.reachGoal('phone-click');
+    if (typeof window.yaCounter43807824 !== 'undefined') {
+        window.yaCounter43807824.reachGoal('phone-click');
     }
-    if (typeof gaCounter !== 'undefined') {
-        gaCounter.send('event', 'click', 'phone');
+    if (typeof ga.getAll() !== 'undefined') {
+        ga.getAll()[0].send('event', 'click', 'phone');
     }
-
+    fbq('track', 'Lead');
 
 });
 
 $('.whatsapp').on('click', function () {
-    if (typeof yaCounter !== 'undefined') {
-        yaCounter.reachGoal('whatsapp');
+    if (typeof window.yaCounter43807824 !== 'undefined') {
+        window.yaCounter43807824.reachGoal('whatsapp');
     }
-    if (typeof gaCounter !== 'undefined') {
-        gaCounter.send('event', 'whatsapp', 'click');
+    if (typeof ga.getAll() !== 'undefined') {
+        ga.getAll()[0].send('event', 'whatsapp', 'click');
     }
-
+  	fbq('track', 'Lead');
 
 })
 
 
 
 $('.mobileMenu__item_category').on('click', function () {
+    console.log(this);
     $('.mobileMenu__list').addClass('mobileMenu__list_category');
     $(this).addClass('active');
 });
 
 $('.mobileMenu__link-prev').on('click', function (event) {
     event.stopPropagation();
+    console.log(this);
     $('.mobileMenu__list').removeClass('mobileMenu__list_category');
     $(this).closest('.mobileMenu__item_category').removeClass('active');
 });

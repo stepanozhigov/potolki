@@ -10,6 +10,15 @@ use App\Connectors\BitrixConnector;
 
 class FeedbackController extends Controller
 {
+ 
+    public function addSurvey(Request $request)
+    {
+        if (!empty($request->message))
+        {
+            mail('adresplus@mail.ru', 'Оценка сайта', $request->message);
+        }
+    }
+
     public function addComment (Request $request)
     {
         $comment = new Comment($request->all());

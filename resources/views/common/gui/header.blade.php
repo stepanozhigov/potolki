@@ -23,7 +23,7 @@ $city = $city ?? App\City::find(1);
 			<img src="/img/gui/mobile-menu-close.svg" alt="" class="header__close js-toggle-menu">
 	        <nav class="menu header__menu" id="">
 				<div class="menu__item menu__item_dropdown">
-	                <a class="text menu__item js-toggle-submenu">Каталог</a>
+	                <a href="{{ route('catalogueCeilings', $city) }}"  class="text menu__item js-toggle-submenu">Каталог</a>
 	                <div class="menu__dropdown menu__dropdown_big">
                         <div class="menu__dropdown-heading">
                             <a href="javascript:void(0);" class="menu__item-nav">
@@ -142,7 +142,7 @@ $city = $city ?? App\City::find(1);
         </a>
         <nav class="menu header__menu" id="">
             <div class="menu__item menu__item_dropdown">
-                <a class="text menu__item js-toggle-submenu">Каталог</a>
+                <a href="{{ route('catalogueCeilings', $city) }}" class="text menu__item js-toggle-submenu">Каталог</a>
                 <div class="menu__dropdown menu__dropdown_big">
                     <div class="menu__dropdown-heading">
                         <a href="javascript:void(0);" class="menu__item-nav">

@@ -12,21 +12,11 @@
 	<p class="popup__send-title">спасибо, <br> заявка отправлена</p>
 	<p class="intro popup__intro">Подпишитесь на&nbsp;удобную для вас социальную сеть и&nbsp;получите 10&nbsp;% скидки</p>
 	<div class="socials">
-		<a target="_blank" href="https://www.instagram.com/business_repin/" class="socials__item">
-			<div class="socials__icon socials__icon_inst"></div>
-		</a>
-		<a target="_blank" href="" class="socials__item">
-			<div class="socials__icon socials__icon_fb"></div>
-		</a>
-		<a target="_blank" href="https://vk.com/business.repin" class="socials__item">
-			<div class="socials__icon socials__icon_vk"></div>
-		</a>
-		<a target="_blank" href="" class="socials__item">
-			<div class="socials__icon socials__icon_ok"></div>
-		</a>
-		<a target="_blank" href="" class="socials__item">
-			<div class="socials__icon socials__icon_youtube"></div>
-		</a>
+		@foreach($city->socials as $social)
+			<a target="_blank" href="{{ $social->link }}" class="socials__item">
+				<div class="socials__icon socials__icon_{{ $social->icon }}"></div>
+			</a>
+		@endforeach
 	</div>
 	@include('common.gui.survey')
 </div>

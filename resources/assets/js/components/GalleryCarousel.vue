@@ -136,6 +136,9 @@
             }
         },
         mounted: function () {
+            if ($(document).width() < 600) {
+                this.showCount = 1;
+            } 
             this.startSliding();
         }
     }

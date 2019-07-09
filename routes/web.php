@@ -40,6 +40,8 @@ Route::post('/forms/add-lead', 'FeedbackController@addLead')->name('add-lead');
 Route::post('/forms/proxy-lead', 'FeedbackController@proxyLead');
 Route::post('/forms/search-phone', 'FeedbackController@searchPhoneInMessage');
 
+ Route::post('/forms/survey', 'FeedbackController@addSurvey');
+
 Route::prefix('/ajax')->group(function () {
     Route::get('/portfolio/{type_id}/photos', 'AjaxController@getPortfolioPhotos')->name('ajaxPortfolioPhotos');
 });
@@ -112,7 +114,7 @@ Route::prefix('/{city}')->group(function () {
 
     Route::get('/dillers', 'PageController@dillers')->name('dillers');
 
-    
+   
 
     Route::get('/credit', 'PageController@credit')->name('credit');
 

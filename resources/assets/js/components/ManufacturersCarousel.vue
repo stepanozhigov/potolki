@@ -1,12 +1,12 @@
 <template>
     <transition-group v-if="showCount < 3" name="list"  tag="div" class="manufacturers__list">
         <div v-for="manufacturer in showedItems" :key="manufacturer.id" class="manufacturers__item" v-touch:swipe="offsetShowPoint">
-            <img v-bind:src="manufacturer.img" alt="" class="manufacturers__item-image">
+            <img v-bind:src="manufacturer.img" alt="" height="70px" class="manufacturers__item-image">
         </div>
     </transition-group>
     <div v-else class="manufacturers__list">
         <div v-for="manufacturer in manufacturers" :key="manufacturer.id" class="manufacturers__item" v-touch:swipe="offsetShowPoint">
-            <img v-bind:src="manufacturer.img" alt="" class="manufacturers__item-image">
+            <img v-bind:src="manufacturer.img" alt="" height="70px" class="manufacturers__item-image">
         </div>
     </div>
 </template>

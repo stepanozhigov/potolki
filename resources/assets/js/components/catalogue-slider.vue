@@ -41,13 +41,13 @@
     export default {
         data: function () {
             return {
-                showCount: 9,
+                showCount: 7, 
                 showPoint: 0,
                 interval: 0,
                 currentPhotoIndex: 0,
-                mode: 'list'
+                mode: 'list'  
             }
-        },
+        }, 
         computed: {
             showedItems: function () {
                 var itemsCount = this.photos.length,
@@ -123,9 +123,12 @@
                     this.mode = 'list';
                     this.startSliding();
                 }
-            }
+            } 
         },
         mounted: function () {
+            if ($(document).width() < 600) {
+                this.showCount = 1;
+            }
             this.startSliding();
         }
     }

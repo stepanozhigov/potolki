@@ -1,6 +1,6 @@
 <template>
     <div :class="[mix, 'socials']">
-        <a @click="vkAuth()" href="" class="socials__item">
+        <a @click.prevent="vkAuth()" href="" class="socials__item">
             <div class="socials__icon socials__icon_vk"></div>
         </a>
         <a href="" class="socials__item">

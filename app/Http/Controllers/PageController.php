@@ -68,9 +68,9 @@ class PageController extends Controller
     public function promos (City $city)
     {
         return view ('common.pages.promos', [
-            'city'  =>  $city,
+            'city'  =>  $city,  
             'promos'    =>  Promo::where('direction_id', 2)->get(),
-            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
+            'seoData'   =>  SeoBlock::where(['route' => Route::currentRouteName(), 'direction_id' => 2])->first()
         ]);
     }
 
@@ -78,7 +78,7 @@ class PageController extends Controller
     {
         return view ('common.pages.about', [
             'city'  =>  $city,
-            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
+            'seoData'   =>  SeoBlock::where(['route' => Route::currentRouteName(), 'direction_id' => 2])->first()
         ]);
     }
 
@@ -105,7 +105,7 @@ class PageController extends Controller
         return view ('common.pages.contacts', [ 
             'city'  =>  $city,
             'socials'   =>  Social::where(['city_id' => $city->id, 'direction_id' => 2])->get(),
-            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
+            'seoData'   =>  SeoBlock::where(['route' => Route::currentRouteName(), 'direction_id' => 2])->first()
         ]);
     }
 
@@ -128,7 +128,7 @@ class PageController extends Controller
             'categories'    => QuestionCategory::all(),
             'currentCategory'  =>  $category,
             'questions' =>  $category->questions->where('direction_id', 2), 
-            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
+            'seoData'   =>  SeoBlock::where(['route' => Route::currentRouteName(), 'direction_id' => 2])->first()
         ]);
     }
 
@@ -145,7 +145,7 @@ class PageController extends Controller
         return view('common.pages.reviews', [
             'city'  =>  $city,
             'reviews'   =>  Review::where(['is_active' => 1, 'direction_id' => 2])->orderBy('sort', 'asc')->paginate(6),
-            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
+            'seoData'   =>  SeoBlock::where(['route' => Route::currentRouteName(), 'direction_id' => 2])->first()
         ]);
     }
 
@@ -166,7 +166,7 @@ class PageController extends Controller
     {
         return view('common.pages.dir-message', [
             'city'  =>  $city,
-            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
+            'seoData'   =>  SeoBlock::where(['route' => Route::currentRouteName(), 'direction_id' => 2])->first()
         ]);
     }
 
@@ -181,7 +181,7 @@ class PageController extends Controller
     {
         return view('common.pages.articles', [
             'city'  =>  $city,
-            'articles' => Article::where('is_active', 1)->orderBy('sort', 'asc')->get(),
+            'articles' => Article::where('is_active', 1)->orderBy('id', 'desc')->get(),
             'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
     }
@@ -216,7 +216,7 @@ class PageController extends Controller
             'offers'    =>  Offer::where(['is_active' =>  1, 'direction_id' => 2])->get(),
             'catalogTypes'  => CatalogType::where(['direction_id' => 2])->get(),
             'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first(),
-            'articles' => Article::where(['is_active' => 1, 'in_main' => 1])->orderBy('sort', 'asc')->get()
+            'articles' => Article::where(['is_active' => 1, 'in_main' => 1])->orderBy('id', 'desc')->get()
         ]);
     }
 
@@ -270,15 +270,23 @@ class PageController extends Controller
 
     public function catalogueDetail (City $city, CatalogType $type)
     {
+        //TODO: Переписать и убрать эти костыли отсюда. 
         $seoData = SeoBlock::where(['route' => Route::currentRouteName(), 'direction_id' => 2])->first();
 
         $typeTitle = mb_strtolower($type->ceiling_title);
         $seoData->meta_title = str_replace('#type#', $typeTitle, $seoData->meta_title);
         $seoData->meta_description = str_replace('#price#', $type->price, $seoData->meta_description);
+
+        $photos =  $type->photos;
+
+        if ($type->type == 'rooms') {
+            $photos = Photo::where('room', $type->id)->get();
+        }
+
         return view('ceilings.catalogueDetail', [
             'city'  =>  $city,
             'type'  =>  $type, 
-            'photos'    =>  $type->photos,
+            'photos'    =>  $photos,
             'seoData'   =>  $seoData
         ]);
     }
@@ -287,7 +295,7 @@ class PageController extends Controller
     {
         return view('ceilings.photoprint', [
             'city'  =>  $city,
-            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
+            'seoData'   =>  SeoBlock::where(['route' => Route::currentRouteName(), 'direction_id' => 2])->first()
         ]);
     }
 
@@ -339,7 +347,7 @@ class PageController extends Controller
             'techs' =>   CatalogType::where(['direction_id' => 2, 'type' => 'tech'])->get(),
             'rooms' =>   CatalogType::where(['direction_id' => 2, 'type' => 'rooms'])->get(),
             'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first(),
-            'articles' => Article::where(['is_active' => 1, 'in_main' => 1])->orderBy('sort', 'asc')->get()
+            'articles' => Article::where(['is_active' => 1, 'in_main' => 1])->orderBy('id', 'desc')->get()
         ]);
     }
 
@@ -352,73 +360,7 @@ class PageController extends Controller
             'offers'    =>  Offer::where('is_active', 1)->get(),
             'catalogTypes'  => CatalogType::where(['direction_id' => 2])->get(),
             'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first(),
-            'articles' => Article::where(['is_active' => 1, 'in_main' => 1])->orderBy('sort', 'asc')->get()
-        ]);
-    }
-
-    public function climat (City $city)
-    {
-        return view('climat.climat', [
-			'city'  =>  $city,
-            'reviews'   =>  Review::limit(3)->orderBy('sort', 'asc')->get(),
-            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first(),
-            'articles' => Article::where(['is_active' => 1, 'in_main' => 1])->orderBy('sort', 'asc')->get()
-		]);
-    }
-
-    public function climatCatalogue (City $city)
-    {
-        return view('climat.climatCatalogue', [
-			'city'  =>  $city,
-            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
-        ]);
-    }
-
-    public function climatDetail (City $city)
-    {
-        return view('climat.climatDetail', [
-			'city'  =>  $city,
-            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
-        ]);
-    }
-
-    public function climatOrdering (City $city)
-    {
-        return view('climat.climatOrdering', [
-			'city'  =>  $city,
-            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
-        ]);
-    }
-
-    public function climatBasket (City $city)
-    {
-        return view('climat.climatBasket', [
-			'city'  =>  $city,
-            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
-        ]);
-    }
-
-    public function climatOrder (City $city)
-    {
-        return view('climat.climatOrder', [
-			'city'  =>  $city,
-            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
-        ]);
-    }
-
-    public function climatMaintenance (City $city)
-    {
-        return view('climat.climatMaintenance', [
-			'city'  =>  $city,
-            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
-        ]);
-    }
-
-    public function climatPersonalData (City $city)
-    {
-        return view('climat.climatPersonalData', [
-			'city'  =>  $city,
-            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
+            'articles' => Article::where(['is_active' => 1, 'in_main' => 1])->orderBy('id', 'desc')->get()
         ]);
     }
 
@@ -433,22 +375,6 @@ class PageController extends Controller
     public function serverError (City $city)
     {
         return view('common.pages.serverError', [
-			'city'  =>  $city,
-            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
-        ]);
-    }
-
-    public function climatDelivery (City $city)
-    {
-        return view('climat.climatDelivery', [
-			'city'  =>  $city,
-            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
-        ]);
-    }
-
-    public function climatInstall (City $city)
-    {
-        return view('climat.climatInstall', [
 			'city'  =>  $city,
             'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);

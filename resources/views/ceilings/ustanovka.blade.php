@@ -61,17 +61,6 @@
         <section class="reason">
             <div class="reason__image-wrap">
                 <div class="reason__image-inner">
-                    <img src="/img/ceilings/install-4.jpg" alt="" class="reason__image">
-                </div>
-            </div>
-            <div class="reason__content">
-                <h4 class="reason__title">Изготовление заказа</h4>
-                <p class="reason__text">Ваш заказ изготовят в&nbsp;собственном цехе компании &laquo;Твой Стиль&raquo;. По&nbsp;вашему пожеланию мы&nbsp;можем произвести любые виды потолков.</p>
-            </div>
-        </section>
-        <section class="reason">
-            <div class="reason__image-wrap">
-                <div class="reason__image-inner">
                     <img src="/img/ceilings/install-5.jpg" alt="" class="reason__image">
                 </div>
             </div>

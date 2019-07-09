@@ -6,7 +6,7 @@
         <section  v-touch:swipe="nextSlide" v-for="(offer, index) in offers" v-if="index == currentOfferIndex" class="main-offer js-offer-slider" :style="{ 'background-image': backgroundImage}">
             <div v-if="offer.type == 'form'" class="main-offer__inner container">
                 <p v-html="offer.overtitle" class="text main-offer__overtitle"></p>
-                <h1 class="title main-offer__title js-title"></h1>
+                <h1 v-html="offer.title" class="title main-offer__title js-title"></h1>
                 <p v-html="offer.text" class="main-offer__subtitle"></p>
 
                 <form class="form main-offer__form mobile-hide" action="/forms/add-lead" id="offer-form"> 
@@ -100,10 +100,10 @@
         },
         props: ['offers'],
         updated: function () {
-            this.initTypeWriter();
+            //this.initTypeWriter();
         },
         mounted: function () {
-            this.initTypeWriter();
+            //this.initTypeWriter();
            // this.initSliding();
         }
     }

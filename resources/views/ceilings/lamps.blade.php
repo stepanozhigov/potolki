@@ -5,7 +5,7 @@
     <section class="lamps">
         @include('common.gui.titles', [
         'overtitle' =>  'Каталог',
-        'title' =>  "Светильники для натяжных потолков от&nbsp;компании Твой&nbsp;стиль"
+        'title' =>  "Светильники для натяжных потолков $city->name_formatted"
         ])
         <div class="lamps__content">
             @include('ceilings.lamp')

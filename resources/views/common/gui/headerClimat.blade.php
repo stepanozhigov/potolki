@@ -228,6 +228,16 @@
                 </div>
             </div>
         </nav>
+    </div>
+    @include('common.gui.mobileMenu')
+	<button class="goTop" type="button" name="button"></button>
+</header>
+<div class="header header_hidden">
+    <div class="header__content">
+        <a href="{{ route('windows.main', $city) }}" class="logo">
+            <img class="logo__icon" src="/img/gui/logo-icon.svg" alt="логотип Твой Стиль">
+            <img class="logo__text mobile-hide" src="/img/gui/logo-text.svg" alt="графема Твой Стиль">
+        </a>
         <div class="header__feedbacks">
             <a href="https://api.whatsapp.com/send?phone={{ $city->whatsapp }}" class="header__whatsapp">WhatsApp<span>написать</span></a>
             <a href="tel:{{ $city->phone }}" class="header__phone">{{ $city->phone }}<span data-src="#popup_callback" class="js-show">заказать звонок</span></a>

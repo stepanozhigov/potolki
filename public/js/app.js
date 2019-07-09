@@ -13776,8 +13776,40 @@ Vue.component('posts-list', __webpack_require__(102));
 Vue.component('manufacturers', __webpack_require__(105));
 Vue.component('banks', __webpack_require__(110));
 Vue.component('menu-city-search', __webpack_require__(115));
-// Vue.component('portfolio-photos', require('./components/PortfolioPhotos.vue'));
 
+// Vue.component('portfolio-photos', require('./components/PortfolioPhotos.vue'));
+$('[href="http://89.108.103.224:699/sochi/catalogue/svetovye-linii"]').on('click', function (ev) {
+    ev.preventDefault();
+    $('.header__callback').trigger('click');
+});
+
+$('.survey__form').on('submit', function (e) {
+    e.preventDefault();
+    var $form = $(e.target);
+    $.ajax({
+        url: '/forms/survey',
+        method: 'post',
+        data: $form.serialize(),
+        success: function success() {
+            $('.survey__thankyou').slideDown();
+            $form.hide();
+        }
+    });
+});
+
+$('.js-dir').on('submit', function (e) {
+    e.preventDefault();
+    var $form = $(e.target);
+    $.ajax({
+        url: '/forms/survey',
+        method: 'post',
+        data: $form.serialize(),
+        success: function success() {
+            $('.dir-message__submit').hide();
+            $('.dir-message__status-send').show();
+        }
+    });
+});
 
 $(document).on('scroll', function () {
     var scrollPosition = $(window).scrollTop(),
@@ -14348,11 +14380,18 @@ $('.form').on('submit', function (event) {
     event.preventDefault();
     var $this = $(this);
 
-    if (typeof yaCounter !== 'undefined') {
-        yaCounter.reachGoal('form-sub');
+    if (typeof window.yaCounter43807824 !== 'undefined') {
+        window.yaCounter43807824.reachGoal('form-sub');
     }
     if (typeof gaCounter !== 'undefined') {
-        gaCounter.send('event', 'forms', 'sub');
+        ga.getAll()[0].send('event', 'forms', 'sub');
+    }
+    fbq('track', 'Lead');
+    var successEl = $this.next('.popup__status-send');
+
+    if (successEl.length > 0) {
+        $this.hide();
+        $this.next('.popup__status-send').show();
     }
 
     $.ajax({
@@ -14360,7 +14399,9 @@ $('.form').on('submit', function (event) {
         data: $this.serialize(),
         method: 'POST',
         success: function success() {
+
             $this.addClass('form_status-send');
+
             $this.find('button[type="submit"]').text('Заявка отправлена!').prop('disabled', true);
             $this.find('input').prop('disabled', true);
         }
@@ -14368,31 +14409,34 @@ $('.form').on('submit', function (event) {
 });
 
 $('.phone').on('click', function () {
-
-    if (typeof yaCounter !== 'undefined') {
-        yaCounter.reachGoal('phone-click');
+    if (typeof window.yaCounter43807824 !== 'undefined') {
+        window.yaCounter43807824.reachGoal('phone-click');
     }
-    if (typeof gaCounter !== 'undefined') {
-        gaCounter.send('event', 'click', 'phone');
+    if (typeof ga.getAll() !== 'undefined') {
+        ga.getAll()[0].send('event', 'click', 'phone');
     }
+    fbq('track', 'Lead');
 });
 
 $('.whatsapp').on('click', function () {
-    if (typeof yaCounter !== 'undefined') {
-        yaCounter.reachGoal('whatsapp');
+    if (typeof window.yaCounter43807824 !== 'undefined') {
+        window.yaCounter43807824.reachGoal('whatsapp');
     }
-    if (typeof gaCounter !== 'undefined') {
-        gaCounter.send('event', 'whatsapp', 'click');
+    if (typeof ga.getAll() !== 'undefined') {
+        ga.getAll()[0].send('event', 'whatsapp', 'click');
     }
+    fbq('track', 'Lead');
 });
 
 $('.mobileMenu__item_category').on('click', function () {
+    console.log(this);
     $('.mobileMenu__list').addClass('mobileMenu__list_category');
     $(this).addClass('active');
 });
 
 $('.mobileMenu__link-prev').on('click', function (event) {
     event.stopPropagation();
+    console.log(this);
     $('.mobileMenu__list').removeClass('mobileMenu__list_category');
     $(this).closest('.mobileMenu__item_category').removeClass('active');
 });
@@ -38572,7 +38616,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            showCount: 9,
+            showCount: 7,
             showPoint: 0,
             interval: 0,
             currentPhotoIndex: 0,
@@ -38661,6 +38705,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
     },
     mounted: function mounted() {
+        if ($(document).width() < 600) {
+            this.showCount = 1;
+        }
         this.startSliding();
     }
 });
@@ -39525,6 +39572,9 @@ var socialAuth = __webpack_require__(62);
     },
     methods: {
         send: function send() {
+            if (this.user.fullName.length == 0 || this.text.length == 0) {
+                return false;
+            }
             this.sended = true;
 
             var data = new FormData(),
@@ -39732,6 +39782,7 @@ var render = function() {
         attrs: { href: "" },
         on: {
           click: function($event) {
+            $event.preventDefault()
             _vm.vkAuth()
           }
         }
@@ -39790,21 +39841,19 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "add-review" }, [
-    !_vm.user.fullName
-      ? _c(
-          "div",
-          { staticClass: "add-review__label" },
-          [
-            _c("p", [_vm._v("Авторизуйтесь через")]),
-            _vm._v(" "),
-            _c("social-auth", {
-              attrs: { mix: "add-review__socials" },
-              on: { logged: _vm.setUser }
-            })
-          ],
-          1
-        )
-      : _vm._e(),
+    _c(
+      "div",
+      { staticClass: "add-review__label" },
+      [
+        _c("p", [_vm._v("Авторизуйтесь через")]),
+        _vm._v(" "),
+        _c("social-auth", {
+          attrs: { mix: "add-review__socials" },
+          on: { logged: _vm.setUser }
+        })
+      ],
+      1
+    ),
     _vm._v(" "),
     _c(
       "div",
@@ -39815,7 +39864,7 @@ var render = function() {
         ]
       },
       [
-        !_vm.user.fullName ? _c("p", [_vm._v("Или представьтесь")]) : _vm._e(),
+        !_vm.user.avatar ? _c("p", [_vm._v("Или представьтесь")]) : _vm._e(),
         _vm._v(" "),
         _c("img", {
           staticClass: "add-review__avatar",
@@ -39832,7 +39881,7 @@ var render = function() {
             }
           ],
           staticClass: "input add-review__input",
-          attrs: { type: "text", placeholder: "Ваше имя *" },
+          attrs: { required: "", type: "text", placeholder: "Ваше имя *" },
           domProps: { value: _vm.user.fullName },
           on: {
             input: function($event) {
@@ -39860,6 +39909,7 @@ var render = function() {
         ],
         staticClass: "textarea add-review__textarea",
         attrs: {
+          required: "",
           name: "",
           id: "",
           placeholder:
@@ -40144,10 +40194,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     props: ['offers'],
     updated: function updated() {
-        this.initTypeWriter();
+        //this.initTypeWriter();
     },
     mounted: function mounted() {
-        this.initTypeWriter();
+        //this.initTypeWriter();
         // this.initSliding();
     }
 });
@@ -40231,7 +40281,8 @@ var render = function() {
                       }),
                       _vm._v(" "),
                       _c("h1", {
-                        staticClass: "title main-offer__title js-title"
+                        staticClass: "title main-offer__title js-title",
+                        domProps: { innerHTML: _vm._s(offer.title) }
                       }),
                       _vm._v(" "),
                       _c("p", {
@@ -40653,6 +40704,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
     },
     mounted: function mounted() {
+        if ($(document).width() < 600) {
+            this.showCount = 1;
+        }
         this.startSliding();
     }
 });
@@ -45013,7 +45067,7 @@ var render = function() {
             [
               _c("img", {
                 staticClass: "manufacturers__item-image",
-                attrs: { src: manufacturer.img, alt: "" }
+                attrs: { src: manufacturer.img, alt: "", height: "70px" }
               })
             ]
           )
@@ -45041,7 +45095,7 @@ var render = function() {
             [
               _c("img", {
                 staticClass: "manufacturers__item-image",
-                attrs: { src: manufacturer.img, alt: "" }
+                attrs: { src: manufacturer.img, alt: "", height: "70px" }
               })
             ]
           )

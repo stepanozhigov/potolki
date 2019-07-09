@@ -7,7 +7,8 @@
     </div>
     <p class="survey__thankyou">Спасибо за ваш отзыв!</p>
     <form class="survey__form" action="" method="post">
-        <textarea class="textarea survey__textarea" name="survey" placeholder="Введите ваше сообщение."></textarea>
+        @csrf
+        <textarea class="textarea survey__textarea" name="message" placeholder="Введите ваше сообщение."></textarea>
         <button class="button" type="submit" name="surveysubmit">Отправить отзыв</button>
     </form>
 </section>

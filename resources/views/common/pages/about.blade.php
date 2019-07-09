@@ -9,7 +9,7 @@
         ])
         <section class="about">
             <div class="b-texture">
-                <blockquote class="about__quote">
+                <blockquote class="about__quote" style="background: url('/img/about/ys_factory.jpg')">
                     <div class="container">
                         <p>Собственное производство обеспечивает качество продукции, короткие сроки от&nbsp;заказа до&nbsp;установки и,&nbsp;конечно, низкую стоимость!</p>
                     </div>

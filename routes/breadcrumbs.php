@@ -3,9 +3,59 @@ Breadcrumbs::for('ceilings', function ($trail, $city) {
     $trail->push('Главная', route('ceilings', $city));
 });
 
+Breadcrumbs::for('catalogueCeilings', function ($trail, $city) {
+    $trail->parent('ceilings', $city);
+    $trail->push('Каталог', route('catalogueCeilings', $city));
+});
+
+Breadcrumbs::for('catalogue', function ($trail, $city) {
+    $trail->parent('catalogueCeilings', $city);
+   // $trail->push('', route('catalogue', $city));
+});
+
 Breadcrumbs::for('contacts', function ($trail, $city) {
     $trail->parent('ceilings', $city);
     $trail->push('Контакты', route('contacts', $city));
+});
+
+Breadcrumbs::for('dillers', function ($trail, $city) {
+    $trail->parent('ceilings', $city);
+    $trail->push('Диллерам', route('dillers', $city));
+});
+
+Breadcrumbs::for('employees', function ($trail, $city) {
+    $trail->parent('ceilings', $city);
+    $trail->push('Сотрудники', route('employees', $city));
+});
+
+Breadcrumbs::for('reviews', function ($trail, $city) {
+    $trail->parent('ceilings', $city);
+    $trail->push('Отзывы', route('reviews', $city));
+});
+
+Breadcrumbs::for('vacancies', function ($trail, $city) {
+    $trail->parent('ceilings', $city);
+    $trail->push('Вакансии', route('vacancies', $city));
+});
+
+Breadcrumbs::for('dirMessage', function ($trail, $city) {
+    $trail->parent('ceilings', $city);
+    $trail->push('Написать директору', route('dirMessage', $city));
+});
+
+Breadcrumbs::for('ceilingsCalc', function ($trail, $city) {
+    $trail->parent('ceilings', $city);
+    $trail->push('Калькулятор', route('ceilingsCalc', $city));
+});
+
+Breadcrumbs::for('questions', function ($trail, $city) {
+    $trail->parent('ceilings', $city);
+    $trail->push('Вопросы и ответы', route('questions', $city));
+});
+
+Breadcrumbs::for('about', function ($trail, $city) {
+    $trail->parent('ceilings', $city);
+    $trail->push('О компании', route('about', $city));
 });
 
 Breadcrumbs::for('calculator', function ($trail, $city) {

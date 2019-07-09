@@ -1857,7 +1857,8 @@ corresponds to the arrow we want to display */
 
 .main-offer {
   background: url(/img/windows/main-offer.jpg) no-repeat center;
-  background-size: auto 100%;
+  /*background-size: auto 100%;*/
+  background-size: cover;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1924,7 +1925,7 @@ corresponds to the arrow we want to display */
   max-width: 560px;
   height: 134px;
   padding-bottom: 0;
-  line-height: 4rem;
+  line-height: 3rem;
 }
 
 .main-offer__title_center {
@@ -7263,6 +7264,31 @@ input {
   }
 }
 
+.headerClimat .goTop {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  -webkit-box-shadow: 0 8px 8px rgba(0, 0, 0, 0.12), 0 0 8px rgba(0, 0, 0, 0.08), inset 0 -1px 0 rgba(0, 0, 0, 0.12);
+          box-shadow: 0 8px 8px rgba(0, 0, 0, 0.12), 0 0 8px rgba(0, 0, 0, 0.08), inset 0 -1px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 5px 0 0 5px;
+  background-color: #f4f6f8;
+}
+
 .stickyLinks {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -8954,6 +8980,7 @@ body.no-scroll .header__close {
 }
 
 .popup__status-send .socials__item {
+  width: initial;
   margin-bottom: 0;
 }
 
@@ -8976,6 +9003,7 @@ body.no-scroll .header__close {
 .popup__status-send .survey {
   width: 100%;
   margin-bottom: 0;
+  margin-left: 0;
 }
 
 .popup__status-send .survey__textarea {
@@ -9831,7 +9859,7 @@ body.no-scroll .header__close {
 }
 
 .rouble {
-  font-family: 'rouble';
+  font-family: 'PTRoubleSans';
 }
 
 .ts-tooltip .tooltipster-box {
@@ -12036,7 +12064,8 @@ input[type=text]::-ms-reveal {
 
   .promo .promo__img,
   .promo .promo__text,
-  .promo .promo__line {
+  .promo .promo__line,
+  .promo .promo__subtitle {
     display: none;
   }
 
@@ -13097,7 +13126,7 @@ input[type=text]::-ms-reveal {
     margin-bottom: 3rem;
   }
 
-  .reviews_main .reviews__item:nth-of-type(n + 4) {
+  .reviews_main .reviews__item:nth-of-type(n + 3) {
     display: none;
   }
 }
@@ -21094,6 +21123,15 @@ input[type=text]::-ms-reveal {
   .catalogueDetail__desc-content.opened {
     max-height: none;
   }
+}
+
+.catalogueDetail__desc-content a {
+  color: #485058;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.5rem;
+  text-decoration: none;
 }
 
 .catalogueDetail__desc p:not(:last-of-type) {

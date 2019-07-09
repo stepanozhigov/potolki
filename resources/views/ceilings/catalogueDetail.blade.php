@@ -31,16 +31,22 @@
             <a class="catalogueDetail__desc-more" href="javascript:void(0);">Читать далее</a>
         </div>
         <div class="catalogueDetail__filter">
-            <h2>Другие материалы для натяжных потолков</h2>
-            <div class="catalogueDetail__types">
-                <a href="javascript:void(0);" class="tag catalogueDetail__tag">Двухуровневые</a>
-                <a href="javascript:void(0);" class="tag catalogueDetail__tag">Парящие</a>
-                <a href="javascript:void(0);" class="tag catalogueDetail__tag">Звездное небо</a>
-                <a href="javascript:void(0);" class="tag catalogueDetail__tag">Матовые</a>
-                <a href="javascript:void(0);" class="tag catalogueDetail__tag">Сатиновые</a>
-                <a href="javascript:void(0);" class="tag catalogueDetail__tag">Тканевые</a>
-                <a href="javascript:void(0);" class="tag catalogueDetail__tag">Разные</a>
-            </div>
+            @if ($type->type == 'rooms')
+                <h2>Другие помещения для натяжных потолков</h2>
+                <div class="catalogueDetail__types">
+                    @foreach(App\CatalogType::where(['direction_id' => 2, 'type' => 'rooms'])->get() as $room)
+                        <a href="{{ route('catalogue', ['city' => request()->route()->city, 'type' => $room]) }}" class="tag {{ $room->id == $type->id ? 'tag_active': '' }} catalogueDetail__tag">{{ $room->name }}</a>
+                    @endforeach 
+                </div>
+            @else
+                <h2>Другие материалы для натяжных потолков</h2>
+                <div class="catalogueDetail__types">
+                    @foreach(App\CatalogType::where(['type' => 'material'])->orWhere('type', 'tech')->get() as $material)
+                        <a href="{{ route('catalogue', ['city' => request()->route()->city, 'type' => $material]) }}" class="tag {{ $material->id == $type->id ? 'tag_active': '' }} catalogueDetail__tag">{{ $material->name }}</a>
+                    @endforeach 
+                </div>
+            @endif
+            
         </div>
     </section>
     @include('common.gui.footer')

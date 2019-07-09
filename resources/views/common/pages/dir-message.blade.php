@@ -14,18 +14,19 @@
                 ])
 
                 <div class="socials">
-                    <a href="" class="socials__item">
+                    <a target="_blank" href="https://www.instagram.com/business_repin/" class="socials__item">
                         <div class="socials__icon socials__icon_insta"></div>
                     </a>
-                    <a href="" class="socials__item">
+                    <a target="_blank" href="https://vk.com/business.repin" class="socials__item">
                         <div class="socials__icon socials__icon_vk"></div>
                     </a>
-                    <a href="" class="socials__item">
+                    <a target="_blank" href="https://api.whatsapp.com/send?phone=79996516666" class="socials__item">
                         <div class="socials__icon socials__icon_whatsapp"></div>
                     </a>
                 </div>
 
-                <form method="post" class="dir-message__form b-texture">
+                <form method="post" class="dir-message__form b-texture js-dir" action="/forms/survey">
+                    @csrf
                     <label class="dir-message__input-wrap">
                         <input type="text" name="name" value="" class="input dir-message__input" placeholder="Ваше имя*" required>
                     </label>
@@ -41,7 +42,7 @@
                     <label class="dir-message__input-wrap">
                         <input type="text" name="theme" value="" class="input dir-message__input" placeholder="Тема сообщения">
                     </label>
-                    <textarea name="textarea" rows="8" cols="80" class="input dir-message__textarea" placeholder="Текст сообщения"></textarea>
+                    <textarea name="message" rows="8" cols="80" class="input dir-message__textarea" placeholder="Текст сообщения"></textarea>
                     <div class="dir-message__bottom">
                         <button type="submit" name="" class="button dir-message__submit">Отправить</button>
                         <p class="dir-message__status-send">Письмо отправлено</p>
@@ -49,6 +50,10 @@
                     </div>
                 </form>
         </section>
-
+        <style type="text/css">
+            .footer-offer {
+                display: none;
+            }
+        </style>
     @include('common.gui.footer')
 @endsection

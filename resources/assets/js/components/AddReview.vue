@@ -1,18 +1,18 @@
 <template>
     <div class="add-review">
-        <div v-if="!user.fullName" class="add-review__label">
+        <div class="add-review__label">
             <p>Авторизуйтесь через</p>
             <social-auth v-on:logged="setUser" mix='add-review__socials'></social-auth>
         </div>
         <div :class="['add-review__label', {'add-review__label_person': user.avatar} ]">
-            <p v-if="!user.fullName">Или представьтесь</p>
+            <p v-if="!user.avatar">Или представьтесь</p>
             <img class="add-review__avatar" :src="user.avatar">
-            <input type="text" class="input add-review__input" v-model="user.fullName" placeholder="Ваше имя *">
+            <input required type="text" class="input add-review__input" v-model="user.fullName" placeholder="Ваше имя *">
         </div>
 
         <div class="add-review__label add-review__label_full">
             <p>Сформулируйте Ваше сообщение</p>
-            <textarea v-model="text" name="" id="" class="textarea add-review__textarea" placeholder="Ваше сообщение. Просим Вас соблюдать нормативную лексику и нормы уважения. В противном случае отзыв может быть удалён."></textarea>
+            <textarea required v-model="text" name="" id="" class="textarea add-review__textarea" placeholder="Ваше сообщение. Просим Вас соблюдать нормативную лексику и нормы уважения. В противном случае отзыв может быть удалён."></textarea>
         </div>
         <div class="add-review__label">
             <p>Прикрепите фотографии</p>
@@ -76,6 +76,9 @@
         methods: {
             send: function ()
             {
+                if (this.user.fullName.length == 0 || this.text.length == 0) {
+                    return false;
+                }
                 this.sended = true;
 
                 var data = new FormData,

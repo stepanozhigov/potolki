@@ -23,10 +23,10 @@
                                 <p>Натяжные потолки MSD Premium и Evolution от <span>90</span>  <span>рублей</span> за&nbsp;квадратный метр</p>
                                 <p>Багет <span>16</span> <span>рублей</span> за погонный метр</p>
                                 <div class="dillers__offer-links">
-                                    <a href="javascript:void(0);" target="_blank">Цены на пленку ПВХ</a>
-                                    <a href="javascript:void(0);" target="_blank">Цены на комплектующие</a>
-                                    <a href="javascript:void(0);" target="_blank">Цены на фотопечать</a>
-                                    <a href="javascript:void(0);" target="_blank">Договор</a>
+                                    <a target="_blank" href="http://potolki-ts.ru/upload/dealer/doc/price_VLD.pdf">Цены на пленку ПВХ</a>
+                                    <a target="_blank" href="http://potolki-ts.ru/upload/dealer/doc/hardware_VLD.pdf">Цены на комплектующие</a>
+                                    <a target="_blank" href="http://potolki-ts.ru/upload/dealer/doc/photoprint_VLD.pdf">Цены на фотопечать</a>
+                                    <a target="_blank" href="http://potolki-ts.ru/upload/dealer/doc/%D0%B4%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80_%D0%92%D0%9B.doc">Договор</a> 
                                 </div>
                             </div>
                             <div class="dillers__offer-contacts">

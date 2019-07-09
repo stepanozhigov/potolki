@@ -3,16 +3,16 @@
 @section('content')
     @include('common.gui.header')
 
-    <section class="main-offer main-offer_ceilings js-offer-slider" data-offers="{{ $offers }}" id="js-offer-slider">
+    <section class="main-offer main-offer_ceilings js-offer-slider" data-offers="{{ $offers }}" id="1js-offer-slider">
         <div class="main-offer__inner container">
             <p class="text main-offer__overtitle">Монтаж за 1 день | Гарантия 30&nbsp;лет</p>
             
-            <h1 class="title main-offer__title js-writen">Натяжные потолки от 100 ₽/м2</h1>
+            <h1 class="title main-offer__title">Натяжные потолки {!! $city->name_formatted !!} от 100 <span class="rouble">₽</span>/м<sup>2</sup></h1>
             <p class="main-offer__subtitle">Вызовите специалиста для&nbsp;замера и&nbsp;расчёта</p>
 
-            <form class="form main-offer__form mobile-hide" action="" id="offer-form">
-                <input class="input form__input" type="text"  placeholder="Ваше имя">
-                <input class="input form__input" type="tel"  placeholder="Ваш телефон">
+            <form class="form main-offer__form mobile-hide" action="/forms/add-lead" id="offer-form">
+                <input required class="input form__input" type="text"  placeholder="Ваше имя">
+                <input required class="input form__input" type="tel"  placeholder="Ваш телефон">
 
                 <button class="button form__button">Вызвать замерщика</button>
 
@@ -37,7 +37,7 @@
                         <li class="whyus__item-text">— 549 вариантов фактур и оттенков</li>
                     </ul>
                 </div>
-                <img class="whyus__item-image" src="/img/gui/factory_whyus_ceilings.jpg" srcset="/img/gui/factory_whyus_ceilings@2x.jpg 2x" alt="Производство">
+                <img class="whyus__item-image" src="/img/gui/img_factory-2.jpg" srcset="/img/gui/img_factory-2.jpg 2x" alt="Производство">
             </div>
             <div class="whyus__item whyus__item_reverse">
                 <div class="whyus__item-info">
@@ -105,6 +105,7 @@
 
                 </a>
             @endforeach
+            
             <div class="buttons">
                 <a href="{{ route('catalogueCeilings', ['city' => $city]) }}" class="button  button_gray">Перейти в каталог</a>
             </div>
@@ -117,7 +118,7 @@
     </div>
 	<div class="discount">
 		<p>Нашли дешевле?</p>
-		<img src="/img/climat/discount.jpg" alt="">
+		<img src="/img/ceilings/Stamp Discount.svg" alt="">
 		<p>Сделаем скидку!</p>
 	</div>
     <section class="constructor">
@@ -194,7 +195,7 @@
         ])
         <p class="manufacturers__text">Компания &laquo;Твой стиль&raquo; ипользует плёнку для натяжных потолков ведущих мировых производителей. Мы&nbsp;предлагаем нашим клиентам только сертифицированные материалы. В&nbsp;нашем ассортименте можно выбрать полотна из&nbsp;пленки ПВХ и&nbsp;тканевые полотна следующих производителей.</p>
         <a class="manufacturers__more" href="javascript:void(0);">Подробнее</a>
-        <div class="manufacturers__list">
+        <div class="manufacturers__list" id="manufacturers__list"> 
             <div class="manufacturers__item">
                 <img height="65px" src="/img/manufacturers/msd.svg" alt="" class="manufacturers__item-image">
             </div>
