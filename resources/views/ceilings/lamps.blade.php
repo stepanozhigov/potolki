@@ -8,14 +8,9 @@
         'title' =>  "Светильники для натяжных потолков $city->name_formatted"
         ])
         <div class="lamps__content">
-            @include('ceilings.lamp')
-            @include('ceilings.lamp')
-            @include('ceilings.lamp')
-            @include('ceilings.lamp')
-            @include('ceilings.lamp')
-            @include('ceilings.lamp')
-            @include('ceilings.lamp')
-            @include('ceilings.lamp')
+            @foreach($lamps as $lamp)
+                @include('ceilings.lamp', ['lamp' => $lamp])
+            @endforeach
         </div>
 
     </section>

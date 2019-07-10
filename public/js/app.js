@@ -37938,7 +37938,7 @@ if (false) {
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = null
+var __vue_script__ = __webpack_require__(144)
 /* template */
 var __vue_template__ = __webpack_require__(41)
 /* template functional */
@@ -37991,7 +37991,8 @@ var render = function() {
       "button",
       {
         staticClass: "simpleSlider__prev",
-        attrs: { type: "button", name: "button" }
+        attrs: { type: "button", name: "button" },
+        on: { click: _vm.prev }
       },
       [
         _c(
@@ -38025,13 +38026,16 @@ var render = function() {
       ]
     ),
     _vm._v(" "),
-    _vm._m(0),
+    _c("div", { staticClass: "simpleSlider__content" }, [
+      _c("img", { attrs: { src: _vm.slide, alt: "" } })
+    ]),
     _vm._v(" "),
     _c(
       "button",
       {
         staticClass: "simpleSlider__next",
-        attrs: { type: "button", name: "button" }
+        attrs: { type: "button", name: "button" },
+        on: { click: _vm.next }
       },
       [
         _c(
@@ -38066,16 +38070,7 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "simpleSlider__content" }, [
-      _c("img", { attrs: { src: "/img/ceilings/photoprint.jpg", alt: "" } })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -39570,6 +39565,14 @@ var socialAuth = __webpack_require__(62);
             resultText: ''
         };
     },
+    computed: {
+        validated: function validated() {
+            if (this.user.fullName && this.text) {
+                return true;
+            }
+            return false;
+        }
+    },
     methods: {
         send: function send() {
             if (this.user.fullName.length == 0 || this.text.length == 0) {
@@ -39942,29 +39945,17 @@ var render = function() {
           on: { change: _vm.handlePhoto }
         }),
         _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "file__preview add-review__preview" },
-          _vm._l(_vm.previews, function(preview) {
-            return _c("img", { attrs: { src: preview } })
-          })
-        ),
+        _c("div", { staticClass: "file__preview add-review__preview" }, [
+          _c("img", { attrs: { src: _vm.previews[0] } })
+        ]),
         _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "file__preview add-review__preview" },
-          _vm._l(_vm.previews, function(preview) {
-            return _c("img", { attrs: { src: preview } })
-          })
-        ),
+        _c("div", { staticClass: "file__preview add-review__preview" }, [
+          _c("img", { attrs: { src: _vm.previews[1] } })
+        ]),
         _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "file__preview add-review__preview disable" },
-          _vm._l(_vm.previews, function(preview) {
-            return _c("img", { attrs: { src: preview } })
-          })
-        )
+        _c("div", { staticClass: "file__preview add-review__preview" }, [
+          _c("img", { attrs: { src: _vm.previews[2] } })
+        ])
       ])
     ]),
     _vm._v(" "),
@@ -39983,17 +39974,11 @@ var render = function() {
           on: { change: _vm.handleVideo }
         }),
         _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "file__preview add-review__preview" },
-          _vm._l(_vm.previews, function(preview) {
-            return _c("img", { attrs: { src: preview } })
-          })
-        )
+        _vm._m(0)
       ])
     ]),
     _vm._v(" "),
-    !_vm.sended
+    !_vm.sended && _vm.validated
       ? _c(
           "button",
           { staticClass: "button add-review__submit", on: { click: _vm.send } },
@@ -40007,7 +39992,7 @@ var render = function() {
         ])
       : _vm._e(),
     _vm._v(" "),
-    _vm._m(0),
+    _vm._m(1),
     _vm._v(" "),
     _c("img", {
       staticClass: "add-review__girl",
@@ -40016,6 +40001,14 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "file__preview add-review__preview" }, [
+      _c("img")
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -45652,6 +45645,77 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 122 */,
+/* 123 */,
+/* 124 */,
+/* 125 */,
+/* 126 */,
+/* 127 */,
+/* 128 */,
+/* 129 */,
+/* 130 */,
+/* 131 */,
+/* 132 */,
+/* 133 */,
+/* 134 */,
+/* 135 */,
+/* 136 */,
+/* 137 */,
+/* 138 */,
+/* 139 */,
+/* 140 */,
+/* 141 */,
+/* 142 */,
+/* 143 */,
+/* 144 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            active: 0,
+            slides: ['/img/ceilings/photoprint.jpg', 'http://potolki-ts.ru/upload/iblock/2a9/2a9c66b96e9dd50c5e8e796ee71f5ed6.jpg', 'http://potolki-ts.ru/upload/iblock/670/6701a4d200d73187256a3baccecd131d.jpg', 'http://potolki-ts.ru/upload/iblock/13f/13f9c3f9cf93eecf35edf2d2594fbc2e.jpg', 'http://potolki-ts.ru/upload/iblock/3a6/3a6aafacc9e67346adad492bc5aa9b19.jpg']
+        };
+    },
+    computed: {
+        slide: function slide() {
+            return this.slides[this.active];
+        }
+    },
+    methods: {
+        next: function next() {
+            this.active++;
+            if (this.active >= this.slides.length) {
+                this.active = 0;
+            }
+        },
+        prev: function prev() {
+            this.active--;
+            if (this.active < 0) {
+                this.active = this.slides.length - 1;
+            }
+        }
+    }
+});
 
 /***/ })
 /******/ ]);

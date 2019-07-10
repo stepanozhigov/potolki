@@ -83,14 +83,19 @@
                 </div>
             </section>
 
-            {{--<section class="lamps-slider">
+            <section class="lamps">
                 @include('common.gui.titles', [
                     'class' =>  "container",
                     'secondTitle' =>  "Светильники для натяжных потолков"
-                ])
+                ])  
+                <div class="lamps__content">
+	                @foreach($lamps as $lamp)
+		                @include('ceilings.lamp', ['lamp' => $lamp])
+		            @endforeach
+	        	</div>
 
                <a href="{{ route('lamps', $city) }}" class="lamps-slider__button">Все светильники</a>
-            </section>--}}
+            </section>
     	</section>
     @include('common.gui.footer')
 @endsection

@@ -19,6 +19,7 @@
     &__list {
         display: flex;
         flex-wrap: wrap;
+        justify-content: space-between;
         width: calc(100% + 20px);
         margin-left: rem(-10);
         margin-right: rem(-10);
@@ -107,7 +108,7 @@
         }
     }
 
-	&_ceilings {
+	/*&_ceilings {
 		padding-top: rem(96);
 
 		@include below($mobile) {
@@ -157,5 +158,5 @@
 			}
 		}
 
-	}
+	}*/ 
 }

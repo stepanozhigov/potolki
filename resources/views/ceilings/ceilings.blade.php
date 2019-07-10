@@ -248,20 +248,27 @@
             'secondTitle' =>  "Также вас может заинтересовать"
         ])
         <div class="additional__list">
-            <div class="additional__item">
+            <a href="{{ route('services', [request()->route()->city, 'deal']) }}" class="additional__item">
                 <img src="/img/windows/home_deal.png" alt="" width="201" height="166" class="additional__img">
                 <h3 class="additional__title">Договор на дому</h3>
                 <p class="text additional__text">
-                    Наш специалист приедет в удобное для вас время, произведет демонстрацию и даст все необходимые консультации
+                    Для вашего удобства замерный <br> мастер  может заключить договор&nbsp;у&nbsp;вас&nbsp;дома.
                 </p>
-            </div>
-            <div class="additional__item">
+            </a>
+            <a href="{{ route('lamps', request()->route()->city) }}" class="additional__item">
+                <img src="/img/ceilings/lamp.png" alt="" width="205" height="134" class="additional__img">
+                <h3 class="additional__title">Светильники</h3>
+                <p class="text additional__text">
+                    Беспроцентная рассрочка даёт <br> возможность установить окна, даже если <br> нет необходимой&nbsp;суммы.
+                </p>
+            </a>
+            <a href="{{ route('services', [request()->route()->city, 'measurements']) }}" class="additional__item">
                 <img src="/img/windows/free_measure.png" alt="" width="201" height="166" class="additional__img">
                 <h3 class="additional__title">Бесплатный замер</h3>
                 <p class="text additional__text">
-                    Технолог нашей компании произведет точный замер и расчет стоимости заказа в удобное для вас время
+                    Наш технолог произведет <br> замер и&nbsp;расчет стоимости заказа <br> в&nbsp;удобное&nbsp;для&nbsp;вас&nbsp;время.
                 </p>
-            </div>
+            </a>
         </div>
     </section>
     @include('common.gui.survey')

@@ -1,28 +1,6 @@
 <section class="lamp">
     <div class="lamp__gallery">
-        <a href="/img/ceilings/white-2x.jpg" data-fancybox="" class="lamp__link"><img src="/img/ceilings/white.png" alt="lamp-img" class="lamp__image hidden visible"></a>
-        <a href="/img/ceilings/mate-cuprum-2x.jpg" data-fancybox="" class="lamp__link"><img src="/img/ceilings/mate-сuprum.png"  alt="lamp-img" class="lamp__image hidden "></a>
-        <a href="/img/ceilings/white-2x.jpg" data-fancybox="" class="lamp__link"><img src="/img/ceilings/white.png" alt="lamp-img" class="lamp__image hidden "></a>
-        <a href="/img/ceilings/white-2x.jpg" data-fancybox="" class="lamp__link"><img src="/img/ceilings/white.png" alt="lamp-img" class="lamp__image hidden "></a>
-        <a href="/img/ceilings/white-2x.jpg" data-fancybox="" class="lamp__link"><img src="/img/ceilings/white.png" alt="lamp-img" class="lamp__image hidden "></a>
-        <a href="/img/ceilings/white-2x.jpg" data-fancybox="" class="lamp__link"><img src="/img/ceilings/white.png" alt="lamp-img" class="lamp__image hidden "></a>
-        <a href="/img/ceilings/white-2x.jpg" data-fancybox="" class="lamp__link"><img src="/img/ceilings/white.png" alt="lamp-img" class="lamp__image hidden "></a>
-        <a href="/img/ceilings/white-2x.jpg" data-fancybox="" class="lamp__link"><img src="/img/ceilings/white.png" alt="lamp-img" class="lamp__image hidden "></a>
-        <a href="/img/ceilings/white-2x.jpg" data-fancybox="" class="lamp__link"><img src="/img/ceilings/white.png" alt="lamp-img" class="lamp__image hidden "></a>
-        <a href="/img/ceilings/white-2x.jpg" data-fancybox="" class="lamp__link"><img src="/img/ceilings/white.png" alt="lamp-img" class="lamp__image hidden "></a>
-        <a href="/img/ceilings/white-2x.jpg" data-fancybox="" class="lamp__link"><img src="/img/ceilings/white.png" alt="lamp-img" class="lamp__image hidden "></a>
-        <a href="/img/ceilings/white-2x.jpg" data-fancybox="" class="lamp__link"><img src="/img/ceilings/white.png" alt="lamp-img" class="lamp__image hidden "></a>
-        <a href="/img/ceilings/white-2x.jpg" data-fancybox="" class="lamp__link"><img src="/img/ceilings/white.png" alt="lamp-img" class="lamp__image hidden "></a>
-        <a href="/img/ceilings/white-2x.jpg" data-fancybox="" class="lamp__link"><img src="/img/ceilings/white.png" alt="lamp-img" class="lamp__image hidden "></a>
-        <a href="/img/ceilings/white-2x.jpg" data-fancybox="" class="lamp__link"><img src="/img/ceilings/white.png" alt="lamp-img" class="lamp__image hidden "></a>
-        <a href="/img/ceilings/white-2x.jpg" data-fancybox="" class="lamp__link"><img src="/img/ceilings/white.png" alt="lamp-img" class="lamp__image hidden "></a>
-        <a href="/img/ceilings/white-2x.jpg" data-fancybox="" class="lamp__link"><img src="/img/ceilings/white.png" alt="lamp-img" class="lamp__image hidden "></a>
-        <a href="/img/ceilings/white-2x.jpg" data-fancybox="" class="lamp__link"><img src="/img/ceilings/white.png" alt="lamp-img" class="lamp__image hidden "></a>
-        <a href="/img/ceilings/white-2x.jpg" data-fancybox="" class="lamp__link"><img src="/img/ceilings/white.png" alt="lamp-img" class="lamp__image hidden "></a>
-        <a href="/img/ceilings/white-2x.jpg" data-fancybox="" class="lamp__link"><img src="/img/ceilings/white.png" alt="lamp-img" class="lamp__image hidden "></a>
-        <a href="/img/ceilings/white-2x.jpg" data-fancybox="" class="lamp__link"><img src="/img/ceilings/white.png" alt="lamp-img" class="lamp__image hidden "></a>
-        <a href="/img/ceilings/white-2x.jpg" data-fancybox="" class="lamp__link"><img src="/img/ceilings/white.png" alt="lamp-img" class="lamp__image hidden "></a>
-        <!-- <img width="29" height="21" class="lamp__zoom" src="/img/ceilings/zoom.svg" alt=""> -->
+        <a class="lamp__link"><img src="{{ Storage::url($lamp->img) }}" alt="lamp-img" class="lamp__image hidden visible"></a>
     </div>
     <div class="lamp__tab-name">
         <span class="lamp__tab-text hidden visible">Белый</span>
@@ -138,22 +116,22 @@
             <span class="lamp__tab-custom"></span>
         </label>
     </div>
-    <h3 class="lamp__title">Светильник Н5</h3>
+    <h3 class="lamp__title">{{ $lamp->title }}</h3>
     <div class="lamp__info">
         <div class="lamp__model">
             <img width="14" height="21" class="lamp__info-icon" src="/img/ceilings/lampicon.svg" alt="">
-            <p class="lamp__text">GX70</p>
+            <p class="lamp__text">{{ $lamp->connector }}</p>
         </div>
         <div class="lamp__power">
             <img width="23" height="22" class="lamp__info-icon" src="/img/ceilings/power.svg" alt="">
-            <p class="lamp__text">20W</p>
+            <p class="lamp__text">{{ $lamp->power }}W</p>
         </div>
         <div class="lamp__temperature">
             <img width="11" height="22" class="lamp__info-icon" src="/img/ceilings/temperature.svg" alt="">
-            <p class="lamp__text">2700K</p>
+            <p class="lamp__text">{{ $lamp->color_temp }}K</p>
         </div>
     </div>
     <div class="lamp__price">
-        <span class="lamp__summ">320 ₽</span>
+        <span class="lamp__summ">{{ $lamp->price }} ₽</span>
     </div>
 </section>

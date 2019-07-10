@@ -18565,6 +18565,57 @@ input[type=text]::-ms-reveal {
 .additional {
   padding-top: 8.125rem;
   margin-bottom: 6rem;
+  /*&_ceilings {
+		padding-top: rem(96);
+
+		@include below($mobile) {
+			display: none;
+		}
+
+		@include above($tablet) {
+			.additional__list {
+				justify-content: center;
+			}
+
+			.additional__item {
+				position: relative;
+				width: rem(440);
+				padding: rem(40) rem(32);
+				padding-right: rem(220);
+				align-items: flex-start;
+
+				&:not(:last-of-type) {
+					margin-right: rem(64);
+				}
+
+				&:nth-of-type(2) {
+					.additional__img {
+						transform: scale(-1, 1);
+					}
+				}
+			}
+
+			.additional__text {
+				text-align: left;
+
+				@include below($tablet) {
+					text-align: center;
+				}
+			}
+
+			.additional__img {
+				position: absolute;
+				top: rem(-18);
+				right: rem(-26);
+				margin: 0;
+				width: rem(224);
+				height: rem(170);
+
+
+			}
+		}
+
+	}*/
 }
 
 .additional .titles {
@@ -18591,6 +18642,9 @@ input[type=text]::-ms-reveal {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: calc(100% + 20px);
   margin-left: -0.625rem;
   margin-right: -0.625rem;
@@ -18712,64 +18766,6 @@ input[type=text]::-ms-reveal {
 @media screen and (max-width: 44.9375rem) {
   .additional .titles {
     padding: 0;
-  }
-}
-
-.additional_ceilings {
-  padding-top: 6rem;
-}
-
-@media screen and (max-width: 44.9375rem) {
-  .additional_ceilings {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 79.9375rem) {
-  .additional_ceilings .additional__list {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-
-  .additional_ceilings .additional__item {
-    position: relative;
-    width: 27.5rem;
-    padding: 2.5rem 2rem;
-    padding-right: 13.75rem;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-  }
-
-  .additional_ceilings .additional__item:not(:last-of-type) {
-    margin-right: 4rem;
-  }
-
-  .additional_ceilings .additional__item:nth-of-type(2) .additional__img {
-    -webkit-transform: scale(-1, 1);
-            transform: scale(-1, 1);
-  }
-
-  .additional_ceilings .additional__text {
-    text-align: left;
-  }
-}
-
-@media screen and (min-width: 79.9375rem) and (max-width: 79.9375rem) {
-  .additional_ceilings .additional__text {
-    text-align: center;
-  }
-}
-
-@media screen and (min-width: 79.9375rem) {
-  .additional_ceilings .additional__img {
-    position: absolute;
-    top: -1.125rem;
-    right: -1.625rem;
-    margin: 0;
-    width: 14rem;
-    height: 10.625rem;
   }
 }
 
@@ -25866,6 +25862,10 @@ input[type=text]::-ms-reveal {
 .climatDetail__additional-value .lamps-slider .titles h2,
 .lamps-slider .titles .constructor__title {
   margin-bottom: 0;
+}
+
+.lamps-slider__button {
+  margin: 60px auto 0 auto;
 }
 
 .advantages__content {

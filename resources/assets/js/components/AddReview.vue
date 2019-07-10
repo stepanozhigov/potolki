@@ -20,13 +20,13 @@
                 <img src="/img/gui/add-file.png" alt="" class="file__preview">
                 <input v-on:change="handlePhoto"  type="file" class="file__input">
                 <div class="file__preview add-review__preview">
-                    <img v-for="preview in previews" v-bind:src="preview">
+                    <img v-bind:src="previews[0]">
                 </div>
                 <div class="file__preview add-review__preview">
-                    <img v-for="preview in previews" v-bind:src="preview">
+                    <img v-bind:src="previews[1]">
                 </div>
-                <div class="file__preview add-review__preview disable">
-                    <img v-for="preview in previews" v-bind:src="preview">
+                <div class="file__preview add-review__preview">
+                    <img v-bind:src="previews[2]">
                 </div>
             </label>
         </div>
@@ -36,11 +36,11 @@
                 <img src="/img/gui/add-file.png" alt="" class="file__preview">
                 <input v-on:change="handleVideo" type="file" class="file__input">
                 <div class="file__preview add-review__preview">
-                    <img v-for="preview in previews" v-bind:src="preview">
+                    <img>
                 </div>
             </label>
         </div>
-        <button v-if="!sended" @click="send" class="button add-review__submit">Оставить отзыв</button>
+        <button v-if="!sended && validated" @click="send" class="button add-review__submit">Оставить отзыв</button>
         <p v-if="sended" class="intro add-review__submit">{{ resultText }}</p>
         <p class="subtext add-review__agreement">Оставляя контактную информацию, Вы соглашаетесь на <a href="javascript:void(0);">обработку персональных данных</a></p>
         <img src="/img/photo-girl.png" class="add-review__girl" alt="">
@@ -71,6 +71,14 @@
                 videoPreview: null,
                 sended: false,
                 resultText: ''
+            }
+        },
+        computed: {
+            validated: function () {
+                if (this.user.fullName && this.text) {
+                    return true;
+                }
+                return false;
             }
         },
         methods: {

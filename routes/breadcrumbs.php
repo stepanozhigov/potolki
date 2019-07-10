@@ -73,6 +73,23 @@ Breadcrumbs::for('services', function ($trail, $city) {
     $trail->push('Услуги', route('services', $city));
 });
 
+Breadcrumbs::for('zamenaPolotna', function ($trail, $city) {
+    $trail->parent('ceilings', $city);
+    $trail->push('Замена полотна', route('services', $city));
+});
+Breadcrumbs::for('ustanovka', function ($trail, $city) {
+    $trail->parent('ceilings', $city);
+    $trail->push('Установка', route('services', $city));
+});
+Breadcrumbs::for('remont', function ($trail, $city) {
+    $trail->parent('ceilings', $city);
+    $trail->push('Ремонт', route('services', $city));
+});
+Breadcrumbs::for('sliv', function ($trail, $city) {
+    $trail->parent('ceilings', $city);
+    $trail->push('Слив', route('services', $city));
+});
+
 Breadcrumbs::for('promos', function ($trail, $city) {
     $trail->parent('ceilings', $city);
     $trail->push('Акции', route('promos', $city));

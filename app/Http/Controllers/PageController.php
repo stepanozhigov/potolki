@@ -311,6 +311,7 @@ class PageController extends Controller
     {
         return view('ceilings.lamps', [
             'city'  =>  $city,
+            'lamps' =>  \App\Lamp::all(), 
             'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
     }
@@ -347,6 +348,7 @@ class PageController extends Controller
             'techs' =>   CatalogType::where(['direction_id' => 2, 'type' => 'tech'])->get(),
             'rooms' =>   CatalogType::where(['direction_id' => 2, 'type' => 'rooms'])->get(),
             'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first(),
+            'lamps' =>  \App\Lamp::limit(4)->get(),
             'articles' => Article::where(['is_active' => 1, 'in_main' => 1])->orderBy('id', 'desc')->get()
         ]);
     }

@@ -81,7 +81,7 @@ Route::prefix('/{city}')->group(function () {
     Route::get('/whyus', 'PageController@whyus')->name('whyus');
 
     Route::get('/agreement', 'PageController@agreement')->name('agreement');
-
+ 
     //Route::get('/catalogue/{type}', 'PageController@catalogue')->name('catalogue');
 
     //Route::get('/ceilings', 'PageController@ceilings')->name('ceilings');

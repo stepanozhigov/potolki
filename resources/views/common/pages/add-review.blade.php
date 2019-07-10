@@ -7,7 +7,7 @@
         'class' =>  'container',
         'overtitle' =>  'Обратная связь',
         'title' =>  "Оставить отзыв о компании Твой Стиль {$city->name_formatted}",
-        'intro' =>  'Описать процесс оставления отзыва и что можно за это получить'
+        'intro' =>  ''
     ])
 
     <section class="container" id="add-review">
