@@ -10,8 +10,8 @@
     }
 
     @include below($mobile) {
-        padding-top: rem(256);
-        background-size: auto;
+        padding-top: rem(128);
+        background-size: contain;
     }
 
     &__content {
@@ -29,7 +29,7 @@
         }
 
         @include below($mobile) {
-            padding: rem(104) rem(16);
+            padding: rem(50) rem(16);
             padding-bottom: 0;
         }
     }
@@ -45,10 +45,10 @@
         }
 
         &:not(:last-of-type) {
-            margin-bottom: rem(96);
+            margin-bottom: rem(46);
 
             @include below($tablet) {
-                margin-bottom: rem(120);
+                margin-bottom: rem(60);
             }
         }
 

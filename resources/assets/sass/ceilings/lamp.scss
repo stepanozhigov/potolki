@@ -20,27 +20,25 @@
     }
 
     &__gallery {
-        position: absolute;
-        top: rem(-72);
-        left: calc(50% - 105px);
-
         width: rem(211);
-        height: rem(180);
         margin: 0 auto;
         overflow: visible;
-
+        height: 190px;
         background: white;
+        margin-bottom: 32px;
     }
 
     &__image {
         width: 100%;
         height: 100%;
-
+        object-fit: cover;
         &.hidden {
             display: none;
         }
         &.visible {
             display: block;
+            margin-top: -64px;
+            margin-bottom: 32px;
         }
     }
 
@@ -69,265 +67,32 @@
         }
     }
 
-    &__tab-swivel {
-        margin-right: rem(5);
-
-        cursor: pointer;
-
-        @include below($tablet-small) {
-            margin-right: rem(20);
-            margin-bottom: rem(20);
-        }
-
-        &_mate-cuprum {
-            .lamp__tab-custom {
-                background-image: linear-gradient(to bottom, #cba27b, #cda885 29%, #a37042 59%, #71461f);
-            }
-        }
-
-        &_gold {
-            .lamp__tab-custom {
-                background-image: linear-gradient(to bottom, #ffe034, #fff2aa 29%, #ffd700 59%, #b58000);
-            }
-        }
-
-        &_titan {
-            .lamp__tab-custom {
-                background-image: linear-gradient(to top, #aaa199, #e6e2df);
-            }
-        }
-
-        &_chrome {
-            .lamp__tab-custom {
-                background-image: linear-gradient(to bottom, #dbdbdb, #fff 14%, #a5a3a3 45%, #858585 68%, #242424 88%, #fff);
-            }
-        }
-
-        &_nielloed-bronze {
-            .lamp__tab-custom {
-                background-image: linear-gradient(to bottom, #ecc199, #efdac6 29%, #dda673 59%, #b47d4b);
-            }
-        }
-
-        &_nielloed-cuprum {
-            .lamp__tab-custom {
-                background-image: linear-gradient(to bottom, #ecc199, #efdac6 29%, #dda673 59%, #b47d4b);
-            }
-        }
-
-        &_nielloed-chrome {
-            .lamp__tab-custom {
-                background-image: linear-gradient(to bottom, #bbb9b9, #d9d8d8 14%, #818080 43%, #434343 68%, #000 88%, #d6d6d6);
-            }
-        }
-
-
-
-        &_mate-cuprum {
-            .lamp__tab-custom {
-                background-image: linear-gradient(to bottom, #cba27b, #cda885 29%, #a37042 59%, #71461f);
-            }
-        }
-
-        &_mate-chrome {
-            .lamp__tab-custom {
-                background-image: linear-gradient(to bottom, #ddd, #a5a3a3 55%, #dedede);
-            }
-        }
-
-        &_cuprum {
-            .lamp__tab-custom {
-                background-image: linear-gradient(to bottom, #ddcaa9, #ffeed8 29%, #c0ae88 58%, #a28e61);
-            }
-        }
-
-        &_perl-with-chrome {
-            .lamp__tab-custom {
-                background-image: linear-gradient(to bottom, #dbdbdb, #fff 14%, #a5a3a3 45%, #858585 68%, #242424 88%, #fff);
-
-                &::after {
-                    content: '';
-
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-
-                    width: rem(5);
-                    height: rem(10);
-                    overflow: hidden;
-
-                    border-radius: rem(3);
-                    border-top-left-radius: rem(40);
-                    border-bottom-left-radius: rem(40);
-                    background: white;
-
-                    @include below($tablet-small) {
-                        width: rem(13);
-                        height: rem(25);
-                    }
-                }
-            }
-        }
-
-        &_silver-with-chrome {
-            .lamp__tab-custom {
-                background-image: linear-gradient(to bottom, #dbdbdb, #fff 14%, #a5a3a3 45%, #858585 68%, #242424 88%, #fff);
-
-                &::after {
-                    content: '';
-
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-
-                    width: rem(5);
-                    height: rem(10);
-                    overflow: hidden;
-
-                    border-radius: rem(3);
-                    border-top-left-radius: rem(40);
-                    border-bottom-left-radius: rem(40);
-                    background: white;
-
-                    @include below($tablet-small) {
-                        width: rem(13);
-                        height: rem(25);
-                    }
-                }
-            }
-        }
-
-        &_nielloed-chrome-with-chrome {
-            .lamp__tab-custom {
-                background-image: linear-gradient(to bottom, #bbb9b9, #d9d8d8 14%, #818080 43%, #434343 68%, #000 88%, #d6d6d6);
-
-                &::after {
-                    content: '';
-
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-
-                    width: rem(5);
-                    height: rem(8);
-                    overflow: hidden;
-
-                    border-radius: rem(3);
-                    border-top-left-radius: rem(40);
-                    border-bottom-left-radius: rem(40);
-                    background: #4a4a4a;
-
-                    @include below($tablet-small) {
-                        width: rem(13);
-                        height: rem(25);
-                    }
-                }
-            }
-        }
-
-        &_beige {
-            .lamp__tab-custom {
-                background-color: #f0dfb8;
-            }
-        }
-
-        &_blue {
-            .lamp__tab-custom {
-                background-color: #75daef;
-            }
-        }
-
-        &_yellow {
-            .lamp__tab-custom {
-                background-color: #ffe100;
-            }
-        }
-
-        &_green {
-            .lamp__tab-custom {
-                background-color: #00c37d;
-            }
-        }
-
-        &_brown {
-            .lamp__tab-custom {
-                background-color: #8b572a;
-            }
-        }
-
-        &_red {
-            .lamp__tab-custom {
-                background-color: #f00;
-            }
-        }
-
-        &_orange {
-            .lamp__tab-custom {
-                background-color: #f6a623;
-            }
-        }
-
-        &_black {
-            .lamp__tab-custom {
-                background-color: #000;
-            }
-        }
-    }
-
-    &__tab-hiden {
-        display: none;
-
-        &:checked + .lamp__tab-custom::before {
-            content: '';
-
-            position: absolute;
-            z-index: 9;
-            top: rem(-1);
-            left: rem(-1);
-
-            width: rem(12);
-            height: rem(12);
-
-            border: rem(1) solid red;
-            border-radius: 50%;
-
-            @include below($tablet-small) {
-                width: rem(27);
-                height: rem(27);
-            }
-        }
-    }
-
-    &__tab-custom {
-        position: relative;
-
-        display: inline-block;
-        width: rem(12);
-        height: rem(12);
-
-        vertical-align: middle;
-
-        border: rem(1) solid #ccc;
-        border-radius: 50%;
-
-        @include below($tablet-small) {
-            width: rem(27);
-            height: rem(27);
-        }
-    }
-
     &__title {
         margin: 0 auto;
         margin-bottom: rem(5);
 
         font-family: $futura;
         font-size: rem(26);
-        font-weight: 300;
+        font-weight: 400;
         color: #6b6b6b;
         text-align: center;
         letter-spacing: rem(1);
         text-transform: uppercase;
+        position: relative;
+        margin-bottom: 42px;
 
+        &::after {
+            position: absolute;
+            content: '';
+            bottom: 0;
+            left: 50%;
+            width: 5rem;
+            height: 2px;
+            background-color: #babec2;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+            top: 48px;
+        }
         @include below($tablet-small) {
             font-size: rem(24);
         }

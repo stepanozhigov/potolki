@@ -4,10 +4,10 @@
     @include('common.gui.header')
     <section class="printprice">
         <div class="page__wrapper">
-            @include('common.gui.titles', [
-                'overtitle' =>  'Прайс',
-                'title' =>  "Цены на фотопечать"
-            ])
+            <div class="titles ">
+                <p class="titles__overtitle">Прайс</p>
+                <h1 class="title title_borderless titles__title">Цены на фотопечать</h1>
+            </div>
             <div class="printprice__content">
                 <div class="printprice__item">
                     <h3 class="printprice__item-title">Фотопечать на натяжных потолках</h3>

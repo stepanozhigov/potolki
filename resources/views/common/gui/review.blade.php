@@ -52,7 +52,7 @@
                 @endforeach
             </div>
             @if ($review->video)
-                <video class="review__video" controls src="{{ Storage::url($review->getVideo()) }}"></video>
+                <video preload="none" class="review__video" controls src="{{ Storage::url($review->getVideo()) }}"></video>
             @endif
         </div>
     </div>
@@ -75,7 +75,7 @@
                             </div>
                         @else
                             <div class="user__left">
-                                <img src="{{ $comment->getAvatar() }}" alt="" class="user__avatar">
+                                <img src="123" alt="" class="user__avatar">
                             </div>
                             <div class="user__right">
                                 <p class="text user__name">{{ $comment->fio }}</p>

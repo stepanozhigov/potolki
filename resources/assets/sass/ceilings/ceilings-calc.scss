@@ -45,7 +45,7 @@
         @include below($mobile) {
             font-size: rem(22);
             line-height: rem(26);
-            margin-bottom: rem(28);
+            margin-bottom: 1.995rem;
             margin-top: rem(-58);
         }
     }
@@ -160,10 +160,6 @@
     &__callback {
         @extend .button;
     }
-}
-
-#ceilings-calc {
-    @extend .container;
 }
 
 .ceilingsCalc {

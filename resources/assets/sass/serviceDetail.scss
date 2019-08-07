@@ -11,6 +11,9 @@
         @include below($tablet) {
             margin-bottom: rem(160);
         }
+        @include below($mobile) {
+            margin-bottom: rem(160) !important;
+        }
 
         &:last-of-type {
             margin-bottom: rem(130);
@@ -20,7 +23,11 @@
             }
         }
     }
-
+    &__titles {
+    	@include below($mobile) {
+    		margin-bottom : 76px;
+    	}
+    }
 	&__info {
 		width: rem(780);
 		padding-bottom: rem(75);

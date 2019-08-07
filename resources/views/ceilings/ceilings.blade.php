@@ -3,41 +3,59 @@
 @section('content')
     @include('common.gui.header')
 
-    <section class="main-offer main-offer_ceilings js-offer-slider" data-offers="{{ $offers }}" id="1js-offer-slider">
+    <section class="main-offer main-offer_ceilings js-offer-slider">
         <div class="main-offer__inner container">
             <p class="text main-offer__overtitle">Монтаж за 1 день | Гарантия 30&nbsp;лет</p>
             
-            <h1 class="title main-offer__title">Натяжные потолки {!! $city->name_formatted !!} от 100 <span class="rouble">₽</span>/м<sup>2</sup></h1>
-            <p class="main-offer__subtitle">Вызовите специалиста для&nbsp;замера и&nbsp;расчёта</p>
+            <h1 class="title main-offer__title">Натяжные потолки<br> {!! $city->name_formatted !!} от&nbsp100&nbsp<span class="rouble">₽</span>/м<sup>2</sup></h1>
+            <p class="main-offer__subtitle">Вызовите специалиста для замера&nbspи&nbsp;расчёта</p>
 
             <form class="form main-offer__form mobile-hide" action="/forms/add-lead" id="offer-form">
-                <input required class="input form__input" type="text"  placeholder="Ваше имя">
-                <input required class="input form__input" type="tel"  placeholder="Ваш телефон">
+                @csrf
+                <input type="hidden" name="city" value="{{ $city->bx_code }}">
+                <input name="name" required class="input form__input" type="text" placeholder="Ваше имя">
+                <input name="phone" required class="input form__input" type="tel" placeholder="Ваш телефон">
 
-                <button class="button form__button">Вызвать замерщика</button>
-
+                <button type="submit" class="button form__button">Вызвать замерщика</button>
+                <p class="form__status">Заявка отправлена, спасибо!</p>  
                 <p class="form__agreement subtext subtext_white">Оставляя контактную информацию, вы&nbsp;соглашаетесь на&nbsp;обработку персональных данных</p>
             </form>
             <button data-src="#popup_callback" class="button main-offer__button mobile-only js-show">Вызвать замерщика</button>
         </div>
     </section>
     <section class="whyus whyus_main whyus_ceilings">
-        @include('common.gui.titles', [
+        <?
+            $region = "на&nbsp;Дальнем Востоке";
+
+            if ($city->code == 'krasnodar' || $city->code == 'sochi') {
+                $region = 'в&nbsp;Краснодарском крае';
+            }
+            if ($city->code == 'moskva' || $city->code == 'dolgoprudnyj') {
+                $region = 'в&nbsp;Москве и области';
+            }
+        ?>
+        @include('common.gui.titles', [ 
             'overtitle' =>  'Наши преимущества',
             'title' =>  "Звонят многим, заказывают у нас. Почему? ",
-            'intro' =>  "Фабрика натяжных потолков &laquo;Твой стиль&raquo; основана в&nbsp;2003 году. Является лидером по&nbsp;производству пластиковых натяжных потолков&nbsp;на&nbsp;Дальнем Востоке."
+            'intro' =>  "Фабрика натяжных потолков &laquo;Твой стиль&raquo; основана в&nbsp;2003 году. Является лидером по&nbsp;производству натяжных потолков&nbsp;{$region}."
         ])
         <div class="whyus__content">
             <div class="whyus__item">
                 <div class="whyus__item-info">
-                    <h2 class="whyus__item-title">Собственное производство</h2>
+                    <h2 class="whyus__item-title">Главные плюсы организации</h2>
                     <ul>
-                        <li class="whyus__item-text">— Обеспечивает гарантию низкой цены</li>
-                        <li class="whyus__item-text">— Снимает любые ограничения на цвет, конфигурацию и фактуру натяжного полотна</li>
-                        <li class="whyus__item-text">— 549 вариантов фактур и оттенков</li>
+                        <li class="whyus__item-text">— Контроль качества после монтажа</li>
+                        <li class="whyus__item-text">—&nbsp;Наличие своего производства</li>
+                        <li class="whyus__item-text">— Подписание договора на дому</li>
+                        
+                        <li class="whyus__item-text">— Сервисное обслуживание</li>
+                        <li class="whyus__item-text">— Установка за один день</li>
+                        <li class="whyus__item-text">— Выгодные цены</li>
+                        <li class="whyus__item-text">— 16 лет опыта</li>
                     </ul>
                 </div>
-                <img class="whyus__item-image" src="/img/gui/img_factory-2.jpg" srcset="/img/gui/img_factory-2.jpg 2x" alt="Производство">
+                <img class="whyus__item-image" src="/img/gui/img_factory-2-min.jpg" alt="Производство">
+                <!-- <img class="whyus__item-image" src="/img/gui/img_factory-2.jpg" srcset="/img/gui/img_factory-2.jpg 2x" alt="Производство"> -->
             </div>
             <div class="whyus__item whyus__item_reverse">
                 <div class="whyus__item-info">
@@ -130,13 +148,6 @@
     <section class="portfolio portfolio_main portfolio_ceilings">
         @include('common.gui.titles', ['secondTitle' => 'Примеры наших работ'])
         <div class="portfolio__carousel" id="portfolio__carousel" data-photos="{{ $photos }}">
-            @foreach ($photos as $photo)
-                <a class="case b-card portfolio__item portfolio__item_slide">
-                    <p class="case__totals">{{ $photo->price }}  ₽ / {{ $photo->area }} м<sup>2</sup></p>
-                    <img src="{{ Voyager::image( $photo->thumbnail('preview','src') ) }}" alt="{{ $photo->name }}" class="case__img">
-                    <p class="card-title case__title">{{ $photo->name }}</p>
-                </a>
-            @endforeach
         </div>
         <div class="buttons portfolio__buttons">
 			<a href="{{ route('photos', $city) }}" class="button button_gray">Посмотреть все работы</a>
@@ -208,12 +219,16 @@
         </div>
     </section>
 
-	<section class="seo-block seo-block_main seo-block_ceilings" @if($seoData->background_image) style="background-image: url({{ Storage::url($seoData->background_image) }})" @endif>
+	<section class="seo-block seo-block_main seo-block_ceilings"
+        @if ($seoData->background_mobile) data-backgr-mobile="url({{ Storage::url($seoData->background_mobile) }})" @endif
+        @if ($seoData->background_tablet) data-backgr-tablet="url({{ Storage::url($seoData->background_tablet) }})" @endif
+        @if($seoData->background_image) style="background-image: url({{ Storage::url($seoData->background_image) }})" @endif
+    >
         <div class="seo-block__content">
 			<div class="seo-block__item seo-block__item_numbered">
                 <div class="seo-block__item-text">
                     <h3 class="seo-block__item-title">{!! str_replace('#city_title#', $city->name_formatted, $seoData->first_title) !!}</h3>
-    				{!! $seoData->first_text !!}
+    				{!! str_replace('#city_title#', $city->name_formatted, $seoData->first_text) !!}
                 </div>
 				@if ($seoData->firm_img)
                     <div data-src="#videoBlock" class="seo-block__item-videoblock js-show">
@@ -248,21 +263,22 @@
             'secondTitle' =>  "Также вас может заинтересовать"
         ])
         <div class="additional__list">
-            <a href="{{ route('services', [request()->route()->city, 'deal']) }}" class="additional__item">
+            <a href="{{ route('services', [request()->route()->city, 'deal']) }}" class="additional__item is-hoverable">
                 <img src="/img/windows/home_deal.png" alt="" width="201" height="166" class="additional__img">
                 <h3 class="additional__title">Договор на дому</h3>
                 <p class="text additional__text">
                     Для вашего удобства замерный <br> мастер  может заключить договор&nbsp;у&nbsp;вас&nbsp;дома.
                 </p>
             </a>
-            <a href="{{ route('lamps', request()->route()->city) }}" class="additional__item">
+            <a href="{{ route('lamps', request()->route()->city) }}" class="additional__item is-hoverable">
                 <img src="/img/ceilings/lamp.png" alt="" width="205" height="134" class="additional__img">
                 <h3 class="additional__title">Светильники</h3>
                 <p class="text additional__text">
-                    Беспроцентная рассрочка даёт <br> возможность установить окна, даже если <br> нет необходимой&nbsp;суммы.
+                    Приобретите специальные светильники<br>для натяжных потолков<br>в офисе продаж.
+                    
                 </p>
             </a>
-            <a href="{{ route('services', [request()->route()->city, 'measurements']) }}" class="additional__item">
+            <a href="{{ route('services', [request()->route()->city, 'measurements']) }}" class="additional__item is-hoverable">
                 <img src="/img/windows/free_measure.png" alt="" width="201" height="166" class="additional__img">
                 <h3 class="additional__title">Бесплатный замер</h3>
                 <p class="text additional__text">

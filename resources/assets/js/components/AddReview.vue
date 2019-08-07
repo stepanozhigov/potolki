@@ -75,7 +75,7 @@
         },
         computed: {
             validated: function () {
-                if (this.user.fullName && this.text) {
+                if (this.user.fullName && this.text || this.video) {
                     return true;
                 }
                 return false;

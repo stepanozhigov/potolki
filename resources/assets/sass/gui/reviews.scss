@@ -102,7 +102,10 @@
 
         padding-bottom: rem(96);
         margin-bottom: 0;
-
+        
+        @include below($mobile) {
+            padding-bottom: 0; 
+        }
         .titles {
             margin-bottom: 0;
 

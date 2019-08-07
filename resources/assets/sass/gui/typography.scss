@@ -147,6 +147,12 @@
         }
     }
 
+    &_borderless {
+        &::after {
+            content: none; 
+        }
+    }
+
     @include below($tablet) {
         font-size: rem(32);
         line-height: rem(38);

@@ -10,6 +10,7 @@
 
     <section class="serviceDetail">
         @include('common.gui.titles', [
+            'class' =>  'serviceDetail__titles',
             'secondTitle' =>  "Этапы установки натяжного потолка"
         ])
         <section class="reason">

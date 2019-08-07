@@ -14,12 +14,6 @@ var ionRangeSlider = require('ion-rangeslider/js/ion.rangeSlider.js');
 var tooltipster = require('tooltipster/dist/js/tooltipster.bundle.js');
 var rateYo = require('rateyo/src/jquery.rateyo.js');
 
-$(document).ready(function () {
-    var yaCounter = typeof window.yaCounter43807824 !== 'undefined' ? window.yaCounter43807824: undefined,
-    gaCounter = typeof ga !== 'undefined' ? ga.getAll()[0] : undefined;
-
-    console.log(yaCounter, gaCounter);
-});
 
 window.Vue2TouchEvents = require('vue2-touch-events');
 Vue.use(Vue2TouchEvents);
@@ -32,7 +26,7 @@ require('./components/popup');
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
+Vue.component('surfaces', require('./components/Surfaces.vue'));
 Vue.component('reviews', require('./components/Reviews.vue'));
 Vue.component('window-calc', require('./components/WindowCalc.vue'));
 Vue.component('balcony-calc', require('./components/BalkonyCalc.vue'));
@@ -57,10 +51,28 @@ Vue.component('banks', require('./components/banksCarousel.vue'));
 Vue.component('menu-city-search', require('./components/MenuCitySearch.vue'));
 
 // Vue.component('portfolio-photos', require('./components/PortfolioPhotos.vue'));
-$('[href="http://89.108.103.224:699/sochi/catalogue/svetovye-linii"]').on('click', function(ev) {
-    ev.preventDefault();
-    $('.header__callback').trigger('click');
-})
+
+var seoContainer = $('.seo-block');
+
+if (seoContainer.length > 0) {
+    var width = $(document).width();
+
+    if (width < 1279) {
+        var background = seoContainer.data('backgr-tablet');
+
+        if (background) {
+            seoContainer.css('background-image', background)
+        }
+    }
+    if (width < 719) {
+        var background = seoContainer.data('backgr-mobile');
+
+        if (background) {
+            seoContainer.css('background-image', background)
+        }
+    }
+}
+
 
 $('.survey__form').on('submit', function (e) {
     e.preventDefault();
@@ -112,7 +124,13 @@ if (menuCities.length > 0) {
     })
 }
 
+const surfaces = $('#surfaces');
 
+if (surfaces.length > 0) {
+    new Vue({
+        el: '#surfaces'
+    })
+}
 
 
 
@@ -566,7 +584,7 @@ $(window).resize(onResize);
 
 
 
-var phoneMask = new Inputmask('+7 999 999-99-99'),
+var phoneMask = new Inputmask('8 999 999-99-99'),
     $phones = $('[type=tel]');
 
 phoneMask.mask($phones);
@@ -703,42 +721,51 @@ $('.catalog-cards__item').on('click', '.catalog-cards__open', function () {
 
 $('.form').on('submit', function (event) {
     event.preventDefault();
-    var $this = $(this);
+    var $this = $(this),
+    	name = $this.find('[name=name]').val(),
+    	city = $this.find('[name=city]').val(),
+    	phone = $this.find('[name=phone]').val();
 
-    if (typeof window.yaCounter43807824 !== 'undefined') {
-        window.yaCounter43807824.reachGoal('form-sub');
+    if (typeof window.yaCounter40202559 !== 'undefined') {
+        window.yaCounter40202559.reachGoal('form-sub');
     }
-    if (typeof gaCounter !== 'undefined') {
+    if (typeof ga !== 'undefined') {
         ga.getAll()[0].send('event', 'forms', 'sub');
-
     }
     fbq('track', 'Lead');
+    
     var successEl = $this.next('.popup__status-send');
 
     if (successEl.length > 0) {
         $this.hide();
         $this.next('.popup__status-send').show();
     }
-            
+    console.log($this.serialize());
+
+    $this.find('button[type="submit"]').text('Заявка отправлена!').prop('disabled', true);
+    $this.find('input').prop('disabled', true);
     $.ajax({
         url: $this.attr('action'),
-        data: $this.serialize(),
+        data: {
+        	name: name,
+        	phone: phone,
+        	city: city
+        },
         method: 'POST',
         success: function () {
             
             $this.addClass('form_status-send');
            
-            $this.find('button[type="submit"]').text('Заявка отправлена!').prop('disabled', true);
-            $this.find('input').prop('disabled', true);
+           
         }
     })
 });
 
 $('.phone').on('click', function () {
-    if (typeof window.yaCounter43807824 !== 'undefined') {
-        window.yaCounter43807824.reachGoal('phone-click');
+    if (typeof window.yaCounter40202559 !== 'undefined') {
+        window.yaCounter40202559.reachGoal('phone-click');
     }
-    if (typeof ga.getAll() !== 'undefined') {
+    if (typeof ga !== 'undefined') {
         ga.getAll()[0].send('event', 'click', 'phone');
     }
     fbq('track', 'Lead');
@@ -746,13 +773,13 @@ $('.phone').on('click', function () {
 });
 
 $('.whatsapp').on('click', function () {
-    if (typeof window.yaCounter43807824 !== 'undefined') {
-        window.yaCounter43807824.reachGoal('whatsapp');
+    if (typeof window.yaCounter40202559 !== 'undefined') {
+        window.yaCounter40202559.reachGoal('whatsapp');
     }
-    if (typeof ga.getAll() !== 'undefined') {
+    if (typeof ga !== 'undefined') {
         ga.getAll()[0].send('event', 'whatsapp', 'click');
     }
-  	fbq('track', 'Lead');
+    fbq('track', 'Lead');
 
 })
 

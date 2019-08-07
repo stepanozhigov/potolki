@@ -7,7 +7,7 @@ class Visit {
 		$visits = session('visits');
 
 		$referer = $_SERVER['HTTP_REFERER'] ?? '';
-		if (strpos($referer, 'okna-ts.ru') !== false)
+		if (strpos($referer, 'potolki-ts.ru') !== false)
 		{
 			$referer = "";
 		} 

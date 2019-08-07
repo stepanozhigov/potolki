@@ -95,12 +95,12 @@ class FeedbackController extends Controller
             $visits.= "utm term: {$visit['utm_term']} \r\n";
             $visits.= "\r\n \r\n \r\n";
         }
-
+        dump($request->name, $request->phone);
         $bitrixConnector->addLead([
             'title' =>  $request->name,
             'name'  =>  $request->name,
             'phone' =>  $request->phone,
-            'direction' =>  59,
+            'direction' =>  56,
             'description'   =>  $visits,
             'city'  =>  $request->city,
             'source'    =>  'WEB'

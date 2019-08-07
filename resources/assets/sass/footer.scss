@@ -164,6 +164,7 @@
 
         @include below($mobile) {
             justify-content: center;
+            width: 100%;
         }
     }
 

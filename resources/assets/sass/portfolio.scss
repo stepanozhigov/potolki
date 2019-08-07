@@ -326,7 +326,7 @@
         background-color: rgba(0, 0, 0, 0.5);
 
         @include below($mobile) {
-			display: none;
+                right: -24px;			
 		}
     }
     &__prev {
@@ -343,7 +343,7 @@
         background-color: rgba(0, 0, 0, 0.5);
 
 		@include below($mobile) {
-			display: none;
+			left: -24px;
 		}
     }
 

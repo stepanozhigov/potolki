@@ -6,9 +6,9 @@
     @include('common.gui.header')
 
     <section class="contacts">
-        @include('common.gui.titles', [
-            'title' =>  "Контакты компании «Твой&nbsp;стиль» {$city->name_formatted}"
-        ])
+        <div class="titles ">
+            <h1 class="title title_borderless titles__title">Контакты компании «Твой&nbsp;стиль» {!! $city->name_formatted !!}</h1>
+        </div>
         @if(count($city->offices) > 0)
             <div class="map contacts__map" id="map" data-placemark="/img/gui/logo.png">
                 <div class="contacts__offices">
@@ -44,8 +44,8 @@
                 <div class="contacts__item">
                     <p class="second-title">Единый номер</p>
                     <p class="phone text contacts__phone">
-                        <a href="tel:{{ $city->phone }}" class="phone__number">
-                            <img class="phone__icon" src="/img/gui/phone_gray.svg" alt="">{{ $city->phone }}
+                        <a href="tel:{{ $currentDirection->phone }}" class="phone__number">
+                            <img class="phone__icon" src="/img/gui/phone_gray.svg" alt="">{{ $currentDirection->phone }}
                         </a>
                         <span class="phone__time">круглосуточно | бесплатно</span>
                     </p>

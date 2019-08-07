@@ -15,6 +15,8 @@
 
     </section>
 
-
-    @include('common.gui.footer')
+    @include('common.footer-offer', [
+        'title' =>  "Запишитесь на&nbsp;замер <span>сегодня</span> и&nbsp;получите светильники <span>в&nbsp;подарок</span>"
+    ])
+    @include('common.gui.footer', ['skipOffer' => true]) 
 @endsection

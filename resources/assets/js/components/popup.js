@@ -5,6 +5,10 @@ $(document).on('click', '.js-show', function(event) {
         $source = $(source),
         $overlay = $('#overlay');
 
+    if (typeof BX !== 'undefined') {
+        BX.SiteButton.hide();
+    }
+    
     if ($this.is('.climatCard') && $(document).width() < 768) {
         return
     }
@@ -72,6 +76,8 @@ $(document).on('click', '.js-showup', function(event) {
     $(source).addClass('popup_active popup_showup');
     $('.header_sticky').addClass('hidden');
 
+    
+
 });
 
 $(document).on('click','.js-close', function(event) {
@@ -85,4 +91,8 @@ $(document).on('click','.js-close', function(event) {
     $overlay.removeClass('overlay_active');
     $popups.removeClass('popup_active');
     $('.header_sticky').removeClass('hidden');
+
+    if (typeof BX !== 'undefined') {
+        BX.SiteButton.show();
+    }
 });

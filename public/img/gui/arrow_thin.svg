@@ -1,1 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="10" viewBox="0 0 16 10"><defs><path id="ayv3a" d="M304 101l-4-4 4-4"/><path id="ayv3b" d="M290 97h14"/></defs><g><g transform="translate(-289 -92)"><g transform="rotate(-180 302 97)"><use fill="#fff" fill-opacity="0" stroke="#808890" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="50" xlink:href="#ayv3a"/></g><g transform="rotate(-180 297 97)"><use fill="#fff" fill-opacity="0" stroke="#808890" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="50" xlink:href="#ayv3b"/></g></g></g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="10px" viewBox="0 0 16 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>→</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="→" transform="translate(1.000000, 1.000000)" stroke="#808890" stroke-width="2">
+            <polyline id="Rectangle-9" transform="translate(12.000000, 4.000000) rotate(-180.000000) translate(-12.000000, -4.000000) " points="14 8 10 4 14 0 14 0"></polyline>
+            <path d="M0,4 L14,4" id="Line-6" transform="translate(7.000000, 4.000000) rotate(-180.000000) translate(-7.000000, -4.000000) "></path>
+        </g>
+    </g>
+</svg>

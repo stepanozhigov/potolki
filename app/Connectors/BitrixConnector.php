@@ -16,16 +16,16 @@ class BitrixConnector {
     }
     protected function getVisitParam($param)
     {
-    	$visits = session('visits');
+        $visits = session('visits');
 
-    	foreach ($visits as $visit)
-    	{
-    		if (!empty($visit[$param]))
-    		{
-    			return $visit[$param];
-    		}
-    	}
-    	return false;
+        foreach ($visits as $visit)
+        {
+            if (!empty($visit[$param]))
+            {
+                return $visit[$param];
+            }
+        }
+        return "";
     }
 
     protected function openConnection ($url, $arFields)
@@ -59,7 +59,7 @@ class BitrixConnector {
             'UF_CRM_1467050632' =>  $data['direction'] ?? '',
             'UF_CRM_CT_UTM_SOUR'    =>  'asdas',
             'UTM_SOURCE'    =>  'testasd',
-            'WEB'   =>  'okna-ts.ru',
+            'WEB'   =>  'potolki-ts.ru', 
             'SOURCE_DESCRIPTION'    =>  $data['description'] ?? '',
             'UF_CRM_1532512285' => request()->get('utm_source') ?? $this->getVisitParam('utm_source'),
             'UF_CRM_1532512297' => request()->get('utm_medium') ?? $this->getVisitParam('utm_medium'),

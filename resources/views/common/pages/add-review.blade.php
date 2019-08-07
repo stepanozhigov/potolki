@@ -15,5 +15,5 @@
     </section>
     
     <script src="https://vk.com/js/api/openapi.js?146" type="text/javascript"></script>
-    @include('common.gui.footer')    
+    @include('common.gui.footer',['skipOffer' => true])    
 @endsection

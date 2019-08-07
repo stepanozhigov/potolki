@@ -36,8 +36,13 @@ $city = $city ?? App\City::find(1);
                             <h3 class="menu__item-title">Потолки</h3>
                             @foreach(App\CatalogType::where(['direction_id' => 2])->get() as $section)
                                 @if ($section->type != 'rooms')
-                                    <a href="{{ route('catalogue', ['city' => $city, 'type' => $section]) }}" class="text menu__item menu__item_bordered">{{ $section->name }}</a>
+                                    @if ($section->id == 23)
+                                        <a href="{{ route('photoprint', ['city' => $city]) }}" class="text menu__item menu__item_bordered">{{ $section->name }}</a>
+                                    @else
+                                        <a href="{{ route('catalogue', ['city' => $city, 'type' => $section]) }}" class="text menu__item menu__item_bordered">{{ $section->name }}</a>
+                                    @endif
                                 @endif
+                                
                             @endforeach
     	                   
                         </div>
@@ -61,10 +66,10 @@ $city = $city ?? App\City::find(1);
 
 	                    <a href="{{ route('services', [$city, 'measurements']) }}" class="text menu__item menu__item_bordered">Бесплатный замер</a>
 	                    <a href="{{ route('photoprint', $city) }}" class="text menu__item menu__item_bordered">Фотопечать</a>
-	                    <a href="{{ route('ustanovka', $city) }}" class="text menu__item menu__item_bordered">Установка</a>
-	                    <a href="{{ route('sliv', $city) }}" class="text menu__item menu__item_bordered">Слив воды</a>
-	                    <a href="{{ route('zamenaPolotna', $city) }}" class="text menu__item menu__item_bordered">Замена полотна</a>
-	                    <a href="{{ route('remont', $city) }}" class="text menu__item menu__item_bordered">Ремонт</a>
+	                    <a href="{{ route('services', ['city' => $city, 'type' => 'ustanovka']) }}" class="text menu__item menu__item_bordered">Установка</a>
+	                    <a href="{{ route('services', ['city' => $city, 'type' => 'sliv']) }}" class="text menu__item menu__item_bordered">Слив воды</a>
+	                    <a href="{{ route('services', ['city' => $city, 'type' => 'zamenaPolotna']) }}" class="text menu__item menu__item_bordered">Замена полотна</a>
+	                    <a href="{{ route('services', ['city' => $city, 'type' => 'remont']) }}" class="text menu__item menu__item_bordered">Ремонт</a>
 	                    <a href="{{ route('credit', $city) }}" class="text menu__item menu__item_bordered">Рассрочка</a>
 	                </div>
 	            </div>
@@ -114,13 +119,10 @@ $city = $city ?? App\City::find(1);
                     @endif
 
                     <p class="dropdown__title">Офисы в других городах</p>
-                    @foreach($cities as $otherCity)
-                        @if ($otherCity->offices->count() > 0 && $otherCity->id !== $city->id)
-                            <a href="{{ route('ceilings', $otherCity) }}" class="text dropdown__item dropdown__item_bordered red-hoverable">{{ $otherCity->name}}</a>
-                        @endif
-                    @endforeach
-                    <p class="dropdown__title">Не нашли ваш город?</p>
                     <menu-city-search :cities="{{ $cities }}"></menu-city-search>
+                    
+                    <!-- <p class="dropdown__title">Не нашли ваш город?</p> -->
+                    
                 </div>
             </div>
         @endif
@@ -128,7 +130,7 @@ $city = $city ?? App\City::find(1);
 
         <div class="header__feedbacks">
             <a href="https://api.whatsapp.com/send?phone={{ $city->whatsapp }}" class="text whatsapp header__whatsapp red-hoverable"><img src="/img/gui/whatsapp.svg" alt="" class="whatsapp__icon"> <span class="whatsapp__write-text">Написать в&nbsp</span>WhatsApp <span class="whatsapp__mobile-text">Написать</span></a>
-            <a href="tel:{{ $city->phone }}" class="text phone header__phone  red-hoverable"><img class="phone__icon" src="/img/gui/phone.svg" alt="">{{ $city->phone }} <span data-src="#popup_callback" class="js-show">Заказать звонок</span></a>
+            <a href="tel:{{ $currentDirection->phone }}" class="text phone header__phone  red-hoverable"><img class="phone__icon" src="/img/gui/phone.svg" alt="">{{ $currentDirection->phone }} <span data-src="#popup_callback" class="js-show">Заказать звонок</span></a>
             <a data-src="#popup_callback" class="text header__callback js-show">Заказать звонок</a>
         </div>
     </div>
@@ -184,13 +186,12 @@ $city = $city ?? App\City::find(1);
                         </a>
                         <a href="javascript:void(0);" class="text menu__dropdown-link">Услуги</a>
                     </div>
-
                     <a href="{{ route('services', [$city, 'measurements']) }}" class="text menu__item menu__item_bordered">Бесплатный замер</a>
                     <a href="{{ route('photoprint', $city) }}" class="text menu__item menu__item_bordered">Фотопечать</a>
-                    <a href="{{ route('ustanovka', $city) }}" class="text menu__item menu__item_bordered">Установка</a>
-                    <a href="{{ route('sliv', $city) }}" class="text menu__item menu__item_bordered">Слив воды</a>
-                    <a href="{{ route('zamenaPolotna', $city) }}" class="text menu__item menu__item_bordered">Замена полотна</a>
-                    <a href="{{ route('remont', $city) }}" class="text menu__item menu__item_bordered">Ремонт</a>
+                    <a href="{{ route('services', ['city' => $city, 'type' => 'ustanovka']) }}" class="text menu__item menu__item_bordered">Установка</a>
+                    <a href="{{ route('services', ['city' => $city, 'type' => 'sliv']) }}" class="text menu__item menu__item_bordered">Слив воды</a>
+                    <a href="{{ route('services', ['city' => $city, 'type' => 'zamenaPolotna']) }}" class="text menu__item menu__item_bordered">Замена полотна</a>
+                    <a href="{{ route('services', ['city' => $city, 'type' => 'remont']) }}" class="text menu__item menu__item_bordered">Ремонт</a>
                     <a href="{{ route('credit', $city) }}" class="text menu__item menu__item_bordered">Рассрочка</a>
                 </div>
             </div>

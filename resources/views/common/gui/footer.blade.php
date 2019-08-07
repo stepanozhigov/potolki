@@ -17,29 +17,11 @@
     <img src="/img/gui/close.svg" alt="" class="popup__close js-close">
     @include('common.forms.survey')
 </div>
-<div class="popup" id="popup_articles">
-    <img src="/img/gui/close.svg" alt="" class="popup__close js-close">
-    @include('common.article-form')
-</div>
-<div class="popup" id="condition_popup">
-    <img src="/img/gui/close.svg" alt="" class="popup__close js-close">
-    @include('climat.conditionerPopup')
-</div>
-<div class="popup" id="formAdressPopup">
-    <img src="/img/gui/close.svg" alt="" class="popup__close js-close">
-    @include('climat.formAdress')
-</div>
-<div class="popup" id="formUrPopup">
-    <img src="/img/gui/close.svg" alt="" class="popup__close js-close">
-    @include('climat.formUr')
-</div>
-<div class="popup" id="quickBuy">
-    <img src="/img/gui/close.svg" alt="" class="popup__close js-close">
-    @include('climat.quickBuy')
-</div>
+
+
 <div class="popup" id="videoBlock">
     <img src="/img/gui/close.svg" alt="" class="popup__close js-close">
-    <iframe width="900" height="506" src="https://www.youtube.com/embed/ZzBDdgLxTxE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <!--<iframe width="900" height="506" src="https://www.youtube.com/embed/ZzBDdgLxTxE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
 </div>
 <div id="overlay" class="overlay js-close"></div>
 </main>
@@ -50,7 +32,7 @@
     <div class="footer__row container">
         <div class="footer__contacts">
 
-            <a href="tel:{{ $city->phone }}" class="text phone footer__phone red-hoverable">
+            <a href="tel:{{ $currentDirection->phone }}" class="text phone footer__phone red-hoverable">
                 <svg class="phone__icon" width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
                     <title>phone</title>
@@ -61,7 +43,7 @@
                         </g>
                     </g>
                 </svg>
-                {{ $city->phone }}
+                {{ $currentDirection->phone }}
                 <span class="subtext phone__time footer__time">Круглосуточно | Бесплатно</span>
             </a>
             <a href="mailto:{{ $city->email }}" class="text text_white footer__mail red-hoverable">
@@ -127,10 +109,10 @@
             </div>
             <div class="nav-group footer__item">
                 <a href="javascript:void(0);" class="card-title footer__title js-open">Услуги</a>
-                <a href="{{ route('sliv', $city) }}" class="red-hoverable subtext subtext_white nav-group__item">Слив воды</a>
-                <a href="{{ route('ustanovka', $city) }}" class="red-hoverable subtext subtext_white nav-group__item">Установка</a>
-                <a href="{{ route('zamenaPolotna', $city) }}" class="red-hoverable subtext subtext_white nav-group__item">Замена</a>
-                <a href="{{ route('remont', $city) }}" class="red-hoverable subtext subtext_white nav-group__item">Ремонт</a>
+                <a href="{{ route('services', ['city' => $city, 'type' => 'sliv']) }}" class="red-hoverable subtext subtext_white nav-group__item">Слив воды</a>
+                <a href="{{ route('services', ['city' => $city, 'type' => 'ustanovka']) }}" class="red-hoverable subtext subtext_white nav-group__item">Установка</a>
+                <a href="{{ route('services', ['city' => $city, 'type' => 'zamenaPolotna']) }}" class="red-hoverable subtext subtext_white nav-group__item">Замена</a>
+                <a href="{{ route('services', ['city' => $city, 'type' => 'remont']) }}" class="red-hoverable subtext subtext_white nav-group__item">Ремонт</a>
             </div>
             <div class="nav-group footer__item">
                 <a href="javascript:void(0);" class="card-title footer__title js-open">Информация</a>

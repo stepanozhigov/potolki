@@ -24,7 +24,7 @@
             return {
                 search: '',
                 notFiltered: [
-                    1, 2, 3, 4, 5, 6, 7, 8        
+                    //1, 2, 3, 4, 5, 6, 7, 8        
                 ]
             }
         },
@@ -32,7 +32,7 @@
         computed: {
             filtered () {
                 if (this.search.length < 1) {
-                    return [];
+                    return this.cities;
                 }
 
                 return this.cities.filter(city => {

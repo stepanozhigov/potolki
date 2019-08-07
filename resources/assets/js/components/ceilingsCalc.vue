@@ -10,26 +10,26 @@
         </div>
         <div class="ceilingCalculator__item">
             <p class="ceilingCalculator__item-name">
-                Количество труб
+                Трубы
             </p>
             <input name="tubes" data-min="0"  data-max="10" class="range" type="text">
         </div>
         <div class="ceilingCalculator__item">
             <p class="ceilingCalculator__item-name">
-                Количество углов
+                Углы
             </p>
             <input v-model="angles" name="angles" data-min="4" data-from="4" data-max="30" class="range" type="text">
         </div>
         <div class="ceilingCalculator__item">
             <p class="ceilingCalculator__item-name">
-                Количество светильников
+                Светильники
             </p>
             <input name="lamps" data-min="0" data-max="30" class="range" type="text">
         </div>
         <p class="ceilingCalculator__subtitle">Для точного расчёта необходимо произвести замер!</p>
         <p class="ceilingCalculator__total"><span class="js-calc-price">350</span> ₽</p>
         <p class="ceilingCalculator__measure">с установкой</p>
-        <button data-src="#popup_callback" class="ceilingCalculator__callback js-show">Вызвать замерщика</button>
+        <button data-src="#popup_callback" class="ceilingCalculator__callback js-show" data-button="Вызвать замерщика" data-title="Вызов замерщика">Вызвать замерщика</button>
     </div>
 </template>
 
@@ -39,11 +39,18 @@
             tubes = $('[name=tubes]').val(),
             angles = $('[name=angles]').val(),
             lamps = $('[name=lamps]').val(),
+            mult = 350,
             price = 0;
 
-        price = angles * 100 + tubes * 200 + lamps * 250 + area * 350 - 400;
+        if (window.city.code == 'krasnodar') {
+            mult = 290;
+        }
+        price = angles * 100 + tubes * 200 + lamps * 250 + area * mult - 400;
 
         $('.js-calc-price').html(price);
+    })
+    $(document).ready(function () {
+        $('[name=area]').trigger('input');
     })
     export default {
         data: function () {

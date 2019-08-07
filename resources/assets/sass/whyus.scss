@@ -145,7 +145,7 @@
 		margin-bottom: rem(16);
 		color: #485058;
 		font-family: $playfair;
-		font-size: rem(32);
+		font-size: rem(30);
 		font-weight: 400;
 		line-height: rem(38);
 
@@ -156,7 +156,8 @@
 
 		@include below($mobile) {
 			margin-bottom: rem(8);
-			font-size: rem(26);
+			font-size: rem(24);
+			margin-bottom: 24px;
 			text-align: left;
 		}
 	}

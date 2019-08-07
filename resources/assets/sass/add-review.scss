@@ -7,7 +7,6 @@
     flex-wrap: wrap;
     padding: 40px 400px 80px 80px;
     padding-right: calc(100% - 660px);
-    margin-bottom: -80px;
 
     @media screen and(max-width: 1200px) {
         padding-right: 0;
@@ -20,7 +19,7 @@
 
     &__girl {
         position: absolute;
-        right: rem(220);
+        right: 5.75rem; 
         bottom: 0;
         z-index: 2;
 

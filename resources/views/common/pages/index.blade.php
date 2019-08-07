@@ -4,7 +4,7 @@
     @include('common.gui.header_light')
 
     <main class=" page page_index">
-        <section class="index-offer">
+        <section class="index-offer" style="background-image: url(/img/ceilings/stretch-ceiling-usa-14.jpg);">
             <h1 class="title index-offer__title">Фабрика натяжных потолков «Твой&#160;стиль»</h1>
             <p class="intro index-offer__intro">Выберите город, чтобы перейти на&nbspсайт</p>
             <div class="index-offer__buttons">

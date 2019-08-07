@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Log;
 // Временно здесь. Обязательно убрать отсюда;
 //$visit = new App\Visit;
 
-Artisan::call('view:clear');
+//Artisan::call('view:clear');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

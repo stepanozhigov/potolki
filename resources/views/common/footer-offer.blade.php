@@ -1,6 +1,10 @@
 <section class="footer-offer">
     <div class="container footer-offer__content">
-        <h2 class="footer-offer__title">Запишитесь на&nbsp;замер <span>сегодня</span> и&nbsp;получите дополнительную <span>скидку&nbsp;10%</span></h2>
+        @if (!empty($title))
+            <h2 class="footer-offer__title">{!! $title !!}</h2>
+        @else
+            <h2 class="footer-offer__title">Запишитесь на&nbsp;замер <span>сегодня</span> и&nbsp;получите дополнительную <span>скидку&nbsp;10%</span></h2>
+        @endif
         <p class="footer-offer__intro">Оставьте контактные данные и наш специалист перезвонит вам <span> в течение 5 минут</span></p>
         <form class="form footer-offer__form" action="{{ route('add-lead') }}">
             @csrf

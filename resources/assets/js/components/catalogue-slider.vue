@@ -6,12 +6,16 @@
 
             <div class="catalogue-slider__carousel">
                 <transition-group name="list-complete"  tag="div" class="catalogue-slider__carousel">
-                    <a v-touch:swipe.left="offsetShowPoint" v-touch:swipe.right="offsetBackShowPoint" @click="toggleMode(index)" v-for="(photo, index) in showedItems" v-bind:key="photo.id" class="catalogue-slider__item">
+                    <a v-touch:swipe.left="offsetShowPoint" v-touch:swipe.right="offsetBackShowPoint" @click="toggleMode(index)" v-for="(photo, index) in showedItems" v-bind:key="index" class="catalogue-slider__item">
                         <img :src="`/storage/${photo.src}`" alt="3" class="catalogue-slider__img">
                     </a>
                  </transition-group>
                 <div @click="toggleMode" v-bind:class="['overlay', 'overlay_dark', mode == 'detail' ? 'overlay_active':'']"></div>
                 <div v-if="mode == 'detail'" class="gallery">
+                    <p v-if="showedItems[currentPhotoIndex].price" class="gallery__totals">{{ showedItems[currentPhotoIndex].price }}  ₽ / {{ showedItems[currentPhotoIndex].area }} м<sup>2</sup></p>
+                    <img @click="toggleMode" class="gallery__close" src="/img/gui/close.svg">
+                    <img @click="prevItem" class="gallery__prev" src="/img/gui/arrow_top.png">
+                    <img @click="nextItem" class="gallery__next" src="/img/gui/arrow_top.png">
                     <img class="gallery__img b-card" :src="`/storage/${showedItems[currentPhotoIndex].src}`">
                 </div>
             </div>
@@ -21,22 +25,24 @@
         </button>
     </div>
 </template>
+
 <style>
-.list-complete-item {
-  transition: all 1s;
-  display: inline-block;
-  margin-right: 10px;
-}
-.list-complete-enter, .list-complete-leave-to
-/* .list-complete-leave-active до версии 2.1.8 */ {
-  opacity: 0;
-  transform: translateY(30px);
-}
-.list-complete-leave-active {
-  position: absolute;
-  display: none;
-}
+    .list-complete-item {
+      transition: all 1s;
+      display: inline-block;
+      margin-right: 10px;
+    }
+    .list-complete-enter, .list-complete-leave-to
+    /* .list-complete-leave-active до версии 2.1.8 */ {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    .list-complete-leave-active {
+      position: absolute;
+      display: none;
+    }
 </style>
+
 <script>
     export default {
         data: function () {
@@ -68,6 +74,9 @@
         },
         props:['photos'],
         methods: {
+            uuid () {
+                return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+            },
             nextItem () {
                 this.currentPhotoIndex++;
 

@@ -1,1 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="18" viewBox="0 0 10 18"><defs><path id="25qda" d="M290 96l8 8-8 8"/></defs><g><g transform="translate(-289 -95)"><use fill="#fff" fill-opacity="0" stroke="#808890" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="50" xlink:href="#25qda"/></g></g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="8px" height="12px" viewBox="0 0 8 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>&gt;</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <polyline id="&gt;" stroke="#808890" stroke-width="2" points="1 1 7 6 1 11 1 11"></polyline>
+    </g>
+</svg>

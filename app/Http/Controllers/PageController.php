@@ -22,6 +22,7 @@ use App\Article;
 use App\SeoBlock;
 use App\Social;
 use App\Visit;
+use App\Surface;
 
 class PageController extends Controller
 {
@@ -40,10 +41,24 @@ class PageController extends Controller
 
     public function photos (City $city, CatalogType $type = null)
     {
+        if (!$type)
+        {
+            $photos = Photo::whereIn('catalog_type_id', [15,16,17,18,19,20,21,22,23,24,25])->get();
+        }
+        else
+        {
+            $photos =  $type->photos;
+
+            if ($type->type == 'rooms') {
+                $photos = Photo::where('room', $type->id)->get();
+            }
+        }
+        
+
         return view ('common.pages.photos', [
             'city'  =>  $city,
             'types' =>  CatalogType::where('direction_id', 2)->get(),
-            'photos'    =>  $type->photos ?? Photo::whereIn('catalog_type_id', [15,16,17,18,19,20,21,22,23,24,25])->get(),
+            'photos'    =>  $photos,
             'currentType'  =>  $type,
             'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
@@ -55,7 +70,7 @@ class PageController extends Controller
 
         if ($type)
         {
-            $view = "windows.services.{$type}";
+            $view = "ceilings.services.{$type}";
         }
 
         return view ($view, [
@@ -205,17 +220,19 @@ class PageController extends Controller
 
     public function ceilings (City $city)
     {
-        if (empty($city->code)) {
-            $city = City::where('code', 'moskva')->first();
+        $seoData = SeoBlock::where(['route' => Route::currentRouteName(), 'city_id' => $city->id])->first();
+
+        if (!$seoData) {
+            $seoData = SeoBlock::where('route', Route::currentRouteName())->whereNull('city_id')->first();
         }
-        //dd($city);
+        //dd($seoData);
         return view('ceilings.ceilings', [
             'city'  =>  $city,
-            'reviews'   =>  Review::where('direction_id', 2)->limit(3)->orderBy('sort', 'asc')->get(),
+            'reviews'   =>  Review::where(['direction_id' => 2, 'is_active' => 1])->limit(3)->orderBy('sort', 'asc')->get(),
             'photos'    =>  Photo::whereIn('catalog_type_id', [15,16,17,18,19,20,21,22,23,24,25])->get(),
             'offers'    =>  Offer::where(['is_active' =>  1, 'direction_id' => 2])->get(),
             'catalogTypes'  => CatalogType::where(['direction_id' => 2])->get(),
-            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first(),
+            'seoData'   =>  $seoData,
             'articles' => Article::where(['is_active' => 1, 'in_main' => 1])->orderBy('id', 'desc')->get()
         ]);
     }
@@ -320,6 +337,7 @@ class PageController extends Controller
     {
         return view('ceilings.surfaces', [
             'city'  =>  $city,
+            'surfaces' => Surface::all(),
             'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
     }
@@ -348,7 +366,7 @@ class PageController extends Controller
             'techs' =>   CatalogType::where(['direction_id' => 2, 'type' => 'tech'])->get(),
             'rooms' =>   CatalogType::where(['direction_id' => 2, 'type' => 'rooms'])->get(),
             'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first(),
-            'lamps' =>  \App\Lamp::limit(4)->get(),
+            'lamps' =>  \App\Lamp::limit(3)->get(),
             'articles' => Article::where(['is_active' => 1, 'in_main' => 1])->orderBy('id', 'desc')->get()
         ]);
     }
