@@ -21,13 +21,13 @@
         }
 
         @include below($mobile) {
-            width: rem(320);
+            width: rem(320); 
             height: rem(682);
-            background-image: url('/img/ceilings/w2.png');
+            background-image: url('/img/ceilings/w2.jpg');
 
             @media (min-resolution: 144dpi),
             (min-resolution: 1.5dppx) {
-                background-image: url('/img/ceilings/w2@2x.png');
+                background-image: url('/img/ceilings/w2@2x.jpg');
             }
         }
     }

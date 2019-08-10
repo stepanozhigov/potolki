@@ -52,6 +52,9 @@ Vue.component('menu-city-search', require('./components/MenuCitySearch.vue'));
 
 // Vue.component('portfolio-photos', require('./components/PortfolioPhotos.vue'));
 
+
+
+
 var seoContainer = $('.seo-block');
 
 if (seoContainer.length > 0) {
@@ -72,7 +75,16 @@ if (seoContainer.length > 0) {
         }
     }
 }
+var $lazyContainers = $('[data-lazy-src]');
 
+if ($lazyContainers.length > 0) {
+    $lazyContainers.each(function(index, element) {
+        var $element = $(element),
+            src = $element.data('lazy-src');
+
+        $element.attr('src', src);
+    });   
+}
 
 $('.survey__form').on('submit', function (e) {
     e.preventDefault();

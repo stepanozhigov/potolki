@@ -54,7 +54,7 @@
                         <li class="whyus__item-text">— 16 лет опыта</li>
                     </ul>
                 </div>
-                <img class="whyus__item-image" src="/img/gui/img_factory-2-min.jpg" alt="Производство">
+                <img class="whyus__item-image" data-lazy-src="/img/gui/img_factory-2-min.jpg" alt="Производство"> 
                 <!-- <img class="whyus__item-image" src="/img/gui/img_factory-2.jpg" srcset="/img/gui/img_factory-2.jpg 2x" alt="Производство"> -->
             </div>
             <div class="whyus__item whyus__item_reverse">
@@ -65,7 +65,7 @@
                     </p>
                     <div class="signature">
                         <p>А. А. Репин</p>
-                        <img src="/img/signature.png" srcset="/img/signature2x.png 2x" alt="signature">
+                        <img data-lazy-src="/img/signature.png" alt="signature">
                     </div>
                     <div class="socials">
                         <a target="_blank" href="https://www.instagram.com/business_repin/" class="socials__item">
@@ -79,7 +79,7 @@
                         </a>
                     </div>
                 </div>
-                <img class="whyus__item-image" src="/img/img_director.jpg" alt="Директор">
+                <img class="whyus__item-image" data-lazy-src="/img/img_director.jpg" alt="Директор">
             </div>
         </div>
         <div class="whyus__stat">
@@ -110,14 +110,14 @@
                 @else
                     <a href="{{ route('catalogue', ['city' => $city, 'type' => $type]) }}" class=" catalog-cards__item b-card is-hoverable">
                 @endif
-                    <img src="{{ Storage::url($type->img) }}" alt="{{ $type->name }}" class="catalog-cards__img">
+                    <img data-lazy-src="{{ Storage::url($type->img) }}" alt="{{ $type->name }}" class="catalog-cards__img">
                     <div class="catalog-cards__item-info">
                         <h3 class="card-title catalog-cards__title">{{ $type->name }}</h3>
                         @if($type->price)
                             <p class="catalog-cards__price">от <span class="catalog-cards__number">{{ number_format($type->price, 0, ',', ' ') }} ₽/м2</span></p>
                         @endif
         				<button class="catalog-cards__open" type="button" name="button">
-        					<img width="18" height="10" src="/img/arrow-down.svg" alt="arrow">
+        					<img width="18" height="10" data-lazy-src="/img/arrow-down.svg" alt="arrow">
         				</button>
                     </div>
 
@@ -136,7 +136,7 @@
     </div>
 	<div class="discount">
 		<p>Нашли дешевле?</p>
-		<img src="/img/ceilings/Stamp Discount.svg" alt="">
+		<img data-lazy-src="/img/ceilings/Stamp Discount.svg" alt="">
 		<p>Сделаем скидку!</p>
 	</div>
     <section class="constructor">
@@ -208,13 +208,13 @@
         <a class="manufacturers__more" href="javascript:void(0);">Подробнее</a>
         <div class="manufacturers__list" id="manufacturers__list"> 
             <div class="manufacturers__item">
-                <img height="65px" src="/img/manufacturers/msd.svg" alt="" class="manufacturers__item-image">
+                <img height="65px" data-lazy-src="/img/manufacturers/msd.svg" alt="" class="manufacturers__item-image">
             </div>
             <div class="manufacturers__item">
-                <img height="80px" src="/img/manufacturers/ptmc.svg" alt="" class="manufacturers__item-image">
+                <img height="80px" data-lazy-src="/img/manufacturers/ptmc.svg" alt="" class="manufacturers__item-image">
             </div>
             <div class="manufacturers__item">
-                <img height="105px" src="/img/manufacturers/pongs (2).png" alt="" class="manufacturers__item-image">
+                <img height="105px" data-lazy-src="/img/manufacturers/pongs (2).png" alt="" class="manufacturers__item-image">
             </div>
         </div>
     </section>
@@ -232,7 +232,7 @@
                 </div>
 				@if ($seoData->firm_img)
                     <div data-src="#videoBlock" class="seo-block__item-videoblock js-show">
-                        <img src="{{ Storage::url($seoData->firm_img) }}" alt="" class="seo-block__item-video">
+                        <img data-lazy-src="{{ Storage::url($seoData->firm_img) }}" alt="" class="seo-block__item-video">
                         <p>Видео о компании</p>
                     </div>
 				@endif
@@ -243,7 +243,7 @@
     				{!! $seoData->second_text !!}
                 </div>
 				@if ($seoData->second_img)
-					<img src="{{ Storage::url($seoData->second_img) }}" alt="" class="seo-block__item-img">
+					<img data-lazy-src="{{ Storage::url($seoData->second_img) }}" alt="" class="seo-block__item-img">
 				@endif
 			</div>
 			<div class="seo-block__item seo-block__item_numbered">
@@ -252,7 +252,7 @@
     				{!! $seoData->third_text !!}
                 </div>
 				@if ($seoData->third_img)
-					<img src="{{ Storage::url($seoData->third_img) }}" alt="" class="seo-block__item-img">
+					<img data-lazy-src="{{ Storage::url($seoData->third_img) }}" alt="" class="seo-block__item-img">
 				@endif
 			</div>
         </div>
@@ -264,22 +264,22 @@
         ])
         <div class="additional__list">
             <a href="{{ route('services', [request()->route()->city, 'deal']) }}" class="additional__item is-hoverable">
-                <img src="/img/windows/home_deal.png" alt="" width="201" height="166" class="additional__img">
+                <img data-lazy-src="/img/windows/home_deal.png" alt="" width="201" height="166" class="additional__img">
                 <h3 class="additional__title">Договор на дому</h3>
                 <p class="text additional__text">
                     Для вашего удобства замерный <br> мастер  может заключить договор&nbsp;у&nbsp;вас&nbsp;дома.
                 </p>
             </a>
             <a href="{{ route('lamps', request()->route()->city) }}" class="additional__item is-hoverable">
-                <img src="/img/ceilings/lamp.png" alt="" width="205" height="134" class="additional__img">
+                <img data-lazy-src="/img/ceilings/lamp.png" alt="" width="205" height="134" class="additional__img">
                 <h3 class="additional__title">Светильники</h3>
                 <p class="text additional__text">
                     Приобретите специальные светильники<br>для натяжных потолков<br>в офисе продаж.
                     
                 </p>
-            </a>
+            </a> 
             <a href="{{ route('services', [request()->route()->city, 'measurements']) }}" class="additional__item is-hoverable">
-                <img src="/img/windows/free_measure.png" alt="" width="201" height="166" class="additional__img">
+                <img data-lazy-src="/img/windows/free_measure.png" alt="" width="201" height="166" class="additional__img">
                 <h3 class="additional__title">Бесплатный замер</h3>
                 <p class="text additional__text">
                     Наш технолог произведет <br> замер и&nbsp;расчет стоимости заказа <br> в&nbsp;удобное&nbsp;для&nbsp;вас&nbsp;время.

@@ -2,8 +2,8 @@
     <div class="review__body b-card">
         <a target="_blank" @if(!empty($review->link)) href="{{ $review->link }}" @endif class="person review__person js-link">
             <div class="avatar person__photo">
-                <img src="{{ $review->getAvatar() }}" alt="" class="avatar person__photo">
-                <img src="/img/gui/{{ $review->social }}_hover.svg" alt="" class="person__social">
+                <img data-lazy-src="{{ $review->getAvatar() }}" alt="" class="avatar person__photo">
+                <img data-lazy-src="/img/gui/{{ $review->social }}_hover.svg" alt="" class="person__social">
             </div>
 
 
@@ -19,24 +19,24 @@
                 {{ $review->text }}
         </p>
         <div class="review__counters">
-            <span class="counter subtext"><img class="counter__img" src="/img/gui/chat.svg" alt="">{{ $review->comments->count() }}</span>
-            <span class="counter subtext"><img class="counter__img" src="/img/gui/attach.svg" alt="">{{ $review->attaches() }}</span>
+            <span class="counter subtext"><img class="counter__img" data-lazy-src="/img/gui/chat.svg" alt="">{{ $review->comments->count() }}</span>
+            <span class="counter subtext"><img class="counter__img" data-lazy-src="/img/gui/attach.svg" alt="">{{ $review->attaches() }}</span>
         </div>
     </div>
     @if ($review->preview_img)
         <div class="review__media {{ $review->video ? 'review__media_video':'' }} b-card">
-            <img class="review__preview" src="{{ Storage::url($review->preview_img) }}" alt="">
+            <img class="review__preview" data-lazy-src="{{ Storage::url($review->preview_img) }}" alt="">
         </div>
     @endif
 </div>
 <div class="popup popup_review" id="popup_review_{{ $review->id }}">
     <a href="javascript:void(0);" class="popup__close js-close">
-    	<img src="/img/gui/close.svg" alt="" class="">
+    	<img data-lazy-src="/img/gui/close.svg" alt="" class="">
     </a>
     <div class="review review_popup">
         <div class="review__body b-card">
             <a class="person review__person">
-                <img src="{{ $review->getAvatar() }}" alt="" class="avatar person__photo">
+                <img data-lazy-src="{{ $review->getAvatar() }}" alt="" class="avatar person__photo">
                 <div class="person__info">
                     <p class="person__name">{{ $review->fio }}</p>
                 </div>
@@ -48,7 +48,7 @@
             </p>
             <div class="review__media review__media_popup {{ $review->video ? 'review__media_video':'' }}">
                 @foreach ($review->getPhotos() as $photo)
-                    <img class="review__img" src="{{ Storage::url($photo) }}" alt="">
+                    <img class="review__img" data-lazy-src="{{ Storage::url($photo) }}" alt="">
                 @endforeach
             </div>
             @if ($review->video)
@@ -71,7 +71,7 @@
                                 <p class="text user__position">{{ $comment->user->position }}</p>
                             </div>
                             <div class="user__right">
-                                <img src="{{ Storage::url($comment->user->avatar) }}" alt="" class="user__avatar">
+                                <img data-lazy-src="{{ Storage::url($comment->user->avatar) }}" alt="" class="user__avatar">
                             </div>
                         @else
                             <div class="user__left">
