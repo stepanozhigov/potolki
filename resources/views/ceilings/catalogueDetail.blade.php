@@ -19,7 +19,7 @@
             <p class="catalogueDetail__price">Полотно — от {{ $type->price }} ₽/м2</p>
             <p class="catalogueDetail__install">С установкой — от {{ $type->price_install }} ₽/м2</p>
             <div class="catalogueDetail__buttons">
-                <button class="button buttons__item js-show" data-src="#popup_callback" data-title="Вызов замерщика" data-button="Вызвать замерщика">Вызвать замерщика</button> 
+                <a href="{{ route('forms.measure', $city) }}" class="button buttons__item">Вызвать замерщика</a> 
                 <a href="{{ route('ceilingsCalc', $city) }}" class="button  button_gray">Рассчитать стоимость</a>
             </div>
         </div>

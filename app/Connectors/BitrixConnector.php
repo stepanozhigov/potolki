@@ -75,7 +75,7 @@ class BitrixConnector {
         $connection = $this->openConnection('https://bitrix-ts.ru:443/crm/configs/import/lead.php', $data);
 
         $result = \curl_exec($connection);
-        Log::info([$data, $result, $connection]);
+        //Log::info([$data, $result, $connection]);
         //var_dump($result, $this->requestData);
         //dd($data);
         return true;

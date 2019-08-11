@@ -172,9 +172,13 @@ class PageController extends Controller
         ]);
     }
 
-    public function callback ()
+    public function callback (City $city)
     {
-        return view('common.forms.callback');
+        return view('common.forms.form', ['city' => $city]); 
+    }
+    public function measure (City $city)
+    {
+        return view('common.forms.measure', ['city' => $city]); 
     }
 
     public function dirMessage (City $city)

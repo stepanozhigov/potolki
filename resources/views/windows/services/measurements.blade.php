@@ -11,8 +11,9 @@
                 <p class="service__overtitle overtitle">бесплатно</p>
                 <h1 class="service__title title">Заполните форму&nbsp;для&nbsp;вызова <br> замерного мастера</h1>
             </div>
-            <form method="POST" action="{{ route('add-lead') }}" class="form service__form">
+            <form method="POST" action="{{ route('forms.feedback', $city) }}" class="form js-less service__form">
                 @csrf
+                <input type="hidden" name="city" value="{{ $city->bx_code }}">
                 <input required name="name" type="text" placeholder="Ваше имя" class="input service__input">
                 <input required name="phone" type="tel" placeholder="Ваш телефон" class="input service__input">
                 <button type="submit" class="button button_red service__button">Вызвать замерщика</button>

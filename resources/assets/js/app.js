@@ -53,7 +53,15 @@ Vue.component('menu-city-search', require('./components/MenuCitySearch.vue'));
 // Vue.component('portfolio-photos', require('./components/PortfolioPhotos.vue'));
 
 
+$('.js-link').on('click', function (event) {
+    event.preventDefault();
 
+    var link = $(this).data('src');
+
+    if (link.length > 0) {
+        location.href = link;
+    }
+})
 
 var seoContainer = $('.seo-block');
 
@@ -596,7 +604,25 @@ $(window).resize(onResize);
 
 
 
-var phoneMask = new Inputmask('8 999 999-99-99'),
+var phoneMask = new Inputmask({
+        mask:'8 999 999-99-99',
+        oncomplete: function(event) {
+            let $this = $(this),
+                form  = $this.parents('form'),
+                button = form.find('button');
+
+            $this.removeClass('error');
+            button.prop('disabled', false); 
+        },
+        onincomplete: function(event) {
+            let $this = $(this),
+                form  = $this.parents('form'),
+                button = form.find('button');
+
+            $this.addClass('error');
+            button.prop('disabled', true);
+        }
+    }),
     $phones = $('[type=tel]');
 
 phoneMask.mask($phones);
@@ -731,7 +757,7 @@ $('.catalog-cards__item').on('click', '.catalog-cards__open', function () {
 });
 
 
-$('.form').on('submit', function (event) {
+$('.form:not(.js-less)').on('submit', function (event) {
     event.preventDefault();
     var $this = $(this),
     	name = $this.find('[name=name]').val(),

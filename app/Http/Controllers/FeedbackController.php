@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Comment;
 use App\Review;
+use App\City;
 use App\Connectors\BitrixConnector;
 
 class FeedbackController extends Controller
@@ -95,7 +96,7 @@ class FeedbackController extends Controller
             $visits.= "utm term: {$visit['utm_term']} \r\n";
             $visits.= "\r\n \r\n \r\n";
         }
-        dump($request->name, $request->phone);
+
         $bitrixConnector->addLead([
             'title' =>  $request->name,
             'name'  =>  $request->name,
@@ -105,6 +106,14 @@ class FeedbackController extends Controller
             'city'  =>  $request->city,
             'source'    =>  'WEB'
         ]);
+    }
+
+    public function feedback (Request $request, City $city)
+    {
+        $this->addLead($request);
+        
+        return view('common.forms.success', ['city' => $city]);
+        
     }
 
     public function proxyLead(Request $request)

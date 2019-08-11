@@ -6,8 +6,9 @@
             <h2 class="footer-offer__title">Запишитесь на&nbsp;замер <span>сегодня</span> и&nbsp;получите дополнительную <span>скидку&nbsp;10%</span></h2>
         @endif
         <p class="footer-offer__intro">Оставьте контактные данные и наш специалист перезвонит вам <span> в течение 5 минут</span></p>
-        <form class="form footer-offer__form" action="{{ route('add-lead') }}">
+        <form class="form js-less footer-offer__form" action="{{ route('forms.feedback', $city) }}" method="POST">
             @csrf
+            <input type="hidden" name="city" value="{{ $city->bx_code }}">
             <input class="input form__input form__input_horiz" type="text" name="name" required placeholder="Ваше имя">
             <input class="input form__input form__input_horiz" type="tel" name="phone" required placeholder="Ваш телефон">
             <button class="button form__button">Вызвать замерщика</button>

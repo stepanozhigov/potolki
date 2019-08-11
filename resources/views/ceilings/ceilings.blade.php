@@ -10,7 +10,7 @@
             <h1 class="title main-offer__title">Натяжные потолки<br> {!! $city->name_formatted !!} от&nbsp100&nbsp<span class="rouble">₽</span>/м<sup>2</sup></h1>
             <p class="main-offer__subtitle">Вызовите специалиста для замера&nbspи&nbsp;расчёта</p>
 
-            <form class="form main-offer__form mobile-hide" action="/forms/add-lead" id="offer-form">
+            <form class="form js-less main-offer__form mobile-hide" method="POST" action="{{ route('forms.feedback', $city) }}" id="offer-form">
                 @csrf
                 <input type="hidden" name="city" value="{{ $city->bx_code }}">
                 <input name="name" required class="input form__input" type="text" placeholder="Ваше имя">
@@ -20,7 +20,7 @@
                 <p class="form__status">Заявка отправлена, спасибо!</p>  
                 <p class="form__agreement subtext subtext_white">Оставляя контактную информацию, вы&nbsp;соглашаетесь на&nbsp;обработку персональных данных</p>
             </form>
-            <button data-src="#popup_callback" class="button main-offer__button mobile-only js-show">Вызвать замерщика</button>
+            <a href="{{ route('forms.measure', $city) }}" class="button main-offer__button mobile-only">Вызвать замерщика</a>
         </div>
     </section>
     <section class="whyus whyus_main whyus_ceilings">
@@ -131,8 +131,8 @@
 
     </section>
 
-    <div id="ceilings-calc">
-        <ceilings-calc ></ceilings-calc>
+    <div>
+        @include('ceilings.calc')
     </div>
 	<div class="discount">
 		<p>Нашли дешевле?</p>
@@ -151,7 +151,7 @@
         </div>
         <div class="buttons portfolio__buttons">
 			<a href="{{ route('photos', $city) }}" class="button button_gray">Посмотреть все работы</a>
-			<button class="button buttons__item js-show" data-src="#popup_callback" data-title="Вызов замерщика" data-button="Вызвать замерщика">Вызвать замерщика</button>
+			<a href="{{ route('forms.measure', $city) }}" class="button buttons__item">Вызвать замерщика</a>
         </div>
     </section>
 
@@ -169,36 +169,6 @@
 			<a href="{{ route('add-review', $city) }}" class="button buttons__item">Оставить отзыв</a>
         </div>
     </section>
-    <!--<section class="articles articles_main articles_ceilings" id="articles">
-        @include('common.gui.titles', [
-            'class' =>  "container",
-            'secondTitle' =>  "Социальные сети"
-        ])
-        <p class="articles__text">Нажмите на логотип социальной сети и посмотрите полезную информацию</p>
-        <div class="socials titles__socials container">
-            <a href="" class="socials__item red-hoverable">
-                <div class="socials__icon socials__icon_insta"></div>
-            </a>
-            <a href="" class="socials__item red-hoverable">
-                <div class="socials__icon socials__icon_fb"></div>
-            </a>
-            <a href="" class="socials__item red-hoverable">
-                <div class="socials__icon socials__icon_vk"></div>
-            </a>
-            <a href="" class="socials__item red-hoverable">
-                <div class="socials__icon socials__icon_ok"></div>
-            </a>
-            <a href="" class="socials__item red-hoverable">
-                <div class="socials__icon socials__icon_youtube"></div>
-            </a>
-        </div>
-        <posts :posts="{{ $articles }}"></posts>
-
-
-
-       <a href="http://89.108.103.224/sochi/articles" class="articles__button">Все посты</a>
-
-    </section>-->
 
     <section class="manufacturers manufacturers_main manufacturers_ceilings container">
         @include('common.gui.titles', [

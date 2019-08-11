@@ -81,20 +81,8 @@ Route::prefix('/{city}')->group(function () {
     Route::get('/whyus', 'PageController@whyus')->name('whyus');
 
     Route::get('/agreement', 'PageController@agreement')->name('agreement');
- 
-    //Route::get('/catalogue/{type}', 'PageController@catalogue')->name('catalogue');
-
-    //Route::get('/ceilings', 'PageController@ceilings')->name('ceilings');
-
-    Route::get('/zamenaPolotna', 'PageController@zamenaPolotna')->name('zamenaPolotna');
 
     Route::get('/ceilingsCalc', 'PageController@ceilingsCalc')->name('ceilingsCalc');
-
-    Route::get('/ustanovka', 'PageController@ustanovka')->name('ustanovka');
-
-    Route::get('/remont', 'PageController@remont')->name('remont');
-
-    Route::get('/sliv', 'PageController@sliv')->name('sliv');
 
     Route::get('/notFound', 'PageController@notFound')->name('notFound');
 
@@ -114,29 +102,16 @@ Route::prefix('/{city}')->group(function () {
 
     Route::get('/dillers', 'PageController@dillers')->name('dillers');
 
-   
-
     Route::get('/credit', 'PageController@credit')->name('credit');
 
-
     Route::get('/climat', 'PageController@climat')->name('climat');
-
-    Route::get('/climatCatalogue', 'PageController@climatCatalogue')->name('climatCatalogue');
-
-    Route::get('/climatDetail', 'PageController@climatDetail')->name('climatDetail');
-
-    Route::get('/climatOrdering', 'PageController@climatOrdering')->name('climatOrdering');
-
-    Route::get('/climatBasket', 'PageController@climatBasket')->name('climatBasket');
-
-    Route::get('/climatOrder', 'PageController@climatOrder')->name('climatOrder');
-
-    Route::get('/climatMaintenance', 'PageController@climatMaintenance')->name('climatMaintenance');
-
-    Route::get('/climatPersonalData', 'PageController@climatPersonalData')->name('climatPersonalData');
 
     Route::get('/serverError', 'PageController@serverError')->name('serverError');
 
     Route::get('/constructor', 'PageController@constructor')->name('constructor');
 
+    Route::get('/forms/callback', 'PageController@callback')->name('forms.callback');
+    Route::get('/forms/measure', 'PageController@measure')->name('forms.measure');
+    Route::post('/forms/success', 'FeedbackController@feedback')->name('forms.feedback');
+    
 });

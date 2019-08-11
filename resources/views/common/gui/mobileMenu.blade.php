@@ -64,7 +64,7 @@
                             <a href="{{ route('services', ['city' => $city, 'type' => 'sliv']) }}">Слив воды</a>
                         </li>
                         <li class="mobileMenu__item">
-                            <a  href="{{ route('zamenaPolotna', $city) }}">Замена полотна</a>
+                            <a  href="{{ route('services', ['city' => $city, 'type' => 'zamenaPolotna']) }}">Замена полотна</a>
                         </li>
                         <li class="mobileMenu__item">
                             <a  href="{{ route('services', ['city' => $city, 'type' => 'remont']) }}">Ремонт</a>

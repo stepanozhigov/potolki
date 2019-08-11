@@ -1504,7 +1504,7 @@ body {
 }
 
 .mobile-only {
-    display: none;
+    display: none !important;
 }
 
 .overflowed {
@@ -1515,7 +1515,7 @@ body {
         display: none;
     }
     .mobile-only {
-        display: initial;
+        display: flex !important;
     }
 }
 
