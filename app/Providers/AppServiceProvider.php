@@ -25,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
 
-        View::share('cities', City::all());
+        View::share('cities', City::orderBy('sort')->get());
         //View::share('currentCity', request()->route()->city);
         View::share('directions', Direction::where('id', '!=', 2)->get());
         View::share('currentDirection',Direction::find(2));

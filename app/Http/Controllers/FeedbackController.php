@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Log;
 use App\Comment;
 use App\Review;
 use App\City;
+use App\Jobs\ProcessFeedback;
 use App\Connectors\BitrixConnector;
 
 class FeedbackController extends Controller
@@ -96,8 +97,7 @@ class FeedbackController extends Controller
             $visits.= "utm term: {$visit['utm_term']} \r\n";
             $visits.= "\r\n \r\n \r\n";
         }
-
-        $bitrixConnector->addLead([
+        $data = [
             'title' =>  $request->name,
             'name'  =>  $request->name,
             'phone' =>  $request->phone,
@@ -105,7 +105,10 @@ class FeedbackController extends Controller
             'description'   =>  $visits,
             'city'  =>  $request->city,
             'source'    =>  'WEB'
-        ]);
+        ];
+        //dd($data);
+        $bitrixConnector->addLead($data); 
+        //ProcessFeedback::dispatch($data); 
     }
 
     public function feedback (Request $request, City $city)

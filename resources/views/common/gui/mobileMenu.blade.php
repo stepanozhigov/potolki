@@ -98,7 +98,7 @@
                     <div class="mobileMenu__category-heading">
                         <a class="mobileMenu__link-prev" href="javascript:void(0);"></a>
                         <a class="mobileMenu__link-category" href="javascript:void(0);">Информация</a>
-                        <a class="mobileMenu__link-category mobileMenu__link-arrow" href="{{ route('about', $city) }}"></a>
+                        <a class="mobileMenu__link-category mobileMenu__link-arrow" style="visibility: hidden;"></a>
                     </div>
                     <ul class="scrollable">
                         <li class="mobileMenu__item">

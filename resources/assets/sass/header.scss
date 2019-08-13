@@ -325,7 +325,7 @@
 
 		.logo {
 			margin-right: auto;
-
+            margin-top: 8px;
 			.logo__icon {
 				width: rem(27);
                 height: rem(32);
@@ -354,10 +354,10 @@
         .menu  {
             margin-left: 0;
             flex-basis: unset;
-            padding-top: rem(7);
+            padding-top: rem(14);
 
             .menu__item {
-                padding-bottom: rem(31);
+                padding-bottom: rem(24);
             }
 
             .menu__item_bordered {
@@ -369,7 +369,7 @@
             }
 
             .menu__item_dropdown:hover .menu__dropdown {
-                top: rem(55);
+                top: rem(47); 
             }
         }
 

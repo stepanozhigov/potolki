@@ -155,25 +155,22 @@ $city = $city ?? App\City::find(1);
 
                     <div class="menu__wrap">
                         <h3 class="menu__item-title">Потолки</h3>
-                        <a href="{{ route('services', $city) }}" class="text menu__item menu__item_bordered">Матовые</a>
-                        <a href="{{ route('about', $city) }}" class="text menu__item menu__item_bordered">Глягцевые</a>
-                        <a href="{{ route('employees', $city) }}" class="text menu__item menu__item_bordered">Сатиновые</a>
-                        <a href="{{ route('vacancies', $city) }}" class="text menu__item menu__item_bordered">Тканевые</a>
-                        <a href="{{ route('questions', $city) }}" class="text menu__item menu__item_bordered">Резные</a>
-                        <a href="{{ route('reviews', $city) }}" class="text menu__item menu__item_bordered">Парящие</a>
-                        <a href="{{ route('articles', $city) }}" class="text menu__item menu__item_bordered">Звездное небо</a>
-                        <a href="{{ route('dirMessage', $city) }}" class="text menu__item menu__item_bordered">Двухуровневые</a>
+                        @foreach(App\CatalogType::where(['direction_id' => 2])->get() as $section)
+                            @if ($section->type != 'rooms')
+                                @if ($section->id == 23)
+                                    <a href="{{ route('photoprint', ['city' => $city]) }}" class="text menu__item menu__item_bordered">{{ $section->name }}</a>
+                                @else
+                                    <a href="{{ route('catalogue', ['city' => $city, 'type' => $section]) }}" class="text menu__item menu__item_bordered">{{ $section->name }}</a>
+                                @endif
+                            @endif
+                            
+                        @endforeach
                     </div>
                     <div class="menu__wrap">
                         <h3 class="menu__item-title">Помещения</h3>
-                        <a href="{{ route('services', $city) }}" class="text menu__item menu__item_bordered">Матовые</a>
-                        <a href="{{ route('about', $city) }}" class="text menu__item menu__item_bordered">Глягцевые</a>
-                        <a href="{{ route('employees', $city) }}" class="text menu__item menu__item_bordered">Сатиновые</a>
-                        <a href="{{ route('vacancies', $city) }}" class="text menu__item menu__item_bordered">Тканевые</a>
-                        <a href="{{ route('questions', $city) }}" class="text menu__item menu__item_bordered">Резные</a>
-                        <a href="{{ route('reviews', $city) }}" class="text menu__item menu__item_bordered">Парящие</a>
-                        <a href="{{ route('articles', $city) }}" class="text menu__item menu__item_bordered">Звездное небо</a>
-                        <a href="{{ route('dirMessage', $city) }}" class="text menu__item menu__item_bordered">Двухуровневые</a>
+                        @foreach(App\CatalogType::where(['direction_id' => 2, 'type' => 'rooms'])->get() as $room)
+                            <a href="{{ route('catalogue', ['city' => $city, 'type' => $room]) }}" class="text menu__item menu__item_bordered">{{ $room->name }}</a>
+                        @endforeach
                     </div>
                 </div>
             </div>

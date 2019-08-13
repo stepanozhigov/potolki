@@ -60,6 +60,9 @@
         },
         computed: {
             showedItems: function () {
+                if(!this.photos) {
+                    return false;
+                }
                 var itemsCount = this.photos.length,
                     index = this.showPoint,
                     items = [];
@@ -96,7 +99,9 @@
                 if (stop) {
                     this.stopSliding();
                 }
-
+                if(!this.photos) {
+                    return false;
+                }
                 const itemsCount = this.photos.length;
 
                 this.showPoint ++;

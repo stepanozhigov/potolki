@@ -756,6 +756,19 @@ $('.catalog-cards__item').on('click', '.catalog-cards__open', function () {
     $(this).closest('.catalog-cards__item').toggleClass('opened');
 });
 
+$(document).on('click', '.b24-widget-button-wrapper', function() {
+    fbq('track', 'Lead');
+    
+    if (typeof ga !== 'undefined') {
+        ga.getAll()[0].send('event', 'callback', 'start');
+    }
+    if (typeof window.yaCounter40202559 !== 'undefined') {
+        window.yaCounter40202559.reachGoal('b24-call');
+    }
+
+});
+
+
 
 $('.form:not(.js-less)').on('submit', function (event) {
     event.preventDefault();
