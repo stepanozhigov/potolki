@@ -52,6 +52,26 @@ Vue.component('menu-city-search', require('./components/MenuCitySearch.vue'));
 
 // Vue.component('portfolio-photos', require('./components/PortfolioPhotos.vue'));
 
+var citySwitch = $('.js-switch-link');
+
+if (citySwitch.length > 0) {
+    $.ajax({
+        url:'/geo/locate',
+        dataType: 'json',
+        success: function (response) {
+            if (response.city)
+            {
+                window.city = response.city;
+                window.city.location = response.location;
+
+                if(response.city.code) {
+                    citySwitch.text('Выбрать '+ response.city.name);
+                    citySwitch.attr('href', 'https://potolki-ts.ru/'+ response.city.code);
+                }
+            }
+        }
+    });
+}
 
 $('.js-link').on('click', function (event) {
     event.preventDefault();

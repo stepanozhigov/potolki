@@ -101,4 +101,6 @@
         window.onload = downloadJSAtOnload;
     }
 </script>
+
+@yield('scripts')
 </html>

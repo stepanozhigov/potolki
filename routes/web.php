@@ -31,6 +31,29 @@ Route::get('/err-handler', function() {
     ]);
 });
 
+Route::get('/geo/locate', function () {
+    $location = geoip(request()->ip());
+    $locationCity = strtolower($location->city);
+    $city = [];
+
+    $codes = [
+        'sochi'    =>   'sochi',
+        'moscow'    => 'moskva',
+        'krasnodar' => 'krasnodar',
+        'vladivostok'   =>   'vladivostok',
+        'dolgoprudnyy'  =>  'dolgoprudnyj',
+        'novosibirsk'   =>  'novosibirsk'
+    ];
+
+    if (!empty($codes[$locationCity]))
+    {
+        $city = City::where('code', $codes[$locationCity])->first()->toArray();
+    }
+    Log::info(['location'   =>  $location, 'city' => $city]);
+    //dd($location);
+    return response()->json(['location' => $location->toArray(),'city' => $city]);
+});
+
 Route::get('/sitemap', 'PageController@sitemap')->name('sitemap');
 
 Route::get('/forms/callback', 'PageController@callback');

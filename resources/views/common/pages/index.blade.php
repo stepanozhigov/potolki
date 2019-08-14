@@ -8,7 +8,7 @@
             <h1 class="title index-offer__title">Фабрика натяжных потолков «Твой&#160;стиль»</h1>
             <p class="intro index-offer__intro">Выберите город, чтобы перейти на&nbspсайт</p>
             <div class="index-offer__buttons">
-                <a href="{{ route('ceilings', ['city' => 'sochi']) }}" class="button index-offer__button">Выбрать Сочи</a>
+                <a href="{{ route('ceilings', ['city' => 'sochi']) }}" class="button js-switch-link index-offer__button">Выбрать Сочи</a>
                 <a href="#cities" class="button button_gray index-offer__button">Выбрать другой город</a>
             </div>
         </section>
