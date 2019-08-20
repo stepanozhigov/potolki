@@ -12,7 +12,27 @@ use App\Connectors\BitrixConnector;
 
 class FeedbackController extends Controller
 {
- 
+    public function quiz (Request $request)
+    {   
+        $desc = "";
+        $bitrixConnector = new BitrixConnector();
+
+        foreach ($request->questions as $question => $answer) {
+            $desc.= "{$question}: {$answer} \r\n";
+        }
+        $data = [
+            'title' => 'Новый результат опроса',
+            'name'  =>  'Новый результат опроса',
+            'phone' =>  $request->phone,
+            'direction' =>  56,
+            'description'   =>  $desc,
+            'city'  =>  $request->city,
+            'source'    =>  'WEB'
+        ];
+        //dd($data);
+        $bitrixConnector->addLead($data); 
+    }
+
     public function addSurvey(Request $request)
     {
         if (!empty($request->message))

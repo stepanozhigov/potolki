@@ -63,8 +63,8 @@ $city = $city ?? App\City::find(1);
                             </a>
                             <a href="javascript:void(0);" class="text menu__dropdown-link">Услуги</a>
                         </div>
-
-	                    <a href="{{ route('services', [$city, 'measurements']) }}" class="text menu__item menu__item_bordered">Бесплатный замер</a>
+ 
+	                    <a href="{{ route('services', ['city' => $city, 'type' => 'measurements']) }}" class="text menu__item menu__item_bordered">Бесплатный замер</a>
 	                    <a href="{{ route('photoprint', $city) }}" class="text menu__item menu__item_bordered">Фотопечать</a>
 	                    <a href="{{ route('services', ['city' => $city, 'type' => 'ustanovka']) }}" class="text menu__item menu__item_bordered">Установка</a>
 	                    <a href="{{ route('services', ['city' => $city, 'type' => 'sliv']) }}" class="text menu__item menu__item_bordered">Слив воды</a>
@@ -183,7 +183,7 @@ $city = $city ?? App\City::find(1);
                         </a>
                         <a href="javascript:void(0);" class="text menu__dropdown-link">Услуги</a>
                     </div>
-                    <a href="{{ route('services', [$city, 'measurements']) }}" class="text menu__item menu__item_bordered">Бесплатный замер</a>
+                    <a href="{{ route('services', ['city' => $city, 'type' => 'measurements']) }}" class="text menu__item menu__item_bordered">Бесплатный замер</a>
                     <a href="{{ route('photoprint', $city) }}" class="text menu__item menu__item_bordered">Фотопечать</a>
                     <a href="{{ route('services', ['city' => $city, 'type' => 'ustanovka']) }}" class="text menu__item menu__item_bordered">Установка</a>
                     <a href="{{ route('services', ['city' => $city, 'type' => 'sliv']) }}" class="text menu__item menu__item_bordered">Слив воды</a>

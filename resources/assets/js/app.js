@@ -49,8 +49,17 @@ Vue.component('posts-list', require('./components/ArticlesList.vue'));
 Vue.component('manufacturers', require('./components/ManufacturersCarousel.vue'));
 Vue.component('banks', require('./components/banksCarousel.vue'));
 Vue.component('menu-city-search', require('./components/MenuCitySearch.vue'));
+Vue.component('quiz', require('./components/Quiz.vue'));
 
 // Vue.component('portfolio-photos', require('./components/PortfolioPhotos.vue'));
+
+const quizContainer = $('#quiz');
+
+if (quizContainer.length > 0) {
+    new Vue({
+        el: '#quiz'
+    })
+}
 
 var citySwitch = $('.js-switch-link');
 
@@ -776,17 +785,17 @@ $('.catalog-cards__item').on('click', '.catalog-cards__open', function () {
     $(this).closest('.catalog-cards__item').toggleClass('opened');
 });
 
-$(document).on('click', '.b24-widget-button-wrapper', function() {
-    fbq('track', 'Lead');
+// $(document).on('click', '.b24-widget-button-wrapper', function() {
+//     fbq('track', 'Lead');
     
-    if (typeof ga !== 'undefined') {
-        ga.getAll()[0].send('event', 'callback', 'start');
-    }
-    if (typeof window.yaCounter40202559 !== 'undefined') {
-        window.yaCounter40202559.reachGoal('b24-call');
-    }
+//     if (typeof ga !== 'undefined') {
+//         ga.getAll()[0].send('event', 'callback', 'start');
+//     }
+//     if (typeof window.yaCounter40202559 !== 'undefined') {
+//         window.yaCounter40202559.reachGoal('b24-call');
+//     }
 
-});
+// });
 
 
 
@@ -832,27 +841,27 @@ $('.form:not(.js-less)').on('submit', function (event) {
     })
 });
 
-$('.phone').on('click', function () {
-    if (typeof window.yaCounter40202559 !== 'undefined') {
-        window.yaCounter40202559.reachGoal('phone-click');
-    }
-    if (typeof ga !== 'undefined') {
-        ga.getAll()[0].send('event', 'click', 'phone');
-    }
-    fbq('track', 'Lead');
+// $('.phone').on('click', function () {
+//     if (typeof window.yaCounter40202559 !== 'undefined') {
+//         window.yaCounter40202559.reachGoal('phone-click');
+//     }
+//     if (typeof ga !== 'undefined') {
+//         ga.getAll()[0].send('event', 'click', 'phone');
+//     }
+//     fbq('track', 'Lead');
 
-});
+// });
 
-$('.whatsapp').on('click', function () {
-    if (typeof window.yaCounter40202559 !== 'undefined') {
-        window.yaCounter40202559.reachGoal('whatsapp');
-    }
-    if (typeof ga !== 'undefined') {
-        ga.getAll()[0].send('event', 'whatsapp', 'click');
-    }
-    fbq('track', 'Lead');
+// $('.whatsapp').on('click', function () {
+//     if (typeof window.yaCounter40202559 !== 'undefined') {
+//         window.yaCounter40202559.reachGoal('whatsapp');
+//     }
+//     if (typeof ga !== 'undefined') {
+//         ga.getAll()[0].send('event', 'whatsapp', 'click');
+//     }
+//     fbq('track', 'Lead');
 
-})
+// })
 
 
 

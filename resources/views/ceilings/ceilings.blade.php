@@ -233,7 +233,7 @@
             'secondTitle' =>  "Также вас может заинтересовать"
         ])
         <div class="additional__list">
-            <a href="{{ route('services', [request()->route()->city, 'deal']) }}" class="additional__item is-hoverable">
+            <a href="{{ route('services', [request()->route()->city, 'measurements']) }}" class="additional__item is-hoverable">
                 <img data-lazy-src="/img/windows/home_deal.png" alt="" width="201" height="166" class="additional__img">
                 <h3 class="additional__title">Договор на дому</h3>
                 <p class="text additional__text">

@@ -64,7 +64,7 @@ class PageController extends Controller
         ]);
     }
 
-    public function services (City $city, $type = null)
+    public function services (City $city, $type)
     {
         $view = 'common.pages.services';
 
@@ -436,6 +436,13 @@ class PageController extends Controller
         return view('common.sitemap', [
             'cities'    =>  $cities,
             'pages' =>  $pages
+        ]);
+    }
+
+    public function quiz (Request $request, City $city)
+    {
+        return view('ceilings.quiz', [
+            'city'  =>  $city
         ]);
     }
 

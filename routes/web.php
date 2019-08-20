@@ -77,7 +77,7 @@ Route::prefix('/{city}')->group(function () {
 
     Route::get('/photos/{type?}', 'PageController@photos')->name('photos');
 
-    Route::get('/services/{type?}', 'PageController@services')->name('services');
+    Route::get('/services/{type}', 'PageController@services')->name('services');
 
     Route::get('/promos', 'PageController@promos')->name('promos');
 
@@ -136,5 +136,9 @@ Route::prefix('/{city}')->group(function () {
     Route::get('/forms/callback', 'PageController@callback')->name('forms.callback');
     Route::get('/forms/measure', 'PageController@measure')->name('forms.measure');
     Route::post('/forms/success', 'FeedbackController@feedback')->name('forms.feedback');
+
     
+    Route::get('/quiz', 'PageController@quiz')->name('quiz');
 });
+
+Route::post('/forms/quiz', 'FeedbackController@quiz')->name('forms.quiz'); 

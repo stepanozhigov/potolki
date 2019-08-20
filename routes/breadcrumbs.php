@@ -70,7 +70,8 @@ Breadcrumbs::for('photos', function ($trail, $city) {
 
 Breadcrumbs::for('services', function ($trail, $city) {
     $trail->parent('ceilings', $city);
-    $trail->push('Услуги', route('services', $city));
+    //dump($type);
+   // $trail->push('Услуги', route('services', $city));
 });
 
 Breadcrumbs::for('zamenaPolotna', function ($trail, $city) {
