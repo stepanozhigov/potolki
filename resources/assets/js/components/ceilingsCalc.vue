@@ -50,7 +50,7 @@
         }
         price = angles * 100 + tubes * 200 + lamps * 250 + area * mult - 400;
 
-        $('.js-calc-price').html(price);
+        $('.js-calc-price').html(price.toLocaleString());
     })
     $(document).ready(function () {
         $('[name=area]').trigger('input');

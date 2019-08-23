@@ -12,7 +12,7 @@
     @endisset
 
     @isset($intro)
-        <p class="intro titles__intro">{!! $intro !!}</p>
+        <p class="intro titles__intro" style="max-height: initial;">{!! $intro !!}</p>
         @if (mb_strlen($intro) > 367)
             <button class="titles__arrow titles__arrow_longtext" type="button">
                 <img src="/img/arrow-down.svg" alt="">

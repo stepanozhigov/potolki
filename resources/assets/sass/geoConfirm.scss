@@ -5,7 +5,7 @@
         display: flex;
         align-items: baseline;
         justify-content: flex-end;
-        padding: rem(5) 0;
+        padding: rem(15) 0;
 
         @include below($tablet-small) {
             padding: rem(10) 0;
@@ -46,7 +46,7 @@
         height: rem(30);
         padding: 0;
         margin-right: rem(35);
-
+        cursor: pointer;
         color: $white;
 
         border: none;
@@ -55,7 +55,6 @@
         background-color: $grey_chateau;
 
         @extend .text;
-        @extend .text_size_small;
         @include below($tablet-small) {
             width: rem(130);
             height: rem(40);
@@ -69,7 +68,7 @@
     &__choose {
         height: rem(30);
         padding: 0;
-
+        cursor: pointer;
         color: $white;
         text-decoration: underline;
 
@@ -78,7 +77,6 @@
         background-color: transparent;
 
         @extend .text;
-        @extend .text_size_small;
     }
 
     &__city-text {
@@ -87,7 +85,6 @@
         color: $white;
 
         @extend .text;
-        @extend .text_size_small;
     }
 
     &__choose-content {
@@ -98,12 +95,12 @@
             flex-wrap: wrap;
             margin-right: rem(-27);
         }
-    }
+    } 
 
     &__choose-city {
         position: relative;
 
-        display: none;
+        display: block;
         width: 100%;
         padding: rem(20) 0;
         margin-top: rem(15);
@@ -148,9 +145,8 @@
 
     &__choose-link {
         color: $white;
-
+        cursor: pointer;
         @extend .text;
-        @extend .text_size_small;
         @include below($mobile) {
             margin-right: rem(27);
             margin-bottom: rem(25);

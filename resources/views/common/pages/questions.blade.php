@@ -2,13 +2,15 @@
 
 @section('content')
     @include('common.gui.header')
-
+    <?
+       // $intro = App\Text::find(2); 
+    ?>
     <section class="questions">
         @include('common.gui.titles', [
             'class' =>  'container',
             'overtitle' =>  'Вопрос-ответ',
             'title' =>  "Получите ответы на вопросы о натяжных потолках.",
-            "intro" =>  'В&nbsp;этом разделе мы&nbsp;собрали ответы на&nbsp;самые популярные вопросы. А&nbsp;если вы&nbsp;не&nbsp;нашли интересующую вас информацию, наши менеджеры с&nbsp;удовольствием дадут вам полную консультацию.'
+            "intro" =>  $intro->text ?? 'В&nbsp;этом разделе мы&nbsp;собрали ответы на&nbsp;самые популярные вопросы. А&nbsp;если вы&nbsp;не&nbsp;нашли интересующую вас информацию, наши менеджеры с&nbsp;удовольствием дадут вам полную консультацию.'
         ])
 
         <div class="questions__content container b-texture b-texture_square">

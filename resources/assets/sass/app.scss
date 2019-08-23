@@ -166,10 +166,14 @@
 
 @import 'discount';
 
-@import 'gui/formPage'; 
+@import 'gui/formPage';
+
+//@import 'photoprint/photoprintPage';
 
 @import '~ion-rangeslider/css/ion.rangeSlider.css';
 
 @import '~tooltipster/dist/css/tooltipster.bundle.css';
 
 @import '~rateyo/src/jquery.rateyo.css';
+
+@import 'geoConfirm';

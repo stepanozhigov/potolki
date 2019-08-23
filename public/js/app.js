@@ -24674,7 +24674,7 @@ module.exports = Component.exports
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(11);
-module.exports = __webpack_require__(131);
+module.exports = __webpack_require__(134);
 
 
 /***/ }),
@@ -24736,8 +24736,13 @@ Vue.component('manufacturers', __webpack_require__(109));
 Vue.component('banks', __webpack_require__(114));
 Vue.component('menu-city-search', __webpack_require__(119));
 Vue.component('quiz', __webpack_require__(124));
-
+Vue.component('geo-confirm', __webpack_require__(130));
 // Vue.component('portfolio-photos', require('./components/PortfolioPhotos.vue'));
+if ($('#geo-confirm').length > 0) {
+    new Vue({
+        el: '#geo-confirm'
+    });
+}
 
 var quizContainer = $('#quiz');
 
@@ -25052,7 +25057,7 @@ $('.survey__yes').on('click', function () {
     $('.survey__thankyou').slideDown();
 });
 
-var bodyScrollLock = __webpack_require__(130);
+var bodyScrollLock = __webpack_require__(133);
 var disableBodyScroll = bodyScrollLock.disableBodyScroll;
 var enableBodyScroll = bodyScrollLock.enableBodyScroll;
 
@@ -38510,7 +38515,7 @@ $(document).on('input', '.range', function (e) {
     }
     price = angles * 100 + tubes * 200 + lamps * 250 + area * mult - 400;
 
-    $('.js-calc-price').html(price);
+    $('.js-calc-price').html(price.toLocaleString());
 });
 $(document).ready(function () {
     $('[name=area]').trigger('input');
@@ -46104,7 +46109,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.quiz {\n\t\tpadding: 96px 120px 112px 120px;\n\t    display: -webkit-box;\n\t    display: -ms-flexbox;\n\t    display: flex;\n\t    -webkit-box-orient: vertical;\n\t    -webkit-box-direction: normal;\n\t        -ms-flex-direction: column;\n\t            flex-direction: column;\n\t    -webkit-box-align: center;\n\t        -ms-flex-align: center;\n\t            align-items: center;\n\t    background-image: url(/img/ceilings/quiz/quiz.jpg);\n\t    background-position: center;\n\t    background-repeat: no-repeat;\n\t    margin-bottom: 80px;\n}\n.quiz__footer {\n\t\tdisplay: -webkit-box;\n\t\tdisplay: -ms-flexbox;\n\t\tdisplay: flex;\n\t    -webkit-box-pack: justify;\n\t        -ms-flex-pack: justify;\n\t            justify-content: space-between;\n\t    width: 80%;\n\t    margin: 0 auto;\n\t    margin-bottom: 80px;\n}\n.quiz__additional {\n\t\twidth: 24%;\n\t    display: -webkit-box;\n\t    display: -ms-flexbox;\n\t    display: flex;\n\t    -webkit-box-orient: vertical;\n\t    -webkit-box-direction: normal;\n\t        -ms-flex-direction: column;\n\t            flex-direction: column;\n\t    -webkit-box-align: center;\n\t        -ms-flex-align: center;\n\t            align-items: center;\n}\n.quiz__additional p {\n\t\tcolor: #485058;\n\t\tfont-family: \"Playfair Display\";\n\t\tfont-size: 20px;\n\t\tfont-weight: 400;\n\t\tline-height: 24px;\n}\n.quiz__success {\n\t\tpadding-top: 40px;\n}\n.quiz__result {\n\t\t-webkit-box-orient: vertical;\n\t\t-webkit-box-direction: normal;\n\t\t    -ms-flex-direction: column;\n\t\t        flex-direction: column;\n}\n.quiz__result p {\n\t\tcolor: #485058;\n\t\tmargin-bottom: 16px;\n}\n.quiz__result input {\n\t\twidth: 368px;\n\t\tmargin-bottom: 48px;\n}\n.quiz__result button {\n\t \twidth: 368px;\n}\n.quiz__titles {\n\t\tmargin-bottom: 42px;\n}\n.quiz__overtitle {\n\t\tcolor: white;\n\t\tfont-size: 16px;\n}\n.quiz__step {\n\t\tfont-size: 16px;\n\t    font-weight: 300;\n\t    color: #485058;\n}\n.quiz__title {\n\t\tfont-size: 64px;\n\t\tline-height: 64px;\n\t\tdisplay: -webkit-box;\n\t\tdisplay: -ms-flexbox;\n\t\tdisplay: flex;\n\t\t-webkit-box-orient: vertical;\n\t\t-webkit-box-direction: normal;\n\t\t    -ms-flex-direction: column;\n\t\t        flex-direction: column;\n\t\tcolor: white;\n}\n.quiz__title::after, .second-title::after {\n\t\tcontent: none;\n}\n.quiz__title span {\n\t\tfont-size: 48px;\n}\n.quiz__intro {\n\t\tcolor: white;\n\t\tmargin-bottom: 62px;\n}\n.quiz__buttons {\n\t\tmargin-top: 48px;\n\t\tdisplay: -webkit-box;\n\t\tdisplay: -ms-flexbox;\n\t\tdisplay: flex;\n\t\t-webkit-box-pack: justify;\n\t\t    -ms-flex-pack: justify;\n\t\t        justify-content: space-between;\n}\n.quiz__button {\n\t\tfont-weight: 300;\n}\n.quiz__popup {\n\t    -webkit-box-align: center;\n\t        -ms-flex-align: center;\n\t            align-items: center;\n    \t-webkit-box-pack: center;\n    \t    -ms-flex-pack: center;\n    \t        justify-content: center;\n    \t-webkit-box-orient: vertical;\n    \t-webkit-box-direction: normal;\n    \t    -ms-flex-direction: column;\n    \t        flex-direction: column;\n\t\tpadding: 48px 40px 64px 40px;\n\t\t-webkit-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16), 0 0 8px rgba(0, 0, 0, 0.08), inset 0 -1px 0 rgba(0, 0, 0, 0.12);\n\t\t        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16), 0 0 8px rgba(0, 0, 0, 0.08), inset 0 -1px 0 rgba(0, 0, 0, 0.12);\n\t\tborder-radius: 16px;\n\t\twidth: 1120px;\n\t    background: white;\n\t    z-index: 9999999;\n\t    display: -webkit-box;\n\t    display: -ms-flexbox;\n\t    display: flex;   \n\t    position: fixed;\n\t    top: 50%;\n\t    left: 50%;\n\t    -webkit-transform: translate(-50%, -50%);\n\t            transform: translate(-50%, -50%);\n}\n.quiz__content {\n\t\tdisplay: -webkit-box;\n\t\tdisplay: -ms-flexbox;\n\t\tdisplay: flex;\n\t\t-ms-flex-wrap: wrap;\n\t\t    flex-wrap: wrap;\n\t\twidth: 100%;\n\t    -webkit-box-pack: justify;\n\t        -ms-flex-pack: justify;\n\t            justify-content: space-between;\n\t    -webkit-box-align: center;\n\t        -ms-flex-align: center;\n\t            align-items: center;\n}\n.quiz__content_area {\n\t\twidth: 51%;\n}\n.quiz__content_when {\n\t\twidth: 85%;\n}\n.quiz__img {\n\t\tmargin-bottom: 16px;\n\t\twidth: 100%;\n}\n.quiz__types {\n\t\t-webkit-box-pack: center;\n\t\t    -ms-flex-pack: center;\n\t\t        justify-content: center;\n}\n.quiz__type {\n\t\tmargin: 0 16px 32px 0;\n\t\twidth: 23.8%;\n\t\t-ms-flex-wrap: wrap;\n\t\t    flex-wrap: wrap;\n\t\tdisplay: -webkit-box;\n\t\tdisplay: -ms-flexbox;\n\t\tdisplay: flex;\n\t\t-webkit-box-orient: vertical;\n\t\t-webkit-box-direction: normal;\n\t\t    -ms-flex-direction: column;\n\t\t        flex-direction: column;\n\t\t-webkit-box-align: center;\n\t\t    -ms-flex-align: center;\n\t\t        align-items: center;\n}\n.quiz__type:nth-of-type(4) {\n\t\tmargin-right: 0\n}\n@media screen and (max-width: 1200px) {\n.quiz__popup {\n\t\t\twidth: 95%;\n}\n.quiz__types {\n\t\t\t-webkit-box-pack: space-evenly;\n\t\t\t    -ms-flex-pack: space-evenly;\n\t\t\t        justify-content: space-evenly;\n}\n.quiz__type {\n\t\t    margin-right: 0;\n\t\t    width: 30%;\n}\n}\n@media screen and (max-width: 900px) {\n.quiz {\n\t\t\tbackground-image: url('/img/ceilings/quiz/quiz_768.jpg');\n\t\t    background-size: cover;\n\t\t    padding-left: 36px;\n\t\t    padding-right: 36px;\n}\n.quiz__title {\n\t\t\tfont-size: 48px;\n}\n.quiz__title span {\n\t\t\tfont-size: 40px;\n}\n.quiz__footer {\n\t\t\t-ms-flex-wrap: wrap;\n\t\t\t    flex-wrap: wrap;\n}\n}\n@media screen and (max-width: 500px) {\n.quiz {\n\t\t\tbackground-image: url('/img/ceilings/quiz/quiz_320.jpg');\n\t\t    background-size: cover;\n\t\t    padding: 46px 8px;\n}\n.quiz__popup {\n\t        max-height: 95vh;\n   \t\t\toverflow: scroll;\n}\n.quiz__overtitle {\n\t\t\tfont-size: 14px;\n}\n.quiz__titles {\n\t\t\tmargin-bottom: 12px;\n}\n.quiz__title {\n\t\t\tfont-size: 32px;\n\t\t\tline-height: 40px;\n}\n.quiz__title span {\n\t\t\tfont-size: 24px;\n}\n.quiz__additional {\n\t\t\twidth: 45%;\n\t\t\ttext-align: center;\n}\n.quiz__radio {\n\t\t\tmargin-bottom: 16px;\n}\n.quiz__types {\n\t\t\t-webkit-box-orient: vertical;\n\t\t\t-webkit-box-direction: normal;\n\t\t\t    -ms-flex-direction: column;\n\t\t\t        flex-direction: column;\n}\n.quiz__type {\n\t\t\twidth: 100%;\n\t\t\t-webkit-box-align: start;\n\t\t\t    -ms-flex-align: start;\n\t\t\t        align-items: flex-start;\n\t\t\tmargin-bottom: 16px;\n}\n.quiz__img {\n\t\t\tdisplay: none;\n}\n.quiz__buttons {\n\t\t\t-webkit-box-orient: vertical;\n\t\t\t-webkit-box-direction: normal;\n\t\t\t    -ms-flex-direction: column;\n\t\t\t        flex-direction: column;\n    \t\twidth: 100%;\n}\n.quiz__button {\n\t\t\tmargin-bottom: 16px;\n}\n.quiz__next {\n\t\t\t-webkit-box-ordinal-group: 2;\n\t\t\t    -ms-flex-order: 1;\n\t\t\t        order: 1;\n}\n.quiz__prev {\n\t\t\t-webkit-box-ordinal-group: 3;\n\t\t\t    -ms-flex-order: 2;\n\t\t\t        order: 2;\n}\n.quiz__result p {\n\t\t\ttext-align: center;\n}\n.quiz__result input {\n\t\t\twidth: 100%;\n}\n.quiz__content_area {\n\t\t\t-webkit-box-align: start;\n\t\t\t    -ms-flex-align: start;\n\t\t\t        align-items: flex-start;\n\t\t    -webkit-box-pack: start;\n\t\t        -ms-flex-pack: start;\n\t\t            justify-content: flex-start;\n\t\t    width: 100%;\n\t\t    -webkit-box-orient: vertical;\n\t\t    -webkit-box-direction: normal;\n\t\t        -ms-flex-direction: column;\n\t\t            flex-direction: column;\n}\n}\n", ""]);
+exports.push([module.i, "\n.quiz {\n\t\tpadding: 96px 120px 112px 120px;\n\t    display: -webkit-box;\n\t    display: -ms-flexbox;\n\t    display: flex;\n\t    -webkit-box-orient: vertical;\n\t    -webkit-box-direction: normal;\n\t        -ms-flex-direction: column;\n\t            flex-direction: column;\n\t    -webkit-box-align: center;\n\t        -ms-flex-align: center;\n\t            align-items: center;\n\t    background-image: url(/img/ceilings/quiz/quiz.jpg);\n\t    background-position: center;\n\t    background-repeat: no-repeat;\n\t    margin-bottom: 80px;\n}\n.quiz__footer {\n\t\tdisplay: -webkit-box;\n\t\tdisplay: -ms-flexbox;\n\t\tdisplay: flex;\n\t    -webkit-box-pack: justify;\n\t        -ms-flex-pack: justify;\n\t            justify-content: space-between;\n\t    width: 80%;\n\t    margin: 0 auto;\n\t    margin-bottom: 80px;\n}\n.quiz__additional {\n\t\twidth: 24%;\n\t    display: -webkit-box;\n\t    display: -ms-flexbox;\n\t    display: flex;\n\t    -webkit-box-orient: vertical;\n\t    -webkit-box-direction: normal;\n\t        -ms-flex-direction: column;\n\t            flex-direction: column;\n\t    -webkit-box-align: center;\n\t        -ms-flex-align: center;\n\t            align-items: center;\n}\n.quiz__additional p {\n\t\tcolor: #485058;\n\t\tfont-family: \"Playfair Display\";\n\t\tfont-size: 20px;\n\t\tfont-weight: 400;\n\t\tline-height: 24px;\n}\n.quiz__success {\n\t\tpadding-top: 40px;\n}\n.quiz__result {\n\t\t-webkit-box-orient: vertical;\n\t\t-webkit-box-direction: normal;\n\t\t    -ms-flex-direction: column;\n\t\t        flex-direction: column;\n}\n.quiz__result p {\n\t\tcolor: #485058;\n\t\tmargin-bottom: 16px;\n}\n.quiz__result input {\n\t\twidth: 368px;\n\t\tmargin-bottom: 48px;\n}\n.quiz__result button {\n\t \twidth: 368px;\n}\n.quiz__titles {\n\t\tmargin-bottom: 42px;\n}\n.quiz__overtitle {\n\t\tcolor: white;\n\t\tfont-size: 16px;\n}\n.quiz__step {\n\t\tfont-size: 16px;\n\t    font-weight: 300;\n\t    color: #485058;\n}\n.quiz__title {\n\t\tfont-size: 64px;\n\t\tline-height: 64px;\n\t\tdisplay: -webkit-box;\n\t\tdisplay: -ms-flexbox;\n\t\tdisplay: flex;\n\t\t-webkit-box-orient: vertical;\n\t\t-webkit-box-direction: normal;\n\t\t    -ms-flex-direction: column;\n\t\t        flex-direction: column;\n\t\tcolor: white;\n}\n.quiz__title::after, .second-title::after {\n\t\tcontent: none;\n}\n.quiz__title span {\n\t\tfont-size: 48px;\n}\n.quiz__intro {\n\t\tcolor: white;\n\t\tmargin-bottom: 62px;\n}\n.quiz__buttons {\n\t\tmargin-top: 48px;\n\t\tdisplay: -webkit-box;\n\t\tdisplay: -ms-flexbox;\n\t\tdisplay: flex;\n\t\t-webkit-box-pack: justify;\n\t\t    -ms-flex-pack: justify;\n\t\t        justify-content: space-between;\n}\n.quiz__button {\n\t\tfont-weight: 300;\n}\n.quiz__popup {\n\t    -webkit-box-align: center;\n\t        -ms-flex-align: center;\n\t            align-items: center;\n    \t-webkit-box-pack: center;\n    \t    -ms-flex-pack: center;\n    \t        justify-content: center;\n    \t-webkit-box-orient: vertical;\n    \t-webkit-box-direction: normal;\n    \t    -ms-flex-direction: column;\n    \t        flex-direction: column;\n\t\tpadding: 48px 40px 64px 40px;\n\t\t-webkit-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16), 0 0 8px rgba(0, 0, 0, 0.08), inset 0 -1px 0 rgba(0, 0, 0, 0.12);\n\t\t        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16), 0 0 8px rgba(0, 0, 0, 0.08), inset 0 -1px 0 rgba(0, 0, 0, 0.12);\n\t\tborder-radius: 16px;\n\t\twidth: 1120px;\n\t    background: white;\n\t    z-index: 9999999;\n\t    display: -webkit-box;\n\t    display: -ms-flexbox;\n\t    display: flex;   \n\t    position: fixed;\n\t    top: 50%;\n\t    left: 50%;\n\t    -webkit-transform: translate(-50%, -50%);\n\t            transform: translate(-50%, -50%);\n}\n.quiz__content {\n\t\tdisplay: -webkit-box;\n\t\tdisplay: -ms-flexbox;\n\t\tdisplay: flex;\n\t\t-ms-flex-wrap: wrap;\n\t\t    flex-wrap: wrap;\n\t\twidth: 100%;\n\t    -webkit-box-pack: justify;\n\t        -ms-flex-pack: justify;\n\t            justify-content: space-between;\n\t    -webkit-box-align: center;\n\t        -ms-flex-align: center;\n\t            align-items: center;\n}\n.quiz__content_area {\n\t\twidth: 51%;\n}\n.quiz__content_when {\n\t\twidth: 85%;\n}\n.quiz__img {\n\t\tmargin-bottom: 16px;\n\t\twidth: 100%;\n}\n.quiz__types {\n\t\t-webkit-box-pack: center;\n\t\t    -ms-flex-pack: center;\n\t\t        justify-content: center;\n}\n.quiz__type {\n\t\tmargin: 0 16px 32px 0;\n\t\twidth: 23.8%;\n\t\t-ms-flex-wrap: wrap;\n\t\t    flex-wrap: wrap;\n\t\tdisplay: -webkit-box;\n\t\tdisplay: -ms-flexbox;\n\t\tdisplay: flex;\n\t\t-webkit-box-orient: vertical;\n\t\t-webkit-box-direction: normal;\n\t\t    -ms-flex-direction: column;\n\t\t        flex-direction: column;\n\t\t-webkit-box-align: center;\n\t\t    -ms-flex-align: center;\n\t\t        align-items: center;\n}\n.quiz__type:nth-of-type(4) {\n\t\tmargin-right: 0\n}\n@media screen and (max-width: 1200px) {\n.quiz__popup {\n\t\t\twidth: 95%;\n}\n.quiz__types {\n\t\t\t-webkit-box-pack: space-evenly;\n\t\t\t    -ms-flex-pack: space-evenly;\n\t\t\t        justify-content: space-evenly;\n}\n.quiz__type {\n\t\t    margin-right: 0;\n\t\t    width: 30%;\n}\n}\n@media screen and (max-width: 900px) {\n.quiz {\n\t\t\tbackground-image: url('/img/ceilings/quiz/quiz_768.jpg');\n\t\t    background-size: cover;\n\t\t    padding-left: 36px;\n\t\t    padding-right: 36px;\n}\n.quiz__title {\n\t\t\tfont-size: 48px;\n}\n.quiz__title span {\n\t\t\tfont-size: 40px;\n}\n.quiz__footer {\n\t\t\t-ms-flex-wrap: wrap;\n\t\t\t    flex-wrap: wrap;\n}\n}\n@media screen and (max-width: 500px) {\n.quiz {\n\t\t\tbackground-color: #485058;\n    \t\tbackground-image: none;\n\t\t    padding: 46px 8px;\n}\n.quiz__popup {\n\t        max-height: 95vh;\n   \t\t\toverflow: scroll;\n}\n.quiz__overtitle {\n\t\t\tfont-size: 14px;\n}\n.quiz__titles {\n\t\t\tmargin-bottom: 12px;\n}\n.quiz__title {\n\t\t\tfont-size: 32px;\n\t\t\tline-height: 40px;\n}\n.quiz__title span {\n\t\t\tfont-size: 24px;\n}\n.quiz__additional {\n\t\t\twidth: 45%;\n\t\t\ttext-align: center;\n}\n.quiz__radio {\n\t\t\tmargin-bottom: 16px;\n}\n.quiz__types {\n\t\t\t-webkit-box-orient: vertical;\n\t\t\t-webkit-box-direction: normal;\n\t\t\t    -ms-flex-direction: column;\n\t\t\t        flex-direction: column;\n}\n.quiz__type {\n\t\t\twidth: 100%;\n\t\t\t-webkit-box-align: start;\n\t\t\t    -ms-flex-align: start;\n\t\t\t        align-items: flex-start;\n\t\t\tmargin-bottom: 16px;\n}\n.quiz__img {\n\t\t\tdisplay: none;\n}\n.quiz__buttons {\n\t\t\t-webkit-box-orient: vertical;\n\t\t\t-webkit-box-direction: normal;\n\t\t\t    -ms-flex-direction: column;\n\t\t\t        flex-direction: column;\n    \t\twidth: 100%;\n}\n.quiz__button {\n\t\t\tmargin-bottom: 16px;\n}\n.quiz__next {\n\t\t\t-webkit-box-ordinal-group: 2;\n\t\t\t    -ms-flex-order: 1;\n\t\t\t        order: 1;\n}\n.quiz__prev {\n\t\t\t-webkit-box-ordinal-group: 3;\n\t\t\t    -ms-flex-order: 2;\n\t\t\t        order: 2;\n}\n.quiz__result p {\n\t\t\ttext-align: center;\n}\n.quiz__result input {\n\t\t\twidth: 100%;\n}\n.quiz__content_area {\n\t\t\t-webkit-box-align: start;\n\t\t\t    -ms-flex-align: start;\n\t\t\t        align-items: flex-start;\n\t\t    -webkit-box-pack: start;\n\t\t        -ms-flex-pack: start;\n\t\t            justify-content: flex-start;\n\t\t    width: 100%;\n\t\t    -webkit-box-orient: vertical;\n\t\t    -webkit-box-direction: normal;\n\t\t        -ms-flex-direction: column;\n\t\t            flex-direction: column;\n}\n}\n", ""]);
 
 // exports
 
@@ -48055,6 +48060,275 @@ if (false) {
 /* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(131)
+/* template */
+var __vue_template__ = __webpack_require__(132)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/GeoConfirm.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-b9da3fb4", Component.options)
+  } else {
+    hotAPI.reload("data-v-b9da3fb4", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 131 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	data: function data() {
+		return {
+			located: null,
+			confirmed: false,
+			citiesShown: false
+		};
+	},
+	mounted: function mounted() {
+		if (!localStorage.getItem('cityConfirm')) {
+			this.confirmed = false;
+			this.getCity();
+		} else {
+			this.confirmed = true;
+		}
+	},
+	props: ['cities'],
+	methods: {
+		getCity: function getCity() {
+			var thus = this;
+			$.ajax({
+				url: '/geo/locate',
+				dataType: 'json',
+				success: function success(response) {
+					if (response.city) {
+						window.city = response.city;
+						window.city.location = response.location;
+
+						thus.located = response.city;
+						// if(response.city.code) {
+						//     citySwitch.text('Выбрать '+ response.city.name);
+						//     citySwitch.attr('href', 'https://potolki-ts.ru/'+ response.city.code);
+						// }
+					}
+				}
+			});
+		},
+		chose: function chose(city) {
+			this.confirm();
+			window.location = '/' + city.code;
+		},
+		confirm: function confirm() {
+			this.confirmed = true;
+			localStorage.setItem('cityConfirm', true);
+		}
+	}
+});
+
+/***/ }),
+/* 132 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm.located && !_vm.confirmed
+    ? _c("div", { staticClass: "geoConfirm" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "geoConfirm__content" }, [
+            _c("div", { staticClass: "geoConfirm__city" }, [
+              _c(
+                "svg",
+                {
+                  attrs: {
+                    viewBox: "0 0 18 26",
+                    version: "1.1",
+                    xmlns: "http://www.w3.org/2000/svg",
+                    "xmlns:xlink": "http://www.w3.org/1999/xlink"
+                  }
+                },
+                [
+                  _c("title", [_vm._v("path")]),
+                  _vm._v(" "),
+                  _c("desc", [_vm._v("Created with Sketch.")]),
+                  _vm._v(" "),
+                  _c("defs"),
+                  _vm._v(" "),
+                  _c(
+                    "g",
+                    {
+                      attrs: {
+                        id: "GUI",
+                        stroke: "",
+                        "stroke-width": "1",
+                        fill: "none",
+                        "fill-rule": "evenodd"
+                      }
+                    },
+                    [
+                      _c(
+                        "g",
+                        {
+                          attrs: {
+                            transform: "translate(-905.000000, -1685.000000)",
+                            id: "path",
+                            stroke: "",
+                            "fill-rule": "nonzero"
+                          }
+                        },
+                        [
+                          _c("path", {
+                            attrs: {
+                              d:
+                                "M914.016839,1710.24888 L914.580705,1709.64431 C915.175032,1708.92368 915.902346,1707.94717 916.761073,1706.71626 C917.621677,1705.48267 918.492699,1704.15745 919.374103,1702.74059 C920.24308,1701.3437 920.984001,1699.8464 921.59691,1698.24819 C922.200617,1696.67399 922.5,1695.28832 922.5,1694.0939 C922.5,1691.70242 921.6758,1689.68265 920.017098,1688.00665 C918.359394,1686.33164 916.363248,1685.5 914,1685.5 C911.636752,1685.5 909.640606,1686.33164 907.9829,1688.00665 C906.3242,1689.68265 905.5,1691.70243 905.5,1694.0939 C905.5,1695.28738 905.809205,1696.69332 906.432865,1698.30812 C907.067464,1699.95125 907.770238,1701.42147 908.540655,1702.71889 C909.31666,1704.02572 910.22303,1705.3743 911.259859,1706.76445 C912.300037,1708.15908 913.019849,1709.08844 913.41254,1709.54474 C913.639487,1709.80846 913.840901,1710.04314 914.016839,1710.24888 Z M914,1697.82864 C912.98052,1697.82864 912.097551,1697.45987 911.379519,1696.73434 C910.662474,1696.00982 910.298658,1695.12044 910.298658,1694.0939 C910.298658,1693.06736 910.662474,1692.17797 911.379517,1691.45345 C912.097551,1690.72792 912.98052,1690.35915 914,1690.35915 C915.01948,1690.35915 915.902449,1690.72792 916.620481,1691.45345 C917.337526,1692.17797 917.701342,1693.06736 917.701342,1694.0939 C917.701342,1695.12044 917.337526,1696.00982 916.620483,1696.73434 C915.902449,1697.45987 915.01948,1697.82864 914,1697.82864 Z"
+                            }
+                          })
+                        ]
+                      )
+                    ]
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c("p", { staticClass: "geoConfirm__city-text" }, [
+                _vm._v("Ваш город "),
+                _c("span", { staticClass: "geoConfirm__city-name" }, [
+                  _vm._v(_vm._s(_vm.located.name))
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "geoConfirm__confirm",
+                on: { click: _vm.confirm }
+              },
+              [_vm._v("Да, верно")]
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "geoConfirm__choose",
+                on: {
+                  click: function($event) {
+                    _vm.citiesShown = true
+                  }
+                }
+              },
+              [_vm._v("Нет, сменить город")]
+            )
+          ]),
+          _vm._v(" "),
+          _vm.citiesShown
+            ? _c("div", { staticClass: "geoConfirm__choose-city" }, [
+                _c(
+                  "div",
+                  { staticClass: "geoConfirm__choose-content" },
+                  _vm._l(_vm.cities, function(city) {
+                    return city.name !== _vm.located.name
+                      ? _c(
+                          "a",
+                          {
+                            staticClass:
+                              "geoConfirm__choose-link red-hoverable",
+                            on: {
+                              click: function($event) {
+                                _vm.chose(city)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(city.name))]
+                        )
+                      : _vm._e()
+                  })
+                )
+              ])
+            : _vm._e()
+        ])
+      ])
+    : _vm._e()
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-b9da3fb4", module.exports)
+  }
+}
+
+/***/ }),
+/* 133 */
+/***/ (function(module, exports, __webpack_require__) {
+
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!function(e,t){if(true)!(__WEBPACK_AMD_DEFINE_ARRAY__ = [exports], __WEBPACK_AMD_DEFINE_FACTORY__ = (t),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
@@ -48062,7 +48336,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 
 /***/ }),
-/* 131 */
+/* 134 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

@@ -421,8 +421,8 @@
 	}
 	@media screen and (max-width: 500px) {
 		.quiz {
-			background-image: url('/img/ceilings/quiz/quiz_320.jpg');
-		    background-size: cover;
+			background-color: #485058;
+    		background-image: none;
 		    padding: 46px 8px;
 		}
 		.quiz__popup {

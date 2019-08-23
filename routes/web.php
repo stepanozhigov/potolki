@@ -42,7 +42,11 @@ Route::get('/geo/locate', function () {
         'krasnodar' => 'krasnodar',
         'vladivostok'   =>   'vladivostok',
         'dolgoprudnyy'  =>  'dolgoprudnyj',
-        'novosibirsk'   =>  'novosibirsk'
+        'novosibirsk'   =>  'novosibirsk',
+        'artem' => 'artem',
+        'khabarovsk'    =>  'habarovsk', 
+        'ussuriysk' =>  'ussuriysk',
+        'blagoveshchensk'   =>  'blagoveschensk'
     ];
 
     if (!empty($codes[$locationCity]))

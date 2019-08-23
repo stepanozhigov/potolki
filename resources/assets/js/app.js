@@ -50,8 +50,14 @@ Vue.component('manufacturers', require('./components/ManufacturersCarousel.vue')
 Vue.component('banks', require('./components/banksCarousel.vue'));
 Vue.component('menu-city-search', require('./components/MenuCitySearch.vue'));
 Vue.component('quiz', require('./components/Quiz.vue'));
-
+Vue.component('geo-confirm', require('./components/GeoConfirm.vue'));
 // Vue.component('portfolio-photos', require('./components/PortfolioPhotos.vue'));
+if ($('#geo-confirm').length > 0) {
+    new Vue({
+        el: '#geo-confirm'
+    })
+}
+
 
 const quizContainer = $('#quiz');
 

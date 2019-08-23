@@ -20,7 +20,7 @@
             $title = str_replace('#city_title#', $city->name_formatted, $seoData->meta_title);
             $desc = str_replace('#city_title#', $city->name_formatted, $seoData->meta_description);
         }
-        ?>
+        ?> 
         <title>{!! $title !!}</title>
         <meta name="description" content="{!! $desc !!}" />
     @else 
@@ -72,6 +72,11 @@
 
 </head>
 <body class="body">
+    <? if (request()->path() !== '/'): ?>
+        <div id="geo-confirm">
+            <geo-confirm :cities="{{ $cities }}"></geo-confirm>
+        </div>
+    <? endif ?>
     <div id="app">
         @yield('content')
     </div>
