@@ -1207,11 +1207,15 @@ corresponds to the arrow we want to display */
 }
 
 @font-face {
-  font-family: 'rouble';
-  src: url("/fonts/RUBSR.woff") format("woff");
+  font-family: 'PT Rouble Serif';
+  src: url(/fonts/RUBSR.woff?0c8e9d280b85f98358aeca0b3c0e6956) format("woff");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
+}
+
+.rouble {
+  font-family: "PT Rouble Serif";
 }
 
 .overtitle,
@@ -9892,9 +9896,10 @@ body.no-scroll .header__close {
   display: block;
 }
 
+/*
 .rouble {
-  font-family: 'PTRoubleSans';
-}
+    font-family: 'PTRoubleSans';
+}*/
 
 .ts-tooltip .tooltipster-box {
   max-width: 38.125rem;
@@ -37414,7 +37419,7 @@ input[type=text]::-ms-reveal {
             justify-content: center;
     width: 100%;
     margin-right: 0;
-    margin-bottom: 1.25rem;
+    margin-bottom: 20px;
   }
 }
 
