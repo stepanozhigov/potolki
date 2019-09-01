@@ -7,7 +7,7 @@
         <div class="main-offer__inner container">
             <p class="text main-offer__overtitle">Монтаж за 1 день | Гарантия 30&nbsp;лет</p>
             
-            <h1 class="title main-offer__title">Натяжные потолки<br> {!! $city->name_formatted !!} от&nbsp100&nbsp<span class="rouble">₽</span>/м<sup>2</sup></h1>
+            <h1 class="title main-offer__title">Натяжные потолки<br> {!! $city->name_formatted !!} от&nbsp100&nbsp<span class="rouble">8</span>/м<sup>2</sup></h1>
             <p class="main-offer__subtitle">Вызовите специалиста для замера&nbspи&nbsp;расчёта</p>
 
             <form class="form js-less main-offer__form mobile-hide" method="POST" action="{{ route('forms.feedback', $city) }}" id="offer-form">

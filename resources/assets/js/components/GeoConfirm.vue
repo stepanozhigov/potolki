@@ -64,6 +64,9 @@
 			confirm: function () {
 				this.confirmed = true;
 				localStorage.setItem('cityConfirm', true);
+				if (location.href.search(this.located.code) < 0) {
+						location = '/' + this.located.code;
+				}
 			}
 		}
 	}

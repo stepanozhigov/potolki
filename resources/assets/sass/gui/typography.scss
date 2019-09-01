@@ -89,15 +89,17 @@
 }
 
 @font-face {
-	font-family: 'PT Rouble Serif';
-    src: url('../fonts/RUBSR.woff') format('woff');
-	font-weight: 300;
-	font-style: normal;
+    font-family: 'PTRoubleSerif';
+    src: url('/fonts/PTRoubleSerif.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
     font-display: swap;
 }
 
+
 .rouble {
-    font-family: "PT Rouble Serif";
+    font-family: 'PTRoubleSerif';
 }
 
 @import 'mixins';

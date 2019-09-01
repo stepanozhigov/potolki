@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Log;
 use App\Comment;
 use App\Review;
 use App\City;
 use App\Jobs\ProcessFeedback;
 use App\Connectors\BitrixConnector;
+
+use App\Mail\Survey;
 
 class FeedbackController extends Controller
 {
@@ -38,7 +41,9 @@ class FeedbackController extends Controller
         dump($request->message);
         if (!empty($request->message))
         {
-            mail('adresplus@mail.ru, kabakovki@yandex.ru, m1r.stillrunner@gmail.com', 'Оценка сайта', $request->message);
+            $res = Mail::to('adresplus@mail.ru')->send(new Survey($request->message)); 
+            dump($res);
+            //mail('adresplus@mail.ru, kabakovki@yandex.ru, m1r.stillrunner@gmail.com', 'Оценка сайта', $request->message);
         }
     }
 
@@ -136,8 +141,13 @@ class FeedbackController extends Controller
     {
         $this->addLead($request);
         
+        //return view('common.forms.success', ['city' => $city]);
+        return redirect()->route('forms.success', ['city' => $city]);
+    }
+
+    public function success (Request $request, City $city)
+    {
         return view('common.forms.success', ['city' => $city]);
-        
     }
 
     public function proxyLead(Request $request)

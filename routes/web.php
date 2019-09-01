@@ -140,6 +140,7 @@ Route::prefix('/{city}')->group(function () {
     Route::get('/forms/callback', 'PageController@callback')->name('forms.callback');
     Route::get('/forms/measure', 'PageController@measure')->name('forms.measure');
     Route::post('/forms/success', 'FeedbackController@feedback')->name('forms.feedback');
+    Route::get('/forms/success', 'FeedbackController@success')->name('forms.success');
 
     
     Route::get('/quiz', 'PageController@quiz')->name('quiz');
