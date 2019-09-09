@@ -1,10 +1,16 @@
+@php
+    $seoData = new App\SeoBlock([
+        'meta_title' =>  "Ремонт натяжных потолков {$city->name_formatted} — цена | Твой стиль",
+        'meta_description'  =>  "Ремонт полотна натяжного потолка {$city->name_formatted} качественно и оперативно за 1 час при любых повреждениях, услуга от опытных специалистов компании «Твой стиль», заказывайте на сайте!" 
+    ])
+@endphp
 @extends('common.layout', ['seoData' => $seoData])
 
 @section('content')
     @include('common.gui.header')
     @include('common.gui.titles', [
         'overtitle' =>  'Ремонт',
-        'title' =>  "Ремонт натяжного полотна",
+        'title' =>  "Ремонт натяжных потолков {$city->name_formatted}",
         'intro' =>  "Средний срок службы натяжного потолка составляет около 15 лет, но даже с таким надежным способом отделки могут случаться ситуации, которые в разы сокращают срок его эксплуатации."
     ])
 

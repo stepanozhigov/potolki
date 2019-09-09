@@ -1,3 +1,9 @@
+@php
+    $seoData = new App\SeoBlock([
+        'meta_title' =>  "Натяжные потолки в рассрочку {$city->name_formatted} без переплат | Твой стиль",
+        'meta_description'  =>  "Натяжные потолки в рассрочку {$city->name_formatted} с выгодными условиями без переплат до 6 месяцев, на любые товары и услуги компании «Твой стиль», достаточно паспорта" 
+    ])
+@endphp
 @extends('common.layout', ['seoData' => $seoData])
 
 @section('content')
@@ -5,7 +11,7 @@
     <section class="credit">
         @include('common.gui.titles', [
             'overtitle' =>  'Рассрочка',
-            'title' =>  "Рассрочка на&nbsp;натяжной потолок",
+            'title' =>  "Натяжные потолки в рассрочку {!! $city->name_formatted !!}",
             'intro' =>  "Натяжные потолки в&nbsp;рассрочку&nbsp;&mdash; это не&nbsp;только практичный, но&nbsp;и&nbsp;доступный способ отделки. Мы&nbsp;ценим каждого клиента и&nbsp;готовы предложить особые условия для того, чтобы ремонт приносил вам только радость. Наслаждайтесь новым ремонтом сейчас, а&nbsp;платите потом."
         ])
         <div class="advantages">

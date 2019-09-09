@@ -7,7 +7,7 @@
             @include('common.gui.titles', [
                 'class' =>  'container',
                 'overtitle' =>  "вакансии",
-                'title' =>  "Работа в компании «Твой стиль» {$city->name_formatted}",
+                'title' =>  "Вакансии и работа: «натяжные потолки» {$city->name_formatted}",
                 'intro' =>  "Мечтаете о&nbsp;работе в&nbsp;крупной и&nbsp;стабильной компании? Считаете себя профессионалом своего дела? Тогда именно для вас мы&nbsp;открываем дополнительные вакансии в&nbsp;нашем представительстве в&nbsp;городе {$city->name}. Сейчас в&nbsp;нашем представительстве {$city->name_formatted} открыты следующие вакансии:"
             ])
             <div class="jobs__content container b-texture b-texture_square">

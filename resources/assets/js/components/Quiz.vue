@@ -219,10 +219,10 @@
 		    		</label>
 			    </div>
 			    <div v-show="step == 7" class="quiz__content quiz__result">
-		    		<p class="text">Ведите номер телефона, мы вышлем СМС с результатами</p>
+		    		<p class="text">Введите номер телефона, мы вышлем СМС с результатами</p>
 		    		<input v-mask="{mask: '8 999-999-99-99', oncomplete: enable}" v-model="questions.phone" class="input quiz__phone" type="tel" placeholder="Ваш телефон*">
 		    		<button :disabled="!phoneValidated" @click="send" class="button quiz__button">Получить результат расчёта</button>
-			    </div>
+			    </div> 
 			    <div v-if="step < 7" class="quiz__buttons">
 			    	<button v-if="step > 1" @click="step--" class="button quiz__button quiz__prev" style="margin-right: 16px">Предыдущий шаг</button>
 			    	<button @click="step++" class="button quiz__button quiz__next">Следующий шаг</button>

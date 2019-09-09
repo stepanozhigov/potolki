@@ -6,7 +6,7 @@
         <section class="promos container">
             @include('common.gui.titles', [
                 'overtitle' =>  'Специальные предложения',
-                'title' =>  "Все скидки и акции на натяжные потолки {$city->name_formatted}",
+                'title' =>  "Скидки и акции на натяжные потолки {$city->name_formatted}",
                 'intro' =>  "Ознакомьтесь с&nbsp;нашими специальными предложениями и&nbsp;ниже вызовите замерного мастера для точного замера и&nbsp;расчёта. Для вашего удобства действует бесплатная услуга &laquo;Договор на&nbsp;дому&raquo;" 
             ])
             <div class="promos__content">

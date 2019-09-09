@@ -5,7 +5,7 @@
     <section class="ceilingsCalc">
         @include('common.gui.titles', [
             'overtitle' =>  'Калькулятор',
-            'title' =>  "Расчет стоимости натяжного потолка {$city->name_formatted}"
+            'title' =>  "Расчет стоимости натяжных потолков {$city->name_formatted}"
         ])
         @include('ceilings.calc')
     </section>

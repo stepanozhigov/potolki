@@ -1,10 +1,16 @@
+@php
+    $seoData = new App\SeoBlock([
+        'meta_title' =>  "Замена полотна натяжного потолка — цены {$city->name_formatted} | Твой стиль",
+        'meta_description'  =>  "Замена полотна натяжного потолка {$city->name_formatted} по цене со скидкой при заказе на сайте, поменяем старый материал пвх на новый в течение часа, заходи на сайт!" 
+    ])
+@endphp
 @extends('common.layout', ['seoData' => $seoData])
 
 @section('content')
     @include('common.gui.header')
     @include('common.gui.titles', [
         'overtitle' =>  'Замена полотна',
-        'title' =>  "Замена натяжного полотна",
+        'title' =>  "Замена полотна натяжного потолка {$city->name_formatted}",
         'intro' =>  "Замена полотна&nbsp;&mdash; отличная альтернатива, которая позволит сэкономить средства, если в&nbsp;помещении ранее были установлены натяжные потолки. Демонтаж и&nbsp;установка нового полотна происходят в&nbsp;течение дня."
     ])
 

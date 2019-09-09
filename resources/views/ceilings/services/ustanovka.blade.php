@@ -1,10 +1,16 @@
+@php
+    $seoData = new App\SeoBlock([
+        'meta_title' =>  "Натяжные потолки с установкой {$city->name_formatted} | Твой стиль",
+        'meta_description'  =>  "Натяжные потолки по цене от 100 руб./м2 с установкой {$city->name_formatted} от компании-производителя «Твой стиль», расчет калькулятором и заказ на сайте с получением скидки на услугу" 
+    ])
+@endphp
 @extends('common.layout', ['seoData' => $seoData])
 
 @section('content')
     @include('common.gui.header')
     @include('common.gui.titles', [
         'overtitle' =>  'Установка',
-        'title' =>  "Установка натяжных потолков",
+        'title' =>  "Натяжные потолки с установкой {$city->name_formatted}",
         'intro' =>  "Производство и&nbsp;установка натяжных потолков &laquo;под ключ&raquo;&nbsp;&mdash; важное направление компании &laquo;Твой Стиль&raquo;. Все работы выполняются опытными мастерами, аккуратно и&nbsp;профессионально."
     ])
 

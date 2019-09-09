@@ -5,7 +5,7 @@
         @include('common.gui.titles', [
             'class' =>  'container about__titles',
             'overtitle' =>  'ИНФОРМАЦИЯ О&nbsp;КОМПАНИИ',
-            'title' =>  "Фабрика натяжных&nbsp;потолков «Твой&nbsp;стиль»&nbsp;{$city->name_formatted}"
+            'title' =>  "Информация о компании «Твой стиль» {$city->name_formatted}"
         ])
         <section class="about">
             <div class="b-texture">

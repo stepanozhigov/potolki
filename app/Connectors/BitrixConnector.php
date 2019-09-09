@@ -52,7 +52,7 @@ class BitrixConnector {
             'TITLE' =>  $data['title'],
             'NAME'  =>  $data['name'],
             'SOURCE_ID' =>  $data['source'] ?? '',
-            'PHONE_MOBILE' =>  str_replace(['+7', ' ', '-'], ['8', ''], $data['phone'] ?? ''),
+            'PHONE_MOBILE' =>  str_replace(['+7', ' ', '-', '(', ')'], ['8', ''], $data['phone'] ?? ''),
             'COMMENTS'   =>  $data['comment'] ?? "",
             'UF_CRM_1478533058' => $data['city'] ?? '',
             'ASSIGNED_BY_ID'    =>  551,

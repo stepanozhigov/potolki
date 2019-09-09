@@ -7,7 +7,7 @@
 
     <section class="contacts">
         <div class="titles ">
-            <h1 class="title title_borderless titles__title">Контакты компании «Твой&nbsp;стиль» {!! $city->name_formatted !!}</h1>
+            <h1 class="title title_borderless titles__title">Контакты фабрики натяжных потолков «Твой стиль» {!! $city->name_formatted !!}</h1>
         </div>
         @if(count($city->offices) > 0)
             <div class="map contacts__map" id="map" data-placemark="/img/gui/logo.png">

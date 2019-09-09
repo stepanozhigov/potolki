@@ -1,3 +1,9 @@
+@php
+    $seoData = new App\SeoBlock([
+        'meta_title' =>  "Бесплатный замер натяжного потолка {$city->name_formatted} | Твой стиль",
+        'meta_description'  =>  "Бесплатный замер натяжного потолка {$city->name_formatted}, вызвать замерщика бесплатно, узнать стоимость установки у специалиста, получить расчет и скидку на монтаж, заходите на сайт!" 
+    ])
+@endphp
 @extends('common.layout')
 
 @section('content')
@@ -9,7 +15,7 @@
         <div class="service__heading service__heading_small container">
             <div class="titles service__titles">
                 <p class="service__overtitle overtitle">бесплатно</p>
-                <h1 class="service__title title">Заполните форму&nbsp;для&nbsp;вызова <br> замерного мастера</h1>
+                <h1 class="service__title title">Заказать замер натяжного потолка {!! $city->name_formatted !!}</h1>
             </div>
             <form method="POST" action="{{ route('forms.feedback', $city) }}" class="form js-less service__form">
                 @csrf

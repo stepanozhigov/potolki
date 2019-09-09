@@ -111,7 +111,7 @@ class PageController extends Controller
         return view ('common.pages.vacancies', [
             'city'  =>  $city,
             'vacancies' =>  Vacancy::all(),
-            'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
+            'seoData'   =>  SeoBlock::where(['route' => Route::currentRouteName(), 'direction_id' => 2])->first()
         ]);
     }
 
@@ -191,8 +191,9 @@ class PageController extends Controller
 
     public function agreement (City $city)
     {
-        return view('common.pages.agreement', [
-            'city'  =>  $city
+        return view('common.pages.agreement', [ 
+            'city'  =>  $city,
+            'seoData'   =>  SeoBlock::where(['route' => Route::currentRouteName(), 'direction_id' => 2])->first()
         ]);
     }
 
