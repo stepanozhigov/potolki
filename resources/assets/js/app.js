@@ -372,7 +372,8 @@ $writtenElements.each((index, element) => {
 });
 
 $('.survey__no').on('click', function () {
-    $(this).closest('.survey').addClass('survey_opened');
+    location.href="https://api.whatsapp.com/send?phone=79996516666";
+    //$(this).closest('.survey').addClass('survey_opened');
 });
 
 $('.survey__yes').on('click', function () {

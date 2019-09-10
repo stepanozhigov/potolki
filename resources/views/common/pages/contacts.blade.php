@@ -4,7 +4,39 @@
 
 @section('content')
     @include('common.gui.header')
+    <style type="text/css">
+        .ymaps-2-1-74-controls__control {
+            z-index: 500;
+        }
+        .contacts__requisites {
+            margin-top: 48px !important;
+        }
+        .requisites {
+            display: flex; 
+            flex-direction: column;
+            align-items: center;
+        }
+        .requisites__list {
+            list-style: none;
+        }
+        .requisites__item {
+            margin-bottom: 12px;
+        }
+        .requisite__title, .requisite__value {
+            font-size: 18px;
+        } 
 
+        @media screen and (max-width: 500px)
+        {
+            .contacts__requisites {
+                order: 3;
+            }
+            .contacts__offices {
+                width: 85%;
+                left: 41px;
+            }
+        }
+    </style>
     <section class="contacts">
         <div class="titles ">
             <h1 class="title title_borderless titles__title">Контакты фабрики натяжных потолков «Твой стиль» {!! $city->name_formatted !!}</h1>
@@ -67,6 +99,36 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="requisites container contacts__requisites">
+            <h3 class="second-title requisites__title">Реквизиты компании</h3>
+            <ul class="requisites__list">
+                <li class="requisites__item requisite">
+                    <span class="text requisite__title">Полное наименование:</span>
+                    <span class="text requisite__value">Общество с ограниченной ответственностью «Твой стиль»</span>
+                </li>
+                <li class="requisites__item requisite">
+                    <span class="text requisite__title">ОГРН:</span>
+                    <span class="text requisite__value">1152366007287</span>
+                </li>
+                <li class="requisites__item requisite">
+                    <span class="text requisite__title">ИНН:</span>
+                    <span class="text requisite__value">2320232540</span>
+                </li>
+                <li class="requisites__item requisite">
+                    <span class="text requisite__title">КПП:</span>
+                    <span class="text requisite__value">232001001</span>
+                </li>
+                <li class="requisites__item requisite">
+                    <span class="text requisite__title">Юридический адрес / фактический:</span>
+                    <span class="text requisite__value"> 354068, РФ, Краснодарский край, г. Сочи, ул. Донская 28, Литер А-2</span>
+                </li>
+                <li class="requisites__item requisite">
+                    <span class="text requisite__title">Ген. директор:</span>
+                    <span class="text requisite__value">Репин Александр Александрович </span>
+                </li>
+            </ul>
         </div>
 
     </section>

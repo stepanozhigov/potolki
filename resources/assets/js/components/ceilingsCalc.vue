@@ -48,6 +48,9 @@
         if (window.city.code == 'dolgoprudnyj') {
         	mult = 450;
         }
+        if (window.city.code == 'moskva') {
+            mult = 450;
+        }
         price = angles * 100 + tubes * 200 + lamps * 250 + area * mult - 400;
 
         $('.js-calc-price').html(price.toLocaleString());

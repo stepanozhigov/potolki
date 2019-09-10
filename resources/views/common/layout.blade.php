@@ -32,13 +32,15 @@
             window.city = <?= json_encode($city) ?>
         </script>
     <? endif ?>
+    <? $req = request()->route()->getName(); ?>
 
+    @if ($req !== 'quiz')
     <!-- Carrot quest BEGIN -->
 		<script type="text/javascript">
 		!function(){function t(t,e){return function(){window.carrotquestasync.push(t,arguments)}}if("undefined"==typeof carrotquest){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="//cdn.carrotquest.io/api.min.js",document.getElementsByTagName("head")[0].appendChild(e),window.carrotquest={},window.carrotquestasync=[],carrotquest.settings={};for(var n=["connect","track","identify","auth","oth","onReady","addCallback","removeCallback","trackMessageInteraction"],a=0;a<n.length;a++)carrotquest[n[a]]=t(n[a])}}(),carrotquest.connect("28264-15daed65704be963b84a4f77f5");
 		</script>
 	<!-- Carrot quest END -->
-    
+    @endif
     <!-- Facebook Pixel Code -->
       <script>
         !function(f,b,e,v,n,t,s)
@@ -72,7 +74,8 @@
 
 </head>
 <body class="body">
-    <? if (request()->path() !== '/'): ?>
+    
+    <? if (request()->path() !== '/' && $req !== 'quiz'): ?> 
         <div id="geo-confirm">
             <geo-confirm :cities="{{ $cities }}"></geo-confirm>
         </div>
