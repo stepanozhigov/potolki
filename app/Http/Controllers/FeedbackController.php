@@ -139,7 +139,14 @@ class FeedbackController extends Controller
 
     public function feedback (Request $request, City $city)
     {
-        $this->addLead($request);
+        $submitted = $request->session()->get('submitted');
+
+        $request->session()->put('submitted', true);
+
+        if (!$submitted)
+        {
+            $this->addLead($request);
+        }
         
         //return view('common.forms.success', ['city' => $city]);
         return redirect()->route('forms.success', ['city' => $city]);

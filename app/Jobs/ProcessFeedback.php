@@ -8,20 +8,24 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use App\Connectors\BitrixConnector;
 
 class ProcessFeedback implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
+    public $data;
+
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($data)
     {
-        //
+        //Log::info('job construct');
+        $this->data = $data;
     }
 
     /**
@@ -29,10 +33,10 @@ class ProcessFeedback implements ShouldQueue
      *
      * @return void
      */
-    public function handle(Array $data)
+    public function handle()
     {
         $bitrixConnector = new BitrixConnector();
-
-        $bitrixConnector->addLead($data); 
+        Log::info(['job handle', $this->data]);
+        $bitrixConnector->addLead($this->data); 
     }
 }
