@@ -1,11 +1,11 @@
 <template>
     <div class="portfolio__list">
-        <a @click="toggleMode(index)" v-for="(photo, index) in photos" v-bind:key="photo.id" class="case b-card portfolio__item">
+        <a @click="toggleMode(index)" v-for="(photo, index) in photos" v-bind:key="photo.id" v-if="photo.price && photo.area" class="case b-card portfolio__item">
             <img :src="`/storage/${photo.src}`" alt="3" class="case__img">
             <p class="card-title case__title">{{ photo.name }}</p>
             <hr class="line line_small case__line">
             <div class="case__totals">
-                <p v-if="photo.price" class="case__info text">Стоиомость: {{ photo.price.toLocaleString() }}  ₽</p>
+                <p v-if="photo.price" class="case__info text">Стоимость: {{ photo.price.toLocaleString() }}  ₽</p>
                 <p class="case__info text">Площадь: {{ photo.area }} м<sup>2</sup></p>
             </div>
         </a>
