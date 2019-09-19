@@ -119,5 +119,285 @@
 })(window, document, 'script', 'cloud.roistat.com', '9fcae1a19bf23011571b33710b6573d5');
 </script>
 
+
+<script>
+    const DEBUG = false;
+
+    const XML_HTTP_REQUEST_TIMEOUT = 5000;
+    const PHONE_REGEXP = /^[8|7]?[8|9](\d){9}$/g;
+    const EMAIL_REGEXP = /^[^\s]+[@][^\s]+$/g;
+    const EXCLUDE_DOMAINS = {
+        'mc.yandex.ru' : 1,
+        'google-analytics.com' : 1,
+        'google.ru' : 1,
+        'google.com' : 1,
+        'stats.g.doubleclick.net' : 1,
+    };
+
+    // XMLHttpRequest
+    if (window.XMLHttpRequest) {
+        // cache old XMLHttpRequest.send
+        XMLHttpRequest.prototype.oldSend = XMLHttpRequest.prototype.send;
+
+        function newSend(data) {
+            var self = this;
+            setTimeout(function () {
+                collectData(self.responseURL, data)
+            }, XML_HTTP_REQUEST_TIMEOUT);
+
+            return this.oldSend(data);
+        }
+
+        // override XMLHttpRequest.send
+        XMLHttpRequest.prototype.send = newSend;
+    }
+
+    // ActiveXObject
+    if (window.ActiveXObject) {
+        var ActualActiveXObject = ActiveXObject;
+
+        // generate new ActiveXObject
+        function ActiveXObject(progid) {
+            var oldActiveXObject = new ActualActiveXObject(progid);
+            var newActiveXObject = {};
+
+            if (progid.toLowerCase() == "msxml2.xmlhttp") {
+                newActiveXObject = {
+                    _ax: oldActiveXObject,
+                    _status: "fake",
+                    responseText: "",
+                    responseXml: null,
+                    readyState: 0,
+                    status: 0,
+                    statusText: 0,
+                    onReadyStateChange: null
+                };
+
+                var cachedUrl = '';
+
+                newActiveXObject._onReadyStateChange = function () {
+                    var self = newActiveXObject;
+
+                    return function () {
+                        self.readyState = self._ax.readyState;
+                        if (self.readyState == 4) {
+                            self.responseText = self._ax.responseText;
+                            self.responseXml = self._ax.responseXml;
+                            self.status = self._ax.status;
+                            self.statusText = self._ax.statusText;
+                        }
+                        if (self.onReadyStateChange) self.onReadyStateChange();
+                    }
+                }();
+
+                newActiveXObject.open = function (method, url, varAsync, user, password) {
+                    cachedUrl = url;
+                    varAsync = (varAsync !== false);
+                    this._ax.onReadyStateChange = this._onReadyStateChange;
+                    return this._ax.open(method, url, varAsync, user, password);
+                };
+
+                newActiveXObject.send = function (body) {
+                    collectData(cachedUrl, body);
+
+                    return this._ax.send(body);
+                };
+            } else {
+                newActiveXObject = oldActiveXObject;
+            }
+
+            return newActiveXObject;
+        }
+
+        // override ActiveXObject
+        window.ActiveXObject = ActiveXObject;
+    }
+
+    // Fetch
+    if (window.fetch) {
+        var oldFetch = fetch;
+
+        fetch = function (request, data) {
+            collectData(request.url, data || {});
+
+            return oldFetch(request, data || {});
+        }
+    }
+
+    // Listen submit event
+    window.addEventListener('submit', function (event) {
+        var elements = event.target.elements;
+        var data = {};
+        for (var i = 0; i < elements.length; i++) {
+            var element = elements[i];
+            var name = element.getAttribute('name');
+
+            data[name] = element.value;
+        }
+
+        collectData('', data);
+    });
+
+    function parseQueryString(url) {
+        var params = {};
+
+        if (url.length === 0) {
+            return params;
+        }
+
+        var urlAsArray = url.split('?');
+
+        if (urlAsArray.length < 2) {
+            return params;
+        }
+
+        var queryParams = urlAsArray[1];
+
+        params = parseQueryParams(queryParams);
+
+        return params;
+    }
+
+    function parseQueryParams(queryParams) {
+        var queryParamsAsArray = queryParams.split('&'), params = {};
+        for (var i = 0; i < queryParamsAsArray.length; i++) {
+            var param = queryParamsAsArray[i].split('=');
+
+            if (param.length < 2) {
+                continue;
+            }
+
+            params[param[0]] = param[1];
+        }
+
+        return params;
+    }
+
+    function getClientInfoFromData(data) {
+        var hasName = data.hasOwnProperty('name') || data.hasOwnProperty('Name') || data.hasOwnProperty('NAME');
+        var hasEmail = data.hasOwnProperty('email') || data.hasOwnProperty('Email') || data.hasOwnProperty('EMAIL');
+        var hasPhone = data.hasOwnProperty('phone') || data.hasOwnProperty('Phone') || data.hasOwnProperty('PHONE')
+            || data.hasOwnProperty('tel') || data.hasOwnProperty('Tel') || data.hasOwnProperty('TEL');
+
+        var newData = {
+            email: hasEmail ? data.email || data.Email || data.EMAIL || data.tel || data.Tel || data.TEL : '',
+            phone: hasPhone ? data.phone || data.Phone || data.PHONE : '',
+            name: hasName ? data.name || data.Name || data.NAME : ''
+        };
+
+        if (DEBUG) {
+            console.group('getClientInfoFromData - data before regexp parsing');
+            console.log('data', newData);
+            console.groupEnd('getClientInfoFromData - data before regexp parsing');
+        }
+
+        const isPhoneEmpty = newData.phone.length === 0;
+        const isEmailEmpty = newData.email.length === 0;
+
+        if (!isPhoneEmpty && !isEmailEmpty) {
+            return newData;
+        }
+
+        var emailRegexp = new RegExp(EMAIL_REGEXP);
+        var phoneRegexp = new RegExp(PHONE_REGEXP);
+        var keys = Object.keys(data);
+
+        for (var i = 0; i < keys.length; i++) {
+            var value = String(data[keys[i]]);
+
+            if (isEmailEmpty) {
+                var matchedEmails = value.match(emailRegexp);
+                if (matchedEmails && matchedEmails.length > 0) {
+                    var oldEmail = newData.email;
+                    newData.email = matchedEmails[0];
+
+                    if (DEBUG) {
+                        console.group('getClientInfoFromData - parsing email');
+                        console.log('old email value', oldEmail);
+                        console.log('new email value', newData.email);
+                        console.groupEnd('getClientInfoFromData - parsing email');
+                    }
+                }
+            }
+
+            if (isPhoneEmpty) {
+                var phoneValue = value.replace(/\D/gi, '');
+                var matchedPhones = phoneValue.match(phoneRegexp);
+                if (matchedPhones && matchedPhones.length > 0) {
+                    var oldPhone = newData.phone;
+                    newData.phone = value;
+
+                    if (DEBUG) {
+                        console.group('getClientInfoFromData - parsing phone');
+                        console.log('old phone value', oldPhone);
+                        console.log('new phone value', newData.phone);
+                        console.groupEnd('getClientInfoFromData - parsing phone');
+                    }
+                }
+            }
+        }
+
+        return newData;
+    }
+
+    // Data processing
+    function collectData(url, body) {
+        if (url.length > 0) {
+            var keys = Object.keys(EXCLUDE_DOMAINS);
+            for(var i = 0; i < keys.length; i++) {
+                if (url.indexOf(keys[i]) !== -1) {
+                    return;
+                }
+            }
+        }
+
+        var queryParams = parseQueryString(url);
+        var localBody = body;
+
+        if (typeof localBody === 'string') {
+            localBody = parseQueryParams(localBody);
+        }
+
+        if (DEBUG) {
+            console.group('collectData - before parsing');
+            console.log('queryParams', queryParams);
+            console.log('localBody', localBody);
+            console.groupEnd('collectData - before parsing');
+        }
+
+        var clientGetParams = getClientInfoFromData(queryParams);
+        var clientPostParams = getClientInfoFromData(localBody);
+
+        if (DEBUG) {
+            console.group('collectData - after parsing');
+            console.log('GET data', clientGetParams);
+            console.log('POST data', clientPostParams);
+            console.groupEnd('collectData - after parsing');
+        }
+
+        processingData(clientGetParams, clientPostParams);
+    }
+
+    function processingData(getData, postData) {
+        var email = getData.email.length > 0 ? getData.email : postData.email;
+        var phone = getData.phone.length > 0 ? getData.phone : postData.phone;
+        var name = getData.name.length > 0 ? getData.name : postData.name;
+
+        if (email.length > 0 || phone.length > 0) {
+            console.log(getData, postData);
+            console.log('Phone or email is not empty');
+
+            roistatGoal.reach({
+                leadName: 'Тестовый лид с сайта',
+                name: name,
+                phone: phone,
+                email: email,
+                is_skip_sending: 1
+            });
+        }
+    }
+</script>
+
+
 @yield('scripts')
 </html>
