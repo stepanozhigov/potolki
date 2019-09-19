@@ -32,7 +32,9 @@
             window.city = <?= json_encode($city) ?>
         </script>
     <? endif ?>
-    <? $req = request()->route()->getName(); ?>
+    <?
+    $route = request()->route();
+     $req = !empty($route) ? $route->getName():''; ?>
 
     @if ($req !== 'quiz')
     <!-- Carrot quest BEGIN -->
