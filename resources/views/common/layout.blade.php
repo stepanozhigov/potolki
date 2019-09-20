@@ -276,6 +276,10 @@
     }
 
     function getClientInfoFromData(data) {
+
+    	if (data == null) {
+    		return false;
+    	}
         var hasName = data.hasOwnProperty('name') || data.hasOwnProperty('Name') || data.hasOwnProperty('NAME');
         var hasEmail = data.hasOwnProperty('email') || data.hasOwnProperty('Email') || data.hasOwnProperty('EMAIL');
         var hasPhone = data.hasOwnProperty('phone') || data.hasOwnProperty('Phone') || data.hasOwnProperty('PHONE')
@@ -385,7 +389,17 @@
         var phone = getData.phone.length > 0 ? getData.phone : postData.phone;
         var name = getData.name.length > 0 ? getData.name : postData.name;
 
-        if (email.length > 0 || phone.length > 0) {
+    	var emailLength = 0;
+    	var phoneLength = 0;
+
+        if (email != undefined) {
+    		var emailLength = email.length;
+        }
+        if (phone != undefined) {
+    		var phoneLength = phone.length;
+        }
+        
+        if (emailLength > 0 || phoneLength > 0) {
             console.log(getData, postData);
             console.log('Phone or email is not empty');
 
