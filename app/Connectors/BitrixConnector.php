@@ -6,8 +6,8 @@ use Illuminate\Support\Facades\Log;
 class BitrixConnector { 
 
     protected $url = 'https://bitrix-ts.ru:443/crm/configs/import/lead.php';
-    protected $login = 'k.kabakov';
-    protected $password = '11Q09w93E.';
+    protected $login = 'leads_tp';
+    protected $password = 'df%C8Bo0tY!';
     protected $requestData = '';
 
     public function __construct ($data = null)

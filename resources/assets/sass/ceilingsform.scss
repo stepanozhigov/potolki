@@ -1,0 +1,671 @@
+.gifts {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  margin-left: -16px;
+  margin-right: -16px;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  &__title {
+    color: #485058;
+    font-family: "Playfair Display";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+    display: none;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+
+    &_active {
+      p {
+        display: inline-flex;
+      }
+    }
+  }
+}
+.ceilingsForm {
+
+    &__banner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: rem(64);
+        padding-top: rem(96);
+        margin-left: -16px;
+        margin-right: -16px;
+        padding-left: 22px;
+        padding-right: 22px;
+        @include below($mobile) {
+            padding: rem(48) rem(16);
+            padding-top: rem(56);
+        }
+    }
+    &__banner.b-texture::before {
+        width: 100%;
+        opacity: 1;
+    }
+
+    &__overtitle {
+        margin: 0;
+        margin-bottom: rem(8);
+        color: #485058;
+        font-family: $futura;
+        font-size: rem(16);
+        font-weight: 300;
+        letter-spacing: rem(4);
+        line-height: rem(32);
+        text-transform: uppercase;
+
+        @include below($tablet) {
+            font-size: rem(14);
+            line-height: rem(28);
+        }
+    }
+
+    &__title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        margin-bottom: rem(23);
+        color: #485058;
+        font-family: $playfair;
+        font-size: rem(64);
+        font-weight: 400;
+        line-height: normal;
+        text-align: center;
+
+        @include below($tablet) {
+            font-size: rem(48);
+        }
+
+        @include below($mobile) {
+            font-size: rem(32);
+            margin-bottom: rem(64);
+            line-height: rem(40);
+        }
+    }
+
+    &__desc {
+        margin: 0;
+        margin-bottom: rem(62);
+        color: #ffffff;
+        font-family: $helvetica;
+        font-size: rem(24);
+        font-weight: 300;
+
+        @include below($tablet) {
+            font-size: rem(20);
+        }
+
+        @include below($mobile) {
+            font-size: rem(16);
+            margin-bottom: rem(56);
+        }
+    }
+
+    .button {
+        width: rem(280);
+        margin-bottom: rem(16);
+    }
+
+    &__agreement {
+        margin: 0;
+        font-family: $helvetica;
+        font-size: rem(12);
+        font-weight: 300;
+        line-height: rem(16);
+        text-align: center;
+        color: #485058;
+        a {
+            color: #485058;
+        }
+    }
+
+    &__advantages {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        &-item {
+            width: 25%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            @include below($tablet) {
+                width: 50%;
+                margin-bottom: rem(48);
+            }
+
+            img {
+                margin-bottom: rem(24);
+
+                @include below($mobile) {
+                    height: rem(66);
+                    width: auto;
+                }
+            }
+
+            p {
+                margin: 0;
+                color: #485058;
+                font-family: $playfair;
+                font-size: rem(20);
+                font-weight: 400;
+                line-height: rem(24);
+                text-align: center;
+            }
+        }
+    }
+}
+
+.ceilingsform {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: rem(1000);
+    padding: 0!important;
+    overflow: scroll;
+    overflow-x: hidden;
+    @include below($tablet) {
+        width: 100%;
+    }
+
+    &__heading {
+        margin-top: auto;
+
+        &-item {
+            display: none;
+            align-items: flex-end;
+
+            &.active {
+                display: flex;
+                padding-bottom: 16px;
+            }
+        }
+
+        &-text {
+            display: flex;
+            flex-direction: column;
+            padding-bottom: rem(48);
+            padding-right: rem(16);
+        }
+
+        &-overtitle {
+            margin: 0;
+            margin-bottom: rem(8);
+            color: #808890;
+            font-family: $futura;
+            font-size: rem(14);
+            font-weight: 300;
+            letter-spacing: rem(4);
+            line-height: rem(28);
+            text-transform: uppercase;
+        }
+
+        &-title {
+            margin: 0;
+            color: #485058;
+            font-family: $playfair;
+            font-size: rem(22);
+            font-weight: 400;
+            line-height: rem(26);
+        }
+
+    }
+
+    &__scale {
+        width: 100%;
+        background-color: #808890;
+
+        span {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: rem(14);
+            padding-top: rem(52);
+            color: #ffffff;
+            font-family: "Helvetica Neue";
+            font-size: 24px;
+            font-weight: 500;
+            background-color: #dc1414;
+        }
+    }
+
+    &__content {
+        margin-bottom: rem(-40);
+        margin-top: rem(-30);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16), 0 0 8px rgba(0, 0, 0, 0.08), inset 0 -1px 0 rgba(0, 0, 0, 0.12);
+        border-radius: rem(16);
+        background-color: $white;
+        padding: rem(40) rem(16);
+        padding-bottom: rem(48);
+        z-index: 3;
+
+        @include below($mobile) {
+            padding: rem(32) rem(16);
+            padding-bottom: rem(96);
+        }
+    }
+
+    &__wrap {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    &__step-val  {
+        margin: 0;
+        margin-bottom: rem(8);
+        color: #485058;
+        font-family: $futura;
+        font-size: rem(16);
+        font-weight: 300;
+        letter-spacing: rem(4);
+        line-height: rem(32);
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    &__title {
+        width: 100%;
+        margin: 0;
+        margin-bottom: rem(48);
+        color: #485058;
+        font-family: $playfair;
+        font-size: rem(32);
+        font-weight: 400;
+        line-height: rem(38);
+        text-align: center;
+
+        @include below($tablet) {
+            font-size: rem(26);
+            line-height: rem(32);
+            margin-bottom: rem(36);
+        }
+
+        @include below($mobile) {
+            font-size: rem(22);
+            line-height: rem(26);
+            margin-bottom: rem(32);
+        }
+    }
+
+    &__text {
+        width: 100%;
+        margin: 0;
+        color: #485058;
+        font-family: $playfair;
+        font-size: rem(18);
+        font-weight: 400;
+        line-height: rem(21);
+    }
+
+    &__transfer {
+        @extend .button;
+        width: 100%;
+        margin-bottom: rem(16);
+    }
+
+    &__close-button  {
+        @extend .button;
+        @extend .button_gray;
+        width: 100%;
+    }
+
+    &__thankyou {
+        width: 100%;
+        height: 100vh;
+        display: none;
+        padding: rem(16);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .ceilingsform__text {
+            margin: 0;
+            margin-bottom: rem(8);
+            color: #808890;
+            font-family: $futura;
+            font-size: rem(14);
+            font-weight: 300;
+            letter-spacing: rem(4);
+            line-height: rem(28);
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .ceilingsform__desc {
+            margin: 0;
+            margin-bottom: rem(28);
+            color: #485058;
+            font-family: $playfair;
+            font-size: rem(26);
+            font-weight: 300;
+            text-align: left;
+            align-self: center;
+            line-height: rem(26);
+        }
+    }
+
+    &__step {
+        width: 100%;
+        display: none;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .range {
+            width: 100%;
+
+            .irs-handle .single {
+                border: rem(12) solid #f4f6f8!important;
+            }
+        }
+
+
+        &.active {
+            display: flex;
+        }
+
+        &_first {
+            .ceilingsform__text {
+                margin-bottom: rem(9);
+            }
+
+            .range_red {
+                width: 100%;
+                margin-bottom: rem(32);
+            }
+        }
+
+        &_gift {
+            align-items: center;
+
+            .ceilingsform__radio {
+                margin-bottom: rem(8);
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                &:first-of-type {
+                    margin-right: rem(16);
+                }
+
+                &:last-of-type {
+                    margin-bottom: rem(32);
+                    order: 2;
+                }
+            }
+
+            .ceilingsform__prev,
+            .ceilingsform__next   {
+                order: 3;
+            }
+
+            img {
+                margin-bottom: rem(17);
+                width: 100%;
+                object-fit: cover;
+                border-radius: 12px;
+
+                &:not(.active) {
+                }
+            }
+        }
+
+
+
+        &_finish {
+            align-items: center;
+            flex-direction: column;
+            padding-top: rem(40);
+            padding-bottom: rem(32);
+
+            .input {
+                width: rem(368);
+
+                @include below($tablet) {
+                    width: rem(500);
+                    margin-bottom: rem(32);
+                }
+
+                @include below($mobile) {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    &__wrap {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: rem(64);
+
+        @include below($tablet) {
+            margin-bottom: rem(32);
+        }
+
+        @include below($mobile) {
+            justify-content: space-between;
+        }
+
+        .radio {
+            margin: 0 rem(32);
+            cursor: pointer;
+
+            @include below($tablet) {
+                margin: 0 rem(24);
+            }
+
+            @include below($mobile) {
+                margin: 0;
+            }
+        }
+
+        &_image {
+            justify-content: flex-start;
+            width: calc(100% + 16px);
+            margin-left: rem(-8);
+            margin-right: rem(-8);
+            margin-bottom: rem(16);
+
+            @include below($tablet) {
+                justify-content: center;
+            }
+
+            @include below($mobile) {
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+
+        &_center {
+            justify-content: center;
+            width: calc(100% + 16px);
+            margin-left: rem(-8);
+            margin-right: rem(-8);
+        }
+
+        &_long {
+            flex-wrap: nowrap;
+
+            @include below($tablet) {
+                flex-wrap: wrap;
+            }
+
+            @include below($mobile) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .radio {
+                margin: 0;
+
+                &:not(:last-of-type) {
+                    margin-right: rem(32);
+                }
+
+                @include below($tablet) {
+                    margin-bottom: rem(32);
+                }
+            }
+        }
+    }
+
+    &__radio-image {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: calc(25% - 16px);
+        margin: 0 rem(8);
+        margin-bottom: rem(32);
+        cursor: pointer;
+
+        img {
+            width: 100%;
+            height: auto;
+            margin-bottom: rem(16);
+        }
+
+        .radio {
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        @include below($tablet) {
+            width: calc(33.3% - 16px);
+        }
+
+        @include below($mobile) {
+            align-items: flex-start;
+            width: 100%;
+            margin: 0 ;
+            margin-bottom: rem(32);
+
+            &:not(.active) img {
+                display: none;
+            }
+        }
+    }
+
+    &__next {
+        @extend .button;
+
+        &_small {
+            width: rem(180);
+
+            @include below($mobile) {
+                width: calc(50% - 4px);
+            }
+        }
+    }
+
+    &__submit {
+        width: rem(372);
+        @extend .button;
+        margin-bottom: rem(8);
+
+        @include below($tablet) {
+            width: rem(328);
+        }
+
+        @include below($mobile) {
+            width: 100%;
+        }
+    }
+
+    &__prev {
+        @extend .button;
+        @extend .button_gray;
+        margin-right: rem(7);
+        width: rem(180);
+
+        @include below($mobile) {
+            margin-right: rem(8);
+            width: calc(50% - 4px);
+        }
+    }
+
+    &__overtitle {
+        margin: 0;
+        margin-bottom: rem(8);
+        color: #485058;
+        font-family: $futura;
+        font-size: rem(16);
+        font-weight: 300;
+        letter-spacing: rem(4);
+        line-height: rem(32);
+        text-transform: uppercase;
+
+        @include below($tablet) {
+            line-height: rem(28);
+            font-size: rem(14);
+        }
+    }
+
+    &__desc {
+        margin: 0;
+        margin-bottom: rem(16);
+        color: #485058;
+        font-family: $helvetica;
+        font-size: rem(16);
+        font-weight: 300;
+        line-height: rem(24);
+        text-align: left;
+        align-self: flex-start;
+
+        @include below($tablet) {
+            line-height: rem(26);
+            font-size: rem(18);
+        }
+    }
+
+    &__agreement {
+        color: #babec2;
+        font-family:$helvetica;
+        font-size: rem(12);
+        font-weight: 300;
+        line-height: rem(16);
+        text-align: center;
+        margin: 0;
+
+        a {
+            color: #babec2;
+        }
+
+        @include below($mobile) {
+            width: 100%;
+        }
+    }
+
+    .popup__close  {
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0.12), 0 0 0 rgba(0, 0, 0, 0)!important;
+        background-color: white;
+    }
+
+    &_sent {
+        .ceilingsform__heading,
+        .ceilingsform__content,
+        .ceilingsform__scale  {
+            display: none;
+        }
+
+        .ceilingsform__thankyou  {
+            display: flex;
+        }
+    }
+}

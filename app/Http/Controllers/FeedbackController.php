@@ -36,6 +36,28 @@ class FeedbackController extends Controller
         $bitrixConnector->addLead($data); 
     }
 
+    public function quiz2 (Request $request)
+    {   
+        $desc = "";
+        $bitrixConnector = new BitrixConnector();
+
+        $desc.= "Площадь: ". $request->area." \r\n";
+        $desc.= "Светильников: ". $request->lamps." \r\n";
+        $desc.= "Подарок: ". $request->gift." \r\n";
+
+        $data = [
+            'title' => 'Новый результат опроса',
+            'name'  =>  'Новый результат опроса',
+            'phone' =>  $request->phone,
+            'direction' =>  56,
+            'description'   =>  $desc,
+            'city'  =>  $request->city,
+            'source'    =>  'WEB'
+        ];
+        //dd($data);
+        $bitrixConnector->addLead($data); 
+    }
+
     public function addSurvey(Request $request)
     {
         dump($request->message);

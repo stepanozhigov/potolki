@@ -4,7 +4,7 @@
     <section class="formPage">
         @include('common.gui.titles', [
             'title' =>  "Вызов замерщика",
-            'intro' =>  "Оставьте ваши данные и&nbsp;специалист свяжется с&nbsp;вами для уточнения даты и&nbsp;времени <span>в&nbsp;течении 5&nbsp;минут</span>"
+            'intro' =>  "Оставьте ваши данные и&nbsp;специалист свяжется с&nbsp;вами для уточнения даты и&nbsp;времени <span>в&nbsp;течение&nbsp;5&nbsp;минут</span>"
         ])
         <form class="form js-less formPage__form" method="post" action="{{ route('forms.feedback', $city) }}">
             @csrf

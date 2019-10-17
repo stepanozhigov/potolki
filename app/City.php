@@ -12,10 +12,10 @@ class City extends Model
 
     // public function resolveRouteBinding($value)
     // {
-        // dd($value, 123); 
+        // dd($value, 123);
         // return $this->where('name', $value)->first() ?? abort(404);
     // }
-    
+
     public function photos ()
     {
         return json_decode($this->photos) ?? [];
@@ -37,6 +37,10 @@ class City extends Model
     {
         $title = $this->name;
         $office = $this->offices->first();
+
+        if ($this->code == 'moskva') {
+            return $this->name." и область";
+        }
 
         if ($office) {
             $title .= ", {$office->adres}";

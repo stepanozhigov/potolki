@@ -50,6 +50,7 @@ Vue.component('manufacturers', require('./components/ManufacturersCarousel.vue')
 Vue.component('banks', require('./components/banksCarousel.vue'));
 Vue.component('menu-city-search', require('./components/MenuCitySearch.vue'));
 Vue.component('quiz', require('./components/Quiz.vue'));
+Vue.component('gifts', require('./components/Gifts.vue'));
 Vue.component('geo-confirm', require('./components/GeoConfirm.vue'));
 // Vue.component('portfolio-photos', require('./components/PortfolioPhotos.vue'));
 if ($('#geo-confirm').length > 0) {
@@ -59,6 +60,50 @@ if ($('#geo-confirm').length > 0) {
 }
 
 
+
+// $(document).on('click', '.gifts__item', function (event) {
+//   var $this = $('.gifts__item_active'),
+//       $next = $this.next('.gifts__item');
+//
+//   if ($next.length == 0) {
+//     $next = $('.gifts__item').eq(0);
+//   }
+//
+//   $this.removeClass('gifts__item_active');
+//   $next.addClass('gifts__item_active');
+//   $next.insertAfter('.gifts__item:nth-child(1)');
+// })
+
+
+$(document).on('click', '.ceilingsform__next', function (e) {
+    var $this = $(this),
+        $stepContainer = $this.parents('.ceilingsform__step'),
+        $nextStepContaner = $stepContainer.next('.ceilingsform__step');
+    console.log($stepContainer.index());
+    $('.ceilingsform__heading-item').removeClass('active').eq($stepContainer.index() + 1).addClass('active');
+    $stepContainer.removeClass('active');
+    $nextStepContaner.addClass('active');
+    console.log($this, $stepContainer);
+});
+
+$(document).on('click', '.ceilingsform__prev', function (e) {
+    var $this = $(this),
+        $stepContainer = $this.parents('.ceilingsform__step'),
+        $nextStepContaner = $stepContainer.prev('.ceilingsform__step');
+    $('.ceilingsform__heading-item').removeClass('active').eq($stepContainer.index() - 1).addClass('active');
+    $stepContainer.removeClass('active');
+    $nextStepContaner.addClass('active');
+    console.log($this, $stepContainer);
+});
+
+// $('.ceilingsform__radio').on('click', function () {
+//     var index = $(this).index();
+//     console.log(index);
+//     $('.ceilingsform__step_gift img').removeClass('active');
+//     $('.ceilingsform__step_gift img').eq(index).addClass('active');
+// })
+
+
 const quizContainer = $('#quiz');
 
 if (quizContainer.length > 0) {
@@ -66,6 +111,14 @@ if (quizContainer.length > 0) {
         el: '#quiz'
     })
 }
+const quizContainer2 = $('#gifts');
+
+if (quizContainer2.length > 0) {
+    new Vue({
+        el: '#gifts'
+    })
+}
+
 
 var citySwitch = $('.js-switch-link');
 
@@ -126,7 +179,7 @@ if ($lazyContainers.length > 0) {
             src = $element.data('lazy-src');
 
         $element.attr('src', src);
-    });   
+    });
 }
 
 $('.survey__form').on('submit', function (e) {
@@ -648,7 +701,7 @@ var phoneMask = new Inputmask({
                 button = form.find('button');
 
             $this.removeClass('error');
-            button.prop('disabled', false); 
+            button.prop('disabled', false);
         },
         onincomplete: function(event) {
             let $this = $(this),
@@ -794,7 +847,7 @@ $('.catalog-cards__item').on('click', '.catalog-cards__open', function () {
 
 // $(document).on('click', '.b24-widget-button-wrapper', function() {
 //     fbq('track', 'Lead');
-    
+
 //     if (typeof ga !== 'undefined') {
 //         ga.getAll()[0].send('event', 'callback', 'start');
 //     }
@@ -804,7 +857,45 @@ $('.catalog-cards__item').on('click', '.catalog-cards__open', function () {
 
 // });
 
+$('.ceilingsform').on('submit', function (event) {
+     event.preventDefault();
+     var $this = $(this);
 
+    if (typeof window.yaCounter40202559 !== 'undefined') {
+        window.yaCounter40202559.reachGoal('quiz2');
+    }
+    if (typeof ga !== 'undefined') {
+        ga.getAll()[0].send('event', 'quiz', 'send');
+    }
+    fbq('track', 'Lead');
+
+    var data = {
+      area: $('[name="area"]').val(),
+      lamps: $('[name="lamps"]').val(),
+      phone: $('[name="phone"]').val(),
+      gift: window.gift
+    };
+
+
+
+    $this.addClass('ceilingsform_sent');
+    $.ajax({
+        url: $this.attr('action'),
+        data: data,
+        method: 'POST',
+        success: function () {
+            $this.addClass('form_status-send');
+        }
+    })
+
+
+})
+$('.js-less').on('submit', function () {
+    var $form = $(this),
+        $button = $form.find('button[type="submit"]');
+
+    $button.prop('disabled', true);
+});
 
 $('.form:not(.js-less)').on('submit', function (event) {
     event.preventDefault();
@@ -820,7 +911,7 @@ $('.form:not(.js-less)').on('submit', function (event) {
         ga.getAll()[0].send('event', 'forms', 'sub');
     }
     fbq('track', 'Lead');
-    
+
     var successEl = $this.next('.popup__status-send');
 
     if (successEl.length > 0) {
@@ -840,10 +931,10 @@ $('.form:not(.js-less)').on('submit', function (event) {
         },
         method: 'POST',
         success: function () {
-            
+
             $this.addClass('form_status-send');
-           
-           
+
+
         }
     })
 });

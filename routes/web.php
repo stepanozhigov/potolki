@@ -26,9 +26,9 @@ Route::group(['prefix' => 'admin'], function () {
 Route::get('/', 'PageController@index')->name('ceilings-index');
 
 Route::get('/err-handler', function() {
-    Log::info([
+    /*Log::info([
         'type' => 'js-err', 'data' => request()->all()
-    ]);
+    ]);*/
 });
 
 Route::get('/geo/locate', function () {
@@ -44,7 +44,7 @@ Route::get('/geo/locate', function () {
         'dolgoprudnyy'  =>  'dolgoprudnyj',
         'novosibirsk'   =>  'novosibirsk',
         'artem' => 'artem',
-        'khabarovsk'    =>  'habarovsk', 
+        'khabarovsk'    =>  'habarovsk',
         'ussuriysk' =>  'ussuriysk',
         'blagoveshchensk'   =>  'blagoveschensk'
     ];
@@ -73,9 +73,13 @@ Route::prefix('/ajax')->group(function () {
     Route::get('/portfolio/{type_id}/photos', 'AjaxController@getPortfolioPhotos')->name('ajaxPortfolioPhotos');
 });
 
+Route::get('/payment', 'TransactionController@index')->name('payment');
+
 Route::prefix('/{city}')->group(function () {
 
     Route::get('/', 'PageController@ceilings')->name('ceilings');
+
+    Route::get('/clone', 'PageController@ceilingsClone')->name('ceilingsClone');
 
     Route::get('/calculator/{type?}', 'PageController@calculator')->name('calculator');
 
@@ -142,8 +146,10 @@ Route::prefix('/{city}')->group(function () {
     Route::post('/forms/success', 'FeedbackController@feedback')->name('forms.feedback');
     Route::get('/forms/success', 'FeedbackController@success')->name('forms.success');
 
-    
+
     Route::get('/quiz', 'PageController@quiz')->name('quiz');
+    Route::get('/quiz2', 'PageController@quiz2')->name('quiz2');
 });
 
-Route::post('/forms/quiz', 'FeedbackController@quiz')->name('forms.quiz'); 
+Route::post('/forms/quiz', 'FeedbackController@quiz')->name('forms.quiz');
+Route::post('/forms/quiz2', 'FeedbackController@quiz2')->name('forms.quiz2');

@@ -53,7 +53,7 @@ class PageController extends Controller
                 $photos = Photo::where('room', $type->id)->get();
             }
         }
-        
+
 
         return view ('common.pages.photos', [
             'city'  =>  $city,
@@ -83,7 +83,7 @@ class PageController extends Controller
     public function promos (City $city)
     {
         return view ('common.pages.promos', [
-            'city'  =>  $city,  
+            'city'  =>  $city,
             'promos'    =>  Promo::where('direction_id', 2)->get(),
             'seoData'   =>  SeoBlock::where(['route' => Route::currentRouteName(), 'direction_id' => 2])->first()
         ]);
@@ -117,7 +117,7 @@ class PageController extends Controller
 
     public function contacts (City $city)
     {
-        return view ('common.pages.contacts', [ 
+        return view ('common.pages.contacts', [
             'city'  =>  $city,
             'socials'   =>  Social::where(['city_id' => $city->id, 'direction_id' => 2])->get(),
             'seoData'   =>  SeoBlock::where(['route' => Route::currentRouteName(), 'direction_id' => 2])->first()
@@ -142,7 +142,7 @@ class PageController extends Controller
             'city'  =>  $city,
             'categories'    => QuestionCategory::all(),
             'currentCategory'  =>  $category,
-            'questions' =>  $category->questions->where('direction_id', 2), 
+            'questions' =>  $category->questions->where('direction_id', 2),
             'seoData'   =>  SeoBlock::where(['route' => Route::currentRouteName(), 'direction_id' => 2])->first()
         ]);
     }
@@ -174,11 +174,11 @@ class PageController extends Controller
 
     public function callback (City $city)
     {
-        return view('common.forms.form', ['city' => $city]); 
+        return view('common.forms.form', ['city' => $city]);
     }
     public function measure (City $city)
     {
-        return view('common.forms.measure', ['city' => $city]); 
+        return view('common.forms.measure', ['city' => $city]);
     }
 
     public function dirMessage (City $city)
@@ -191,7 +191,7 @@ class PageController extends Controller
 
     public function agreement (City $city)
     {
-        return view('common.pages.agreement', [ 
+        return view('common.pages.agreement', [
             'city'  =>  $city,
             'seoData'   =>  SeoBlock::where(['route' => Route::currentRouteName(), 'direction_id' => 2])->first()
         ]);
@@ -239,6 +239,18 @@ class PageController extends Controller
             'catalogTypes'  => CatalogType::where(['direction_id' => 2])->get(),
             'seoData'   =>  $seoData,
             'articles' => Article::where(['is_active' => 1, 'in_main' => 1])->orderBy('id', 'desc')->get()
+        ]);
+    }
+    public function ceilingsClone (City $city)
+    {
+        return view('templates.ceilings.main', [
+            // 'city'  =>  $city,
+            // 'reviews'   =>  Review::where(['direction_id' => 2, 'is_active' => 1])->limit(3)->orderBy('sort', 'asc')->get(),
+            // 'photos'    =>  Photo::whereIn('catalog_type_id', [15,16,17,18,19,20,21,22,23,24,25])->get(),
+            // 'offers'    =>  Offer::where(['is_active' =>  1, 'direction_id' => 2])->get(),
+            // 'catalogTypes'  => CatalogType::where(['direction_id' => 2])->get(),
+            // 'seoData'   =>  $seoData,
+            // 'articles' => Article::where(['is_active' => 1, 'in_main' => 1])->orderBy('id', 'desc')->get()
         ]);
     }
 
@@ -292,7 +304,7 @@ class PageController extends Controller
 
     public function catalogueDetail (City $city, CatalogType $type)
     {
-        //TODO: Переписать и убрать эти костыли отсюда. 
+        //TODO: Переписать и убрать эти костыли отсюда.
         $seoData = SeoBlock::where(['route' => Route::currentRouteName(), 'direction_id' => 2])->first();
 
         $typeTitle = mb_strtolower($type->ceiling_title);
@@ -307,7 +319,7 @@ class PageController extends Controller
 
         return view('ceilings.catalogueDetail', [
             'city'  =>  $city,
-            'type'  =>  $type, 
+            'type'  =>  $type,
             'photos'    =>  $photos,
             'seoData'   =>  $seoData
         ]);
@@ -333,7 +345,7 @@ class PageController extends Controller
     {
         return view('ceilings.lamps', [
             'city'  =>  $city,
-            'lamps' =>  \App\Lamp::all(), 
+            'lamps' =>  \App\Lamp::all(),
             'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
     }
@@ -443,6 +455,12 @@ class PageController extends Controller
     public function quiz (Request $request, City $city)
     {
         return view('ceilings.quiz', [
+            'city'  =>  $city
+        ]);
+    }
+    public function quiz2 (Request $request, City $city)
+    {
+        return view('ceilings.quiz2', [
             'city'  =>  $city
         ]);
     }

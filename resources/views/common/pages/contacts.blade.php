@@ -101,35 +101,97 @@
             </div>
         </div>
 
-        <div class="requisites container contacts__requisites">
-            <h3 class="second-title requisites__title">Реквизиты компании</h3>
-            <ul class="requisites__list">
-                <li class="requisites__item requisite">
-                    <span class="text requisite__title">Полное наименование:</span>
-                    <span class="text requisite__value">Общество с ограниченной ответственностью «Твой стиль»</span>
-                </li>
-                <li class="requisites__item requisite">
-                    <span class="text requisite__title">ОГРН:</span>
-                    <span class="text requisite__value">1152366007287</span>
-                </li>
-                <li class="requisites__item requisite">
-                    <span class="text requisite__title">ИНН:</span>
-                    <span class="text requisite__value">2320232540</span>
-                </li>
-                <li class="requisites__item requisite">
-                    <span class="text requisite__title">КПП:</span>
-                    <span class="text requisite__value">232001001</span>
-                </li>
-                <li class="requisites__item requisite">
-                    <span class="text requisite__title">Юридический адрес / фактический:</span>
-                    <span class="text requisite__value"> 354068, РФ, Краснодарский край, г. Сочи, ул. Донская 28, Литер А-2</span>
-                </li>
-                <li class="requisites__item requisite">
-                    <span class="text requisite__title">Ген. директор:</span>
-                    <span class="text requisite__value">Репин Александр Александрович </span>
-                </li>
-            </ul>
-        </div>
+        @if ($city->code == 'moskva' || $city->code == 'dolgoprudnyj')
+            <div class="requisites container contacts__requisites">
+                <h3 class="second-title requisites__title">Реквизиты компании</h3>
+                <ul class="requisites__list">
+                    <li class="requisites__item requisite">
+                        <span class="text requisite__title">Наименование:</span>
+                        <span class="text requisite__value">ООО «ТВОЙ СТИЛЬ»</span>
+                    </li>
+                    <li class="requisites__item requisite">
+                        <span class="text requisite__title">ОГРН:</span>
+                        <span class="text requisite__value">1195081057214</span>
+                    </li>
+                    <li class="requisites__item requisite">
+                        <span class="text requisite__title">ИНН:</span>
+                        <span class="text requisite__value">5047229412</span>
+                    </li>
+                    <li class="requisites__item requisite">
+                        <span class="text requisite__title">КПП:</span>
+                        <span class="text requisite__value">504701001</span>
+                    </li>
+                    <li class="requisites__item requisite">
+                        <span class="text requisite__title">Юридический адрес:</span>
+                        <span class="text requisite__value">
+                            141703 Московская область, г. Долгопрудный, ул. Набережная, дом 29, корпус 1, помещение НП8
+                        </span>
+                    </li>
+                    <li class="requisites__item requisite">
+                        <span class="text requisite__title">Почтовый адрес:</span>
+                        <span class="text requisite__value">
+                            141703 Московская область, г. Долгопрудный, ул. Набережная, дом 29, корпус 1, помещение НП8
+                        </span>
+                    </li>
+                    <li class="requisites__item requisite">
+                        <span class="text requisite__title">Расчётный счёт:</span>
+                        <span class="text requisite__value">
+                            40702810940000065034 ПАО СБЕРБАНК
+                        </span>
+                    </li>
+                    <li class="requisites__item requisite">
+                        <span class="text requisite__title">Кор/счет:</span>
+                        <span class="text requisite__value">
+                            30101810400000000225
+                        </span>
+                    </li>
+                    <li class="requisites__item requisite">
+                        <span class="text requisite__title">БИК:</span>
+                        <span class="text requisite__value">
+                            044525225
+                        </span>
+                    </li>
+                    <li class="requisites__item requisite">
+                        <span class="text requisite__title">Ген. директор:</span>
+                        <span class="text requisite__value">Репина Татьяна Александровна</span>
+                    </li>
+                    <li class="requisites__item requisite">
+                        <span class="text requisite__title">Система налогообложения:</span>
+                        <span class="text requisite__value">Упрощённая</span>
+                    </li>
+                </ul>
+            </div>
+        @else
+            <div class="requisites container contacts__requisites">
+                <h3 class="second-title requisites__title">Реквизиты компании</h3>
+                <ul class="requisites__list">
+                    <li class="requisites__item requisite">
+                        <span class="text requisite__title">Полное наименование:</span>
+                        <span class="text requisite__value">Общество с ограниченной ответственностью «Твой стиль»</span>
+                    </li>
+                    <li class="requisites__item requisite">
+                        <span class="text requisite__title">ОГРН:</span>
+                        <span class="text requisite__value">1152366007287</span>
+                    </li>
+                    <li class="requisites__item requisite">
+                        <span class="text requisite__title">ИНН:</span>
+                        <span class="text requisite__value">2320232540</span>
+                    </li>
+                    <li class="requisites__item requisite">
+                        <span class="text requisite__title">КПП:</span>
+                        <span class="text requisite__value">232001001</span>
+                    </li>
+                    <li class="requisites__item requisite">
+                        <span class="text requisite__title">Юридический адрес / фактический:</span>
+                        <span class="text requisite__value"> 354068, РФ, Краснодарский край, г. Сочи, ул. Донская 28, Литер А-2</span>
+                    </li>
+                    <li class="requisites__item requisite">
+                        <span class="text requisite__title">Ген. директор:</span>
+                        <span class="text requisite__value">Репин Александр Александрович </span>
+                    </li>
+                </ul>
+            </div>
+        @endif
 
     </section>
     @include('common.gui.footer')

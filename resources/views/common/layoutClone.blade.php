@@ -36,15 +36,13 @@
     $route = request()->route();
      $req = !empty($route) ? $route->getName():''; ?>
 
-    @if ($req !== 'quiz' && $req !== 'quiz2' && request()->skip_scripts != '1')  
+    @if ($req !== 'quiz')
     <!-- Carrot quest BEGIN -->
 		<script type="text/javascript">
 		!function(){function t(t,e){return function(){window.carrotquestasync.push(t,arguments)}}if("undefined"==typeof carrotquest){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="//cdn.carrotquest.io/api.min.js",document.getElementsByTagName("head")[0].appendChild(e),window.carrotquest={},window.carrotquestasync=[],carrotquest.settings={};for(var n=["connect","track","identify","auth","oth","onReady","addCallback","removeCallback","trackMessageInteraction"],a=0;a<n.length;a++)carrotquest[n[a]]=t(n[a])}}(),carrotquest.connect("28264-15daed65704be963b84a4f77f5");
 		</script>
 	<!-- Carrot quest END -->
     @endif
-
-    @if (request()->skip_scripts != '1')
     <!-- Facebook Pixel Code -->
       <script>
         !function(f,b,e,v,n,t,s)
@@ -63,7 +61,7 @@
       /></noscript>
     <!-- End Facebook Pixel Code -->
 
-    <!-- Yandex.Metrika counter --> <script type="text/javascript" > (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(40202559, "init", { clickmap:true, webvisor:true, trackLinks:true, accurateTrackBounce:true, trackHash:true }); </script> <noscript><div><img src="https://mc.yandex.ru/watch/40202559" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
+    <!-- Yandex.Metrika counter --> <script type="text/javascript" > (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(40202559, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, trackHash:true }); </script> <noscript><div><img src="https://mc.yandex.ru/watch/40202559" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
  
 
      <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -76,11 +74,10 @@
         gtag('config', 'UA-85472546-4');
     </script>
 
-    @endif  
-
 </head>
 <body class="body">
-    <? if (request()->path() !== '/' && $req !== 'quiz' && $req !== 'quiz2' && url()->previous() !== 'https://potolki-ts.ru/'): ?> 
+    
+    <? if (request()->path() !== '/' && $req !== 'quiz'): ?> 
         <div id="geo-confirm">
             <geo-confirm :cities="{{ $cities }}"></geo-confirm>
         </div>
@@ -90,12 +87,12 @@
     </div>
 </body>
 
-<!-- <script>
+<script>
         (function(w,d,u){
                 var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/60000|0);
                 var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
         })(window,document,'https://bitrix-ts.ru/upload/crm/site_button/loader_1_82uuho.js');
-</script> -->
+</script>
 
 <script type="text/javascript">
     function downloadJSAtOnload() {
@@ -115,7 +112,6 @@
     }
 </script>
 
-@if (request()->skip_scripts != '1')
 <script>
 (function(w, d, s, h, id) {
     w.roistatProjectId = id; w.roistatHost = h;
@@ -417,7 +413,7 @@
         }
     }
 </script>
-@endif
+
 
 @yield('scripts')
 </html>

@@ -369,7 +369,7 @@
             }
 
             .menu__item_dropdown:hover .menu__dropdown {
-                top: rem(47); 
+                top: rem(47);
             }
         }
 
@@ -549,6 +549,98 @@
                 background-image: url('/img/gui/phone.svg');
                 background-size: contain;
                 background-repeat: no-repeat;
+            }
+        }
+    }
+
+    &_ceilings-form {
+        @extend .container;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: rem(16) 0;
+
+        @include below($mobile) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .header__logo {
+            margin-right: rem(24);
+            padding: 0;
+
+            @include below($mobile) {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                margin-bottom: rem(16);
+                margin-right: 0;
+            }
+        }
+
+        .header__phone   {
+            white-space: nowrap;
+
+            @include below($mobile) {
+                position: relative;
+                font-size: rem(16);
+                line-height: normal;
+                margin-right: rem(20);
+
+                span {
+                    display: none;
+                }
+
+                .phone__icon {
+                    top: rem(1);
+                }
+            }
+        }
+
+        .header__callback  {
+            display: block;
+
+            @include below($mobile) {
+                font-size: rem(16);
+            }
+        }
+
+        .header__direction {
+            position: relative;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding-left: rem(24);
+            margin: 0;
+            margin-right: auto;
+            color: #485058;
+            font-family: $helvetica;
+            font-size: rem(16);
+            font-weight: 500;
+            line-height: normal;
+
+            @include below($mobile) {
+                width: 100%;
+                padding-bottom: rem(16);
+                text-align: center;
+                justify-content: center;
+                padding-left: 0;
+                margin-bottom: rem(12);
+                border-bottom: rem(1) solid #e6e8ea;
+            }
+
+            &::after {
+                position: absolute;
+                content: '';
+                width: rem(1);
+                height: rem(46);
+                top: rem(-12);
+                left: 0;
+                background-color: #babec2;
+
+                @include below($mobile) {
+                    display: none;
+                }
             }
         }
     }
