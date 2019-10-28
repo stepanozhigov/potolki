@@ -26,6 +26,7 @@ Route::group(['prefix' => 'admin'], function () {
 Route::get('/', 'PageController@index')->name('ceilings-index');
 
 Route::get('/err-handler', function() {
+	dd($_COOKIE['roistat_visit']);
     /*Log::info([
         'type' => 'js-err', 'data' => request()->all()
     ]);*/

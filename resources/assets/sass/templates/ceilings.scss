@@ -1,0 +1,43 @@
+@font-face {
+	font-family: 'helvetica-nueue';
+	src: url('../../fonts/helvetica-neue/helvetica-neue_light.woff');
+	font-weight: 300;
+}
+
+* {
+	font-family: 'helvetica-neue';
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.body {
+	display: grid;
+	grid-template-areas: "header" "content" "footer";
+}
+
+.logo {
+	display: flex;
+
+	&__icon {
+		width: 28px;
+		height: 32px;
+	}
+}
+
+.text {
+	font-size: 16px;
+}
+
+
+.header {
+	grid-area: header;
+}
+
+.content {
+	grid-area: content;
+}
+
+.footer {
+	grid-area: footer;
+}

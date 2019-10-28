@@ -1,0 +1,46 @@
+@font-face {
+  font-family: 'helvetica-nueue';
+  src: url(/fonts/helvetica-neue_light.woff?ea893f69b44ce11eeb0a42eb0e2113d4);
+  font-weight: 300;
+}
+
+* {
+  font-family: 'helvetica-neue';
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.body {
+  display: grid;
+  grid-template-areas: "header" "content" "footer";
+}
+
+.logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.logo__icon {
+  width: 28px;
+  height: 32px;
+}
+
+.text {
+  font-size: 16px;
+}
+
+.header {
+  grid-area: header;
+}
+
+.content {
+  grid-area: content;
+}
+
+.footer {
+  grid-area: footer;
+}
+

@@ -2,8 +2,9 @@
 
 namespace App\Connectors;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Cookie;
 
-class BitrixConnector { 
+class BitrixConnector {
 
     protected $url = 'https://bitrix-ts.ru:443/crm/configs/import/lead.php';
     protected $login = 'leads_tp';
@@ -39,7 +40,7 @@ class BitrixConnector {
 
         \curl_setopt_array($curl, [
             CURLOPT_RETURNTRANSFER  =>  true,
-            CURLOPT_POST => 1, 
+            CURLOPT_POST => 1,
             CURLOPT_POSTFIELDS => http_build_query($queryFields + $arFields)
         ]);
 
@@ -59,8 +60,9 @@ class BitrixConnector {
             'UF_CRM_1467050632' =>  $data['direction'] ?? '',
             'UF_CRM_CT_UTM_SOUR'    =>  'asdas',
             'UTM_SOURCE'    =>  'testasd',
-            'WEB'   =>  'potolki-ts.ru', 
+            'WEB'   =>  'potolki-ts.ru',
             'SOURCE_DESCRIPTION'    =>  $data['description'] ?? '',
+			'UF_CRM_5D8343E788'	=>	$_COOKIE['roistat_visit'] ?? '',
             'UF_CRM_1532512285' => request()->get('utm_source') ?? $this->getVisitParam('utm_source'),
             'UF_CRM_1532512297' => request()->get('utm_medium') ?? $this->getVisitParam('utm_medium'),
             'UF_CRM_1532512307' => request()->get('utm_campaign') ?? $this->getVisitParam('utm_campaign'),
@@ -75,12 +77,12 @@ class BitrixConnector {
         $connection = $this->openConnection('https://bitrix-ts.ru:443/crm/configs/import/lead.php', $data);
 
         $result = \curl_exec($connection);
-        //Log::info([$data, $result, $connection]);
+        Log::info(['lead_result' => $result, 'lead_data' => $data]);
         //var_dump($result, $this->requestData);
         //dd($data);
         return true;
     }
-    
+
     public function addTask ()
     {
 
