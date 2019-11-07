@@ -25513,6 +25513,7 @@ $('.ceilingsform').on('submit', function (event) {
         area: $('[name="area"]').val(),
         lamps: $('[name="lamps"]').val(),
         phone: $('[name="phone"]').val(),
+        city: $('[name="city"]').val(),
         gift: window.gift
     };
 
@@ -25954,6 +25955,16 @@ $('.catalogueDetail__desc-more').on('click', function () {
     } else {
         $this.text('Читать далее');
     }
+});
+
+$('.whatsapp_check').on('click', function () {
+    if (typeof window.yaCounter40202559 !== 'undefined') {
+        window.yaCounter40202559.reachGoal('whatsapp');
+    }
+    if (typeof ga.getAll() !== 'undefined') {
+        ga.getAll()[0].send('event', 'whatsapp', 'click');
+    }
+    fbq('track', 'Lead');
 });
 
 /***/ }),
@@ -35888,6 +35899,8 @@ $(document).on('click', '.js-show', function (event) {
         $source = $(source),
         $overlay = $('#overlay');
 
+    $('[name="icon_callback"]').hide();
+
     if (typeof BX !== 'undefined') {
         BX.SiteButton.hide();
     }
@@ -35922,7 +35935,7 @@ $(document).on('click', '.js-show', function (event) {
     }
 
     if ($source.height() % 2 == 1) {
-        $source.height($source.height() + 1);
+        // $source.height($source.height() + 1);
     }
 
     $overlay.addClass('overlay_active');

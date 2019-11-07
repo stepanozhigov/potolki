@@ -42,9 +42,9 @@ $city = $city ?? App\City::find(1);
                                         <a href="{{ route('catalogue', ['city' => $city, 'type' => $section]) }}" class="text menu__item menu__item_bordered">{{ $section->name }}</a>
                                     @endif
                                 @endif
-                                
+
                             @endforeach
-    	                   
+
                         </div>
 	                    <div class="menu__wrap">
                             <h3 class="menu__item-title">Помещения</h3>
@@ -63,7 +63,7 @@ $city = $city ?? App\City::find(1);
                             </a>
                             <a href="javascript:void(0);" class="text menu__dropdown-link">Услуги</a>
                         </div>
- 
+
 	                    <a href="{{ route('services', ['city' => $city, 'type' => 'measurements']) }}" class="text menu__item menu__item_bordered">Бесплатный замер</a>
 	                    <a href="{{ route('photoprint', $city) }}" class="text menu__item menu__item_bordered">Фотопечать</a>
 	                    <a href="{{ route('services', ['city' => $city, 'type' => 'ustanovka']) }}" class="text menu__item menu__item_bordered">Установка</a>
@@ -120,16 +120,16 @@ $city = $city ?? App\City::find(1);
 
                     <p class="dropdown__title">Офисы в других городах</p>
                     <menu-city-search :cities="{{ $cities }}"></menu-city-search>
-                    
+
                     <!-- <p class="dropdown__title">Не нашли ваш город?</p> -->
-                    
+
                 </div>
             </div>
         @endif
 
 
         <div class="header__feedbacks">
-            <a href="https://api.whatsapp.com/send?phone={{ $city->whatsapp }}" class="text whatsapp header__whatsapp red-hoverable"><img src="/img/gui/whatsapp.svg" alt="" class="whatsapp__icon"> <span class="whatsapp__write-text">Написать в&nbsp</span>WhatsApp <span class="whatsapp__mobile-text">Написать</span></a>
+            <a data-title="Написать в&nbspWhatsapp" data-src="#popup_whatsapp" class="js-show text whatsapp header__whatsapp red-hoverable"><img src="/img/gui/whatsapp.svg" alt="" class="whatsapp__icon"> <span class="whatsapp__write-text">Написать в&nbsp</span>WhatsApp <span class="whatsapp__mobile-text">Написать</span></a>
             <a href="tel:{{ $currentDirection->phone }}" class="text phone header__phone  red-hoverable"><img class="phone__icon" src="/img/gui/phone.svg" alt="">{{ $currentDirection->phone }} <span data-src="{{ route('forms.callback', $city) }}" class="js-link">Заказать звонок</span></a>
             <a href="{{ route('forms.callback', $city) }}" class="text header__callback">Заказать звонок</a>
         </div>
@@ -163,7 +163,7 @@ $city = $city ?? App\City::find(1);
                                     <a href="{{ route('catalogue', ['city' => $city, 'type' => $section]) }}" class="text menu__item menu__item_bordered">{{ $section->name }}</a>
                                 @endif
                             @endif
-                            
+
                         @endforeach
                     </div>
                     <div class="menu__wrap">
@@ -217,7 +217,7 @@ $city = $city ?? App\City::find(1);
                 </div>
             </div>
         </nav>
-        <div class="header__feedbacks"> 
+        <div class="header__feedbacks">
             <a href="https://api.whatsapp.com/send?phone={{ $city->whatsapp }}" class="header__whatsapp">WhatsApp<span>Написать</span></a>
             <a href="{{ route('forms.callback', $city) }}" class="header__phone">{{ $currentDirection->phone }}<span class="js-link" data-src="{{ route('forms.callback', $city) }}">заказать звонок</span></a>
             <img src="/img/gui/nav_hamburger.svg" alt="" class="hamburger header__hamburger active js-toggle-menu">

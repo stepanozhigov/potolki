@@ -33,7 +33,7 @@ class PageController extends Controller
     public function index () {
         return view('common.pages.index', [
             'directions' => Direction::where('id', '!=', 2)->get(),
-            'cities'    =>  City::where('id', '!=', 1)->with('offices')->get(),
+            'cities'    =>  City::with('offices')->get(),
             'currentCity'   =>  City::find(1),
             'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);

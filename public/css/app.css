@@ -8538,13 +8538,11 @@ body.no-scroll .header__close {
 
 .whatsapp.header__whatsapp {
   position: relative;
+  display: none;
 }
 
 @media screen and (max-width: 79.9375rem) {
   .whatsapp.header__whatsapp {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -8553,6 +8551,14 @@ body.no-scroll .header__close {
         -ms-flex-align: start;
             align-items: flex-start;
     padding-left: 24px;
+  }
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .whatsapp.header__whatsapp {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 
@@ -9018,9 +9024,9 @@ body.no-scroll .header__close {
 
 @media screen and (max-width: 650px) {
   .popup_active {
-    width: 100vw;
-    height: 100vh !important;
-    border-radius: 0;
+    width: 100%;
+    max-width: 86%;
+    max-height: calc(100vh - 40px);
   }
 }
 
@@ -9339,8 +9345,8 @@ body.no-scroll .header__close {
 
 @media screen and (max-width: 650px) {
   .popup__close {
-    top: 15px;
-    right: 15px;
+    top: -15px;
+    right: -15px;
   }
 }
 
@@ -9353,7 +9359,7 @@ body.no-scroll .header__close {
 
 @media screen and (max-width: 650px) {
   .popup__form {
-    padding: 65px 25px 80px 25px;
+    padding: 30px 15px;
     margin: 0;
     overflow: auto;
     max-width: initial;
@@ -9369,6 +9375,14 @@ body.no-scroll .header__close {
   letter-spacing: 3px;
   padding-bottom: 1.5rem;
   margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 44.9375rem) {
+  .popup__title {
+    padding-bottom: .625rem;
+    margin-bottom: .625rem;
+    font-size: 24px;
+  }
 }
 
 .popup__title::after {

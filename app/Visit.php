@@ -1,16 +1,17 @@
-<? 
+<?
 namespace App;
 
 class Visit {
 	public function __construct () {
 		$visits = [];
 		$visits = session('visits');
-
+		$json=json_encode($visits);
+		echo "<script>console.log({$json})</script>";
 		$referer = $_SERVER['HTTP_REFERER'] ?? '';
 		if (strpos($referer, 'potolki-ts.ru') !== false)
 		{
 			$referer = "";
-		} 
+		}
 
 		$visits[] = [
 				'referer'	=>	$referer,
@@ -22,7 +23,7 @@ class Visit {
 				'time'	=>	date('Y-m-d H:i:s')
 		];
 		session(['visits' => $visits]);
-		
+
 		//$data = json_encode(session()->all());
 		$data = json_encode(session('visits'));
 		//echo "<script>console.log({$data})</script>";

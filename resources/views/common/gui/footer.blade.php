@@ -8,6 +8,11 @@
     @include('common.forms.callback')
 </div>
 
+<div class="popup" id="popup_whatsapp">
+    <img src="/img/gui/close.svg" alt="" class="popup__close js-close">
+    @include('common.forms.whatsapp')
+</div>
+
 <div class="popup" id="credit_popup">
     <img src="/img/gui/close.svg" alt="" class="popup__close js-close">
     @include('common.forms.credit')

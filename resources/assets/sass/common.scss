@@ -637,14 +637,18 @@ body {
 
 	&.header__whatsapp {
         position: relative;
-
+		display: none;
 
         @include below($tablet) {
-            display: flex;
+
             flex-direction: column;
             align-items: flex-start;
             padding-left: 24px;
         }
+
+		@include below ($mobile) {
+			display: flex;
+		}
 
 		.whatsapp__mobile-text {
             position: relative;
@@ -1057,9 +1061,9 @@ body {
         border-radius: .3125rem;
 
         @media screen and (max-width: 650px) {
-            width: 100vw;
-            height: 100vh!important;
-            border-radius: 0;
+			width: 100%;
+			max-width: 86%;
+			max-height: calc(100vh - 40px);
         }
     }
     &_showup {
@@ -1296,8 +1300,8 @@ body {
 
 
         @media screen and (max-width: 650px) {
-            top: 15px;
-            right: 15px;
+            top: -15px;
+            right: -15px; 
         }
     }
 
@@ -1308,7 +1312,7 @@ body {
         display: block;
 
         @media screen and (max-width: 650px) {
-            padding: 65px 25px 80px 25px;
+            padding: 30px 15px;
 			margin: 0;
             overflow: auto;
             max-width: initial;
@@ -1325,6 +1329,11 @@ body {
         padding-bottom: rem(24);
         margin-bottom: rem(32);
 
+		@include below($mobile) {
+		    padding-bottom: .625rem;
+		    margin-bottom: .625rem;
+		    font-size: 24px;
+		}
         &::after {
             position: absolute;
             content: '';

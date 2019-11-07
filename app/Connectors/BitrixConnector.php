@@ -18,15 +18,16 @@ class BitrixConnector {
     protected function getVisitParam($param)
     {
         $visits = session('visits');
-
+		//Log::info(['get_vis' => $visits]);
+		$value = null;
         foreach ($visits as $visit)
         {
             if (!empty($visit[$param]))
             {
-                return $visit[$param];
+                $value = $visit[$param];
             }
         }
-        return "";
+        return $value;
     }
 
     protected function openConnection ($url, $arFields)
@@ -77,7 +78,8 @@ class BitrixConnector {
         $connection = $this->openConnection('https://bitrix-ts.ru:443/crm/configs/import/lead.php', $data);
 
         $result = \curl_exec($connection);
-        Log::info(['lead_result' => $result, 'lead_data' => $data]);
+        //Log::info(['lead_result' => $result, 'lead_data' => $data]);
+		Log::info(['request_m' => request()->get('utm_source'), 'visit_m' => $this->getVisitParam('utm_source')]);
         //var_dump($result, $this->requestData);
         //dd($data);
         return true;
