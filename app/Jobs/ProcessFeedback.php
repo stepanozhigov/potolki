@@ -9,23 +9,23 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
-use App\Connectors\BitrixConnector;
+use \App\Connectors\BitrixConnector;
+use App\Lead;
 
 class ProcessFeedback implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+	// use Dispatchable, InteractsWithQueue, Queueable;
 
-    public $data;
-
+    protected $lead;
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct($data)
+    public function __construct(Lead $lead)
     {
-        //Log::info('job construct');
-        $this->data = $data;
+        $this->lead = $lead;
     }
 
     /**
@@ -33,10 +33,31 @@ class ProcessFeedback implements ShouldQueue
      *
      * @return void
      */
-    public function handle()
+    public function handle(BitrixConnector $connector)
     {
-        $bitrixConnector = new BitrixConnector();
-        Log::info(['job handle', $this->data]);
-        $bitrixConnector->addLead($this->data); 
+		$visits = $this->lead->visits;
+		info($visits);
+		// foreach ($visits as $id => $visit) {
+        //     $visits.= "Дата: {$visit['time']} \r\n";
+        //     $visits.= "Страница: {$visit['page']} \r\n";
+        //     $visits.= "Реферер: {$visit['referer']} \r\n";
+        //     $visits.= "utm source: {$visit['utm_source']} \r\n";
+        //     $visits.= "utm medium: {$visit['utm_medium']} \r\n";
+        //     $visits.= "utm campaign: {$visit['utm_campaign']} \r\n";
+        //     $visits.= "utm term: {$visit['utm_term']} \r\n";
+        //     $visits.= "\r\n \r\n \r\n";
+        // }
+
+		$result = $connector->addLead([
+            'title' =>  $this->lead->name,
+            'name'  =>  $this->lead->name,
+            'phone' =>  $this->lead->phone,
+            'direction' =>  56,
+			'roistat'	=>	$this->lead->roistat, 
+            'description'   =>  $visits,
+            'city'  =>  $this->lead->city_id,
+            'source'    =>  'WEB'
+        ]);
+		info([$this->lead, $result]);
     }
 }

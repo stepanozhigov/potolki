@@ -1342,7 +1342,9 @@ $('.catalogueDetail__desc-more').on('click', function () {
 });
 
 
-$('.whatsapp_check').on('click', function () {
+$('.whatsapp_check').on('click', function (event) {
+	event.preventDefault();
+	$(this).attr('disabled', true);
     if (typeof window.yaCounter40202559 !== 'undefined') {
         window.yaCounter40202559.reachGoal('whatsapp');
     }
@@ -1351,4 +1353,21 @@ $('.whatsapp_check').on('click', function () {
     }
   	fbq('track', 'Lead');
 
+	var link = $(this).attr('href');
+
+	$.ajax({
+		url: '/forms/add-lead',
+		method: 'post',
+		dataType: 'json',
+		data: {
+			city: window.city.bx_code,
+			phone: null,
+			name: 'Пустой лид whatsapp',
+		},
+		success: function (response) {
+			if (response.success) {
+				location.href = link;
+			}
+		}
+	})
 });

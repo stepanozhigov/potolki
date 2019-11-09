@@ -3,8 +3,11 @@ $(document).on('click', '.js-show', function(event) {
     var source = $(this).data('src'),
         $this = $(this),
         $source = $(source),
+		$carrot = $('[name=icon_callback]'),
         $overlay = $('#overlay');
 
+	$carrot.css('display', 'none !important');
+	
 	$('[name="icon_callback"]').hide();
 
     if (typeof BX !== 'undefined') {

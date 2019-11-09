@@ -218,7 +218,7 @@ $city = $city ?? App\City::find(1);
             </div>
         </nav>
         <div class="header__feedbacks">
-            <a href="https://api.whatsapp.com/send?phone={{ $city->whatsapp }}" class="header__whatsapp">WhatsApp<span>Написать</span></a>
+            <a href="https://api.whatsapp.com/send?phone={{ $currentDirection->whatsapp }}" class="whatsapp header__whatsapp">WhatsApp<span>Написать</span></a>
             <a href="{{ route('forms.callback', $city) }}" class="header__phone">{{ $currentDirection->phone }}<span class="js-link" data-src="{{ route('forms.callback', $city) }}">заказать звонок</span></a>
             <img src="/img/gui/nav_hamburger.svg" alt="" class="hamburger header__hamburger active js-toggle-menu">
     		<img src="/img/gui/mobile-menu-close.svg" alt="" class="header__close js-toggle-menu">

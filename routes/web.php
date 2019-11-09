@@ -13,7 +13,7 @@
 use App\Direction;
 use App\City;
 use Illuminate\Support\Facades\Log;
-
+use App\Connectors\BitrixConnector;
 // Временно здесь. Обязательно убрать отсюда;
 //$visit = new App\Visit;
 
@@ -25,6 +25,16 @@ Route::group(['prefix' => 'admin'], function () {
 
 Route::get('/', 'PageController@index')->name('ceilings-index');
 
+Route::get('/job-test', function (BitrixConnector $connector) {
+	$lead = App\Lead::create([
+		'name'	=> 'test name',
+		'phone'	=>	'8 999 999 99 99',
+		'city_id' => 117,
+		'direction_id' => 56,
+		'visits'	=>	session('visits')
+	]);
+	App\Jobs\ProcessFeedback::dispatch($lead);
+});
 Route::get('/err-handler', function() {
 	dd($_COOKIE['roistat_visit']);
     /*Log::info([
@@ -54,7 +64,7 @@ Route::get('/geo/locate', function () {
     {
         $city = City::where('code', $codes[$locationCity])->first()->toArray();
     }
-    Log::info(['location'   =>  $location, 'city' => $city]);
+    //Log::info(['location'   =>  $location, 'city' => $city]);
     //dd($location);
     return response()->json(['location' => $location->toArray(),'city' => $city]);
 });

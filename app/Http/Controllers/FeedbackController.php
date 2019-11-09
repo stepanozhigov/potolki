@@ -10,13 +10,13 @@ use App\Review;
 use App\City;
 use App\Jobs\ProcessFeedback;
 use App\Connectors\BitrixConnector;
-
+use App\Lead;
 use App\Mail\Survey;
 
 class FeedbackController extends Controller
 {
     public function quiz (Request $request)
-    {   
+    {
         $desc = "";
         $bitrixConnector = new BitrixConnector();
 
@@ -33,11 +33,14 @@ class FeedbackController extends Controller
             'source'    =>  'WEB'
         ];
         //dd($data);
-        $bitrixConnector->addLead($data); 
+        $bitrixConnector->addLead($data);
     }
 
     public function quiz2 (Request $request)
-    {   
+    {
+
+
+
         $desc = "";
         $bitrixConnector = new BitrixConnector();
 
@@ -50,12 +53,13 @@ class FeedbackController extends Controller
             'name'  =>  'Новый результат опроса',
             'phone' =>  $request->phone,
             'direction' =>  56,
+			'roistat'	=>	$request->cookie('roistat_visit'),
             'description'   =>  $desc,
             'city'  =>  $request->city,
             'source'    =>  'WEB'
         ];
         //dd($data);
-        $bitrixConnector->addLead($data); 
+        $bitrixConnector->addLead($data);
     }
 
     public function addSurvey(Request $request)
@@ -63,7 +67,7 @@ class FeedbackController extends Controller
         dump($request->message);
         if (!empty($request->message))
         {
-            $res = Mail::to('adresplus@mail.ru')->send(new Survey($request->message)); 
+            $res = Mail::to('adresplus@mail.ru')->send(new Survey($request->message));
             dump($res);
             //mail('adresplus@mail.ru, kabakovki@yandex.ru, m1r.stillrunner@gmail.com', 'Оценка сайта', $request->message);
         }
@@ -125,38 +129,28 @@ class FeedbackController extends Controller
             $review->photos = json_encode($arPhotos);
             $review->save();
         }
-        
+
     }
 
     public function addLead(Request $request)
     {
-        $bitrixConnector = new BitrixConnector();
-
         $visits = "";
         $arVisits = session('visits');
 
-        foreach ($arVisits as $id => $visit) {
-            $visits.= "Дата: {$visit['time']} \r\n";
-            $visits.= "Страница: {$visit['page']} \r\n";
-            $visits.= "Реферер: {$visit['referer']} \r\n";
-            $visits.= "utm source: {$visit['utm_source']} \r\n";
-            $visits.= "utm medium: {$visit['utm_medium']} \r\n";
-            $visits.= "utm campaign: {$visit['utm_campaign']} \r\n";
-            $visits.= "utm term: {$visit['utm_term']} \r\n";
-            $visits.= "\r\n \r\n \r\n";
-        }
-        $data = [
-            'title' =>  $request->name,
-            'name'  =>  $request->name,
-            'phone' =>  $request->phone,
-            'direction' =>  56,
-            'description'   =>  $visits,
-            'city'  =>  $request->city,
-            'source'    =>  'WEB'
-        ];
-        //dd($data);
-        $bitrixConnector->addLead($data); 
-        //ProcessFeedback::dispatch($data); 
+		$lead = Lead::create([
+			'name'	=> $request->name,
+			'phone'	=> $request->phone,
+			'city_id' => $request->city,
+			'direction_id' => 56,
+			'roistat'	=>	$request->cookie('roistat_visit'),
+			'visits'	=>	$arVisits
+		]);
+
+		ProcessFeedback::dispatch($lead);
+
+		return response()->json([
+			'success'	=> true
+		]);
     }
 
     public function feedback (Request $request, City $city)
@@ -168,9 +162,9 @@ class FeedbackController extends Controller
         $this->addLead($request);
         // if (!$submitted)
         // {
-            // 
+            //
         // }
-        
+
         //return view('common.forms.success', ['city' => $city]);
         return redirect()->route('forms.success', ['city' => $city]);
     }

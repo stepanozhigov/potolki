@@ -1,6 +1,6 @@
-<?php
+<?
 
-namespace App\Connectors;
+namespace App;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Cookie;
 
@@ -10,18 +10,17 @@ class BitrixConnector {
     protected $login = 'leads_tp';
     protected $password = 'df%C8Bo0tY!';
     protected $requestData = '';
-	protected $visits = [];
 
-	public function __construct (Array $visits = null)
-	{
-		$this->visits = $visits;
-	}
-
+    public function __construct ($data = null)
+    {
+        $this->requestData = $data;
+    }
     protected function getVisitParam($param)
     {
+        $visits = session('visits');
+		//Log::info(['get_vis' => $visits]);
 		$value = null;
-
-        foreach ($this->visits as $visit)
+        foreach ($visits as $visit)
         {
             if (!empty($visit[$param]))
             {
@@ -51,7 +50,6 @@ class BitrixConnector {
 
     public function addLead ($data)
     {
-		$this->visits = $data['visits'] ?? [];
         $data = [
             'TITLE' =>  $data['title'],
             'NAME'  =>  $data['name'],
@@ -65,7 +63,7 @@ class BitrixConnector {
             'UTM_SOURCE'    =>  'testasd',
             'WEB'   =>  'potolki-ts.ru',
             'SOURCE_DESCRIPTION'    =>  $data['description'] ?? '',
-			'UF_CRM_5D8343E788'	=>	$data['roistat'] ?? '',
+			'UF_CRM_5D8343E788'	=>	$_COOKIE['roistat_visit'] ?? '',
             'UF_CRM_1532512285' => request()->get('utm_source') ?? $this->getVisitParam('utm_source'),
             'UF_CRM_1532512297' => request()->get('utm_medium') ?? $this->getVisitParam('utm_medium'),
             'UF_CRM_1532512307' => request()->get('utm_campaign') ?? $this->getVisitParam('utm_campaign'),
@@ -80,8 +78,11 @@ class BitrixConnector {
         $connection = $this->openConnection('https://bitrix-ts.ru:443/crm/configs/import/lead.php', $data);
 
         $result = \curl_exec($connection);
-
-		return $result;
+        //Log::info(['lead_result' => $result, 'lead_data' => $data]);
+		Log::info(['request_m' => request()->get('utm_source'), 'visit_m' => $this->getVisitParam('utm_source')]);
+        //var_dump($result, $this->requestData);
+        //dd($data);
+        return $result;
     }
 
     public function addTask ()

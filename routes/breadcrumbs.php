@@ -1,4 +1,4 @@
-<?
+<?php
 Breadcrumbs::for('ceilings', function ($trail, $city) {
     $trail->push('Главная', route('ceilings', $city));
 });
