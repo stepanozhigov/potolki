@@ -13,7 +13,8 @@ class Lead extends Model
 		'city_id',
 		'direction_id',
 		'visits',
-		'roistat'  
+		'roistat',
+		'description'
 	];
 
 	protected $casts = [

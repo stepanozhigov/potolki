@@ -36,28 +36,18 @@ class ProcessFeedback implements ShouldQueue
     public function handle(BitrixConnector $connector)
     {
 		$visits = $this->lead->visits;
-		info($visits);
-		// foreach ($visits as $id => $visit) {
-        //     $visits.= "Дата: {$visit['time']} \r\n";
-        //     $visits.= "Страница: {$visit['page']} \r\n";
-        //     $visits.= "Реферер: {$visit['referer']} \r\n";
-        //     $visits.= "utm source: {$visit['utm_source']} \r\n";
-        //     $visits.= "utm medium: {$visit['utm_medium']} \r\n";
-        //     $visits.= "utm campaign: {$visit['utm_campaign']} \r\n";
-        //     $visits.= "utm term: {$visit['utm_term']} \r\n";
-        //     $visits.= "\r\n \r\n \r\n";
-        // }
 
 		$result = $connector->addLead([
             'title' =>  $this->lead->name,
             'name'  =>  $this->lead->name,
             'phone' =>  $this->lead->phone,
+			'visits' => $this->lead->visits,
             'direction' =>  56,
-			'roistat'	=>	$this->lead->roistat, 
+			'roistat'	=>	$this->lead->roistat,
+			'comment'	=>	$this->lead->description,
             'description'   =>  $visits,
             'city'  =>  $this->lead->city_id,
             'source'    =>  'WEB'
         ]);
-		info([$this->lead, $result]);
     }
 }

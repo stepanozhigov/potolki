@@ -38,28 +38,28 @@ class FeedbackController extends Controller
 
     public function quiz2 (Request $request)
     {
+		$arVisits = session('visits');
 
-
-
-        $desc = "";
-        $bitrixConnector = new BitrixConnector();
-
+		$desc = "";
         $desc.= "Площадь: ". $request->area." \r\n";
         $desc.= "Светильников: ". $request->lamps." \r\n";
         $desc.= "Подарок: ". $request->gift." \r\n";
 
-        $data = [
-            'title' => 'Новый результат опроса',
-            'name'  =>  'Новый результат опроса',
-            'phone' =>  $request->phone,
-            'direction' =>  56,
+		$lead = Lead::create([
+			'name'	=> 'Новый результат опроса',
+			'phone'	=> $request->phone,
+			'city_id' => $request->city,
+			'direction_id' => 56,
 			'roistat'	=>	$request->cookie('roistat_visit'),
-            'description'   =>  $desc,
-            'city'  =>  $request->city,
-            'source'    =>  'WEB'
-        ];
-        //dd($data);
-        $bitrixConnector->addLead($data);
+			'visits'	=>	$arVisits,
+			'description'   =>  $desc,
+		]);
+
+		ProcessFeedback::dispatch($lead);
+
+		return response()->json([
+			'success'	=> true
+		]);
     }
 
     public function addSurvey(Request $request)

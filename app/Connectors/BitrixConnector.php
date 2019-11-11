@@ -52,6 +52,7 @@ class BitrixConnector {
     public function addLead ($data)
     {
 		$this->visits = $data['visits'] ?? [];
+		info($this->visits); 
         $data = [
             'TITLE' =>  $data['title'],
             'NAME'  =>  $data['name'],
