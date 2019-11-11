@@ -1,0 +1,76 @@
+@font-face {
+	font-family: $helvetica;
+	src: url('../../fonts/helvetica-neue/helvetica-neue_light.woff');
+	font-weight: 300;
+}
+@font-face {
+	font-family: $futura;
+	src: url('../../fonts/futura-pt/futura-pt_book.woff');
+	font-weight: 300;
+}
+
+@font-face {
+	font-family: $playfair;
+	src: url('../../fonts/playfair-display/playfair-display.woff');
+	font-weight: 400;
+}
+@font-face {
+	font-family: $playfair;
+	src: url('../../fonts/playfair-display/playfair-display_italic.woff');
+	font-weight: 400;
+	font-style: italic;
+}
+@font-face {
+	font-family: $playfair;
+	src: url('../../fonts/playfair-display/playfair-display_bold.woff');
+	font-weight: 700;
+}
+
+* {
+	color: $black;
+	font-family: $helvetica;
+	text-align: center;
+	hyphens: none;
+}
+.overtitle {
+	color: $gray;
+	font-family: $futura;
+	font-size: 18px;
+	font-weight: 300;
+	letter-spacing: 5px;
+	line-height: 20px;
+	text-transform: uppercase;
+}
+
+.h1 {
+	font: 26px/36px $playfair;
+}
+.h2 {
+	font: 22px/26px $playfair;
+}
+.h3 {
+	font: 18px/20px $playfair;
+}
+.h4 {
+	font: 26px/32px $futura;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+}
+.h5 {
+	font: italic 24px $playfair;
+}
+.intro {
+	font: 20px/30px $helvetica;
+}
+
+.text {
+	font: 18px/26px $helvetica;
+
+	&_small {
+		font: 14px/24px $helvetica;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+
+}

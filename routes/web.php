@@ -1,4 +1,4 @@
-<?php
+	<?php
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +24,10 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 Route::get('/', 'PageController@index')->name('ceilings-index');
+
+Route::get('/gui', function () {
+	return view('templates.gui.gui');
+});
 
 Route::get('/job-test', function (BitrixConnector $connector) {
 	$lead = App\Lead::create([
