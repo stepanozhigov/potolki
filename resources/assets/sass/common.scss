@@ -1047,12 +1047,17 @@ body {
 	 }
 }
 
+[name="icon_callback"]{
+    z-index: 999999 !important;
+}
+
 .popup {
     display: none;
 
     &_active {
         background: white;
         z-index: 9999999999;
+        9999999
         display: flex;
         position: fixed;
         top: 50%;
