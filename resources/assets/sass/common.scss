@@ -1052,7 +1052,7 @@ body {
 
     &_active {
         background: white;
-        z-index: 9999999;
+        z-index: 9999999999;
         display: flex;
         position: fixed;
         top: 50%;
@@ -1310,7 +1310,6 @@ body {
         padding: rem(40);
         padding-bottom: rem(48);
         display: block;
-        z-index: 1000;
 
         @media screen and (max-width: 650px) {
             padding: 30px 15px;
