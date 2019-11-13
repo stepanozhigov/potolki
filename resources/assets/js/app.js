@@ -1392,6 +1392,7 @@ $('.whatsapp').on('click', function (event) {
     }else{
         name = 'WhatsApp - Восток';
     }
+    console.log(city_code);
     console.log(window.city.bx_code);
     console.log(city_code.includes(window.city.bx_code));
 });
