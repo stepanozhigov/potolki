@@ -1354,7 +1354,7 @@ $('.whatsapp_check').on('click', function (event) {
   	fbq('track', 'Lead');
 
 	var link = $(this).attr('href');
-
+    console.log(window.city.bx_code);
 	$.ajax({
 		url: '/forms/add-lead',
 		method: 'post',
