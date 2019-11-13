@@ -1379,3 +1379,19 @@ $('.whatsapp_check').on('click', function (event) {
 		}
 	})
 });
+
+$('.whatsapp').on('click', function (event) {
+	event.preventDefault();
+	$(this).attr('disabled', true);
+
+    var name = 'Пустой лид whatsapp';
+    var city_code = [529,523,528,113,117];
+
+    if (city_code.includes(window.city.bx_code)){
+        name = 'WhatsApp - Запад';
+    }else{
+        name = 'WhatsApp - Восток';
+    }
+    console.log(window.city.bx_code);
+    console.log(city_code.includes(window.city.bx_code));
+});
