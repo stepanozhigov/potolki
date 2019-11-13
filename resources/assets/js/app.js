@@ -1385,7 +1385,7 @@ $('.whatsapp').on('click', function (event) {
 	$(this).attr('disabled', true);
 
     var name = 'Пустой лид whatsapp';
-    const city_code = [529, 523, 528, 113, 117];
+    const city_code = ['529', '523', '528', '113', '117'];
 
     if (city_code.includes(window.city.bx_code)){
         name = 'WhatsApp - Запад';
