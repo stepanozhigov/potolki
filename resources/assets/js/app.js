@@ -1357,7 +1357,7 @@ $('.whatsapp_check').on('click', function (event) {
     var name = 'Пустой лид whatsapp';
     var city_code = [529, 523, 528, 113, 117];
 
-    if (array.includes(window.city.bx_code)){
+    if (window.city.bx_code in ity_code){
         name = 'WhatsApp - Запад';
     }else{
         name = 'WhatsApp - Восток';
