@@ -26,6 +26,8 @@
 	font-weight: 700;
 }
 
+// mobile first
+
 * {
 	color: $black;
 	font-family: $helvetica;
@@ -33,12 +35,9 @@
 	hyphens: none;
 }
 .overtitle {
+	font: 18px/20px $futura;
 	color: $gray;
-	font-family: $futura;
-	font-size: 18px;
-	font-weight: 300;
 	letter-spacing: 5px;
-	line-height: 20px;
 	text-transform: uppercase;
 }
 
@@ -71,6 +70,19 @@
 	}
 }
 
-@media screen and (min-width: 1024px) {
 
+// then tablet
+@media screen and (min-width: 768px) {
+	.h1 {
+		font: 32px/40px $playfair;
+	}
 }
+
+// then desktop
+@media screen and (min-width: 1024px) {
+	.h1 {
+		font: 44px/56px $playfair;
+	}
+}
+
+// then other: tv etc

@@ -8,24 +8,6 @@
 	max-width: 100%;
 }
 
-// typo
-
-.title {
-	color: #485058;
-	text-align: center;;
-	font-family: playfair-display;
-	font-size: 28px;
-	font-weight: 400;
-	line-height: 36px;
-
-	b {
-		font-size: 30px;
-		font-family: inherit;
-	}
-}
-
-// end typo
-
 .body {
 	display: grid;
 	grid-template-areas:

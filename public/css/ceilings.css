@@ -39,12 +39,9 @@
 }
 
 .overtitle {
+  font: 18px/20px "futura-pt";
   color: #babec2;
-  font-family: "futura-pt";
-  font-size: 18px;
-  font-weight: 300;
   letter-spacing: 5px;
-  line-height: 20px;
   text-transform: uppercase;
 }
 
@@ -82,26 +79,24 @@
   font: 14px/24px "helvetica-neue";
 }
 
+@media screen and (min-width: 768px) {
+  .h1 {
+    font: 32px/40px "playfair-display";
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .h1 {
+    font: 44px/56px "playfair-display";
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   max-width: 100%;
-}
-
-.title {
-  color: #485058;
-  text-align: center;
-  font-family: playfair-display;
-  font-size: 28px;
-  font-weight: 400;
-  line-height: 36px;
-}
-
-.title b {
-  font-size: 30px;
-  font-family: inherit;
 }
 
 .body {
