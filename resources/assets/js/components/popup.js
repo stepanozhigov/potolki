@@ -10,6 +10,21 @@ $(document).on('click', '.js-show', function(event) {
 	
     $('[name="icon_callback"]').hide();
 
+    var mutationObserver = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          console.log(mutation);
+        });
+      });
+
+      mutationObserver.observe($carrot, {
+        attributes: true,
+        characterData: true,
+        childList: true,
+        subtree: true,
+        attributeOldValue: true,
+        characterDataOldValue: true
+      });
+
     $carrot.onload= function(){
         $carrot.each(function () {
             $(this).css('display', 'none !important');
