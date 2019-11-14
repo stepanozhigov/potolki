@@ -10,26 +10,24 @@ $(document).on('click', '.js-show', function(event) {
 	
     $('[name="icon_callback"]').hide();
 
-    var mutationObserver = new MutationObserver(function(mutations) {
-        mutations.forEach(function(mutation) {
-          console.log(mutation);
-        });
-      });
+    var MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
+  var list = document.querySelector('body');
+ 
+  var observer = new MutationObserver(function(mutations) {  
+    mutations.forEach(function(mutation) {
+      if (mutation.type === 'childList') {
 
-      mutationObserver.observe($carrot, {
-        attributes: true,
-        characterData: true,
-        childList: true,
-        subtree: true,
-        attributeOldValue: true,
-        characterDataOldValue: true
-      });
+        console.log("123");
 
-    $carrot.onload= function(){
-        $carrot.each(function () {
-            $(this).css('display', 'none !important');
-        });
-    };
+      }
+    });
+  });
+ 
+  observer.observe(list, {
+  	attributes: true, 
+  	childList: true, 
+  	characterData: true 
+   });
 
     
 
