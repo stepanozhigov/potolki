@@ -102,7 +102,8 @@ $(document).on('click','.js-close', function(event) {
     event.preventDefault();
     //выключаем прослушку
     observer.disconnect();
-    
+    $('[name="icon_callback"]').show();
+
     $('body').removeClass('overflowed');
 
     var $overlay = $('#overlay'),
