@@ -8,7 +8,11 @@ $(document).on('click', '.js-show', function(event) {
 
 	$carrot.css('display', 'none !important');
 	
-	$('[name="icon_callback"]').hide();
+    $('[name="icon_callback"]').hide();
+    
+    $carrot.addEventListener("load", function myFunction() {
+        $carrot.css('display', 'none !important');
+    });
 
     if (typeof BX !== 'undefined') {
         BX.SiteButton.hide();
