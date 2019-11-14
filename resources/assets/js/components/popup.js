@@ -10,10 +10,10 @@ $(document).on('click', '.js-show', function(event) {
 	
     $('[name="icon_callback"]').hide();
 
-    $carrot.addEventListener("load", function(){
+    $carrot.onload= function(){
         $carrot.css('display', 'none !important');
         $('[name="icon_callback"]').hide();
-    });
+    };
 
     if (typeof BX !== 'undefined') {
         BX.SiteButton.hide();
