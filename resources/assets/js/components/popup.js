@@ -1,3 +1,13 @@
+var MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
+    var list = document.querySelector('body');
+ 
+    var observer = new MutationObserver(function(mutations) {  
+        mutations.forEach(function(mutation) {
+            $('[name="icon_callback"]').css('display', 'none !important');
+            console.log("123");
+        });
+    });
+
 $(document).on('click', '.js-show', function(event) {
     event.preventDefault();
     var source = $(this).data('src'),
@@ -9,25 +19,10 @@ $(document).on('click', '.js-show', function(event) {
 	$carrot.css('display', 'none !important');
 	
     $('[name="icon_callback"]').hide();
-
-    var MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
-  var list = document.querySelector('body');
  
-  var observer = new MutationObserver(function(mutations) {  
-    mutations.forEach(function(mutation) {
-      if (mutation.type === 'childList') {
-
-        console.log("123");
-
-      }
+    observer.observe(list, {
+        childList: true
     });
-  });
- 
-  observer.observe(list, {
-  	attributes: true, 
-  	childList: true, 
-  	characterData: true 
-   });
 
     
 
@@ -108,7 +103,7 @@ $(document).on('click', '.js-showup', function(event) {
 
 $(document).on('click','.js-close', function(event) {
     event.preventDefault();
-
+    observer.disconnect();
     $('body').removeClass('overflowed');
 
     var $overlay = $('#overlay'),
