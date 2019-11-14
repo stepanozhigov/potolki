@@ -11,12 +11,8 @@ $(document).on('click', '.js-show', function(event) {
     $('[name="icon_callback"]').hide();
 
     $carrot.onload = function(){
-        hideCarrot()
-    };
-
-    function hideCarrot() {
         $carrot.css('display', 'none !important');
-    }
+    };
 
     if (typeof BX !== 'undefined') {
         BX.SiteButton.hide();
