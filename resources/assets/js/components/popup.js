@@ -1,12 +1,11 @@
+//прослушивание изменения dom
 var MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
-    var list = document.querySelector('body');
- 
-    var observer = new MutationObserver(function(mutations) {  
-        mutations.forEach(function(mutation) {
-            $('[name="icon_callback"]').css('display', 'none !important');
-            console.log("123");
-        });
+var list = document.querySelector('body');
+var observer = new MutationObserver(function(mutations) {  
+    mutations.forEach(function(mutation) {
+        $('[name="icon_callback"]').hide();
     });
+});
 
 $(document).on('click', '.js-show', function(event) {
     event.preventDefault();
@@ -19,12 +18,10 @@ $(document).on('click', '.js-show', function(event) {
 	$carrot.css('display', 'none !important');
 	
     $('[name="icon_callback"]').hide();
- 
+    //включаем прослушку
     observer.observe(list, {
         childList: true
     });
-
-    
 
     if (typeof BX !== 'undefined') {
         BX.SiteButton.hide();
@@ -103,7 +100,9 @@ $(document).on('click', '.js-showup', function(event) {
 
 $(document).on('click','.js-close', function(event) {
     event.preventDefault();
+    //выключаем прослушку
     observer.disconnect();
+    
     $('body').removeClass('overflowed');
 
     var $overlay = $('#overlay'),
