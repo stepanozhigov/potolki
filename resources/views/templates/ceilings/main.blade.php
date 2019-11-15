@@ -10,8 +10,8 @@
 	<title>Document</title>
 </head>
 <body class="body">
-	{{-- <header class="header"> -->
-		<a class="logo" href="/" aria-label="На главную страницу">
+	<header class="header">
+		<a class="logo header__logo" href="/" aria-label="На главную страницу">
 			@include('templates.gui.icons.logo.logo__icon')
 		</a>
 		<div class="directions">
@@ -37,13 +37,13 @@
 			<p>8 800 222-11-97</p>
 			<p>Заказать звонок</p>
 		</a>
-	</header>--}}
+	</header>
 	<main class="content">
 		<section class="hero">
-			<p class="overtitle">
+			<p class="overtitle hero__overtitle">
 				Монтаж 1 день | Гарантия 15 лет
 			</p>
-			<h1 class="title hero__title">
+			<h1 class="h1 hero__title">
 				<b>Натяжные потолки</b><br>
 				в Москве и МО<br>
 				от 100 ₽/м²
@@ -262,8 +262,8 @@
 				<p class="form__agreement">Оставляя контактную информацию, вы соглашаетесь на обработку персональных данных</p>
 			</form>
 		</section>
-	</main>
-	{{--<footer class="footer">
+	</main> 
+	<footer class="footer">
 		<ul class="footer__contacts">
 			<li class="phone">
 				@include('templates.gui.icons.phone.phone_white')
@@ -304,8 +304,7 @@
 			<a href="#"><u>Оценить сайт</u></a>
 			<p>Разработка и продвижение<br>TREND PRO</p>
 		</div>
-	</footer>--}}
+	</footer>
 </body>
 <script src="/js/ceilings.js"></script>
 </html>
-

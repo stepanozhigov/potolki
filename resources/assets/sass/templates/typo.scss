@@ -43,6 +43,11 @@
 
 .h1 {
 	font: 26px/36px $playfair;
+
+	b {
+		color: inherit;
+		font-family: inherit; 
+	}
 }
 .h2 {
 	font: 22px/26px $playfair;
