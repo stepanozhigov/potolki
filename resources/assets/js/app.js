@@ -14,6 +14,8 @@ var ionRangeSlider = require('ion-rangeslider/js/ion.rangeSlider.js');
 var tooltipster = require('tooltipster/dist/js/tooltipster.bundle.js');
 var rateYo = require('rateyo/src/jquery.rateyo.js');
 
+window.VueCookie = require('vue-cookie');
+Vue.use(VueCookie);
 
 window.Vue2TouchEvents = require('vue2-touch-events');
 Vue.use(Vue2TouchEvents);
@@ -877,7 +879,7 @@ $('.ceilingsform').on('submit', function (event) {
       gift: window.gift
     };
 
-
+    Vue.cookie.set('form_send', true, 1);
 
     $this.addClass('ceilingsform_sent');
     $.ajax({
@@ -892,14 +894,32 @@ $('.ceilingsform').on('submit', function (event) {
 
 })
 $('.js-less').on('submit', function () {
-    var $form = $(this),
-        $button = $form.find('button[type="submit"]');
 
-    $button.prop('disabled', true);
+    if(Vue.cookie.get('form_send')){
+        $('body').addClass('overflowed');
+        $('#overlay').addClass('overlay_active');
+        $('#popup_alert_form').addClass('popup_active');
+        $('.header_sticky').addClass('hidden');
+        $(this).find('input').val('');
+        event.preventDefault();
+    }else{
+        Vue.cookie.set('form_send', true, 1);
+    }
+
 });
 
 $('.form:not(.js-less)').on('submit', function (event) {
     event.preventDefault();
+
+    if(Vue.cookie.get('form_send')){
+        $('#popup_callback').removeClass('popup_active');
+        $('#popup_alert_form').addClass('popup_active');
+        $(this).find('input').val('');
+        return false;
+    }else{
+        Vue.cookie.set('form_send', true, 1);
+    }
+
     var $this = $(this),
     	name = $this.find('[name=name]').val(),
     	city = $this.find('[name=city]').val(),

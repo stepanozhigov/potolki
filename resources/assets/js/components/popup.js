@@ -61,8 +61,10 @@ $(document).on('click', '.js-show', function(event) {
         $source.find('button').html('Заказать звонок');
     }
 
-    if ($source.height() % 2 == 1 ) {
-        // $source.height($source.height() + 1);
+    if (source == "#popup_ceilingsform"){
+        if(Vue.cookie.get('form_send')){
+            var source = "#popup_alert_form";
+        }
     }
 
     $overlay.addClass('overlay_active');

@@ -23,6 +23,10 @@
     @include('common.forms.survey')
 </div>
 
+<div class="popup" id="popup_alert_form">
+    <img src="/img/gui/close.svg" alt="" class="popup__close js-close">
+    @include('common.forms.alert_form')
+</div>
 
 <div class="popup" id="videoBlock">
     <img src="/img/gui/close.svg" alt="" class="popup__close js-close">
