@@ -1363,39 +1363,48 @@ $('.catalogueDetail__desc-more').on('click', function () {
 
 
 $('.whatsapp_check').on('click', function (event) {
-	event.preventDefault();
+    event.preventDefault();
 	$(this).attr('disabled', true);
-    if (typeof window.yaCounter40202559 !== 'undefined') {
-        window.yaCounter40202559.reachGoal('whatsapp');
-    }
-    if (typeof ga.getAll() !== 'undefined') {
-        ga.getAll()[0].send('event', 'whatsapp', 'click');
-    }
-  	fbq('track', 'Lead');
-
     var link = $(this).attr('href');
-    var name = 'Пустой лид whatsapp';
-    var city_code = ['529', '523', '528', '113', '117'];
 
-    if (city_code.includes(window.city.bx_code)){
-        name = 'WhatsApp - Запад';
+    if(Vue.cookie.get('form_send')){
+
+        location.href = link;
+
     }else{
-        name = 'WhatsApp - Восток';
+
+        var name = 'Пустой лид whatsapp';
+        var city_code = ['529', '523', '528', '113', '117'];
+
+        if (city_code.includes(window.city.bx_code)){
+            name = 'WhatsApp - Запад';
+        }else{
+            name = 'WhatsApp - Восток';
+        }
+
+        if (typeof window.yaCounter40202559 !== 'undefined') {
+            window.yaCounter40202559.reachGoal('whatsapp');
+        }
+        if (typeof ga.getAll() !== 'undefined') {
+            ga.getAll()[0].send('event', 'whatsapp', 'click');
+        }
+        fbq('track', 'Lead');
+
+        $.ajax({
+            url: '/forms/add-lead',
+            method: 'post',
+            dataType: 'json',
+            data: {
+                city: window.city.bx_code,
+                phone: null,
+                name: name,
+            },
+            success: function (response) {
+                if (response.success) {
+                    location.href = link;
+                }
+            }
+        })
     }
 
-	$.ajax({
-		url: '/forms/add-lead',
-		method: 'post',
-		dataType: 'json',
-		data: {
-			city: window.city.bx_code,
-			phone: null,
-			name: name,
-		},
-		success: function (response) {
-			if (response.success) {
-				location.href = link;
-			}
-		}
-	})
 });
