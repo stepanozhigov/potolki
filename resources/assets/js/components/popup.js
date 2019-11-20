@@ -7,6 +7,13 @@ var observer = new MutationObserver(function(mutations) {
     });
 });
 
+if(Vue.cookie.get('form_send')){
+    //включаем прослушку
+    observer.observe(list, {
+        childList: true
+    });
+}
+
 $(document).on('click', '.js-show', function(event) {
     event.preventDefault();
     var source = $(this).data('src'),
