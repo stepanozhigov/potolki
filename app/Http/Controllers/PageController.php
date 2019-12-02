@@ -244,13 +244,13 @@ class PageController extends Controller
     public function ceilingsClone (City $city)
     {
         return view('templates.ceilings.main', [
-            // 'city'  =>  $city,
-            // 'reviews'   =>  Review::where(['direction_id' => 2, 'is_active' => 1])->limit(3)->orderBy('sort', 'asc')->get(),
-            // 'photos'    =>  Photo::whereIn('catalog_type_id', [15,16,17,18,19,20,21,22,23,24,25])->get(),
-            // 'offers'    =>  Offer::where(['is_active' =>  1, 'direction_id' => 2])->get(),
-            // 'catalogTypes'  => CatalogType::where(['direction_id' => 2])->get(),
+            'city'  =>  $city,
+            'reviews'   =>  Review::where(['direction_id' => 2, 'is_active' => 1])->limit(3)->orderBy('sort', 'asc')->get(),
+            'photos'    =>  Photo::whereIn('catalog_type_id', [15,16,17,18,19,20,21,22,23,24,25])->get(),
+            'offers'    =>  Offer::where(['is_active' =>  1, 'direction_id' => 2])->get(),
+            'catalogTypes'  => CatalogType::where(['direction_id' => 2])->whereIn('type', ['material', 'tech'])->get(),
             // 'seoData'   =>  $seoData,
-            // 'articles' => Article::where(['is_active' => 1, 'in_main' => 1])->orderBy('id', 'desc')->get()
+            'articles' => Article::where(['is_active' => 1, 'in_main' => 1])->orderBy('id', 'desc')->get()
         ]);
     }
 

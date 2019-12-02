@@ -54,6 +54,7 @@ Vue.component('menu-city-search', require('./components/MenuCitySearch.vue'));
 Vue.component('quiz', require('./components/Quiz.vue'));
 Vue.component('gifts', require('./components/Gifts.vue'));
 Vue.component('geo-confirm', require('./components/GeoConfirm.vue'));
+Vue.component('ceilings-cats', require('./components/ceilingsCats.vue'));
 // Vue.component('portfolio-photos', require('./components/PortfolioPhotos.vue'));
 if ($('#geo-confirm').length > 0) {
     new Vue({
@@ -306,6 +307,21 @@ if (portfolioListContainer.length > 0) {
             }
         }
     })
+}
+
+const catalogCarouselContainer = $('.catalog__carousel');
+
+if (catalogCarouselContainer.length > 0) {
+    new Vue({
+        el: '#catalog__carousel',
+        template: '<ceilings-cats :cats="cats" :city="city"></ceilings-cats>',
+        data: function () {
+            return {
+                cats: catalogCarouselContainer.data('cats'),
+                city: catalogCarouselContainer.data('city')
+            }
+        }
+    });
 }
 
 
