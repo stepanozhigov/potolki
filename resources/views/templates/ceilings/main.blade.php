@@ -135,7 +135,7 @@
     </section>
 
     <section class="manufactur section wrapper">
-        <h2 class="manufactur__title title-dec">Визуализация потолков</h2>
+        <h2 class="manufactur__title title-dec">Производители плёнки</h2>
         <p class="manufactur__subtitle subtitleN">Компания &laquo;Твой стиль&raquo; ипользует плёнку для натяжных потолков ведущих мировых производителей. Мы&nbsp;предлагаем нашим клиентам только сертифицированные материалы. В&nbsp;нашем ассортименте можно выбрать полотна из&nbsp;пленки ПВХ и&nbsp;тканевые полотна следующих производителей.</p>
         <div class="manufactur__items">   
             <div class="manufactur__item">
