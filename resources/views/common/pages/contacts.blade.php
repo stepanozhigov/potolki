@@ -51,7 +51,7 @@
                                 <p class="office__title card-title"> {{ $office->adres }}</p>
                                 <p class="office__desc text">{{ $office->adres_desc }}</p>
                                 <p class="office__time card-title">{{ $office->time }}</p>
-                                <p class="text office__weekend">Без выходных</p>
+                                <p class="text office__weekend">Пн-Пт, Сб-Вс выходные</p>
                             </div>
                         </div>
                     @endforeach
