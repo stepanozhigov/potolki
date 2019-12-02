@@ -1,10 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="23px" height="16px" viewBox="0 0 23 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
-    <title>Components / Mixin / Icons basic / Close</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Components-/-Mixin-/-Icons-basic-/-Close" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M5,3 L15,13 L5,3 Z" id="Line" stroke="#808890"></path>
-        <path d="M15,3 L5,13 L15,3 Z" id="Line" stroke="#808890"></path>
-    </g>
-</svg>
+<svg id="SVGDoc" width="12" height="12" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:avocode="https://avocode.com/" viewBox="0 0 12 12"><defs><path d="M1009.92976,193.73932l-3.14519,-3.14519c-0.60487,-0.60488 -1.58557,-0.60488 -2.19044,0c-0.60488,0.60487 -0.60488,1.58557 0,2.19044l3.14519,3.14519l-3.28566,3.28567c-0.60488,0.60487 -0.60488,1.58557 0,2.19044c0.60487,0.60488 1.58556,0.60488 2.19044,0l3.28566,-3.28566l3.42614,3.42613c0.60488,0.60488 1.58557,0.60488 2.19044,0c0.60488,-0.60487 0.60488,-1.58556 0,-2.19044l-3.42613,-3.42614l3.28566,-3.28566c0.60488,-0.60488 0.60488,-1.58557 0,-2.19044c-0.60487,-0.60488 -1.58557,-0.60488 -2.19044,0z" id="Path-0"/></defs><desc>Generated with Avocode.</desc><g transform="matrix(1,0,0,1,-1004,-190)"><g><title>Combined Shape</title><use xlink:href="#Path-0" fill="#aaaaaa" fill-opacity="1"/></g></g></svg>
