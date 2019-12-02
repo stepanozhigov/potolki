@@ -35,7 +35,7 @@
 		</div> 
     </section>
 
-    @include('ceilings.calc')
+    @include('ceilings.calc_new')
 
     <section class="sale wrapper">
 		<h2 class="sale__title">
