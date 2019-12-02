@@ -43,7 +43,7 @@
 			<b>Сделаем скидку!</b>
 		</h2>
 		<img class="sale__img" src="/img/templates/gui/offer/opponent_sale.png" alt="Скидка до 500р от цены конкурента">
-		<button class="buttonN buttonN-light sale__button">Получить скидку</button>
+		<button data-title="Получить скидку" data-src="#popup_sale" class="buttonN buttonN-light sale__button js-show">Получить скидку</button>
     </section>
 
     <section class="section catalog">

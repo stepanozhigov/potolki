@@ -675,6 +675,7 @@ $gray: #babec2;
             padding-top: rem(16);
             display: grid;
             grid-gap: rem(16);
+            width: 100%;
     
             @include above($size_md) {
                 position: absolute;
