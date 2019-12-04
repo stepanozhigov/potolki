@@ -9,7 +9,7 @@
 			<h1 class="hero__title">
 				<b>Натяжные потолки</b><br>
 				{!! $city->name_formatted !!}
-				от 100 ₽/м²
+				от 100 <span class="rouble">8</span>/м²
 			</h1>
 			<p class="hero__intro">Вызовите специалиста для замера и расчёта</p>
 			<form class="formN hero__form js-less" method="POST" action="{{ route('forms.feedback', $city) }}" id="offer-form">
@@ -24,9 +24,9 @@
 
     <section class="section texture texture_sand">
 		<div class="wrapper offer">
-			<h2 class="offer__title"><b>Двойная скидка!</b></h2>
+			<h2 class="offer__title"><b>Новогодняя скидка!</b></h2>
 			<img class="offer__img" src="/img/templates/ceilings/offer/new_year/double_sale_sm.png" alt="Увеличиваем скидки до 60%">
-			<p class="offer__intro">Только до 25 сентября!</p>
+			<p class="offer__intro">Только до 31 декабря!</p>
 			<form class="formN" action="{{ route('forms.feedback', $city) }}" method="POST">
                 <input class="inputN" type="tel" name="phone" required placeholder="Ваш телефон">  
 				<button class="buttonN buttonN-light">Получить скидку</button>
