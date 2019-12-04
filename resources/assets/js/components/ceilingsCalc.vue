@@ -34,7 +34,7 @@
 </template>
 
 <script type="text/javascript">
-    $(document).on('input', '.range', function (e) {
+    $(document).on('input', '#calc_page .range', function (e) {
         var area = $('[name=area]').val(),
             tubes = $('[name=tubes]').val(),
             angles = $('[name=angles]').val(),

@@ -3,27 +3,75 @@
 @section('content')
     @include('common.gui.header')
 
-    <section class="main-offer main-offer_ceilings js-offer-slider">
-        <div class="main-offer__inner container">
-            <p class="text main-offer__overtitle">Монтаж за 1 день | Гарантия 30&nbsp;лет</p>
-            
-            <h1 class="title main-offer__title">Натяжные потолки<br> {!! $city->name_formatted !!} от&nbsp100&nbsp<span class="rouble">8</span>/м<sup>2</sup></h1>
-            <p class="main-offer__subtitle">Вызовите специалиста для замера&nbspи&nbsp;расчёта</p>
-
-            <form class="form js-less main-offer__form mobile-hide" method="POST" action="{{ route('forms.feedback', $city) }}" id="offer-form">
+    <section class="hero">
+		<div class="wrapper hero__content">
+            <p class="hero__overtitle">Монтаж 1 день | Гарантия 30 лет</p>
+			<h1 class="hero__title">
+				<b>Натяжные потолки</b><br>
+				{!! $city->name_formatted !!}
+				от 100 <span class="rouble">8</span>/м²
+			</h1>
+			<p class="hero__intro">Вызовите специалиста для замера и расчёта</p>
+			<form class="formN hero__form js-less" method="POST" action="{{ route('forms.feedback', $city) }}" id="offer-form">
                 @csrf
                 <input type="hidden" name="city" value="{{ $city->bx_code }}">
-                <input name="name" required class="input form__input" type="text" placeholder="Ваше имя">
-                <input name="phone" required class="input form__input" type="tel" placeholder="Ваш телефон">
-
-                <button type="submit" class="button form__button">Вызвать замерщика</button>
-                <p class="form__status">Заявка отправлена, спасибо!</p>  
-                <p class="form__agreement subtext subtext_white">Оставляя контактную информацию, вы&nbsp;соглашаетесь на&nbsp;обработку персональных данных</p>
-            </form>
-            <a href="{{ route('forms.measure', $city) }}" class="button main-offer__button mobile-only">Вызвать замерщика</a>
-        </div>
+                <input name="phone" required class="inputN" type="tel" placeholder="Ваш телефон">
+				<button type="submit" class="buttonN buttonN-red">Вызвать замерщика</button>
+				<p class="form__agreement">Оставляя контактную информацию, вы соглашаетесь на <u>обработку персональных данных</u></p>
+			</form>
+		</div>
     </section>
-    <section class="whyus whyus_main whyus_ceilings">
+
+    <section class="section texture texture_sand">
+		<div class="wrapper offer">
+			<h2 class="offer__title"><b>Новогодняя скидка!</b></h2>
+			<img class="offer__img" src="/img/templates/ceilings/offer/new_year/double_sale_lg.png" alt="Увеличиваем скидки до 60%">
+			<p class="offer__intro">Только до 31 декабря!</p>
+			<form class="formN js-less" action="{{ route('forms.feedback', $city) }}" method="POST">
+                <input class="inputN" type="tel" name="phone" required placeholder="Ваш телефон">  
+				<button class="buttonN buttonN-light">Получить скидку</button>
+				<p class="formN__agreement">Оставляя контактную информацию, вы соглашаетесь на обработку персональных данных</p>
+			</form>
+		</div> 
+    </section>
+
+    <section class="wrapper calc section" id="calc_home">
+        <h2 class="title-dec">Калькулятор</h2>
+        <p class="calc__item calc__item-intro">
+            Расчёт стоимости натяжного потолка <span class="b-color_red">по акции</span>.
+            Для точного расчёта необходимо произвести замер!
+        </p>
+        <div class="calc__item">
+            <p class="calc__item-name">Площадь помещения</p>
+            <input value="1" name="area" data-min="0" data-from="1" data-max="150" class="range" type="text">
+        </div>
+        <div class="calc__item">
+            <p class="calc__item-name">Количество светильников</p>
+            <input name="lamps" data-min="0" data-max="30" class="range" type="text">
+        </div>
+        <div class="calc__item">
+            <p class="calc__item-name">Цена с установкой</p>
+            <p class="calc__total"><span class="js-calc-price">350</span> ₽</p>
+        </div>
+        <a href="{{ route('forms.measure', $city) }}" class="calc__callback buttonN buttonN-red">Вызвать замерщика</a>
+    </section>
+
+    <section class="sale wrapper">
+		<h2 class="sale__title">
+			Нашли дешевле?<br>
+			<b>Сделаем скидку!</b>
+		</h2>
+		<img class="sale__img" src="/img/templates/gui/offer/opponent_sale.svg" alt="Скидка до 500р от цены конкурента">
+		<button data-title="Получить скидку" data-src="#popup_sale" class="buttonN buttonN-light sale__button js-show">Получить скидку</button>
+    </section>
+
+    <section class="section catalog">
+			<h2 class="title-dec catalog__title">Каталог натяжных потолков {!! $city->name_formatted !!} от производителя</h2>
+			<div class="catalog__carousel" id="catalog__carousel" data-cats="{{ $catalogTypes }}" data-city="{{ $city }}"></div>
+			<a href="{{ route('catalogueCeilings', ['city' => $city]) }}" class="buttonN buttonN-light catalog__button">Перейти в каталог</a>
+    </section>
+
+    <section class="section wrapper skills">
         <?
             $region = "на&nbsp;Дальнем Востоке";
 
@@ -34,117 +82,52 @@
                 $region = 'в&nbsp;Москве и области';
             }
         ?>
-        @include('common.gui.titles', [ 
-            'overtitle' =>  'Наши преимущества',
-            'title' =>  "Звонят многим, заказывают у нас. Почему? ",
-            'intro' =>  "Фабрика натяжных потолков &laquo;Твой стиль&raquo; основана в&nbsp;2003 году. Является лидером по&nbsp;производству натяжных потолков&nbsp;{$region}."
-        ])
-        <div class="whyus__content">
-            <div class="whyus__item">
-                <div class="whyus__item-info">
-                    <h2 class="whyus__item-title">Главные плюсы организации</h2>
-                    <ul>
-                        <li class="whyus__item-text">— Контроль качества после монтажа</li>
-                        <li class="whyus__item-text">—&nbsp;Наличие своего производства</li>
-                        <li class="whyus__item-text">— Подписание договора на дому</li>
-                        
-                        <li class="whyus__item-text">— Сервисное обслуживание</li>
-                        <li class="whyus__item-text">— Установка за один день</li>
-                        <li class="whyus__item-text">— Выгодные цены</li>
-                        <li class="whyus__item-text">— 16 лет опыта</li>
-                    </ul>
-                </div>
-                <img class="whyus__item-image" data-lazy-src="/img/gui/img_factory-2-min.jpg" alt="Производство"> 
-                <!-- <img class="whyus__item-image" src="/img/gui/img_factory-2.jpg" srcset="/img/gui/img_factory-2.jpg 2x" alt="Производство"> -->
-            </div>
-            <div class="whyus__item whyus__item_reverse">
-                <div class="whyus__item-info">
-                    <h2 class="whyus__item-title">Директор всегда на связи</h2>
-                    <p class="whyus__item-text">
-                        Я лично контролирую все этапы работы с помощью прямого контакта со своими клиентами. Вы можете написать мне в любую социальную сеть или позвонить. <br> Прямая линия обеспечивает ответственную работу каждого сотрудника. Считаю это самым важным фактором для моих клиентов.
-                    </p>
-                    <div class="signature">
-                        <p>А. А. Репин</p>
-                        <img data-lazy-src="/img/signature.png" alt="signature">
-                    </div>
-                    <div class="socials">
-                        <a target="_blank" href="https://www.instagram.com/business_repin/" class="socials__item">
-                            <div class="socials__icon socials__icon_insta"></div>
-                        </a>
-                        <a target="_blank" href="https://vk.com/business.repin" class="socials__item">
-                            <div class="socials__icon socials__icon_vk"></div>
-                        </a>
-                        <a target="_blank" href="https://api.whatsapp.com/send?phone=79996516666" class="socials__item">
-                            <div class="socials__icon socials__icon_whatsapp"></div>
-                        </a>
-                    </div>
-                </div>
-                <img class="whyus__item-image" data-lazy-src="/img/img_director.jpg" alt="Директор">
-            </div>
-        </div>
-        <div class="whyus__stat">
-            <div class="whyus__stat-item">
-                <p class="whyus__stat-num">15</p>
-                <p class="whyus__stat-text">лет гарантии <br>на потолки</p>
-            </div>
-            <div class="whyus__stat-item">
-                <p class="whyus__stat-num">3</p>
-                <p class="whyus__stat-text">часа занимает <br> установка</p>
-            </div>
-            <div class="whyus__stat-item">
-                <p class="whyus__stat-num">397</p>
-                <p class="whyus__stat-text">квадратных метров <br> в день</p>
-            </div>
-        </div>
+		<p class="skills__overtitle">Наши преимущества</p>
+		<h2 class="title-dec skills__title">Звонят многим, заказывают у нас. Почему?</h2>
+		<p class="skills__intro">
+			Фабрика натяжных потолков «Твой&nbspстиль» основана в 2003 году является лидером по производству и установке натяжных потолков {!!$region!!}.
+		</p>
+		<div class="advantages">
+			<article class="advantage">
+				<img class="advantage__img order" data-lazy-src="/img/gui/img_factory-2-min.jpg" alt="Собственное производство">
+				<div class="advantage__wrap">
+					<h3 class="advantage__title">Главные плюсы организации</h3>
+					<p class="intro advantage__intro">— Контроль качества после монтажа</p>
+					<p class="intro advantage__intro">— Наличие своего производства</p>
+                    <p class="intro advantage__intro">— Подписание договора на дому</p>
+                    <p class="intro advantage__intro">— Сервисное обслуживание</p>
+                    <p class="intro advantage__intro">— Установка за один день</p>
+                    <p class="intro advantage__intro">— Выгодные цены</p>
+                    <p class="intro advantage__intro">— 16 лет опыта</p>
+				</div>
+			</article>
+			<article class="advantage">
+				<img class="advantage__img" data-lazy-src="/img/img_director.jpg" alt="Генеральный директор Репин А.А. всегда на связи">
+				<div class="advantage__wrap">
+					<h3 class="advantage__title">Директор всегда на связи</h3>
+					<p class="intro advantage__intro">
+                        Я лично контролирую все этапы работы с помощью прямого контакта со своими клиентами. 
+                        Вы можете написать мне в любую социальную сеть или позвонить.<br> 
+                        Прямая линия обеспечивает ответственную работу каждого сотрудника. 
+                        Считаю это самым важным фактором для моих клиентов.
+					</p>
+					<div class="advantage__signature">
+						<span class="advantage__signature_name">А. А. Репин</span>
+						<img class="advantage__signature_img" data-lazy-src="/img/signature.png" alt="signature">
+					</div>
+				</div>
+				<a href="https://api.whatsapp.com/send?phone=79996516666" class="buttonN buttonN-inst">Написать в Инстаграм</a>
+			</article>
+		</div>
     </section>
-    <section class="catalog-cards catalog-cards_ceilings container ">
-        @include('common.gui.titles', [
-            'secondTitle' =>  "Натяжные потолки {$city->name_formatted} от&nbspпроизводителя",
-            'intro' =>  "Фабрика натяжных потолков №1 {$city->name_formatted}. Посмотрите каталог и ниже рассчитайте ваш заказ <span class='intro_red'>за&nbsp5&nbspсекунд</span>"
-        ])
-        <div class="catalog-cards__content">
-            @foreach ($catalogTypes as $type)
-                <? if ($type->id == 5 || $type->type == 'rooms') continue ?>
-                @if ($type->id == 23)
-                    <a href="{{ route('photoprint', ['city' => $city]) }}" class=" catalog-cards__item b-card is-hoverable">
-                @else
-                    <a href="{{ route('catalogue', ['city' => $city, 'type' => $type]) }}" class=" catalog-cards__item b-card is-hoverable">
-                @endif
-                    <img data-lazy-src="{{ Storage::url($type->img) }}" alt="{{ $type->name }}" class="catalog-cards__img">
-                    <div class="catalog-cards__item-info">
-                        <h3 class="card-title catalog-cards__title">{{ $type->name }}</h3>
-                        @if($type->price)
-                            <p class="catalog-cards__price">от <span class="catalog-cards__number">{{ number_format($type->price, 0, ',', ' ') }} ₽/м2</span></p>
-                        @endif
-        				<button class="catalog-cards__open" type="button" name="button">
-        					<img width="18" height="10" data-lazy-src="/img/arrow-down.svg" alt="arrow">
-        				</button>
-                    </div>
-
-                </a>
-            @endforeach
-            
-            <div class="buttons">
-                <a href="{{ route('catalogueCeilings', ['city' => $city]) }}" class="button  button_gray">Перейти в каталог</a>
-            </div>
-        </div>
-
-    </section>
-
-    <div>
-        @include('ceilings.calc')
-    </div>
-	<div class="discount">
-		<p>Нашли дешевле?</p>
-		<img data-lazy-src="/img/ceilings/Stamp Discount.svg" alt="">
-		<p>Сделаем скидку!</p>
-	</div>
-    <section class="constructor">
+    
+    <section class="section constructor">
         <div class="constructor__image"></div>
-        <h2 class="constructor__title">Визуализация потолков</h2>
+        <h2 class="title-dec">Визуализация потолков</h2>
         <p class="constructor__text">Выберите цвет вашего потолка и посмотрите как это выглядит в интерьере при помощи конструктора.</p>
-        <a class="constructor__link" href="{{ route('constructor', $city) }}">Конструктор</a>
+        <a class="buttonN buttonN-light constructor__link" href="{{ route('constructor', $city) }}">Конструктор</a>
     </section>
+
     <section class="portfolio portfolio_main portfolio_ceilings">
         @include('common.gui.titles', ['secondTitle' => 'Примеры наших работ'])
         <div class="portfolio__carousel" id="portfolio__carousel" data-photos="{{ $photos }}">
@@ -170,22 +153,51 @@
         </div>
     </section>
 
-    <section class="manufacturers manufacturers_main manufacturers_ceilings container">
-        @include('common.gui.titles', [
-            'secondTitle' =>  "Производители пленки"
-        ])
-        <p class="manufacturers__text">Компания &laquo;Твой стиль&raquo; ипользует плёнку для натяжных потолков ведущих мировых производителей. Мы&nbsp;предлагаем нашим клиентам только сертифицированные материалы. В&nbsp;нашем ассортименте можно выбрать полотна из&nbsp;пленки ПВХ и&nbsp;тканевые полотна следующих производителей.</p>
-        <a class="manufacturers__more" href="javascript:void(0);">Подробнее</a>
-        <div class="manufacturers__list" id="manufacturers__list"> 
-            <div class="manufacturers__item">
-                <img height="65px" data-lazy-src="/img/manufacturers/msd.svg" alt="" class="manufacturers__item-image">
+    <section class="manufactur section wrapper">
+        <h2 class="manufactur__title title-dec">Производители плёнки</h2>
+        <p class="manufactur__subtitle subtitleN">Компания &laquo;Твой стиль&raquo; ипользует плёнку для натяжных потолков ведущих мировых производителей. Мы&nbsp;предлагаем нашим клиентам только сертифицированные материалы. В&nbsp;нашем ассортименте можно выбрать полотна из&nbsp;пленки ПВХ и&nbsp;тканевые полотна следующих производителей.</p>
+        <div class="manufactur__items">   
+            <div class="manufactur__item">
+                <img data-lazy-src="/img/manufacturers/clipso.svg" alt="clipso" class="manufactur__item-image">
+                <span class="manufactur__item-name">Франция</span>
             </div>
-            <div class="manufacturers__item">
-                <img height="80px" data-lazy-src="/img/manufacturers/ptmc.svg" alt="" class="manufacturers__item-image">
+            <div class="manufactur__item">
+                <img data-lazy-src="/img/manufacturers/descor.svg" alt="descor" class="manufactur__item-image">    
+                <span class="manufactur__item-name">Германия</span>
             </div>
-            <div class="manufacturers__item">
-                <img height="105px" data-lazy-src="/img/manufacturers/pongs (2).png" alt="" class="manufacturers__item-image">
+            <div class="manufactur__item">
+                <img data-lazy-src="/img/manufacturers/lackfole.svg" alt="lackfole" class="manufactur__item-image">
+                <span class="manufactur__item-name">Германия</span>
             </div>
+            <div class="manufactur__item">
+                <img data-lazy-src="/img/manufacturers/ptmc.svg" alt="ptmc" class="manufactur__item-image">
+                <span class="manufactur__item-name">Китай</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="other section wrapper">
+        <a href="{{ route('services', [request()->route()->city, 'measurements']) }}" class="other__item is-hoverable">
+            <img data-lazy-src="/img/windows/home_deal.png" alt="home_deal" class="other__img">
+            <h3 class="other__title">Договор на дому</h3>
+            <p class="other__text">
+                Для вашего удобства замерный <br> мастер  может заключить договор&nbsp;у&nbsp;вас&nbsp;дома.
+            </p>
+        </a>
+        <a href="{{ route('lamps', request()->route()->city) }}" class="other__item is-hoverable">
+            <img data-lazy-src="/img/ceilings/lamp.png" alt="lamp" class="other__img">
+            <h3 class="other__title">Светильники</h3>
+            <p class="other__text">
+                Приобретите специальные светильники<br>для натяжных потолков<br>в офисе продаж.    
+            </p>
+        </a> 
+        <a href="{{ route('services', [request()->route()->city, 'measurements']) }}" class="other__item is-hoverable">
+            <img data-lazy-src="/img/windows/free_measure.png" alt="free_measure" class="other__img">
+            <h3 class="other__title">Бесплатный замер</h3>
+            <p class="other__text">
+                Наш технолог произведет <br> замер и&nbsp;расчет стоимости заказа <br> в&nbsp;удобное&nbsp;для&nbsp;вас&nbsp;время.
+            </p>
+        </a>
         </div>
     </section>
 
@@ -228,35 +240,6 @@
         </div>
     </section>
 
-    <section class="additional additional_ceilings container">
-        @include('common.gui.titles', [
-            'secondTitle' =>  "Также вас может заинтересовать"
-        ])
-        <div class="additional__list">
-            <a href="{{ route('services', [request()->route()->city, 'measurements']) }}" class="additional__item is-hoverable">
-                <img data-lazy-src="/img/windows/home_deal.png" alt="" width="201" height="166" class="additional__img">
-                <h3 class="additional__title">Договор на дому</h3>
-                <p class="text additional__text">
-                    Для вашего удобства замерный <br> мастер  может заключить договор&nbsp;у&nbsp;вас&nbsp;дома.
-                </p>
-            </a>
-            <a href="{{ route('lamps', request()->route()->city) }}" class="additional__item is-hoverable">
-                <img data-lazy-src="/img/ceilings/lamp.png" alt="" width="205" height="134" class="additional__img">
-                <h3 class="additional__title">Светильники</h3>
-                <p class="text additional__text">
-                    Приобретите специальные светильники<br>для натяжных потолков<br>в офисе продаж.
-                    
-                </p>
-            </a> 
-            <a href="{{ route('services', [request()->route()->city, 'measurements']) }}" class="additional__item is-hoverable">
-                <img data-lazy-src="/img/windows/free_measure.png" alt="" width="201" height="166" class="additional__img">
-                <h3 class="additional__title">Бесплатный замер</h3>
-                <p class="text additional__text">
-                    Наш технолог произведет <br> замер и&nbsp;расчет стоимости заказа <br> в&nbsp;удобное&nbsp;для&nbsp;вас&nbsp;время.
-                </p>
-            </a>
-        </div>
-    </section>
     @include('common.gui.survey')
 
     @include('common.gui.footer')

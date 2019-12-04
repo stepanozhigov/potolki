@@ -1,4 +1,4 @@
- <div class="ceilingCalculator">
+ <div class="ceilingCalculator" id="calc_page">
     <h2 class="ceilingCalculator__title">Калькулятор</h2>
     <p class="ceilingCalculator__desc">Рассчитайте стоимость натяжного потолка онлайн. Матовые, сатиновые, глянцевые — все по одной цене! Выберите параметры вашего помещения, перемещая&nbsp;ползунки.</p>
     <div class="ceilingCalculator__item">

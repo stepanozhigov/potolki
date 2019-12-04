@@ -55,6 +55,7 @@ Vue.component('quiz', require('./components/Quiz.vue'));
 Vue.component('gifts', require('./components/Gifts.vue'));
 Vue.component('geo-confirm', require('./components/GeoConfirm.vue'));
 Vue.component('ceilings-cats', require('./components/ceilingsCats.vue'));
+Vue.component('ceilings-calc', require('./components/ceilingsCalcHome.vue'));
 // Vue.component('portfolio-photos', require('./components/PortfolioPhotos.vue'));
 if ($('#geo-confirm').length > 0) {
     new Vue({
