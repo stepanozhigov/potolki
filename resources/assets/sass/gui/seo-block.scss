@@ -366,7 +366,7 @@
     &_ceilings {
         margin-bottom: 0;
         padding-bottom: rem(64);
-        border-bottom: rem(1) solid #babec2;
+        // border-bottom: rem(1) solid #babec2;
 
         @include below($mobile) {
             border-bottom: 0;
