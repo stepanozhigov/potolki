@@ -43,9 +43,6 @@ $(document).on('click', '.js-show', function(event) {
         var offset = 0;
 
         offset = $(window).scrollTop() - $('.reviews__content').offset().top;
-        console.log($(window).scrollTop());
-        console.log($('.reviews').offset().top);
-        console.log(offset);
 
         $source.css('top', offset + 150);
     }
@@ -68,7 +65,9 @@ $(document).on('click', '.js-show', function(event) {
         $source.find('button').html('Заказать звонок');
     }
 
-    if (source == "#popup_ceilingsform"){
+    if (source == "#popup_ceilingsform"||
+        source == "#popup_callback"||
+        source == "#popup_sale"){
         if(Vue.cookie.get('form_send')){
             var source = "#popup_alert_form";
         }
