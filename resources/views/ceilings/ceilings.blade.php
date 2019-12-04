@@ -201,7 +201,7 @@
         </div>
     </section>
 
-	<section class="seo-block seo-block_main seo-block_ceilings sections"
+	<section class="seo-block seo-block_main seo-block_ceilings"
         @if ($seoData->background_mobile) data-backgr-mobile="url({{ Storage::url($seoData->background_mobile) }})" @endif
         @if ($seoData->background_tablet) data-backgr-tablet="url({{ Storage::url($seoData->background_tablet) }})" @endif
         @if($seoData->background_image) style="background-image: url({{ Storage::url($seoData->background_image) }})" @endif
