@@ -211,6 +211,7 @@ $gray: #babec2;
     position: relative;
 
     &:before{
+        content:'';
         position: absolute;
         top:0;
         left:0;
