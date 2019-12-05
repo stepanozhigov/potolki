@@ -925,7 +925,7 @@ $('.js-less').on('submit', function () {
 
 });
 
-$('.form:not(.js-less)').on('submit', function (event) {
+$('.form:not(.js-less), .formN:not(.js-less)').on('submit', function (event) {
     event.preventDefault();
 
     if(Vue.cookie.get('form_send')){

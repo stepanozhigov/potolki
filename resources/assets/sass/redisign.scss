@@ -13,20 +13,31 @@ $gray: #babec2;
 .wrapper{
 	max-width: $size_lg;
 	width: 100%;
-    padding-left: rem(8);
-    padding-right: rem(8);
+    padding-left: rem(15);
+    padding-right: rem(15);
 	margin: 0 auto;
 	
-	@include above($size_sm) {
-		padding-left: rem(15);
-		padding-right: rem(15);
+	// @include above($size_sm) {
+	// 	padding-left: rem(15);
+	// 	padding-right: rem(15);
 		
-	}
+	// }
 
 	@include above($size_md) {
 		padding-left: rem(20);
 		padding-right: rem(20);
 	}
+}
+
+.hidden-sm{
+    @include above($size_sm) {
+		display: none;
+	}
+}
+.hidden-xs{
+    @include between(0, $size_md) {
+        display: none;
+    }
 }
 
 .section {
@@ -189,7 +200,7 @@ $gray: #babec2;
 	}
 }
 
-////////////
+//////////////
 
 .hero {
 	background-image: url('/img/templates/ceilings/hero/background-sm.jpg');
@@ -1038,6 +1049,7 @@ $gray: #babec2;
 
         @include above($size_lg) {
             max-width: 280px;
+            width: 100%;
             justify-self: center;
         }
 

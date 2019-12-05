@@ -8,10 +8,10 @@
             <p class="hero__overtitle">Монтаж 1 день | Гарантия 30 лет</p>
 			<h1 class="hero__title">
 				<b>Натяжные потолки</b><br>
-				{!! $city->name_formatted !!}
+				{!! $city->name_formatted !!}<br class="hidden-sm">
 				от 100 <span class="rouble">8</span>/м²
 			</h1>
-			<p class="hero__intro">Вызовите специалиста для замера и расчёта</p>
+			<p class="hero__intro">Вызовите специалиста для<br class="hidden-sm"> замера и расчёта</p>
 			<form class="formN hero__form js-less" method="POST" action="{{ route('forms.feedback', $city) }}" id="offer-form">
                 @csrf
                 <input type="hidden" name="city" value="{{ $city->bx_code }}">
@@ -121,7 +121,7 @@
 		</div>
     </section>
     
-    <section class="section constructor">
+    <section class="section constructor hidden-xs">
         <div class="constructor__image"></div>
         <h2 class="title-dec">Визуализация потолков</h2>
         <p class="constructor__text">Выберите цвет вашего потолка и посмотрите как это выглядит в интерьере при помощи конструктора.</p>
@@ -138,7 +138,7 @@
         </div>
     </section>
 
-    <section class="reviews reviews_main container">
+    <section class="reviews reviews_main container hidden-xs">
         @include('common.gui.titles', ['secondTitle' => 'Отзывы наших клиентов'])
 
         <div class="reviews__content">
@@ -162,7 +162,7 @@
                 <span class="manufactur__item-name">Франция</span>
             </div>
             <div class="manufactur__item">
-                <img data-lazy-src="/img/manufacturers/descor.svg" alt="descor" class="manufactur__item-image">    
+                <img data-lazy-src="/img/manufacturers/pongs.svg" alt="pongs" class="manufactur__item-image">    
                 <span class="manufactur__item-name">Германия</span>
             </div>
             <div class="manufactur__item">
@@ -170,7 +170,7 @@
                 <span class="manufactur__item-name">Германия</span>
             </div>
             <div class="manufactur__item">
-                <img data-lazy-src="/img/manufacturers/ptmc.svg" alt="ptmc" class="manufactur__item-image">
+                <img data-lazy-src="/img/manufacturers/msd.svg" alt="msd" class="manufactur__item-image">
                 <span class="manufactur__item-name">Китай</span>
             </div>
         </div>
@@ -181,21 +181,21 @@
             <img data-lazy-src="/img/windows/home_deal.png" alt="home_deal" class="other__img">
             <h3 class="other__title">Договор на дому</h3>
             <p class="other__text">
-                Для вашего удобства замерный <br> мастер  может заключить договор&nbsp;у&nbsp;вас&nbsp;дома.
+                Для вашего удобства замерный <br> мастер  может заключить <br>договор у вас дома.
             </p>
         </a>
         <a href="{{ route('lamps', request()->route()->city) }}" class="other__item is-hoverable">
             <img data-lazy-src="/img/ceilings/lamp.png" alt="lamp" class="other__img">
             <h3 class="other__title">Светильники</h3>
             <p class="other__text">
-                Приобретите специальные светильники<br>для натяжных потолков<br>в офисе продаж.    
+                Выберите специальные<br> светильники<br>для натяжных потолков.
             </p>
         </a> 
         <a href="{{ route('services', [request()->route()->city, 'measurements']) }}" class="other__item is-hoverable">
             <img data-lazy-src="/img/windows/free_measure.png" alt="free_measure" class="other__img">
             <h3 class="other__title">Бесплатный замер</h3>
             <p class="other__text">
-                Наш технолог произведет <br> замер и&nbsp;расчет стоимости заказа <br> в&nbsp;удобное&nbsp;для&nbsp;вас&nbsp;время.
+                Наш технолог произведет<br> замер и расчет стоимости заказа<br> в удобное для вас время.
             </p>
         </a>
         </div>
@@ -204,7 +204,7 @@
 	<section class="seo-block seo-block_main seo-block_ceilings"
         @if ($seoData->background_mobile) data-backgr-mobile="url({{ Storage::url($seoData->background_mobile) }})" @endif
         @if ($seoData->background_tablet) data-backgr-tablet="url({{ Storage::url($seoData->background_tablet) }})" @endif
-        @if($seoData->background_image) style="background-image: url({{ Storage::url($seoData->background_image) }})" @endif
+        @if ($seoData->background_image) style="background-image: url({{ Storage::url($seoData->background_image) }})" @endif
     >
         <div class="seo-block__content">
 			<div class="seo-block__item seo-block__item_numbered">
