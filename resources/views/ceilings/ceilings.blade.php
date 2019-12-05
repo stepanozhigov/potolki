@@ -29,6 +29,7 @@
 			<p class="offer__intro">Только до 31 декабря!</p>
 			<form class="formN js-less" action="{{ route('forms.feedback', $city) }}" method="POST">
                 @csrf
+                <input type="hidden" name="city" value="{{ $city->bx_code }}">
                 <input class="inputN" type="tel" name="phone" required placeholder="Ваш телефон">  
 				<button class="buttonN buttonN-light">Получить скидку</button>
 				<p class="formN__agreement">Оставляя контактную информацию, вы соглашаетесь на обработку персональных данных</p>
