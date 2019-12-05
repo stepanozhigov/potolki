@@ -940,7 +940,8 @@ $('.form:not(.js-less), .formN:not(.js-less)').on('submit', function (event) {
     var $this = $(this),
     	name = $this.find('[name=name]').val(),
     	city = $this.find('[name=city]').val(),
-    	phone = $this.find('[name=phone]').val();
+        phone = $this.find('[name=phone]').val();
+        token = $this.find('[name=_token]').val();
 
     if (typeof window.yaCounter40202559 !== 'undefined') {
         window.yaCounter40202559.reachGoal('form-sub');
@@ -961,11 +962,11 @@ $('.form:not(.js-less), .formN:not(.js-less)').on('submit', function (event) {
     $.ajax({
         url: $this.attr('action'),
         method: 'post',
-        dataType: 'json',
         data: {
         	name: name,
         	phone: phone,
-        	city: city
+            city: city,
+            _token: token
         },
         success: function () {
 
