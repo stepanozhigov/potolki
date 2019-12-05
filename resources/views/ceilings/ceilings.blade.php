@@ -28,6 +28,7 @@
 			<img class="offer__img" src="/img/templates/ceilings/offer/new_year/double_sale_lg.png" alt="Увеличиваем скидки до 60%">
 			<p class="offer__intro">Только до 31 декабря!</p>
 			<form class="formN js-less" action="{{ route('forms.feedback', $city) }}" method="POST">
+                @csrf
                 <input class="inputN" type="tel" name="phone" required placeholder="Ваш телефон">  
 				<button class="buttonN buttonN-light">Получить скидку</button>
 				<p class="formN__agreement">Оставляя контактную информацию, вы соглашаетесь на обработку персональных данных</p>
