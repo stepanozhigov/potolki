@@ -960,13 +960,16 @@ $('.form:not(.js-less), .formN:not(.js-less)').on('submit', function (event) {
     console.log($this.serialize());
 
     $.ajax({
-        url: $this.attr('action'),
+        url: '/forms/add-lead',
         method: 'post',
+        dataType: 'JSON',
+        headers: {
+            'X-CSRF-TOKEN': token
+        },
         data: {
         	name: name,
         	phone: phone,
-            city: city,
-            _token: token
+            city: city
         },
         success: function () {
 
