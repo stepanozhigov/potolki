@@ -925,7 +925,7 @@ $('.js-less').on('submit', function () {
 
 });
 
-$('.form:not(.js-less), .formN:not(.js-less)').on('submit', function (event) {
+$('.form:not(.js-less)').on('submit', function (event) {
     event.preventDefault();
 
     if(Vue.cookie.get('form_send')){
@@ -940,8 +940,7 @@ $('.form:not(.js-less), .formN:not(.js-less)').on('submit', function (event) {
     var $this = $(this),
     	name = $this.find('[name=name]').val(),
     	city = $this.find('[name=city]').val(),
-        phone = $this.find('[name=phone]').val(),
-        token = $this.find('[name=_token]').val();
+    	phone = $this.find('[name=phone]').val();
 
     if (typeof window.yaCounter40202559 !== 'undefined') {
         window.yaCounter40202559.reachGoal('form-sub');
@@ -960,24 +959,16 @@ $('.form:not(.js-less), .formN:not(.js-less)').on('submit', function (event) {
     console.log($this.serialize());
 
     $.ajax({
-        url: '/forms/add-lead',
-        method: 'post',
-        dataType: 'JSON',
-        headers: {
-            'X-CSRF-TOKEN': token
-        },
-        data: {
-        	name: name,
-        	phone: phone,
-            city: city
-        },
+        url: $this.attr('action'),
+        data: $this.serialize(),
+        method: 'POST',
         success: function () {
-
             $this.addClass('form_status-send');
-
         }
     })
+
 });
+
 
 
 $('.mobileMenu__item_category').on('click', function () {

@@ -87,7 +87,7 @@
 		<p class="skills__overtitle">Наши преимущества</p>
 		<h2 class="title-dec skills__title">Звонят многим, заказывают у нас. Почему?</h2>
 		<p class="skills__intro">
-			Фабрика натяжных потолков «Твой&nbspстиль» основана в 2003 году является лидером по производству и установке натяжных потолков {!!$region!!}.
+			Фабрика натяжных потолков «Твой&nbspстиль» основана в 2003 году и является лидером по производству и установке натяжных потолков {!!$region!!}.
 		</p>
 		<div class="advantages">
 			<article class="advantage">
@@ -118,7 +118,7 @@
 						<img class="advantage__signature_img" data-lazy-src="/img/signature.png" alt="signature">
 					</div>
 				</div>
-				<a href="https://api.whatsapp.com/send?phone=79996516666" class="buttonN buttonN-inst">Написать в Инстаграм</a>
+				<a href="https://www.instagram.com/business_repin/" target="_blank" class="buttonN buttonN-inst">Директор в Instagram</a>
 			</article>
 		</div>
     </section>
