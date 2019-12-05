@@ -958,47 +958,22 @@ $('.form:not(.js-less), .formN:not(.js-less)').on('submit', function (event) {
     }
     console.log($this.serialize());
 
-    $this.find('button[type="submit"]').text('Заявка отправлена!').prop('disabled', true);
-    $this.find('input').prop('disabled', true);
     $.ajax({
         url: $this.attr('action'),
+        method: 'post',
+        dataType: 'json',
         data: {
         	name: name,
         	phone: phone,
         	city: city
         },
-        method: 'POST',
         success: function () {
 
             $this.addClass('form_status-send');
 
-
         }
     })
 });
-
-// $('.phone').on('click', function () {
-//     if (typeof window.yaCounter40202559 !== 'undefined') {
-//         window.yaCounter40202559.reachGoal('phone-click');
-//     }
-//     if (typeof ga !== 'undefined') {
-//         ga.getAll()[0].send('event', 'click', 'phone');
-//     }
-//     fbq('track', 'Lead');
-
-// });
-
-// $('.whatsapp').on('click', function () {
-//     if (typeof window.yaCounter40202559 !== 'undefined') {
-//         window.yaCounter40202559.reachGoal('whatsapp');
-//     }
-//     if (typeof ga !== 'undefined') {
-//         ga.getAll()[0].send('event', 'whatsapp', 'click');
-//     }
-//     fbq('track', 'Lead');
-
-// })
-
 
 
 $('.mobileMenu__item_category').on('click', function () {
