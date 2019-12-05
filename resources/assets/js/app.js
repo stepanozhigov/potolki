@@ -940,7 +940,7 @@ $('.form:not(.js-less), .formN:not(.js-less)').on('submit', function (event) {
     var $this = $(this),
     	name = $this.find('[name=name]').val(),
     	city = $this.find('[name=city]').val(),
-        phone = $this.find('[name=phone]').val();
+        phone = $this.find('[name=phone]').val(),
         token = $this.find('[name=_token]').val();
 
     if (typeof window.yaCounter40202559 !== 'undefined') {
