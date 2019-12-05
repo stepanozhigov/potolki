@@ -14,6 +14,7 @@ class VerifyCsrfToken extends Middleware
     protected $except = [
         '/forms/proxy-lead',
         '/forms/search-phone',
-        'forms.feedback'
+        'forms.feedback',
+        '/forms/add-lead'
     ];
 }
