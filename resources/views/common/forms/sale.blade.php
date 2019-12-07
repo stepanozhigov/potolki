@@ -1,6 +1,7 @@
 <form action="{{ route('add-lead') }}" method="POST" class="form popup__form">
 	@csrf
-	<input type="hidden" name="city" value="{{ $city->externalCode() ?? '' }}">
+	<input type="hidden" name="city" value="{{ $city->bx_code }}">
+    <input type="hidden" name="name" value="Получить скидку">
     <p class="overtitle popup__title">Получить скидку</p>
     <p class="intro popup__intro">Оставьте ваш телефон и получите скидку!</p>
     <input required placeholder="Ваш телефон" name="phone" type="tel" class="input popup__input">

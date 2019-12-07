@@ -64,11 +64,11 @@ class FeedbackController extends Controller
 
     public function addSurvey(Request $request)
     {
-        dump($request->message);
+
         if (!empty($request->message))
         {
             $res = Mail::to('adresplus@mail.ru')->send(new Survey($request->message));
-            dump($res);
+ 
             //mail('adresplus@mail.ru, kabakovki@yandex.ru, m1r.stillrunner@gmail.com', 'Оценка сайта', $request->message);
         }
     }

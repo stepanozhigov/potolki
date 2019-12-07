@@ -956,7 +956,6 @@ $('.form:not(.js-less)').on('submit', function (event) {
         $this.hide();
         $this.next('.popup__status-send').show();
     }
-    console.log($this.serialize());
 
     $.ajax({
         url: $this.attr('action'),
@@ -968,6 +967,7 @@ $('.form:not(.js-less)').on('submit', function (event) {
     })
 
 });
+
 
 
 
