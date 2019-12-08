@@ -9,9 +9,13 @@
 </div>
 
 <div class="popup" id="popup_sale">
-    <img src="/img/gui/close.svg" alt="" class="popup__close js-close">
+    <img src="/img/gui/close.svg" alt="" class="popup__close js-close"> 
     @include('common.forms.sale')
 </div>
+
+<!-- <div class="popupN popupN-sale" id="popup_sale">
+    
+</div> -->
 
 <div class="popup" id="popup_whatsapp">
     <img src="/img/gui/close.svg" alt="" class="popup__close js-close">
