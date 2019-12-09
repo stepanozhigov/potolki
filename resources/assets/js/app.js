@@ -56,6 +56,8 @@ Vue.component('gifts', require('./components/Gifts.vue'));
 Vue.component('geo-confirm', require('./components/GeoConfirm.vue'));
 Vue.component('ceilings-cats', require('./components/ceilingsCats.vue'));
 Vue.component('ceilings-calc', require('./components/ceilingsCalcHome.vue'));
+Vue.component('widget', require('./components/Widget.vue'));
+
 // Vue.component('portfolio-photos', require('./components/PortfolioPhotos.vue'));
 if ($('#geo-confirm').length > 0) {
     new Vue({
@@ -63,6 +65,11 @@ if ($('#geo-confirm').length > 0) {
     })
 }
 
+if ($('#widget').length > 0) {
+    new Vue({
+        el: '#widget' 
+    })
+}
 
 
 // $(document).on('click', '.gifts__item', function (event) {

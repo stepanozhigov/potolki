@@ -2,7 +2,11 @@
 
 @section('content')
     @include('common.gui.header')
-
+	@if (!empty(request()->widget))
+		<div id="widget">
+			<widget></widget>
+		</div>
+	@endif
     <section class="hero">
 		<div class="wrapper hero__content">
             <p class="hero__overtitle">Монтаж 1 день | Гарантия 30 лет</p>
@@ -28,11 +32,11 @@
 			<img class="offer__img" src="/img/templates/ceilings/offer/new_year/double_sale_sm.png" alt="Увеличиваем скидки до 60%">
 			<p class="offer__intro">Только до 31 декабря!</p>
 			<form class="formN js-less" action="{{ route('forms.feedback', $city) }}" method="POST">
-                <input class="inputN" type="tel" name="phone" required placeholder="Ваш телефон">  
+                <input class="inputN" type="tel" name="phone" required placeholder="Ваш телефон">
 				<button class="buttonN buttonN-light">Получить скидку</button>
 				<p class="formN__agreement">Оставляя контактную информацию, вы соглашаетесь на обработку персональных данных</p>
 			</form>
-		</div> 
+		</div>
     </section>
 
     @include('ceilings.calc_new')
@@ -88,9 +92,9 @@
 				<div class="advantage__wrap">
 					<h3 class="advantage__title">Директор всегда на связи</h3>
 					<p class="intro advantage__intro">
-                        Я лично контролирую все этапы работы с помощью прямого контакта со своими клиентами. 
-                        Вы можете написать мне в любую социальную сеть или позвонить.<br> 
-                        Прямая линия обеспечивает ответственную работу каждого сотрудника. 
+                        Я лично контролирую все этапы работы с помощью прямого контакта со своими клиентами.
+                        Вы можете написать мне в любую социальную сеть или позвонить.<br>
+                        Прямая линия обеспечивает ответственную работу каждого сотрудника.
                         Считаю это самым важным фактором для моих клиентов.
 					</p>
 					<div class="advantage__signature">
@@ -102,7 +106,7 @@
 			</article>
 		</div>
 	</section>
-    
+
     <section class="section constructor">
         <div class="constructor__image"></div>
         <h2 class="title-dec">Визуализация потолков</h2>
@@ -137,13 +141,13 @@
     <section class="manufactur section wrapper">
         <h2 class="manufactur__title title-dec">Производители плёнки</h2>
         <p class="manufactur__subtitle subtitleN">Компания &laquo;Твой стиль&raquo; ипользует плёнку для натяжных потолков ведущих мировых производителей. Мы&nbsp;предлагаем нашим клиентам только сертифицированные материалы. В&nbsp;нашем ассортименте можно выбрать полотна из&nbsp;пленки ПВХ и&nbsp;тканевые полотна следующих производителей.</p>
-        <div class="manufactur__items">   
+        <div class="manufactur__items">
             <div class="manufactur__item">
                 <img data-lazy-src="/img/manufacturers/clipso.svg" alt="clipso" class="manufactur__item-image">
                 <span class="manufactur__item-name">Франция</span>
             </div>
             <div class="manufactur__item">
-                <img data-lazy-src="/img/manufacturers/descor.svg" alt="descor" class="manufactur__item-image">    
+                <img data-lazy-src="/img/manufacturers/descor.svg" alt="descor" class="manufactur__item-image">
                 <span class="manufactur__item-name">Германия</span>
             </div>
             <div class="manufactur__item">
@@ -169,9 +173,9 @@
             <img data-lazy-src="/img/ceilings/lamp.png" alt="lamp" class="other__img">
             <h3 class="other__title">Светильники</h3>
             <p class="other__text">
-                Приобретите специальные светильники<br>для натяжных потолков<br>в офисе продаж.    
+                Приобретите специальные светильники<br>для натяжных потолков<br>в офисе продаж.
             </p>
-        </a> 
+        </a>
         <a href="{{ route('services', [request()->route()->city, 'measurements']) }}" class="other__item is-hoverable">
             <img data-lazy-src="/img/windows/free_measure.png" alt="free_measure" class="other__img">
             <h3 class="other__title">Бесплатный замер</h3>

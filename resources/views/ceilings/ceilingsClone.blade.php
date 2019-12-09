@@ -2,11 +2,11 @@
 
 @section('content')
     @include('common.gui.header')
-
+	
     <section class="main-offer main-offer_ceilings js-offer-slider">
         <div class="main-offer__inner container">
             <p class="text main-offer__overtitle">Монтаж за 1 день | Гарантия 30&nbsp;лет</p>
-            
+
             <h1 class="title main-offer__title">Натяжные потолки<br> {!! $city->name_formatted !!} от&nbsp100&nbsp<span class="rouble">8</span>/м<sup>2</sup></h1>
             <p class="main-offer__subtitle">Вызовите специалиста для замера&nbspи&nbsp;расчёта</p>
 
@@ -17,7 +17,7 @@
                 <input name="phone" required class="input form__input" type="tel" placeholder="Ваш телефон">
 
                 <button type="submit" class="button form__button">Вызвать замерщика</button>
-                <p class="form__status">Заявка отправлена, спасибо!</p>  
+                <p class="form__status">Заявка отправлена, спасибо!</p>
                 <p class="form__agreement subtext subtext_white">Оставляя контактную информацию, вы&nbsp;соглашаетесь на&nbsp;обработку персональных данных</p>
             </form>
             <a href="{{ route('forms.measure', $city) }}" class="button main-offer__button mobile-only">Вызвать замерщика</a>
@@ -34,7 +34,7 @@
                 $region = 'в&nbsp;Москве и области';
             }
         ?>
-        @include('common.gui.titles', [ 
+        @include('common.gui.titles', [
             'overtitle' =>  'Наши преимущества',
             'title' =>  "Звонят многим, заказывают у нас. Почему? ",
             'intro' =>  "Фабрика натяжных потолков &laquo;Твой стиль&raquo; основана в&nbsp;2003 году. Является лидером по&nbsp;производству натяжных потолков&nbsp;{$region}."
@@ -47,14 +47,14 @@
                         <li class="whyus__item-text">— Контроль качества после монтажа</li>
                         <li class="whyus__item-text">—&nbsp;Наличие своего производства</li>
                         <li class="whyus__item-text">— Подписание договора на дому</li>
-                        
+
                         <li class="whyus__item-text">— Сервисное обслуживание</li>
                         <li class="whyus__item-text">— Установка за один день</li>
                         <li class="whyus__item-text">— Выгодные цены</li>
                         <li class="whyus__item-text">— 16 лет опыта</li>
                     </ul>
                 </div>
-                <img class="whyus__item-image" data-lazy-src="/img/gui/img_factory-2-min.jpg" alt="Производство"> 
+                <img class="whyus__item-image" data-lazy-src="/img/gui/img_factory-2-min.jpg" alt="Производство">
                 <!-- <img class="whyus__item-image" src="/img/gui/img_factory-2.jpg" srcset="/img/gui/img_factory-2.jpg 2x" alt="Производство"> -->
             </div>
             <div class="whyus__item whyus__item_reverse">
@@ -123,7 +123,7 @@
 
                 </a>
             @endforeach
-            
+
             <div class="buttons">
                 <a href="{{ route('catalogueCeilings', ['city' => $city]) }}" class="button  button_gray">Перейти в каталог</a>
             </div>
@@ -176,7 +176,7 @@
         ])
         <p class="manufacturers__text">Компания &laquo;Твой стиль&raquo; ипользует плёнку для натяжных потолков ведущих мировых производителей. Мы&nbsp;предлагаем нашим клиентам только сертифицированные материалы. В&nbsp;нашем ассортименте можно выбрать полотна из&nbsp;пленки ПВХ и&nbsp;тканевые полотна следующих производителей.</p>
         <a class="manufacturers__more" href="javascript:void(0);">Подробнее</a>
-        <div class="manufacturers__list" id="manufacturers__list"> 
+        <div class="manufacturers__list" id="manufacturers__list">
             <div class="manufacturers__item">
                 <img height="65px" data-lazy-src="/img/manufacturers/msd.svg" alt="" class="manufacturers__item-image">
             </div>
@@ -245,9 +245,9 @@
                 <h3 class="additional__title">Светильники</h3>
                 <p class="text additional__text">
                     Приобретите специальные светильники<br>для натяжных потолков<br>в офисе продаж.
-                    
+
                 </p>
-            </a> 
+            </a>
             <a href="{{ route('services', [request()->route()->city, 'measurements']) }}" class="additional__item is-hoverable">
                 <img data-lazy-src="/img/windows/free_measure.png" alt="" width="201" height="166" class="additional__img">
                 <h3 class="additional__title">Бесплатный замер</h3>
