@@ -1,10 +1,16 @@
-<form action="" class="form popup__form">
-    <p class="overtitle popup__title">Получить рассрочку</p>
-    <hr class="line popup__line">
-    <p class="intro popup__intro">Оставьте ваши данные и специалист свяжется с вами <span class="intro_red">в&nbspтечение&nbsp5&nbspминут</span></p>
-    <input required placeholder="Ваше имя" type="text" class="input popup__input">
-    <input required placeholder="Ваш телефон" type="tel" class="input popup__input">
-    <button class="button popup__button">Получить рассрочку</button>
-	<p class="form__status">Заявка отправлена, спасибо!</p>
-    <p class="text popup__agreement">Оставляя контактную информацию, вы соглашаетесь на&nbspобработку персональных данных</p>
-</form>
+<div class="popupN__wrapper">
+    <img src="/img/gui/close.svg" alt="" class="popupN__close js-close">
+    <h3 class="popupN__title">Получить рассрочку</h3>
+	<form action="{{ route('add-lead') }}" method="POST" class="form popupN__form">
+		@csrf
+		<input type="hidden" name="city" value="{{ $city->bx_code }}">
+		<p class="popupN__intro">Оставьте ваши данные и специалист свяжется с вами <span class="intro_red">в&nbspтечение&nbsp5&nbspминут</span></p>
+		<input required placeholder="Ваше имя" name="name" type="text" class="inputN popupN__input">
+		<input required placeholder="Ваш телефон" name="phone" type="tel" class="inputN popupN__input">
+		<button class="buttonN buttonN-red popupN__btn">Получить рассрочку</button>
+		<p class="popupN__agreement">Оставляя контактную информацию, вы соглашаетесь на обработку персональных данных</p>
+    </form>
+    <div class="popupN__status-send">
+        <p class="popupN__send-title">спасибо, <br> заявка отправлена</p>
+    </div>
+</div>

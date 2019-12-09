@@ -29,7 +29,7 @@
         </div>
     @endif
 </div>
-<div class="popup popup_review" id="popup_review_{{ $review->id }}">
+<div class="popupN popupN_review" id="popup_review_{{ $review->id }}">
     <a href="javascript:void(0);" class="popup__close js-close">
     	<img data-lazy-src="/img/gui/close.svg" alt="" class="">
     </a>

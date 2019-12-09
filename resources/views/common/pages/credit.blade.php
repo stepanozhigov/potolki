@@ -43,7 +43,7 @@
                 'secondTitle' =>  "Работаем с&nbsp;большим количеством банков"
             ])
             <div id="credit__banks-list"></div>
-            <button class="button buttons__item js-show" data-src="#popup_callback" data-title="Получить рассрочку" data-button="Получить рассрочку">Получить рассрочку</button>
+            <button class="button buttons__item js-show" data-src="#popup_credit">Получить рассрочку</button>
         </section>
     </section>
 
