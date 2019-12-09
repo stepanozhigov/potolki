@@ -1,35 +1,28 @@
-
 @empty($skipOffer)
     @include('common.footer-offer')
 @endempty
 
-<div class="popup" id="popup_callback">
-    <img src="/img/gui/close.svg" alt="" class="popup__close js-close">
+<div class="popupN" id="popup_callback">
     @include('common.forms.callback')
 </div>
 
-<div class="popup" id="popup_sale">
-    <img src="/img/gui/close.svg" alt="" class="popup__close js-close">
+<div class="popupN popupN-sale" id="popup_sale">
     @include('common.forms.sale')
 </div>
 
-<div class="popup" id="popup_whatsapp">
-    <img src="/img/gui/close.svg" alt="" class="popup__close js-close">
-    @include('common.forms.whatsapp')
+<div class="popupN" id="popup_whatsapp">
+    @include('common.forms.whatsapp') 
 </div>
 
-<div class="popup" id="credit_popup">
-    <img src="/img/gui/close.svg" alt="" class="popup__close js-close">
+<div class="popupN" id="popup_credit">
     @include('common.forms.credit')
 </div>
 
-<div class="popup" id="popup_survey">
-    <img src="/img/gui/close.svg" alt="" class="popup__close js-close">
+<div class="popupN" id="popup_survey">
     @include('common.forms.survey')
 </div>
 
-<div class="popup" id="popup_alert_form">
-    <img src="/img/gui/close.svg" alt="" class="popup__close js-close">
+<div class="popupN" id="popup_alert_form">
     @include('common.forms.alert_form')
 </div>
 
@@ -147,7 +140,7 @@
                 </a>
                 <p class=" subtext footer__text"><span>&copy;  2003 – {{ date('Y') }}  ООО «Твой Стиль» </span></p>
             </div>
-			<a data-title="Оценить сайт" data-button="Отправить отзыв" data-src="#popup_survey" class="footer__survey js-showup" href="javascript:void(0);">Оценить сайт</a>
+			<a data-src="#popup_survey" class="footer__survey js-showup" href="javascript:void(0);">Оценить сайт</a>
             <p class="footer__dev subtext footer__text">
                 Разработка и продвижение <a href="http://trend-p.ru" target="_blank" class="text footer__text red-hoverable" target="_blank">TREND PRO</a>
             </p>

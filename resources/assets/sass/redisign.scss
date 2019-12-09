@@ -1102,3 +1102,298 @@ $gray: #babec2;
 
     }
 }
+
+// modal window //
+
+.popupN {
+    z-index: 9999999999;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: rem(10);
+    right: rem(10);
+    margin: auto;
+    transform: translateY(-50%);
+    max-height: 100vh;
+    overflow: auto;
+    
+
+    @include above($size_sm) {
+        overflow: visible;
+    }
+
+    &__wrapper{
+        background: white;
+        display: block;
+        border-radius: rem(8);
+        box-shadow: 0 8px 8px rgba(0, 0, 0, 0.12), 0 0 8px rgba(0, 0, 0, 0.08), inset 0 -1px 0 rgba(0, 0, 0, 0.12);
+        padding: rem(48) rem(16) rem(29);
+        max-width: rem(380);
+        position: relative;
+        margin: auto;
+    }
+
+    &_active{
+        display: block;
+    }
+
+    &__close{
+        position: absolute;
+        height: rem(20);
+        right: rem(20);
+        top: rem(16);
+        z-index: 10;
+        cursor: pointer;
+        transition: all .33s ease-in;
+
+        &:hover{
+            transform: rotate(180deg);
+        }
+    }
+
+    &__title{
+        color: #485058;
+        font-family: $futura;
+        font-size: rem(26);
+        font-weight: 300;
+        letter-spacing: rem(2);
+        line-height: 1.3;
+        text-transform: uppercase;
+        padding-bottom: rem(36);
+        position: relative;
+        text-align: center;
+
+        @include above($size_sm) {
+            font-size: rem(36); 
+            letter-spacing: rem(2.5);
+        }
+
+        &:before{
+            content: '';
+            position: absolute;
+            bottom: rem(24);
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: rem(160);
+            height: rem(1);
+            background-color: #babec2;
+
+        }
+    }
+
+    &__intro{
+        color: #485058;
+        font-family: $helvetica;
+        font-size: rem(18);
+        font-weight: 300;
+        line-height: 1.5;
+        margin-bottom: rem(34);
+        text-align: center;
+
+        @include above($size_sm) {
+            font-size: rem(16);
+        }
+    }
+
+    &__agreement{
+        color: #babec2;
+        font-family: $helvetica;
+        font-size: rem(12);
+        font-weight: 300;
+        margin-top: rem(8);
+
+        u{
+            text-decoration: underline;
+        }
+    }
+
+    &__input{
+        margin-bottom: rem(16);
+
+        @include above($size_sm) {
+            margin-bottom: rem(24);
+        }
+    }
+
+    &__btn{
+        max-width: none;    
+    }
+    
+    &-sale{
+        
+        .popupN__wrapper{
+            @include above($size_sm) {
+                width: rem(720);
+                height: rem(410);
+                padding: rem(48) rem(20) rem(40) rem(40);
+                max-width: none;
+            }
+        }
+
+        .popupN__title{
+            position: relative;
+            z-index: 10;
+            text-align: left;
+
+            &:before{
+                right: auto;
+            }
+        }
+
+        .popupN__intro{
+            text-align: left;
+        }
+
+        .popupN__form{
+            @include above($size_sm) {
+                max-width: rem(320);
+            }
+        }
+
+        .popupN__send-title {
+            text-align: center;
+
+            @include above($size_sm) {
+                text-align: left;
+            }
+
+        }
+
+        &__img{
+            position: absolute;
+            bottom: 0;
+            right: rem(20);
+
+            @include between(0, $size_sm) {
+                display: none;
+            }
+    
+        }
+
+        &__btn, .popupN__agreement{
+            max-width: none;
+            
+            @include above($size_sm) {
+                max-width: rem(288);
+            }
+            
+        }
+
+    }
+
+    &_showup {
+        bottom: 0;
+        top: auto;
+        transform: translateX(0);
+        animation-duration: 1.6s;
+        animation-name: showup;
+        transition-timing-function: ease;
+
+        .popupN__wrapper{
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+    }
+
+    &_review {
+        width: rem(580);
+        top: 15%;
+        flex-direction: column;
+        position: absolute;
+		border-radius: rem(5);
+
+		.review__media {
+			justify-content: flex-start;
+
+			img {
+				&:not(:last-of-type) {
+					margin-right: 1%;
+				}
+			}
+		}
+		.review__media_video {
+			&::after {
+				display: none;
+			}
+		}
+
+    }
+
+    &__send-title {
+        color: #485058;
+        font-family: $futura;
+        font-size: rem(26);
+        font-weight: 300;
+        letter-spacing: rem(2);
+        line-height: 1.3;
+        text-transform: uppercase;
+        position: relative;
+        z-index: 10;
+        text-align: center;
+        margin: rem(32) 0;
+
+        @include above($size_sm) {
+            font-size: rem(36); 
+            letter-spacing: rem(2.5);
+        }
+
+    }
+
+    &__status-send {
+        display: none;
+        flex-direction: column;
+
+        .socials {
+            position: relative;
+            padding-bottom: rem(48);
+            margin-bottom: rem(24);
+            justify-content: center;
+
+            &__item {
+                &:not(:last-of-type) {
+                    margin-right: rem(16);
+                }
+                width: initial;
+                margin-bottom: 0;
+            }
+
+            &::after {
+                position: absolute;
+                content: '';
+                bottom: 0;
+                left: 50%;
+                width: rem(140);
+                height: rem(1);
+                transform: translateX(-50%);
+                background-color: #babec2;
+            }
+        }
+
+        .survey  {
+            width: 100%;
+            margin-bottom: 0;
+            margin-left: 0;
+            &__textarea {
+                width: 100%;
+            }
+
+            &__title {
+                @extend .text;
+                font-size: rem(16);
+                line-height: 24px;
+                margin-bottom: rem(24);
+            }
+
+            &__form {
+                width: 100%;
+
+                .button {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+}

@@ -29,7 +29,7 @@
         <p class="ceilingCalculator__subtitle">Для точного расчёта необходимо произвести замер!</p>
         <p class="ceilingCalculator__total"><span class="js-calc-price">350</span> ₽</p>
         <p class="ceilingCalculator__measure">с установкой</p>
-        <button data-src="#popup_callback" class="ceilingCalculator__callback js-show" data-button="Вызвать замерщика" data-title="Вызов замерщика">Вызвать замерщика</button>
+        <button data-src="#popup_callback" class="ceilingCalculator__callback js-show">Вызвать замерщика</button>
     </div>
 </template>
 

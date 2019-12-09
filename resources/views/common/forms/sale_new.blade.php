@@ -11,9 +11,10 @@
             <button class="buttonN buttonN-red popupN-sale__btn">Получить скидку</button>
             <p class="popupN__agreement">Оставляя контактную информацию, вы соглашаетесь на <u>обработку персональных данных</u></p>
         </form>
-        <div class="popupN__status-send">
-            <p class="popupN__send-title">спасибо, <br> заявка отправлена</p>
-        </div>
     </div>
     <img src="/img/templates/gui/form/sale_popap.png" alt="sale" class="popupN-sale__img">
+
+    <div class="popup__status-send">
+        <p class="popup__send-title">спасибо, <br> заявка отправлена</p>
+    </div>
 </div>

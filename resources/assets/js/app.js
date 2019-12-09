@@ -922,7 +922,7 @@ $('.js-less').on('submit', function () {
     if(Vue.cookie.get('form_send')){
         $('body').addClass('overflowed');
         $('#overlay').addClass('overlay_active');
-        $('#popup_alert_form').addClass('popup_active');
+        $('#popup_alert_form').addClass('popupN_active');
         $('.header_sticky').addClass('hidden');
         $(this).find('input').val('');
         event.preventDefault();
@@ -935,14 +935,7 @@ $('.js-less').on('submit', function () {
 $('.form:not(.js-less)').on('submit', function (event) {
     event.preventDefault();
 
-    if(Vue.cookie.get('form_send')){
-        $('#popup_callback').removeClass('popup_active');
-        $('#popup_alert_form').addClass('popup_active');
-        $(this).find('input').val('');
-        return false;
-    }else{
-        Vue.cookie.set('form_send', true, 1);
-    }
+    Vue.cookie.set('form_send', true, 1);
 
     var $this = $(this),
     	name = $this.find('[name=name]').val(),
@@ -957,11 +950,12 @@ $('.form:not(.js-less)').on('submit', function (event) {
     }
     fbq('track', 'Lead');
 
-    var successEl = $this.next('.popup__status-send');
+    var successEl = $this.next('.popupN__status-send');
 
     if (successEl.length > 0) {
         $this.hide();
-        $this.next('.popup__status-send').show();
+        $this.prev('.popupN__title').hide();
+        $this.next('.popupN__status-send').show();
     }
 
     $.ajax({

@@ -129,7 +129,7 @@ $city = $city ?? App\City::find(1);
 
 
         <div class="header__feedbacks">
-        <a data-title="Написать в&nbspWhatsapp" data-src="#popup_whatsapp" class="js-show text whatsapp header__whatsapp"><img src="/img/gui/whatsapp.svg" alt="" class="whatsapp__icon"> <span class="whatsapp__write-text">Написать в&nbsp</span>WhatsApp <span class="whatsapp__mobile-text">Написать</span></a>
+            <a data-src="#popup_whatsapp" class="js-show text whatsapp header__whatsapp"><img src="/img/gui/whatsapp.svg" alt="whatsapp" class="whatsapp__icon"> <span class="whatsapp__write-text">Написать в&nbsp</span>WhatsApp <span class="whatsapp__mobile-text">Написать</span></a>
             <a href="tel:{{ $city->phone }}" class="text phone header__phone  red-hoverable"><img class="phone__icon" src="/img/gui/phone.svg" alt="">{{ $city->phone }} <span data-src="#popup_callback" class="js-show">Заказать звонок</span></a>
             <a data-src="#popup_callback" class="text header__callback js-show">Заказать звонок</a>
         </div>
@@ -218,7 +218,7 @@ $city = $city ?? App\City::find(1);
             </div>
         </nav>
         <div class="header__feedbacks">
-            <a data-title="Написать в&nbspWhatsapp" data-src="#popup_whatsapp" class="whatsapp header__whatsapp js-show">WhatsApp<span>Написать</span></a>
+            <a data-src="#popup_whatsapp" class="whatsapp header__whatsapp js-show">WhatsApp<span>Написать</span></a>
             <a href="tel:{{ $city->phone }}" class="header__phone">{{ $city->phone }} <span data-src="#popup_callback" class="js-show">Заказать звонок</span></a>
             <img src="/img/gui/nav_hamburger.svg" alt="" class="hamburger header__hamburger active js-toggle-menu">
     		<img src="/img/gui/mobile-menu-close.svg" alt="" class="header__close js-toggle-menu">
