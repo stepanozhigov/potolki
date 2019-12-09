@@ -6,6 +6,7 @@
 		bottom: 32px;
 	    z-index: 999;
 	}
+
 	.widget__gift {
 		width: 105px;
     	height: 105px;
@@ -116,6 +117,13 @@
 		max-width: 195px;
 	}
 	@media screen and (max-width: 640px) {
+		.widget_opened {
+			top: 50%;
+		    left: 50%;
+		    transform: translate(-50%, -50%);
+			bottom: initial;
+			right: initial;
+		}
 		.widget__gift {
 			width: 75px;
     		height: 75px;
@@ -158,15 +166,15 @@
 </style>
 
 <template>
-	<section class="widget">
+	<section class="widget" :class="{widget_opened: state == 'opened'}">
 		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 		<img @click="state = 'opened'" v-if="state == 'closed'" src="/img/gift.png" alt="" class="widget__gift">
 		<form @submit.prevent="submit" v-if="state == 'opened'" class="widget__form">
 			<span @click="state = 'closed'" class="widget__close"></span>
 			<img class="widget__img" src="/img/gift_icon.png" alt="">
 			<p class="widget__title">Купон на 5000 ₽ в&nbspподарок!</p>
-			<p class="widget__intro">Оставьте заявку сегодня, и&nbspменеджер активирует ваш подарочный купон</p>
-			<input v-model="fio" class="widget__input" type="text" placeholder="Укажите имя">
+			<p class="widget__intro">Оставьте заявку сегодня и&nbspменеджер активирует ваш подарочный купон</p>
+			<!-- <input v-model="fio" class="widget__input" type="text" placeholder="Укажите имя"> -->
 			<input v-model="phone" v-mask="{mask: '8 999-999-99-99', oncomplete: enable, onincomplete: disable}" class="widget__input" type="text" placeholder="Укажите телефон">
 			<!-- <the-mask :masked="true" type="tel" v-model="phone" class="widget__input" :mask="'8 ### ### ## ##'"></the-mask> -->
 
@@ -225,7 +233,7 @@
 					method: 'post',
 					dataType: 'json',
 					data: {
-						name: $this.fio,
+						// name: $this.fio,
 						phone: $this.phone,
 						city: window.city.bx_code
 					},
