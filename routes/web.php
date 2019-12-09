@@ -166,5 +166,6 @@ Route::prefix('/{city}')->group(function () {
     Route::get('/quiz2', 'PageController@quiz2')->name('quiz2');
 });
 
+Route::post('/forms/feedback', 'FeedbackController@addLead');
 Route::post('/forms/quiz', 'FeedbackController@quiz')->name('forms.quiz');
 Route::post('/forms/quiz2', 'FeedbackController@quiz2')->name('forms.quiz2');

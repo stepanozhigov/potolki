@@ -2,7 +2,7 @@
 	.widget {
 		font-family: 'Roboto';
 		position: fixed;
-		left: 32px;
+		right: 32px;
 		bottom: 32px;
 	    z-index: 999;
 	}
@@ -115,6 +115,27 @@
 		width: 100%;
 		max-width: 195px;
 	}
+	@media screen and (max-width: 640px) {
+		.widget__gift {
+			width: 75px;
+    		height: 75px;
+		}
+		.widget__close {
+			height: 33px;
+			right: -24px;
+    		top: -40px;
+		    width: 32px;
+		}
+		.widget__close:before, .widget__close:after {
+		    background-color: #fff;
+		    content: ' ';
+		    height: 19px;
+		    left: 15px;
+		    position: absolute;
+		    width: 2px;
+		    top: 7px;
+		}
+	}
 
 	@keyframes phone-outer {
 		0% {
@@ -140,13 +161,13 @@
 	<section class="widget">
 		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 		<img @click="state = 'opened'" v-if="state == 'closed'" src="/img/gift.png" alt="" class="widget__gift">
-		<form @submit="submit" v-if="state == 'opened'" class="widget__form">
+		<form @submit.prevent="submit" v-if="state == 'opened'" class="widget__form">
 			<span @click="state = 'closed'" class="widget__close"></span>
 			<img class="widget__img" src="/img/gift_icon.png" alt="">
 			<p class="widget__title">Купон на 5000 ₽ в&nbspподарок!</p>
 			<p class="widget__intro">Оставьте заявку сегодня, и&nbspменеджер активирует ваш подарочный купон</p>
 			<input v-model="fio" class="widget__input" type="text" placeholder="Укажите имя">
-			<input v-mask="{mask: '8 999-999-99-99', oncomplete: enable, onincomplete: disable}" class="widget__input" type="text" placeholder="Укажите телефон">
+			<input v-model="phone" v-mask="{mask: '8 999-999-99-99', oncomplete: enable, onincomplete: disable}" class="widget__input" type="text" placeholder="Укажите телефон">
 			<!-- <the-mask :masked="true" type="tel" v-model="phone" class="widget__input" :mask="'8 ### ### ## ##'"></the-mask> -->
 
 			<button :disabled="!phoneValidated" class="widget__button">Отправить заявку</button>
@@ -185,9 +206,34 @@
 				this.phoneValidated = false;
 			},
 			submit: function (event) {
-				this.state = 'success';
 				event.preventDefault();
+				event.stopPropagation();
 				console.log(event);
+				this.state = 'success';
+				fbq('track', 'Lead');
+
+			    if (typeof ga !== 'undefined') {
+			        ga.getAll()[0].send('event', 'callback', 'start');
+			    }
+			    if (typeof window.yaCounter40202559 !== 'undefined') {
+			        window.yaCounter40202559.reachGoal('b24-call');
+			    }
+				var $this = this;
+
+				$.ajax({
+					url: '/forms/feedback',
+					method: 'post',
+					dataType: 'json',
+					data: {
+						name: $this.fio,
+						phone: $this.phone,
+						city: window.city.bx_code
+					},
+					success: function (response) {
+						console.log(1);
+					}
+				})
+
 			}
 		}
 	}
