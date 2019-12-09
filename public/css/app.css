@@ -3,7 +3,7 @@ Ion.RangeSlider, 2.3.0
 © Denis Ineshin, 2010 - 2018, IonDen.com
 Build date: 2018-12-11 23:23:51
 */
-.irs {
+.irs { 
   position: relative;
   display: block;
   -webkit-touch-callout: none;
@@ -3784,14 +3784,14 @@ corresponds to the arrow we want to display */
   opacity: 1;
 }
 
-.input::-moz-placeholder,
-.headerClimat__search .search__input::-moz-placeholder,
-.calculator__input::-moz-placeholder,
-.climatCatalogue__sort-select select::-moz-placeholder,
-.formAdress__input::-moz-placeholder,
-.formUr__input::-moz-placeholder,
-.quickBuy__name::-moz-placeholder,
-.quickBuy__tel::-moz-placeholder {
+.input:-ms-input-placeholder,
+.headerClimat__search .search__input:-ms-input-placeholder,
+.calculator__input:-ms-input-placeholder,
+.climatCatalogue__sort-select select:-ms-input-placeholder,
+.formAdress__input:-ms-input-placeholder,
+.formUr__input:-ms-input-placeholder,
+.quickBuy__name:-ms-input-placeholder,
+.quickBuy__tel:-ms-input-placeholder {
   color: #808890;
   font-family: "Helvetica Neue", sans-serif;
   font-size: 1.125rem;
@@ -3886,14 +3886,14 @@ corresponds to the arrow we want to display */
   color: #babec2;
 }
 
-.input:disabled::-moz-placeholder,
-.headerClimat__search .search__input:disabled::-moz-placeholder,
-.calculator__input:disabled::-moz-placeholder,
-.climatCatalogue__sort-select select:disabled::-moz-placeholder,
-.formAdress__input:disabled::-moz-placeholder,
-.formUr__input:disabled::-moz-placeholder,
-.quickBuy__name:disabled::-moz-placeholder,
-.quickBuy__tel:disabled::-moz-placeholder {
+.input:disabled:-ms-input-placeholder,
+.headerClimat__search .search__input:disabled:-ms-input-placeholder,
+.calculator__input:disabled:-ms-input-placeholder,
+.climatCatalogue__sort-select select:disabled:-ms-input-placeholder,
+.formAdress__input:disabled:-ms-input-placeholder,
+.formUr__input:disabled:-ms-input-placeholder,
+.quickBuy__name:disabled:-ms-input-placeholder,
+.quickBuy__tel:disabled:-ms-input-placeholder {
   color: #babec2;
 }
 
@@ -3965,14 +3965,14 @@ corresponds to the arrow we want to display */
   color: #485058;
 }
 
-.input:focus::-moz-placeholder,
-.headerClimat__search .search__input:focus::-moz-placeholder,
-.calculator__input:focus::-moz-placeholder,
-.climatCatalogue__sort-select select:focus::-moz-placeholder,
-.formAdress__input:focus::-moz-placeholder,
-.formUr__input:focus::-moz-placeholder,
-.quickBuy__name:focus::-moz-placeholder,
-.quickBuy__tel:focus::-moz-placeholder {
+.input:focus:-ms-input-placeholder,
+.headerClimat__search .search__input:focus:-ms-input-placeholder,
+.calculator__input:focus:-ms-input-placeholder,
+.climatCatalogue__sort-select select:focus:-ms-input-placeholder,
+.formAdress__input:focus:-ms-input-placeholder,
+.formUr__input:focus:-ms-input-placeholder,
+.quickBuy__name:focus:-ms-input-placeholder,
+.quickBuy__tel:focus:-ms-input-placeholder {
   color: #485058;
 }
 
@@ -4043,14 +4043,14 @@ corresponds to the arrow we want to display */
   color: #dc1414;
 }
 
-.input.error::-moz-placeholder,
-.headerClimat__search .error.search__input::-moz-placeholder,
-.error.calculator__input::-moz-placeholder,
-.climatCatalogue__sort-select select.error::-moz-placeholder,
-.error.formAdress__input::-moz-placeholder,
-.error.formUr__input::-moz-placeholder,
-.error.quickBuy__name::-moz-placeholder,
-.error.quickBuy__tel::-moz-placeholder {
+.input.error:-ms-input-placeholder,
+.headerClimat__search .error.search__input:-ms-input-placeholder,
+.error.calculator__input:-ms-input-placeholder,
+.climatCatalogue__sort-select select.error:-ms-input-placeholder,
+.error.formAdress__input:-ms-input-placeholder,
+.error.formUr__input:-ms-input-placeholder,
+.error.quickBuy__name:-ms-input-placeholder,
+.error.quickBuy__tel:-ms-input-placeholder {
   color: #dc1414;
 }
 
@@ -7004,7 +7004,7 @@ input {
   font-weight: 300;
 }
 
-.headerClimat__search .search__input::-moz-placeholder {
+.headerClimat__search .search__input:-ms-input-placeholder {
   font-size: 0.875rem;
   line-height: normal;
   font-weight: 300;
@@ -29825,24 +29825,19 @@ input[type=text]::-ms-reveal {
   width: 100%;
   height: 25rem;
   -webkit-column-count: 2;
-     -moz-column-count: 2;
           column-count: 2;
   -webkit-column-gap: 20px;
-     -moz-column-gap: 20px;
           column-gap: 20px;
 }
 
 @media screen and (max-width: 60rem) {
   .climatDetail__additional-text {
     -webkit-column-gap: 0;
-       -moz-column-gap: 0;
             column-gap: 0;
     -webkit-column-count: 1;
-       -moz-column-count: 1;
             column-count: 1;
     height: auto;
     -webkit-column-break-inside: avoid;
-    page-break-inside: avoid;
     break-inside: avoid;
   }
 }
@@ -29858,10 +29853,8 @@ input[type=text]::-ms-reveal {
 @media screen and (max-width: 60rem) {
   .climatDetail__additional-text_characteristic {
     -webkit-column-gap: 0;
-       -moz-column-gap: 0;
             column-gap: 0;
     -webkit-column-count: 1;
-       -moz-column-count: 1;
             column-count: 1;
     height: auto;
   }
@@ -29960,7 +29953,6 @@ input[type=text]::-ms-reveal {
       -ms-flex-direction: column;
           flex-direction: column;
   -webkit-column-break-inside: avoid;
-     page-break-inside: avoid;
           break-inside: avoid;
 }
 
@@ -32509,7 +32501,7 @@ input[type=text]::-ms-reveal {
   color: #a7aaad;
 }
 
-.climatOrdering__ordering-info textarea::-moz-placeholder {
+.climatOrdering__ordering-info textarea:-ms-input-placeholder {
   font-family: "Helvetica Neue", sans-serif;
   font-size: 1rem;
   color: #a7aaad;
