@@ -2,12 +2,7 @@
 
 @section('content')
     @include('common.gui.header')
-	@if (!empty(request()->widget))
-		<div id="widget">
-			<widget></widget>
-		</div>
-	@endif
-    <section class="hero">
+<section class="hero">
 		<div class="wrapper hero__content">
             <p class="hero__overtitle">Монтаж 1 день | Гарантия 30 лет</p>
 			<h1 class="hero__title">

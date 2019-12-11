@@ -20,10 +20,10 @@
             $title = str_replace('#city_title#', $city->name_formatted, $seoData->meta_title);
             $desc = str_replace('#city_title#', $city->name_formatted, $seoData->meta_description);
         }
-        ?> 
+        ?>
         <title>{!! $title !!}</title>
         <meta name="description" content="{!! $desc !!}" />
-    @else 
+    @else
         <title>Твой стиль</title>
     @endif
 
@@ -36,7 +36,7 @@
     $route = request()->route();
      $req = !empty($route) ? $route->getName():''; ?>
 
-    @if ($req !== 'quiz' && $req !== 'quiz2' && request()->skip_scripts != '1')  
+    @if (false)
     <!-- Carrot quest BEGIN -->
 		<script type="text/javascript">
 		!function(){function t(t,e){return function(){window.carrotquestasync.push(t,arguments)}}if("undefined"==typeof carrotquest){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="//cdn.carrotquest.io/api.min.js",document.getElementsByTagName("head")[0].appendChild(e),window.carrotquest={},window.carrotquestasync=[],carrotquest.settings={};for(var n=["connect","track","identify","auth","oth","onReady","addCallback","removeCallback","trackMessageInteraction"],a=0;a<n.length;a++)carrotquest[n[a]]=t(n[a])}}(),carrotquest.connect("28264-15daed65704be963b84a4f77f5");
@@ -64,7 +64,7 @@
     <!-- End Facebook Pixel Code -->
 
     <!-- Yandex.Metrika counter --> <script type="text/javascript" > (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(40202559, "init", { clickmap:true, webvisor:true, trackLinks:true, accurateTrackBounce:true, trackHash:true }); </script> <noscript><div><img src="https://mc.yandex.ru/watch/40202559" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
- 
+
 
      <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-85472546-4"></script>
@@ -76,15 +76,18 @@
         gtag('config', 'UA-85472546-4');
     </script>
 
-    @endif  
+    @endif
 
 </head>
 <body class="body">
-    <? if (request()->path() !== '/' && $req !== 'quiz' && $req !== 'quiz2' && url()->previous() !== 'https://potolki-ts.ru/'): ?> 
+    <? if (request()->path() !== '/' && $req !== 'quiz' && $req !== 'quiz2' && url()->previous() !== 'https://potolki-ts.ru/'): ?>
         <div id="geo-confirm">
             <geo-confirm :cities="{{ $cities }}"></geo-confirm>
         </div>
     <? endif ?>
+	<div id="widget">
+		<widget></widget>
+	</div>
     <div id="app">
         @yield('content')
     </div>
