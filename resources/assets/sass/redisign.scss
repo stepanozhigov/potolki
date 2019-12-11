@@ -276,8 +276,7 @@ $gray: #babec2;
 	    bottom: 0;
 	    margin: 0 auto;
 		z-index: -1
-	} 
-
+    } 
 	&_sand {
 		&:before {
 			background-image: url('/img/templates/gui/texture/sand.png');
@@ -395,7 +394,7 @@ $gray: #babec2;
 
         &::before{
             @include above($size_sm) {
-                content: url('/img/templates/ceilings/hero/banner-girl.webp');
+                content: url('/img/templates/ceilings/hero/banner-girl.png');
                 position: absolute;
                 right: rem(-100);
                 bottom: rem(-23);
@@ -516,7 +515,7 @@ $gray: #babec2;
 
         .inputN{
             text-align: center;
-            
+
             @include above($size_sm) {
                 text-align: left;
             }
@@ -709,7 +708,7 @@ $gray: #babec2;
     &:before {
         
         @include above($size_sm) {
-            background-image: url(/img/templates/gui/texture/square.png);
+            background-image: url('/img/templates/gui/texture/square.png');
             content: ' ';
             position: absolute;
             top: 0;
@@ -781,7 +780,7 @@ $gray: #babec2;
 
     &:before {
         @include between(0, $size_sm) {
-            background-image: url(/img/templates/gui/texture/square.png);
+            background-image: url('/img/templates/gui/texture/square.png');
             content: ' ';
             position: absolute;
             width: 60%;
@@ -946,7 +945,7 @@ $gray: #babec2;
 
     &:before {
         @include above($size_sm) {
-            background-image: url(/img/templates/gui/texture/square.png);
+            background-image: url('/img/templates/gui/texture/square.png');
             content: ' ';
             position: absolute;
             width: 70%;
@@ -1558,13 +1557,13 @@ $gray: #babec2;
 .seo-block {
     padding-top: rem(208);
     padding-bottom: rem(64);
-    background-image: url('/img/templates/ceilings/seo-block/seo-bg-sm.webp');
+    background-image: url('/img/templates/ceilings/seo-block/seo-bg-sm.jpg');
     background-position: top;
     background-repeat: no-repeat;
     background-size: 100% auto;
 
     @include above($size-sm) {
-        background-image: url('/img/templates/ceilings/seo-block/seo-bg-lg.webp');
+        background-image: url('/img/templates/ceilings/seo-block/seo-bg-lg.jpg');
     }
 
     @include above($size-md) {
@@ -1814,3 +1813,70 @@ $gray: #babec2;
 }
 
 
+.webp{
+    .texture {
+        &:before {
+            background-image: url('/img/templates/gui/texture/square.png');
+        } 
+    
+        &_sand {
+            &:before {
+                background-image: url('/img/templates/gui/texture/sand.png');
+            }
+        }
+    }
+    .hero {
+        background-image: url('/img/templates/ceilings/hero/background-sm.jpg');
+
+        @include above($size_sm) {
+            background-image: url('/img/templates/ceilings/hero/background-lg.jpg');
+        }
+        &__content {
+            &::before{
+                @include above($size_sm) {
+                    content: url('/img/templates/ceilings/hero/banner-girl.webp');
+                }
+            }
+        }
+    }
+    .offer { 
+        &::before{
+            @include above($size_sm) {
+                content: url('/img/templates/ceilings/offer/new_year/banner_top.png');
+            }
+        }
+    
+        &::after{
+            @include above($size_md) {
+                content: url('/img/templates/ceilings/offer/new_year/banner_bottom.png');
+            }
+        }
+    }
+    .sale{
+        &:before {
+            @include above($size_sm) {
+                background-image: url('/img/templates/gui/texture/square.png');
+            }
+        }
+    }
+    .catalog{
+        &:before {
+            @include between(0, $size_sm) {
+                background-image: url('/img/templates/gui/texture/square.png');
+            }
+        }
+    }
+    .skills{
+        &:before {
+            @include above($size_sm) {
+                background-image: url('/img/templates/gui/texture/square.png');
+            }
+        }
+    }
+    .seo-block {
+        background-image: url('/img/templates/ceilings/seo-block/seo-bg-sm.webp');
+        @include above($size-sm) {
+            background-image: url('/img/templates/ceilings/seo-block/seo-bg-lg.webp');
+        }
+    }
+}

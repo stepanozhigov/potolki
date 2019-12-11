@@ -79,7 +79,7 @@
     @endif
 
 </head>
-<body class="body">
+<body class="body {{ strpos( $_SERVER['HTTP_ACCEPT'], 'image/webp' ) !== false ? 'webp' : '' }}">
     <? if (request()->path() !== '/' && $req !== 'quiz' && $req !== 'quiz2' && url()->previous() !== 'https://potolki-ts.ru/'): ?>
         <div id="geo-confirm">
             <geo-confirm :cities="{{ $cities }}"></geo-confirm>

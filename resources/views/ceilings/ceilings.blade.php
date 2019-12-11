@@ -22,10 +22,13 @@
 		</div>
     </section>
 
-    <section class="section texture texture_sand">
+    <section class="section texture texture_sand webp">
 		<div class="wrapper offer">
-			<h2 class="offer__title"><b>Новогодняя скидка!</b></h2>
-			<img class="offer__img" data-lazy-src="/img/templates/ceilings/offer/new_year/double_sale_lg.webp" alt="Увеличиваем скидки до 60%">
+            <h2 class="offer__title"><b>Новогодняя скидка!</b></h2>
+            <picture>
+                <source srcset="/img/templates/ceilings/offer/new_year/double_sale_lg.webp" type="image/webp">
+                <img class="offer__img" data-lazy-src="/img/templates/ceilings/offer/new_year/double_sale_lg.png" alt="Увеличиваем скидки до 60%">
+            </picture>
 			<p class="offer__intro">Только до 31 декабря!</p>
 			<form class="formN js-less" action="{{ route('forms.feedback', $city) }}" method="POST">
                 @csrf
@@ -91,7 +94,10 @@
 		</p>
 		<div class="advantages">
 			<article class="advantage">
-				<img class="advantage__img order" data-lazy-src="/img/templates/ceilings/advantages/factory.webp" alt="Собственное производство">
+                <picture>
+                    <source srcset="/img/templates/ceilings/advantages/factory.webp" type="image/webp">
+                    <img class="advantage__img order" data-lazy-src="/img/templates/ceilings/advantages/factory.jpg" alt="Собственное производство">
+                </picture>
 				<div class="advantage__wrap">
 					<h3 class="advantage__title">Главные плюсы организации</h3>
 					<p class="intro advantage__intro">— Контроль качества после монтажа</p>
@@ -104,7 +110,11 @@
 				</div>
 			</article>
 			<article class="advantage">
-				<img class="advantage__img" data-lazy-src="/img/templates/ceilings/advantages/director.webp" alt="Генеральный директор Репин А.А. всегда на связи">
+                
+                <picture>
+                    <source srcset="/img/templates/ceilings/advantages/director.webp" type="image/webp">
+                    <img class="advantage__img" data-lazy-src="/img/templates/ceilings/advantages/director.jpg" alt="Генеральный директор Репин А.А. всегда на связи">
+                </picture>
 				<div class="advantage__wrap">
 					<h3 class="advantage__title">Директор всегда на связи</h3>
 					<p class="intro advantage__intro">
@@ -114,8 +124,11 @@
                         Считаю это самым важным фактором для моих клиентов.
 					</p>
 					<div class="advantage__signature">
-						<span class="advantage__signature_name">А. А. Репин</span>
-						<img class="advantage__signature_img" data-lazy-src="/img/signature.png" alt="signature">
+                        <span class="advantage__signature_name">А. А. Репин</span>
+                        <picture>
+                            <source srcset="/img/templates/ceilings/advantages/signature.webp" type="image/webp">
+                            <img class="advantage__signature_img" data-lazy-src="/img/templates/ceilings/advantages/signature.png" alt="signature">
+                        </picture>
 					</div>
 				</div>
 				<a href="https://www.instagram.com/business_repin/" target="_blank" class="buttonN buttonN-inst">Директор в Instagram</a>
@@ -180,21 +193,30 @@
 
     <section class="other section wrapper">
         <a href="{{ route('services', [request()->route()->city, 'measurements']) }}" class="other__item is-hoverable">
-            <img data-lazy-src="/img/templates/ceilings/other/home_deal.webp" alt="home_deal" class="other__img">
+            <picture>
+                <source srcset="/img/templates/ceilings/other/home_deal.webp" type="image/webp">
+                <img data-lazy-src="img/templates/ceilings/other/home_deal.png" alt="home_deal" class="other__img">
+            </picture>
             <h3 class="other__title">Договор на дому</h3>
             <p class="other__text">
                 Для вашего удобства замерный <br> мастер  может заключить <br>договор у вас дома.
             </p>
         </a>
         <a href="{{ route('lamps', request()->route()->city) }}" class="other__item is-hoverable">
-            <img data-lazy-src="/img/templates/ceilings/other/lamp.webp" alt="lamp" class="other__img">
+            <picture>
+                <source srcset="/img/templates/ceilings/other/lamp.webp" type="image/webp">
+                <img data-lazy-src="img/templates/ceilings/other/lamp.png" alt="lamp" class="other__img">
+            </picture>
             <h3 class="other__title">Светильники</h3>
             <p class="other__text">
                 Поможем подобрать специальные<br> светильники для натяжных<br> потолков.
             </p>
         </a> 
         <a href="{{ route('services', [request()->route()->city, 'measurements']) }}" class="other__item is-hoverable">
-            <img data-lazy-src="/img/templates/ceilings/other/free_measure.webp" alt="free_measure" class="other__img">
+            <picture>
+                <source srcset="/img/templates/ceilings/other/free_measure.webp" type="image/webp">
+                <img data-lazy-src="img/templates/ceilings/other/free_measure.png" alt="free_measure" class="other__img">
+            </picture>
             <h3 class="other__title">Бесплатный замер</h3>
             <p class="other__text">
                 Наш технолог произведет замер<br> и расчет стоимости заказа<br> в удобное для вас время.
