@@ -16,7 +16,7 @@
                 @csrf
                 <input type="hidden" name="city" value="{{ $city->bx_code }}">
                 <input name="phone" required class="inputN" type="tel" placeholder="Ваш телефон">
-				<button type="submit" class="buttonN buttonN-red">Вызвать замерщика</button>
+				<button type="submit" class="buttonN buttonN-red btn-4">Вызвать замерщика</button>
 				<p class="form__agreement">Оставляя контактную информацию, вы соглашаетесь на <u>обработку персональных данных</u></p>
 			</form>
 		</div>
@@ -25,13 +25,13 @@
     <section class="section texture texture_sand">
 		<div class="wrapper offer">
 			<h2 class="offer__title"><b>Новогодняя скидка!</b></h2>
-			<img class="offer__img" src="/img/templates/ceilings/offer/new_year/double_sale_lg.png" alt="Увеличиваем скидки до 60%">
+			<img class="offer__img" data-lazy-src="/img/templates/ceilings/offer/new_year/double_sale_lg.webp" alt="Увеличиваем скидки до 60%">
 			<p class="offer__intro">Только до 31 декабря!</p>
 			<form class="formN js-less" action="{{ route('forms.feedback', $city) }}" method="POST">
                 @csrf
                 <input type="hidden" name="city" value="{{ $city->bx_code }}">
                 <input class="inputN" type="tel" name="phone" required placeholder="Ваш телефон">  
-				<button class="buttonN buttonN-light">Получить скидку</button>
+				<button class="buttonN buttonN-light btn-pulse">Получить скидку</button>
 				<p class="formN__agreement">Оставляя контактную информацию, вы соглашаетесь на обработку персональных данных</p>
 			</form>
 		</div> 
@@ -55,7 +55,7 @@
             <p class="calc__item-name">Цена с установкой</p>
             <p class="calc__total"><span class="js-calc-price">350</span> ₽</p>
         </div>
-        <a href="{{ route('forms.measure', $city) }}" class="calc__callback buttonN buttonN-red">Вызвать замерщика</a>
+        <a href="{{ route('forms.measure', $city) }}" class="calc__callback buttonN buttonN-red btn-4">Вызвать замерщика</a>
     </section>
 
     <section class="sale wrapper">
@@ -63,14 +63,14 @@
 			Нашли дешевле?<br>
 			<b>Сделаем скидку!</b>
 		</h2>
-		<img class="sale__img" src="/img/templates/gui/offer/opponent_sale.svg" alt="Скидка до 500р от цены конкурента">
-		<button data-src="#popup_sale" class="buttonN buttonN-light sale__button js-show">Получить скидку</button>
+		<img class="sale__img" data-lazy-src="/img/templates/gui/offer/opponent_sale.svg" alt="Скидка до 500р от цены конкурента">
+		<button data-src="#popup_sale" class="buttonN buttonN-light sale__button js-show btn-4">Получить скидку</button>
     </section>
 
     <section class="section catalog">
 			<h2 class="title-dec catalog__title">Каталог натяжных потолков {!! $city->name_formatted !!} от производителя</h2>
 			<div class="catalog__carousel" id="catalog__carousel" data-cats="{{ $catalogTypes }}" data-city="{{ $city }}"></div>
-			<a href="{{ route('catalogueCeilings', ['city' => $city]) }}" class="buttonN buttonN-light catalog__button">Перейти в каталог</a>
+			<a href="{{ route('catalogueCeilings', ['city' => $city]) }}" class="buttonN buttonN-light catalog__button btn-4">Перейти в каталог</a>
     </section>
 
     <section class="section wrapper skills">
@@ -91,7 +91,7 @@
 		</p>
 		<div class="advantages">
 			<article class="advantage">
-				<img class="advantage__img order" data-lazy-src="/img/gui/img_factory-2-min.jpg" alt="Собственное производство">
+				<img class="advantage__img order" data-lazy-src="/img/templates/ceilings/advantages/factory.webp" alt="Собственное производство">
 				<div class="advantage__wrap">
 					<h3 class="advantage__title">Главные плюсы организации</h3>
 					<p class="intro advantage__intro">— Контроль качества после монтажа</p>
@@ -104,7 +104,7 @@
 				</div>
 			</article>
 			<article class="advantage">
-				<img class="advantage__img" data-lazy-src="/img/img_director.jpg" alt="Генеральный директор Репин А.А. всегда на связи">
+				<img class="advantage__img" data-lazy-src="/img/templates/ceilings/advantages/director.webp" alt="Генеральный директор Репин А.А. всегда на связи">
 				<div class="advantage__wrap">
 					<h3 class="advantage__title">Директор всегда на связи</h3>
 					<p class="intro advantage__intro">
@@ -127,7 +127,7 @@
         <div class="constructor__image"></div>
         <h2 class="title-dec">Визуализация потолков</h2>
         <p class="constructor__text">Выберите цвет вашего потолка и посмотрите как это выглядит в интерьере при помощи конструктора.</p>
-        <a class="buttonN buttonN-light constructor__link" href="{{ route('constructor', $city) }}">Конструктор</a>
+        <a class="buttonN buttonN-light constructor__link btn-4" href="{{ route('constructor', $city) }}">Конструктор</a>
     </section>
 
     <section class="portfolio portfolio_main portfolio_ceilings">
@@ -135,8 +135,8 @@
         <div class="portfolio__carousel" id="portfolio__carousel" data-photos="{{ $photos }}">
         </div>
         <div class="buttons portfolio__buttons">
-			<a href="{{ route('photos', $city) }}" class="button button_gray">Посмотреть все работы</a>
-			<a href="{{ route('forms.measure', $city) }}" class="button buttons__item">Вызвать замерщика</a>
+			<a href="{{ route('photos', $city) }}" class="button button_gray btn-4">Посмотреть все работы</a>
+			<a href="{{ route('forms.measure', $city) }}" class="button buttons__item btn-4">Вызвать замерщика</a>
         </div>
     </section>
 
@@ -150,8 +150,8 @@
         </div>
 
         <div class="buttons reviews__buttons">
-			<a href="{{ route('reviews', $city) }}" class="button  button_gray">Все отзывы</a>
-			<a href="{{ route('add-review', $city) }}" class="button buttons__item">Оставить отзыв</a>
+			<a href="{{ route('reviews', $city) }}" class="button  button_gray btn-4">Все отзывы</a>
+			<a href="{{ route('add-review', $city) }}" class="button buttons__item btn-4">Оставить отзыв</a>
         </div>
     </section>
 
@@ -180,65 +180,63 @@
 
     <section class="other section wrapper">
         <a href="{{ route('services', [request()->route()->city, 'measurements']) }}" class="other__item is-hoverable">
-            <img data-lazy-src="/img/windows/home_deal.png" alt="home_deal" class="other__img">
+            <img data-lazy-src="/img/templates/ceilings/other/home_deal.webp" alt="home_deal" class="other__img">
             <h3 class="other__title">Договор на дому</h3>
             <p class="other__text">
                 Для вашего удобства замерный <br> мастер  может заключить <br>договор у вас дома.
             </p>
         </a>
         <a href="{{ route('lamps', request()->route()->city) }}" class="other__item is-hoverable">
-            <img data-lazy-src="/img/ceilings/lamp.png" alt="lamp" class="other__img">
+            <img data-lazy-src="/img/templates/ceilings/other/lamp.webp" alt="lamp" class="other__img">
             <h3 class="other__title">Светильники</h3>
             <p class="other__text">
-                Выберите специальные<br> светильники<br>для натяжных потолков.
+                Поможем подобрать специальные<br> светильники для натяжных<br> потолков.
             </p>
         </a> 
         <a href="{{ route('services', [request()->route()->city, 'measurements']) }}" class="other__item is-hoverable">
-            <img data-lazy-src="/img/windows/free_measure.png" alt="free_measure" class="other__img">
+            <img data-lazy-src="/img/templates/ceilings/other/free_measure.webp" alt="free_measure" class="other__img">
             <h3 class="other__title">Бесплатный замер</h3>
             <p class="other__text">
-                Наш технолог произведет<br> замер и расчет стоимости заказа<br> в удобное для вас время.
+                Наш технолог произведет замер<br> и расчет стоимости заказа<br> в удобное для вас время.
             </p>
         </a>
         </div>
     </section>
 
-	<section class="seo-block seo-block_main seo-block_ceilings"
-        @if ($seoData->background_mobile) data-backgr-mobile="url({{ Storage::url($seoData->background_mobile) }})" @endif
-        @if ($seoData->background_tablet) data-backgr-tablet="url({{ Storage::url($seoData->background_tablet) }})" @endif
-        @if ($seoData->background_image) style="background-image: url({{ Storage::url($seoData->background_image) }})" @endif
-    >
-        <div class="seo-block__content">
-			<div class="seo-block__item seo-block__item_numbered">
-                <div class="seo-block__item-text">
-                    <h3 class="seo-block__item-title">{!! str_replace('#city_title#', $city->name_formatted, $seoData->first_title) !!}</h3>
-    				{!! str_replace('#city_title#', $city->name_formatted, $seoData->first_text) !!}
-                </div>
-				@if ($seoData->firm_img)
-                    <div data-src="#videoBlock" class="seo-block__item-videoblock js-show">
-                        <img data-lazy-src="{{ Storage::url($seoData->firm_img) }}" alt="" class="seo-block__item-video">
+	<section class="seo-block seo-block_main">
+        <div class="wrapper">
+            <div class="seo-block__content">
+                <div class="seo-block__items">
+                    <div class="seo-block__item">
+                        <h3 class="seo-block__item-title">{!! str_replace('#city_title#', $city->name_formatted, $seoData->first_title) !!}</h3>
+                        {!! str_replace('#city_title#', $city->name_formatted, $seoData->first_text) !!}
+                    </div>
+                    @if ($seoData->firm_img)
+                    <div data-src="#videoBlock" class="seo-block__item-video js-show">
+                        <img data-lazy-src="{{ Storage::url($seoData->firm_img) }}" alt="video">
                         <p>Видео о компании</p>
                     </div>
-				@endif
-			</div>
-			<div class="seo-block__item seo-block__item_numbered seo-block__item_reverse">
-                <div class="seo-block__item-text">
-                    <h3 class="seo-block__item-title">{{ $seoData->second_title }}</h3>
-    				{!! $seoData->second_text !!}
+                    @endif
                 </div>
-				@if ($seoData->second_img)
-					<img data-lazy-src="{{ Storage::url($seoData->second_img) }}" alt="" class="seo-block__item-img">
-				@endif
-			</div>
-			<div class="seo-block__item seo-block__item_numbered">
-                <div class="seo-block__item-text">
-                    <h3 class="seo-block__item-title">{{ $seoData->third_title }}</h3>
-    				{!! $seoData->third_text !!}
+                <div class="seo-block__items seo-block__items_reverse">
+                    <div class="seo-block__item">
+                        <h3 class="seo-block__item-title">{{ $seoData->second_title }}</h3>
+                        {!! $seoData->second_text !!}
+                    </div>
+                    @if ($seoData->second_img)
+                        <img data-lazy-src="{{ Storage::url($seoData->second_img) }}" alt="" class="seo-block__item-img">
+                    @endif
                 </div>
-				@if ($seoData->third_img)
-					<img data-lazy-src="{{ Storage::url($seoData->third_img) }}" alt="" class="seo-block__item-img">
-				@endif
-			</div>
+                <div class="seo-block__items">
+                    <div class="seo-block__item">
+                        <h3 class="seo-block__item-title">{{ $seoData->third_title }}</h3>
+                        {!! $seoData->third_text !!}
+                    </div>
+                    @if ($seoData->third_img)
+                        <img data-lazy-src="{{ Storage::url($seoData->third_img) }}" alt="" class="seo-block__item-img">
+                    @endif
+                </div>
+            </div>
         </div>
     </section>
 

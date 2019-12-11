@@ -1,5 +1,5 @@
 <div class="popupN__wrapper">
-    <img src="/img/gui/close.svg" alt="close" class="popupN__close js-close">
+    <img data-lazy-src="/img/gui/close.svg" alt="close" class="popupN__close js-close">
     <div class="popupN-sale__general">
         <h3 class="popupN__title">Сделаем дешевле!</h3>
         <form action="{{ route('add-lead') }}" method="POST" class="form popupN__form">
@@ -8,7 +8,7 @@
             <input type="hidden" name="city" value="{{ $city->bx_code }}">
             <input type="hidden" name="name" value="Получить скидку">
             <input required placeholder="Ваш телефон" name="phone" type="tel" class="inputN popupN__input">
-            <button class="buttonN buttonN-red popupN-sale__btn">Получить скидку</button>
+            <button class="buttonN buttonN-red popupN-sale__btn btn-4">Получить скидку</button>
             <p class="popupN__agreement">Оставляя контактную информацию, вы соглашаетесь на <u>обработку персональных данных</u></p>
         </form>
         <div class="popupN__status-send">

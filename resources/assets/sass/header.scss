@@ -43,15 +43,12 @@
     &__close {
         position: relative;
         display: none;
-        width: rem(24);
-        height: rem(49);
-        margin-left: auto;
-        padding-bottom: rem(25);
+        // margin-left: auto;
+        // padding-bottom: rem(25);
         z-index: 3;
-        height: rem(30);
-        width: rem(22);
-        padding: rem(8);
-        padding-right: 0;
+        height: rem(25);
+        width: rem(25);
+        padding: 0;
 
         @include below($tablet) {
             &.active {

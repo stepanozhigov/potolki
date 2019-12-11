@@ -26,9 +26,11 @@
     @include('common.forms.alert_form')
 </div>
 
-<div class="popup" id="videoBlock">
-    <img src="/img/gui/close.svg" alt="" class="popup__close js-close">
-    <iframe width="900" height="506" data-lazy-src="https://www.youtube.com/embed/ZzBDdgLxTxE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="popupN popupN-video" id="videoBlock">
+    <div class="popupN__wrapper">   
+        <img data-lazy-src="/img/gui/close.svg" alt="close" class="popupN__close js-close">
+        <iframe width="900" height="506" data-lazy-src="https://www.youtube.com/embed/ZzBDdgLxTxE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
 </div>
 <div id="overlay" class="overlay js-close"></div>
 </main>
@@ -39,7 +41,7 @@
     <div class="footer__row container">
         <div class="footer__contacts">
 
-            <a href="tel:{{ $currentDirection->phone }}" class="text phone footer__phone red-hoverable">
+            <a href="tel:{{ $city->phone }}" class="text phone footer__phone red-hoverable">
                 <svg class="phone__icon" width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
                     <title>phone</title>
@@ -50,7 +52,7 @@
                         </g>
                     </g>
                 </svg>
-                {{ $currentDirection->phone }}
+                {{ $city->phone }}
                 <span class="subtext phone__time footer__time">Круглосуточно | Бесплатно</span>
             </a>
             <a href="mailto:{{ $city->email }}" class="text text_white footer__mail red-hoverable">
