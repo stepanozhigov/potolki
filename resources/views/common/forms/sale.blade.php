@@ -15,5 +15,8 @@
             <p class="popupN__send-title">спасибо, <br> заявка отправлена</p>
         </div>
     </div>
-    <img src="/img/templates/gui/form/sale_popap.png" alt="sale" class="popupN-sale__img">
+    <picture>
+        <source srcset="/img/templates/ceilings/form/sale_popap.webp" type="image/webp">
+        <img src="/img/templates/gui/ceilings/sale_popap.png" alt="sale" class="popupN-sale__img">
+    </picture>
 </div>

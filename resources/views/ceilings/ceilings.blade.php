@@ -22,7 +22,7 @@
 		</div>
     </section>
 
-    <section class="section texture texture_sand webp">
+    <section class="section texture_sand">
 		<div class="wrapper offer">
             <h2 class="offer__title"><b>Новогодняя скидка!</b></h2>
             <picture>
@@ -131,7 +131,7 @@
                         </picture>
 					</div>
 				</div>
-				<a href="https://www.instagram.com/business_repin/" target="_blank" class="buttonN buttonN-inst">Директор в Instagram</a>
+				<a href="https://www.instagram.com/business_repin/" target="_blank" class="buttonN buttonN-inst btn-4">Директор в Instagram</a>
 			</article>
 		</div>
     </section>
