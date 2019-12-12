@@ -12,6 +12,7 @@ window.Vue = require('vue');
 var Inputmask = require('inputmask');
 var ionRangeSlider = require('ion-rangeslider/js/ion.rangeSlider.js');
 var tooltipster = require('tooltipster/dist/js/tooltipster.bundle.js');
+var lazySizesLib = require('lazysizes/lazysizes.min.js');
 // var rateYo = require('rateyo/src/jquery.rateyo.js');
 
 window.VueCookie = require('vue-cookie');
@@ -160,6 +161,17 @@ $('.js-link').on('click', function (event) {
         location.href = link;
     }
 })
+
+if ('loading' in HTMLImageElement.prototype) {
+    const images = document.querySelectorAll("img.lazyload");
+    images.forEach(img => {
+        img.src = img.dataset.src;
+    });
+
+} else {
+    
+    lazySizes.init(); 
+}
 
 var $lazyContainers = $('[data-lazy-src]');
 
