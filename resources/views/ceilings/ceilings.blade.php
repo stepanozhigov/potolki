@@ -26,7 +26,7 @@
 		<div class="wrapper offer">
             <h2 class="offer__title"><b>Новогодняя скидка!</b></h2>
             <picture>
-                <source srcset="/img/templates/ceilings/offer/new_year/double_sale_lg.webp" type="image/webp">
+                <source data-srcset="/img/templates/ceilings/offer/new_year/double_sale_lg.webp" type="image/webp">
                 <img class="offer__img lazyload" data-src="/img/templates/ceilings/offer/new_year/double_sale_lg.png" loading="lazy" alt="Увеличиваем скидки до 60%">
             </picture>
 			<p class="offer__intro">Только до 31 декабря!</p>
@@ -95,7 +95,7 @@
 		<div class="advantages">
 			<article class="advantage">
                 <picture>
-                    <source srcset="/img/templates/ceilings/advantages/factory.webp" type="image/webp">
+                    <source data-srcset="/img/templates/ceilings/advantages/factory.webp" type="image/webp">
                     <img class="advantage__img order lazyload" data-src="/img/templates/ceilings/advantages/factory.jpg" loading="lazy" alt="Собственное производство">
                 </picture>
 				<div class="advantage__wrap">
@@ -112,7 +112,7 @@
 			<article class="advantage">
                 
                 <picture>
-                    <source srcset="/img/templates/ceilings/advantages/director.webp" type="image/webp">
+                    <source data-srcset="/img/templates/ceilings/advantages/director.webp" type="image/webp">
                     <img class="advantage__img lazyload" data-src="/img/templates/ceilings/advantages/director.jpg" loading="lazy" alt="Генеральный директор Репин А.А. всегда на связи">
                 </picture>
 				<div class="advantage__wrap">
@@ -126,7 +126,7 @@
 					<div class="advantage__signature">
                         <span class="advantage__signature_name">А. А. Репин</span>
                         <picture>
-                            <source srcset="/img/templates/ceilings/advantages/signature.webp" type="image/webp">
+                            <source data-srcset="/img/templates/ceilings/advantages/signature.webp" type="image/webp">
                             <img class="advantage__signature_img lazyload" data-src="/img/templates/ceilings/advantages/signature.png" loading="lazy" alt="signature">
                         </picture>
 					</div>
@@ -194,7 +194,7 @@
     <section class="other section wrapper">
         <a href="{{ route('services', [request()->route()->city, 'measurements']) }}" class="other__item is-hoverable">
             <picture>
-                <source srcset="/img/templates/ceilings/other/home_deal.webp" type="image/webp">
+                <source data-srcset="/img/templates/ceilings/other/home_deal.webp" type="image/webp">
                 <img data-src="img/templates/ceilings/other/home_deal.png" loading="lazy" alt="home_deal" class="other__img lazyload">
             </picture>
             <h3 class="other__title">Договор на дому</h3>
@@ -204,7 +204,7 @@
         </a>
         <a href="{{ route('lamps', request()->route()->city) }}" class="other__item is-hoverable">
             <picture>
-                <source srcset="/img/templates/ceilings/other/lamp.webp" type="image/webp">
+                <source data-srcset="/img/templates/ceilings/other/lamp.webp" type="image/webp">
                 <img data-src="img/templates/ceilings/other/lamp.png" loading="lazy" alt="lamp" class="other__img lazyload">
             </picture>
             <h3 class="other__title">Светильники</h3>
@@ -214,7 +214,7 @@
         </a> 
         <a href="{{ route('services', [request()->route()->city, 'measurements']) }}" class="other__item is-hoverable">
             <picture>
-                <source srcset="/img/templates/ceilings/other/free_measure.webp" type="image/webp">
+                <source data-srcset="/img/templates/ceilings/other/free_measure.webp" type="image/webp">
                 <img data-src="img/templates/ceilings/other/free_measure.png" loading="lazy" alt="free_measure" class="other__img lazyload">
             </picture>
             <h3 class="other__title">Бесплатный замер</h3>

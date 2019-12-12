@@ -16,7 +16,7 @@
         </div>
     </div>
     <picture>
-        <source srcset="/img/templates/ceilings/form/sale_popap.webp" type="image/webp">
-        <img src="/img/templates/gui/ceilings/sale_popap.png" alt="sale" class="popupN-sale__img">
+        <source data-srcset="/img/templates/ceilings/form/sale_popap.webp" type="image/webp">
+        <img data-src="/img/templates/gui/ceilings/sale_popap.png" alt="sale" loading="lazy" class="popupN-sale__img lazyload">
     </picture>
 </div>
