@@ -1531,6 +1531,27 @@ $gray: #babec2;
             right: rem(-20);
         }
     }
+    //quiz
+    &_ceilingsform{
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        transform: translateY(0);
+        background: #fff;
+        max-height: none;
+
+        form{
+            max-width: 320px;
+            position: relative;
+            margin: auto;
+        }
+
+        .gifts{
+            margin: 0;
+            padding: 0;
+        }
+    }
 
 }
 

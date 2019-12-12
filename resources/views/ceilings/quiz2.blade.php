@@ -37,10 +37,6 @@
 		margin: 0;
 		width: 100%;
 	}
-	.ceilingsform__heading-item.active {
-		padding-left: 8px;
-		padding-right: 16px;
-	}
 	.ceilingsForm__title {
 		display: inline;
 		margin-bottom: 49px;
@@ -50,6 +46,7 @@
 		}
 		.ceilingsform__heading-title {
 			hyphens: none;
+			font-size: 20px;
 		}
 		.ceilingsform_sent .ceilingsform__thankyou {
 			height: 100vh;
@@ -97,20 +94,20 @@
 	</style>
     @include('common.headerCeilingsForm')
 	    <section class="ceilingsForm container">
-	        <div class="ceilingsForm__banner b-texture b-texture_sand">
+	        <div class="ceilingsForm__banner b-texture b-texture_sand snow-container">
+				<img src="/img/quiz/new_year/New_Year_Border.png" alt="New Year" class="new_year_quiz">
 	            <p class="ceilingsForm__overtitle">пройдите тест за 30 секунд</p>
 	            <p class="ceilingsForm__title">Получите расчёт<br>натяжного потолка<br>и <span style="color: #dc1414">подарок</span></p>
 	            <a data-src="#popup_ceilingsform" href="javascript:void(0);" class="button form__button js-show">Получить расчёт</a>
 	            <p class="ceilingsForm__agreement">Оставляя контактную информацию, вы <br> соглашаетесь на <a href="/sochi/agreement">обработку персональных данных</a> </p>
 	        </div>
-      </section>
-    	<div class="popup popup_ceilingsform" id="popup_ceilingsform" style="">
-    		<img src="/img/gui/close.svg" alt="" class="popup__close js-close">
+      	</section>
+    	<div class="popupN popupN_ceilingsform" id="popup_ceilingsform" style="">
+    		<img src="/img/gui/close.svg" alt="" class="popupN__close js-close">
     		<!-- ceilingsform_sent -->
 	    	<form action="{{ route('forms.quiz2') }}" class="ceilingsform form js-less popup__form">
 	    		@csrf
 	    		<input type="hidden" name="city" value="{{ $city->bx_code }}">
-				<img src="/img/gui/close_thin.svg" alt="" class="popup__close js-close">
 				<div class="ceilingsform__heading">
 					<div class="ceilingsform__heading-item active">
 						<img height="160px" src="/img/quiz/234.jpg" alt="">

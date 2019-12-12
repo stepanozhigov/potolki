@@ -903,8 +903,6 @@ $('.ceilingsform').on('submit', function (event) {
       gift: window.gift
     };
 
-    Vue.cookie.set('form_send', true, 1);
-
     $this.addClass('ceilingsform_sent');
     $.ajax({
         url: $this.attr('action'),
@@ -912,6 +910,7 @@ $('.ceilingsform').on('submit', function (event) {
         method: 'POST',
         success: function () {
             $this.addClass('form_status-send');
+            Vue.cookie.set('form_send', true, 1);
         }
     })
 
@@ -934,8 +933,6 @@ $('.js-less').on('submit', function () {
 
 $('.form:not(.js-less)').on('submit', function (event) {
     event.preventDefault();
-
-    Vue.cookie.set('form_send', true, 1);
 
     var $this = $(this),
     	name = $this.find('[name=name]').val(),
@@ -964,6 +961,7 @@ $('.form:not(.js-less)').on('submit', function (event) {
         method: 'POST',
         success: function () {
             $this.addClass('form_status-send');
+            Vue.cookie.set('form_send', true, 1);
         }
     })
 

@@ -29,6 +29,24 @@
     }
   }
 }
+@keyframes snow {
+    0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+    100% {background-position: 500px 1000px, 400px 400px, 300px 300px;}
+}
+
+.snow-container {
+    background-image: url(/img/quiz/new_year/snowflake.png), url(/img/quiz/new_year/snowflake3.png), url(/img/quiz/new_year/snowflake2.png);
+    height: 100%;
+    animation: snow 20s linear infinite;
+}
+.new_year_quiz{
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
 .ceilingsForm {
 
     &__banner {
@@ -44,6 +62,8 @@
         @include below($mobile) {
             padding: rem(48) rem(16);
             padding-top: rem(56);
+            min-height: 100vh;
+            overflow: hidden;
         }
     }
     &__banner.b-texture::before {
