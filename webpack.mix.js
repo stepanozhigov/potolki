@@ -1,5 +1,5 @@
 let mix = require('laravel-mix');
-
+let mqpacker = require("css-mqpacker");
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -14,6 +14,8 @@ let mix = require('laravel-mix');
 mix.js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css').options({
       postCss: [
-          require("css-mqpacker")
+        mqpacker({
+            sort: true
+          })
       ]
   });

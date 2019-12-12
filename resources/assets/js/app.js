@@ -162,16 +162,18 @@ $('.js-link').on('click', function (event) {
     }
 })
 
-if ('loading' in HTMLImageElement.prototype) {
-    const images = document.querySelectorAll("img.lazyload");
-    images.forEach(img => {
-        img.src = img.dataset.src;
-    });
+lazySizes.init();
 
-} else {
+// if ('loading' in HTMLImageElement.prototype) {
+//     const images = document.querySelectorAll("img.lazyload");
+//     images.forEach(img => {
+//         img.src = img.dataset.src;
+//     });
+
+// } else {
     
-    lazySizes.init(); 
-}
+//     lazySizes.init(); 
+// }
 
 var $lazyContainers = $('[data-lazy-src]');
 
