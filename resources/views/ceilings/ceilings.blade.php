@@ -66,7 +66,7 @@
 			Нашли дешевле?<br>
 			<b>Сделаем скидку!</b>
 		</h2>
-		<img class="sale__img" data-lazy-src="/img/templates/gui/offer/opponent_sale.svg" alt="Скидка до 500р от цены конкурента">
+		<img class="sale__img" src="/img/templates/gui/offer/opponent_sale.svg" loading="lazy" alt="Скидка до 500р от цены конкурента">
 		<button data-src="#popup_sale" class="buttonN buttonN-light sale__button js-show btn-4">Получить скидку</button>
     </section>
 
@@ -96,7 +96,7 @@
 			<article class="advantage">
                 <picture>
                     <source srcset="/img/templates/ceilings/advantages/factory.webp" type="image/webp">
-                    <img class="advantage__img order" data-lazy-src="/img/templates/ceilings/advantages/factory.jpg" alt="Собственное производство">
+                    <img class="advantage__img order" src="/img/templates/ceilings/advantages/factory.jpg" loading="lazy" alt="Собственное производство">
                 </picture>
 				<div class="advantage__wrap">
 					<h3 class="advantage__title">Главные плюсы организации</h3>
@@ -113,7 +113,7 @@
                 
                 <picture>
                     <source srcset="/img/templates/ceilings/advantages/director.webp" type="image/webp">
-                    <img class="advantage__img" data-lazy-src="/img/templates/ceilings/advantages/director.jpg" alt="Генеральный директор Репин А.А. всегда на связи">
+                    <img class="advantage__img" src="/img/templates/ceilings/advantages/director.jpg" loading="lazy" alt="Генеральный директор Репин А.А. всегда на связи">
                 </picture>
 				<div class="advantage__wrap">
 					<h3 class="advantage__title">Директор всегда на связи</h3>
@@ -127,7 +127,7 @@
                         <span class="advantage__signature_name">А. А. Репин</span>
                         <picture>
                             <source srcset="/img/templates/ceilings/advantages/signature.webp" type="image/webp">
-                            <img class="advantage__signature_img" data-lazy-src="/img/templates/ceilings/advantages/signature.png" alt="signature">
+                            <img class="advantage__signature_img" src="/img/templates/ceilings/advantages/signature.png" loading="lazy" alt="signature">
                         </picture>
 					</div>
 				</div>
@@ -173,19 +173,19 @@
         <p class="manufactur__subtitle subtitleN">Компания &laquo;Твой стиль&raquo; ипользует плёнку для натяжных потолков ведущих мировых производителей. Мы&nbsp;предлагаем нашим клиентам только сертифицированные материалы. В&nbsp;нашем ассортименте можно выбрать полотна из&nbsp;пленки ПВХ и&nbsp;тканевые полотна следующих производителей.</p>
         <div class="manufactur__items">   
             <div class="manufactur__item">
-                <img data-lazy-src="/img/manufacturers/clipso.svg" alt="clipso" class="manufactur__item-image">
+                <img src="/img/manufacturers/clipso.svg" loading="lazy" alt="clipso" class="manufactur__item-image">
                 <span class="manufactur__item-name">Франция</span>
             </div>
             <div class="manufactur__item">
-                <img data-lazy-src="/img/manufacturers/pongs.svg" alt="pongs" class="manufactur__item-image">    
+                <img src="/img/manufacturers/pongs.svg" loading="lazy" alt="pongs" class="manufactur__item-image">    
                 <span class="manufactur__item-name">Германия</span>
             </div>
             <div class="manufactur__item">
-                <img data-lazy-src="/img/manufacturers/lackfole.svg" alt="lackfole" class="manufactur__item-image">
+                <img src="/img/manufacturers/lackfole.svg" loading="lazy" alt="lackfole" class="manufactur__item-image">
                 <span class="manufactur__item-name">Германия</span>
             </div>
             <div class="manufactur__item">
-                <img data-lazy-src="/img/manufacturers/msd.svg" alt="msd" class="manufactur__item-image">
+                <img src="/img/manufacturers/msd.svg" loading="lazy" alt="msd" class="manufactur__item-image">
                 <span class="manufactur__item-name">Китай</span>
             </div>
         </div>
@@ -195,7 +195,7 @@
         <a href="{{ route('services', [request()->route()->city, 'measurements']) }}" class="other__item is-hoverable">
             <picture>
                 <source srcset="/img/templates/ceilings/other/home_deal.webp" type="image/webp">
-                <img data-lazy-src="img/templates/ceilings/other/home_deal.png" alt="home_deal" class="other__img">
+                <img src="img/templates/ceilings/other/home_deal.png" loading="lazy" alt="home_deal" class="other__img">
             </picture>
             <h3 class="other__title">Договор на дому</h3>
             <p class="other__text">
@@ -205,7 +205,7 @@
         <a href="{{ route('lamps', request()->route()->city) }}" class="other__item is-hoverable">
             <picture>
                 <source srcset="/img/templates/ceilings/other/lamp.webp" type="image/webp">
-                <img data-lazy-src="img/templates/ceilings/other/lamp.png" alt="lamp" class="other__img">
+                <img src="img/templates/ceilings/other/lamp.png" loading="lazy" alt="lamp" class="other__img">
             </picture>
             <h3 class="other__title">Светильники</h3>
             <p class="other__text">
@@ -215,7 +215,7 @@
         <a href="{{ route('services', [request()->route()->city, 'measurements']) }}" class="other__item is-hoverable">
             <picture>
                 <source srcset="/img/templates/ceilings/other/free_measure.webp" type="image/webp">
-                <img data-lazy-src="img/templates/ceilings/other/free_measure.png" alt="free_measure" class="other__img">
+                <img src="img/templates/ceilings/other/free_measure.png" loading="lazy" alt="free_measure" class="other__img">
             </picture>
             <h3 class="other__title">Бесплатный замер</h3>
             <p class="other__text">
@@ -235,7 +235,7 @@
                     </div>
                     @if ($seoData->firm_img)
                     <div data-src="#videoBlock" class="seo-block__item-video js-show">
-                        <img data-lazy-src="{{ Storage::url($seoData->firm_img) }}" alt="video">
+                        <img src="{{ Storage::url($seoData->firm_img) }}" loading="lazy" alt="video">
                         <p>Видео о компании</p>
                     </div>
                     @endif
@@ -246,7 +246,7 @@
                         {!! $seoData->second_text !!}
                     </div>
                     @if ($seoData->second_img)
-                        <img data-lazy-src="{{ Storage::url($seoData->second_img) }}" alt="" class="seo-block__item-img">
+                        <img src="{{ Storage::url($seoData->second_img) }}" loading="lazy" alt="" class="seo-block__item-img">
                     @endif
                 </div>
                 <div class="seo-block__items">
@@ -255,7 +255,7 @@
                         {!! $seoData->third_text !!}
                     </div>
                     @if ($seoData->third_img)
-                        <img data-lazy-src="{{ Storage::url($seoData->third_img) }}" alt="" class="seo-block__item-img">
+                        <img src="{{ Storage::url($seoData->third_img) }}" loading="lazy" alt="" class="seo-block__item-img">
                     @endif
                 </div>
             </div>
