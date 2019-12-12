@@ -27,7 +27,7 @@
             <h2 class="offer__title"><b>Новогодняя скидка!</b></h2>
             <picture>
                 <source srcset="/img/templates/ceilings/offer/new_year/double_sale_lg.webp" type="image/webp">
-                <img class="offer__img" data-lazy-src="/img/templates/ceilings/offer/new_year/double_sale_lg.png" alt="Увеличиваем скидки до 60%">
+                <img class="offer__img" src="/img/templates/ceilings/offer/new_year/double_sale_lg.png" loading="lazy" alt="Увеличиваем скидки до 60%">
             </picture>
 			<p class="offer__intro">Только до 31 декабря!</p>
 			<form class="formN js-less" action="{{ route('forms.feedback', $city) }}" method="POST">

@@ -12,7 +12,7 @@ window.Vue = require('vue');
 var Inputmask = require('inputmask');
 var ionRangeSlider = require('ion-rangeslider/js/ion.rangeSlider.js');
 var tooltipster = require('tooltipster/dist/js/tooltipster.bundle.js');
-var rateYo = require('rateyo/src/jquery.rateyo.js');
+// var rateYo = require('rateyo/src/jquery.rateyo.js');
 
 window.VueCookie = require('vue-cookie');
 Vue.use(VueCookie);
@@ -30,22 +30,22 @@ require('./components/popup');
  */
 Vue.component('surfaces', require('./components/Surfaces.vue'));
 Vue.component('reviews', require('./components/Reviews.vue'));
-Vue.component('window-calc', require('./components/WindowCalc.vue'));
-Vue.component('balcony-calc', require('./components/BalkonyCalc.vue'));
+// Vue.component('window-calc', require('./components/WindowCalc.vue'));
+// Vue.component('balcony-calc', require('./components/BalkonyCalc.vue'));
 Vue.component('simple-slider', require('./components/simpleSlider.vue'));
 Vue.component('ceilings-calc', require('./components/ceilingsCalc.vue'));
-Vue.component('climat-slider', require('./components/climatSlider.vue'));
+// Vue.component('climat-slider', require('./components/climatSlider.vue'));
 Vue.component('catalogue-slider', require('./components/catalogue-slider.vue'));
 Vue.component('city-search', require('./components/CitySearch.vue'));
 Vue.component('add-comment', require('./components/AddComment.vue'));
 Vue.component('add-review', require('./components/AddReview.vue'));
-Vue.component('offer-slider', require('./components/OfferSlider.vue'));
+// Vue.component('offer-slider', require('./components/OfferSlider.vue'));
 Vue.component('gallery-carousel', require('./components/GalleryCarousel.vue'));
 Vue.component('gallery-list', require('./components/GalleryList.vue'));
-Vue.component('credit-calc', require('./components/CreditCalc.vue'));
-Vue.component('dveri-calc', require('./components/DveriCalc.vue'));
-Vue.component('peregorodki-calc', require('./components/Peregorodki.vue'));
-Vue.component('zhalyuzi-calc', require('./components/Zhalyuzi.vue'));
+// Vue.component('credit-calc', require('./components/CreditCalc.vue'));
+// Vue.component('dveri-calc', require('./components/DveriCalc.vue'));
+// Vue.component('peregorodki-calc', require('./components/Peregorodki.vue'));
+// Vue.component('zhalyuzi-calc', require('./components/Zhalyuzi.vue'));
 Vue.component('posts', require('./components/Articles.vue'));
 Vue.component('posts-list', require('./components/ArticlesList.vue'));
 Vue.component('manufacturers', require('./components/ManufacturersCarousel.vue'));
@@ -130,7 +130,6 @@ if (quizContainer2.length > 0) {
     })
 }
 
-
 var citySwitch = $('.js-switch-link');
 
 if (citySwitch.length > 0) {
@@ -162,26 +161,6 @@ $('.js-link').on('click', function (event) {
     }
 })
 
-var seoContainer = $('.seo-block');
-
-if (seoContainer.length > 0) {
-    var width = $(document).width();
-
-    if (width < 1279) {
-        var background = seoContainer.data('backgr-tablet');
-
-        if (background) {
-            seoContainer.css('background-image', background)
-        }
-    }
-    if (width < 719) {
-        var background = seoContainer.data('backgr-mobile');
-
-        if (background) {
-            seoContainer.css('background-image', background)
-        }
-    }
-}
 var $lazyContainers = $('[data-lazy-src]');
 
 if ($lazyContainers.length > 0) {
@@ -192,34 +171,6 @@ if ($lazyContainers.length > 0) {
         $element.attr('src', src);
     });
 }
-
-$('.survey__form').on('submit', function (e) {
-    e.preventDefault();
-    var $form = $(e.target);
-    $.ajax({
-        url: '/forms/survey',
-        method: 'post',
-        data: $form.serialize(),
-        success: function () {
-            $('.survey__thankyou').slideDown();
-            $form.hide();
-        }
-    });
-});
-
-$('.js-dir').on('submit', function (e) {
-    e.preventDefault();
-    var $form = $(e.target);
-    $.ajax({
-        url: '/forms/survey',
-        method: 'post',
-        data: $form.serialize(),
-        success: function () {
-            $('.dir-message__submit').hide();
-            $('.dir-message__status-send').show();
-        }
-    });
-})
 
 $(document).on('scroll', function () {
     var scrollPosition = $(window).scrollTop(),
@@ -251,8 +202,6 @@ if (surfaces.length > 0) {
     })
 }
 
-
-
 const articles = $('#articles');
 
 if (articles.length > 0) {
@@ -279,15 +228,6 @@ if (banks.length > 0) {
     })
 }
 
-
-const creditCalcContainer = $('#credit-calc');
-
-if (creditCalcContainer.length > 0) {
-    new Vue({
-        el: '#credit-calc',
-        template: '<credit-calc></credit-calc>'
-    })
-}
 
 const portfolioCarouselContainer = $('.portfolio__carousel');
 
@@ -333,22 +273,6 @@ if (catalogCarouselContainer.length > 0) {
 }
 
 
-
-
-const offerSliderContainer = $('#js-offer-slider');
-
-if (offerSliderContainer.length > 0) {
-
-    const   offers = offerSliderContainer.data('offers'),
-            offerSlider = new Vue({
-                el: '#js-offer-slider',
-                template: `<offer-slider :offers="offers"></offer-slider>`,
-                data: {
-                    offers: offers
-                }
-            });
-}
-
 $('.js-add-comment').each(function(index, element) {
     var elementId = $(element).attr('id');
 
@@ -369,18 +293,6 @@ if ($('#city-search').length > 0) {
     });
 }
 
-if ($('#window-calc').length > 0) {
-    var windowCalc = new Vue({
-        el: '#window-calc'
-    });
-}
-
-if ($('#balcony-calc').length > 0) {
-    var BalkonyCalc = new Vue({
-        el: '#balcony-calc'
-    });
-}
-
 if ($('#simple-slider').length > 0) {
     var BalkonyCalc = new Vue({
         el: '#simple-slider'
@@ -393,33 +305,9 @@ if ($('#ceilings-calc').length > 0) {
     });
 }
 
-if ($('#climat-slider').length > 0) {
-    var CeilingsCalc = new Vue({
-        el: '#climat-slider'
-    });
-}
-
 if ($('#catalogue-slider').length > 0) {
     var CeilingsCalc = new Vue({
         el: '#catalogue-slider'
-    });
-}
-
-if ($('#dveri-calc').length > 0) {
-    var DveriCalc = new Vue({
-        el: '#dveri-calc'
-    });
-}
-
-if ($('#peregorodki-calc').length > 0) {
-    var PeregorodkiCalc = new Vue({
-        el: '#peregorodki-calc'
-    });
-}
-
-if ($('#zhalyuzi-calc').length > 0) {
-    var ZhalyuziCalc = new Vue({
-        el: '#zhalyuzi-calc'
     });
 }
 
@@ -616,17 +504,6 @@ $('.question__more').on('click', function(e) {
 
 });
 
-$('.calculator__type').on('click', function () {
-    $(this).addClass('active').siblings().removeClass('active')
-    $(this).closest('.calculator__inner').find('.calculator__main').removeClass('active').eq($(this).index()).addClass('active');
-});
-
-$('.facture').on('click', '.facture__item', function () {
-    $(this)
-    .addClass('active').siblings().removeClass('active')
-    .closest('.facture').find('.facture__img').removeClass('active').eq($(this).index()).addClass('active');
-});
-
 $('.titles__arrow').on('click', function () {
     $(this).prev('.intro ').toggleClass('opened');
     $(this).prev('.text ').toggleClass('opened');
@@ -664,51 +541,35 @@ let onResize = function () {
                 scrollTop: $(this).offset().top - 80
             }, 500);
         });
-        $('.article__more').off();
-        $('.article__more').on('click', function () {
-            $(this).prev('.article__desc').find('h3').toggleClass('opened')
-        });
-
-		$('.catalogue__list').off('click', '.catalogue__item');
-		$('.catalogue__list').on('click', '.catalogue__item', function () {
-			$(this).siblings().removeClass('opened');
-			$(this).toggleClass('opened');
-		});
-
-        $('.ourArticle__more').off();
-        $('.ourArticle__more').on('click', function () {
-            $(this).closest('.ourArticle').siblings().removeClass('opened');
-            $(this).closest('.ourArticle').toggleClass('opened');
-
-            if ($(this).text() === 'Подробнее') {
-                $(this).text('Свернуть');
-            } else {
-                $(this).text('Подробнее');
-            }
-
-        });
 
         $('.nav-group').off();
         $('.nav-group').on('click', function() {
         	$(this).toggleClass('nav-group_opened');
         });
+        
+        // $('.article__more').off();
+        // $('.article__more').on('click', function () {
+        //     $(this).prev('.article__desc').find('h3').toggleClass('opened')
+        // });
 
-        $('.calculator__type').on('click', function () {
-            let list = $(this).prevAll('.calculator__type');
-            let thisWidth = $(this).outerWidth();
-            let width = 0;
+		// $('.catalogue__list').off('click', '.catalogue__item');
+		// $('.catalogue__list').on('click', '.catalogue__item', function () {
+		// 	$(this).siblings().removeClass('opened');
+		// 	$(this).toggleClass('opened');
+		// });
 
+        // $('.ourArticle__more').off();
+        // $('.ourArticle__more').on('click', function () {
+        //     $(this).closest('.ourArticle').siblings().removeClass('opened');
+        //     $(this).closest('.ourArticle').toggleClass('opened');
 
-            for (var i = 0; i < list.length; i++) {
-                let element = list[i];
-                let elementWidth = $(element).outerWidth();
-                width += elementWidth;
-            }
+        //     if ($(this).text() === 'Подробнее') {
+        //         $(this).text('Свернуть');
+        //     } else {
+        //         $(this).text('Подробнее');
+        //     }
+        // });
 
-            let offset = thisWidth / 2 + width;
-            let value = 'calc(50% - ' + offset + 'px)';
-            $('.calculator__types').css("left", value);
-        });
     } else {
         $('.calculator__types').css("left", 0);
     }
@@ -746,23 +607,6 @@ $('.range').ionRangeSlider({
     skin: 'round',
     hide_min_max: true,
     extra_classes: 'range_red'
-});
-
-$('.rangeFixed').ionRangeSlider({
-    skin: 'round',
-    hide_min_max: true,
-    hide_from_to: true,
-    extra_classes: 'range_red range_fixed'
-});
-
-$('.rangeFixed').on("change", function () {
-        var $inp = $(this);
-        let from = $inp.data("from");   // input data-from attribute
-        let to = $inp.data("to");       // input data-to attribute
-        let fromSpan = $(this).closest('.climatCatalogue__filter-item').find('.climatCatalogue__range-from');
-        let toSpan = $(this).closest('.climatCatalogue__filter-item').find('.climatCatalogue__range-to');
-        $(fromSpan).text(from);
-        $(toSpan).text(to);
 });
 
 window.onerror = function (msg, url, line, col, exception) {
@@ -833,33 +677,33 @@ $('.dillers__item-heading').on('click', function () {
 
 });
 
-$('.dillers__materials-open').on('click', function () {
-    let $this = $(this),
-        text = $this.text(),
-        prev = $this.prev();
-    $this.prev('.dillers__materials-table').toggleClass('opened');
-    $this.toggleClass('arrow_rotate-vertical');
+// $('.dillers__materials-open').on('click', function () {
+//     let $this = $(this),
+//         text = $this.text(),
+//         prev = $this.prev();
+//     $this.prev('.dillers__materials-table').toggleClass('opened');
+//     $this.toggleClass('arrow_rotate-vertical');
 
-    if (text === 'Показать все изделия') {
-        $this.text('Свернуть');
-    } else {
-        $this.text('Показать все изделия');
-    }
-});
+//     if (text === 'Показать все изделия') {
+//         $this.text('Свернуть');
+//     } else {
+//         $this.text('Показать все изделия');
+//     }
+// });
 
-$('.dillers__toPrice').on('click', function () {
-    $('#price').trigger('click');
-    $('html, body').animate({
-        scrollTop: $('#price').offset().top
-    }, 500);
-});
+// $('.dillers__toPrice').on('click', function () {
+//     $('#price').trigger('click');
+//     $('html, body').animate({
+//         scrollTop: $('#price').offset().top
+//     }, 500);
+// });
 
-$('.dillers__toShipping').on('click', function () {
-    $('#shipping').trigger('click');
-    $('html, body').animate({
-        scrollTop: $('#shipping').offset().top
-    }, 500);
-});
+// $('.dillers__toShipping').on('click', function () {
+//     $('#shipping').trigger('click');
+//     $('html, body').animate({
+//         scrollTop: $('#shipping').offset().top
+//     }, 500);
+// });
 
 $('.dillers__heading-button').on('click', function () {
     $(this).toggleClass('rotate-vertical');
@@ -870,105 +714,6 @@ $('.catalog-cards__item').on('click', '.catalog-cards__open', function () {
     event.preventDefault();
     $(this).closest('.catalog-cards__item').toggleClass('opened');
 });
-
-// $(document).on('click', '.b24-widget-button-wrapper', function() {
-//     fbq('track', 'Lead');
-
-//     if (typeof ga !== 'undefined') {
-//         ga.getAll()[0].send('event', 'callback', 'start');
-//     }
-//     if (typeof window.yaCounter40202559 !== 'undefined') {
-//         window.yaCounter40202559.reachGoal('b24-call');
-//     }
-
-// });
-
-$('.ceilingsform').on('submit', function (event) {
-     event.preventDefault();
-     var $this = $(this);
-
-    if (typeof window.yaCounter40202559 !== 'undefined') {
-        window.yaCounter40202559.reachGoal('quiz2');
-    }
-    if (typeof ga !== 'undefined') {
-        ga.getAll()[0].send('event', 'quiz', 'send');
-    }
-    fbq('track', 'Lead');
-
-    var data = {
-      area: $('[name="area"]').val(),
-      lamps: $('[name="lamps"]').val(),
-      phone: $('[name="phone"]').val(),
-	  city: $('[name="city"]').val(),
-      gift: window.gift
-    };
-
-    $this.addClass('ceilingsform_sent');
-    $.ajax({
-        url: $this.attr('action'),
-        data: data,
-        method: 'POST',
-        success: function () {
-            $this.addClass('form_status-send');
-            Vue.cookie.set('form_send', true, 1);
-        }
-    })
-
-
-})
-$('.js-less').on('submit', function () {
-
-    if(Vue.cookie.get('form_send')){
-        $('body').addClass('overflowed');
-        $('#overlay').addClass('overlay_active');
-        $('#popup_alert_form').addClass('popupN_active');
-        $('.header_sticky').addClass('hidden');
-        $(this).find('input').val('');
-        event.preventDefault();
-    }else{
-        Vue.cookie.set('form_send', true, 1);
-    }
-
-});
-
-$('.form:not(.js-less)').on('submit', function (event) {
-    event.preventDefault();
-
-    var $this = $(this),
-    	name = $this.find('[name=name]').val(),
-    	city = $this.find('[name=city]').val(),
-    	phone = $this.find('[name=phone]').val();
-
-    if (typeof window.yaCounter40202559 !== 'undefined') {
-        window.yaCounter40202559.reachGoal('form-sub');
-    }
-    if (typeof ga !== 'undefined') {
-        ga.getAll()[0].send('event', 'forms', 'sub');
-    }
-    fbq('track', 'Lead');
-
-    var successEl = $this.next('.popupN__status-send');
-
-    if (successEl.length > 0) {
-        $this.hide();
-        $this.prev('.popupN__title').hide();
-        $this.next('.popupN__status-send').show();
-    }
-
-    $.ajax({
-        url: $this.attr('action'),
-        data: $this.serialize(),
-        method: 'POST',
-        success: function () {
-            $this.addClass('form_status-send');
-            Vue.cookie.set('form_send', true, 1);
-        }
-    })
-
-});
-
-
-
 
 $('.mobileMenu__item_category').on('click', function () {
     console.log(this);
@@ -983,352 +728,12 @@ $('.mobileMenu__link-prev').on('click', function (event) {
     $(this).closest('.mobileMenu__item_category').removeClass('active');
 });
 
-$('.climatCard__comparison').on('click', function () {
-    $(this).toggleClass('active');
-    if ($(this).is(".active")) {
-        $(this).find('span').text('В сравнении');
-    } else {
-        $(this).find('span').text('К сравнению');
-    }
-});
-
-$('.climatCard__favourites').on('click', function () {
-    $(this).toggleClass('active');
-    if ($(this).is(".active")) {
-        $(this).find('span').text('В избранном');
-    } else {
-        $(this).find('span').text('В избранное');
-    }
-});
-
-$('.conditionerPopup__comparison').on('click', function () {
-    $(this).toggleClass('active');
-    if ($(this).is(".active")) {
-        $(this).find('span').text('В сравнении');
-    } else {
-        $(this).find('span').text('К сравнению');
-    }
-});
-
-$('.conditionerPopup__favourites').on('click', function () {
-    $(this).toggleClass('active');
-    if ($(this).is(".active")) {
-        $(this).find('span').text('В избранном');
-    } else {
-        $(this).find('span').text('В избранное');
-    }
-});
-
-$('.climatDetail__comparison').on('click', function () {
-    $(this).toggleClass('active');
-    if ($(this).is(".active")) {
-        $(this).find('span').text('В сравнении');
-    } else {
-        $(this).find('span').text('К сравнению');
-    }
-});
-
-$('.climatDetail__favourites').on('click', function () {
-    $(this).toggleClass('active');
-    if ($(this).is(".active")) {
-        $(this).find('span').text('В избранном');
-    } else {
-        $(this).find('span').text('В избранное');
-    }
-});
-
-$('.climatCatalogue__filter-title').on('click', function () {
-    $(this).parent('.climatCatalogue__filter-item').toggleClass('opened');
-});
-
-$('.climatCard__stars').rateYo({
-    rating: 3,
-    starWidth: '16px',
-    normalFill: '#babec2',
-    ratedFill: '#dc1414',
-    fullStar: true,
-    readOnly: true
-});
-
-$('.climatCatalogue__stars').rateYo({
-    rating: $(this).attr("data-rateyo-rating"),
-    starWidth: '16px',
-    normalFill: '#babec2',
-    ratedFill: '#dc1414',
-    fullStar: true,
-    readOnly: true
-});
-
-$('.conditionerPopup__stars').rateYo({
-    rating: $(this).attr("data-rateyo-rating"),
-    starWidth: '16px',
-    normalFill: '#babec2',
-    ratedFill: '#dc1414',
-    fullStar: true,
-    readOnly: true
-});
-
-$('.climatDetail__stars').rateYo({
-    rating: $(this).attr("data-rateyo-rating"),
-    starWidth: '16px',
-    normalFill: '#babec2',
-    ratedFill: '#dc1414',
-    fullStar: true,
-    readOnly: true
-});
-
-$('.climatDetail__review-stars').rateYo({
-    rating: $(this).attr("data-rateyo-rating"),
-    starWidth: '16px',
-    normalFill: '#babec2',
-    ratedFill: '#dc1414',
-    fullStar: true,
-    readOnly: true
-});
-
-$('.headerClimat__more').on('click', function () {
-    $(this).toggleClass('active');
-});
-
-$('.headerClimat__search-button').on('click', function () {
-    $(this).closest('.headerClimat__search').addClass('active');
-});
-
-$('.headerClimat__back-button').on('click', function () {
-    $(this).closest('.headerClimat__search').removeClass('active');
-});
-
-$('#priceSort').on('change', function () {
-    if ($(this).is(":checked")) {
-        $(this).next().text('возрастанию цены');
-    } else {
-        $(this).next().text('понижению цены');
-    }
-});
-
-$('.goTop').on('click', function () {
-    $("html, body").animate({ scrollTop: 0 }, "slow");
-});
-
-$('.climatCatalogue__orientation input[name=orientation]').on('change', function () {
-    if($(this).val() == 'cards') {
-        $('.climatCard').removeClass('climatCard_horisontal');
-    } else if ($(this).val() == 'list') {
-        $('.climatCard').addClass('climatCard_horisontal');
-    }
-});
-
-const filter = document.querySelector(".climatCatalogue__filter-content");
-
-$('.climatCatalogue__filter-open').on('click', function () {
-    $('.climatCatalogue__filter').addClass('opened');
-    disableBodyScroll(filter);
-});
-
-$('.climatCatalogue__filter-close').on('click', function () {
-    $('.climatCatalogue__filter').removeClass('opened');
-    enableBodyScroll(filter);
-});
-
-$('.climatCatalogue__sort-item').on('click', function () {
-    $(this).addClass('active');
-    $(this).siblings().removeClass('active');
-});
-$('.climatCatalogue__filter-clear').on('click', function (event) {
-    event.stopPropagation();
-});
-
-
-$('.conditionerPopup__gallery-prev').on('click', function () {
-
-    let activeSlide = $(this).closest('.conditionerPopup__gallery-list').find('.active');
-
-
-    if( $(activeSlide).prev('.conditionerPopup__gallery-item').length > 0 && $(document).width() > 960) {
-        $(activeSlide).removeClass('active').prev().addClass('active');
-
-        let length = $('.conditionerPopup__gallery-item.active').prevAll(".conditionerPopup__gallery-item").length;
-        length = length * 138;
-        let translate = 'translateY(-' + length + 'px)';
-        $(".conditionerPopup__gallery-wrap").css("transform", translate);
-
-    } else if($(activeSlide).prev('.conditionerPopup__gallery-item').length > 0 && $(document).width() <= 960) {
-        console.log(1);
-        $(activeSlide).removeClass('active').prev().addClass('active');
-
-        let length = $('.conditionerPopup__gallery-item.active').prevAll(".conditionerPopup__gallery-item").length;
-        length = length * 115;
-        let translate = 'translateY(-' + length + 'px)';
-        $(".conditionerPopup__gallery-wrap").css("transform", translate);
-    } else {
-        return;
-    }
-
-});
-
-$('.conditionerPopup__gallery-next').on('click', function () {
-    let activeSlide = $(this).closest('.conditionerPopup__gallery-list').find('.active');
-
-    if( $(activeSlide).next('.conditionerPopup__gallery-item').length > 0 && $(document).width() > 960) {
-        $(activeSlide).removeClass('active').next().addClass('active');
-
-        let length = $('.conditionerPopup__gallery-item.active').prevAll(".conditionerPopup__gallery-item").length;
-        length = length * 138;
-        let translate = 'translateY(-' + length + 'px)';
-        $(".conditionerPopup__gallery-wrap").css("transform", translate);
-
-    } else if($(activeSlide).next('.conditionerPopup__gallery-item').length > 0 && $(document).width() <= 960) {
-        console.log(1);
-        $(activeSlide).removeClass('active').next().addClass('active');
-        let length = $('.conditionerPopup__gallery-item.active').prevAll(".conditionerPopup__gallery-item").length;
-        length = length * 115;
-        let translate = 'translateY(-' + length + 'px)';
-        $(".conditionerPopup__gallery-wrap").css("transform", translate);
-    } else {
-        return;
-    }
-
-});
-
-$('.climatDetail__additional-name').on('click', function() {
-    $(this)
-    .addClass('active').siblings().removeClass('active')
-    .closest('.climatDetail__additional-content').find('.climatDetail__additional-value').removeClass('active').eq($(this).index()).addClass('active');
-});
-
 $('.share').on('click', function () {
     $(this).closest('.socials').toggleClass('opened');
 });
 
-
-$('.climatDetail__gallery-prev').on('click', function () {
-
-    let activeSlide = $(this).closest('.climatDetail__gallery-list').find('.active');
-
-
-    if( $(activeSlide).prev('.climatDetail__gallery-item').length > 0 && $(document).width() > 960) {
-        $(activeSlide).removeClass('active').prev().addClass('active');
-
-        let length = $('.climatDetail__gallery-item.active').prevAll(".climatDetail__gallery-item").length;
-        length = length * 179;
-        let translate = 'translateY(-' + length + 'px)';
-        $(".climatDetail__gallery-wrap").css("transform", translate);
-
-    } else if($(activeSlide).prev('.climatDetail__gallery-item').length > 0 && $(document).width() <= 960) {
-        console.log(1);
-        $(activeSlide).removeClass('active').prev().addClass('active');
-
-        let length = $('.climatDetail__gallery-item.active').prevAll(".climatDetail__gallery-item").length;
-        length = length * 70;
-        let translate = 'translateY(-' + length + 'px)';
-        $(".climatDetail__gallery-wrap").css("transform", translate);
-    } else {
-        return;
-    }
-
-});
-
-$('.climatDetail__gallery-next').on('click', function () {
-    let activeSlide = $(this).closest('.climatDetail__gallery-list').find('.active');
-
-    if( $(activeSlide).next('.climatDetail__gallery-item').length > 0 && $(document).width() > 960) {
-        $(activeSlide).removeClass('active').next().addClass('active');
-
-        let length = $('.climatDetail__gallery-item.active').prevAll(".climatDetail__gallery-item").length;
-        length = length * 179;
-        let translate = 'translateY(-' + length + 'px)';
-        $(".climatDetail__gallery-wrap").css("transform", translate);
-
-    } else if($(activeSlide).next('.climatDetail__gallery-item').length > 0 && $(document).width() <= 960) {
-        console.log(1);
-        $(activeSlide).removeClass('active').next().addClass('active');
-        let length = $('.climatDetail__gallery-item.active').prevAll(".climatDetail__gallery-item").length;
-        length = length * 70;
-        let translate = 'translateY(-' + length + 'px)';
-        $(".climatDetail__gallery-wrap").css("transform", translate);
-    } else {
-        return;
-    }
-
-});
-
-
-$('input[name=climatShipping]').on('change', function () {
-    $('.climatOrdering__shipping-value').removeClass('active');
-    $(this).closest('.climatOrdering__shipping-value').addClass('active');
-});
-
-$('input[name=climatPaying]').on('change', function () {
-    $('.climatOrdering__paying-value').removeClass('active');
-    $(this).closest('.climatOrdering__paying-value').addClass('active');
-});
-
-$('.climatOrdering__more').on('click', function () {
-    let $this = $(this),
-        text = $this.text();
-
-    if (text === 'Читать описание') {
-        $this.text('Свернуть описание');
-        $this.prev().show();
-    } else {
-        $this.text('Читать описание');
-        $this.prev().hide();
-    }
-});
-
 $('.serverError__refresh-link').on('click', function () {
     location.reload();
-});
-
-
-let onResizeOrder = function () {
-    if ($(window).width() <= 720) {
-        $('.climatOrdering__next').on('click', function () {
-            $(this).closest('.climatOrdering__step').removeClass('active');
-            $(this).closest('.climatOrdering__step').next().addClass('active');
-        });
-        $('.climatOrdering__prev').on('click', function () {
-            if (!$(this).closest('.climatOrdering__step').is($('.climatOrdering__step')[0])) {
-                $(this).closest('.climatOrdering__step').removeClass('active');
-                $(this).closest('.climatOrdering__step').prev().addClass('active');
-            }
-        });
-        $('.climatOrdering__mobile-prev').on('click', function () {
-            $(this).closest('.climatOrdering__step').removeClass('active');
-            $(this).closest('.climatOrdering__step').prev().addClass('active');
-        });
-        $('.climatOrdering__mobile-login').on('click', function () {
-            $('.climatOrdering__contacts-content.active').show();
-            $('.climatOrdering__contacts-data').hide();
-            $('.climatOrdering__step-nav').addClass('visible');
-            $('.climatOrdering__mobile-autorize').hide();
-        });
-        $('.climatOrdering__mobile-register').on('click', function () {
-            $('.climatOrdering__contacts-content.active').show();
-            $('.climatOrdering__contacts-login').hide();
-            $('.climatOrdering__step-nav').addClass('visible');
-            $('.climatOrdering__mobile-autorize').hide();
-        });
-    }
-};
-
-$(document).ready(onResizeOrder);
-$(window).resize(onResizeOrder);
-
-$('.climatPersonalData__checkbox').on('change', function () {
-    if ($(this).is(':checked')) {
-        $('.climatPersonalData__ur').addClass('active');
-    } else {
-        $('.climatPersonalData__ur').removeClass('active');
-    }
-});
-
-$('.quickBuy').on('change', 'input[name=shipping]', function () {
-    if ($(this).val() === 'pickup') {
-        $('.quickBuy__issuePoints').addClass('active');
-    } else {
-        $('.quickBuy__issuePoints').removeClass('active');
-    }
 });
 
 $('.manufacturers__more').on('click', function () {
@@ -1347,6 +752,118 @@ $('.catalogueDetail__desc-more').on('click', function () {
 
 });
 
+$('.survey__form').on('submit', function (e) {
+    e.preventDefault();
+    var $form = $(e.target);
+    $.ajax({
+        url: '/forms/survey',
+        method: 'post',
+        data: $form.serialize(),
+        success: function () {
+            $('.survey__thankyou').slideDown();
+            $form.hide();
+        }
+    });
+});
+
+$('.js-dir').on('submit', function (e) {
+    e.preventDefault();
+    var $form = $(e.target);
+    $.ajax({
+        url: '/forms/survey',
+        method: 'post',
+        data: $form.serialize(),
+        success: function () {
+            $('.dir-message__submit').hide();
+            $('.dir-message__status-send').show();
+        }
+    });
+})
+
+$('.ceilingsform').on('submit', function (event) {
+    event.preventDefault();
+    var $this = $(this);
+
+   if (typeof window.yaCounter40202559 !== 'undefined') {
+       window.yaCounter40202559.reachGoal('quiz2');
+   }
+   if (typeof ga !== 'undefined') {
+       ga.getAll()[0].send('event', 'quiz', 'send');
+   }
+   fbq('track', 'Lead');
+
+   var data = {
+     area: $('[name="area"]').val(),
+     lamps: $('[name="lamps"]').val(),
+     phone: $('[name="phone"]').val(),
+     city: $('[name="city"]').val(),
+     gift: window.gift
+   };
+
+   $this.addClass('ceilingsform_sent');
+   $.ajax({
+       url: $this.attr('action'),
+       data: data,
+       method: 'POST',
+       success: function () {
+           $this.addClass('form_status-send');
+           Vue.cookie.set('form_send', true, 1);
+       }
+   })
+
+
+})
+
+$('.js-less').on('submit', function () {
+
+   if(Vue.cookie.get('form_send')){
+       $('body').addClass('overflowed');
+       $('#overlay').addClass('overlay_active');
+       $('#popup_alert_form').addClass('popupN_active');
+       $('.header_sticky').addClass('hidden');
+       $(this).find('input').val('');
+       event.preventDefault();
+   }else{
+       Vue.cookie.set('form_send', true, 1);
+   }
+
+});
+
+$('.form:not(.js-less)').on('submit', function (event) {
+   event.preventDefault();
+
+   var $this = $(this),
+       name = $this.find('[name=name]').val(),
+       city = $this.find('[name=city]').val(),
+       phone = $this.find('[name=phone]').val();
+
+   if (typeof window.yaCounter40202559 !== 'undefined') {
+       window.yaCounter40202559.reachGoal('form-sub');
+   }
+   if (typeof ga !== 'undefined') {
+       ga.getAll()[0].send('event', 'forms', 'sub');
+   }
+   fbq('track', 'Lead');
+
+   var successEl = $this.next('.popupN__status-send');
+
+   if (successEl.length > 0) {
+       $this.hide();
+       $this.prev('.popupN__title').hide();
+       $this.next('.popupN__status-send').show();
+   }
+
+   $.ajax({
+       url: $this.attr('action'),
+       data: $this.serialize(),
+       method: 'POST',
+       success: function () {
+           $this.addClass('form_status-send');
+           Vue.cookie.set('form_send', true, 1);
+       }
+   })
+
+});
 
 $('.whatsapp_check').on('click', function (event) {
     event.preventDefault();
