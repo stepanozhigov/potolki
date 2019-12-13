@@ -2,7 +2,7 @@
 
         <transition-group name="list-complete"  tag="div" class="carousel catalog__carousel">
             <a  :href="dataUrl(cat)" v-touch:swipe.left="offsetShowPoint" v-touch:swipe.right="offsetBackShowPoint" v-for="(cat, index) in showedItems" v-bind:key="cat.id" class="carousel__item">
-                <img :src="'/storage/'+cat.img" :alt="cat.name" class="carousel__item_img">
+                <img :data-src="'/storage/'+cat.img" :alt="cat.name" class="carousel__item_img lazyload">
                 <div class="carousel__item_wrap">
                     <p class="carousel__item_title">{{ cat.name }}</p>
                     <p class="text carousel__item_text">{{ cat.ceiling_intro }}</p>
