@@ -75,7 +75,7 @@
                             </div>
                         @else
                             <div class="user__left">
-                                <img src="123" alt="" class="user__avatar">
+
                             </div>
                             <div class="user__right">
                                 <p class="text user__name">{{ $comment->fio }}</p>
