@@ -29,15 +29,8 @@ Route::get('/gui', function () {
 	return view('templates.gui.gui');
 });
 
-Route::get('/job-test', function (BitrixConnector $connector) {
-	$lead = App\Lead::create([
-		'name'	=> 'test name',
-		'phone'	=>	'8 999 999 99 99',
-		'city_id' => 117,
-		'direction_id' => 56,
-		'visits'	=>	session('visits')
-	]);
-	App\Jobs\ProcessFeedback::dispatch($lead);
+Route::get('/job-test', function () {
+	return view('common.test');
 });
 Route::get('/err-handler', function() {
 	dd($_COOKIE['roistat_visit']);
