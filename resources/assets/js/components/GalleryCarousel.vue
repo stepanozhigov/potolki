@@ -7,7 +7,7 @@
             <div class="portfolio__carousel">
                 <transition-group name="list-complete"  tag="div" class="portfolio__carousel">
                     <a v-touch:swipe.left="offsetShowPoint" v-touch:swipe.right="offsetBackShowPoint" @click="toggleMode(index)" v-for="(photo, index) in showedItems" v-bind:key="photo.id" class="case b-card portfolio__item portfolio__item_slide">
-                        <img :src="`/storage/${photo.src}`" alt="3" class="case__img">
+                        <img :src="`/storage/${postfix_url(photo.src)}`" alt="3" class="case__img">
                         <p class="card-title case__title">{{ photo.name }}</p>
                         <hr class="line line_small case__line">
                         <div class="case__totals">
@@ -81,6 +81,10 @@
         },
         props:['photos'],
         methods: {
+            postfix_url(value) {
+                return value.toString().replace(/(\.[^\.]+)$/, '-preview$1');
+                
+            },
             nextItem () {
                 this.currentPhotoIndex++;
 
