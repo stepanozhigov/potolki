@@ -235,7 +235,7 @@
                     </div>
                     @if ($seoData->firm_img)
                     <div data-src="#videoBlock" class="seo-block__item-video js-show">
-                        <img data-src="{{ Storage::url($seoData->firm_img) }}" loading="lazy" alt="video lazyload">
+                        <img data-src="{{ Storage::url($seoData->firm_img) }}" loading="lazy" alt="video" class="lazyload">
                         <p>Видео о компании</p>
                     </div>
                     @endif
