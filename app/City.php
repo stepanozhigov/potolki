@@ -16,6 +16,11 @@ class City extends Model
         // return $this->where('name', $value)->first() ?? abort(404);
     // }
 
+    public function employees()
+    {
+        return $this->belongsToMany('App\Employee', 'citys_employees');
+    }
+
     public function photos ()
     {
         return json_decode($this->photos) ?? [];

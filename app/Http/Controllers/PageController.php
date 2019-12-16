@@ -99,9 +99,13 @@ class PageController extends Controller
 
     public function employers (City $city)
     {
+        $employees = Employee::whereHas('citys', function($q) use ($city){
+            $q->where('city_id', $city->id);
+        })->orWhereDoesntHave('citys')->get();
+
         return view ('common.pages.employers', [
             'city'  =>  $city,
-            'employees' =>  Employee::all(),
+            'employees' =>  $employees,
             'seoData'   =>  SeoBlock::where('route', Route::currentRouteName())->first()
         ]);
     }
