@@ -7,10 +7,6 @@
     padding-top: rem(16);
     @extend .container;
 
-    @include between(0, $size_sm) {
-        display: none;
-    }
-
     &__image {
         width: rem(740);
         height: rem(426);

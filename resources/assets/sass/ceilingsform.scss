@@ -43,9 +43,7 @@
     position: absolute;
     top: 0;
     z-index: -1;
-    left: 0;
-    right: 0;
-    width: 100%;
+    min-width: 100%;
 }
 .ceilingsForm {
 
@@ -59,12 +57,14 @@
         margin-right: -16px;
         padding-left: 22px;
         padding-right: 22px;
-        @include below($mobile) {
-            padding: rem(48) rem(16);
+
+        @include below($size-md) {
+            padding: rem(48) rem(8);
             padding-top: rem(56);
-            min-height: 100vh;
+            min-height: calc(100vh - 166px);
             overflow: hidden;
         }
+
     }
     &__banner.b-texture::before {
         width: 100%;
@@ -84,9 +84,11 @@
 
         @include below($tablet) {
             font-size: rem(14);
-            line-height: rem(28);
+            line-height: rem(20);
+            font-weight: 400;
         }
     }
+
 
     &__title {
         display: flex;
@@ -136,7 +138,7 @@
     }
 
     &__agreement {
-        margin: 0;
+        margin-top: rem(16);
         font-family: $helvetica;
         font-size: rem(12);
         font-weight: 300;
@@ -687,5 +689,12 @@
         .ceilingsform__thankyou  {
             display: flex;
         }
+    }
+}
+
+.header_ceilings-form{
+    @include below($size-sm) {
+        width: 100%;
+        margin: 0;
     }
 }

@@ -96,9 +96,9 @@
 	    <section class="ceilingsForm container">
 	        <div class="ceilingsForm__banner b-texture b-texture_sand snow-container">
 				<img src="/img/quiz/new_year/New_Year_Border.png" alt="New Year" class="new_year_quiz">
-	            <p class="ceilingsForm__overtitle">пройдите тест за 30 секунд</p>
+	            <p class="ceilingsForm__overtitle">Новогоднее предложение</p>
 	            <p class="ceilingsForm__title">Получите расчёт<br>натяжного потолка<br>и <span style="color: #dc1414">подарок</span></p>
-	            <a data-src="#popup_ceilingsform" href="javascript:void(0);" class="button form__button js-show">Получить расчёт</a>
+	            <a data-src="#popup_ceilingsform" href="javascript:void(0);" class="buttonN buttonN-red js-show">Получить расчёт</a>
 	            <p class="ceilingsForm__agreement">Оставляя контактную информацию, вы <br> соглашаетесь на <a href="/sochi/agreement">обработку персональных данных</a> </p>
 	        </div>
       	</section>
