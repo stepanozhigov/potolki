@@ -33,6 +33,10 @@ main.page{
 	}
 }
 
+.hidden{
+    display: none !important;
+}
+
 .hidden-sm{
     @include above($size_sm) {
 		display: none;

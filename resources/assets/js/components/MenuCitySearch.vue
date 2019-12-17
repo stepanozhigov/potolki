@@ -32,7 +32,9 @@
         computed: {
             filtered () {
                 if (this.search.length < 1) {
-                    return this.cities;
+                    return this.cities.filter(city => {
+                        return city.hidden != 1
+                    })
                 }
 
                 return this.cities.filter(city => {

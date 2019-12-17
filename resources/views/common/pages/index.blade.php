@@ -18,7 +18,7 @@
                 'secondTitle'  =>  'Филиалы в других городах'
             ])
             @foreach($cities as $city)
-                <a href="{{ route('ceilings', ['city' => $city->code]) }}" class="button button_inline cities__item">{{ $city->name }}</a>
+                <a href="{{ route('ceilings', ['city' => $city->code]) }}" class="button button_inline cities__item {{ $city->hidden == 1 ? 'hidden' : ''}}">{{ $city->name }}</a>
             @endforeach
             <p class="intro cities__intro">Нет вашего города? Воспользуйтесь поиском</p>
             <div id="city-search" class="cities__search">
