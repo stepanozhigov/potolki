@@ -1,16 +1,14 @@
 <template>
-
-        <transition-group name="list-complete"  tag="div" class="carousel catalog__carousel">
-            <a  :href="dataUrl(cat)" v-touch:swipe.left="offsetShowPoint" v-touch:swipe.right="offsetBackShowPoint" v-for="(cat, index) in showedItems" v-bind:key="cat.id" class="carousel__item">
-                <img :data-src="'/storage/'+cat.img" :alt="cat.name" class="carousel__item_img lazyload">
-                <div class="carousel__item_wrap">
-                    <p class="carousel__item_title">{{ cat.name }}</p>
-                    <p class="carousel__item_text">{{ cat.ceiling_intro }}</p>
-                    <p class="carousel__item_price">от {{ formatPrice(cat.price) }}  ₽/м2</p>
-                </div>
-            </a>
-        </transition-group>    
-
+    <transition-group name="list-complete"  tag="div" class="carousel catalog__carousel">
+        <a :href="dataUrl(cat)" v-touch:swipe.left="offsetShowPoint" v-touch:swipe.right="offsetBackShowPoint" v-for="(cat, index) in showedItems" v-bind:key="cat.id" class="carousel__item b-card">
+            <img :data-src="'/storage/'+cat.img" :alt="cat.name" class="carousel__item_img lazyload">
+            <div class="carousel__item_wrap">
+                <p class="carousel__item_title">{{ cat.name }}</p>
+                <p class="carousel__item_text">{{ cat.ceiling_intro }}</p>
+                <p class="carousel__item_price">от {{ formatPrice(cat.price) }}  ₽/м2</p>
+            </div>
+        </a>
+    </transition-group>    
 </template>
 
 <style>
@@ -34,11 +32,10 @@
     export default {
         data: function () {
             return {
-                showCount: 7,
+                showCount: null,
                 showPoint: 0,
                 interval: 0,
                 currentCatIndex: 0,
-                mode: 'list',
             }
         },
         computed: {
@@ -48,27 +45,28 @@
                 }
                 var itemsCount = this.cats.length,
                     index = this.showPoint,
-                    width = window.innerWidth,
                     items = [];
-
-                if(width > 768){
-                    this.showCount ++;
-                }
 
                 while (items.length < this.showCount) {
                     if (!this.cats[index]) {
                         index = 0;
                     }
                     items.push(this.cats[index]);
-
                     index ++;
                 }
-
                 return items;
-            }
+            },
+
         },
         props:['cats', 'city'],
         methods: {
+            onResize() {
+                if(document.documentElement.clientWidth >= 768){
+                    this.showCount = 8;
+                }else{
+                    this.showCount = 7;
+                }
+            },
             formatPrice(value) {
                 return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
             },
@@ -81,26 +79,43 @@
                 }
             },
             offsetShowPoint (stop = false) {
+                if (stop) {
+                    this.stopSliding();
+                }
                 if(!this.cats) {
                     return false;
                 }
+
                 const itemsCount = this.cats.length;
-
                 this.showPoint ++;
-
                 if (this.showPoint == itemsCount) {
                     this.showPoint = 0;
                 }
             },
             offsetBackShowPoint (stop = false) {
+                if (stop) {
+                    this.stopSliding();
+                }
+
                 const itemsCount = this.cats.length;
-
                 this.showPoint --;
-
                 if (this.showPoint <= 0) {
                     this.showPoint = itemsCount;
                 }
             },
-        }
+            startSliding () {
+                this.interval = setInterval(this.offsetShowPoint, 3000);
+            },
+            stopSliding () {
+                clearInterval(this.interval);
+            },
+        },
+        created() {
+            window.addEventListener('resize', this.onResize);
+            this.onResize();
+        },
+        beforeDestroy() {
+            window.removeEventListener('resize', this.onResize);
+        },
     }
 </script>
