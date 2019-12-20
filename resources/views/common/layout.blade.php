@@ -38,15 +38,9 @@
     <? endif ?>
     <?
     $route = request()->route();
-     $req = !empty($route) ? $route->getName():''; ?>
+    $req = !empty($route) ? $route->getName():''; ?>
 
-    @if (false)
-    <!-- Carrot quest BEGIN -->
-		<script type="text/javascript">
-		!function(){function t(t,e){return function(){window.carrotquestasync.push(t,arguments)}}if("undefined"==typeof carrotquest){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="//cdn.carrotquest.io/api.min.js",document.getElementsByTagName("head")[0].appendChild(e),window.carrotquest={},window.carrotquestasync=[],carrotquest.settings={};for(var n=["connect","track","identify","auth","oth","onReady","addCallback","removeCallback","trackMessageInteraction"],a=0;a<n.length;a++)carrotquest[n[a]]=t(n[a])}}(),carrotquest.connect("28264-15daed65704be963b84a4f77f5");
-		</script>
-	<!-- Carrot quest END -->
-    @endif
+
 
     @if (request()->skip_scripts != '1')
     <!-- Facebook Pixel Code -->
