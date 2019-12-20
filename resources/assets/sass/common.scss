@@ -292,16 +292,18 @@ body {
         }
 
         .dropdown__content {
-            width: 100%;
+            min-width: 310px;
             position: absolute;
             display: flex;
             box-shadow: 0 0 4px rgba(0, 0, 0, 0.08), 0 4px 4px rgba(0, 0, 0, 0.12), inset 0 -1px 0 rgba(0, 0, 0, 0.12);
             border-radius: 5px;
             background-color: #ffffff;
-            padding: 30px 20px 22px 23px;
+            padding: 30px 20px 20px 23px;
             top: -30px;
             left: -25px;
-			z-index: 99;
+            z-index: 99;
+            
+            // bottom: rem(-16);
 
 
             @include below($tablet) {
@@ -311,7 +313,7 @@ body {
     }
 
     &:not(.opened) {
-        @media screen and (max-width: 1024px) {
+        @media screen and (max-width: $size-md) {
             .dropdown__content {
                 display: none;
             }
@@ -335,7 +337,7 @@ body {
         font-weight: 400;
         text-transform: uppercase;
         letter-spacing: 2px;
-        margin: 28px 0 15px 23px;
+        margin: 0 0 15px 30px;
         margin-left: 0;
     }
 

@@ -38,10 +38,10 @@
 
 
 <footer role="contentinfo" class="footer">
-    <div class="footer__row container">
+    <div class="footer__row wrapper">
         <div class="footer__contacts">
 
-            <a href="tel:{{ $city->phone }}" class="text phone footer__phone red-hoverable">
+            <a href="tel:{{ $city->phone }}" class="footer__phone footer__contact_item red-hoverable">
                 <svg class="phone__icon" width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
                     <title>phone</title>
@@ -53,9 +53,9 @@
                     </g>
                 </svg>
                 {{ $city->phone }}
-                <span class="subtext phone__time footer__time">Круглосуточно | Бесплатно</span>
+                <span class="footer__time">Круглосуточно | Бесплатно</span>
             </a>
-            <a href="mailto:{{ $city->email }}" class="text text_white footer__mail red-hoverable">
+            <a href="mailto:{{ $city->email }}" class="footer__mail footer__contact_item  red-hoverable">
                 <svg class="phone__icon" width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
                     <title>mail</title>
@@ -69,9 +69,8 @@
                 {{ $city->email }}
             </a>
 
-            <a href="{{ route('contacts', $city) }}" class="text text_white footer__offices red-hoverable">
+            <a href="{{ route('contacts', $city) }}" class="footer__offices footer__contact_item red-hoverable">
                 <svg class="footer__icon" width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
                     <title>geo</title>
                     <desc>Created with Sketch.</desc>
                     <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -140,11 +139,22 @@
                     <img class="logo__icon" src="/img/gui/logo-icon.svg" alt="логотип Твой Стиль">
                     <img class="logo__text" src="/img/gui/logo-text.svg" alt="графема Твой Стиль">
                 </a>
-                <p class=" subtext footer__text"><span>&copy;  2003 – {{ date('Y') }}  ООО «Твой Стиль» </span></p>
+                <div class="footer__directions dropdown">
+                    <a class="dropdown__item_link"><img class="dropdown__arrow" src="/img/gui/arrow.svg" alt="">{{ $currentDirection->name }}</a>
+                    <div class="dropdown__content">
+                        @foreach ($directions as $direction)
+                            <a href="{{ $direction->site  ?? '' }}" class="text dropdown__item dropdown__item_bordered  red-hoverable">{!! $direction->name !!}</a>
+                        @endforeach
+                        <p class="dropdown__title">Другие направления</p>
+                        <a class="text dropdown__item dropdown__item_active"><img class="dropdown__arrow" src="/img/gui/arrow.svg" alt="">{!! $currentDirection->name !!}</a>
+                    </div>
+                </div>
             </div>
+            <p class="footer__year"><span>&copy;  2003 – {{ date('Y') }}  ООО «Твой Стиль» <br>Все права защищены. </span></p>
+
 			<a data-src="#popup_survey" class="footer__survey js-showup" href="javascript:void(0);">Оценить сайт</a>
-            <p class="footer__dev subtext footer__text">
-                Разработка и продвижение <a href="http://trend-p.ru" target="_blank" class="text footer__text red-hoverable" target="_blank">TREND PRO</a>
+            <p class="footer__dev">
+                Разработка и продвижение <a href="http://trend-p.ru" target="_blank" class="red-hoverable" target="_blank">TREND PRO</a>
             </p>
         </div>
     </div>

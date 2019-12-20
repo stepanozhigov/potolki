@@ -192,7 +192,7 @@
     </section>
 
     <section class="other section wrapper">
-        <a href="{{ route('services', [request()->route()->city, 'measurements']) }}" class="other__item is-hoverable">
+        <a href="{{ route('services', [request()->route()->city, 'deal']) }}" class="other__item is-hoverable">
             <picture>
                 <source data-srcset="/img/templates/ceilings/other/home_deal.webp" type="image/webp">
                 <img data-src="img/templates/ceilings/other/home_deal.png" loading="lazy" alt="home_deal" class="other__img lazyload">
@@ -222,7 +222,6 @@
                 Наш технолог произведет замер<br> и расчет стоимости заказа<br> в удобное для вас время.
             </p>
         </a>
-        </div>
     </section>
 
 	<section class="seo-block seo-block_main">

@@ -84,34 +84,16 @@
         }
     }
     &__directions {
-        margin: -2px 0 0 44px;
-        position: relative;
-        width: 30%;
-        padding-bottom: rem(25);
-
-        @media screen and (max-width: 650px){
-            margin-left: 0;
-            padding: 0;
-            margin-top: 2px;
-        }
-
-        &:before {
-            content: '';
-            position: absolute;
-            top: -11px;
-            left: -24px;
-            width: .0625rem;
-            height: 2.8125rem;
-            background-color: #a7aaad;
-
-            @media screen and (max-width: 650px){
-                content: none;
-            }
-        }
-
-        @include below($tablet){
-            width: initial;
-        }
+        text-transform: uppercase;
+        white-space: nowrap;
+        color: #485058;
+        font-family: $helvetica;
+        padding-bottom: rem(20);
+        margin-left: rem(48);
+        letter-spacing: rem(0.9);
+        font-size: rem(14);
+        font-weight: 300;
+        line-height: 1.4;
     }
 
     &__menu {
