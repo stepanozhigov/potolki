@@ -27,6 +27,10 @@
         <title>Твой стиль</title>
     @endif
 
+	<script>
+		console.log("<?= Request::ip() ?>");
+	</script>
+
     <? if (!empty($city)): ?>
         <script type="text/javascript">
             window.city = <?= json_encode($city) ?>
