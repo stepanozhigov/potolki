@@ -45,16 +45,6 @@ main.page{
     }
 }
 
-<<<<<<< HEAD
-.color-white{
-    color: #fff;
-}
-.hidden{
-    display: none !important;
-}
-
-=======
->>>>>>> bd61d6d470514c8105509248bb4a6b304e3734c4
 .hidden-sm{
     @include above($size_sm) {
 		display: none;
