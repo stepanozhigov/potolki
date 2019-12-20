@@ -20,11 +20,11 @@ main.page{
     padding-left: rem(15);
     padding-right: rem(15);
 	margin: 0 auto;
-	
+
 	// @include above($size_sm) {
 	// 	padding-left: rem(15);
 	// 	padding-right: rem(15);
-		
+
 	// }
 
 	@include above($size_md) {
@@ -45,6 +45,7 @@ main.page{
     }
 }
 
+<<<<<<< HEAD
 .color-white{
     color: #fff;
 }
@@ -52,6 +53,8 @@ main.page{
     display: none !important;
 }
 
+=======
+>>>>>>> bd61d6d470514c8105509248bb4a6b304e3734c4
 .hidden-sm{
     @include above($size_sm) {
 		display: none;
@@ -152,7 +155,7 @@ main.page{
     height: rem(56);
     justify-self: center;
     width: 100%;
-    
+
     @include above($size_sm) {
         height: rem(48);
     }
@@ -182,7 +185,7 @@ main.page{
     @include above($size_sm) {
         height: rem(48);
     }
-    
+
     &-red{
         background-color: $red;
         box-shadow: 0 8px 8px rgba(0, 0, 0, 0), 0 0 8px rgba(0, 0, 0, 0), inset 0 -1px 0 $red_tamarillo;
@@ -199,7 +202,7 @@ main.page{
 }
 
 /////////////////////////////
-//button-4 
+//button-4
 ///////////////////////////
 .btn-4 {
     overflow: hidden;
@@ -256,40 +259,40 @@ main.page{
       left: -30px;
       margin-left: 0px;
     }
-  
+
     30% {
       left: 110%;
       margin-left: 80px;
     }
-  
+
     100% {
       left: 110%;
       margin-left: 80px;
     }
   }
-  
+
   @keyframes radiance {
     0% {
       left: -30px;
       margin-left: 0px;
     }
-  
+
     30% {
       left: 110%;
       margin-left: 80px;
     }
-  
+
     100% {
       left: 110%;
       margin-left: 80px;
     }
   }
-  
+
   @-webkit-keyframes move {
     0% {
       background-position: 0 0;
     }
-  
+
     100% {
       background-position: 50px 50px;
     }
@@ -308,7 +311,7 @@ main.page{
 	    bottom: 0;
 	    margin: 0 auto;
 		z-index: -1
-    } 
+    }
 	&_sand {
         position: relative;
 		&:before {
@@ -362,14 +365,14 @@ main.page{
         background-image: url('/img/templates/ceilings/hero/background-lg.jpg');
         text-align: left;
     }
-    
+
     &__overtitle{
 		font-family: $futura;
 		font-size: rem(12);
 		letter-spacing: rem(2.8);
 		line-height: 2;
         text-transform: uppercase;
-        
+
         @include above($size_sm) {
             font-size: rem(16);
             letter-spacing: rem(4);
@@ -384,13 +387,13 @@ main.page{
 		b{
 			font-weight: 700;
             font-size: rem(30);
-            
+
             @include above($size_sm) {
                 font-weight: inherit;
                 font-size: rem(64);
             }
         }
-        
+
         @include above($size_sm) {
             font-size: rem(48);
             line-height: rem(64);
@@ -401,7 +404,7 @@ main.page{
         line-height: 1.5;
         font-family: $helvetica;
         font-weight: 300;
-        
+
         @include above($size_sm) {
             font-size: rem(26);
         }
@@ -414,7 +417,7 @@ main.page{
         grid-template-rows: rem(40) rem(150) rem(88);
         position: relative;
         z-index: 2;
-        
+
         @include above($size_sm) {
             padding-top: rem(96);
             padding-bottom: rem(130);
@@ -437,7 +440,7 @@ main.page{
             }
         }
     }
-    
+
     &__form{
         .inputN{
             max-width: rem(280);
@@ -464,14 +467,14 @@ main.page{
             }
         }
     }
-	
+
 }
 
 .offer {
     justify-items: center;
 	color: #485058;
     display: grid;
-    
+
     @include above($size_sm) {
         justify-items: left;
         max-width: rem(900);
@@ -539,14 +542,14 @@ main.page{
         font-family: $helvetica;
         line-height: 1.5;
         margin-bottom: rem(32);
-        
+
         @include above($size_sm) {
             font-size: rem(32);
         }
     }
 
     .formN{
-        
+
         @include above($size_sm) {
             width: rem(302);
         }
@@ -707,7 +710,7 @@ main.page{
         text-align: center;
         font-family: $helvetica;
         align-self: flex-end;
-        
+
 
         @include above($size_sm) {
             text-align: left;
@@ -733,7 +736,7 @@ main.page{
     @include between(0, #{$size_sm - rem(1)}) {
         max-width: rem(480);
         padding: rem(64) rem(16);
-        
+
     }
     @include above($size_sm) {
         max-width: $size-sm;
@@ -741,11 +744,11 @@ main.page{
         margin-top: rem(32);
         grid-gap: rem(24);
         grid-template-columns: auto;
-        
+
     }
-    
+
     &:before {
-        
+
         @include above($size_sm) {
             background-image: url('/img/templates/ceilings/texture/square.png');
             content: ' ';
@@ -780,7 +783,7 @@ main.page{
             letter-spacing: rem(-0.3);
             justify-self: flex-start;
             text-align: left;
-            
+
         }
 
         b{
@@ -798,7 +801,7 @@ main.page{
 
     &__button{
         margin-top: rem(40);
-        
+
         @include above($size_sm) {
             grid-column: 1/2;
             grid-row: 2;
@@ -898,7 +901,7 @@ main.page{
                 color: #808890;
             }
         }
-    
+
         &:hover{
             box-shadow: 0 0.75rem 0.75rem rgba(0, 0, 0, 0.16), 0 0 0.75rem rgba(0, 0, 0, 0.08), inset 0 -0.0625rem 0 rgba(0, 0, 0, 0.16)
         }
@@ -910,7 +913,7 @@ main.page{
             max-width: 100%;
             height: 100%;
         }
-    
+
         &_wrap{
             background-color: #fff;
             padding-top: rem(16);
@@ -921,13 +924,13 @@ main.page{
             @include above($size_sm) {
                 grid-gap: rem(0);
             }
-    
+
             @include above($size_md) {
                 position: absolute;
                 bottom: rem(16);
             }
         }
-    
+
         &_title{
             color: #485058;
             font-size: rem(22);
@@ -947,7 +950,7 @@ main.page{
             @include above($size_md) {
                 font-size: rem(26);
             }
-            
+
             &::before{
                 content: '';
                 position: absolute;
@@ -960,7 +963,7 @@ main.page{
                 background-color: #babec2;
             }
         }
-    
+
         &_text{
             padding: 0 rem(15);
             font-size: rem(12);
@@ -977,7 +980,7 @@ main.page{
                 padding-bottom: rem(0);
             }
         }
-    
+
         &_price {
             color: $red;
             font-family: $helvetica;
@@ -1061,7 +1064,7 @@ main.page{
 }
 .advantage {
     display: grid;
-    
+
     @include above($size_sm) {
         grid-template-columns: 1fr 1fr;
         grid-gap: rem(16);
@@ -1131,7 +1134,7 @@ main.page{
             order: 1;
         }
     }
-    
+
 }
 
 .buttonN-inst{
@@ -1161,7 +1164,7 @@ main.page{
     &__items{
         display: grid;
         margin-top: rem(50);
-        
+
         @include above($size_sm) {
             grid-template-columns: repeat(3, auto);
         }
@@ -1228,7 +1231,7 @@ main.page{
     }
     @include above($size_lg) {
         grid-template-columns: repeat(3, 1fr);
-       
+
     }
 
     &__item{
@@ -1257,7 +1260,7 @@ main.page{
         margin-top: rem(-60);
 
         @include above($size_lg) {
-            margin-bottom: rem(16); 
+            margin-bottom: rem(16);
         }
     }
     &__title{
@@ -1290,7 +1293,7 @@ main.page{
     transform: translateY(-50%);
     max-height: 100vh;
     overflow: auto;
-    
+
 
     @include above($size_sm) {
         overflow: visible;
@@ -1338,7 +1341,7 @@ main.page{
         text-align: center;
 
         @include above($size_sm) {
-            font-size: rem(36); 
+            font-size: rem(36);
             letter-spacing: rem(2.5);
         }
 
@@ -1391,11 +1394,11 @@ main.page{
     }
 
     &__btn{
-        max-width: none;    
+        max-width: none;
     }
-    
+
     &-sale{
-        
+
         .popupN__wrapper{
             @include above($size_sm) {
                 width: rem(720);
@@ -1442,16 +1445,16 @@ main.page{
             @include between(0, #{$size_sm - rem(1)}) {
                 display: none;
             }
-    
+
         }
 
         &__btn, .popupN__agreement{
             max-width: none;
-            
+
             @include above($size_sm) {
                 max-width: rem(288);
             }
-            
+
         }
 
     }
@@ -1509,7 +1512,7 @@ main.page{
         margin: rem(32) 0;
 
         @include above($size_sm) {
-            font-size: rem(36); 
+            font-size: rem(36);
             letter-spacing: rem(2.5);
         }
 
@@ -1632,7 +1635,6 @@ main.page{
         background-color: $white;
         padding: 0 rem(16);
         border-radius: rem(8) rem(8) 0 0;
-
         @include above($size-lg) {
             padding: 0 rem(98);
         }
@@ -1642,7 +1644,7 @@ main.page{
         margin-top: rem(80);
         position: relative;
         display: grid;
-        
+
 
         @include above($size-sm) {
             grid-gap: rem(28);
@@ -1690,7 +1692,7 @@ main.page{
                 @include above($size-lg) {
                     left: rem(-64);
                 }
-                
+
             }
         }
 
@@ -1844,7 +1846,7 @@ main.page{
 
         &-img {
             object-fit: cover;
- 
+
             @include between(0, #{$size_sm - rem(1)}) {
                 width: calc(100% + #{rem(30)});
                 margin-left: rem(-15);
@@ -2020,7 +2022,7 @@ main.page{
 
 .webp{
     .hero {
-        background-image: url('/img/templates/ceilings/hero/background-sm.webp');
+        background-image: url(/img/windows/main-offer.jpg) no-repeat center;
 
         @include above($size_sm) {
             background-image: url('/img/templates/ceilings/hero/background-lg.webp');
@@ -2033,13 +2035,13 @@ main.page{
             }
         }
     }
-    .offer { 
+    .offer {
         &::before{
             @include above($size_sm) {
                 content: url('/img/templates/ceilings/offer/new_year/banner_top.webp');
             }
         }
-    
+
         &::after{
             @include above($size_md) {
                 content: url('/img/templates/ceilings/offer/new_year/banner_bottom.webp');
