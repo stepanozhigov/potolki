@@ -28,15 +28,12 @@
         display: flex;
         align-items: center;
         flex-direction: column;
+        flex-shrink: 0;
 
         @include above($size_sm) {
-            margin-right: rem(60);
             align-items: flex-start;
         }
 
-        @include above($size_md) {
-            margin-right: rem(100);
-        }
     }
 
     &__contact_item{
