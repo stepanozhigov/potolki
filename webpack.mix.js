@@ -1,5 +1,7 @@
 let mix = require('laravel-mix');
 let mqpacker = require("css-mqpacker");
+
+require('laravel-mix-criticalcss');
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -12,7 +14,22 @@ let mqpacker = require("css-mqpacker");
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+   .sass('resources/assets/sass/app.scss', 'public/css')
+   .criticalCss({
+      enabled: mix.inProduction(),
+      paths: {
+          base: 'https://potolki-ts.ru/',
+          templates: './css_test/',
+          suffix: '_critical.min'
+      },
+      urls: [
+          { url: 'moskva', template: 'moskva' },
+      ],
+      options: {
+          minify: true,
+      },
+  });
+
   //  .options({
   //     postCss: [
   //       mqpacker({
