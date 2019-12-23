@@ -8,7 +8,14 @@
     <meta name="yandex-verification" content="6c7a8a6c99047a3c" />
     <meta name="google-site-verification" content="9PMBsqLABSxa0ShPlCJmBj0DCnuCrxL4v_kFdn2hakY" />
     <meta name="cmsmagazine" content="eaf22e35ae274666a6d7cdb9ea04fe37" />
-    <link onload="if(media!='all') media='all'" rel="stylesheet" href="{{ Asset('/css/app.css') }}">
+
+    <style type="text/css">
+        @include('common.criticalCss');
+    </style>
+    <link rel="preload" href="{{ Asset('/css/app.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ Asset('/css/app.css') }}"></noscript>
+
+
     <link rel="canonical" href="{{ url(Request::url()) }}" />
     <? $visit = new App\Visit; ?>
     @if (!empty($seoData))

@@ -19,16 +19,15 @@ mix.js('resources/assets/js/app.js', 'public/js')
       enabled: mix.inProduction(),
       paths: {
           base: 'https://potolki-ts.ru/',
-          templates: './css_test/',
-          suffix: '_critical.min'
+          inline: true,
+          templates: './public/css/',
+          suffix: '_critical'
       },
       urls: [
-          { url: 'moskva', template: 'moskva' },
-      ],
-      options: {
-          minify: true,
-      },
-  });
+          { url: 'moskva', template: 'index' },
+      ]
+  })
+  .copy('public/css/index_critical.css', 'resources/views/common/criticalCss.blade.php');
 
   //  .options({
   //     postCss: [
