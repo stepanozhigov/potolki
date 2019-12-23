@@ -1121,7 +1121,7 @@ main.page{
 
     .order{
         @include above($size_sm) {
-            order: 1;
+            order: -1;
         }
     }
 

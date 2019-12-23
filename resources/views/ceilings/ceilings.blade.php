@@ -96,9 +96,9 @@
 			<article class="advantage">
                 <picture>
                     <source data-srcset="/img/templates/ceilings/advantages/factory.webp" type="image/webp">
-                    <img class="advantage__img order lazyload" data-src="/img/templates/ceilings/advantages/factory.jpg" loading="lazy" alt="Собственное производство">
+                    <img class="advantage__img lazyload" data-src="/img/templates/ceilings/advantages/factory.jpg" loading="lazy" alt="Собственное производство">
                 </picture>
-				<div class="advantage__wrap">
+				<div class="advantage__wrap order">
 					<h3 class="advantage__title">Главные плюсы организации</h3>
 					<p class="intro advantage__intro">— Контроль качества после монтажа</p>
 					<p class="intro advantage__intro">— Наличие своего производства</p>
