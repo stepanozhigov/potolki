@@ -2025,6 +2025,10 @@ main.page{
             }
         }
     }
+
+    .texture_sand::before {
+		background-image: url('/img/templates/ceilings/texture/sand.webp');
+	}
     .offer {
         &::before{
             @include above($size_sm) {
