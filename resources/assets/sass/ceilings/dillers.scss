@@ -964,7 +964,7 @@
         }
 
         img {
-            width: calc(33,3% - 10px);
+            width: calc(33.3% - 10px);
             height: auto;
 
             @include below($tablet) {
