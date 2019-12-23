@@ -26,12 +26,12 @@
     @include('common.forms.alert_form')
 </div>
 
-<!-- <div class="popupN popupN-video" id="videoBlock">
+<div class="popupN popupN-video" id="videoBlock">
     <div class="popupN__wrapper">   
-        <img data-lazy-src="/img/gui/close.svg" alt="close" class="popupN__close js-close">
-        <iframe width="900" height="506" data-lazy-src="https://www.youtube.com/embed/ZzBDdgLxTxE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <img data-src="/img/gui/close.svg" alt="close" class="popupN__close js-close">
+        <iframe width="900" height="506" data-src="https://www.youtube.com/embed/ZzBDdgLxTxE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="lazyload"></iframe>
     </div>
-</div> -->
+</div>
 <div id="overlay" class="overlay js-close"></div>
 </main>
 
