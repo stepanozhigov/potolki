@@ -28,7 +28,7 @@
 
 <div class="popupN popupN-video" id="videoBlock">
     <div class="popupN__wrapper">   
-        <img data-src="/img/gui/close.svg" alt="close" class="popupN__close js-close">
+        <img src="/img/gui/close.svg" alt="close" class="popupN__close js-close">
         <iframe width="900" height="506" data-src="https://www.youtube.com/embed/ZzBDdgLxTxE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="lazyload"></iframe>
     </div>
 </div>
