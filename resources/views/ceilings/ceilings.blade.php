@@ -26,7 +26,7 @@
 		<div class="wrapper offer">
             <h2 class="offer__title"><b>Новогодняя скидка!</b></h2>
             <picture>
-                <source data-srcset="/img/templates/ceilings/offer/new_year/double_sale_lg.webp" type="image/webp">
+                <source data-srcset="/img/templates/ceilings/offer/new_year/double_sale_lg.webp" type="image/webp" class="lazyload">
                 <img class="offer__img lazyload" data-src="/img/templates/ceilings/offer/new_year/double_sale_lg.png" loading="lazy" alt="Увеличиваем скидки до 60%">
             </picture>
 			<p class="offer__intro">Только до 31 декабря!</p>

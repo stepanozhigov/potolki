@@ -2012,7 +2012,7 @@ main.page{
 
 .webp{
     .hero {
-        background-image: url(/img/windows/main-offer.jpg) no-repeat center;
+        background-image: url('/img/templates/ceilings/hero/background-sm.webp');
 
         @include above($size_sm) {
             background-image: url('/img/templates/ceilings/hero/background-lg.webp');
