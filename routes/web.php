@@ -113,9 +113,9 @@ Route::prefix('/{city}')->group(function () {
 
     Route::get('/dir-message', 'PageController@dirMessage')->name('dirMessage');
 
-    Route::get('/articles', 'PageController@articles')->name('articles');
+    // Route::get('/articles', 'PageController@articles')->name('articles');
 
-    Route::get('/articles/{article}', 'PageController@article')->name('article');
+    // Route::get('/articles/{article}', 'PageController@article')->name('article');
 
     Route::get('/whyus', 'PageController@whyus')->name('whyus');
 

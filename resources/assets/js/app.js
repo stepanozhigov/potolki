@@ -33,7 +33,7 @@ Vue.component('surfaces', require('./components/Surfaces.vue'));
 Vue.component('reviews', require('./components/Reviews.vue'));
 // Vue.component('window-calc', require('./components/WindowCalc.vue'));
 // Vue.component('balcony-calc', require('./components/BalkonyCalc.vue'));
-Vue.component('simple-slider', require('./components/simpleSlider.vue'));
+// Vue.component('simple-slider', require('./components/simpleSlider.vue'));
 Vue.component('ceilings-calc', require('./components/ceilingsCalc.vue'));
 // Vue.component('climat-slider', require('./components/climatSlider.vue'));
 Vue.component('catalogue-slider', require('./components/catalogue-slider.vue'));
@@ -47,8 +47,8 @@ Vue.component('gallery-list', require('./components/GalleryList.vue'));
 // Vue.component('dveri-calc', require('./components/DveriCalc.vue'));
 // Vue.component('peregorodki-calc', require('./components/Peregorodki.vue'));
 // Vue.component('zhalyuzi-calc', require('./components/Zhalyuzi.vue'));
-Vue.component('posts', require('./components/Articles.vue'));
-Vue.component('posts-list', require('./components/ArticlesList.vue'));
+// Vue.component('posts', require('./components/Articles.vue'));
+// Vue.component('posts-list', require('./components/ArticlesList.vue'));
 Vue.component('manufacturers', require('./components/ManufacturersCarousel.vue'));
 Vue.component('banks', require('./components/banksCarousel.vue'));
 Vue.component('menu-city-search', require('./components/MenuCitySearch.vue'));
@@ -164,17 +164,6 @@ $('.js-link').on('click', function (event) {
 
 lazySizes.init();
 
-// if ('loading' in HTMLImageElement.prototype) {
-//     const images = document.querySelectorAll("img.lazyload");
-//     images.forEach(img => {
-//         img.src = img.dataset.src;
-//     });
-
-// } else {
-    
-//     lazySizes.init(); 
-// }
-
 var $lazyContainers = $('[data-lazy-src]');
 
 if ($lazyContainers.length > 0) {
@@ -216,13 +205,13 @@ if (surfaces.length > 0) {
     })
 }
 
-const articles = $('#articles');
+// const articles = $('#articles');
 
-if (articles.length > 0) {
-    new Vue({
-        el: '#articles'
-    })
-}
+// if (articles.length > 0) {
+//     new Vue({
+//         el: '#articles'
+//     })
+// }
 
 const manufacturers = $('#manufacturers__list');
 
@@ -295,11 +284,11 @@ $('.js-add-comment').each(function(index, element) {
     })
 })
 
-if ($('#portfolio-photos').length > 0) {
-     const portfolioPhotos = new Vue({
-        el: '#portfolio-photos'
-    });
-}
+// if ($('#portfolio-photos').length > 0) {
+//      const portfolioPhotos = new Vue({
+//         el: '#portfolio-photos'
+//     });
+// }
 
 if ($('#city-search').length > 0) {
     const citySearch = new Vue({
@@ -307,11 +296,11 @@ if ($('#city-search').length > 0) {
     });
 }
 
-if ($('#simple-slider').length > 0) {
-    var BalkonyCalc = new Vue({
-        el: '#simple-slider'
-    });
-}
+// if ($('#simple-slider').length > 0) {
+//     var BalkonyCalc = new Vue({
+//         el: '#simple-slider'
+//     });
+// }
 
 if ($('#ceilings-calc').length > 0) {
     var CeilingsCalc = new Vue({
@@ -331,26 +320,26 @@ if ($('#add-review').length > 0) {
     });
 }
 
-import typewriter from 'typewriter-effect/dist/core';
+// import typewriter from 'typewriter-effect/dist/core';
 
-let $writtenElements = $('.js-writen');
+// let $writtenElements = $('.js-writen');
 
-$writtenElements.each((index, element) => {
-    var $element = $(element),
-        text = $element.text(),
-        additionalTexts = $element.data('texts');
+// $writtenElements.each((index, element) => {
+//     var $element = $(element),
+//         text = $element.text(),
+//         additionalTexts = $element.data('texts');
 
-    if (additionalTexts) {
-        text = [text].concat(additionalTexts);
-    }
-    console.log(text);
-    new typewriter(element, {
-        strings: text,
-        autoStart: true,
-        loop: true,
-        delay: 70
-    });
-});
+//     if (additionalTexts) {
+//         text = [text].concat(additionalTexts);
+//     }
+//     console.log(text);
+//     new typewriter(element, {
+//         strings: text,
+//         autoStart: true,
+//         loop: true,
+//         delay: 70
+//     });
+// });
 
 $('.survey__no').on('click', function () {
     location.href="https://api.whatsapp.com/send?phone=79996516666";
