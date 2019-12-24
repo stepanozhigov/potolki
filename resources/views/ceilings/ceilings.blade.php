@@ -25,7 +25,7 @@
     <section class="section texture_sand snow-wrap">
 		<div class="wrapper offer">
             <h2 class="offer__title"><b>Новогодняя скидка!</b></h2>
-            <p class="offer__intro">Только до 31 января!</p>
+            <p class="offer__intro">Только до 31 января</p>
             <picture>
                 <source type="image/webp" media="(max-width: 767px)" data-srcset="/img/templates/ceilings/offer/new_year/double_sale_sm.webp">
                 <source type="image/png" media="(max-width: 767px)" data-srcset="/img/templates/ceilings/offer/new_year/double_sale_sm.png">
@@ -105,13 +105,16 @@
                 </picture>
 				<div class="advantage__wrap order">
 					<h3 class="advantage__title">Главные плюсы организации</h3>
-					<p class="intro advantage__intro">— Наличие своего производства</p>
-                    <p class="intro advantage__intro">— Подписание договора на дому</p>
-                    <p class="intro advantage__intro">— Сервисное обслуживание</p>
-                    <p class="intro advantage__intro">— Установка за один день</p>
-                    <p class="intro advantage__intro">— Контроль качества</p>
-                    <p class="intro advantage__intro">— Выгодные цены</p>
-                    <p class="intro advantage__intro">— 16 лет опыта</p>
+                    <ul class="advantage__list">
+                        <li>— Наличие своего производства</li>
+                        <li>— Подписание договора на дому</li>
+                        <li>— Сервисное обслуживание</li>
+                        <li>— Установка за один день</li>
+                        <li>— Контроль качества</li>
+                        <li>— Выгодные цены</li>
+                        <li>— 16 лет опыта</li>
+                        <li>— Установка за сутки</li>
+                    </ul>
 				</div>
 			</article>
 			<article class="advantage">
@@ -148,8 +151,8 @@
         <a class="buttonN buttonN-light constructor__link btn-4" href="{{ route('constructor', $city) }}">Конструктор</a>
     </section>
 
-    <section class="portfolio portfolio_main portfolio_ceilings">
-        @include('common.gui.titles', ['secondTitle' => 'Примеры наших работ'])
+    <section class="portfolio portfolioN portfolio_main portfolio_ceilings">
+        <h2 class="title-dec">Примеры наших работ</h2>   
         <div class="portfolio__carousel" id="portfolio__carousel" data-photos="{{ $photos }}">
         </div>
         <div class="buttons portfolio__buttons">
@@ -158,9 +161,8 @@
         </div>
     </section>
 
-    <section class="reviews reviews_main container hidden-xs">
-        @include('common.gui.titles', ['secondTitle' => 'Отзывы наших клиентов'])
-
+    <section class="reviews reviewsN reviews_main wrapper hidden-xs">
+        <h2 class="title-dec">Отзывы наших клиентов</h2>    
         <div class="reviews__content">
             @foreach($reviews as $review)
                 @include('common.gui.review', $review)

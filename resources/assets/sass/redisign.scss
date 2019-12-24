@@ -72,18 +72,15 @@ main.page{
 }
 
 .title-dec{
+    font-family: "Playfair Display", serif;
     color: #485058;
-    font-size: rem(22);
+    font-size: rem(26);
     font-weight: 400;
     margin-bottom: rem(52);
     position: relative;
     line-height: 1.2;
 
     @include above($size_sm) {
-        font-size: rem(26);
-    }
-
-    @include above($size_md) {
         font-size: rem(32);
     }
 
@@ -1054,20 +1051,17 @@ main.page{
         @include above($size_sm) {
             font-size: rem(32);
         }
-        @include above($size_md) {
-            font-size: rem(42);
-        }
     }
     &__intro{
         font-family: $helvetica;
         color: #485058;
-        font-size: rem(20);
+        font-weight: 300;
+        font-size: rem(16);
         line-height: 1.5;
         text-align: center;
         margin-bottom: rem(36);
 
         @include above($size_sm) {
-            font-size: rem(22);
             margin-bottom: rem(70);
         }
     }
@@ -1075,7 +1069,11 @@ main.page{
 
 .advantages {
 	display: grid;
-	grid-gap: rem(66);
+	grid-gap: rem(36);
+    
+    @include above($size_sm) {
+        grid-gap: rem(66);
+    }
 }
 .advantage {
     display: grid;
@@ -1096,9 +1094,6 @@ main.page{
             min-height: rem(312);
         }
     }
-    &__wrap{
-
-    }
 	&__title {
 		text-align: left;
 		font-size: rem(22);
@@ -1108,7 +1103,23 @@ main.page{
         @include above($size_md) {
             font-size: rem(32);
         }
-	}
+    }
+    &__list{
+
+        li{
+            color: #485058;
+            text-align: left;
+            font-family: $helvetica;
+            font-weight: 300;
+            font-size: rem(18);
+            margin-bottom: rem(8);
+            list-style-type: none;
+    
+            @include above($size_md) {
+                margin-bottom: rem(8);
+            } 
+        }
+    }
 	&__intro {
 		color: #485058;
         text-align: left;
@@ -1837,21 +1848,21 @@ main.page{
             }
 
             p {
-                display: none;
                 position: absolute;
                 z-index: 2;
                 font-family: $playfair;
                 color: #f4f6f8;
-                font-size: rem(24);
+                font-size: rem(16);
                 line-height: 1.5;
                 margin: auto;
-                bottom: rem(32);
+                bottom: rem(20);
                 left: 0;
                 right: 0;
                 text-align: center;
 
-                @include above($size-md) {
-                    display: block;
+                @include above($size-sm) {
+                    font-size: rem(24);
+                    bottom: rem(32);
                 }
             }
 
@@ -2099,3 +2110,17 @@ main.page{
     }
 }
 
+.reviewsN{
+    padding-top: rem(64);
+
+    .title-dec{
+        text-align: center;
+    }
+}
+.portfolioN{
+    padding-top: rem(64);
+
+    .title-dec{
+        text-align: center;
+    }
+}
