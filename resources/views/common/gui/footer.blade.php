@@ -140,7 +140,7 @@
                     <img class="logo__text" src="/img/gui/logo-text.svg" alt="графема Твой Стиль">
                 </a>
                 <div class="footer__directions dropdown">
-                    <a class="dropdown__item_link"><img class="dropdown__arrow" src="/img/gui/arrow.svg" alt="">{{ $currentDirection->name }}</a>
+                    <a class="dropdown__item_link"><img class="dropdown__arrow" src="/img/gui/arrow.svg" alt="">Фабрика потолков</a>
                     <div class="dropdown__content">
                         @foreach ($directions as $direction)
                             <a href="{{ $direction->site  ?? '' }}" class="text dropdown__item dropdown__item_bordered  red-hoverable">{!! $direction->name !!}</a>
@@ -152,7 +152,7 @@
             </div>
             <p class="footer__year"><span>&copy;  2003 – {{ date('Y') }}  ООО «Твой Стиль» <br>Все права защищены. </span></p>
 
-			<a data-src="#popup_survey" class="footer__survey js-showup" href="javascript:void(0);">Оценить сайт</a>
+			<a data-src="#popup_survey" class="footer__survey js-showup hidden-xs" href="javascript:void(0);">Оценить сайт</a>
             <p class="footer__dev">
                 Разработка и продвижение <a href="http://trend-p.ru" target="_blank" class="red-hoverable" target="_blank">TREND PRO</a>
             </p>

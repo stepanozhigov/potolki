@@ -32,18 +32,7 @@ main.page{
 		padding-right: rem(20);
 	}
 }
-.footer-offer{
-    &:before{
-        content: '';
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        width: 100%;
-        height: 50px;
-        background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgba(255, 255, 255, 0.91), rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.73), rgba(255, 255, 255, 0.64), rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.36), rgba(255, 255, 255, 0.27), rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0));
-    }
-}
+
 
 .hidden-sm{
     @include above($size_sm) {
@@ -54,6 +43,10 @@ main.page{
     @include between(0, #{$size_sm - rem(1)}) {
         display: none;
     }
+}
+
+.hidden{
+	display: none !important;
 }
 
 .lazyload,
@@ -235,10 +228,10 @@ main.page{
         width: 50px;
         z-index: 1;
         transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
-        animation-delay: 0.05s;
+        animation-delay: 0.01s;
         animation-timing-function: ease-in-out;
         animation-name: radiance;
-        animation-duration: 3s;
+        animation-duration: 2s;
         animation-iteration-count: infinite;
         opacity: 0.2;
     }
@@ -531,14 +524,19 @@ main.page{
         font-size: rem(20);
         font-family: $helvetica;
         line-height: 1.5;
-        margin-bottom: rem(32);
+        margin-bottom: rem(16);
+        color: #dc1414;
 
         @include above($size_sm) {
             font-size: rem(32);
+            margin-bottom: rem(32);
+            color: #485058;
         }
     }
 
     .formN{
+        position: relative;
+        z-index: 10;
 
         @include above($size_sm) {
             width: rem(302);
@@ -554,6 +552,11 @@ main.page{
 
         .buttonN{
             max-width: none;
+            background: #dc1414;
+
+            @include above($size_sm) {
+                background: #babec2;
+            }
         }
 
         &__agreement{
@@ -564,6 +567,27 @@ main.page{
             }
         }
     }
+}
+
+@keyframes snow {
+    0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+    100% {background-position: 500px 1000px, 400px 400px, 300px 300px;}
+}
+
+.snow-wrap {
+
+    &:after{
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-image: url(/img/quiz/new_year/snowflake.png), url(/img/quiz/new_year/snowflake3.png), url(/img/quiz/new_year/snowflake2.png);
+        height: 100%;
+        animation: snow 20s linear infinite;
+    }
+    
 }
 
 .calc{
@@ -1040,10 +1064,11 @@ main.page{
         font-size: rem(20);
         line-height: 1.5;
         text-align: center;
-        margin-bottom: rem(70);
+        margin-bottom: rem(36);
 
         @include above($size_sm) {
             font-size: rem(22);
+            margin-bottom: rem(70);
         }
     }
 }
@@ -1077,7 +1102,7 @@ main.page{
 	&__title {
 		text-align: left;
 		font-size: rem(22);
-        margin-bottom: rem(8);
+        margin-bottom: rem(16);
         color: #50555a;
 
         @include above($size_md) {
@@ -1089,8 +1114,18 @@ main.page{
         text-align: left;
         font-family: $helvetica;
         font-weight: 300;
-        margin-bottom: rem(8);
         font-size: rem(18);
+
+        @include above($size_md) {
+            margin-bottom: rem(8);
+        }
+
+        a{
+            font-weight: 400;
+            color: inherit;
+            text-decoration: none;
+            white-space: nowrap;
+        }
 	}
 	&__signature {
         margin-bottom: rem(16);
@@ -1564,6 +1599,8 @@ main.page{
     }
 
     &-video{
+
+        padding: rem(20) 0;
 
         .popupN__wrapper{
             justify-self: center;

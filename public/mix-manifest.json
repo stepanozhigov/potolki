@@ -1,5 +1,4 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css",
-    "/resources/views/common/criticalCss.blade.php": "/resources/views/common/criticalCss.blade.php"
+    "/css/app.css": "/css/app.css"
 }

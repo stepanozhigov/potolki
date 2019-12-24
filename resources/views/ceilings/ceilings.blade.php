@@ -16,20 +16,25 @@
                 @csrf
                 <input type="hidden" name="city" value="{{ $city->bx_code }}">
                 <input name="phone" required class="inputN" type="tel" placeholder="Ваш телефон">
-				<button type="submit" class="buttonN buttonN-red btn-4">Вызвать замерщика</button>
+				<button type="submit" class="buttonN buttonN-red btn-pulse">Вызвать замерщика</button>
 				<p class="form__agreement">Оставляя контактную информацию, вы соглашаетесь на <u>обработку персональных данных</u></p>
 			</form>
 		</div>
     </section>
 
-    <section class="section texture_sand">
+    <section class="section texture_sand snow-wrap">
 		<div class="wrapper offer">
             <h2 class="offer__title"><b>Новогодняя скидка!</b></h2>
+            <p class="offer__intro">Только до 31 января!</p>
             <picture>
-                <source data-srcset="/img/templates/ceilings/offer/new_year/double_sale_lg.webp" type="image/webp" class="lazyload">
+                <source type="image/webp" media="(max-width: 767px)" data-srcset="/img/templates/ceilings/offer/new_year/double_sale_sm.webp">
+                <source type="image/png" media="(max-width: 767px)" data-srcset="/img/templates/ceilings/offer/new_year/double_sale_sm.png">
+                <source type="image/webp" media="(min-width: 768px)" data-srcset="/img/templates/ceilings/offer/new_year/double_sale_lg.webp">
+                <source type="image/png" media="(min-width: 768px)" data-srcset="/img/templates/ceilings/offer/new_year/double_sale_lg.png">
+
                 <img class="offer__img lazyload" data-src="/img/templates/ceilings/offer/new_year/double_sale_lg.png" loading="lazy" alt="Увеличиваем скидки до 60%">
             </picture>
-			<p class="offer__intro">Только до 31 декабря!</p>
+			
 			<form class="formN js-less" action="{{ route('forms.feedback', $city) }}" method="POST">
                 @csrf
                 <input type="hidden" name="city" value="{{ $city->bx_code }}">
@@ -71,7 +76,7 @@
     </section>
 
     <section class="section catalog">
-			<h2 class="title-dec catalog__title">Каталог натяжных потолков {!! $city->name_formatted !!} от производителя</h2>
+			<h2 class="title-dec catalog__title">Каталог натяжных потолков {!! $city->name_formatted !!}</h2>
 			<div class="catalog__carousel" id="catalog__carousel" data-cats="{{ $catalogTypes }}" data-city="{{ $city }}"></div>
 			<a href="{{ route('catalogueCeilings', ['city' => $city]) }}" class="buttonN buttonN-light catalog__button btn-4">Перейти в каталог</a>
     </section>
@@ -90,7 +95,7 @@
 		<p class="skills__overtitle">Наши преимущества</p>
 		<h2 class="title-dec skills__title">Звонят многим, заказывают у нас. Почему?</h2>
 		<p class="skills__intro">
-			Фабрика натяжных потолков «Твой&nbspстиль» основана в 2003 году и является лидером по производству и установке натяжных потолков {!!$region!!}.
+			Фабрика натяжных потолков «Твой&nbspстиль» основана в 2003 году и является лидером по производству и установке натяжных потолков<span class="hidden-xs"> {!!$region!!}</span>.
 		</p>
 		<div class="advantages">
 			<article class="advantage">
@@ -100,11 +105,11 @@
                 </picture>
 				<div class="advantage__wrap order">
 					<h3 class="advantage__title">Главные плюсы организации</h3>
-					<p class="intro advantage__intro">— Контроль качества после монтажа</p>
 					<p class="intro advantage__intro">— Наличие своего производства</p>
                     <p class="intro advantage__intro">— Подписание договора на дому</p>
                     <p class="intro advantage__intro">— Сервисное обслуживание</p>
                     <p class="intro advantage__intro">— Установка за один день</p>
+                    <p class="intro advantage__intro">— Контроль качества</p>
                     <p class="intro advantage__intro">— Выгодные цены</p>
                     <p class="intro advantage__intro">— 16 лет опыта</p>
 				</div>
@@ -118,10 +123,10 @@
 				<div class="advantage__wrap">
 					<h3 class="advantage__title">Директор всегда на связи</h3>
 					<p class="intro advantage__intro">
-                        Я лично контролирую все этапы работы с помощью прямого контакта со своими клиентами. 
-                        Вы можете написать мне в любую социальную сеть или позвонить.<br> 
-                        Прямая линия обеспечивает ответственную работу каждого сотрудника. 
-                        Считаю это самым важным фактором для моих клиентов.
+                        Я лично контролирую все этапы работы с нашими клиентами и отвечаю за качество обслуживания.<br> 
+                        Вы можете написать мне на почту <a href="mailto:boss-tvoistil@mail.ru">boss-tvoistil@mail.ru</a> или в Instagram - я оперативно отвечу.<br> 
+                        Прямая линия обеспечивает ответственную работу каждого сотрудника в компании. 
+                        Считаю это важным плюсом для наших клиентов.
 					</p>
 					<div class="advantage__signature">
                         <span class="advantage__signature_name">А. А. Репин</span>

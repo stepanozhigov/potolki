@@ -1,7 +1,7 @@
 let mix = require('laravel-mix');
-let mqpacker = require("css-mqpacker");
+// let mqpacker = require("css-mqpacker");
 
-require('laravel-mix-criticalcss');
+// require('laravel-mix-criticalcss');
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -14,20 +14,20 @@ require('laravel-mix-criticalcss');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css')
-   .criticalCss({
-      enabled: mix.inProduction(),
-      paths: {
-          base: 'https://potolki-ts.ru/',
-          inline: true,
-          templates: './public/css/',
-          suffix: '_critical'
-      },
-      urls: [
-          { url: 'moskva', template: 'index' },
-      ]
-  })
-  .copy('public/css/index_critical.css', 'resources/views/common/criticalCss.blade.php');
+   .sass('resources/assets/sass/app.scss', 'public/css');
+//    .criticalCss({
+//       enabled: mix.inProduction(),
+//       paths: {
+//           base: 'https://potolki-ts.ru/',
+//           inline: true,
+//           templates: './public/css/',
+//           suffix: '_critical'
+//       },
+//       urls: [
+//           { url: 'moskva', template: 'index' },
+//       ]
+//   })
+//   .copy('public/css/index_critical.css', 'resources/views/common/criticalCss.blade.php');
 
   //  .options({
   //     postCss: [
