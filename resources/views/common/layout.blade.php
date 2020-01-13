@@ -84,10 +84,10 @@
         <div id="geo-confirm">
             <geo-confirm :cities="{{ $cities }}"></geo-confirm>
         </div>
+		<div id="widget">
+			<widget></widget> 
+		</div>
     <? endif ?>
-	<div id="widget">
-		<widget></widget>
-	</div>
     <div id="app">
         @yield('content')
     </div>

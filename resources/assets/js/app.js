@@ -68,7 +68,7 @@ if ($('#geo-confirm').length > 0) {
 
 if ($('#widget').length > 0) {
     new Vue({
-        el: '#widget' 
+        el: '#widget'
     })
 }
 
@@ -549,7 +549,7 @@ let onResize = function () {
         $('.nav-group').on('click', function() {
         	$(this).toggleClass('nav-group_opened');
         });
-        
+
         // $('.article__more').off();
         // $('.article__more').on('click', function () {
         //     $(this).prev('.article__desc').find('h3').toggleClass('opened')
@@ -584,7 +584,17 @@ $(window).resize(onResize);
 
 
 var phoneMask = new Inputmask({
-        mask:'8 999 999-99-99',
+        mask:'+9 (999) 999-99-99',
+		onBeforeWrite: function (event, buffer, caretPos, opts) {
+			// var $input = $(event.target),
+				// phone = $input.val();
+			// formatted = phone.replace(/^8/, '+7');
+			// $input.val(formatted);
+			buffer[0] = '+';
+			buffer[1] = 7;
+			console.log(buffer);
+			return buffer;
+		},
         oncomplete: function(event) {
             let $this = $(this),
                 form  = $this.parents('form'),
@@ -604,7 +614,15 @@ var phoneMask = new Inputmask({
     }),
     $phones = $('[type=tel]');
 
-phoneMask.mask($phones);
+	// $phones.on('input', function (event) {
+	// 	var phone = $(this).val(),
+	// 		formatted = phone.replace(/^8/, '+7');
+	//
+	// 	$(this).val(formatted);
+	// 	// console.log(phone, );
+	// });
+
+	phoneMask.mask($phones);
 
 $('.range').ionRangeSlider({
     skin: 'round',
