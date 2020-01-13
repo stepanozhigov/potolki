@@ -61,7 +61,7 @@
         </div>
         <div class="calc__item">
             <p class="calc__item-name">Цена с установкой</p>
-            <p class="calc__total"><span class="js-calc-price">350</span> ₽</p>
+            <p class="calc__total"><span class="js-calc-price">350</span> <span class="rouble">8</span></p>
         </div>
         <a href="{{ route('forms.measure', $city) }}" class="calc__callback buttonN buttonN-red btn-4">Вызвать замерщика</a>
     </section>

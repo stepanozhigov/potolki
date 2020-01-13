@@ -426,7 +426,6 @@ main.page{
             max-width: rem(280);
             text-align: center;
             @include above($size_sm) {
-                max-width: rem(380);
                 justify-self: flex-start;
                 text-align: left;
             }
@@ -693,6 +692,7 @@ main.page{
 
         @include above($size_md) {
             margin-bottom: rem(48);
+            font-size: rem(20);
         }
     }
 
@@ -878,7 +878,7 @@ main.page{
         box-shadow: 0 0 2px rgba(0, 0, 0, 0.16), inset 0 -1px 0 rgba(0, 0, 0, 0.12);
         border-radius: rem(8);
         overflow: hidden;
-        padding-bottom: rem(30);
+        padding-bottom: rem(32);
         cursor: pointer;
         position: relative;
         // transition: all 1s;
@@ -889,7 +889,7 @@ main.page{
         }
         @include above($size_sm) {
             min-width: rem(234);
-            padding-bottom: rem(16);
+            // padding-bottom: rem(16);
             grid-template-rows: rem(180) rem(112);
             margin-bottom: rem(32);
             flex-basis: calc(33.33% - 16px);
@@ -898,23 +898,25 @@ main.page{
             flex-basis: calc(25% - 16px);
         }
 
-        &:hover .carousel__item_text{
+        &:hover {
             @include above($size_md) {
-                color: #808890;
-                max-height: 300px;
-                opacity: 1;
-            }
-        }
+                box-shadow: 0 0.75rem 0.75rem rgba(0, 0, 0, 0.16), 0 0 0.75rem rgba(0, 0, 0, 0.08), inset 0 -0.0625rem 0 rgba(0, 0, 0, 0.16);
 
-        &:hover .carousel__item_title{
-            @include above($size_md) {
-                font-size: rem(20);
-                color: #808890;
-            }
-        }
+                .carousel__item_img{
+                    // opacity: 0;
+                }
+                .carousel__item_wrap{
+                    max-height: rem(293);
+                    height: 100%;
 
-        &:hover{
-            box-shadow: 0 0.75rem 0.75rem rgba(0, 0, 0, 0.16), 0 0 0.75rem rgba(0, 0, 0, 0.08), inset 0 -0.0625rem 0 rgba(0, 0, 0, 0.16)
+                }
+                .carousel__item_text{
+                    color: #808890;
+                    max-height: 300px;
+                    opacity: 1;
+                    font-size: rem(16);
+                }
+            }
         }
 
         &_img {
@@ -929,7 +931,7 @@ main.page{
             background-color: #fff;
             padding-top: rem(16);
             display: grid;
-            // grid-gap: rem(16);
+            transition: max-height .6s;
             width: 100%;
 
             @include above($size_sm) {
@@ -938,7 +940,9 @@ main.page{
 
             @include above($size_md) {
                 position: absolute;
-                bottom: rem(16);
+                bottom: 0;
+                max-height: rem(149);
+                padding-bottom: rem(32);
             }
         }
 
@@ -953,7 +957,7 @@ main.page{
             font-weight: 400;
             letter-spacing: rem(1.5);
             text-transform: uppercase;
-            transition: all .6s;
+            align-self: flex-start;
 
             @include above($size_sm) {
                 font-size: rem(24);
@@ -977,6 +981,7 @@ main.page{
 
         &_text{
             padding: 0 rem(15);
+            font-family: $helvetica;
             font-size: rem(12);
             font-weight: 300;
             line-height: 1.5;
@@ -998,6 +1003,7 @@ main.page{
             font-size: rem(24);
             font-weight: 500;
             line-height: 1.2;
+            align-self: flex-end;
 
             @include above($size_sm) {
                 font-size: rem(32);
@@ -1273,13 +1279,13 @@ main.page{
     &__item{
         box-shadow: 0 0 2px rgba(0, 0, 0, 0.16), inset 0 -1px 0 rgba(0, 0, 0, 0.12);
         border-radius: rem(8);
-        padding: 0 rem(20) rem(44) rem(20);
+        padding: 0 rem(16) rem(44) rem(16);
         position: relative;
         text-decoration: none;
         text-align: center;
 
         @include above($size_lg) {
-            max-width: 280px;
+            max-width: 300px;
             width: 100%;
             justify-self: center;
         }
@@ -1300,7 +1306,7 @@ main.page{
         }
     }
     &__title{
-        font-size: rem(20);
+        font-size: rem(22);
         line-height: 1.2;
         font-weight: 400;
         color: #485058;
@@ -1309,7 +1315,7 @@ main.page{
     }
     &__text{
         color: #485058;
-        font-size: rem(14);
+        font-size: rem(16);
         line-height: 1.5;
         font-family: $helvetica;
 

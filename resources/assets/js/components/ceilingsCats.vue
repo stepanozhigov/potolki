@@ -5,7 +5,7 @@
             <div class="carousel__item_wrap">
                 <p class="carousel__item_title">{{ cat.name }}</p>
                 <p class="carousel__item_text">{{ cat.ceiling_intro }}</p>
-                <p class="carousel__item_price">от {{ formatPrice(cat.price) }}  ₽/м2</p>
+                <p class="carousel__item_price">от {{ formatPrice(cat.price) }}  <span class="rouble">8</span>/м2</p>
             </div>
         </a>
     </transition-group>    
