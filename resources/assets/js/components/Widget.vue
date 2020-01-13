@@ -175,7 +175,7 @@
 			<p class="widget__title">Купон на 5000 ₽ в&nbspподарок!</p>
 			<p class="widget__intro">Оставьте заявку сегодня и&nbspменеджер активирует ваш подарочный купон</p>
 			<!-- <input v-model="fio" class="widget__input" type="text" placeholder="Укажите имя"> -->
-			<input v-model="phone" v-mask="{mask: '8 999-999-99-99', oncomplete: enable, onincomplete: disable}" class="widget__input" type="text" placeholder="Укажите телефон">
+			<input v-model="phone" v-mask="{mask: '+9 (999) 999-99-99', oncomplete: enable, onincomplete: disable, onBeforeWrite: onBeforeWrite}" class="widget__input" type="text" placeholder="Укажите телефон">
 			<!-- <the-mask :masked="true" type="tel" v-model="phone" class="widget__input" :mask="'8 ### ### ## ##'"></the-mask> -->
 
 			<button :disabled="!phoneValidated" class="widget__button">Отправить заявку</button>
@@ -207,6 +207,10 @@
 			}
 		},
 		methods: {
+			onBeforeWrite: function (event, buffer) {
+				buffer[0] = '+';
+				buffer[1] = 7;
+			},
 			enable: function () {
 				this.phoneValidated = true;
 			},
