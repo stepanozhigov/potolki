@@ -249,9 +249,12 @@
 						city: window.city.bx_code
 					},
 					success: function (response) {
-						Vue.cookie.set('form_send', true, 1);
+						
 					}
 				})
+
+				Vue.cookie.set('form_send', true, 1);
+				
 				setTimeout(() => {
 					this.$nextTick(function () {
 						this.hidden = true
