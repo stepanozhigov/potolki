@@ -7,12 +7,10 @@
 		<div class="wrapper hero__content">
             <p class="hero__overtitle">Монтаж 1 день | Гарантия 30 лет</p>
 			<h1 class="hero__title">
+                <b>Натяжные потолки №1</b><br>
                 @if($city->bx_code == 786)
-                    <b>Натяжные потолки №1</b>
-                @else
-                    <b>Натяжные потолки</b>
+                    №1 
                 @endif
-				<br>
 				{!! $city->name_formatted !!}<br class="hidden-sm">
 				от 100 <span class="rouble">8</span>/м²
 			</h1>
