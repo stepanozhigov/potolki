@@ -166,7 +166,7 @@
 </style>
 
 <template>
-	<section class="widget" :class="{widget_opened: state == 'opened'}">
+	<section class="widget" :class="{widget_opened: state == 'opened', hidden: hidden == true}">
 		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 		<img @click="state = 'opened'" v-if="state == 'closed'" src="/img/gift.png" alt="" class="widget__gift">
 		<form @submit.prevent="submit" v-if="state == 'opened'" class="widget__form">
@@ -204,6 +204,12 @@
 				fio: '',
 				phone: '',
 				phoneValidated: false,
+				hidden: false,
+			}
+		},
+		mounted: function (){
+			if(Vue.cookie.get('form_send')){
+				this.hidden = true
 			}
 		},
 		methods: {
@@ -218,18 +224,19 @@
 				this.phoneValidated = false;
 			},
 			submit: function (event) {
+				
 				event.preventDefault();
 				event.stopPropagation();
 				console.log(event);
 				this.state = 'success';
 				fbq('track', 'Lead');
 
-			    if (typeof ga !== 'undefined') {
-			        ga.getAll()[0].send('event', 'callback', 'start');
-			    }
-			    if (typeof window.yaCounter40202559 !== 'undefined') {
-			        window.yaCounter40202559.reachGoal('b24-call');
-			    }
+				if (typeof ga !== 'undefined') {
+					ga.getAll()[0].send('event', 'callback', 'start');
+				}
+				if (typeof window.yaCounter40202559 !== 'undefined') {
+					window.yaCounter40202559.reachGoal('b24-call');
+				}
 				var $this = this;
 
 				$.ajax({
@@ -242,10 +249,14 @@
 						city: window.city.bx_code
 					},
 					success: function (response) {
-						console.log(1);
+						Vue.cookie.set('form_send', true, 1);
 					}
 				})
-
+				setTimeout(() => {
+					this.$nextTick(function () {
+						this.hidden = true
+					})
+				}, 2000);
 			}
 		}
 	}
