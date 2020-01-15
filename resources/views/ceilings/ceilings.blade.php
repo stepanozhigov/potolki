@@ -7,7 +7,7 @@
 		<div class="wrapper hero__content">
             <p class="hero__overtitle">Монтаж 1 день | Гарантия 30 лет</p>
 			<h1 class="hero__title">
-                <b>Натяжные потолки №1</b><br>
+                <b>Натяжные потолки</b><br>
                 @if($city->bx_code == 786)
                     №1 
                 @endif
