@@ -6,6 +6,7 @@
             <p class="popupN__intro">Оставьте заявку на скидку, если вы нашли дешевле, и получите 500 рублей.</p>
             @csrf
             <input type="hidden" name="city" value="{{ $city->bx_code }}">
+            <input type="hidden" name="city_name" value="{{ $city->name ?? ''}}">
             <input type="hidden" name="name" value="Получить скидку">
             <input required placeholder="Ваш телефон" name="phone" type="tel" class="inputN popupN__input">
             <button class="buttonN buttonN-red popupN-sale__btn">Получить скидку</button>

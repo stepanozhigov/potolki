@@ -137,13 +137,22 @@ class FeedbackController extends Controller
         $visits = "";
         $arVisits = session('visits');
 
+        
+
+        if($request->city == 117){
+            $description = $request->city_name;
+        }else{
+            $description = null;
+        }
+
 		$lead = Lead::create([
 			'name'	=> $request->name,
 			'phone'	=> $request->phone,
 			'city_id' => $request->city,
 			'direction_id' => 56,
 			'roistat'	=>	$request->cookie('roistat_visit'),
-			'visits'	=>	$arVisits
+            'visits'	=>	$arVisits,
+            'description' => $description
 		]);
 
 		ProcessFeedback::dispatch($lead);

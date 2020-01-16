@@ -9,6 +9,7 @@
         <form class="form js-less formPage__form" method="post" action="{{ route('forms.feedback', $city) }}">
             @csrf
             <input type="hidden" name="city" value="{{ $city->bx_code ?? '' }}">
+            <input type="hidden" name="city_name" value="{{ $city->name ?? ''}}">
             <input class="input form__input form__input_horiz" type="text" name="name" required placeholder="Ваше имя">
             <input class="input form__input form__input_horiz" type="tel" name="phone" required placeholder="Ваш телефон">
             <button class="button form__button">Вызвать замерщика</button>

@@ -3,6 +3,7 @@
 	<form action="{{ route('add-lead') }}" method="POST" class="form popupN__form">
 		@csrf
 		<input type="hidden" name="city" value="{{ $city->bx_code }}">
+		<input type="hidden" name="city_name" value="{{ $city->name ?? ''}}">
 		<h3 class="popupN__title">Заказать звонок</h3>
 		<p class="popupN__intro">Оставьте ваши данные и специалист свяжется с вами <span class="intro_red">в&nbspтечение&nbsp5&nbspминут</span></p>
 		<input required placeholder="Ваш телефон" name="phone" type="tel" class="inputN popupN__input">
