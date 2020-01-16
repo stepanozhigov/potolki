@@ -139,7 +139,7 @@ class FeedbackController extends Controller
 
         
 
-        if($request->city == 117){
+        if($request->city == 792){
             $description = $request->city_name;
         }else{
             $description = null;
