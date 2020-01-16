@@ -33,4 +33,4 @@ class Lead extends Model
             'city'  =>  $this->city
 		]);
 	}
-} 
+}
