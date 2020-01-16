@@ -30,8 +30,7 @@ class Lead extends Model
             'name'  =>  $this->name,
             'phone' =>  $this->phone,
             'direction' =>  $this->direction,
-			'city'  =>  $this->city,
-			'comment'   =>  '1'
+            'city'  =>  $this->city
 		]);
 	}
-}
+} 
