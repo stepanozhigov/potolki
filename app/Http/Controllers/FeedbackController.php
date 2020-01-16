@@ -137,11 +137,11 @@ class FeedbackController extends Controller
         $visits = "";
         $arVisits = session('visits');
 
-        if($city->bx_code == 792){
-            $description = $city->name;
-        }else{
-            $description = '';
-        }
+        // if($city->bx_code == 792){
+        //     $description = $city->name;
+        // }else{
+        //     $description = '';
+        // }
 
 		$lead = Lead::create([
 			'name'	=> $request->name,
@@ -150,7 +150,7 @@ class FeedbackController extends Controller
 			'direction_id' => 56,
 			'roistat'	=>	$request->cookie('roistat_visit'),
             'visits'	=>	$arVisits,
-            'description' => $description
+            // 'description' => $description
 		]);
 
 		ProcessFeedback::dispatch($lead);
