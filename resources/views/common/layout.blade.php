@@ -91,8 +91,12 @@
     <div id="app">
         @yield('content')
     </div>
-    @if ($city->bx_code === 528)
+
+</body>
+
     <!-- Pixel -->
+    @if ($city->bx_code === 528)
+    
     <script type="text/javascript">
         (function (d, w) {
             var n = d.getElementsByTagName("script")[0],
@@ -107,16 +111,9 @@
                     } else { f(); }
         })(document, window);
     </script>
-    <!-- /Pixel -->
+    
     @endif
-</body>
-
-<!-- <script>
-        (function(w,d,u){
-                var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/60000|0);
-                var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
-        })(window,document,'https://bitrix-ts.ru/upload/crm/site_button/loader_1_82uuho.js');
-</script> -->
+    <!-- /Pixel -->
 
 <script async type="text/javascript">
     function downloadJSAtOnload() {
