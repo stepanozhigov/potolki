@@ -95,7 +95,7 @@
 </body>
 
     <!-- Pixel -->
-    @if ($city->bx_code === 528)
+    @if ($city->bx_code == 528)
     
     <script type="text/javascript">
         (function (d, w) {
