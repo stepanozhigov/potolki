@@ -94,9 +94,8 @@
 	</style>
     @include('common.headerCeilingsForm')
 	    <section class="ceilingsForm container">
-	        <div class="ceilingsForm__banner b-texture b-texture_sand snow-container">
-				<img src="/img/quiz/new_year/New_Year_Border.png" alt="New Year" class="new_year_quiz">
-	            <p class="ceilingsForm__overtitle">Новогоднее предложение</p>
+	        <div class="ceilingsForm__banner b-texture b-texture_sand">
+	            <p class="ceilingsForm__overtitle">Экспресс расчёт за 30 секунд</p>
 	            <p class="ceilingsForm__title">Получите расчёт<br>натяжного потолка<br>и <span style="color: #dc1414">подарок</span></p>
 	            <a data-src="#popup_ceilingsform" href="javascript:void(0);" class="buttonN buttonN-red js-show">Получить расчёт</a>
 	            <p class="ceilingsForm__agreement">Оставляя контактную информацию, вы <br> соглашаетесь на <a href="/sochi/agreement">обработку персональных данных</a> </p>
@@ -156,7 +155,7 @@
 					</section>
 					<section class="ceilingsform__step ceilingsform__step_finish ">
 						<p class="ceilingsform__desc">Введите номер телефона и получите расчёт на WhatsApp и СМС в течении <span style="color: red">5&nbspминут.</span></p>
-						<input class="input form__input" type="tel" name="phone" required="" placeholder="Ваш телефон">
+						<input class="input form__input" type="tel" name="phone" pattern="[\+]\d{1}\s[\(]\d{3}[\)]\s\d{3}[\-]\d{2}[\-]\d{2}" minlength="18" maxlength="18" required placeholder="Ваш телефон">
 						<button type="submit" class="ceilingsform__submit">Получить расчёт и подарок</button>
 						<p class="ceilingsform__agreement">Оставляя контактную информацию, вы соглашаетесь на <a href="/sochi/agreement">обработку персональных данных</a> </p>
 					</section>

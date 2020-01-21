@@ -73,7 +73,7 @@
 
     &__overtitle {
         margin: 0;
-        margin-bottom: rem(8);
+        margin-bottom: rem(16);
         color: #485058;
         font-family: $futura;
         font-size: rem(16);
@@ -83,7 +83,7 @@
         text-transform: uppercase;
 
         @include below($tablet) {
-            font-size: rem(14);
+            font-size: rem(12);
             line-height: rem(20);
             font-weight: 400;
         }
