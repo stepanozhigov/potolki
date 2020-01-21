@@ -68,7 +68,7 @@ class FeedbackController extends Controller
         if (!empty($request->message))
         {
             $res = Mail::to('adresplus@mail.ru')->send(new Survey($request->message));
- 
+
             //mail('adresplus@mail.ru, kabakovki@yandex.ru, m1r.stillrunner@gmail.com', 'Оценка сайта', $request->message);
         }
     }
@@ -134,10 +134,19 @@ class FeedbackController extends Controller
 
     public function addLead(Request $request)
     {
-        $visits = "";
+		$visits = "";
         $arVisits = session('visits');
 
-        
+        foreach ($arVisits as $id => $visit) {
+            $visits.= "Дата: {$visit['time']} \r\n";
+            $visits.= "Страница: {$visit['page']} \r\n";
+            $visits.= "Реферер: {$visit['referer']} \r\n";
+            $visits.= "utm source: {$visit['utm_source']} \r\n";
+            $visits.= "utm medium: {$visit['utm_medium']} \r\n";
+            $visits.= "utm campaign: {$visit['utm_campaign']} \r\n";
+            $visits.= "utm term: {$visit['utm_term']} \r\n";
+            $visits.= "\r\n \r\n \r\n";
+        }
 
         if($request->city == 792){
             $description = $request->city_name;
@@ -152,7 +161,7 @@ class FeedbackController extends Controller
 			'direction_id' => 56,
 			'roistat'	=>	$request->cookie('roistat_visit'),
             'visits'	=>	$arVisits,
-            'description' => $description
+            'description' => $visits.$description
 		]);
 
 		ProcessFeedback::dispatch($lead);
