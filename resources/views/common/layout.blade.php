@@ -91,7 +91,7 @@
     <div id="app">
         @yield('content')
     </div>
-    @if ($city->bx_code == 528)
+    @if ($city->bx_code === 528)
     <!-- Pixel -->
     <script type="text/javascript">
         (function (d, w) {
