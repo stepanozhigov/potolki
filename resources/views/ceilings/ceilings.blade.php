@@ -12,7 +12,7 @@
                     №1 
                 @endif
 				{!! $city->name_formatted !!}<br class="hidden-sm">
-				от 100 <span class="helvetica">₽</span>/м²
+				от 100 <span class="rouble">8</span>/м²
 			</h1>
 			<p class="hero__intro">Вызовите специалиста для<br class="hidden-sm"> замера и расчёта</p>
 			<form class="formN hero__form js-less" method="POST" action="{{ route('forms.feedback', $city) }}" id="offer-form">
