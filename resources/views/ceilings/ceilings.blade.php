@@ -184,7 +184,7 @@
     </section>
 
     <section class="other section wrapper">
-        <a href="{{ route('services', [request()->route()->city, 'deal']) }}" class="other__item is-hoverable">
+        <a href="#" class="other__item is-hoverable">
             <picture>
                 <source data-srcset="/img/templates/ceilings/other/home_deal.webp" type="image/webp" class="lazyload">
                 <img data-src="img/templates/ceilings/other/home_deal.png" loading="lazy" alt="home_deal" class="other__img lazyload">
