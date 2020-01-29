@@ -27,13 +27,10 @@
     }
 
     &__top-content {
-        padding: 65px 0 0 0;
+        padding: 25px 0 0 0;
         display: flex;
         align-items: center;
 
-        @include below($tablet){
-            padding-top: 35px;
-        }
         @media screen and (max-width: 650px){
             padding: rem(18) 0;
             align-items: center;
