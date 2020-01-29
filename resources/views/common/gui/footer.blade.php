@@ -11,7 +11,7 @@
 </div>
 
 <div class="popupN" id="popup_whatsapp">
-    @include('common.forms.whatsapp') 
+    @include('common.forms.whatsapp')
 </div>
 
 <div class="popupN" id="popup_credit">
@@ -27,7 +27,7 @@
 </div>
 
 <div class="popupN popupN-video" id="videoBlock">
-    <div class="popupN__wrapper">   
+    <div class="popupN__wrapper">
         <img src="/img/gui/close.svg" alt="close" class="popupN__close js-close">
         <iframe width="900" height="506" data-src="https://www.youtube.com/embed/ZzBDdgLxTxE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="lazyload"></iframe>
     </div>
@@ -92,7 +92,7 @@
         <nav class="footer__nav">
             <div class="nav-group footer__item">
                 <a href="javascript:void(0);" class="card-title footer__title js-open">О компании</a>
-                <a href="{{ route('dirMessage', request()->route()->city) }}" class="red-hoverable subtext subtext_white nav-group__item">Написать директору</a>
+                <a href="{{ route('dirMessage', $city) }}" class="red-hoverable subtext subtext_white nav-group__item">Написать директору</a>
                 <a href="{{ route('employees', $city) }}" class="red-hoverable subtext subtext_white nav-group__item">Сотрудники</a>
                 <a href="{{ route('vacancies', $city) }}" class="red-hoverable subtext subtext_white nav-group__item">Вакансии</a>
                 <a href="{{ route('reviews', $city) }}" class="red-hoverable subtext subtext_white nav-group__item">Отзывы</a>
@@ -110,10 +110,10 @@
                 <a href="{{ route('catalogue', ['city' => request()->route()->city, 'type' => 'reznye']) }}" class="red-hoverable subtext subtext_white nav-group__item">Резные</a>
             </div>
             <div class="nav-group footer__item">
-                <a href="{{ route('photoprint', request()->route()->city) }}" class="card-title footer__title js-open">Фотопечать</a>
-                <a href="{{ route('surfaces', request()->route()->city) }}" class="red-hoverable subtext subtext_white nav-group__item">Поверхности</a>
-                <a href="{{ route('printprice', request()->route()->city) }}" class="red-hoverable subtext subtext_white nav-group__item">Цены</a>
-                <a href="{{ route('photobank', request()->route()->city) }}" class="red-hoverable subtext subtext_white nav-group__item">Каталог</a>
+                <a href="{{ route('photoprint', $city) }}" class="card-title footer__title js-open">Фотопечать</a>
+                <a href="{{ route('surfaces', $city) }}" class="red-hoverable subtext subtext_white nav-group__item">Поверхности</a>
+                <a href="{{ route('printprice', $city) }}" class="red-hoverable subtext subtext_white nav-group__item">Цены</a>
+                <a href="{{ route('photobank', $city) }}" class="red-hoverable subtext subtext_white nav-group__item">Каталог</a>
             </div>
             <div class="nav-group footer__item">
                 <a href="javascript:void(0);" class="card-title footer__title js-open">Услуги</a>

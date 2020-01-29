@@ -81,12 +81,14 @@ Route::prefix('/ajax')->group(function () {
     Route::get('/portfolio/{type_id}/photos', 'AjaxController@getPortfolioPhotos')->name('ajaxPortfolioPhotos');
 });
 
-Route::get('/payment', 'TransactionController@index')->name('payment');
+Route::post('/transaction/result', 'TransactionController@result')->name('transaction.result');
+Route::get('/transaction/success', 'TransactionController@success')->name('transaction.success');
+Route::get('/transaction/err', 'TransactionController@err')->name('transaction.err');
 
 Route::prefix('/{city}')->group(function () {
 
     Route::get('/', 'PageController@ceilings')->name('ceilings');
-
+	Route::get('/payment', 'TransactionController@index')->name('payment');
     Route::get('/clone', 'PageController@ceilingsClone')->name('ceilingsClone');
 
     Route::get('/calculator/{type?}', 'PageController@calculator')->name('calculator');
