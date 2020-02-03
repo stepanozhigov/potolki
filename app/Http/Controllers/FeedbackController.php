@@ -24,8 +24,8 @@ class FeedbackController extends Controller
             $desc.= "{$question}: {$answer} \r\n";
         }
         $data = [
-            'title' => 'Новый результат опроса',
-            'name'  =>  'Новый результат опроса',
+            'title' => 'Квиз',
+            'name'  =>  'Квиз',
             'phone' =>  $request->phone,
             'direction' =>  56,
             'description'   =>  $desc,
@@ -46,7 +46,7 @@ class FeedbackController extends Controller
         $desc.= "Подарок: ". $request->gift." \r\n";
 
 		$lead = Lead::create([
-			'name'	=> 'Новый результат опроса',
+			'name'	=> 'Квиз',
 			'phone'	=> $request->phone,
 			'city_id' => $request->city,
 			'direction_id' => 56,
