@@ -21,7 +21,7 @@
                 @csrf
                 <input type="hidden" name="city" value="{{ $city->bx_code ?? '' }}">
                 <input required name="name" type="text" placeholder="Ваше имя" class="input service__input">
-                <input required name="phone" type="tel" placeholder="Ваш телефон" class="input service__input">
+                <input required name="phone" type="tel" placeholder="Ваш телефон" class="input service__input" pattern="[\+]\d{1}\s[\(]\d{3}[\)]\s\d{3}[\-]\d{2}[\-]\d{2}" minlength="18" maxlength="18">
                 <button type="submit" class="button button_red service__button">Вызвать замерщика</button>
                 <p class="service__agreement subtext">Оставляя контактную информацию, вы соглашаетесь на <a href="{{ route('agreement', $city) }}">обработку персональных данных</a> </p>
             </form>

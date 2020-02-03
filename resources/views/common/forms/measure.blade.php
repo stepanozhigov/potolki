@@ -11,7 +11,7 @@
             <input type="hidden" name="city" value="{{ $city->bx_code ?? '' }}">
             <input type="hidden" name="city_name" value="{{ $city->name ?? ''}}">
             <input class="input form__input form__input_horiz" type="text" name="name" required placeholder="Ваше имя">
-            <input class="input form__input form__input_horiz" type="tel" name="phone" required placeholder="Ваш телефон">
+            <input class="input form__input form__input_horiz" type="tel" name="phone" required placeholder="Ваш телефон" pattern="[\+]\d{1}\s[\(]\d{3}[\)]\s\d{3}[\-]\d{2}[\-]\d{2}" minlength="18" maxlength="18">
             <button class="button form__button">Вызвать замерщика</button>
             <p class="subtext subtext_center form__agreement">Оставляя контактную информацию, вы соглашаетесь на <a href="{{ route('agreement', $city) }}">обработку персональных данных</a> </p>
         </form>
