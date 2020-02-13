@@ -474,5 +474,10 @@ class PageController extends Controller
             'city'  =>  $city
         ]);
     }
-
+    public function quiz3 (Request $request, City $city)
+    {
+        return view('ceilings.quiz3', [
+            'city'  =>  $city
+        ]);
+    }
 }

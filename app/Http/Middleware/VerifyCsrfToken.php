@@ -15,6 +15,7 @@ class VerifyCsrfToken extends Middleware
         '/forms/proxy-lead',
         '/forms/search-phone',
         'forms.feedback',
-        '/forms/add-lead'
+        '/forms/add-lead',
+        '/forms/quiz2'
     ];
 }

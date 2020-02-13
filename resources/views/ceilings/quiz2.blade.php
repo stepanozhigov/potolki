@@ -2,27 +2,26 @@
 
 @section('content')
 	<style type="text/css">
-	* {
-		hyphens: none !important;
-		word-break      : normal;
-	}
+		* {
+			hyphens: none !important;
+			word-break      : normal;
+		}
 	#popup_callback {
-    z-index: 102;
-    z-index: 99999999999999999;
-		align-items: center;
+	    z-index: 102;
+	    z-index: 99999999999999999;
+			align-items: center;
 
-
-}
-#popup_callback .popup__close {
-	top: 39px !important;
-	right: 39px !important;
-}
+		}
+	#popup_callback .popup__close {
+		top: 39px !important;
+		right: 39px !important;
+	}
 
 	.overflowed {
 		overflow: initial;
 	}
 	.overlay {
-		display: none !important;
+		display: none !important; 
 	}
 	.page {
 		position: relative;

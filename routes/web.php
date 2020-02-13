@@ -61,8 +61,7 @@ Route::get('/geo/locate', function () {
     {
         $city = City::where('code', $codes[$locationCity])->first()->toArray();
     }
-    //Log::info(['location'   =>  $location, 'city' => $city]);
-    //dd($location);
+
     return response()->json(['location' => $location->toArray(),'city' => $city]);
 });
 
@@ -158,7 +157,8 @@ Route::prefix('/{city}')->group(function () {
 
 
     Route::get('/quiz', 'PageController@quiz')->name('quiz');
-    Route::get('/quiz2', 'PageController@quiz2')->name('quiz2');
+    Route::get('/quiz2', 'PageController@quiz3')->name('quiz2');
+    // Route::get('/quiz3', 'PageController@quiz3')->name('quiz3');
 });
 
 Route::post('/forms/feedback', 'FeedbackController@addLead');
