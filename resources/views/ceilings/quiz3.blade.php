@@ -6,6 +6,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<!-- <link rel="stylesheet" href="https://unpkg.com/vue-range-component@1.0.2/dist/vue-range-slider.min.css"> -->
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vue-slider-component@latest/theme/default.css">
+		<? if (!empty($city)): ?>
+			<script type="text/javascript">
+				window.city = <?= json_encode($city) ?>
+			</script>
+		<? endif ?>
 		<style>
 			@font-face {
 				font-family: "Helvetica Neue";
@@ -421,6 +426,7 @@
 						<p class="intro form__intro">
 							Введите номер телефона и получите расчёт на WhatsApp и СМС в течении <span class="intro_red">5&nbspминут.</span>
 						</p>
+						<input type="hidden" name="city" value="{{ $city->bx_code }}">
 						<the-mask :masked="true" type="tel" v-model="questions.phone" class="input form__input" :mask="'+# (###) ###-##-##'"></the-mask>
 						<button :disabled="!validated" @click.prevent="submit" class="button form__button">Получить расчёт и подарок</button>
 					</form>
@@ -479,6 +485,14 @@
 	        gtag('config', 'UA-85472546-4');
 	    </script>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script>
+	(function(w, d, s, h, id) {
+		w.roistatProjectId = id; w.roistatHost = h;
+		var p = d.location.protocol == "https:" ? "https://" : "http://";
+		var u = /^.*roistat_visit=[^;]+(.*)?$/.test(d.cookie) ? "/dist/module.js" : "/api/site/1.0/"+id+"/init";
+		var js = d.createElement(s); js.charset="UTF-8"; js.async = 1; js.src = p+h+u; var js2 = d.getElementsByTagName(s)[0]; js2.parentNode.insertBefore(js, js2);
+	})(window, document, 'script', 'cloud.roistat.com', '9fcae1a19bf23011571b33710b6573d5');
+	</script>
 
 	<script type="text/javascript">
 		const quiz = new Vue({
@@ -533,7 +547,7 @@
 						method: 'post',
 						data: {
 							phone: quiz.questions.phone,
-							// city: window.city.bx_code,
+							city: window.city.bx_code,
 							area: quiz.questions.area,
 							lamps: quiz.questions.lamps,
 							gift: quiz.gifts[quiz.questions.gift].title
