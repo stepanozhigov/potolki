@@ -480,4 +480,11 @@ class PageController extends Controller
             'city'  =>  $city
         ]);
     }
+
+    public function quiz4 (Request $request, City $city)
+    {
+        return view('quiz.quiz2', [
+            'city'  =>  $city
+        ]);
+    }
 }

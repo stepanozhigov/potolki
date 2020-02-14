@@ -158,6 +158,7 @@ Route::prefix('/{city}')->group(function () {
 
     Route::get('/quiz', 'PageController@quiz')->name('quiz');
     Route::get('/quiz2', 'PageController@quiz3')->name('quiz2');
+    Route::get('/quiz3', 'PageController@quiz4')->name('quiz3');
     // Route::get('/quiz3', 'PageController@quiz3')->name('quiz3');
 });
 
