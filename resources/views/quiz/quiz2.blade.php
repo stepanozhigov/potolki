@@ -8,7 +8,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Квиз опрос. Твой стиль</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" rel="stylesheet">
     <link href="{{ asset('css/quiz.css') }}" rel="stylesheet">
 
     <? if (!empty($city)): ?>
