@@ -153,13 +153,13 @@ button[disabled]{
 
     &-title{
         font-size: rem(28);
-        font-weight: 700;
-        color: #505050;
-        letter-spacing: rem(-0.3);
         margin-bottom: rem(22);
         text-align: center;
     }
 
+    &-intro{
+        font-family: $helvetica;
+    }
 
     //animation
     &-enter {
@@ -215,7 +215,7 @@ button[disabled]{
     }
     .contact{
         @include size(24);
-        @include size-md(16);
+        @include size-md(18);
         order: 2;
         justify-content: space-between;
         position: relative;

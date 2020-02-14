@@ -19,7 +19,7 @@
                                 </svg>
                                 8 800 333-22-68
                             </a>
-                            <div class="callback">Заказать звонок</div>
+                            <div v-if="step == 0" class="callback" @click="openCallModal">Заказать звонок</div>
                         </div>
                     </div>
                 </div>    
@@ -244,6 +244,31 @@
                 </div>
             </section>
         </transition>
+
+        <modal v-if="callModal" @close="openCallModal">
+            <div slot="content">
+                <p class="modal-title">Заказать звонок</p>
+                <p class="modal-intro">Оставьте ваши данные и специалист свяжется с вами <span class="modal-marck">в течение 5 минут</span></p>
+                <form class="form" @submit="submitForm">
+                    <input type="text" v-model="questions.name" class="input input_name" placeholder="Введите ваше имя"/>
+                    <div>
+                        <masked-input 
+                            type="tel" 
+                            autocomplete="off" 
+                            required
+                            v-model="questions.phoneclear"
+                            placeholder="Введите ваш номер*"
+                            mask="\+\7 (111) 111-11-11"
+                            @input="questions.phone = arguments[1]"
+                            class="input"
+                            />
+                    </div>
+                    <button :disabled="!isPhoneValid" class="btn">Заказать звонок</button>
+                </form>
+                <p class="alarm">Оставляя контактную информацию, вы соглашаетесь на обработку персональных данных</p>
+            </div>
+        </modal>
+
     </div>
 
 </template>
@@ -252,6 +277,7 @@
     import axios from 'axios'
     import VueSlider from 'vue-slider-component'
     import Vue2TouchEvents from 'vue2-touch-events'
+    Vue.component('modal', require('../components/ModalForm.vue').default)
     Vue.use(Vue2TouchEvents)
     const pattern = /^[0-9]+$/;
 
@@ -260,6 +286,7 @@
             return {
                 step: 0,
                 size_md: false,
+                callModal: false,
                 questions: {
 					date: 'В течении месяца',
 					phone: '',
@@ -267,6 +294,7 @@
                     gift: 0,
                     area: 50,
 					lamps: 10,
+                    name: ''
 				},
                 gifts: [
 					{
@@ -303,6 +331,9 @@
             lengthTooltip: function (value) {
 				return value + ' ';
 			},
+            openCallModal: function () {
+                this.callModal = !this.callModal
+            },
             submitForm (e){
                 e.preventDefault();
 
@@ -311,7 +342,6 @@
                     text: 'Тип сайта: '+this.questions.type+'\nДизайн сайта: '+this.questions.disign+'\nБюджет: '+this.questions.price+'\nПодарок: '+ this.gifts[this.questions.gift].title,
                     tag: 'Квиз'
                 }).then(response => (
-                    console.log(this.gifts[this.questions.gift].title),
                     this.step = 5,
                     this.questions.type = '',
                     this.questions.disign = '',
