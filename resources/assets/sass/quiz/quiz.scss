@@ -32,6 +32,11 @@
         @include row-flex();
         position: relative;
 
+        @include above($break_sm) {
+            padding-left: rem(20);
+            padding-right: rem(20);
+        }
+
         &_item{
             @include col();
             display: flex;
