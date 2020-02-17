@@ -54,7 +54,6 @@
 
         gtag('config', 'UA-85472546-4');
     </script>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script>
         (function(w, d, s, h, id) {
             w.roistatProjectId = id; w.roistatHost = h;

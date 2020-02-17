@@ -43,6 +43,7 @@ class FeedbackController extends Controller
 		$desc = "";
         $desc.= "Площадь: ". $request->area." \r\n";
         $desc.= "Светильников: ". $request->lamps." \r\n";
+        $desc.= "Дата: ". $request->times." \r\n";
         $desc.= "Подарок: ". $request->gift." \r\n";
 
 		$lead = Lead::create([

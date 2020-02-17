@@ -5,14 +5,11 @@
             <header class="header" :class="{ mob: step > 0 }">
                 <div class="header__wrapper">
                     <div class="header__items">
-                        <a href="/" class="header__items_item logo"><img src="/img/quiz/logo.svg" alt="logo"></a>
+                        <a href="/" class="header__items_item logo">
+                            <img src="/img/quiz/logo.svg" alt="logo">
+                            <p class="logo_name">Фабрика потолков</p>
+                        </a>
                         <div class="header__items_item contact">
-                            <a href="" class="whatsapp">
-                                <svg class="icon" width="16px" height="19px">
-                                    <use xlink:href="#whatsapp"></use>
-                                </svg>
-                                WhatsApp
-                            </a>
                             <a href="" class="phone">
                                 <svg class="icon" width="10px" height="19px">
                                     <use xlink:href="#phone"></use>
@@ -34,7 +31,8 @@
                             <div class="hero__items_item">
                                 <p class="hero_intro">Пройдите тест за 30 секунд</p>
                                 <h1 class="hero_title">Получите расчёт натяжного потолка и <span class="mark">подарок</span></h1>
-                                <button class="btn" @click="step = 1">Получить расчёт</button>
+                                <button class="btn btn-pulse" @click="startQuiz">Получить расчёт</button>
+                                <a href="/" class="hero_link">Перейти на сайт</a>
                             </div>
                         </div>
                     </div>
@@ -46,6 +44,9 @@
             <section class="quest" v-if="step >= 1">
                 <div class="quest__wrapper">
                     <div class="quest__items">
+                        <svg class="icon close" width="20px" height="20px" @click="step = 0">
+                            <use xlink:href="#close"></use>
+                        </svg>
                         <div class="quest__items_item quest_content" v-if="step == 1">
                             <div class="quest_img">
                                 <img src="/img/quiz/234.jpg">
@@ -87,8 +88,7 @@
                                     </div>
                                 </div>
                                 <div class="quest__control">
-                                    <button class="btn btn_prev"  @click="step--">Назад</button>
-                                    <button class="btn btn_next"  @click="step++">Далее</button>
+                                    <button class="btn btn_next btn-pulse"  @click="step++">Далее</button>
                                 </div>
                             </div>
                         </div>
@@ -105,26 +105,26 @@
                                 <ul>
                                     <li>
                                         <label for="opt2-1" class="radio">
-                                            <input type="radio" v-model="questions.date" id="opt2-1" class="hidden" value="В ближайшие дни"/>
+                                            <input type="radio" v-model="questions.times" id="opt2-1" class="hidden" value="В ближайшие дни"/>
                                             <span class="label"></span>В ближайшие дни
                                         </label>
                                     </li>
                                     <li>
                                         <label for="opt2-2" class="radio">
-                                            <input type="radio" v-model="questions.date" id="opt2-2" class="hidden" value="В течении месяца"/>
+                                            <input type="radio" v-model="questions.times" id="opt2-2" class="hidden" value="В течении месяца"/>
                                             <span class="label"></span>В течении месяца
                                         </label>
                                     </li>
                                     <li>
                                         <label for="opt2-3" class="radio">
-                                            <input type="radio" v-model="questions.date" id="opt2-3" class="hidden" value="Не знаю"/>
+                                            <input type="radio" v-model="questions.times" id="opt2-3" class="hidden" value="Не знаю"/>
                                             <span class="label"></span>Не знаю
                                         </label>
                                     </li>
                                 </ul>
                                 <div class="quest__control">
                                     <button class="btn btn_prev"  @click="step--">Назад</button>
-                                    <button class="btn btn_next" @click="step++">Далее</button>
+                                    <button class="btn btn_next btn-pulse" @click="step++">Далее</button>
                                 </div>
                             </div>
                         </div>
@@ -165,12 +165,14 @@
                                 <div class="gifts_md" v-if="size_md == true">
                                     <label v-for="(gift, id) in gifts" :for="id"  class="radio_img">
                                         <input type="radio" v-model="questions.gift" name="radio" :id="id"  :value="id" class="hidden"/>
-                                        <img :src="gift.img" :alt="gift.title" class="gifts_img">
+                                        <figure class="hover_img">
+                                            <img :src="gift.img" :alt="gift.title" class="gifts_img">
+                                        </figure>
                                     </label>
                                 </div>
                                 <div class="quest__control">
                                     <button class="btn btn_prev"  @click="step--">Назад</button>
-                                    <button class="btn btn_next"  @click="step++">Далее</button>
+                                    <button class="btn btn_next btn-pulse"  @click="step++">Далее</button>
                                 </div>
                             </div>
                         </div>
@@ -197,7 +199,7 @@
                                     class="input"
                                 />
                                 <div class="quest__control quest__control_finish">
-                                    <button class="btn btn_send" :disabled="!isPhoneValid"  @click="submitForm">Получить расчёт</button>
+                                    <button class="btn btn_send btn-pulse" :disabled="!isPhoneValid"  @click="submitQuiz">Получить расчёт</button>
                                     <p class="alarm">Оставляя контактную информацию, вы соглашаетесь на <span>обработку персональных данных</span></p>
                                 </div>
                             </div>
@@ -206,7 +208,10 @@
                         <div class="quest__items_item quest_content finish" v-if="step == 5">
                             <p class="quest_intro finish">СПАСИБО!</p>
                             <p class="quest_title">Ваша заявка принята</p>
-                            <a href="/" class="btn btn_next">Перейти на сайт</a>
+                            <div class="quest__control">
+                                <a href="/" class="btn btn_next btn-pulse">Перейти на сайт</a>
+                                <button class="btn btn_prev"  @click="step = 0">Закрыть окно</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -245,11 +250,11 @@
             </section>
         </transition>
 
-        <modal v-if="callModal" @close="openCallModal">
-            <div slot="content">
+        <modal v-if="callModal" @close="closeCallModal">
+            <div slot="content" v-if="sendCall == false">
                 <p class="modal-title">Заказать звонок</p>
                 <p class="modal-intro">Оставьте ваши данные и специалист свяжется с вами <span class="modal-marck">в течение 5 минут</span></p>
-                <form class="form" @submit="submitForm">
+                <form class="form" @submit="submitCall">
                     <input type="text" v-model="questions.name" class="input input_name" placeholder="Введите ваше имя"/>
                     <div>
                         <masked-input 
@@ -267,6 +272,17 @@
                 </form>
                 <p class="alarm">Оставляя контактную информацию, вы соглашаетесь на обработку персональных данных</p>
             </div>
+            <div slot="content" v-if="sendCall == true">
+                <p class="modal-title">Спасибо, <br> заявка отправлена</p>
+                <p class="modal-intro">Наш специалист свяжется с вами <span class="modal-marck">в течение 5 минут</span></p>
+            </div>
+        </modal>
+
+        <modal v-if="formError" @close="openFormError">
+            <div slot="content">
+                <p class="modal-title">Вы уже отправляли заявку!</p>
+                <p class="modal-intro">В ближайшее время мы свяжется с вами.</p>
+            </div>
         </modal>
 
     </div>
@@ -277,6 +293,8 @@
     import axios from 'axios'
     import VueSlider from 'vue-slider-component'
     import Vue2TouchEvents from 'vue2-touch-events'
+    import VueCookie from 'vue-cookie'
+    Vue.use(VueCookie);
     Vue.component('modal', require('../components/ModalForm.vue').default)
     Vue.use(Vue2TouchEvents)
     const pattern = /^[0-9]+$/;
@@ -285,10 +303,12 @@
         data: function () {
             return {
                 step: 0,
+                sendCall: false,
                 size_md: false,
                 callModal: false,
+                formError: false,
                 questions: {
-					date: 'В течении месяца',
+					times: 'В течении месяца',
 					phone: '',
                     phoneclear: '',
                     gift: 0,
@@ -332,22 +352,57 @@
 				return value + ' ';
 			},
             openCallModal: function () {
-                this.callModal = !this.callModal
+                if(Vue.cookie.get('form_send')){
+                    this.openFormError()
+                }else{
+                   this.callModal = true
+                }
             },
-            submitForm (e){
+            closeCallModal: function () {
+                this.callModal = false
+            },
+            openFormError: function () {
+                this.formError = !this.formError
+            },
+            startQuiz: function () {
+                if(Vue.cookie.get('form_send')){
+                    this.openFormError()
+                }else{
+                    this.step = 1
+                }
+            },
+            submitQuiz (e){
                 e.preventDefault();
 
-                axios.post('/lead', {
-                    phone: this.questions.phone,
-                    text: 'Тип сайта: '+this.questions.type+'\nДизайн сайта: '+this.questions.disign+'\nБюджет: '+this.questions.price+'\nПодарок: '+ this.gifts[this.questions.gift].title,
-                    tag: 'Квиз'
+                axios.post('/forms/quiz2', {
+                    phone: '8'+this.questions.phone,
+                    city: window.city.bx_code,
+                    area: this.questions.area,
+                    lamps: this.questions.lamps,
+                    times: this.questions.times,
+                    gift: this.gifts[this.questions.gift].title
                 }).then(response => (
                     this.step = 5,
-                    this.questions.type = '',
-                    this.questions.disign = '',
-                    this.questions.price = '',
-                    this.questions.phoneclear = ''
+                    Vue.cookie.set('form_send', true, 1),
+                    window.yaCounter40202559.reachGoal('quiz'),
+                    ga.getAll()[0].send('event', 'quiz', 'send')
                 ))
+                
+            },
+            submitCall (e){
+                e.preventDefault();
+
+                axios.post('/forms/add-lead', {
+                    phone: '8'+this.questions.phone,
+                    city: window.city.bx_code,
+                    name: this.questions.name
+                }).then(response => (
+                    this.sendCall = true,
+                    Vue.cookie.set('form_send', true, 1),
+                    window.yaCounter40202559.reachGoal('form-sub'),
+                    ga.getAll()[0].send('event', 'forms', 'sub')
+                ))
+                
             },
             nextGift: function () {
 				let count = this.gifts.length,
