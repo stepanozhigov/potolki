@@ -53,10 +53,10 @@
                             </div>
                             <div class="quest__titles">
                                 <p class="quest_intro">Вопрос 1/3</p>
-                                <p class="quest_title">Укажите площадь и количество светильников</p>
+                                <p class="quest_title">Укажите параметры вашего помещения</p>
                             </div>
                             
-                            <div class="quest__list quest__range">
+                            <div class="quest__list quest__range quest__range_pad">
                                 <div class="quest__range_wrapper">
                                     <p class="quest__range_title">Площадь помещения</p>
                                     <div class="quest__range_item">
