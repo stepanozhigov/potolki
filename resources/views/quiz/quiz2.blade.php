@@ -12,7 +12,7 @@
 
     <? if (!empty($city)): ?>
 		<script type="text/javascript">
-			window.city = <?= json_encode($city) ?>
+            window.city = <?= json_encode($city) ?>
 		</script>
 	<? endif ?>
 </head>

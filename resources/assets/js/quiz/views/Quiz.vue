@@ -10,11 +10,11 @@
                             <p class="logo_name">Фабрика потолков</p>
                         </a>
                         <div class="header__items_item contact">
-                            <a href="" class="phone">
+                            <a :href="'tel:'+phoneSite" class="phone">
                                 <svg class="icon" width="10px" height="19px">
                                     <use xlink:href="#phone"></use>
                                 </svg>
-                                8 800 333-22-68
+                                {{phoneSite}}
                             </a>
                             <div v-if="step == 0" class="callback" @click="openCallModal">Заказать звонок</div>
                         </div>
@@ -307,6 +307,7 @@
                 size_md: false,
                 callModal: false,
                 formError: false,
+                phoneSite:  window.city.phone,
                 questions: {
 					times: 'В течении месяца',
 					phone: '',
