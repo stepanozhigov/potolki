@@ -251,6 +251,7 @@ button[disabled]{
         min-height: rem(200);
         display: flex;
         align-items: center;
+        justify-content: center;
         
         .form{
             .input{
