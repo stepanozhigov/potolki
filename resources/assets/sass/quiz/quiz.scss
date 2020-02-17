@@ -122,33 +122,7 @@
             margin-right: rem(8);
         }
     }
-    .callback{
-        
-        display: flex;
-        letter-spacing: rem(-0.2);
-        color: $red;
-        position: relative;
-        margin-left: rem(16);
-        cursor: pointer;
 
-        @include above($break_sm) {
-            margin-bottom: rem(10);
-        }
-
-        &::before{
-            content: '';
-            position: absolute;
-            height: rem(1);
-            width: 100%;
-            border-bottom: dashed rem(1) $red;
-            bottom: rem(0);
-            transition: all .2s;
-        }
-        &:hover::before{
-            bottom: rem(-2);
-        }
-        
-    }
 }
 
 .hero{

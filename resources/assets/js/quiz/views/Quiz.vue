@@ -16,7 +16,6 @@
                                 </svg>
                                 {{phoneSite}}
                             </a>
-                            <div v-if="step == 0" class="callback" @click="openCallModal">Заказать звонок</div>
                         </div>
                     </div>
                 </div>    
@@ -250,34 +249,6 @@
             </section>
         </transition>
 
-        <modal v-if="callModal" @close="closeCallModal">
-            <div slot="content" v-if="sendCall == false">
-                <p class="modal-title">Заказать звонок</p>
-                <p class="modal-intro">Оставьте ваши данные и специалист свяжется с вами <span class="modal-marck">в течение 5 минут</span></p>
-                <form class="form" @submit="submitCall">
-                    <input type="text" v-model="questions.name" class="input input_name" placeholder="Введите ваше имя"/>
-                    <div>
-                        <masked-input 
-                            type="tel" 
-                            autocomplete="off" 
-                            required
-                            v-model="questions.phoneclear"
-                            placeholder="Введите ваш номер*"
-                            mask="\+\7 (111) 111-11-11"
-                            @input="questions.phone = arguments[1]"
-                            class="input"
-                            />
-                    </div>
-                    <button :disabled="!isPhoneValid" class="btn">Заказать звонок</button>
-                </form>
-                <p class="alarm">Оставляя контактную информацию, вы соглашаетесь на обработку персональных данных</p>
-            </div>
-            <div slot="content" v-if="sendCall == true">
-                <p class="modal-title">Спасибо, <br> заявка отправлена</p>
-                <p class="modal-intro">Наш специалист свяжется с вами <span class="modal-marck">в течение 5 минут</span></p>
-            </div>
-        </modal>
-
         <modal v-if="formError" @close="openFormError">
             <div slot="content">
                 <p class="modal-title">Вы уже отправляли заявку!</p>
@@ -303,9 +274,7 @@
         data: function () {
             return {
                 step: 0,
-                sendCall: false,
                 size_md: false,
-                callModal: false,
                 formError: false,
                 phoneSite:  window.city.phone,
                 questions: {
@@ -314,8 +283,7 @@
                     phoneclear: '',
                     gift: 0,
                     area: 50,
-					lamps: 10,
-                    name: ''
+					lamps: 10
 				},
                 gifts: [
 					{
@@ -352,16 +320,6 @@
             lengthTooltip: function (value) {
 				return value + ' ';
 			},
-            openCallModal: function () {
-                if(Vue.cookie.get('form_send')){
-                    this.openFormError()
-                }else{
-                   this.callModal = true
-                }
-            },
-            closeCallModal: function () {
-                this.callModal = false
-            },
             openFormError: function () {
                 this.formError = !this.formError
             },
@@ -387,21 +345,6 @@
                     Vue.cookie.set('form_send', true, 1),
                     window.yaCounter40202559.reachGoal('quiz'),
                     ga.getAll()[0].send('event', 'quiz', 'send')
-                ))
-                
-            },
-            submitCall (e){
-                e.preventDefault();
-
-                axios.post('/forms/add-lead', {
-                    phone: '8'+this.questions.phone,
-                    city: window.city.bx_code,
-                    name: this.questions.name
-                }).then(response => (
-                    this.sendCall = true,
-                    Vue.cookie.set('form_send', true, 1),
-                    window.yaCounter40202559.reachGoal('form-sub'),
-                    ga.getAll()[0].send('event', 'forms', 'sub')
                 ))
                 
             },
