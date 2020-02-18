@@ -1966,7 +1966,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 
@@ -3385,22 +3384,24 @@ var render = function() {
       _c("header", { staticClass: "header", class: { mob: _vm.step > 0 } }, [
         _c("div", { staticClass: "header__wrapper" }, [
           _c("div", { staticClass: "header__items" }, [
-            _c(
-              "a",
-              {
-                staticClass: "header__items_item logo",
-                attrs: { href: "/" + _vm.cityLink }
-              },
-              [
-                _c("img", {
-                  attrs: { src: "/img/quiz/logo.svg", alt: "logo" }
-                }),
-                _vm._v(" "),
-                _c("p", { staticClass: "logo_name" }, [
-                  _vm._v("Фабрика потолков")
-                ])
-              ]
-            ),
+            _c("div", { staticClass: "header__items_item logo" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "logo_link",
+                  attrs: { href: "/" + _vm.cityLink }
+                },
+                [
+                  _c("img", {
+                    attrs: { src: "/img/quiz/logo.svg", alt: "logo" }
+                  })
+                ]
+              ),
+              _vm._v(" "),
+              _c("p", { staticClass: "logo_name" }, [
+                _vm._v("Фабрика потолков")
+              ])
+            ]),
             _vm._v(" "),
             _c("div", { staticClass: "header__items_item contact" }, [
               _c(
@@ -3419,9 +3420,9 @@ var render = function() {
                     [_c("use", { attrs: { "xlink:href": "#phone" } })]
                   ),
                   _vm._v(
-                    "\n                            " +
+                    "\n                        " +
                       _vm._s(_vm.phoneSite) +
-                      "\n                        "
+                      "\n                    "
                   )
                 ]
               )
@@ -3633,7 +3634,7 @@ var render = function() {
                                   _vm._v(" "),
                                   _c("span", { staticClass: "label" }),
                                   _vm._v(
-                                    "В ближайшие дни\n                                    "
+                                    "В ближайшие дни\n                                "
                                   )
                                 ]
                               )
@@ -3681,7 +3682,7 @@ var render = function() {
                                   _vm._v(" "),
                                   _c("span", { staticClass: "label" }),
                                   _vm._v(
-                                    "В течении месяца\n                                    "
+                                    "В течении месяца\n                                "
                                   )
                                 ]
                               )
@@ -3729,7 +3730,7 @@ var render = function() {
                                   _vm._v(" "),
                                   _c("span", { staticClass: "label" }),
                                   _vm._v(
-                                    "Не знаю\n                                    "
+                                    "Не знаю\n                                "
                                   )
                                 ]
                               )
@@ -3852,52 +3853,24 @@ var render = function() {
                                         attrs: {
                                           src: _vm.currentGift.img,
                                           alt: ""
-                                        },
-                                        on: { click: _vm.nextGift }
+                                        }
                                       })
                                     ]
                                   ),
                                   _vm._v(" "),
                                   _c(
-                                    "svg",
-                                    {
-                                      attrs: {
-                                        width: "70",
-                                        height: "50",
-                                        xmlns: "http://www.w3.org/2000/svg",
-                                        "xmlns:svg":
-                                          "http://www.w3.org/2000/svg",
-                                        id: "icon-swipe"
-                                      }
-                                    },
-                                    [
-                                      _c("path", {
-                                        attrs: {
-                                          d:
-                                            "m57,7.5625l-6.45,6.5625l-1.51875,-1.5375l3.8625,-3.9375l-10.89375,0l0,-2.175l10.89375,0l-3.88125,-3.9375l1.51875,-1.5375l6.46875,6.5625z",
-                                          fill: "black",
-                                          id: "right"
-                                        }
-                                      }),
-                                      _vm._v(" "),
-                                      _c("path", {
-                                        attrs: {
-                                          d:
-                                            "m28,8.65l-10.89375,0l3.8625,3.9375l-1.51875,1.5375l-6.45,-6.5625l6.46875,-6.5625l1.51875,1.5375l-3.88125,3.9375l10.89375,0l0,2.175z",
-                                          fill: "black",
-                                          id: "left"
-                                        }
-                                      }),
-                                      _vm._v(" "),
-                                      _c("path", {
-                                        attrs: {
-                                          d:
-                                            "m52.4074,23.40948l-9.18666,-5.42519a4.19548,4.19548 0 0 0 -2.40517,-0.79569a4.2859,4.2859 0 0 0 -3.11044,1.3563l0,-9.04198a4.44866,4.44866 0 0 0 -1.28396,-3.14661a4.30398,4.30398 0 0 0 -3.12853,-1.3563l0,0a4.41249,4.41249 0 0 0 -4.35824,4.44866l0,20.14554l-1.24779,-1.26588a8.49946,8.49946 0 0 0 -6.07621,-2.56792a8.58988,8.58988 0 0 0 -3.7253,0.94037a2.27858,2.27858 0 0 0 -1.24779,1.66372a2.38708,2.38708 0 0 0 0.66911,1.95307l13.90657,14.15975a13.72573,13.72573 0 0 0 9.60259,3.92422a13.97891,13.97891 0 0 0 13.83423,-14.08741l0,-7.08892a4.37632,4.37632 0 0 0 -2.24241,-3.81572l0,-0.00001zm0,10.85038a11.68224,11.68224 0 0 1 -11.59182,11.845l0,0a11.41098,11.41098 0 0 1 -7.97503,-3.25511l-13.96082,-14.15975a6.0943,6.0943 0 0 1 2.7126,-0.63294l0,0a6.18472,6.18472 0 0 1 4.46674,1.89882l2.76685,2.80301a0.94037,0.94037 0 0 0 0.65102,0.28934l0.3436,0a2.13391,2.13391 0 0 0 1.3563,-1.98924l0,-21.61034a2.11582,2.11582 0 0 1 2.09774,-2.15199l0,0a2.13391,2.13391 0 0 1 2.11582,2.15199l0,12.49602a1.08504,1.08504 0 0 0 0.70527,1.0127l0.36168,0a1.04887,1.04887 0 0 0 0.81378,-0.39785l1.8084,-2.35092a2.09774,2.09774 0 0 1 1.73606,-0.74144a2.0254,2.0254 0 0 1 1.22971,0.41593l9.25899,5.42519a2.13391,2.13391 0 0 1 1.06695,1.8084l0.03617,7.14317l-0.00001,0.00001z",
-                                          fill: "black",
-                                          id: "hand"
-                                        }
+                                    "div",
+                                    { staticClass: "gifts__paginated" },
+                                    _vm._l(_vm.gifts, function(gift, id) {
+                                      return _c("span", {
+                                        staticClass: "gifts__paginated_dot",
+                                        class: {
+                                          active: _vm.questions.gift === id
+                                        },
+                                        attrs: { for: id }
                                       })
-                                    ]
+                                    }),
+                                    0
                                   )
                                 ],
                                 1

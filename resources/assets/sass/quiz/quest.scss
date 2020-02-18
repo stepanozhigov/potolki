@@ -1,5 +1,9 @@
 .quest{
     overflow: hidden;
+
+    @include above($break_sm) {
+        overflow: visible;
+    }
     &__wrapper{
         @include wrapper();
         min-height: 100vh;
@@ -57,16 +61,15 @@
             grid-template-columns: rem(280) auto;
             border-radius: rem(16);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16), 0 0 8px rgba(0, 0, 0, 0.08), inset 0 -1px 0 rgba(0, 0, 0, 0.12);
-            margin-top: rem(10);
-            margin-bottom: rem(25);
+
             padding-left: rem(30);
             padding-right: rem(30);
-            min-height: rem(558);
+            min-height: rem(631);
             box-sizing: border-box;
+        }
 
-            @include above($break_md) {
-                padding-top: rem(15);
-            }
+        @include above($break_md) {
+            padding-top: rem(15);
         }
 
         &.finish{
@@ -152,7 +155,7 @@
         width: 100%;
         position: relative;
         padding-top: rem(48);
-        padding-bottom: rem(32);
+        padding-bottom: rem(64);
         grid-area: list;
         min-height: calc(100vh - 160px);
         box-sizing: border-box;
@@ -278,8 +281,7 @@
     }
 
     .close{
-        right: rem(0);
-        top: rem(15);
+        right: rem(7);
 
         @include above($break_sm) {
             right: rem(30);
@@ -333,6 +335,26 @@
     &_next{
         right: rem(-20);
     }
+
+    &__paginated{
+        margin-top: rem(16);
+        display: flex;
+        justify-content: center;
+
+        &_dot{
+            height: rem(8);
+            width: rem(8);
+            margin: 0 rem(4);
+            border-radius: 100%;
+            box-sizing: border-box;
+            background-color: #e6e8ea;
+
+            &.active{
+                background-color: $red;
+            }
+        }
+    }
+    
 }
 
 .radio_img{
