@@ -138,10 +138,10 @@ button[disabled]{
     top: rem(15);
     z-index: 10;
     cursor: pointer;
-    transition: all .33s ease-in;
+    transition: all .33s ease-out;
 
     &:hover{
-        transform: rotate(180deg);
+        transform: rotate(90deg);
     }
 }
 

@@ -1,11 +1,10 @@
 <template>
     
     <div>
-        <transition :duration="{ enter: 500, leave: 300 }" enter-active-class="animated zoomIn" leave-active-class="animated zoomOut" mode="out-in">
             <header class="header" :class="{ mob: step > 0 }">
                 <div class="header__wrapper">
                     <div class="header__items">
-                        <a href="/" class="header__items_item logo">
+                        <a :href="'/'+cityLink" class="header__items_item logo">
                             <img src="/img/quiz/logo.svg" alt="logo">
                             <p class="logo_name">Фабрика потолков</p>
                         </a>
@@ -20,26 +19,28 @@
                     </div>
                 </div>    
             </header>
-        </transition>
-        <transition :duration="{ enter: 500, leave: 300 }" enter-active-class="animated zoomIn" leave-active-class="animated zoomOut" mode="out-in">
+
             <div v-if="step == 0">
                 
                 <section class="hero">
                     <div class="hero__wrapper">
                         <div class="hero__items">
                             <div class="hero__items_item">
-                                <p class="hero_intro">Пройдите тест за 30 секунд</p>
-                                <h1 class="hero_title">Получите расчёт натяжного потолка и <span class="mark">подарок</span></h1>
-                                <button class="btn btn-pulse" @click="startQuiz">Получить расчёт</button>
-                                <a href="/" class="hero_link">Перейти на сайт</a>
+                                <div>
+                                    <p class="hero_intro">Пройдите тест за 30 секунд</p>
+                                    <h1 class="hero_title">Получите расчёт натяжного потолка и <span class="mark">подарок</span></h1>
+                                </div>
+                                <div>
+                                    <button class="btn btn-pulse" @click="startQuiz">Получить расчёт</button>
+                                    <a :href="'/'+cityLink" class="hero_link">Перейти на сайт</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </section>
 
             </div>
-        </transition>
-        <transition :duration="{ enter: 500, leave: 300 }" enter-active-class="animated zoomIn" leave-active-class="animated zoomOut" mode="out-in">
+
             <section class="quest" v-if="step >= 1">
                 <div class="quest__wrapper">
                     <div class="quest__items">
@@ -208,15 +209,14 @@
                             <p class="quest_intro finish">СПАСИБО!</p>
                             <p class="quest_title">Ваша заявка принята</p>
                             <div class="quest__control">
-                                <a href="/" class="btn btn_next btn-pulse">Перейти на сайт</a>
+                                <a :href="'/'+cityLink" class="btn btn_next btn-pulse">Перейти на сайт</a>
                                 <button class="btn btn_prev"  @click="step = 0">Закрыть окно</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-        </transition>
-        <transition :duration="{ enter: 500, leave: 300 }" enter-active-class="animated zoomIn" leave-active-class="animated zoomOut" mode="out-in">
+
             <section class="inf">
                 <div class="inf__wrapper">
                     <div class="inf__items">
@@ -247,7 +247,7 @@
                     </div>
                 </div>
             </section>
-        </transition>
+
 
         <modal v-if="formError" @close="openFormError">
             <div slot="content">
@@ -277,6 +277,7 @@
                 size_md: false,
                 formError: false,
                 phoneSite:  window.city.phone,
+                cityLink: window.city.code,
                 questions: {
 					times: 'В течении месяца',
 					phone: '',
