@@ -245,6 +245,10 @@ button[disabled]{
     &:hover::before {
         animation: circle .75s;
     }
+
+    img{
+        display: block;
+    }
 } 
 
 @-webkit-keyframes circle {

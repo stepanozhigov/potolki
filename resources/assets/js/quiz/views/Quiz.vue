@@ -31,7 +31,7 @@
                         <div class="hero__items_item">
                             <div>
                                 <p class="hero_intro">Пройдите тест за 30 секунд</p>
-                                <h1 class="hero_title">Получите расчёт натяжного потолка и <span class="mark">подарок</span></h1>
+                                <h1 class="hero_title">Получите расчёт натяжного потолка <br><span class="mark">и подарок</span></h1>
                             </div>
                             <div>
                                 <button class="btn btn-pulse" @click="startQuiz">Получить расчёт</button>
