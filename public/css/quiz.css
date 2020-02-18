@@ -39,6 +39,8 @@ body {
   line-height: 1.2;
   font-size: 1.125rem;
   font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .input {
@@ -4353,13 +4355,6 @@ figure {
     padding-top: 6rem;
     padding-bottom: 6rem;
   }
-  .hero__items_item {
-    width: calc(83.3333333333% - 0.625rem);
-  }
-  .hero__items_item {
-    margin-left: calc(8.3333333333% + 0.3125rem);
-    margin-right: calc(8.3333333333% + 0.3125rem);
-  }
   .hero_intro {
     font-size: 1rem;
     letter-spacing: 0.625rem;
@@ -4470,13 +4465,6 @@ figure {
   .hero__wrapper {
     border-radius: 1rem;
   }
-  .hero__items_item {
-    width: calc(75% - 0.625rem);
-  }
-  .hero__items_item {
-    margin-left: calc(12.5% + 0.3125rem);
-    margin-right: calc(12.5% + 0.3125rem);
-  }
   .hero_intro {
     font-size: 1.375rem;
     letter-spacing: 0.75rem;
@@ -4490,6 +4478,7 @@ figure {
   }
   .quest_content {
     padding-top: 0.9375rem;
+    min-height: 34.6875rem;
   }
   .quest_title {
     font-size: 2rem;
@@ -4532,6 +4521,16 @@ figure {
   }
   .inf_text {
     font-size: 1.25rem;
+  }
+}
+
+@media screen and (min-width: 73.75rem) {
+  .hero__items_item {
+    width: calc(91.6666666667% - 0.625rem);
+  }
+  .hero__items_item {
+    margin-left: calc(4.1666666667% + 0.3125rem);
+    margin-right: calc(4.1666666667% + 0.3125rem);
   }
 }
 

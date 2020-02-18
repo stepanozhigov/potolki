@@ -3492,91 +3492,84 @@ var render = function() {
                         _vm._v(" "),
                         _vm._m(2),
                         _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass:
-                              "quest__list quest__range quest__range_pad"
-                          },
-                          [
-                            _c("div", { staticClass: "quest__range_wrapper" }, [
-                              _c("p", { staticClass: "quest__range_title" }, [
-                                _vm._v("Площадь помещения")
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { staticClass: "quest__range_item" },
-                                [
-                                  _c("vue-slider", {
-                                    staticClass: "slider",
-                                    attrs: {
-                                      tooltip: "always",
-                                      min: 1,
-                                      max: 100,
-                                      step: 1,
-                                      "tooltip-formatter": _vm.lengthTooltip
-                                    },
-                                    model: {
-                                      value: _vm.questions.area,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.questions, "area", $$v)
-                                      },
-                                      expression: "questions.area"
-                                    }
-                                  })
-                                ],
-                                1
-                              )
+                        _c("div", { staticClass: "quest__list quest__range" }, [
+                          _c("div", { staticClass: "quest__range_wrapper" }, [
+                            _c("p", { staticClass: "quest__range_title" }, [
+                              _vm._v("Площадь помещения")
                             ]),
                             _vm._v(" "),
-                            _c("div", { staticClass: "quest__range_wrapper" }, [
-                              _c("p", { staticClass: "quest__range_title" }, [
-                                _vm._v("Количество светильников")
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { staticClass: "quest__range_item" },
-                                [
-                                  _c("vue-slider", {
-                                    staticClass: "slider",
-                                    attrs: {
-                                      tooltip: "always",
-                                      min: 1,
-                                      max: 20,
-                                      step: 1,
-                                      "tooltip-formatter": _vm.lengthTooltip
+                            _c(
+                              "div",
+                              { staticClass: "quest__range_item" },
+                              [
+                                _c("vue-slider", {
+                                  staticClass: "slider",
+                                  attrs: {
+                                    tooltip: "always",
+                                    min: 1,
+                                    max: 100,
+                                    step: 1,
+                                    "tooltip-formatter": _vm.lengthTooltip
+                                  },
+                                  model: {
+                                    value: _vm.questions.area,
+                                    callback: function($$v) {
+                                      _vm.$set(_vm.questions, "area", $$v)
                                     },
-                                    model: {
-                                      value: _vm.questions.lamps,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.questions, "lamps", $$v)
-                                      },
-                                      expression: "questions.lamps"
-                                    }
-                                  })
-                                ],
-                                1
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "quest__control" }, [
-                              _c(
-                                "button",
-                                {
-                                  staticClass: "btn btn_next btn-pulse",
-                                  on: {
-                                    click: function($event) {
-                                      _vm.step++
-                                    }
+                                    expression: "questions.area"
                                   }
-                                },
-                                [_vm._v("Далее")]
-                              )
-                            ])
-                          ]
-                        )
+                                })
+                              ],
+                              1
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "quest__range_wrapper" }, [
+                            _c("p", { staticClass: "quest__range_title" }, [
+                              _vm._v("Количество светильников")
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "quest__range_item" },
+                              [
+                                _c("vue-slider", {
+                                  staticClass: "slider",
+                                  attrs: {
+                                    tooltip: "always",
+                                    min: 1,
+                                    max: 20,
+                                    step: 1,
+                                    "tooltip-formatter": _vm.lengthTooltip
+                                  },
+                                  model: {
+                                    value: _vm.questions.lamps,
+                                    callback: function($$v) {
+                                      _vm.$set(_vm.questions, "lamps", $$v)
+                                    },
+                                    expression: "questions.lamps"
+                                  }
+                                })
+                              ],
+                              1
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "quest__control" }, [
+                            _c(
+                              "button",
+                              {
+                                staticClass: "btn btn_next btn-pulse",
+                                on: {
+                                  click: function($event) {
+                                    _vm.step++
+                                  }
+                                }
+                              },
+                              [_vm._v("Далее")]
+                            )
+                          ])
+                        ])
                       ]
                     )
                   : _vm._e(),
@@ -4261,7 +4254,9 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("p", { staticClass: "quest_info" }, [
-      _vm._v("Введите номер телефона и получите расчёт на WhatsApp и СМС "),
+      _vm._v(
+        "Введите номер телефона и получите расчёт на WhatsApp и СМС в течении"
+      ),
       _c("span", { staticClass: "mark" }, [_vm._v("5 минут.")])
     ])
   },

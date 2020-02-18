@@ -28,10 +28,10 @@
         &_item{
             @include col(); 
             @include size(24);
-            @include size-md(20);
-            @include offset-md(2);
-            @include size-lg(18);
-            @include offset-lg(3);
+            // @include size-md(20);
+            // @include offset-md(2);
+            @include size-lgx(22);
+            @include offset-lgx(1);
             display: flex;
             flex-direction: column;
             justify-content: space-evenly;

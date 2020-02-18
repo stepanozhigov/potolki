@@ -4,6 +4,8 @@ body{
     line-height: 1.2;
     font-size: rem(18);
     font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .input{

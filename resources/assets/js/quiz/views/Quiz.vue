@@ -59,7 +59,7 @@
                             <p class="quest_title">Укажите параметры вашего помещения</p>
                         </div>
                         
-                        <div class="quest__list quest__range quest__range_pad">
+                        <div class="quest__list quest__range">
                             <div class="quest__range_wrapper">
                                 <p class="quest__range_title">Площадь помещения</p>
                                 <div class="quest__range_item">
@@ -187,7 +187,7 @@
                             <p class="quest_title">Получите расчёт натяжного потолка и подарок</p>
                         </div>
                         <div class="quest__list quest__range">
-                            <p class="quest_info">Введите номер телефона и получите расчёт на WhatsApp и СМС <span class="mark">5 минут.</span></p>
+                            <p class="quest_info">Введите номер телефона и получите расчёт на WhatsApp и СМС в течении<span class="mark">5 минут.</span></p>
                             <masked-input 
                                 type="tel" 
                                 autocomplete="off" 
