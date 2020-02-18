@@ -187,7 +187,7 @@
                             <p class="quest_title">Получите расчёт натяжного потолка и подарок</p>
                         </div>
                         <div class="quest__list quest__range">
-                            <p class="quest_info">Введите номер телефона и получите расчёт на WhatsApp и СМС в течении<span class="mark">5 минут.</span></p>
+                            <p class="quest_info">Введите номер телефона и получите расчёт на WhatsApp и СМС в течении <span class="mark">5 минут.</span></p>
                             <masked-input 
                                 type="tel" 
                                 autocomplete="off" 
