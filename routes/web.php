@@ -23,6 +23,12 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
+Route::get('/import-cities', function () {
+    $file = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/cities.json');
+    $jsonCities = json_encode($file);
+    dd($jsonCities);
+});
+
 Route::get('/', 'PageController@index')->name('ceilings-index');
 
 Route::get('/gui', function () {
