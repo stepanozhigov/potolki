@@ -318,7 +318,7 @@
         },
         methods: {
             lengthTooltip: function (value) {
-				return value + ' ';
+				return value + ' '; 
 			},
             openFormError: function () {
                 this.formError = !this.formError
