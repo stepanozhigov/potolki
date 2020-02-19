@@ -210,7 +210,6 @@
                         <p class="quest_title">Ваша заявка принята</p>
                         <div class="quest__control">
                             <a :href="'/'+cityLink" class="btn btn_next btn-pulse">Перейти на сайт</a>
-                            <button class="btn btn_prev"  @click="step = 0">Закрыть окно</button>
                         </div>
                     </div>
                 </div>
@@ -278,7 +277,7 @@
                 phoneSite:  window.city.phone,
                 cityLink: window.city.code,
                 questions: {
-					times: 'В течение месяца',
+					times: '',
 					phone: '',
                     phoneclear: '',
                     gift: 1,
@@ -333,6 +332,10 @@
             submitQuiz (e){
                 e.preventDefault();
 
+                if(this.questions.times === ''){
+                    this.questions.times = 'Не знаю'
+                }
+
                 axios.post('/forms/quiz2', {
                     phone: '8'+this.questions.phone,
                     city: window.city.bx_code,
@@ -345,7 +348,10 @@
                     Vue.cookie.set('form_send', true, 1),
                     window.yaCounter40202559.reachGoal('quiz'),
                     fbq('track', 'Lead'),
-                    ga.getAll()[0].send('event', 'quiz', 'send')
+                    ga.getAll()[0].send('event', 'quiz', 'send'),
+                    setTimeout(() => {
+                        window.location.href = '/'+this.cityLink
+                    }, 4000)
                 ))
                 
             },
