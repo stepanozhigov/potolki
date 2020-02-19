@@ -1,7 +1,7 @@
 import Vue from 'vue';
 window.Vue = Vue;
 
-Vue.component('quiz', require('./views/Quiz.vue').default);
+Vue.component('quiz', require('./views/Quiz.vue'));
 
 
 

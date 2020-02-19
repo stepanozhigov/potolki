@@ -8,7 +8,7 @@
         display: flex;
         padding-top: rem(20);
         padding-bottom: rem(20);
-        background-image: url('img/quiz/sand.png');
+        background-image: url('/img/quiz/sand.png');
 
         @include above($break_sm) {
             min-height: auto;
