@@ -114,8 +114,8 @@
                                 </li>
                                 <li>
                                     <label for="opt2-2" class="radio">
-                                        <input type="radio" v-model="questions.times" id="opt2-2" class="hidden" value="В течении месяца"/>
-                                        <span class="label"></span>В течении месяца
+                                        <input type="radio" v-model="questions.times" id="opt2-2" class="hidden" value="В течение месяца"/>
+                                        <span class="label"></span>В течение месяца
                                     </label>
                                 </li>
                                 <li>
@@ -278,7 +278,7 @@
                 phoneSite:  window.city.phone,
                 cityLink: window.city.code,
                 questions: {
-					times: 'В течении месяца',
+					times: 'В течение месяца',
 					phone: '',
                     phoneclear: '',
                     gift: 1,
