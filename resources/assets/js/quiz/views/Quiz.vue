@@ -281,18 +281,18 @@
 					times: 'В течении месяца',
 					phone: '',
                     phoneclear: '',
-                    gift: 0,
+                    gift: 1,
                     area: 50,
 					lamps: 10
 				},
                 gifts: [
 					{
-						title: 'Купон 5000 руб',
-						img: '/img/quiz/gifts/new/gift-1.jpg'
-					},
-					{
 						title: 'Второй потолок',
 						img: '/img/quiz/gifts/new/gift-2.jpg'
+					},
+                    {
+						title: 'Купон 5000 руб',
+						img: '/img/quiz/gifts/new/gift-1.jpg'
 					},
 					{
 						title: 'Светильники',
