@@ -344,6 +344,7 @@
                     this.step = 5,
                     Vue.cookie.set('form_send', true, 1),
                     window.yaCounter40202559.reachGoal('quiz'),
+                    fbq('track', 'Lead'),
                     ga.getAll()[0].send('event', 'quiz', 'send')
                 ))
                 
