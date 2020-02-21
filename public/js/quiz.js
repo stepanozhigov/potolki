@@ -1965,6 +1965,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -3452,7 +3459,7 @@ var render = function() {
                           staticClass: "btn btn-pulse",
                           on: { click: _vm.startQuiz }
                         },
-                        [_vm._v("Получить расчёт")]
+                        [_vm._v("Получить расчёт и подарок")]
                       ),
                       _vm._v(" "),
                       _c(
@@ -3995,7 +4002,16 @@ var render = function() {
                                 autocomplete: "off",
                                 required: "",
                                 placeholder: "Введите ваш номер*",
-                                mask: "\\+\\7 (111) 111-11-11"
+                                mask: {
+                                  pattern: "+7 (V11) 111-11-11",
+                                  formatCharacters: {
+                                    V: {
+                                      validate: function(char) {
+                                        return /[9]/.test(char)
+                                      }
+                                    }
+                                  }
+                                }
                               },
                               on: {
                                 input: function($event) {
@@ -4025,7 +4041,7 @@ var render = function() {
                                     attrs: { disabled: !_vm.isPhoneValid },
                                     on: { click: _vm.submitQuiz }
                                   },
-                                  [_vm._v("Получить расчёт")]
+                                  [_vm._v("Получить расчёт и подарок")]
                                 ),
                                 _vm._v(" "),
                                 _vm._m(10)
@@ -4123,7 +4139,7 @@ var render = function() {
                 [_c("use", { attrs: { "xlink:href": "#inf-4" } })]
               ),
               _vm._v(" "),
-              _c("p", { staticClass: "inf_text" }, [_vm._v("Гарантия 15 лет")])
+              _c("p", { staticClass: "inf_text" }, [_vm._v("Гарантия 5 лет")])
             ])
           ])
         ])

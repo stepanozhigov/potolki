@@ -34,7 +34,7 @@
                                 <h1 class="hero_title">Получите расчёт натяжного потолка <br><span class="mark">и подарок</span></h1>
                             </div>
                             <div>
-                                <button class="btn btn-pulse" @click="startQuiz">Получить расчёт</button>
+                                <button class="btn btn-pulse" @click="startQuiz">Получить расчёт и подарок</button>
                                 <a :href="'/'+cityLink" class="hero_link">Перейти на сайт</a>
                             </div>
                         </div>
@@ -194,12 +194,19 @@
                                 required
                                 v-model="questions.phoneclear"
                                 placeholder="Введите ваш номер*"
-                                mask="\+\7 (111) 111-11-11"
+                                :mask="{
+                                    pattern: '\+7 (V11) 111-11-11',
+                                    formatCharacters: {
+                                        'V': {
+                                            validate: char => /[9]/.test(char)
+                                        }, 
+                                    }, 
+                                }"
                                 @input="questions.phone = arguments[1]"
                                 class="input"
                             />
                             <div class="quest__control quest__control_finish">
-                                <button class="btn btn_send btn-pulse" :disabled="!isPhoneValid"  @click="submitQuiz">Получить расчёт</button>
+                                <button class="btn btn_send btn-pulse" :disabled="!isPhoneValid"  @click="submitQuiz">Получить расчёт и подарок</button>
                                 <p class="alarm">Оставляя контактную информацию, вы соглашаетесь на <span>обработку персональных данных</span></p>
                             </div>
                         </div>
@@ -241,7 +248,7 @@
                         <svg class="icon" width="69px" height="81px">
                             <use xlink:href="#inf-4"></use>
                         </svg>
-                        <p class="inf_text">Гарантия 15 лет</p>
+                        <p class="inf_text">Гарантия 5 лет</p>
                     </div>
                 </div>
             </div>
