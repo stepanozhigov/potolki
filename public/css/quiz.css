@@ -129,7 +129,7 @@ button[disabled] {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 2rem;
+  /* padding: 0 2rem; */
   border-radius: 0.5rem;
   border: none;
   box-sizing: border-box;
@@ -4376,7 +4376,7 @@ figure {
   }
   .hero .btn {
     margin-top: 0.625rem;
-    max-width: 16.25rem;
+    /* max-width: 16.25rem; */
   }
   .quest {
     overflow: visible;

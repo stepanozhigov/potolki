@@ -3452,7 +3452,7 @@ var render = function() {
                           staticClass: "btn btn-pulse",
                           on: { click: _vm.startQuiz }
                         },
-                        [_vm._v("Получить расчёт")]
+                        [_vm._v("Получить расчёт и подарок")]
                       ),
                       _vm._v(" "),
                       _c(
@@ -4025,7 +4025,7 @@ var render = function() {
                                     attrs: { disabled: !_vm.isPhoneValid },
                                     on: { click: _vm.submitQuiz }
                                   },
-                                  [_vm._v("Получить расчёт")]
+                                  [_vm._v("Получить расчёт и подарок")]
                                 ),
                                 _vm._v(" "),
                                 _vm._m(10)
