@@ -129,6 +129,10 @@ button[disabled] {
   display: flex;
   justify-content: center;
   align-items: center;
+<<<<<<< HEAD
+=======
+  /* padding: 0 2rem; */
+>>>>>>> 1aace607b5029bcb37f5c975284350987331de20
   border-radius: 0.5rem;
   border: none;
   box-sizing: border-box;
@@ -4375,6 +4379,10 @@ figure {
   }
   .hero .btn {
     margin-top: 0.625rem;
+<<<<<<< HEAD
+=======
+    /* max-width: 16.25rem; */
+>>>>>>> 1aace607b5029bcb37f5c975284350987331de20
   }
   .quest {
     overflow: visible;
