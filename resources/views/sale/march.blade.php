@@ -1,6 +1,6 @@
 <section class="section offer">
 	<div class="wrapper offer__wrap">
-        <img class="offer__img lazyload" src="/img/templates/windows/offer/march/flowers-lg.png" loading="lazy" alt="Увеличиваем скидки до 30%">
+        <img class="offer__img lazyload" src="/img/templates/ceilings/offer/march/flowers-lg.png" loading="lazy" alt="Увеличиваем скидки до 30%">
         <div class="offer__wrapper">
             <h2 class="offer__title">Скидка к 8 Марта!</h2>
             <p class="offer__intro">Зафиксируйте скидку прямо сейчас и получите подарок</p>
