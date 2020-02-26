@@ -584,17 +584,12 @@ $(window).resize(onResize);
 
 
 var phoneMask = new Inputmask({
-        mask:'+9 (999) 999-99-99',
-		onBeforeWrite: function (event, buffer, caretPos, opts) {
-			// var $input = $(event.target),
-				// phone = $input.val();
-			// formatted = phone.replace(/^8/, '+7');
-			// $input.val(formatted);
-			buffer[0] = '+';
-			buffer[1] = 7;
-			console.log(buffer);
-			return buffer;
-		},
+        mask:'+7 (V99) 999-99-99',
+        definitions: { 
+            'V': {
+                validator: '[9]' 
+            }
+        },
         oncomplete: function(event) {
             let $this = $(this),
                 form  = $this.parents('form'),

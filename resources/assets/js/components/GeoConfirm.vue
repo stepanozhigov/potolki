@@ -10,7 +10,7 @@
 	        </div>
 	        <div v-if="citiesShown" class="geoConfirm__choose-city">
 	            <div class="geoConfirm__choose-content">
-	                <a @click="chose(city)" v-if="city.name !== located.name" v-for="city in cities" class="geoConfirm__choose-link red-hoverable">{{ city.name }}</a> 
+	                <a @click="chose(city)" v-if="city.name !== located.name && city.hidden !== 1" v-for="city in cities" class="geoConfirm__choose-link red-hoverable">{{ city.name }}</a> 
 	            </div>
 	        </div>
 	    </div>
