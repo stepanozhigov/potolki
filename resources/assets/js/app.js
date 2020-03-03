@@ -29,35 +29,35 @@ require('./components/popup');
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-Vue.component('surfaces', require('./components/Surfaces.vue'));
-Vue.component('reviews', require('./components/Reviews.vue'));
+Vue.component('surfaces', require('./components/Surfaces.vue').default);
+Vue.component('reviews', require('./components/Reviews.vue').default);
 // Vue.component('window-calc', require('./components/WindowCalc.vue'));
 // Vue.component('balcony-calc', require('./components/BalkonyCalc.vue'));
 // Vue.component('simple-slider', require('./components/simpleSlider.vue'));
-Vue.component('ceilings-calc', require('./components/ceilingsCalc.vue'));
+Vue.component('ceilings-calc', require('./components/ceilingsCalc.vue').default);
 // Vue.component('climat-slider', require('./components/climatSlider.vue'));
-Vue.component('catalogue-slider', require('./components/catalogue-slider.vue'));
-Vue.component('city-search', require('./components/CitySearch.vue'));
-Vue.component('add-comment', require('./components/AddComment.vue'));
-Vue.component('add-review', require('./components/AddReview.vue'));
+Vue.component('catalogue-slider', require('./components/catalogue-slider.vue').default);
+Vue.component('city-search', require('./components/CitySearch.vue').default);
+Vue.component('add-comment', require('./components/AddComment.vue').default);
+Vue.component('add-review', require('./components/AddReview.vue').default);
 // Vue.component('offer-slider', require('./components/OfferSlider.vue'));
-Vue.component('gallery-carousel', require('./components/GalleryCarousel.vue'));
-Vue.component('gallery-list', require('./components/GalleryList.vue'));
+Vue.component('gallery-carousel', require('./components/GalleryCarousel.vue').default);
+Vue.component('gallery-list', require('./components/GalleryList.vue').default);
 // Vue.component('credit-calc', require('./components/CreditCalc.vue'));
 // Vue.component('dveri-calc', require('./components/DveriCalc.vue'));
 // Vue.component('peregorodki-calc', require('./components/Peregorodki.vue'));
 // Vue.component('zhalyuzi-calc', require('./components/Zhalyuzi.vue'));
 // Vue.component('posts', require('./components/Articles.vue'));
 // Vue.component('posts-list', require('./components/ArticlesList.vue'));
-Vue.component('manufacturers', require('./components/ManufacturersCarousel.vue'));
-Vue.component('banks', require('./components/banksCarousel.vue'));
-Vue.component('menu-city-search', require('./components/MenuCitySearch.vue'));
-Vue.component('quiz', require('./components/Quiz.vue'));
-Vue.component('gifts', require('./components/Gifts.vue'));
-Vue.component('geo-confirm', require('./components/GeoConfirm.vue'));
-Vue.component('ceilings-cats', require('./components/ceilingsCats.vue'));
-Vue.component('ceilings-calc', require('./components/ceilingsCalcHome.vue'));
-Vue.component('widget', require('./components/Widget.vue'));
+Vue.component('manufacturers', require('./components/ManufacturersCarousel.vue').default);
+Vue.component('banks', require('./components/banksCarousel.vue').default);
+Vue.component('menu-city-search', require('./components/MenuCitySearch.vue').default);
+Vue.component('quiz', require('./components/Quiz.vue').default);
+Vue.component('gifts', require('./components/Gifts.vue').default);
+Vue.component('geo-confirm', require('./components/GeoConfirm.vue').default);
+Vue.component('ceilings-cats', require('./components/ceilingsCats.vue').default);
+Vue.component('ceilings-calc', require('./components/ceilingsCalcHome.vue').default);
+Vue.component('widget', require('./components/Widget.vue').default);
 
 // Vue.component('portfolio-photos', require('./components/PortfolioPhotos.vue'));
 if ($('#geo-confirm').length > 0) {
