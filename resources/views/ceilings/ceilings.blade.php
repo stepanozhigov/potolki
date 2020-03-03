@@ -98,7 +98,6 @@
                         <li>— Контроль качества</li>
                         <li>— Выгодные цены</li>
                         <li>— 16 лет опыта</li>
-                        <li>— Установка за сутки</li>
                     </ul>
 				</div>
 			</article>
@@ -129,12 +128,12 @@
 		</div>
     </section>
     
-    <section class="section constructor hidden-xs">
+    <!-- <section class="section constructor hidden-xs">
         <div class="constructor__image"></div>
         <h2 class="title-dec">Визуализация потолков</h2>
         <p class="constructor__text">Выберите цвет вашего потолка и посмотрите как это выглядит в интерьере при помощи конструктора.</p>
         <a class="buttonN buttonN-light constructor__link btn-4" href="{{ route('constructor', $city) }}">Конструктор</a>
-    </section>
+    </section> -->
 
     <section class="portfolio portfolioN portfolio_main portfolio_ceilings">
         <h2 class="title-dec">Примеры наших работ</h2>   
