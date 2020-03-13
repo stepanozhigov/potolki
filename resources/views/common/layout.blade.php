@@ -80,14 +80,15 @@
 
 </head>
 <body class="body {{ strpos( $_SERVER['HTTP_ACCEPT'], 'image/webp' ) !== false ? 'webp' : '' }}">
-    <? if (request()->path() !== '/' && $req !== 'quiz' && $req !== 'quiz2' && url()->previous() !== 'https://potolki-ts.ru/'): ?>
+    <? if (request()->path() !== '/' && $req !== 'quiz' && url()->previous() !== 'https://potolki-ts.ru/'): ?>
         <div id="geo-confirm">
             <geo-confirm :cities="{{ $cities }}"></geo-confirm>
         </div>
-		<div id="widget">
-			<widget></widget>
-		</div>
+		
     <? endif ?>
+    <div id="widget">
+		<widget></widget>
+	</div>
     <div id="app">
         @yield('content')
     </div>
