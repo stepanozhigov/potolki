@@ -2,8 +2,8 @@
 	<div class="wrapper offer__wrap">
         <img class="offer__img lazyload" src="/img/templates/ceilings/offer/march/flowers-lg.png" loading="lazy" alt="Увеличиваем скидки до 30%">
         <div class="offer__wrapper">
-            <h2 class="offer__title">Скидка к 8 Марта!</h2>
-            <p class="offer__intro">Праздник женский, но скидки и подарки дарим всем</p>
+            <h2 class="offer__title">Скидки до 31 марта!</h2>
+            <p class="offer__intro">Женский месяц, но скидки и подарки дарим всем</p>
             <form class="formN js-less" action="{{ route('forms.feedback', $city) }}" method="POST">
                 @csrf
                 <input type="hidden" name="city" value="{{ $city->bx_code }}">
