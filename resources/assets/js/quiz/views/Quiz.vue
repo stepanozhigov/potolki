@@ -355,6 +355,7 @@
                     Vue.cookie.set('form_send', true, 1),
                     window.yaCounter40202559.reachGoal('quiz'),
                     fbq('track', 'Lead'),
+                    pixel.Event('send_quiz'),
                     ga.getAll()[0].send('event', 'quiz', 'send'),
                     setTimeout(() => {
                         window.location.href = '/'+this.cityLink
