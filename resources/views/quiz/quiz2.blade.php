@@ -24,6 +24,8 @@
     </div>
 
     <script src="/js/quiz.js"></script>
+
+    <script type="text/javascript">!function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="https://vk.com/js/api/openapi.js?167",t.onload=function(){VK.Retargeting.Init("VK-RTRG-466585-h6dY2"),VK.Retargeting.Hit()},document.head.appendChild(t)}();</script><noscript><img src="https://vk.com/rtrg?p=VK-RTRG-466585-h6dY2" style="position:fixed; left:-999px;" alt=""/></noscript>
     
     <!-- Facebook Pixel Code -->
     <script>
