@@ -9,7 +9,7 @@
 
     <title>Квиз опрос. Твой стиль</title>
     <link href="{{ asset('css/quiz.css') }}" rel="stylesheet">
-
+    
     <? if (!empty($city)): ?>
 		<script type="text/javascript">
             window.city = <?= json_encode($city) ?>
@@ -24,11 +24,20 @@
     </div>
 
     <script src="/js/quiz.js"></script>
+    <!-- VK Pixel Code -->
+    <script>
+        var pixel;
+        // вызовется после загрузки openapi.js
+        window.vkAsyncInit = function() {
+            pixel = new VK.Pixel('VK-RTRG-466585-h6dY2');
+        }
+    </script>
+    <script src="//vk.com/js/api/openapi.js?159" async></script>
 
-    <script type="text/javascript">!function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="https://vk.com/js/api/openapi.js?167",t.onload=function(){VK.Retargeting.Init("VK-RTRG-466585-h6dY2"),VK.Retargeting.Hit()},document.head.appendChild(t)}();</script><noscript><img src="https://vk.com/rtrg?p=VK-RTRG-466585-h6dY2" style="position:fixed; left:-999px;" alt=""/></noscript>
-    <!-- <script>
+    <script>
         VK.Retargeting.Hit();
-    </script> -->
+    </script>
+
     <!-- Facebook Pixel Code -->
     <script>
         !function(f,b,e,v,n,t,s)
