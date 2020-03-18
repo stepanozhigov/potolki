@@ -35,7 +35,7 @@
     <script src="//vk.com/js/api/openapi.js?159" async></script>
 
     <script>
-        VK.Retargeting.Hit();
+        pixel.Hit();
     </script>
 
     <!-- Facebook Pixel Code -->
