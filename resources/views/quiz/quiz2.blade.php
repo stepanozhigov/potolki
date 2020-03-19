@@ -25,10 +25,15 @@
 
     <script src="/js/quiz.js"></script>
     <!-- VK Pixel Code -->
-    <script src="https://vk.com/js/api/openapi.js?144"></script> 
-    <script> 
-        VK.Retargeting.Init('VK-RTRG-466585-h6dY2');  
+    <script>
+        var pixel;
+        // вызовется после загрузки openapi.js
+        window.vkAsyncInit = function() {
+            pixel = new VK.Pixel('VK-RTRG-466585-h6dY2');
+            pixel.Hit();
+        }
     </script>
+    <script src="//vk.com/js/api/openapi.js?159" async></script>
 
 
     <!-- Facebook Pixel Code -->
