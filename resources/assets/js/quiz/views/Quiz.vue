@@ -206,7 +206,7 @@
                                 class="input"
                             />
                             <div class="quest__control quest__control_finish">
-                                <button class="btn btn_send btn-pulse" :disabled="!isPhoneValid"  @click="submitQuiz">Получить расчёт и подарок</button>
+                                <button class="btn btn_send btn-pulse" :disabled="!isPhoneValid"  @click="submitQuiz" >Получить расчёт и подарок</button>
                                 <p class="alarm">Оставляя контактную информацию, вы соглашаетесь на <span>обработку персональных данных</span></p>
                             </div>
                         </div>
@@ -312,6 +312,7 @@
                 return pattern.test(this.questions.phone)
             },
             currentGift: function () {
+                
 				return this.gifts[this.questions.gift];
 			}
         },
@@ -338,7 +339,7 @@
             },
             submitQuiz (e){
                 e.preventDefault();
-
+                
                 if(this.questions.times === ''){
                     this.questions.times = 'Не знаю'
                 }
@@ -355,7 +356,7 @@
                     Vue.cookie.set('form_send', true, 1),
                     window.yaCounter40202559.reachGoal('quiz'),
                     fbq('track', 'Lead'),
-                    pixel.Event('quiz'),
+                    window.pixel.Event('quiz'),
                     // window.pixel.Add(32528967),
                     ga.getAll()[0].send('event', 'quiz', 'send'),
                     setTimeout(() => {

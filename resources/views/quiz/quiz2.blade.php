@@ -32,6 +32,7 @@
             pixel = new VK.Pixel('VK-RTRG-466585-h6dY2');
             pixel.Hit();
         }
+        
     </script>
     <script src="//vk.com/js/api/openapi.js?159" async></script>
 
