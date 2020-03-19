@@ -357,7 +357,7 @@
                     window.yaCounter40202559.reachGoal('quiz'),
                     fbq('track', 'Lead'),
                     window.pixel.Event('quiz'),
-                    // window.pixel.Add(32528967),
+                    window.pixel.Add(32528967),
                     ga.getAll()[0].send('event', 'quiz', 'send'),
                     setTimeout(() => {
                         window.location.href = '/'+this.cityLink
