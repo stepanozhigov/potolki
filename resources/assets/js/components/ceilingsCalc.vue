@@ -39,19 +39,34 @@
             tubes = $('[name=tubes]').val(),
             angles = $('[name=angles]').val(),
             lamps = $('[name=lamps]').val(),
-            mult = 350,
+            city = window.city.code,
+            areaPrice = 350,
+            lampPrice = 250,
             price = 0;
 
-        if (window.city.code == 'krasnodar') {
-            mult = 290;
+        if (city === 'krasnodar') {
+            areaPrice = 290;
         }
-        if (window.city.code == 'dolgoprudnyj') {
-        	mult = 450;
+        if (city === 'moskva' ||
+            city === 'dolgoprudnyj' ||
+            city === 'nahodka') {
+        	areaPrice = 450;
         }
-        if (window.city.code == 'moskva') {
-            mult = 450;
+
+        if (city === 'ussuriysk' ||
+            city === 'vladivostok' ||
+            city === 'habarovsk' ||
+            city === 'blagoveschensk') {
+        	areaPrice = 400;
         }
-        price = angles * 100 + tubes * 200 + lamps * 250 + area * mult - 400;
+
+        if (city === 'ussuriysk' ||
+            city === 'vladivostok' ||
+            city === 'habarovsk' ||
+            city === 'nahodka') {
+        	lampPrice = 300;
+        }
+        price = angles * 100 + tubes * 200 + lamps * lampPrice + area * areaPrice - 400;
 
         $('.js-calc-price').html(price.toLocaleString());
     })
