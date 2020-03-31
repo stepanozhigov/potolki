@@ -1,1 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 50 50" xml:space="preserve"><path fill="#808890" d="M2.707 48.707L25 26.414l22.293 22.293 1.414-1.414L26.414 25 48.707 2.707l-1.414-1.414L25 23.586 2.707 1.293 1.293 2.707 23.586 25 1.293 47.293z" id="Layer_1"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="23px" height="16px" viewBox="0 0 23 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Components / Mixin / Icons basic / Close</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Components-/-Mixin-/-Icons-basic-/-Close" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5,3 L15,13 L5,3 Z" id="Line" stroke="#808890"></path>
+        <path d="M15,3 L5,13 L15,3 Z" id="Line" stroke="#808890"></path>
+    </g>
+</svg>
