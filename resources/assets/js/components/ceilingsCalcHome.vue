@@ -2,13 +2,20 @@
     $(document).on('input', '#calc_home .range', function (e) {
         var area = $('[name=area]').val(),
             lamps = $('[name=lamps]').val(),
+<<<<<<< HEAD
             lampsPrice = 250,
             mult = 350,
+=======
+            city = window.city.code,
+            areaPrice = 350,
+            lampPrice = 250,
+>>>>>>> 528cdf1c35a20f80cd75543efeac80ac23f3f5b4
             price = 0;
 
-        if (window.city.code == 'krasnodar') {
-            mult = 290;
+        if (city === 'krasnodar') {
+            areaPrice = 290;
         }
+<<<<<<< HEAD
         if (window.city.code == 'moskva') {
             mult = 450;
         }
@@ -36,6 +43,31 @@
             mult = 400;
         }
         price = lamps * lampsPrice + area * mult;
+=======
+        if (city === 'moskva' ||
+            city === 'dolgoprudnyj' ||
+            city === 'nahodka') {
+        	areaPrice = 450;
+        }
+
+        if (city === 'ussuriysk' ||
+            city === 'vladivostok' ||
+            city === 'habarovsk' ||
+            city === 'blagoveschensk') {
+        	areaPrice = 400;
+        }
+
+        if (city === 'ussuriysk' ||
+            city === 'vladivostok' ||
+            city === 'habarovsk' ||
+            city === 'nahodka') {
+        	lampPrice = 300;
+        }
+
+        
+
+        price = lamps * lampPrice + area * areaPrice;
+>>>>>>> 528cdf1c35a20f80cd75543efeac80ac23f3f5b4
 
         $('.js-calc-price').html(price.toLocaleString());
     })
@@ -47,11 +79,6 @@
             return {
                 area: 1,
                 lamps: 0
-            }
-        },
-        computed: {
-            price: function () {
-                return this.lamps * 250 + this.area * 350;
             }
         }
     }
