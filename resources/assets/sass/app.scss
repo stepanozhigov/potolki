@@ -9,8 +9,6 @@
 @import './gui/survey';
 @import './gui/checkbox';
 @import './gui/breadcrumbs';
-// @import './gui/seo-block';
-
 
 @import './gui/form';
 
@@ -20,7 +18,7 @@
 
 @import 'common';
 @import './gui/menu';
-// @import './windows/catalogue';
+
 @import './ceilings/ceilings-calc';
 @import 'portfolio';
 
@@ -57,8 +55,6 @@
 @import 'gui/paginator';
 
 @import 'gui/radio';
-
-// @import 'windows/calculator';
 
 @import 'jobs';
 
@@ -122,41 +118,9 @@
 
 @import 'mobileMenu';
 
-// @import 'climat/climatSlider';
-
-// @import 'climat/climatCatalogue';
-
-// @import 'climat/climatCard';
-
 @import 'gui/linkBlock';
 
-// @import 'climat/climatAdditional';
-
-// @import 'climat/recent';
-
-// @import 'climat/climatDetail';
-
-// @import 'climat/conditionerPopup';
-
 @import 'gui/slider-dots';
-
-// @import 'climat/climatOrdering';
-
-// @import 'climat/orderingItem';
-
-// @import 'climat/climatBasket';
-
-// @import 'climat/climatOrder';
-
-// @import 'climat/climatMaintenance';
-
-// @import 'climat/climatPersonalData';
-
-// @import 'climat/formAdress';
-
-// @import 'climat/formUr';
-
-// @import 'climat/quickBuy';
 
 @import 'climat/constructor';
 
@@ -167,8 +131,6 @@
 @import 'discount';
 
 @import 'gui/formPage';
-
-//@import 'photoprint/photoprintPage';
 
 @import '~ion-rangeslider/css/ion.rangeSlider.css';
 
@@ -184,4 +146,5 @@
 
 // @import 'sale/winter';
 // @import 'sale/february_23';
-@import 'sale/march';
+// @import 'sale/march';
+@import 'sale/spring';

@@ -49,7 +49,7 @@
         <a href="{{ route('forms.measure', $city) }}" class="calc__callback buttonN buttonN-red btn-4">Вызвать замерщика</a>
     </section>
 
-
+    @include('sale.spring')
 
     <section class="sale wrapper">
 		<h2 class="sale__title">
