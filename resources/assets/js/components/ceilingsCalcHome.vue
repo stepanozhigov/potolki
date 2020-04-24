@@ -8,10 +8,9 @@
             price = 0;
 
         if (city === 'krasnodar') {
-            areaPrice = 290;
+            areaPrice = 270;
         }
-        if (city === 'moskva' ||
-            city === 'dolgoprudnyj' ||
+        if (city === 'dolgoprudnyj' ||
             city === 'nahodka') {
         	areaPrice = 450;
         }
@@ -28,6 +27,11 @@
             city === 'habarovsk' ||
             city === 'nahodka') {
         	lampPrice = 300;
+        }
+
+        if (city === 'moskva') {
+            areaPrice = 450;
+            lampPrice = 500;
         }
 
         
