@@ -33,7 +33,9 @@
 			}
 		</style>
 		<form class="payment__form" method="POST"  class="application"  accept-charset="UTF-8" action="https://partner.rficb.ru/alba/input/">
-		  <input type="hidden" name="key" value="fvMXytFivKigwP8EzZ21ErVxb+PqIpiwt6RSDsmXwGQ=" />
+		  <input type="hidden" name="key" value="yvgz56fJm6cDc6hpZJt1O5zcQQY6vVxdZaY1xCgk4OM=" />
+		  
+		  <!-- <input type="hidden" name="key" value="fvMXytFivKigwP8EzZ21ErVxb+PqIpiwt6RSDsmXwGQ=" /> -->
 		  <input type="hidden" name="name" value="potolki-ts.ru оплата договора"/>
 		  <input type="hidden" name="order_id" value="0" />
 		   <input class="input" name="fio" value="" placeholder="Ваше имя" />
