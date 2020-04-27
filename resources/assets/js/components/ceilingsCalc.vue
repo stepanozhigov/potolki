@@ -47,8 +47,10 @@
         if (city === 'krasnodar') {
             areaPrice = 270;
         }
+        
         if (city === 'dolgoprudnyj' ||
-            city === 'nahodka') {
+            city === 'nahodka' ||
+            city === 'sankt-peterburg') {
         	areaPrice = 450;
         }
 
