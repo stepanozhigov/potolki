@@ -31,7 +31,7 @@
                 </div>
             </div>
             <div class="about__content">
-                    <p class="about__desc text">Натяжные потолки с компанией «Твой стиль» стали еще доступнее. Наши цены из самых низких. Доверяйте профессионалам!</p>
+                    <p class="about__desc text">Натяжные потолки с компанией «Твой стиль» стали еще доступнее. Наши цены — одни из самых низких. Доверяйте профессионалам!</p>
                     @include('common.gui.titles', ['secondTitle' => 'Награды компании «Твой стиль»'])
                     <div class="about__rewards">
                         <div class="about__reward">
