@@ -161,7 +161,7 @@
 
     <section class="manufactur section wrapper">
         <h2 class="manufactur__title title-dec">Производители плёнки</h2>
-        <p class="manufactur__subtitle subtitleN">Компания &laquo;Твой стиль&raquo; иcпользует для натяжных потолков ведущих поставщиков с сертификатами качества. Работаем с ПВХ-плёнкой и тканевыми полотнами следующих производителей:</p>
+        <p class="manufactur__subtitle subtitleN">Компания &laquo;Твой стиль&raquo; иcпользует для натяжных потолков ведущих поставщиков с&nbsp;сертификатами качества. Работаем с ПВХ&ndash;плёнкой и&nbsp;тканевыми полотнами следующих производителей:</p>
         <div class="manufactur__items">   
             <div class="manufactur__item">
                 <img data-src="/img/manufacturers/clipso.svg" loading="lazy" alt="clipso" class="manufactur__item-image lazyload">
