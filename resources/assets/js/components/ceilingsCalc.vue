@@ -48,7 +48,7 @@
             <vue-slider
                 class="slider"
                 tooltip="always"
-                :min="4"
+                :min="0"
                 :max="30"
                 v-model="lamps"
             >
@@ -82,10 +82,10 @@ export default {
                 blagoveschensk: 400,
                 moskva: 450,
                 sochi: 350,
-                artem: 350,
+                artem: 400,
                 krasnoyarsk: 350,
                 novosibirsk: 350,
-                komsomolsk: 350
+                komsomolsk: 400
             },
             priceLamp: {
                 krasnodar: 250,
@@ -95,13 +95,13 @@ export default {
                 ussuriysk: 300,
                 vladivostok: 300,
                 habarovsk: 300,
-                blagoveschensk: 250,
+                blagoveschensk: 300,
                 moskva: 500,
                 sochi: 250,
-                artem: 250,
+                artem: 300,
                 krasnoyarsk: 250,
-                novosibirsk: 250,
-                komsomolsk: 250
+                novosibirsk: 300,
+                komsomolsk: 300
             },
             priceTubes: 200,
             priceAngles: 100
@@ -110,8 +110,10 @@ export default {
     computed: {
         totlaPrice() {
             const city = window.city.code ? window.city.code.toString().replace(/[\-\/]/g,'_') : 'moskva'
-
-            return this.area*this.priceArea[city] + this.lamps*this.priceLamp[city] + this.tubes*this.priceTubes + (this.angles*this.priceAngles - this.priceAngles*4)
+            const priceA  = this.priceArea[city] ?  this.priceArea[city] : 350
+            const priceL  = this.priceLamp[city] ?  this.priceLamp[city] : 250
+            
+            return this.area*priceA + this.lamps*priceL + this.tubes*this.priceTubes + (this.angles*this.priceAngles - this.priceAngles*4)
         },
         link() {
             return `https://potolki-ts.ru/${window.city.code}/forms/measure`
