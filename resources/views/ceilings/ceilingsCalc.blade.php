@@ -7,7 +7,7 @@
             'overtitle' =>  'Калькулятор',
             'title' =>  "Расчет стоимости натяжных потолков {$city->name_formatted}"
         ])
-        @include('ceilings.calc')
+        <div id="ceilings-calc"></div>
     </section>
     @include('common.gui.footer')
 @endsection

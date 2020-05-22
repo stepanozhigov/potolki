@@ -1,55 +1,95 @@
-<script type="text/javascript">
-    $(document).on('input', '#calc_home .range', function (e) {
-        var area = $('[name=area]').val(),
-            lamps = $('[name=lamps]').val(),
-            city = window.city.code,
-            areaPrice = 350,
-            lampPrice = 250,
-            price = 0;
+<template>
+    <section class="wrapper calc section">
+        <h2 class="title-dec">Калькулятор</h2>
+        <p class="calc__item calc__item-intro">
+            Расчёт стоимости натяжного потолка <span class="b-color_red">по акции.</span>
+            Для точного расчёта необходимо произвести замер!
+        </p>
+        <div class="calc__item">
+            <p class="calc__item-name">Площадь помещения</p>
+            <vue-slider
+                class="slider"
+                tooltip="always"
+                :min="0"
+                :max="150"
+                v-model="area"
+            >
+            </vue-slider>
+        </div>
+        <div class="calc__item">
+            <p class="calc__item-name">Количество светильников</p>
+            <vue-slider
+                class="slider"
+                tooltip="always"
+                :min="0"
+                :max="30"
+                v-model="lamps"
+            >
+            </vue-slider>
+        </div>
+        <div class="calc__item">
+            <p class="calc__item-name">Цена с установкой</p>
+            <p class="calc__total"><span>{{totlaPrice}}</span> <span class="rouble">8</span></p>
+        </div>
+        <a :href="link" class="calc__callback buttonN buttonN-red btn-4">Вызвать замерщика</a>
+    </section>
+</template>
 
-        if (city === 'krasnodar') {
-            areaPrice = 270;
-        }
-        if (city === 'dolgoprudnyj' ||
-            city === 'nahodka' ||
-            city === 'sankt-peterburg') {
-        	areaPrice = 450;
-        }
+<script>
 
-        if (city === 'ussuriysk' ||
-            city === 'vladivostok' ||
-            city === 'habarovsk' ||
-            city === 'blagoveschensk') {
-        	areaPrice = 400;
-        }
+import VueSlider from 'vue-slider-component'
 
-        if (city === 'ussuriysk' ||
-            city === 'vladivostok' ||
-            city === 'habarovsk' ||
-            city === 'nahodka') {
-        	lampPrice = 300;
-        }
-
-        if (city === 'moskva') {
-            areaPrice = 450;
-            lampPrice = 500;
-        }
-
-        
-
-        price = lamps * lampPrice + area * areaPrice;
-
-        $('.js-calc-price').html(price.toLocaleString());
-    })
-    $(document).ready(function () {
-        $('[name=area]').trigger('input');
-    })
-    export default {
-        data: function () {
-            return {
-                area: 1,
-                lamps: 0
+export default {
+    data: function () {
+        return {
+            area: 1,
+            lamps: 0,
+            priceArea: {
+                krasnodar: '270',
+                dolgoprudnyj: '450',
+                nahodka: '450',
+                sankt_peterburg: '350',
+                ussuriysk: '400',
+                vladivostok: '400',
+                habarovsk: '400',
+                blagoveschensk: '400',
+                moskva: '450',
+                sochi: '350',
+                artem: '350',
+                krasnoyarsk: '350',
+                novosibirsk: '350',
+                komsomolsk: '350',
+            },
+            priceLamp: {
+                krasnodar: '250',
+                dolgoprudnyj: '250',
+                nahodka: '300',
+                sankt_peterburg: '300',
+                ussuriysk: '300',
+                vladivostok: '300',
+                habarovsk: '300',
+                blagoveschensk: '250',
+                moskva: '500',
+                sochi: '250',
+                artem: '250',
+                krasnoyarsk: '250',
+                novosibirsk: '250',
+                komsomolsk: '250',
             }
         }
+    },
+    computed: {
+        totlaPrice() {
+            const city = window.city.code ? window.city.code.toString().replace(/[\-\/]/g,'_') : 'moskva'
+
+            return this.area*this.priceArea[city] + this.lamps*this.priceLamp[city]
+        },
+        link() {
+            return `https://potolki-ts.ru/${window.city.code}/forms/measure`
+        }
+    },
+    components: { 
+        VueSlider
     }
+}
 </script>

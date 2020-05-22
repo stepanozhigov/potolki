@@ -119,6 +119,9 @@
     &__item {
         width: calc(50% - 10px);
         margin-bottom: rem(48);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
         @include below($tablet-small) {
             margin-bottom: rem(64);

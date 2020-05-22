@@ -1,98 +1,124 @@
 <template>
-    <div class="ceilingCalculator">
+     <div class="ceilingCalculator">
         <h2 class="ceilingCalculator__title">Калькулятор</h2>
         <p class="ceilingCalculator__desc">Рассчитайте стоимость натяжного потолка онлайн. Матовые, сатиновые, глянцевые — все по одной цене! Выберите параметры вашего помещения, перемещая&nbsp;ползунки.</p>
         <div class="ceilingCalculator__item">
             <p class="ceilingCalculator__item-name">
                 Площадь помещения, м<sup>2</sup>
             </p>
-            <input value="1" name="area" data-min="0" data-from="1" data-max="150" class="range" type="text">
+            <vue-slider
+                class="slider"
+                tooltip="always"
+                :min="0"
+                :max="150"
+                v-model="area"
+            >
+            </vue-slider>
         </div>
         <div class="ceilingCalculator__item">
             <p class="ceilingCalculator__item-name">
                 Трубы
             </p>
-            <input name="tubes" data-min="0"  data-max="10" class="range" type="text">
+            <vue-slider
+                class="slider"
+                tooltip="always"
+                :min="0"
+                :max="30"
+                v-model="tubes"
+            >
+            </vue-slider>
         </div>
         <div class="ceilingCalculator__item">
             <p class="ceilingCalculator__item-name">
                 Углы
             </p>
-            <input v-model="angles" name="angles" data-min="4" data-from="4" data-max="30" class="range" type="text">
+            <vue-slider
+                class="slider"
+                tooltip="always"
+                :min="4"
+                :max="30"
+                v-model="angles"
+            >
+            </vue-slider>
         </div>
         <div class="ceilingCalculator__item">
             <p class="ceilingCalculator__item-name">
                 Светильники
             </p>
-            <input name="lamps" data-min="0" data-max="30" class="range" type="text">
+            <vue-slider
+                class="slider"
+                tooltip="always"
+                :min="4"
+                :max="30"
+                v-model="lamps"
+            >
+            </vue-slider>
         </div>
         <p class="ceilingCalculator__subtitle">Для точного расчёта необходимо произвести замер!</p>
-        <p class="ceilingCalculator__total"><span class="js-calc-price">350</span> ₽</p>
+        <p class="ceilingCalculator__total"><span class="js-calc-price">{{totlaPrice}}</span> ₽</p>
         <p class="ceilingCalculator__measure">с установкой</p>
-        <button data-src="#popup_callback" class="ceilingCalculator__callback js-show">Вызвать замерщика</button>
+        <a :href="link" class="ceilingCalculator__callback">Вызвать замерщика</a>
     </div>
 </template>
 
-<script type="text/javascript">
-    $(document).on('input', '#calc_page .range', function (e) {
-        var area = $('[name=area]').val(),
-            tubes = $('[name=tubes]').val(),
-            angles = $('[name=angles]').val(),
-            lamps = $('[name=lamps]').val(),
-            city = window.city.code,
-            areaPrice = 350,
-            lampPrice = 250,
-            price = 0;
+<script>
+import VueSlider from 'vue-slider-component'
 
-        if (city === 'krasnodar') {
-            areaPrice = 270;
+export default {
+    data: function () {
+        return {
+            area: 1,
+            tubes: 0,
+            angles: 4,
+            lamps: 0,
+            priceArea: {
+                krasnodar: 270,
+                dolgoprudnyj: 450,
+                nahodka: 450,
+                sankt_peterburg: 350,
+                ussuriysk: 400,
+                vladivostok: 400,
+                habarovsk: 400,
+                blagoveschensk: 400,
+                moskva: 450,
+                sochi: 350,
+                artem: 350,
+                krasnoyarsk: 350,
+                novosibirsk: 350,
+                komsomolsk: 350
+            },
+            priceLamp: {
+                krasnodar: 250,
+                dolgoprudnyj: 250,
+                nahodka: 300,
+                sankt_peterburg: 300,
+                ussuriysk: 300,
+                vladivostok: 300,
+                habarovsk: 300,
+                blagoveschensk: 250,
+                moskva: 500,
+                sochi: 250,
+                artem: 250,
+                krasnoyarsk: 250,
+                novosibirsk: 250,
+                komsomolsk: 250
+            },
+            priceTubes: 200,
+            priceAngles: 100
         }
-        
-        if (city === 'dolgoprudnyj' ||
-            city === 'nahodka' ||
-            city === 'sankt-peterburg') {
-        	areaPrice = 450;
-        }
+    },
+    computed: {
+        totlaPrice() {
+            const city = window.city.code ? window.city.code.toString().replace(/[\-\/]/g,'_') : 'moskva'
 
-        if (city === 'ussuriysk' ||
-            city === 'vladivostok' ||
-            city === 'habarovsk' ||
-            city === 'blagoveschensk') {
-        	areaPrice = 400;
-        }
-
-        if (city === 'ussuriysk' ||
-            city === 'vladivostok' ||
-            city === 'habarovsk' ||
-            city === 'nahodka') {
-        	lampPrice = 300;
-        }
-
-        if (city === 'moskva') {
-            areaPrice = 450;
-            lampPrice = 500;
-        }
-        
-        price = angles * 100 + tubes * 200 + lamps * lampPrice + area * areaPrice - 400;
-
-        $('.js-calc-price').html(price.toLocaleString());
-    })
-    $(document).ready(function () {
-        $('[name=area]').trigger('input');
-    })
-    export default {
-        data: function () {
-            return {
-                area: 1,
-                tubes: 0,
-                angles: 4,
-                lamps: 0
-            }
+            return this.area*this.priceArea[city] + this.lamps*this.priceLamp[city] + this.tubes*this.priceTubes + (this.angles*this.priceAngles - this.priceAngles*4)
         },
-        computed: {
-            price: function () {
-                return this.angles * 100 + this.tubes * 200 + this.lamps * 250 + this.area * 350;
-            }
+        link() {
+            return `https://potolki-ts.ru/${window.city.code}/forms/measure`
         }
+    },
+    components: { 
+        VueSlider
     }
+}
 </script>

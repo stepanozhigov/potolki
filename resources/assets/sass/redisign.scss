@@ -539,6 +539,9 @@ main.page{
 
     &__item{
         margin-bottom: rem(48);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
         @include above($size_md) {
             margin-bottom: 0;
@@ -552,6 +555,7 @@ main.page{
         line-height: 1.5;
         justify-self: center;
         font-family: $helvetica;
+        display: block;
 
         @include above($size_md) {
             margin-bottom: rem(48);
