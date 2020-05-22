@@ -110,8 +110,8 @@ export default {
     computed: {
         totlaPrice() {
             const city = window.city.code ? window.city.code.toString().replace(/[\-\/]/g,'_') : 'moskva'
-            const priceA  = this.priceArea[city] ?  this.priceArea[city] : 350
-            const priceL  = this.priceLamp[city] ?  this.priceLamp[city] : 250
+            const priceA  = this.priceArea[city] ? this.priceArea[city] : 350
+            const priceL  = this.priceLamp[city] ? this.priceLamp[city] : 250
             
             return this.area*priceA + this.lamps*priceL + this.tubes*this.priceTubes + (this.angles*this.priceAngles - this.priceAngles*4)
         },
