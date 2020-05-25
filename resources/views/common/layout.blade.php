@@ -75,6 +75,15 @@
         gtag('config', 'UA-85472546-4');
     </script>
 
+    <script>
+    (function() {
+        var ta = document.createElement('script'); ta.type = 'text/javascript'; ta.async = true;
+        ta.src = 'https://analytics.tiktok.com/i18n/pixel/sdk.js?sdkid=BR5D4O0QGATOS731M1H0';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ta, s);
+    })();
+    </script>
+
 
     @endif
 
