@@ -13,23 +13,23 @@ let mix = require('laravel-mix');
  |
  */
 
-mix
-.js('resources/assets/js/app.js', 'public/js')
-   // .sass('resources/assets/sass/app.scss', 'public/css');
-
-
-
-// const mqpacker = require("css-mqpacker");
-// const sortCSSmq = require('sort-css-media-queries');
-
 // mix
+// .js('resources/assets/js/app.js', 'public/js')
+//    // .sass('resources/assets/sass/app.scss', 'public/css');
+
+
+
+const mqpacker = require("css-mqpacker");
+const sortCSSmq = require('sort-css-media-queries');
+
+mix
    
-//    .js('resources/assets/js/quiz/quiz.js', 'public/js')
-//    .sass('resources/assets/sass/quiz/quiz.scss', 'public/css')
-//    .options({
-//        postCss: [
-//          mqpacker({
-//                sort: sortCSSmq
-//            })
-//        ]
-//    });
+   .js('resources/assets/js/quiz/quiz.js', 'public/js')
+   .sass('resources/assets/sass/quiz/quiz.scss', 'public/css')
+   .options({
+       postCss: [
+         mqpacker({
+               sort: sortCSSmq
+           })
+       ]
+   });

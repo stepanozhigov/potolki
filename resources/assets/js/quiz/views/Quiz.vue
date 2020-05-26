@@ -206,7 +206,7 @@
                                 class="input"
                             />
                             <div class="quest__control quest__control_finish">
-                                <button class="btn btn_send btn-pulse" :disabled="!isPhoneValid"  @click="submitQuiz" >Получить расчёт и подарок</button>
+                                <button class="btn btn_send btn-pulse" id="send-quiz" :disabled="!isPhoneValid"  @click="submitQuiz">Получить расчёт и подарок</button>
                                 <p class="alarm">Оставляя контактную информацию, вы соглашаетесь на <span>обработку персональных данных</span></p>
                             </div>
                         </div>
