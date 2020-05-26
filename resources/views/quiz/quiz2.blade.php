@@ -74,6 +74,15 @@
             var js = d.createElement(s); js.charset="UTF-8"; js.async = 1; js.src = p+h+u; var js2 = d.getElementsByTagName(s)[0]; js2.parentNode.insertBefore(js, js2);
         })(window, document, 'script', 'cloud.roistat.com', '9fcae1a19bf23011571b33710b6573d5');
 	</script>
+
+    <script>
+        (function() {
+            var ta = document.createElement('script'); ta.type = 'text/javascript'; ta.async = true;
+            ta.src = 'https://analytics.tiktok.com/i18n/pixel/sdk.js?sdkid=BR5D4O0QGATOS731M1H0';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ta, s);
+        })();
+    </script>
     @include('quiz.svg_sprite_quiz')
 </body>
 </html>
