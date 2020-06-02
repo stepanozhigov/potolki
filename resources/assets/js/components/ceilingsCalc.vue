@@ -54,7 +54,7 @@
             >
             </vue-slider>
         </div>
-        <p class="ceilingCalculator__subtitle">Для точного расчёта необходимо произвести замер! <br>Минимальный заказ {{priceMin}} ₽</p>
+        <p class="ceilingCalculator__subtitle">Для точного расчёта необходимо произвести замер! <br>Минимальный заказ {{priceMin[city]}} ₽</p>
         <p class="ceilingCalculator__total"><span class="js-calc-price">{{totlaPrice}}</span> ₽</p>
         <p class="ceilingCalculator__measure">с установкой</p>
         <a :href="link" class="ceilingCalculator__callback">Вызвать замерщика</a>
