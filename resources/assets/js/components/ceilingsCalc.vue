@@ -54,7 +54,7 @@
             >
             </vue-slider>
         </div>
-        <p class="ceilingCalculator__subtitle">Для точного расчёта необходимо произвести замер! <br>Минимальный заказ {{priceMin[city]}} ₽</p>
+        <p class="ceilingCalculator__subtitle">Для точного расчёта необходимо произвести замер! <br>Минимальный заказ {{minPrice}} ₽</p>
         <p class="ceilingCalculator__total"><span class="js-calc-price">{{totlaPrice}}</span> ₽</p>
         <p class="ceilingCalculator__measure">с установкой</p>
         <a :href="link" class="ceilingCalculator__callback">Вызвать замерщика</a>
@@ -133,6 +133,12 @@ export default {
         },
         link() {
             return `https://potolki-ts.ru/${window.city.code}/forms/measure`
+        },
+        minPrice() {
+            const city = window.city.code ? window.city.code.toString().replace(/[\-\/]/g,'_') : 'moskva'
+            const minPrice = this.priceMin[city] ? this.priceMin[city] : '4 000'
+            
+            return minPrice
         }
     },
     components: { 

@@ -3,7 +3,7 @@
         <h2 class="title-dec">Калькулятор</h2>
         <p class="calc__item calc__item-intro">
             Расчёт стоимости натяжного потолка <span class="b-color_red">по акции.</span>
-            Для точного расчёта необходим замер! Минимальный заказ {{priceMin[city]}} ₽
+            Для точного расчёта необходим замер! Минимальный заказ {{minPrice}} ₽
         </p>
         <div class="calc__item">
             <p class="calc__item-name">Площадь помещения</p>
@@ -104,6 +104,12 @@ export default {
         },
         link() {
             return `https://potolki-ts.ru/${window.city.code}/forms/measure`
+        },
+        minPrice() {
+            const city = window.city.code ? window.city.code.toString().replace(/[\-\/]/g,'_') : 'moskva'
+            const minPrice = this.priceMin[city] ? this.priceMin[city] : '4 000'
+            
+            return minPrice
         }
     },
     components: { 
