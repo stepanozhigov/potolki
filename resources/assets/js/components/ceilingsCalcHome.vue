@@ -3,7 +3,7 @@
         <h2 class="title-dec">Калькулятор</h2>
         <p class="calc__item calc__item-intro">
             Расчёт стоимости натяжного потолка <span class="b-color_red">по акции.</span>
-            Для точного расчёта необходимо произвести замер!
+            Для точного расчёта необходим замер! Минимальный заказ {{priceMin}} ₽
         </p>
         <div class="calc__item">
             <p class="calc__item-name">Площадь помещения</p>
@@ -75,6 +75,22 @@ export default {
                 krasnoyarsk: 250,
                 novosibirsk: 300,
                 komsomolsk: 300
+            },
+            priceMin: {
+                krasnodar: '5 000',
+                dolgoprudnyj: '7 000',
+                nahodka: '4 000',
+                sankt_peterburg: '7 000',
+                ussuriysk: '3 000',
+                vladivostok: '4 000',
+                habarovsk: '4 000',
+                blagoveschensk: '4 000',
+                moskva: '7 000',
+                sochi: '6 000',
+                artem: '4 000',
+                krasnoyarsk: '5 000',
+                novosibirsk: '5 000',
+                komsomolsk: '4 000'
             }
         }
     },

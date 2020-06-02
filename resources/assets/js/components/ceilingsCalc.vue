@@ -54,7 +54,7 @@
             >
             </vue-slider>
         </div>
-        <p class="ceilingCalculator__subtitle">Для точного расчёта необходимо произвести замер!</p>
+        <p class="ceilingCalculator__subtitle">Для точного расчёта необходимо произвести замер! <br>Минимальный заказ {{priceMin}} ₽</p>
         <p class="ceilingCalculator__total"><span class="js-calc-price">{{totlaPrice}}</span> ₽</p>
         <p class="ceilingCalculator__measure">с установкой</p>
         <a :href="link" class="ceilingCalculator__callback">Вызвать замерщика</a>
@@ -102,6 +102,22 @@ export default {
                 krasnoyarsk: 250,
                 novosibirsk: 300,
                 komsomolsk: 300
+            },
+            priceMin: {
+                krasnodar: '5 000',
+                dolgoprudnyj: '7 000',
+                nahodka: '4 000',
+                sankt_peterburg: '7 000',
+                ussuriysk: '3 000',
+                vladivostok: '4 000',
+                habarovsk: '4 000',
+                blagoveschensk: '4 000',
+                moskva: '7 000',
+                sochi: '6 000',
+                artem: '4 000',
+                krasnoyarsk: '5 000',
+                novosibirsk: '5 000',
+                komsomolsk: '4 000'
             },
             priceTubes: 200,
             priceAngles: 100
