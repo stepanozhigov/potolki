@@ -52,13 +52,20 @@ class FeedbackController extends Controller
 			'name'	=> 'Квиз',
 			'phone'	=> $request->phone,
 			'city_id' => $request->city,
+            'city_name' => $request->city_name,
 			'direction_id' => 56,
 			'roistat'	=>	$request->cookie('roistat_visit'),
 			'visits'	=>	$arVisits,
 			'description'   =>  $desc,
 		]);
 
-		ProcessFeedback::dispatch($lead);
+        if($request->city == 792){
+
+            $res = Mail::to('partner@mail-ts.ru')->send(new LeadSend($lead));
+
+        }else{
+            ProcessFeedback::dispatch($lead);
+        }
 
 		return response()->json([
 			'success'	=> true
@@ -161,6 +168,7 @@ class FeedbackController extends Controller
 			'name'	=> $request->name,
 			'phone'	=> $request->phone,
 			'city_id' => $request->city,
+            'city_name' => $request->city_name,
 			'direction_id' => 56,
 			'roistat'	=>	$request->cookie('roistat_visit'),
             'visits'	=>	$arVisits,
@@ -169,7 +177,7 @@ class FeedbackController extends Controller
 
         if($request->city == 792){
 
-            $res = Mail::to('partner@mail-ts.ru')->send(new LeadSend($request));
+            $res = Mail::to('partner@mail-ts.ru')->send(new LeadSend($lead));
 
         }else{
             ProcessFeedback::dispatch($lead);
