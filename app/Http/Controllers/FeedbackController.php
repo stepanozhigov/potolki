@@ -169,7 +169,7 @@ class FeedbackController extends Controller
 
         if($request->city == 792){
 
-            $res = Mail::to('acces5denied@yandex.ru')->send(new LeadSend($request));
+            $res = Mail::to('partner@mail-ts.ru')->send(new LeadSend($request));
 
         }else{
             ProcessFeedback::dispatch($lead);
