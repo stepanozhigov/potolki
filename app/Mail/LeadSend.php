@@ -29,6 +29,6 @@ class LeadSend extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.survey');
+        return $this->view('emails.lead');
     }
 }
