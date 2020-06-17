@@ -12,6 +12,8 @@ use App\Jobs\ProcessFeedback;
 use App\Connectors\BitrixConnector;
 use App\Lead;
 use App\Mail\Survey;
+use App\Mail\LeadSend;
+
 
 class FeedbackController extends Controller
 {
@@ -165,7 +167,13 @@ class FeedbackController extends Controller
             'description' => $visits.$description
 		]);
 
-		ProcessFeedback::dispatch($lead);
+        if($request->city == 792){
+
+            $res = Mail::to('acces5denied@yandex.ru')->send(new LeadSend($request));
+
+        }else{
+            ProcessFeedback::dispatch($lead);
+        }
 
 		return response()->json([
 			'success'	=> true
