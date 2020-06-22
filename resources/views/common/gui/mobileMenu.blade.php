@@ -102,6 +102,9 @@
                     </div>
                     <ul class="scrollable">
                         <li class="mobileMenu__item">
+                            <a href="{{ route('payment', $city) }}">Оплатить заказ</a>
+                        </li>
+                        <li class="mobileMenu__item">
                             <a href="{{ route('about', $city) }}">О компании</a>
                         </li>
                         <li class="mobileMenu__item">

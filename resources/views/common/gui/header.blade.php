@@ -76,7 +76,7 @@ $city = $city ?? App\City::find(1);
                             </a>
                             <a href="javascript:void(0);" class="text menu__dropdown-link">Информация</a>
                         </div>
-
+                        <a href="{{ route('payment', $city) }}" class="text menu__item menu__item_bordered">Оплатить заказ</a>
                         <a href="{{ route('about', $city) }}" class="text menu__item menu__item_bordered">О компании</a>
                         <a href="{{ route('dillers', $city) }}" class="text menu__item menu__item_bordered">Диллерам</a>
                         <a href="{{ route('contacts', $city) }}" class="text menu__item menu__item_bordered">Контакты</a>
@@ -195,7 +195,7 @@ $city = $city ?? App\City::find(1);
                         </a>
                         <a href="javascript:void(0);" class="text menu__dropdown-link">Информация</a>
                     </div>
-
+                    <a href="{{ route('payment', $city) }}" class="text menu__item menu__item_bordered">Оплатить заказ</a>
                     <a href="{{ route('about', $city) }}" class="text menu__item menu__item_bordered">О компании</a>
                     <a href="{{ route('dillers', $city) }}" class="text menu__item menu__item_bordered">Диллерам</a>
                     <a href="{{ route('contacts', $city) }}" class="text menu__item menu__item_bordered">Контакты</a>
