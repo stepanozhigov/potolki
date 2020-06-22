@@ -28,7 +28,7 @@
 
     <section id="ceilings-calc-home"></section>
 
-    @include('sale.spring')
+    @include('sale.summer')
 
     <section class="sale wrapper">
 		<h2 class="sale__title">
