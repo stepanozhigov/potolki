@@ -39,7 +39,7 @@
 		    <input type="hidden" name="name" value="potolki-ts.ru оплата договора"/>
 		    <input type="hidden" name="order_id" value="0" />
             <input class="input" name="payer_name" value="" required placeholder="Ваше имя" />
-            <input class="input" name="address" value="" required placeholder="Ваш адрес" />
+            <input class="input" name="custom_fields" value="" required placeholder="Ваш адрес" />
             <input class="input" name="email" value="" required placeholder="Ваш e-mail" />
             <input class="input" name="comment" value="" required placeholder="Номер договора" />
             <input class="input" name="cost" value="" required placeholder="Сумма" />
