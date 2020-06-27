@@ -33,15 +33,13 @@
 			}
 		</style>
 		<form class="payment__form" method="POST"  class="application"  accept-charset="UTF-8" action="https://partner.rficb.ru/alba/input/">
-		  <input type="hidden" name="key" value="yvgz56fJm6cDc6hpZJt1O5zcQQY6vVxdZaY1xCgk4OM=" />
+		  <input type="hidden" name="key"/>
 
 		    <!-- <input type="hidden" name="key" value="fvMXytFivKigwP8EzZ21ErVxb+PqIpiwt6RSDsmXwGQ=" /> -->
 		    <input type="hidden" name="name" value="potolki-ts.ru оплата договора"/>
 		    <input type="hidden" name="order_id" value="0" />
-            <input class="input" name="payer_name" value="" required placeholder="Ваше имя" />
-            <input class="input" name="custom_fields" value="" required placeholder="Ваш адрес" />
             <input class="input" name="email" value="" required placeholder="Ваш e-mail" />
-            <input class="input" name="comment" value="" required placeholder="Номер договора" />
+            <input class="input" name="comment" value="" required placeholder="№ договора / адрес монтажа" />
             <input class="input" name="cost" value="" required placeholder="Сумма" />
 
 		    <button class="button" name="button">Оплатить</button>
