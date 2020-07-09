@@ -9,6 +9,7 @@
 
     <title>Квиз опрос. Твой стиль</title>
     <link href="{{ asset('css/quiz.css') }}" rel="stylesheet">
+    <script type="text/javascript" src="https://pxl.knam.pro/code/code.php" charset="UTF-8"></script>
     
     <? if (!empty($city)): ?>
 		<script type="text/javascript">
