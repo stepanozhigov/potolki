@@ -1,5 +1,5 @@
 <template>
-    
+
     <div>
         <header class="header" :class="{ mob: step > 0 }">
             <div class="header__wrapper">
@@ -10,7 +10,7 @@
                         </a>
                         <p class="logo_name">Фабрика потолков</p>
                     </div>
-                    
+
                     <div class="header__items_item contact">
                         <a :href="'tel:'+phoneSite" class="phone">
                             <svg class="icon" width="10px" height="19px">
@@ -20,11 +20,11 @@
                         </a>
                     </div>
                 </div>
-            </div>    
+            </div>
         </header>
 
         <div v-if="step == 0">
-            
+
             <section class="hero">
                 <div class="hero__wrapper">
                     <div class="hero__items">
@@ -58,7 +58,7 @@
                             <p class="quest_intro">Вопрос 1/3</p>
                             <p class="quest_title">Укажите параметры вашего помещения</p>
                         </div>
-                        
+
                         <div class="quest__list quest__range">
                             <div class="quest__range_wrapper">
                                 <p class="quest__range_title">Площадь помещения</p>
@@ -153,9 +153,9 @@
                                     </svg>
                                 </button>
                                 <transition name="slide-fade">
-                                    <img :src="currentGift.img" 
-                                        v-touch:swipe.left="nextGift" 
-                                        v-touch:swipe.right="prevGift" 
+                                    <img :src="currentGift.img"
+                                        v-touch:swipe.left="nextGift"
+                                        v-touch:swipe.right="prevGift"
                                         alt="" class="gifts_img">
                                 </transition>
                                 <div class="gifts__paginated">
@@ -177,7 +177,7 @@
                         </div>
                     </div>
 
-                    
+
                     <div class="quest__items_item quest_content" v-if="step == 4">
                         <div class="quest_img">
                             <img src="/img/quiz/130.jpg">
@@ -188,9 +188,9 @@
                         </div>
                         <div class="quest__list quest__range">
                             <p class="quest_info">Введите номер телефона и получите расчёт на WhatsApp и СМС в течении <span class="mark">5 минут.</span></p>
-                            <masked-input 
-                                type="tel" 
-                                autocomplete="off" 
+                            <masked-input
+                                type="tel"
+                                autocomplete="off"
                                 required
                                 v-model="questions.phoneclear"
                                 placeholder="Введите ваш номер*"
@@ -199,8 +199,8 @@
                                     formatCharacters: {
                                         'V': {
                                             validate: char => /[9]/.test(char)
-                                        }, 
-                                    }, 
+                                        },
+                                    },
                                 }"
                                 @input="questions.phone = arguments[1]"
                                 class="input"
@@ -312,7 +312,7 @@
                 return pattern.test(this.questions.phone)
             },
             currentGift: function () {
-                
+
 				return this.gifts[this.questions.gift];
 			}
         },
@@ -325,7 +325,7 @@
         },
         methods: {
             lengthTooltip: function (value) {
-				return value + ' '; 
+				return value + ' ';
 			},
             openFormError: function () {
                 this.formError = !this.formError
@@ -339,7 +339,7 @@
             },
             submitQuiz (e){
                 e.preventDefault();
-                
+
                 if(this.questions.times === ''){
                     this.questions.times = 'Не знаю'
                 }
@@ -360,10 +360,10 @@
                     window.pixel.Add(32528967),
                     ga.getAll()[0].send('event', 'quiz', 'send'),
                     setTimeout(() => {
-                        window.location.href = '/'+this.cityLink
+                        window.location.href = 'https://www.instagram.com/p/B6irm-7oSpB/?igshid=vj3wkl2esfmv'
                     }, 4000)
                 ))
-                
+
             },
             nextGift: function () {
 				let count = this.gifts.length,
@@ -377,7 +377,7 @@
             prevGift: function () {
 				let count = this.gifts.length,
 					prev = this.questions.gift - 1;
-                    
+
 				if (prev < 0) {
 					prev = count - 1;
 				}
@@ -389,10 +389,10 @@
                 }else{
                     this.size_md = false
                 }
-                
+
             }
         },
-        components: { 
+        components: {
             MaskedInput,
             VueSlider
         }
