@@ -2,7 +2,7 @@
 	<div class="wrapper offer__wrap">
         <div class="offer__wrapper">
             <h2 class="offer__title">Двойная скидка!</h2>
-            <p class="offer__intro">Успейте только до 31 июля!</p>
+            <p class="offer__intro">Успейте только до 31 августа!</p>
             <form class="formN js-less" action="{{ route('forms.feedback', $city) }}" method="POST">
                 @csrf
                 <input type="hidden" name="city" value="{{ $city->bx_code }}">
