@@ -108,7 +108,7 @@
                             <a href="{{ route('about', $city) }}">О компании</a>
                         </li>
                         <li class="mobileMenu__item">
-                            <a  href="{{ route('dillers', $city) }}">Диллерам</a>
+                            <a  href="{{ route('dillers', $city) }}">Дилерам</a>
                         </li>
                         <li class="mobileMenu__item">
                             <a href="{{ route('contacts', $city) }}">Контакты</a>

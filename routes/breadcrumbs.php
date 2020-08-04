@@ -20,7 +20,7 @@ Breadcrumbs::for('contacts', function ($trail, $city) {
 
 Breadcrumbs::for('dillers', function ($trail, $city) {
     $trail->parent('ceilings', $city);
-    $trail->push('Диллерам', route('dillers', $city));
+    $trail->push('Дилерам', route('dillers', $city));
 });
 
 Breadcrumbs::for('employees', function ($trail, $city) {

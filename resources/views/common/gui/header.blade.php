@@ -78,7 +78,7 @@ $city = $city ?? App\City::find(1);
                         </div>
                         <a href="{{ route('payment', $city) }}" class="text menu__item menu__item_bordered">Оплатить заказ</a>
                         <a href="{{ route('about', $city) }}" class="text menu__item menu__item_bordered">О компании</a>
-                        <a href="{{ route('dillers', $city) }}" class="text menu__item menu__item_bordered">Диллерам</a>
+                        <a href="{{ route('dillers', $city) }}" class="text menu__item menu__item_bordered">Дилерам</a>
                         <a href="{{ route('contacts', $city) }}" class="text menu__item menu__item_bordered">Контакты</a>
                         <a href="{{ route('employees', $city) }}" class="text menu__item menu__item_bordered">Сотрудники</a>
                         <a href="{{ route('reviews', $city) }}" class="text menu__item menu__item_bordered">Отзывы</a>
@@ -197,7 +197,7 @@ $city = $city ?? App\City::find(1);
                     </div>
                     <a href="{{ route('payment', $city) }}" class="text menu__item menu__item_bordered">Оплатить заказ</a>
                     <a href="{{ route('about', $city) }}" class="text menu__item menu__item_bordered">О компании</a>
-                    <a href="{{ route('dillers', $city) }}" class="text menu__item menu__item_bordered">Диллерам</a>
+                    <a href="{{ route('dillers', $city) }}" class="text menu__item menu__item_bordered">Дилерам</a>
                     <a href="{{ route('contacts', $city) }}" class="text menu__item menu__item_bordered">Контакты</a>
                     <a href="{{ route('employees', $city) }}" class="text menu__item menu__item_bordered">Сотрудники</a>
                     <a href="{{ route('reviews', $city) }}" class="text menu__item menu__item_bordered">Отзывы</a>
