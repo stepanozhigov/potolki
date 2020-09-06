@@ -14,15 +14,14 @@
     <link rel="canonical" href="{{ url(Request::url()) }}" />
     <? $visit = new App\Visit; ?>
     @if (!empty($seoData))
-        <?
-        $title = $seoData->meta_title;
+        @php        $title = $seoData->meta_title;
         $desc = $seoData->meta_description;
 
         if (!empty($city)) {
             $title = str_replace('#city_title#', $city->name_formatted, $seoData->meta_title);
             $desc = str_replace('#city_title#', $city->name_formatted, $seoData->meta_description);
         }
-        ?>
+        @endphp
         <title>{!! $title !!}</title>
         <meta name="description" content="{!! $desc !!}" />
     @else
@@ -93,7 +92,7 @@
         <div id="geo-confirm">
             <geo-confirm :cities="{{ $cities }}"></geo-confirm>
         </div>
-		
+
     <? endif ?>
     <div id="widget">
 		<widget></widget>

@@ -1,6 +1,6 @@
-<?
+@php
 $city = $city ?? App\City::find(1);
-?>
+@endphp
 <header class="header">
     <div class="header__top ">
 		<div class="header__top-content container">

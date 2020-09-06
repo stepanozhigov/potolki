@@ -9,7 +9,7 @@
 			<h1 class="hero__title">
                 <b>Натяжные потолки</b><br>
                 @if($city->bx_code == 786)
-                    №1 
+                    №1
                 @endif
 				{!! $city->name_formatted !!}<br class="hidden-sm">
 				от 100 <span class="rouble">8</span>/м²
@@ -28,7 +28,7 @@
 
     <section id="ceilings-calc-home"></section>
 
-    @include('sale.summer')
+    @include('sale.september2020')
 
     <section class="sale wrapper">
 		<h2 class="sale__title">
@@ -46,7 +46,7 @@
     </section>
 
     <section class="section wrapper skills">
-        <?
+        @php
             $region = "на&nbsp;Дальнем Востоке";
 
             if ($city->code == 'krasnodar' || $city->code == 'sochi') {
@@ -55,7 +55,7 @@
             if ($city->code == 'moskva' || $city->code == 'dolgoprudnyj') {
                 $region = 'в&nbsp;Москве и области';
             }
-        ?>
+        @endphp
 		<p class="skills__overtitle">Наши преимущества</p>
 		<h2 class="title-dec skills__title">Звонят многим, заказывают у нас. Почему?</h2>
 		<p class="skills__intro">
@@ -81,7 +81,7 @@
 				</div>
 			</article>
 			<article class="advantage">
-                
+
                 <picture>
                     <source data-srcset="/img/templates/ceilings/advantages/director.webp" type="image/webp" class="lazyload">
                     <img class="advantage__img lazyload" data-src="/img/templates/ceilings/advantages/director.jpg" loading="lazy" alt="Генеральный директор Репин А.А. всегда на связи">
@@ -89,9 +89,9 @@
 				<div class="advantage__wrap">
 					<h3 class="advantage__title">Директор всегда на связи</h3>
 					<p class="intro advantage__intro">
-                        Я лично контролирую все этапы работы с нашими клиентами и отвечаю за качество обслуживания.<br> 
-                        Вы можете написать мне на почту <a href="mailto:boss-tvoistil@mail.ru">boss-tvoistil@mail.ru</a> или в Instagram - я оперативно отвечу.<br> 
-                        Прямая линия обеспечивает ответственную работу каждого сотрудника в компании. 
+                        Я лично контролирую все этапы работы с нашими клиентами и отвечаю за качество обслуживания.<br>
+                        Вы можете написать мне на почту <a href="mailto:boss-tvoistil@mail.ru">boss-tvoistil@mail.ru</a> или в Instagram - я оперативно отвечу.<br>
+                        Прямая линия обеспечивает ответственную работу каждого сотрудника в компании.
                         Считаю это важным плюсом для наших клиентов.
 					</p>
 					<div class="advantage__signature">
@@ -106,7 +106,7 @@
 			</article>
 		</div>
     </section>
-    
+
     <!-- <section class="section constructor hidden-xs">
         <div class="constructor__image"></div>
         <h2 class="title-dec">Визуализация потолков</h2>
@@ -115,7 +115,7 @@
     </section> -->
 
     <section class="portfolio portfolioN portfolio_main portfolio_ceilings">
-        <h2 class="title-dec">Примеры наших работ</h2>   
+        <h2 class="title-dec">Примеры наших работ</h2>
         <div class="portfolio__carousel" id="portfolio__carousel" data-photos="{{ $photos }}">
         </div>
         <div class="buttons portfolio__buttons">
@@ -125,7 +125,7 @@
     </section>
 
     <section class="reviews reviewsN reviews_main wrapper hidden-xs">
-        <h2 class="title-dec">Отзывы наших клиентов</h2>    
+        <h2 class="title-dec">Отзывы наших клиентов</h2>
         <div class="reviews__content">
             @foreach($reviews as $review)
                 @include('common.gui.review', $review)
@@ -141,13 +141,13 @@
     <section class="manufactur section wrapper">
         <h2 class="manufactur__title title-dec">Производители плёнки</h2>
         <p class="manufactur__subtitle subtitleN">Компания &laquo;Твой стиль&raquo; иcпользует плёнку для натяжных потолков ведущих поставщиков с&nbsp;сертификатами качества. Работаем с ПВХ&ndash;плёнкой и&nbsp;тканевыми полотнами следующих производителей:</p>
-        <div class="manufactur__items">   
+        <div class="manufactur__items">
             <div class="manufactur__item">
                 <img data-src="/img/manufacturers/clipso.svg" loading="lazy" alt="clipso" class="manufactur__item-image lazyload">
                 <span class="manufactur__item-name">Франция</span>
             </div>
             <div class="manufactur__item">
-                <img data-src="/img/manufacturers/pongs.svg" loading="lazy" alt="pongs" class="manufactur__item-image lazyload">    
+                <img data-src="/img/manufacturers/pongs.svg" loading="lazy" alt="pongs" class="manufactur__item-image lazyload">
                 <span class="manufactur__item-name">Германия</span>
             </div>
             <div class="manufactur__item">
@@ -181,7 +181,7 @@
             <p class="other__text">
                 Поможем подобрать специальные<br> светильники для натяжных<br> потолков.
             </p>
-        </a> 
+        </a>
         <a href="{{ route('services', [request()->route()->city, 'measurements']) }}" class="other__item is-hoverable">
             <picture>
                 <source data-srcset="/img/templates/ceilings/other/free_measure.webp" type="image/webp" class="lazyload">
