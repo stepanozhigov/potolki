@@ -166,8 +166,12 @@ Route::prefix('/{city}')->group(function () {
     // Route::get('/quiz2', 'PageController@quiz3')->name('quiz2');
     Route::get('/quiz2', 'PageController@quiz4')->name('quiz2');
     // Route::get('/quiz3', 'PageController@quiz3')->name('quiz3');
+    Route::get('/lead', 'PageController@lead')->name('lead');
 });
 
 Route::post('/forms/feedback', 'FeedbackController@addLead');
 Route::post('/forms/quiz', 'FeedbackController@quiz')->name('forms.quiz');
 Route::post('/forms/quiz2', 'FeedbackController@quiz2')->name('forms.quiz2');
+
+
+
