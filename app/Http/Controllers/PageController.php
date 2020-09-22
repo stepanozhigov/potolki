@@ -487,4 +487,11 @@ class PageController extends Controller
             'city'  =>  $city
         ]);
     }
+
+    public function lead (Request $request, City $city)
+    {
+        return view('lead.lead', [
+            'city'  =>  $city
+        ]);
+    }
 }

@@ -1,5 +1,7 @@
 {
-    "/js/quiz.js": "/js/quiz.js",
+    "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
-    "/css/quiz.css": "/css/quiz.css"
+    "/css/quiz.css": "/css/quiz.css",
+    "/js/lead.js": "/js/lead.js",
+    "/js/quiz.js": "/js/quiz.js"
 }
