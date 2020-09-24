@@ -27,10 +27,9 @@
         <div class="lcontent__items">
           <div class="lcontent__items_item">
             <p class="lcontent_intro"></p>
-            <p class="lcontent_location" v-html="name_formatted"></p>
             <h1 class="lcontent_title">
               <span>Натяжные потолки</span><br>
-              от 100 ₽/м<sup>2</sup>
+              <span class="location" v-html="name_formatted"></span> от 100 ₽/м<sup>2</sup>
             </h1>
             <p class="lcontent_subtitle">
               Оставьте ваш номер телефона для расчёта натяжного потолка по WhatsApp и получите купон на сумму 5000 ₽ в подарок!
@@ -373,23 +372,6 @@ body {
     }
   }
 
-  &_location {
-    font-family: 'Playfair Display', serif;
-    font-size: rem(24);
-    font-weight: 400;
-    line-height: rem(36);
-    margin-bottom: rem(4);
-      &:first-letter{
-          text-transform: capitalize;
-      }
-
-    @include above($break_sm) {
-      text-align: left;
-      font-size: rem(40);
-      line-height: rem(48);
-      margin-bottom: rem(16);
-    }
-  }
 
   &_title {
     font-family: 'Playfair Display', serif;
@@ -410,7 +392,7 @@ body {
     @include above($break_md) {
     }
 
-    span {
+    span:not(.location) {
       display: inline-block;
       text-transform: uppercase;
       font-size: rem(30);
@@ -425,6 +407,12 @@ body {
         font-size: rem(56);
       }
     }
+
+      span.location {
+          &:first-letter{
+              text-transform: capitalize;
+          }
+      }
 
   }
 
