@@ -28,8 +28,8 @@
           <div class="lcontent__items_item">
             <p class="lcontent_intro"></p>
             <h1 class="lcontent_title">
-              <span>Натяжные потолки</span><br>
-              <span class="location" v-html="name_formatted"></span> от 100 ₽/м<sup>2</sup>
+              <span class="header">Натяжные потолки</span><br>
+              <span class="location" v-html="name_formatted"></span> от <span class="animate_number"><i>1</i><i>0</i><i>0</i></span> ₽/м<sup>2</sup>
             </h1>
             <p class="lcontent_subtitle">
               Оставьте ваш номер телефона для расчёта натяжного потолка по WhatsApp и получите купон на сумму 5000 ₽ в подарок!
@@ -392,7 +392,7 @@ body {
     @include above($break_md) {
     }
 
-    span:not(.location) {
+    span.header {
       display: inline-block;
       text-transform: uppercase;
       font-size: rem(30);
@@ -407,13 +407,29 @@ body {
         font-size: rem(56);
       }
     }
+      span{
+          display: inline-block;
+          i{
+              font-style: normal;
+              letter-spacing: rem(-0.4);
+              line-height: 1.33;
+              display:inline-block;
+              animation:float .3s ease-in-out infinite;
+
+              &:nth-child(2){ animation-delay:.05s; }
+              &:nth-child(3){ animation-delay:.15s; }
+              &:nth-child(4){ animation-delay:.3s; }
+          }
+      }
 
       span.location {
           &:first-letter{
               text-transform: capitalize;
           }
       }
-
+      .animate_number{
+          font-family: "Times New Roman", serif;
+      }
   }
 
   &_intro {

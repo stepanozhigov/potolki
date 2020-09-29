@@ -4,6 +4,9 @@ import Vuelidate from 'vuelidate'
 
 window.$ = window.jQuery = require('jquery');
 
+const VueInputMask = require('vue-inputmask').default;
+Vue.use(VueInputMask)
+
 Vue.use(Vuex)
 Vue.use(Vuelidate)
 window.Vue = Vue;

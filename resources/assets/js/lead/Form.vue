@@ -1,7 +1,7 @@
 <template>
     <form class="form" @submit.prevent="submitForm">
         <div class="input_field">
-            <masked-input
+            <!--<masked-input
                 type="tel"
                 autocomplete="off"
                 placeholder="Ваш телефон"
@@ -17,6 +17,17 @@
                     },
                 }"
                 @focus.native="isValid = true"
+            />-->
+            <input
+                type="tel"
+                autocomplete="off"
+                placeholder="Ваш телефон"
+                class="input"
+                :class="{ 'error': !isValid }"
+                v-mask="{mask: '+7 (999) 999-99-99'}"
+                v-model="$v.phone.$model"
+                v-on:change="maskCheck"
+                @focus="isValid = true"
             />
             <div v-if="!isValid" class="error_wrapper">
                 <span class="error_alert">некорректный телефон</span>
@@ -62,6 +73,13 @@
             }
         },
         methods:{
+            maskCheck: function (field){
+                if (field.target.inputmask.isComplete() || field.target.inputmask.isValid()) {
+                    this.isValid = true
+                } else {
+                    this.isValid = false
+                }
+            },
             submitForm() {
                 if(this.$v.phone.$invalid){
                     this.isValid = false
