@@ -29,10 +29,10 @@
             <p class="lcontent_intro"></p>
             <h1 class="lcontent_title">
               <span class="header">Натяжные потолки</span><br>
-              <span class="location" v-html="name_formatted"></span> от <span class="animate_number"><i>1</i><i>0</i><i>0</i></span> ₽/м<sup>2</sup>
+              <span class="location" v-html="name_formatted"></span> от <span class="animate_number"><i>1</i><i>0</i><i>0</i></span> <span class="rouble">8</span>/м<sup>2</sup>
             </h1>
             <p class="lcontent_subtitle">
-              Оставьте ваш номер телефона для расчёта натяжного потолка по WhatsApp и получите купон на сумму 5000 ₽ в подарок!
+              Оставьте ваш номер телефона для расчёта натяжного потолка по WhatsApp и получите купон на сумму 5000 <span class="rouble">8</span> в подарок!
             </p>
             <Form :buttonName="'Получить расчёт и подарок'" v-if="visible"/>
             <div class="lcontent_site_link">
@@ -142,32 +142,99 @@ export default {
 </script>
 <style lang="scss">
 @import 'mixins';
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
 @font-face {
-  font-family: 'Helvetica';
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: url("../../fonts/subset-HelveticaNeue-Light.woff") format("woff");
+    font-family: 'PTRoubleSans';
+    src: url('../../fonts/subset-PTRoubleSans.woff2') format('woff2'),
+    url('../../fonts/subset-PTRoubleSans.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: 'Helvetica';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("../../fonts/subset-HelveticaNeue-Regular.woff") format("woff");
+    font-family: 'Futura PT';
+    src: url('../../fonts/Futura-PT-Light.woff2') format('woff2'),
+    url('../../fonts/Futura-PT-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: 'FuturaPTBook';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("../../fonts/FuturaPT-Book.woff") format("woff");
+    font-family: 'Futura PT';
+    src: url('../../fonts/Futura-PT-Book.woff2') format('woff2'),
+    url('../../fonts/Futura-PT-Book.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    font-display: swap;
 }
 
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('../../fonts/subset-PlayfairDisplay-Italic.woff2') format('woff2'),
+    url('../../fonts/subset-PlayfairDisplay-Italic.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('../../fonts/subset-PlayfairDisplay-Regular.woff2') format('woff2'),
+    url('../../fonts/subset-PlayfairDisplay-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('../../fonts/subset-HelveticaNeue-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('../../fonts/subset-HelveticaNeue-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('../../fonts/subset-HelveticaNeue-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('../../fonts/subset-HelveticaNeue-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PTRoubleSerif';
+    font-display: swap;
+    src: url('../../fonts/PTRoubleSerif.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+
+.rouble {
+    font-family: 'PTRoubleSerif';
+}
 
 @include resset();
 
@@ -196,7 +263,7 @@ body {
 }
 
 .wrapper{
-  max-width: 1158px;
+  max-width: 1180px;
   margin: 0 auto;
 }
 
@@ -422,11 +489,6 @@ body {
           }
       }
 
-      span.location {
-          &:first-letter{
-              text-transform: capitalize;
-          }
-      }
       .animate_number{
           font-family: "Times New Roman", serif;
       }
@@ -746,7 +808,7 @@ body {
   }
 
   &_pre {
-    font-family: "FuturaPTBook", serif;
+    font-family: "Futura PT", serif;
     font-size: 14px;
     font-weight: 400;
     letter-spacing: 6px;
