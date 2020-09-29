@@ -1,7 +1,7 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css",
-    "/css/quiz.css": "/css/quiz.css",
-    "/js/lead.js": "/js/lead.js",
-    "/js/quiz.js": "/js/quiz.js"
+    "/js/app.js": "/js/app.js?id=cbd7d70e6aaf236a55fb",
+    "/css/app.css": "/css/app.css?id=639c637a43dcff86acfb",
+    "/css/quiz.css": "/css/quiz.css?id=fb6bf8a33c6bad956937",
+    "/js/lead.js": "/js/lead.js?id=1104d173483a25640f69",
+    "/js/quiz.js": "/js/quiz.js?id=b55ee9ae0dd7dc3eee3a"
 }

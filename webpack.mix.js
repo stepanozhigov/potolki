@@ -28,3 +28,5 @@ mix
             })
         ]
     });
+
+mix.version();

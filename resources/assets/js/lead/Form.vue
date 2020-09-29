@@ -74,10 +74,14 @@
                         ga('send', 'event', 'lead', 'send');
                         ym(40202559,'reachGoal','lead')
                     }
+                    fbq('track', 'Lead');
+                    window.pixel.Event('lead');
+                    window.pixel.Add(32528967);
+
                     axios.post('/forms/add-lead', {
                         phone: this.phone,
                         name: 'Потолки',
-                        city: this.$store.state.city.id,
+                        city: this.$store.state.city.bx_code,
                         city_name: this.$store.state.city.name
                     }).then(response => (
                         this.phone = '',
