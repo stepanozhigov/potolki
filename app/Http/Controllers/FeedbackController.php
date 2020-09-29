@@ -172,7 +172,7 @@ class FeedbackController extends Controller
 			'direction_id' => 56,
 			'roistat'	=>	$request->cookie('roistat_visit'),
             'visits'	=>	$arVisits,
-            'description' => $visits.$description
+            'description' => $description
 		]);
 
         if($request->city == 792){
