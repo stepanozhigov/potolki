@@ -98,7 +98,7 @@
 
                     axios.post('/forms/add-lead', {
                         phone: this.phone,
-                        name: 'Потолки',
+                        name: 'Лидмагнит потолки',
                         city: this.$store.state.city.bx_code,
                         city_name: this.$store.state.city.name
                     }).then(response => (
