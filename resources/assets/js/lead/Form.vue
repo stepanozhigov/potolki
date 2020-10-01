@@ -86,10 +86,10 @@
                 }else{
                     this.isValid = true
                     if(this.type === 'callback'){
-                        ga('send', 'event', 'callback', 'send');
+                        ga.getAll()[0].send('event', 'callback', 'send');
                         ym(40202559,'reachGoal','form-sub')
                     }else{
-                        ga('send', 'event', 'lead', 'send');
+                        ga.getAll()[0].send('event', 'lead', 'send')
                         ym(40202559,'reachGoal','lead')
                     }
                     fbq('track', 'Lead');

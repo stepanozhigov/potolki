@@ -56,7 +56,7 @@
                     </span>
           <div class="modal__lcontent">
             <p class="modal_title">{{ modalTitle }}</p>
-            <Form :buttonName="btnName" :title="modalTitle"/>
+            <Form :buttonName="btnName" :title="modalTitle" :type="'callback'"/>
             <span class="modal_linkClose" @click="toogleModal">Закрыть</span>
           </div>
         </div>
